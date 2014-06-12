@@ -169,14 +169,34 @@ $model = (object) $model;
             <div class="container row-fluid">
                 <?php
                 if (Yii::app()->user->usertype != 0) {
-                    $condition =  (($model->type == 0) ? 'type > 0' : 'type = ' . $model->type) . ' AND owner = ' . Yii::app()->user->id ;
+
+                    $owner = User::model()->findByPk(Yii::app()->user->id);
+
+                    if ($owner->parentuser == 0) {
+
+                        $condition =  (($model->type == 0) ? 'type > 0' : 'type = ' . $model->type) . ' AND owner = ' . Yii::app()->user->id;
+
+                    } else {
+
+                        $company_users_all = User::model()->findAll('parentuser = ' . $owner->parentuser);
+                        $company_users_array = array();
+
+                        $company_users_array[] = $owner->parentuser;
+
+                        foreach ($company_users_all as $value){
+                            $company_users_array[] = $value->id;
+                        }
+
+                        $condition =  (($model->type == 0) ? 'type > 0' : 'type = ' . $model->type) . ' AND owner IN (' . implode(',', $company_users_array) . ')';
+                    }
+
                 } else {
                     $condition =  (($model->type == 0) ? 'type > 0' : 'type = ' . $model->type) /*. ' AND status = 1' */;
                 }
 
                 $this->widget('zii.widgets.CListView', array(
                     'id' => 'list_property',
-                    'dataProvider'=>new CActiveDataProvider('Property', array('criteria'=>array('condition'=> $condition,'order' => 'pid DESC'),'pagination'=>array('pageSize'=>2))),
+                    'dataProvider'=>new CActiveDataProvider('Property', array('criteria'=>array('condition'=> $condition,'order' => 'pid DESC'),'pagination'=>array('pageSize'=>5))),
                     'itemView' => '_property_list_view',
                     'template'=>'{items}<div class="span12"></div>{pager}<div class="span12"></div>'
                 ));
