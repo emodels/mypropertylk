@@ -128,4 +128,9 @@ class User extends CActiveRecord
 			'criteria'=>$criteria,
 		));
 	}
+
+    public function getFullName()
+    {
+        return $this->fname.' '.$this->lname;
+    }
 }

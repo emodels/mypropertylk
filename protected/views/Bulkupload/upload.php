@@ -10,7 +10,7 @@
                 data: $('#bulkupload-form').serialize(),
                 success: function(data){
                     if (data == 'done'){
-                        alert('done');
+                        window.location.replace('<?php echo Yii::app()->request->baseUrl; ?>/property/propertylisting?type=0');
                     } else {
                         alert(data);
                     }
@@ -48,7 +48,7 @@ $this->breadcrumbs=array(
                             <li>Do NOT include previously uploaded, existing property information in Excel sheet</li>
                             <li>Excel file should be name exactly as "property" and format must be ".xlsx"</li>
                             <li>Make sure images are kept in separate folder named with appropriate property ID</li>
-                            <li>Do NOT include large scale high resolution images and maximum 800px X 600px scale recommended</li>
+                            <li>Property images must be 800px X 600px scale</li>
                         </div>
                         <?php if (Yii::app()->user->usertype == 0) { ?>
                         <div class="control-group">

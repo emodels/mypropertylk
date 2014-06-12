@@ -26,7 +26,32 @@ class AddPropertyAction extends CAction
             $this->getController()->redirect(Yii::app()->baseUrl);
         }
 
-        $model->otheragent = 0;
+        /*----( Agent Dropdown list )----*/
+        $agentListData = array();
+        $otherAgentListData = array();
+
+        switch (Yii::app()->user->usertype){
+            case 0: //----Admin
+
+                $agentListData = CHtml::listData(User::model()->findAll('usertype = 0 OR usertype = 2'), 'id', 'fullName');
+                $otherAgentListData = CHtml::listData(User::model()->findAll('usertype = 0 OR usertype = 2'), 'id', 'fullName');
+                break;
+
+            case 1: //----Member
+
+                $agentListData = CHtml::listData(User::model()->findAll('id = ' . Yii::app()->user->id), 'id', 'fullName');
+                $otherAgentListData = CHtml::listData(User::model()->findAll('id = ' . Yii::app()->user->id), 'id', 'fullName');
+                break;
+
+            case 2: //----Agent
+
+                $agentListData = CHtml::listData(User::model()->findAll('id = ' . Yii::app()->user->id . ' OR parentuser = ' . Yii::app()->user->id), 'id', 'fullName');
+                $otherAgentListData = CHtml::listData(User::model()->findAll('id = ' . Yii::app()->user->id . ' OR parentuser = ' . Yii::app()->user->id), 'id', 'fullName');
+                break;
+        }
+
+        $model->agent = Yii::app()->user->id;
+        $model->otheragent = Yii::app()->user->id;
         $model->sendemail = 0;
         $model->hidestreetaddress = 0;
         $model->dispalyprice = 1;
@@ -64,7 +89,7 @@ class AddPropertyAction extends CAction
         }
 
 
-        $this->getController()->render('addproperty', array('model' => $model, 'modeltype'=>$modeltype));
+        $this->getController()->render('addproperty', array('model' => $model, 'modeltype'=>$modeltype, 'agentListData'=>$agentListData, 'otherAgentListData'=>$otherAgentListData));
     }
 
 }

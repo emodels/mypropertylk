@@ -25,6 +25,30 @@ class EditPropertyAction extends CAction
             $this->getController()->redirect(Yii::app()->baseUrl);
         }
 
+        /*----( Agent Dropdown list )----*/
+        $agentListData = array();
+        $otherAgentListData = array();
+
+        switch (Yii::app()->user->usertype){
+            case 0: //----Admin
+
+                $agentListData = CHtml::listData(User::model()->findAll(), 'id', 'fullName');
+                $otherAgentListData = CHtml::listData(User::model()->findAll(), 'id', 'fullName');
+                break;
+
+            case 1: //----Member
+
+                $agentListData = CHtml::listData(User::model()->findAll('id = ' . Yii::app()->user->id), 'id', 'fullName');
+                $otherAgentListData = CHtml::listData(User::model()->findAll('id = ' . Yii::app()->user->id), 'id', 'fullName');
+                break;
+
+            case 2: //----Agent
+
+                $agentListData = CHtml::listData(User::model()->findAll('id = ' . Yii::app()->user->id . ' OR parentuser = ' . Yii::app()->user->id), 'id', 'fullName');
+                $otherAgentListData = CHtml::listData(User::model()->findAll('id = ' . Yii::app()->user->id . ' OR parentuser = ' . Yii::app()->user->id), 'id', 'fullName');
+                break;
+        }
+
         $propertytyperelations_array = array();
 
         foreach ($model->propertytyperelations as $value){
@@ -63,7 +87,7 @@ class EditPropertyAction extends CAction
 
         }
 
-        $this->getController()->render('editproperty', array('model'=>$model, 'modeltype'=>$modeltype));
+        $this->getController()->render('editproperty', array('model'=>$model, 'modeltype'=>$modeltype, 'agentListData'=>$agentListData, 'otherAgentListData'=>$otherAgentListData));
     }
 
 }
