@@ -18,8 +18,7 @@ class AddUserAction extends CAction
     public function run()
     {
         $model = new User;
-        $model->usertype = 1;
-
+        $model->usertype = 2;
 
         if (isset($_POST['User'])) {
 
@@ -67,7 +66,7 @@ class AddUserAction extends CAction
                     $thumb->save();
 
                     Yii::app()->user->setFlash('success', "User Added Successfully !");
-                    $this->getController()->redirect(Yii::app()->baseUrl . '/admin/manageusers');
+                    $this->getController()->redirect(Yii::app()->baseUrl . '/agent/manageusers');
 
                 }
                 else{

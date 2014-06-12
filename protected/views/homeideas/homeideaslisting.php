@@ -62,9 +62,15 @@
             )); ?>
             <div class="container row-fluid">
                 <?php
+                if (Yii::app()->user->usertype != 0) {
+                    $condition =  'userid = ' . Yii::app()->user->id ;
+                } else {
+                    $condition =  '';
+                }
+
                 $this->widget('zii.widgets.CListView', array(
                     'id' => 'list_homeideas',
-                    'dataProvider'=>new CActiveDataProvider('Homeideas', array('criteria'=>array('order' => 'dateadded DESC'),'pagination'=>array('pageSize'=>5))),
+                    'dataProvider'=>new CActiveDataProvider('Homeideas', array('criteria'=>array('condition'=> $condition,'order' => 'dateadded DESC'),'pagination'=>array('pageSize'=>5))),
                     'itemView' => '_homeideas_image_list_view',
                     'template'=>'{items}<div class="span12" style="margin-left: 0">{pager}</div>'
                 ));

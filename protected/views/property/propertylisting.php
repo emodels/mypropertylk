@@ -72,8 +72,8 @@ $model = (object) $model;
                 </div>
             </div>
         </div>
-        <div class="span12" style="padding-top: 10px; padding-bottom:10px; margin-left: 0;">
-            <div class="span3" style="padding-right: 10px; padding-left: 10px;">
+        <div class="span12" style="padding-top: 10px; padding-bottom:10px; margin-left: 0; border-bottom: solid 1px silver">
+            <div class="span2" style="padding-right: 10px; padding-left: 10px;">
                 <div class="btn-group">
                     <a class="btn btn-small dropdown-toggle" data-toggle="dropdown" href="#">
                         <?php
@@ -114,11 +114,11 @@ $model = (object) $model;
                 <select class="btn-small" style="width: auto;">
                     <option>Status</option>
                     <option>Active</option>
-                    <option>Off Market</option>
+                    <option>In Active</option>
                     <option>Sold</option>
-                    <option>Under Offer</option>
                 </select>
             </div>
+            <?php if (Yii::app()->user->usertype == 0) {?>
             <div class="span2">
                 <select class="btn-small" style="width: auto;">
                     <option>Agents</option>
@@ -128,6 +128,7 @@ $model = (object) $model;
                     <option>Agent 2</option>
                 </select>
             </div>
+            <?php }?>
             <div class="span2">
                 <select class="btn-small" style="width: auto;">
                     <option>Sort By</option>
@@ -139,10 +140,8 @@ $model = (object) $model;
                     <option>Agent</option>
                 </select>
             </div>
-        </div>
-        <div class="span12" style="margin-left: 0">
-            <div class="form_bg span">
-                <div class="span10">
+            <div class="span4">
+                <div class="span9">
                     <form class="form-search" style="margin-bottom: 0">
                         <div class="input-append">
                             <input type="text" class="span12 search-query" placeholder="Enter Property ID, Address / District">
@@ -169,7 +168,11 @@ $model = (object) $model;
             )); ?>
             <div class="container row-fluid">
                 <?php
-                $condition =  (($model->type == 0) ? 'type > 0' : 'type = ' . $model->type) /*. ' AND status = 1' */;
+                if (Yii::app()->user->usertype != 0) {
+                    $condition =  (($model->type == 0) ? 'type > 0' : 'type = ' . $model->type) . ' AND owner = ' . Yii::app()->user->id ;
+                } else {
+                    $condition =  (($model->type == 0) ? 'type > 0' : 'type = ' . $model->type) /*. ' AND status = 1' */;
+                }
 
                 $this->widget('zii.widgets.CListView', array(
                     'id' => 'list_property',

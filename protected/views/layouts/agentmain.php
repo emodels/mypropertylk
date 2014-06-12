@@ -99,6 +99,7 @@
                         <ul class="nav nav-pills nav-stacked">
                             <li><a id="admin_home" href="<?php echo Yii::app()->request->baseUrl; ?>/agent/home" class="active"><i class="icon-home icon_gap"></i>Home</a></li>
                             <li><a id="admin_list" href="<?php echo Yii::app()->request->baseUrl; ?>/property/propertylisting?type=0"><i class="icon-list icon_gap"></i>Listings</a></li>
+                            <li><a id="admin_homeideas" href="<?php echo Yii::app()->request->baseUrl; ?>/homeideas/homeideaslisting"><i class="icon-camera icon_gap"></i>Home Ideas</a></li>
                             <li><a id="admin_editprof" href="<?php echo Yii::app()->request->baseUrl . '/profile/editprofile?id=' . Yii::app()->user->id;?>"><i class="icon-edit icon_gap"></i>Edit Profile</a></li>
                             <li><a id="admin_manage" href="<?php echo Yii::app()->request->baseUrl; ?>/agent/manageusers"><i class="icon-user icon_gap"></i>Manage Staff</a></li>
                             <li><a id="admin_adv" href="<?php echo Yii::app()->request->baseUrl; ?>/advertising/advertisement"><i class="icon-bullhorn icon_gap"></i>Advertising</a></li>

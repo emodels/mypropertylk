@@ -19,6 +19,20 @@
         });
 
     }
+
+    function UserStatusChange(id) {
+        $.ajax({
+            type: "GET",
+            url: 'manageusers/mode/STATUS/id/' + id,
+            success: function(data){
+                if (data == 'done'){
+                    $.fn.yiiListView.update('list_user');
+                } else {
+                    alert(data);
+                }
+            }
+        });
+    }
 </script>
 <div class="col_right" style="padding-top: 0;">
     <div class="span12" style="border-bottom: solid 1px silver">
@@ -29,7 +43,7 @@
             <div class="hidden-phone" style="padding-top: 20px;"></div>
             <!---------( For Add NewUsers )------------------>
             <div class="btn-group" style="padding-bottom: 5px;">
-                <button class="btn btn-primary"><a href="<?php echo Yii::app()->request->baseUrl; ?>/admin/adduser" style="text-decoration: none; color: #ffffff">Add New User</a></button>
+                <button class="btn btn-primary"><a href="<?php echo Yii::app()->request->baseUrl; ?>/agent/adduser" style="text-decoration: none; color: #ffffff">Add New User</a></button>
             </div>
         </div>
     </div>
@@ -44,20 +58,11 @@
                 </form>
             </div>
             <div class="visible-phone" style="padding-top: 5px;"></div>
-            <div class="offset2 span2">
+            <div class="offset2 span4">
                 <select class="btn-small" style="width: auto;">
                     <option>Status</option>
                     <option>Active</option>
                     <option>InActive</option>
-                </select>
-            </div>
-            <div class="visible-phone" style="padding-top: 5px;"></div>
-            <div class="span2">
-                <select class="btn-small" style="width: auto;">
-                    <option>Type</option>
-                    <option>Member</option>
-                    <option>Agents</option>
-                    <option>Advertiser</option>
                 </select>
             </div>
         </div>
@@ -65,9 +70,11 @@
     <div class="span12" style="margin-left: 0 ">
         <div class="container row-fluid" style="margin-left: 0">
             <?php
+            $condition =  'parentuser = ' . Yii::app()->user->id . ' AND id !=' . Yii::app()->user->id;
+
             $this->widget('zii.widgets.CListView', array(
                 'id' => 'list_user',
-                'dataProvider'=>new CActiveDataProvider('User', array('criteria'=>array('condition'=>'usertype!=0','order' => 'id DESC'),'pagination'=>array('pageSize'=>5))),
+                'dataProvider'=>new CActiveDataProvider('User', array('criteria'=>array('condition'=> $condition,'order' => 'id DESC'),'pagination'=>array('pageSize'=>5))),
                 'itemView' => '_user_list_view',
                 'template'=>'{items}<div class="span12"></div>{pager}<div class="span12"></div>'
             ));

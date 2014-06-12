@@ -29,6 +29,7 @@ class AgentController extends Controller
         return array(
             'home'=>'application.controllers.Agent.IndexAction',  //action for admin - index page controller
             'manageusers'=>'application.controllers.Agent.ManageUsersAction',  //action for admin - index page controller
+            'adduser'=>'application.controllers.Agent.AddUserAction',  //action for admin - Add Users page controller
         );
     }
 

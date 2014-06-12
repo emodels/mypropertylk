@@ -19,6 +19,20 @@
         });
 
     }
+
+    function UserStatusChange(id) {
+        $.ajax({
+            type: "GET",
+            url: 'manageusers/mode/STATUS/id/' + id,
+            success: function(data){
+                if (data == 'done'){
+                    $.fn.yiiListView.update('list_user');
+                } else {
+                    alert(data);
+                }
+            }
+        });
+    }
 </script>
 <div class="col_right" style="padding-top: 0;">
     <div class="span12" style="border-bottom: solid 1px silver">
