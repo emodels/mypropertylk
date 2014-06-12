@@ -41,6 +41,10 @@ class AddPropertyAction extends CAction
 
                 $agentListData = CHtml::listData(User::model()->findAll('id = ' . Yii::app()->user->id), 'id', 'fullName');
                 $otherAgentListData = CHtml::listData(User::model()->findAll('id = ' . Yii::app()->user->id), 'id', 'fullName');
+
+                $model->agent = Yii::app()->user->id;
+                $model->otheragent = 0;
+
                 break;
 
             case 2: //----Agent
@@ -50,8 +54,6 @@ class AddPropertyAction extends CAction
                 break;
         }
 
-        $model->agent = Yii::app()->user->id;
-        $model->otheragent = Yii::app()->user->id;
         $model->sendemail = 0;
         $model->hidestreetaddress = 0;
         $model->dispalyprice = 1;

@@ -97,7 +97,6 @@
  * @property User $agent0
  * @property Province $province0
  * @property District $district0
- * @property User $otheragent0
  * @property Propertyimages[] $propertyimages
  * @property Propertytyperelation[] $propertytyperelations
  */
@@ -154,7 +153,6 @@ class Property extends CActiveRecord
 			'agent0' => array(self::BELONGS_TO, 'User', 'agent'),
 			'province0' => array(self::BELONGS_TO, 'Province', 'province'),
 			'district0' => array(self::BELONGS_TO, 'District', 'district'),
-			'otheragent0' => array(self::BELONGS_TO, 'User', 'otheragent'),
 			'propertyimages' => array(self::HAS_MANY, 'Propertyimages', 'propertyid'),
 			'propertytyperelations' => array(self::HAS_MANY, 'Propertytyperelation', 'propertyid'),
 		);

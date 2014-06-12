@@ -21,7 +21,6 @@
  * The followings are the available model relations:
  * @property Homeideas[] $homeideases
  * @property Property[] $properties
- * @property Property[] $properties1
  */
 class User extends CActiveRecord
 {
@@ -73,7 +72,6 @@ class User extends CActiveRecord
 		return array(
 			'homeideases' => array(self::HAS_MANY, 'Homeideas', 'userid'),
 			'properties' => array(self::HAS_MANY, 'Property', 'agent'),
-			'properties1' => array(self::HAS_MANY, 'Property', 'otheragent'),
 		);
 	}
 
