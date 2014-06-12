@@ -3,6 +3,22 @@
         $('.nav-stacked a').removeClass('active');
         $('#admin_manage').addClass('active');
     });
+
+    function Delete_User(id){
+        $.ajax({
+            type: "GET",
+            url: 'manageusers/mode/DELETE/id/' + id,
+            success: function(data){
+                if (data == 'done'){
+                    $.fn.yiiListView.update('list_user');
+
+                } else {
+                    alert(data);
+                }
+            }
+        });
+
+    }
 </script>
 <div class="col_right" style="padding-top: 0;">
     <div class="span12" style="border-bottom: solid 1px silver">
@@ -13,7 +29,7 @@
             <div class="hidden-phone" style="padding-top: 20px;"></div>
             <!---------( For Add NewUsers )------------------>
             <div class="btn-group" style="padding-bottom: 5px;">
-                <button class="btn btn-primary"><a href="<?php echo Yii::app()->request->baseUrl; ?>/site/register" style="text-decoration: none; color: #ffffff">Add New User</a></button>
+                <button class="btn btn-primary"><a href="<?php echo Yii::app()->request->baseUrl; ?>/admin/adduser" style="text-decoration: none; color: #ffffff">Add New User</a></button>
             </div>
         </div>
     </div>
@@ -47,78 +63,15 @@
         </div>
     </div>
     <div class="span12" style="margin-left: 0 ">
-        <div class="container row-fluid span listing-row">
-            <div class="span2">
-                <img src="<?php echo Yii::app()->request->baseUrl; ?>/images/user_no_img.png" class="listing-userimg">
-            </div>
-            <div class="span5">
-                <div class="listing-Address">John Smith</div>
-                <div class="listing-normal">#2323</div>
-                <div class="listing-small">John@gamil.com</div>
-                <div class="listing-small">077121212</div>
-            </div>
-            <div class="offset2 span3">
-                <div class="listing-normal">Agent</div>
-                <div class="hidden-phone"></br></br></div>
-                <div class="listing-btn">
-                    <a href="#" class="icon_gap lnkno-style">In-Active</a>
-                    <a href="#" class="lnkno-style" title="edit  "><i class="icon-edit icon_gap"></i></a>
-                    <a href="#" class="lnkno-style" title="delete"><i class="icon-remove icon_gap"></i></a>
-                </div>
-            </div>
-        </div>
-        <div class="container row-fluid span listing-row" style="margin-left: 0">
-            <div class="span2">
-                <img src="<?php echo Yii::app()->request->baseUrl; ?>/images/user_no_img.png" class="listing-userimg">
-            </div>
-            <div class="span5">
-                <div class="listing-Address">John Smith</div>
-                <div class="listing-normal">#2323</div>
-                <div class="listing-small">John@gamil.com</div>
-                <div class="listing-small">077121212</div>
-            </div>
-            <div class="offset2 span3">
-                <div class="listing-normal">Agent</div>
-                <div class="hidden-phone"></br></br></div>
-                <div class="listing-btn">
-                    <a href="#" class="icon_gap lnkno-style">In-Active</a>
-                    <a href="#" class="lnkno-style" title="edit  "><i class="icon-edit icon_gap"></i></a>
-                    <a href="#" class="lnkno-style" title="delete"><i class="icon-remove icon_gap"></i></a>
-                </div>
-            </div>
-        </div>
-        <div class="container row-fluid span listing-row" style="margin-left: 0">
-            <div class="span2">
-                <img src="<?php echo Yii::app()->request->baseUrl; ?>/images/user_no_img.png" class="listing-userimg">
-            </div>
-            <div class="span5">
-                <div class="listing-Address">John Smith</div>
-                <div class="listing-normal">#2323</div>
-                <div class="listing-small">John@gamil.com</div>
-                <div class="listing-small">077121212</div>
-            </div>
-            <div class="offset2 span3">
-                <div class="listing-normal">Agent</div>
-                <div class="hidden-phone"></br></br></div>
-                <div class="listing-btn">
-                    <a href="#" class="icon_gap lnkno-style">In-Active</a>
-                    <a href="#" class="lnklnkno-style" title="edit  "><i class="icon-edit icon_gap"></i></a>
-                    <a href="#" class="lnklnkno-style" title="delete"><i class="icon-remove icon_gap"></i></a>
-                </div>
-            </div>
-        </div>
-        <div class="container row-fluid span">
-            <div class="pagination pagination-small pagination-centered">
-                <ul>
-                    <li class="disabled"><a href="#">&laquo;</a></li>
-                    <li class="active"><a href="#">1</a></li>
-                    <li><a href="#">2</a></li>
-                    <li><a href="#">3</a></li>
-                    <li><a href="#">4</a></li>
-                    <li><a href="#">5</a></li>
-                    <li><a href="#">&raquo</a></li>
-                </ul>
-            </div>
+        <div class="container row-fluid" style="margin-left: 0">
+            <?php
+            $this->widget('zii.widgets.CListView', array(
+                'id' => 'list_user',
+                'dataProvider'=>new CActiveDataProvider('User', array('criteria'=>array('condition'=>'usertype!=0','order' => 'id DESC'),'pagination'=>array('pageSize'=>5))),
+                'itemView' => '_user_list_view',
+                'template'=>'{items}<div class="span12"></div>{pager}<div class="span12"></div>'
+            ));
+            ?>
         </div>
     </div>
 </div>
