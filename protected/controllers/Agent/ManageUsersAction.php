@@ -29,6 +29,27 @@ class ManageUsersAction extends CAction
             Yii::app()->end();
         }
 
+        if (Yii::app()->request->isAjaxRequest && isset($_GET['mode']) && $_GET['mode'] == 'STATUS' && isset($_GET['id'])) {
+
+            $user =  User::model()->find('id=' . $_GET['id']);
+
+            if (isset($user)) {
+
+                if ($user->status == 0) {
+                    $user->status = 1;
+                } else if ($user->status == 1){
+                    $user->status = 0;
+                }
+                $user->save(false);
+
+                Yii::app()->user->setFlash('success', "User Updated");
+                echo 'done';
+
+            }
+
+            Yii::app()->end();
+        }
+
         $this->getController()->render('manageusers');
     }
 }

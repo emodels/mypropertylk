@@ -37,7 +37,7 @@ class PropertyListingAction extends CAction
                 }
                 $property->save(false);
 
-                Yii::app()->user->setFlash('success', "Price List Updated.");
+                Yii::app()->user->setFlash('success', "Property Updated.");
                 echo 'done';
 
             }

@@ -21,7 +21,15 @@
         </div>
         <div class="hidden-phone"></br></br></div>
         <div class="listing-btn">
-            <a href="#" class="icon_gap lnkno-style" style="text-decoration: none;">In-Active</a>
+            <a href="javascript:UserStatusChange(<?php echo $data->id; ?>);" class="icon_gap" style="text-decoration: none">
+                <?php
+                if ($data->status == 0) {
+                    echo "InActive";
+                } elseif ($data->status == 1) {
+                    echo "Active";
+                }
+                ?>
+            </a>
             <a href="<?php echo Yii::app()->request->baseUrl .'/profile/editprofile?id='. $data->id ;?>" class="lnkno-style" title="edit" style="text-decoration: none;"><i class="icon-edit icon_gap"></i></a>
             <a href="javascript:Delete_User(<?php echo $data->id; ?>);" class="lnkno-style" title="delete" style="text-decoration: none;"><i class="icon-trash icon_gap"></i></a>
         </div>
