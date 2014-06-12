@@ -23,13 +23,29 @@ class PropertyImageUploadAction extends CAction
         $allowedExtensions = array("jpg", "png");
         $sizeLimit = 1 * 1024 * 1024;
 
-        $uploader = new qqFileUploader($allowedExtensions, $sizeLimit);
+        $uploader = new qqFileUploader($allowedExtensions, $sizeLimit, 'image_' . $_GET['id'] . '_' . time());
 
         $result = $uploader->handleUpload($folder, true);
         $return = htmlspecialchars(json_encode($result), ENT_NOQUOTES);
 
         $fileSize=filesize($folder.$result['filename']);
         $fileName=$result['filename'];
+
+        /*---( Scale images to 800 X 600 size )---*/
+/*        Yii::import('ext.CThumbCreator.CThumbCreator');
+
+        $thumb = new CThumbCreator();
+        $thumb->image = Yii::getPathOfAlias('webroot.upload.propertyimages') . DIRECTORY_SEPARATOR . $model->userimage;
+        $thumb->width = 90;
+        //$thumb->height = 100;
+        $thumb->square = false;
+        $thumb->directory = Yii::getPathOfAlias('webroot.upload.userimages') . DIRECTORY_SEPARATOR;
+        $thumb->defaultName = explode('.', $model->userimage)[0];
+        $thumb->createThumb();
+
+        unlink(Yii::getPathOfAlias('webroot.upload.userimages') . DIRECTORY_SEPARATOR . $model->userimage);
+
+        $thumb->save();*/
 
         //----------Add to Database--------
         $image = new Propertyimages();
