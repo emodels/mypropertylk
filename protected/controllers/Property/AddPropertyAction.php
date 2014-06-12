@@ -64,6 +64,7 @@ class AddPropertyAction extends CAction
         if (isset($_POST['Property'])) {
 
             $model->attributes = $_POST['Property'];
+            $model->owner = Yii::app()->user->id;
 
             if ($model->save(false)){
 

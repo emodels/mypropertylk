@@ -86,7 +86,6 @@ $this->breadcrumbs=array(
                         'multiple title'=> 'Property Type'
                     ),
                 )); ?><span class=star>*</span>
-                <?php echo $form->error($modeltype, 'typeid'); ?>
             </div>
             <div class="control-group-admin">
                 <div class="row">

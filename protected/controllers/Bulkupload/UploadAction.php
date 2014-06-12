@@ -71,8 +71,8 @@ class UploadAction extends CAction
 
                         $property->owner = $user_id;
                         $property->agent = $user_id;
-                        $property->otheragent = $user_id;
-                        $property->availabledate = date("Y-m-d", strtotime("+1 month", strtotime(date('Y-m-d'))));
+                        $property->otheragent = 0;
+                        $property->availabledate = date("Y-m-d", strtotime("+1 month", strtotime(date('Y-m-d')))); /*@TODO need to remove this*/
                         $property->entrydate = date("Y-m-d");
                         $property->status = 1;
                         $property->pricetype = 1;
