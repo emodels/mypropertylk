@@ -69,8 +69,15 @@ class UploadAction extends CAction
                         $property = new Property();
                         $propertytyperelation = new Propertytyperelation();
 
-                        $property->pid = $row['A'];
-                        $property->proptype = $row['B'];
+                        $property->owner = $user_id;
+                        $property->agent = $user_id;
+                        $property->otheragent = $user_id;
+                        $property->availabledate = date("Y-m-d", strtotime("+1 month", strtotime(date('Y-m-d'))));
+                        $property->entrydate = date("Y-m-d");
+                        $property->status = 1;
+                        $property->pricetype = 1;
+
+                        $property->type = $row['B'];
                         $property->propcondition = $row['D'];
                         $property->weeklyrent = $row['E'];
                         $property->monthlyrent = $row['F'];
@@ -123,12 +130,18 @@ class UploadAction extends CAction
                         $property->onlinetour1 = $row['BA'];
                         $property->onlinetour2 = $row['BB'];
 
-                        $property->save();
+                        if ($property->save(false)) {
 
-                        $propertytyperelation->propertyid = $property->pid;
-                        $propertytyperelation->typeid = $row['C'];
+                            $propertytyperelation->propertyid = $property->pid;
+                            $propertytyperelation->typeid = $row['C'];
 
-                        $propertytyperelation->save();
+                            $propertytyperelation->save();
+
+                        } else {
+
+                            print_r($property->getErrors());
+                        }
+
                     }
                     $rowCount++;
                 }
