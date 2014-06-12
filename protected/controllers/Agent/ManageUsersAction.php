@@ -16,10 +16,19 @@ class ManageUsersAction extends CAction
      */
     public function run()
     {
-        /*if (Yii::app()->request->isPostRequest)
-        {
-            $this->redirect(array("admin/addproperty_step2"));
-        }*/
+        if (Yii::app()->request->isAjaxRequest && isset($_GET['mode']) && $_GET['mode'] == 'DELETE' && isset($_GET['id'])) {
+
+            $result = User::model()->deleteByPk($_GET['id']);
+
+            if ($result) {
+                Yii::app()->user->setFlash('success', "User deleted.");
+                echo 'done';
+
+            }
+
+            Yii::app()->end();
+        }
+
         $this->getController()->render('manageusers');
     }
 }
