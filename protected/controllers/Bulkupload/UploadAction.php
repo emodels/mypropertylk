@@ -142,10 +142,44 @@ class UploadAction extends CAction
                             print_r($property->getErrors());
                         }
 
+                        /*-----( Upload Property Images )-------*/
+                        $imageIndex = 1;
+                        foreach (glob(Yii::getPathOfAlias('webroot.upload.bulkupload') . DIRECTORY_SEPARATOR . 'property_bulk_upload_' . $user_id . DIRECTORY_SEPARATOR . 'property'. DIRECTORY_SEPARATOR. $row['A'] . DIRECTORY_SEPARATOR . '*') as $fileName) {
+
+                            $filename_array = explode('.', $fileName);
+                            $fileName_without_extention = $filename_array[0];
+                            $fileName_extention = $filename_array[1];
+
+                            /*---( Scale images to 800 X 600 size )---*/
+                            Yii::import('ext.CThumbCreator.CThumbCreator');
+
+                            $thumb = new CThumbCreator();
+                            $thumb->image = $fileName;
+                            $thumb->width = 800;
+                            $thumb->height = 600;
+                            $thumb->square = true;
+                            $thumb->directory = Yii::getPathOfAlias('webroot.upload.propertyimages') . DIRECTORY_SEPARATOR;
+                            $thumb->defaultName = 'image_' . $property->pid . '_' . $imageIndex . '_' .time();
+                            $thumb->createThumb();
+                            $thumb->save();
+
+                            /*----( Save to Database )----*/
+                            $propertyimage = new Propertyimages();
+
+                            $propertyimage->propertyid = $property->pid;
+                            $propertyimage->imagename = $thumb->defaultName . '.' .$fileName_extention;
+                            $propertyimage->imagetype = 0;
+
+                            $propertyimage->save();
+
+                            $imageIndex++;
+                        }
                     }
                     $rowCount++;
                 }
             }
+
+            Yii::app()->user->setFlash('success', "Property information imported successfully.");
 
             echo 'done';
             Yii::app()->end();

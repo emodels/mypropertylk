@@ -41,6 +41,9 @@ class EditProfileAction extends CAction
                     $userimage->saveAs(Yii::getPathOfAlias('webroot.upload.userimages') . DIRECTORY_SEPARATOR . $model->userimage);
                 }
 
+                $filename_array = explode('.', $model->userimage);
+                $fileName_without_extention = $filename_array[0];
+
                 Yii::import('ext.CThumbCreator.CThumbCreator');
 
                 $thumb = new CThumbCreator();
@@ -49,7 +52,7 @@ class EditProfileAction extends CAction
                 //$thumb->height = 100;
                 $thumb->square = false;
                 $thumb->directory = Yii::getPathOfAlias('webroot.upload.userimages') . DIRECTORY_SEPARATOR;
-                $thumb->defaultName = explode('.', $model->userimage)[0];
+                $thumb->defaultName = $fileName_without_extention;
                 $thumb->createThumb();
 
                 unlink(Yii::getPathOfAlias('webroot.upload.userimages') . DIRECTORY_SEPARATOR . $model->userimage);

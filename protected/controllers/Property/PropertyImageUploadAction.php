@@ -31,21 +31,24 @@ class PropertyImageUploadAction extends CAction
         $fileSize=filesize($folder.$result['filename']);
         $fileName=$result['filename'];
 
-        /*---( Scale images to 800 X 600 size )---*/
-/*        Yii::import('ext.CThumbCreator.CThumbCreator');
+        $filename_array = explode('.', $fileName);
+        $fileName_without_extention = $filename_array[0];
+
+            /*---( Scale images to 800 X 600 size )---*/
+        Yii::import('ext.CThumbCreator.CThumbCreator');
 
         $thumb = new CThumbCreator();
-        $thumb->image = Yii::getPathOfAlias('webroot.upload.propertyimages') . DIRECTORY_SEPARATOR . $model->userimage;
-        $thumb->width = 90;
-        //$thumb->height = 100;
-        $thumb->square = false;
-        $thumb->directory = Yii::getPathOfAlias('webroot.upload.userimages') . DIRECTORY_SEPARATOR;
-        $thumb->defaultName = explode('.', $model->userimage)[0];
+        $thumb->image = Yii::getPathOfAlias('webroot.upload.propertyimages') . DIRECTORY_SEPARATOR . $fileName;
+        $thumb->width = 800;
+        $thumb->height = 600;
+        $thumb->square = true;
+        $thumb->directory = Yii::getPathOfAlias('webroot.upload.propertyimages') . DIRECTORY_SEPARATOR;
+        $thumb->defaultName = $fileName_without_extention;
         $thumb->createThumb();
 
-        unlink(Yii::getPathOfAlias('webroot.upload.userimages') . DIRECTORY_SEPARATOR . $model->userimage);
+        unlink(Yii::getPathOfAlias('webroot.upload.propertyimages') . DIRECTORY_SEPARATOR . $fileName);
 
-        $thumb->save();*/
+        $thumb->save();
 
         //----------Add to Database--------
         $image = new Propertyimages();

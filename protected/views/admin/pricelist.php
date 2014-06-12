@@ -44,13 +44,12 @@
                 type: "POST",
                 data: {priceid: price_id, price_value: $(obj).prev().val()},
                 success: function(data){
-                                            if (data == 'done'){
-                                                $.fn.yiiGridView.update('grid_pricelist');
-                                                setTimeout(function(){$('#flshMsg').fadeOut("slow");}, 3000);
-
-                                            } else {
-                                                alert(data);
-                                            }
+                    if (data == 'done'){
+                        $.fn.yiiGridView.update('grid_pricelist');
+                        setTimeout(function(){$('#flshMsg').fadeOut("slow");}, 3000);
+                    } else {
+                        alert(data);
+                    }
                 }
             });
         }

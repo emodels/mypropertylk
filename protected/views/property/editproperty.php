@@ -66,12 +66,12 @@ $this->breadcrumbs=array(
                         </div>
                     </div>
                     <div class="control-group-admin">
-                        <?php echo $form->dropDownList($model, 'agent', CHtml::listData(User::model()->findAll('usertype = 2'), 'id', 'fname'), array('empty'=>'Agents')); ?><span class="star">*</span>
+                        <?php echo $form->dropDownList($model, 'agent', CHtml::listData(User::model()->findAll('usertype = 1 OR usertype = 0'), 'id', 'fname'), array('empty'=>'Agents')); ?><span class="star">*</span>
                         <a href="#" data-toggle="tooltip" title="The agent name list is maintained in 'Your Profile - Agents' section." data-placement="right" class="tooltip-custom"></a>
                         <?php echo $form->error($model, 'agent', array('style'=>'width:auto')); ?>
                     </div>
                     <div class="control-group-admin">
-                        <?php echo $form->dropDownList($model, 'otheragent', CHtml::listData(User::model()->findAll('usertype = 2'), 'id', 'fname'), array('empty'=>'Other Agents')); ?>
+                        <?php echo $form->dropDownList($model, 'otheragent', CHtml::listData(User::model()->findAll('usertype = 1 OR usertype = 0'), 'id', 'fname'), array('empty'=>'Other Agents')); ?>
                         <a href="#" data-toggle="tooltip" title="The agent name list is maintained in 'Your Profile - Agents' section." data-placement="right" class="tooltip-custom"></a>
                     </div>
                     <!---------( For Rental )------------------>
