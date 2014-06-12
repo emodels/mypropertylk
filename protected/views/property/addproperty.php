@@ -7,14 +7,30 @@ $this->breadcrumbs=array(
 <script type="text/javascript">
     $(document).ready(function () {
         $('[data-toggle="tooltip"]').tooltip();
+
+        $('#Propertytyperelation_typeid').change(function () {
+            if ($(this).val() == null){
+                $(this).parent().removeClass('success').addClass('error');
+                $(this).parent().find('.errorMessage').css('display','block');
+            } else {
+                $(this).parent().removeClass('error').addClass('success');
+                $(this).parent().find('.errorMessage').css('display','none');
+            }
+        });
     });
 
     function formSend(form, data, hasError){
 
+        if ($('#Propertytyperelation_typeid').val() == null){
+            $('#Propertytyperelation_typeid').parent().removeClass('success').addClass('error');
+            $('#Propertytyperelation_typeid').parent().find('.errorMessage').css('display','block');
+            hasError = true;
+        }
+
         if (hasError) {
 
-            if ($('.error :first').length > 0){
-                $(window).scrollTop($('.error :first').offset().top);
+            if ($('.error:first').length > 0){
+                $(window).scrollTop($('.error:first').offset().top);
             }
 
             return false;
@@ -86,6 +102,7 @@ $this->breadcrumbs=array(
                         'multiple title'=> 'Property Type'
                     ),
                 )); ?><span class=star>*</span>
+                <div class="errorMessage" style="display: none">Property Type cannot be blank.</div>
             </div>
             <div class="control-group-admin">
                 <div class="row">
