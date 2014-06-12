@@ -1,0 +1,18 @@
+#map-imagemap {
+    z-index: 100;
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+
+#map {
+    height: 430px;
+    position: relative;
+}
+
+#map-layer {
+    top: 0;
+    left: 0;
+    position: absolute;
+    z-index: 0;
+}
