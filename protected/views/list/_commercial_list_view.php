@@ -1,6 +1,6 @@
 <div class="row-fluid" style="padding-top: 15px;">
     <div class="span12 property-box">
-        <div class="heading_buy" id="box-heading">
+        <div class="heading_commercial" id="box-heading">
             <div class="span8">
                 <?php echo $data->number . ', ' . ucwords($data->streetaddress) . ', '. ucwords($data->areaname) . ', ' . ucwords($data->townname) ?>
             </div>

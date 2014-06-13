@@ -9,7 +9,7 @@
         <div>
             <div class="span7" style="padding-top: 0;">
                 <a href="<?php echo Yii::app()->baseUrl . '/list/detail?pid=' .$data->pid;?> ">
-                     <img src="<?php echo Yii::app()->baseUrl . '/upload/propertyimages/'. ((count($data->propertyimages) > 0) ? $data->propertyimages[0]->imagename : 'prop_no_img.jpg') ?>" style="max-height: 220px;">
+                     <img src="<?php echo Yii::app()->baseUrl . '/upload/propertyimages/'. ((count($data->propertyimages) > 0) ? $data->propertyimages[0]->imagename : 'prop_no_img.jpg') ?>" >
                 </a>
             </div>
             <div class="span5 content">

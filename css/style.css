@@ -3647,6 +3647,14 @@ a img.aligncenter {
     line-height: 20px;
     height: 25px;
 }
+.property-box .heading_commercial{
+    background-color: #FC9311;
+    color: #fff;
+    padding: 5px;
+    font-size: 16px;
+    line-height: 20px;
+    height: 25px;
+}
 .property-box .content{
     padding: 10px;
 }

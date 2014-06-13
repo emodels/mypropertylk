@@ -44,7 +44,7 @@ class AdminController extends Controller
          */
         if (Yii::app()->user->isGuest){
             Yii::app()->user->setReturnUrl(Yii::app()->request->requestUri);
-            $this->redirect('/site/login');
+            $this->redirect(Yii::app()->baseUrl . '/login');
         }
         else{
             /*
@@ -52,7 +52,7 @@ class AdminController extends Controller
              */
             if (Yii::app()->user->usertype != 0) {
                 Yii::app()->user->setFlash('error','Sorry you do not have access to Admin control');
-                $this->redirect('/login');
+                $this->redirect(Yii::app()->baseUrl . '/login');
             }
         }
         $filterChain->run();//default action

@@ -41,7 +41,7 @@ class TransactionsController extends Controller
          */
         if (Yii::app()->user->isGuest){
             Yii::app()->user->setReturnUrl(Yii::app()->request->requestUri);
-            $this->redirect('/site/login');
+            $this->redirect(Yii::app()->baseUrl . '/login');
         } else {
 
             switch (Yii::app()->user->usertype){

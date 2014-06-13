@@ -13,9 +13,8 @@
                     <li><a href="<?php echo Yii::app()->request->baseUrl; ?>/property/addproperty?type=1">Home Sales</a></li>
                     <li><a href="<?php echo Yii::app()->request->baseUrl; ?>/property/addproperty?type=2"">Land Sales</a></li>
                     <li><a href="<?php echo Yii::app()->request->baseUrl; ?>/property/addproperty?type=3"">Home Rental</a></li>
-                    <li><a href="<?php echo Yii::app()->request->baseUrl; ?>/property/addproperty?type=4"#">Home Ideas</a></li>
-                    <li><a href="<?php echo Yii::app()->request->baseUrl; ?>/property/addproperty?type=5"">Commercial Sales</a></li>
-                    <li><a href="<?php echo Yii::app()->request->baseUrl; ?>/property/addproperty?type=6"">Commercial Leased</a></li>
+                    <li><a href="<?php echo Yii::app()->request->baseUrl; ?>/property/addproperty?type=4"">Commercial Sales</a></li>
+                    <li><a href="<?php echo Yii::app()->request->baseUrl; ?>/property/addproperty?type=5"">Commercial Leased</a></li>
                 </ul>
             </div>
         </div>

@@ -3,7 +3,6 @@
     $(document).ready(function(){
         $('#menu-primary-menu li').removeClass('current_page_item');
         $('#menu-primary-menu li#commercial').addClass('current_page_item');
-        document.getElementById('box-heading').style.backgroundColor = '#FC9311';
 
         if (<?php echo $_GET['type']?> == all) {
             $('.nav-tabs li').removeClass('active');
