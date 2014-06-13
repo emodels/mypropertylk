@@ -12,7 +12,7 @@
             $('.nav-tabs li#sale').addClass('active');
         } else if (<?php echo $_GET['type']?> == leased) {
             $('.nav-tabs li').removeClass('active');
-            $('.nav-tabs li#leased').addClass('active');
+            $('.nav-tabs li#lease').addClass('active');
         } else if (<?php echo $_GET['type']?> == sold) {
             $('.nav-tabs li').removeClass('active');
             $('.nav-tabs li#sold').addClass('active');
