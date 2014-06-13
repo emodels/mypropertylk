@@ -34,7 +34,7 @@
     }
 
     function ViewProperty(id) {
-        window.open('viewproperty/pid/' + id);
+        window.open('<?php echo Yii::app()->request->baseUrl; ?>/list/detail/pid/' + id);
     }
 
 </script>

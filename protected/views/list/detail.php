@@ -157,15 +157,19 @@
                             <?php echo $model->agent0->phone; ?></br>
                             <?php echo ucwords($model->agent0->address); ?>
                         </div>
+                        <?php if ($model->otheragent > 0) {
+                        $otheragent = User::model()->findByPk($model->otheragent);
+                        ?>
                         <div class="span3">
-                            <img src="<?php echo Yii::app()->request->baseUrl; ?>/upload/userimages/<?php echo $model->otheragent0->userimage?>" class="listing-userimg"/>
+                            <img src="<?php echo Yii::app()->request->baseUrl; ?>/upload/userimages/<?php echo $otheragent->userimage?>" class="listing-userimg"/>
                         </div>
                         <div class="span3">
-                            <?php echo ucwords($model->otheragent0->fname) .' ' . ucwords($model->otheragent0->lname); ?></br>
-                            <?php echo $model->otheragent0->email; ?></br>
-                            <?php echo $model->otheragent0->phone; ?></br>
-                            <?php echo ucwords($model->otheragent0->address); ?>
+                            <?php echo ucwords($otheragent->fname) .' ' . ucwords($otheragent->lname); ?></br>
+                            <?php echo $otheragent->email; ?></br>
+                            <?php echo $otheragent->phone; ?></br>
+                            <?php echo ucwords($otheragent->address); ?>
                         </div>
+                        <?php } ?>
                     </div>
                     <div class="span12" style="padding-top: 10px; margin-left: 0; text-align: justify; border-top: solid 1px silver">
                         <div>

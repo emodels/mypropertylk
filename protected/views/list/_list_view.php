@@ -38,7 +38,7 @@
                     <img src="<?php echo Yii::app()->request->baseUrl; ?>/images/parking_spaces.png"/>&nbsp;<?php echo $data->parkingspaces;?>
                     <?php } ?>
                 </div>
-                <div class="listing-bold"><?php echo$data->headline; ?></div>
+                <div class="listing-bold" style="margin-top: 10px; margin-bottom: 5px"><?php echo$data->headline; ?></div>
                 <div class="listing-small-normal"><?php echo substr($data->desc, 0, 160).'....'; ?></div>
                 <div class="listing-small"><b>Agent :</b> <?php echo ucwords($data->agent0->fname) .' '. ucwords($data->agent0->lname)  ?></div>
                 <div style="text-align: right; padding-top: 15px;">

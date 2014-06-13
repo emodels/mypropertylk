@@ -49,7 +49,7 @@
                             <div class="nav-collapse collapse">
                                 <nav id="nav-main" role="navigation">
                                     <ul id="menu-primary-menu" class="nav">
-                                        <li id="menu-item-1536" style=" border-bottom: solid 2px #000099" class="menu-item menu-item-type-custom menu-item-object-custom current-menu-item current_page_item menu-item-home "><a id="home" href="<?php echo Yii::app()->request->baseUrl; ?>">Home</a></li>
+                                        <li id="menu-item-1536" style=" border-bottom: solid 2px #000099" class="menu-item menu-item-type-custom menu-item-object-custom current-menu-item current_page_item menu-item-home "><a id="home" href="<?php echo Yii::app()->request->baseUrl; ?>/">Home</a></li>
                                         <li id="buy" style=" border-bottom: solid 2px #660099" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1866"><a id="buy" href="<?php echo Yii::app()->request->baseUrl; ?>/list/property/type/buy">Buy</a></li>
                                         <li id="rent" style=" border-bottom: solid 2px #009900" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children dropdown menu-item-1649"><a id="rent" href="<?php echo Yii::app()->request->baseUrl; ?>/list/property/type/rent">Rent</a></li>
                                         <li id="sold" style=" border-bottom: solid 2px #cc0000" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children dropdown menu-item-1648"><a id="sold" class="dropdown-toggle" href="<?php echo Yii::app()->request->baseUrl; ?>/list/property/type/sold">Sold</a></li>
