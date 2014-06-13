@@ -154,7 +154,7 @@
             //$this->ext = strtolower(end($mime_type));
 
             $filename_array = explode('.', $this->image);
-            $this->ext = $filename_array[1];
+            $this->ext = strtolower($filename_array[1]);
 
             switch ($this->ext)
             {

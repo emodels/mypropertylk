@@ -52,6 +52,8 @@ class UploadAction extends CAction
             $src = Yii::getPathOfAlias('webroot.upload.bulkupload') . DIRECTORY_SEPARATOR . 'property_bulk_upload_' . $user_id . '.zip';
             $dest = Yii::getPathOfAlias('webroot.upload.bulkupload') . DIRECTORY_SEPARATOR . 'property_bulk_upload_' . $user_id;
 
+            $this->deleteDir($dest);
+
             $zip = new ZipArchive();
             if ($zip->open($src)===true)
             {
@@ -77,13 +79,13 @@ class UploadAction extends CAction
                         $property->status = 1;
                         $property->pricetype = 1;
 
-                        $property->type = $row['B'];
-                        $property->propcondition = $row['D'];
+                        $property->type = intval($row['B']);
+                        $property->propcondition = intval($row['D']);
                         $property->weeklyrent = $row['E'];
                         $property->monthlyrent = $row['F'];
                         $property->securebond = $row['G'];
                         $property->price = $row['H'];
-                        $property->dispalyprice = $row['I'];
+                        $property->dispalyprice = intval($row['I']);
                         $property->vendorname = $row['J'];
                         $property->vendoremail = $row['K'];
                         $property->vendorphone = $row['L'];
@@ -93,9 +95,9 @@ class UploadAction extends CAction
                         $property->streetaddress = $row['P'];
                         $property->areaname = $row['Q'];
                         $property->townname = $row['R'];
-                        $property->hidestreetaddress = $row['S'];
-                        $property->district = $row['T'];
-                        $property->province = $row['U'];
+                        $property->hidestreetaddress = intval($row['S']);
+                        $property->district = intval($row['T']);
+                        $property->province = intval($row['U']);
                         $property->bedrooms = $row['V'];
                         $property->bathrooms = $row['W'];
                         $property->toilets = $row['X'];
@@ -103,26 +105,26 @@ class UploadAction extends CAction
                         $property->landsize = $row['Z'];
                         $property->floorarea = $row['AA'];
                         $property->parkcarpetspaces = $row['AB'];
-                        $property->balcony = $row['AC'];
-                        $property->remotegarage = $row['AD'];
-                        $property->swimpool = $row['AE'];
-                        $property->courtyard = $row['AF'];
-                        $property->fullyfenced = $row['AG'];
-                        $property->outsidespa = $row['AH'];
-                        $property->securepark = $row['AI'];
-                        $property->tenniscourt = $row['AJ'];
-                        $property->alarmsys = $row['AK'];
-                        $property->gym = $row['AL'];
-                        $property->intercom = $row['AM'];
-                        $property->workshop = $row['AN'];
-                        $property->broadbandinternet = $row['AO'];
-                        $property->dishwasher = $row['AP'];
-                        $property->ac = $row['AQ'];
-                        $property->heating = $row['AR'];
-                        $property->cooling = $row['AS'];
-                        $property->solarpower = $row['AT'];
-                        $property->solarhotwater = $row['AU'];
-                        $property->watertank = $row['AV'];
+                        $property->balcony = intval($row['AC']);
+                        $property->remotegarage = intval($row['AD']);
+                        $property->swimpool = intval($row['AE']);
+                        $property->courtyard = intval($row['AF']);
+                        $property->fullyfenced = intval($row['AG']);
+                        $property->outsidespa = intval($row['AH']);
+                        $property->securepark = intval($row['AI']);
+                        $property->tenniscourt = intval($row['AJ']);
+                        $property->alarmsys = intval($row['AK']);
+                        $property->gym = intval($row['AL']);
+                        $property->intercom = intval($row['AM']);
+                        $property->workshop = intval($row['AN']);
+                        $property->broadbandinternet = intval($row['AO']);
+                        $property->dishwasher = intval($row['AP']);
+                        $property->ac = intval($row['AQ']);
+                        $property->heating = intval($row['AR']);
+                        $property->cooling = intval($row['AS']);
+                        $property->solarpower = intval($row['AT']);
+                        $property->solarhotwater = intval($row['AU']);
+                        $property->watertank = intval($row['AV']);
                         $property->otherfeatures = $row['AW'];
                         $property->headline = $row['AX'];
                         $property->desc = $row['AY'];
@@ -133,7 +135,7 @@ class UploadAction extends CAction
                         if ($property->save(false)) {
 
                             $propertytyperelation->propertyid = $property->pid;
-                            $propertytyperelation->typeid = $row['C'];
+                            $propertytyperelation->typeid = intval($row['C']);
 
                             $propertytyperelation->save();
 
@@ -186,5 +188,23 @@ class UploadAction extends CAction
         }
 
         $this->getController()->render('upload', array('enable_import'=>$enable_import, 'user_id'=>$user_id));
+    }
+
+    private function deleteDir($dirPath) {
+        if (! is_dir($dirPath)) {
+            throw new InvalidArgumentException("$dirPath must be a directory");
+        }
+        if (substr($dirPath, strlen($dirPath) - 1, 1) != '/') {
+            $dirPath .= '/';
+        }
+        $files = glob($dirPath . '*', GLOB_MARK);
+        foreach ($files as $file) {
+            if (is_dir($file)) {
+                self::deleteDir($file);
+            } else {
+                unlink($file);
+            }
+        }
+        rmdir($dirPath);
     }
 }
