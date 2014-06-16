@@ -371,7 +371,7 @@ code {
     background: -o-linear-gradient(#fff, #cfcfcf); /* For Opera 11.1 to 12.0 */
     background: -moz-linear-gradient(#fff, #cfcfcf); /* For Firefox 3.6 to 15 */
     background: linear-gradient(#fff, #cfcfcf); /* Standard syntax */
-	padding-bottom:17px;
+	padding-bottom:18px;
 }
 
 .nav-background .navbar .nav>li ul.dropdown-menu {

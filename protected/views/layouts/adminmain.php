@@ -102,7 +102,7 @@
                             <li><a id="admin_list" href="<?php echo Yii::app()->request->baseUrl; ?>/property/propertylisting?type=0"><i class="icon-list icon_gap"></i>Listings</a></li>
                             <li><a id="admin_homeideas" href="<?php echo Yii::app()->request->baseUrl; ?>/homeideas/homeideaslisting"><i class="icon-camera icon_gap"></i>Home Ideas</a></li>
                             <li><a id="admin_editprof" href="<?php echo Yii::app()->request->baseUrl. '/profile/editprofile?id='. Yii::app()->user->id;?>"><i class="icon-edit icon_gap"></i>Edit Profile</a></li>
-                            <li><a id="admin_manage" href="<?php echo Yii::app()->request->baseUrl; ?>/admin/manageusers"><i class="icon-user icon_gap"></i>Manage Users</a></li>
+                            <li><a id="admin_manage" href="<?php echo Yii::app()->request->baseUrl; ?>/profile/manageusers"><i class="icon-user icon_gap"></i>Manage Users</a></li>
                             <li><a id="admin_price" href="<?php echo Yii::app()->request->baseUrl; ?>/admin/pricelist"><span class="add-on icon_gap" style="padding-left: 2px"><b>$</b></span> Price List</a></li>
                             <li><a id="admin_adv" href="<?php echo Yii::app()->request->baseUrl; ?>/advertising/advertisement"><i class="icon-bullhorn icon_gap"></i>Advertising</a></li>
                             <li><a id="admin_transact" href="<?php echo Yii::app()->request->baseUrl; ?>/transactions/transaction"><i class="icon-retweet icon_gap"></i>Transactions</a></li>

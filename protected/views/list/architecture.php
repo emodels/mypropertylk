@@ -2,6 +2,8 @@
 <link rel="stylesheet" href="<?php echo Yii::app()->request->baseUrl; ?>/css/visuallightbox.css" type="text/css" media="screen" />
 <script src="<?php echo Yii::app()->request->baseUrl; ?>/js/jquery.min.js" type="text/javascript"></script>
 <script src="<?php echo Yii::app()->request->baseUrl; ?>/js/visuallightbox.js" type="text/javascript"></script>
+<!-- Go to www.addthis.com/dashboard to customize your tools -->
+<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=lankahotelguide"></script>
 
 <script type="text/javascript">
     $(document).ready(function(){
@@ -84,9 +86,14 @@
                 <div id="title-listing" class="container" style="margin-bottom: 20px; margin-left: 25px">
                     <div class="property-list-title" >Home Ideas By <?php echo $model->fname . " " . $model->lname; ?></div>
                 </div>
-                <div style="margin-bottom: 20px; margin-left: 25px">
-                    <i class="icon-phone icon_gap"> </i><?php echo $model->phone; ?>&nbsp; &nbsp;
-                    <i class="icon-envelope icon_gap"></i><?php echo $model->email; ?>
+                <div class="span12 row-fluid" style="margin-left: 0; margin-bottom: 20px; margin-left: 25px">
+                    <div class="span6">
+                        <i class="icon-phone icon_gap"> </i><?php echo $model->phone; ?>&nbsp; &nbsp;
+                        <i class="icon-envelope icon_gap"></i><?php echo $model->email; ?>
+                    </div>
+                    <div class="span6" style="text-align: right;">
+                        <div class="addthis_sharing_toolbox"></div>
+                    </div>
                 </div>
                 <ul class="nav nav-tabs" style="margin-left: 25px;">
                     <li id="all" class="active">

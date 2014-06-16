@@ -27,11 +27,14 @@
     <header id="header" role="banner">
         <div class="header-background">
             <div class="container">
-                <div class="row-fluid">
-                    <div>
+                <div class="span12 row-fluid">
+                    <div class="offset4 span4">
                         <a href="<?php echo Yii::app()->request->baseUrl; ?>" title="myproperty.lk" rel="home">
                             <img class="site-logo" src="<?php echo Yii::app()->request->baseUrl; ?>/images/logo.png" alt="Real Expert" />
                         </a>
+                    </div>
+                    <div class="span4" style="float: right; text-align: right; padding:30px 35px 30px 0;">
+                        <a class="btn btn-warning" href="<?php echo Yii::app()->request->baseUrl; ?>/login" title="click here to post a free ad" rel="home">POST YOUR FREE AD</a>
                     </div>
                 </div>
             </div>

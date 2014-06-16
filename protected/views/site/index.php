@@ -320,7 +320,6 @@
             <a class="current" href="javascript:LoadFeaturedList('all');">All</a>
             <a class="" href="javascript:LoadFeaturedList('buy');">Buy</a>
             <a class="" href="javascript:LoadFeaturedList('rent');">Rent</a>
-            <a class="" href="javascript:LoadFeaturedList('sold');">Sold</a>
         </div>
     </div><!-- /#title-listing -->
     <div class="row-fluid property-row">
@@ -332,8 +331,6 @@
                 $condition = '(type = 1 OR type = 2) AND pricetype = 3 AND status = 1';
             } elseif($_GET['type'] == "rent"){
                 $condition = 'type = 3 AND pricetype = 3 AND status = 1';
-            } elseif($_GET['type'] == "sold"){
-                $condition = '(type = 1 OR type = 2 OR type = 3) AND status = 2 AND pricetype = 3';
             }
         }
          else {
@@ -398,9 +395,9 @@
                                     <span class="attr-pricing"><sup class="price-curr">Rs.</sup>
                                         <?php
                                         if ($data->type == 1 || $data->type == 2) {
-                                            echo $data->price. ".00";
+                                            echo Yii::app()->numberFormatter->format("#,##0.00", $data->price);
                                         } elseif ($data->type == 3) {
-                                            echo $data->monthlyrent. ".00";
+                                            echo Yii::app()->numberFormatter->format("#,##0.00", $data->monthlyrent);
                                         }
                                         ?>
                                     </span>

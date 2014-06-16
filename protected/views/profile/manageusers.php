@@ -43,7 +43,7 @@
             <div class="hidden-phone" style="padding-top: 20px;"></div>
             <!---------( For Add NewUsers )------------------>
             <div class="btn-group" style="padding-bottom: 5px;">
-                <button class="btn btn-primary"><a href="<?php echo Yii::app()->request->baseUrl; ?>/admin/adduser" style="text-decoration: none; color: #ffffff">Add New User</a></button>
+                <button class="btn btn-primary"><a href="<?php echo Yii::app()->request->baseUrl; ?>/profile/adduser" style="text-decoration: none; color: #ffffff">Add New User</a></button>
             </div>
         </div>
     </div>

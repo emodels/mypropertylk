@@ -28,8 +28,6 @@ class AdminController extends Controller
     {
         return array(
             'home'=>'application.controllers.Admin.IndexAction',  //action for admin - index page controller
-            'manageusers'=>'application.controllers.Admin.ManageUsersAction',  //action for admin - Manage Users page controller
-            'adduser'=>'application.controllers.Admin.AddUserAction',  //action for admin - Add Users page controller
             'pricelist'=>'application.controllers.Admin.PriceListAction',  //action for admin - Price List page controller
         );
     }

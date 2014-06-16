@@ -7,6 +7,17 @@
         $('#menu-primary-menu li').removeClass('current_page_item');
         $('#menu-primary-menu li#buy').addClass('current_page_item');
         $('a[href="http://wowslider.com"]').remove();
+
+        $("#wowslider-container1").mouseover(function() {
+            $(this).stop();
+            return false;
+        });
+
+        //On mouseout start the slider
+        $("#wowslider-container1").mouseout(function() {
+            loop();
+        });
+
     });
 
     function initialize() {
@@ -137,9 +148,9 @@
                         </div>
                         <div class="span6 listing-red" style="text-align: right"> Rs.
                             <?php if($model->type == 1 || $model->type == 2 || $model->type == 4){
-                                echo $model->price;
+                                echo Yii::app()->numberFormatter->format("#,##0.00", $model->price);
                             } elseif ($model->type == 3 || $model->type == 5) {
-                                echo $model->monthlyrent. " (monthly rental)";
+                                echo Yii::app()->numberFormatter->format("#,##0.00", $model->monthlyrent) . " (monthly rental)";
                             }
                             ?>
                         </div>
@@ -153,9 +164,11 @@
                         </div>
                         <div class="span3">
                             <?php echo ucwords($model->agent0->fname) .' ' . ucwords($model->agent0->lname); ?></br>
-                            <?php echo $model->agent0->email; ?></br>
                             <?php echo $model->agent0->phone; ?></br>
                             <?php echo ucwords($model->agent0->address); ?>
+                            <div style="padding-top:5px ">
+                                <a href="mail:<?php echo $model->agent0->email; ?>" class="btn btn-primary">Email Agent</a>
+                            </div>
                         </div>
                         <?php if ($model->otheragent > 0) {
                         $otheragent = User::model()->findByPk($model->otheragent);
@@ -165,9 +178,9 @@
                         </div>
                         <div class="span3">
                             <?php echo ucwords($otheragent->fname) .' ' . ucwords($otheragent->lname); ?></br>
-                            <?php echo $otheragent->email; ?></br>
                             <?php echo $otheragent->phone; ?></br>
                             <?php echo ucwords($otheragent->address); ?>
+                            <br/><a href="<?php echo $model->agent0->email; ?>" class="btn btn-primary">Email Agent</a>
                         </div>
                         <?php } ?>
                     </div>
@@ -196,21 +209,42 @@
                         <div class="container row-fluid">
                             <div style="background-color: #E6E6E6; border: solid 1px silver; color: #C21814; margin: 0; line-height: 28px; font-weight: bold; border-top-left-radius: 5px; border-top-right-radius: 5px; text-align: center;">Open for Inspection Times</div>
                             <?php
-                            $this->widget('zii.widgets.CListView', array(
-                                'id' => 'list_inspect_time',
-                                'dataProvider' => new CActiveDataProvider('Inspecttime', array('criteria'=>array('condition'=>'property=' . $model->pid , 'order' => 'date ASC'), 'pagination' => false)),
-                                'itemView' => '_inspect_time_propview',
-                                'summaryText'=> '',
-                            ));
+                            $dataProvider = new CActiveDataProvider('Inspecttime', array('criteria'=>array('condition'=>'property=' . $model->pid , 'order' => 'date ASC'), 'pagination' => false));
+
+                            if ($dataProvider->getTotalItemCount() > 0) {
+                                $this->widget('zii.widgets.CListView', array(
+                                    'id' => 'list_inspect_time',
+                                    'dataProvider' => new CActiveDataProvider('Inspecttime', array('criteria'=>array('condition'=>'property=' . $model->pid , 'order' => 'date ASC'), 'pagination' => false)),
+                                    'itemView' => '_inspect_time_propview',
+                                    'summaryText'=> '',
+                                ));
+                            } else {
+                                echo "<div style='padding-top: 10px; padding-left: 10px;'>";
+                                echo "No inspections are currently scheduled. <br/><a href='' >Contact the agent </a> to arrange an appointment";
+                                echo "</div>";
+                            }
+
                             ?>
                         </div>
                     </div>
-                    <div class="span12" style="border-top: solid 1px silver; border-bottom: solid 1px silver; padding-top: 10px; margin-left: 0; margin-top: 20px;">
+                    <div class="span12" style="border-top: solid 1px silver; padding-top: 10px; margin-left: 0; margin-top: 20px;">
                         <div class="span6">
                             <i class="icon-print icon_gap"></i> Print Page
                         </div>
                         <div class="span6">
                             <i class="icon-folder-open icon_gap"></i> Save Page
+                        </div>
+                    </div>
+                    <div class="span12" style="border-bottom: dotted 1px silver; margin-left: 0;">
+                        <div style="padding: 5px 0 10px 0;">
+                            <img src="<?php echo Yii::app()->request->baseUrl; ?>/images/twitter.png" style="width: 20px; height: 20px;"> Twitter
+                        </div>
+                    </div>
+                    <div class="span12" style="margin-left: 0;">
+                        <div style="padding: 10px 0;">
+                            <a href="http://www.facebook.com/login" target="_blank">
+                            <img src="<?php echo Yii::app()->request->baseUrl; ?>/images/fb_like.png" style="width: auto; height: 25px;"></a>
+                            <a href="http://www.facebook.com" target="_blank"> Sign Up </a>to see what your friends like.
                         </div>
                     </div>
                 </div>

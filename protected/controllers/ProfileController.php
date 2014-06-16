@@ -29,6 +29,8 @@ class ProfileController extends Controller
         return array(
             'changepassword'=>'application.controllers.Profile.ChangePasswordAction',  //action for Change Password page controller
             'editprofile'=>'application.controllers.Profile.EditProfileAction',  //action for Edit Profile page controller
+            'manageusers'=>'application.controllers.Profile.ManageUsersAction',  //action for admin - Manage Users page controller
+            'adduser'=>'application.controllers.Profile.AddUserAction',  //action for admin - Add Users page controller
         );
     }
 
