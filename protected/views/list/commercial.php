@@ -10,7 +10,7 @@
         } else if (<?php echo $_GET['type']?> == sale) {
             $('.nav-tabs li').removeClass('active');
             $('.nav-tabs li#sale').addClass('active');
-        } else if (<?php echo $_GET['type']?> == leased) {
+        } else if (<?php echo $_GET['type']?> == lease) {
             $('.nav-tabs li').removeClass('active');
             $('.nav-tabs li#lease').addClass('active');
         } else if (<?php echo $_GET['type']?> == sold) {
@@ -70,7 +70,7 @@
                                     <a href="<?php echo Yii::app()->request->baseUrl; ?>/list/commercial/type/all">All</a>
                                 </li>
                                 <li id="sale"><a href="<?php echo Yii::app()->request->baseUrl; ?>/list/commercial/type/sale">For Sale</a></li>
-                                <li id="lease"><a href="<?php echo Yii::app()->request->baseUrl; ?>/list/commercial/type/leased">For Lease</a></li>
+                                <li id="lease"><a href="<?php echo Yii::app()->request->baseUrl; ?>/list/commercial/type/lease">For Lease</a></li>
                                 <li id="sold"><a href="<?php echo Yii::app()->request->baseUrl; ?>/list/commercial/type/sold">Sold / Leased</a></li>
                             </ul>
                         </div>
@@ -80,7 +80,7 @@
                                 $condition = '(type = 4 OR type = 5 ) AND status = 1';
                             } elseif($_GET['type'] == "sale"){
                                 $condition = 'type = 4 AND status = 1';
-                            } elseif($_GET['type'] == "leased"){
+                            } elseif($_GET['type'] == "lease"){
                                 $condition = 'type = 5 AND status = 1';
                             } elseif($_GET['type'] == "sold"){
                                 $condition = '(type = 4 OR type = 5 ) AND status = 2';
