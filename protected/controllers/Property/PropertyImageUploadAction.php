@@ -31,6 +31,15 @@ class PropertyImageUploadAction extends CAction
         $fileSize=filesize($folder.$result['filename']);
         $fileName=$result['filename'];
 
+        if ($fileSize > 0 && $fileName != "") {
+            list($width, $height, $type, $attr) = getimagesize(Yii::getPathOfAlias('webroot.upload.propertyimages') . DIRECTORY_SEPARATOR . $fileName);
+
+            if ($width < 800 || $height < 600) {
+                echo '{"success":false,"message":"Image width & height must be at least 800px and 600px"}';
+                exit();
+            }
+        }
+
         $filename_array = explode('.', $fileName);
         $fileName_without_extention = $filename_array[0];
 
@@ -58,6 +67,6 @@ class PropertyImageUploadAction extends CAction
         $image->save();
         //---------------------------------
 
-        echo $return;
+        echo '{"success":true,"filename":"'. $fileName . '"}';
     }
 }

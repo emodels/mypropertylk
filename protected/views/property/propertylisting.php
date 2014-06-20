@@ -5,17 +5,20 @@
     });
 
     function Delete_Property(id){
-        $.ajax({
-            type: "GET",
-            url: 'propertylisting/mode/DELETE/pid/' + id,
-            success: function(data){
-                if (data == 'done'){
-                    $.fn.yiiListView.update('list_property');
-                } else {
-                    alert(data);
+        if (confirm('Are you sure want to delete?'))
+        {
+            $.ajax({
+                type: "GET",
+                url: 'propertylisting/mode/DELETE/pid/' + id,
+                success: function(data){
+                    if (data == 'done'){
+                        $.fn.yiiListView.update('list_property');
+                    } else {
+                        alert(data);
+                    }
                 }
-            }
-        });
+            });
+        }
 
     }
 

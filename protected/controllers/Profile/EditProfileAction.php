@@ -61,21 +61,7 @@ class EditProfileAction extends CAction
 
 
                 Yii::app()->user->setFlash('success', "User Profile Updated");
-                switch (Yii::app()->user->usertype){
-                    case 0:
-                        $this->getController()->redirect(Yii::app()->baseUrl . '/admin/manageusers');
-                        break;
-                    case 1:
-                        $this->getController()->redirect(Yii::app()->baseUrl . '/member/manageusers');
-                        break;
-                    case 2:
-                        $this->getController()->redirect(Yii::app()->baseUrl . '/agent/manageusers');
-                        break;
-                    case 3:
-                        $this->getController()->redirect(Yii::app()->baseUrl . '/advertiser/manageusers');
-                        break;
-                }
-
+                $this->getController()->redirect(Yii::app()->baseUrl . '/profile/manageusers');
 
             } else {
                 print_r($model->getErrors());

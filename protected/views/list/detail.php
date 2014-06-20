@@ -60,8 +60,8 @@
     }
 </style>
 <div class="span12">
-    <div class="span8">
-        <div class="span12" style="border-bottom: solid 1px silver; padding-top: 20px; font-size: 12px; color: #999999;">
+    <div class="offset1 span8">
+        <div class="span10" style="border-bottom: solid 1px silver; padding-top: 20px; font-size: 12px; color: #999999;">
             <div class="span6">
                 <a href="javascript: history.go(-1)" style="color: #999999; text-decoration: none;">
                     <i class="icon-hand-left icon-gap"></i> BACK TO PROPERTY LISTINGS </a>
@@ -72,7 +72,7 @@
                 <a href="<?php echo Yii::app()->request->baseUrl; ?>/property/viewproperty/id/<?php echo $next_id; ?>" style="color: #999999; text-decoration: none;">NEXT <i class="icon-hand-right icon-gap"></i></a>
             </div>
         </div>
-        <div class="span12" style="margin-top: 15px; background: -webkit-linear-gradient(#0088cc, #ffffff); background: -o-linear-gradient(#0088cc, #ffffff); background: -moz-linear-gradient(#0088cc, #ffffff); background: linear-gradient(#0088cc, #ffffff);">
+        <div class="span10" style="margin-top: 15px; background: -webkit-linear-gradient(#0088cc, #ffffff); background: -o-linear-gradient(#0088cc, #ffffff); background: -moz-linear-gradient(#0088cc, #ffffff); background: linear-gradient(#0088cc, #ffffff);">
             <div class="row-fluid span12" style="color: #fff; padding-top: 10px; margin-left: 0; ">
                 <div class="span6" style="padding-left: 40px;">
                     Property ID : <?php echo $model->pid ?>
@@ -81,7 +81,7 @@
                     <?php echo $model->pricetype0->proptype ?>
                 </div>
             </div>
-            <div class="span12">
+            <div class="span10">
                 <div id="wowslider-container1" style="margin-left: 15px;">
                     <div class="ws_images">
                         <ul>
@@ -121,7 +121,7 @@
                 </div>
             </div>
         </div>
-        <div class="span12" style="padding: 20px 0;">
+        <div class="span10" style="padding: 20px 0;">
             <div class="row-fluid span12" style="margin-left: 0">
                 <div class="span8" style="padding: 10px 0;">
                     <div class="span12" style="border-bottom: solid 1px silver; ">
@@ -184,13 +184,115 @@
                         </div>
                         <?php } ?>
                     </div>
-                    <div class="span12" style="padding-top: 10px; margin-left: 0; text-align: justify; border-top: solid 1px silver">
-                        <div>
+                    <div class="row-fluid span12" style="padding-top: 10px; margin-left: 0; text-align: justify; border-top: solid 1px silver">
+                        <div class=" row-fluid span12">
                             <div  style="font-weight: bold;padding-bottom: 8px;">
                                 <?php echo ucwords($model->headline); ?>
                             </div>
-                            <?php echo $model->desc; ?>
+                            <div>
+                                <?php echo $model->desc; ?>
+                            </div>
+                            <div style="padding: 10px 0;">
+                                <?php echo $model->otherfeatures; ?>
+                            </div>
                         </div>
+                        <b>General Features:</b>
+                        <div class="row-fluid span12">
+                            <div class="span6">
+                                <?php
+                                if ($model->ensuites != 0){
+                                    echo "Ensuites: " . $model->ensuites . "<br/>";
+                                }
+                                if ($model->toilets != 0){
+                                    echo "Toilets: " . $model->toilets . "<br/>";
+                                }
+                                if ($model->parkgaragespaces != 0){
+                                    echo "Parking Garage Spaces: " . $model->parkgaragespaces . "<br/>";
+                                }
+                                if ($model->parkcarpetspaces != 0){
+                                    echo "Park Carpet Spaces: " . $model->parkcarpetspaces . "<br/>";
+                                }
+                                if ($model->parkopenspaces != 0){
+                                    echo "Parking Open Spaces: " . $model->parkopenspaces . "<br/>";
+                                }
+                                if ($model->tenuretype != ""){
+                                    echo "Tenure Type: " . $model->tenuretype . "<br/>";
+                                }
+                                if ($model->building != ""){
+                                    echo "Building: " . $model->building . "<br/>";
+                                }
+                                if ($model->parkcomment != ""){
+                                    echo "Parking Comment: " . $model->parkcomment . "<br/>";
+                                }
+
+                                ?>
+                            </div>
+                            <div class="span6">
+                                <?php
+                                if ($model->livingarea != 0){
+                                    echo "Living Area: " . $model->livingarea . "<br/>";
+                                }
+                                if ($model->housesize != 0){
+                                    echo "House Size: " . $model->housesize . " " . $model->housesquares = 1 ? "f²" : "m²";
+                                    echo "<br/>";
+                                }
+                                if ($model->landsize){
+                                    echo "Landsize: " . $model->landsize . " ";
+                                    if ($model->landsquares == 1){
+                                        echo "f²";
+                                    } else if ($model->landsquares == 2){
+                                        echo "m²";
+                                    } else if ($model->landsquares == 3){
+                                        echo "Hec";
+                                    } else if ($model->landsquares == 2){
+                                        echo "Acres";
+                                    }
+                                    echo "<br/>";
+                                }
+                                if ($model->floorarea){
+                                    echo "Floor Area: " . $model->floorarea . " " . $model->floorsquares = 1 ? "f²" : "m²";
+                                    echo "<br/>";
+                                }
+                                if ($model->zoning != ""){
+                                    echo "Zoning: " . $model->zoning . "<br/>";
+                                }
+                                if ($model->outgoings != ""){
+                                    echo "Outgoings: " . $model->outgoings . "<br/>";
+                                }
+                                if ($model->eer != 0){
+                                    echo "Energy Efficiency Rate: " . $model->eer . "<br/>";
+                                }
+                                ?>
+                            </div>
+                        </div>
+                        <?php if (count($outdoorfeatures_array) > 0 ){?>
+                        <div class="row-fluid span12" style="border-top: solid 1px silver; margin-top: 10px; margin-left: 0;">
+                            <h6 style="color: green"><b>Outdoor Features</b></h6>
+                            <?php
+                                echo implode('&nbsp;&nbsp;|&nbsp;&nbsp;', $outdoorfeatures_array);
+                            ?>
+                        </div>
+                        <?php }
+                        if (count($indoorfeatures_array) > 0){
+                        ?>
+
+                        <div class="row-fluid span12" style="border-top: solid 1px silver; margin-top: 10px;  margin-left: 0;">
+                            <h6 style="color: #c1381c"><b>Intdoor Features</b></h6>
+                            <?php
+                            echo implode('&nbsp;&nbsp;|&nbsp;&nbsp;', $indoorfeatures_array);
+                            ?>
+                        </div>
+                        <?php }
+                        if (count($otherfeatures_array) > 0){
+                        ?>
+
+                        <div class="row-fluid span12" style="border-top: solid 1px silver; margin-top: 10px;  margin-left: 0;">
+                            <h6 style="color: #25a6df"><b>Other Features</b></h6>
+                            <?php
+                            echo implode('&nbsp;&nbsp;|&nbsp;&nbsp;', $otherfeatures_array);
+                            ?>
+                        </div>
+                        <?php } ?>
                     </div>
                 </div>
                 <div class="span4" style="">

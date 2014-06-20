@@ -5,19 +5,21 @@
     });
 
     function Delete_User(id){
-        $.ajax({
-            type: "GET",
-            url: 'manageusers/mode/DELETE/id/' + id,
-            success: function(data){
-                if (data == 'done'){
-                    $.fn.yiiListView.update('list_user');
+        if (confirm('Are you sure want to delete?'))
+        {
+            $.ajax({
+                type: "GET",
+                url: 'manageusers/mode/DELETE/id/' + id,
+                success: function(data){
+                    if (data == 'done'){
+                        $.fn.yiiListView.update('list_user');
 
-                } else {
-                    alert(data);
+                    } else {
+                        alert(data);
+                    }
                 }
-            }
-        });
-
+            });
+        }
     }
 
     function UserStatusChange(id) {

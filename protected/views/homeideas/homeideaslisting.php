@@ -8,6 +8,25 @@
         $('.nav-stacked a').removeClass('active');
         $('#admin_homeideas').addClass('active');
     });
+
+    function Delete_Homeideas(id){
+        if (confirm('Are you sure want to delete?'))
+        {
+            $.ajax({
+                type: "GET",
+                url: 'homeideaslisting/mode/DELETE/id/' + id,
+                success: function(data){
+                    if (data == 'done'){
+                        window.document.location.reload();
+                    } else {
+                        alert(data);
+                    }
+                }
+            });
+        }
+
+    }
+
 </script>
 <div class="col_right" style="padding-top: 0;">
     <div class="form">
@@ -56,7 +75,6 @@
                 'clientOptions' => array(
                     'validateOnSubmit' => true,
                     'validateOnChange' => true,
-                    'afterValidate' => 'js:formSend',
                 ),
                 'htmlOptions'=>array('class'=>'form-horizontal'),
             )); ?>

@@ -16,6 +16,13 @@ class HomeideasListingAction extends CAction
      */
     public function run()
     {
+        if (Yii::app()->request->isAjaxRequest && isset($_GET['mode']) && $_GET['mode'] == 'DELETE' && isset($_GET['id'])) {
+
+            Homeideas::model()->deleteByPk($_GET['id']);
+            echo 'done';
+
+            Yii::app()->end();
+        }
         $this->getController()->render('homeideaslisting');
     }
 }

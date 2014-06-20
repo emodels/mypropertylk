@@ -67,7 +67,7 @@ class AddUserAction extends CAction
                     $thumb->save();
 
                     Yii::app()->user->setFlash('success', "User Added Successfully !");
-                    $this->getController()->redirect(Yii::app()->baseUrl . '/admin/manageusers');
+                    $this->getController()->redirect(Yii::app()->baseUrl . '/profile/manageusers');
 
                 }
                 else{

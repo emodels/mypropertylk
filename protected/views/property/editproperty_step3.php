@@ -13,6 +13,20 @@
         });
 
     }
+
+    function formSend(form, data, hasError){
+
+        if (hasError) {
+
+            if ($('.error :first').length > 0){
+                $(window).scrollTop($('.error :first').offset().top);
+            }
+
+            return false;
+        }
+
+        return true;
+    }
 </script>
 <div class="col_right" style="padding-top: 0;">
     <div>
@@ -85,9 +99,20 @@
                                     'action'=>Yii::app()->createUrl('property/propertyimageupload/id/'.$model->pid. '/type/0'),
                                     'allowedExtensions'=>array("jpg", "png"),
                                     'sizeLimit'=>1*1024*1024,
-                                    'onComplete'=>'js:function(){$.fn.yiiListView.update("list_images_house")}'
+                                    'onComplete'=>'js:function(id, filename, responseJSON){
+                                                        if (responseJSON.success == true){
+                                                            $.fn.yiiListView.update("list_images_house");
+                                                        } else {
+                                                            $("#imageScaleErrorMessage p").html(responseJSON.message);
+                                                            $("#imageScaleErrorMessage").show().animate({opacity: 1.0}, 3000).fadeOut("slow");
+                                                        }
+                                                      }'
                                 )
                             )); ?>
+                        <div id="imageScaleErrorMessage" class="alert alert-block alert-error fade in hide" style="margin-top: 10px;">
+                            <h4 class="alert-heading">Oh.. You got an error!</h4>
+                            <p></p>
+                        </div>
                         <?php
                         $this->widget('zii.widgets.CListView', array(
                             'id' => 'list_images_house',
