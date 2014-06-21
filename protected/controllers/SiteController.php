@@ -154,6 +154,7 @@ class SiteController extends Controller
     {
         $model = new User;
         $model->usertype = 1;
+        $form_valid = true;
 
         if (isset($_POST['User'])) {
 
@@ -172,51 +173,64 @@ class SiteController extends Controller
 
                 if (isset($model->userimage) && !is_null($model->userimage)) {
                     $model->userimage = "{$rnd}-{$model->userimage->name}";  // random number + file name
+                    $model->userimage = str_replace('.jpg','.jpeg', $model->userimage);
+
+                    CUploadedFile::getInstance($model, 'userimage')->saveAs(Yii::getPathOfAlias('webroot.upload.userimages') . DIRECTORY_SEPARATOR . $model->userimage);
+
+                    list($width, $height, $type, $attr) = getimagesize(Yii::getPathOfAlias('webroot.upload.userimages') . DIRECTORY_SEPARATOR .  $model->userimage);
+
+                    if ($width != 90 && $height != 100) {
+                        Yii::app()->user->setFlash('error', 'Image width & height must be 90px and 100px');
+                        $form_valid = false;
+                    }
                 } else {
 
                     $model->userimage = 'user_no_img.png';
                 }
 
-                if ($model->save()){
+                if ($form_valid == true) {
 
-                    /*---(Upload Profile Image)---*/
-                    if ($model->userimage != 'user_no_img.png') {
-                        CUploadedFile::getInstance($model, 'userimage')->saveAs(Yii::getPathOfAlias('webroot.upload.userimages') . DIRECTORY_SEPARATOR . $model->userimage);
+                    if ($model->save()){
+
+                        /*---(Upload Profile Image)---*/
+                        /*if ($model->userimage != 'user_no_img.png') {
+                            CUploadedFile::getInstance($model, 'userimage')->saveAs(Yii::getPathOfAlias('webroot.upload.userimages') . DIRECTORY_SEPARATOR . $model->userimage);
+                        }*/
+
+                        $login_model = new LoginForm;
+                        $login_model->username = $model->username;
+                        $login_model->password = $model->password;
+                        $login_model->rememberMe = 1;
+
+                        unset(Yii::app()->request->cookies['remember_me']);
+                        $cookie = new CHttpCookie('remember_me', $login_model->username);
+                        $cookie->expire = time()+60*60*24*180;
+                        Yii::app()->request->cookies['remember_me'] = $cookie;
+
+                        if($login_model->validate() && $login_model->login()){
+                            Yii::app()->user->setFlash('success', "You are Successfully Registered !");
+                        }
+
+                        switch ($model->usertype){
+                            case 0:
+                                $this->redirect(Yii::app()->baseUrl . '/admin/home');
+                                break;
+                            case 1:
+                                $this->redirect(Yii::app()->baseUrl . '/member/home');
+                                break;
+                            case 2:
+                                $this->redirect(Yii::app()->baseUrl . '/agent/home');
+                                break;
+                            case 3:
+                                $this->redirect(Yii::app()->baseUrl . '/advertiser/home');
+                                break;
+                        }
+
                     }
-
-                    $login_model = new LoginForm;
-                    $login_model->username = $model->username;
-                    $login_model->password = $model->password;
-                    $login_model->rememberMe = 1;
-
-                    unset(Yii::app()->request->cookies['remember_me']);
-                    $cookie = new CHttpCookie('remember_me', $login_model->username);
-                    $cookie->expire = time()+60*60*24*180;
-                    Yii::app()->request->cookies['remember_me'] = $cookie;
-
-                    if($login_model->validate() && $login_model->login()){
-                        Yii::app()->user->setFlash('success', "You are Successfully Registered !");
+                    else{
+                        print_r($model->getErrors());
+                        Yii::app()->user->setFlash('error', 'Error Saving Record');
                     }
-
-                    switch ($model->usertype){
-                        case 0:
-                            $this->redirect(Yii::app()->baseUrl . '/admin/home');
-                            break;
-                        case 1:
-                            $this->redirect(Yii::app()->baseUrl . '/member/home');
-                            break;
-                        case 2:
-                            $this->redirect(Yii::app()->baseUrl . '/agent/home');
-                            break;
-                        case 3:
-                            $this->redirect(Yii::app()->baseUrl . '/advertiser/home');
-                            break;
-                    }
-
-                }
-                else{
-                    print_r($model->getErrors());
-                    Yii::app()->user->setFlash('error', 'Error Saving Record');
                 }
             }
         }
