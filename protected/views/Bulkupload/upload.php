@@ -1,21 +1,20 @@
 <script type="text/javascript">
     $(document).ready(function(){
         $('.nav-stacked a').removeClass('active');
-        $('#admin_editprof').addClass('active');
+        $('#admin_uplaod').addClass('active');
 
-        $('#btn_import').click(function () {
-            $.ajax({
-                type: 'POST',
-                url: 'upload/import/true',
-                data: $('#bulkupload-form').serialize(),
-                success: function(data){
-                    if (data == 'done'){
-                        window.location.replace('<?php echo Yii::app()->request->baseUrl; ?>/property/propertylisting?type=0');
-                    } else {
-                        alert(data);
-                    }
-                }
-            });
+        $('#bulkupload-form').submit(function() {
+
+            if ($('#zipfile').val() == '') {
+
+                alert('Please enter ZIP file to upload');
+                return false;
+
+            } else {
+
+                $('#waitModalWindow').modal({ keyboard: false });
+                return true;
+            }
         });
     });
 </script
@@ -31,6 +30,29 @@ $this->breadcrumbs=array(
             <legend>
                 <h3>Bulk Upload</h3>
             </legend>
+            <?php if (count($warningsArray) > 0){ ?>
+            <div class="span11">
+                <h4>Following errors are encountered during bulk upload process</h4>
+                <table class="table table-bordered table-hover">
+                    <thead>
+                        <tr>
+                            <th>Property ID #</th>
+                            <th style="text-align: center">Type</th>
+                            <th>Description</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <?php foreach ($warningsArray as $value) { ?>
+                            <tr class="<?php echo $value->type; ?>">
+                                <td><?php echo $value->id; ?></td>
+                                <td style="text-align: center"><?php echo ($value->type == 'warning') ? '<i style="color: orange" class="icon-exclamation-sign"></i>' : '<i style="color: #ff0000" class="icon-warning-sign"></i>'; ?></td>
+                                <td><?php echo $value->desc; ?></td>
+                            </tr>
+                        <?php } ?>
+                    </tbody>
+                </table>
+            </div>
+            <?php } ?>
             <div class="span10">
                 <div class="form">
                     <?php $form=$this->beginWidget('CActiveForm', array(
@@ -61,16 +83,22 @@ $this->breadcrumbs=array(
                             <?php echo CHtml::fileField('zipfile');?>
                         </div>
                         <div class="control-group">
-                            <div>
-                                <?php echo CHtml::submitButton('Upload ZIP file', array('class' => 'btn btn-primary')); ?>
-                                &nbsp;
-                                <?php echo CHtml::button('Import Property Information', array('class' => 'btn btn-primary', 'id'=>'btn_import', 'disabled'=> ($enable_import ? '' : 'disabled'))); ?>
-                            </div>
+                            <div><?php echo CHtml::submitButton('Upload ZIP file and Import Property Information', array('class' => 'btn btn-primary')); ?></div>
                         </div>
                     </div>
                 </div>
                 <?php $this->endWidget(); ?>
             </div>
         </div>
+    </div>
+</div>
+<!-- Modal -->
+<div id="waitModalWindow" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+        <h3 id="myModalLabel">Bulk Upload in progress...</h3>
+    </div>
+    <div class="modal-body">
+        <h6 class="text-center"><img src="<?php echo Yii::app()->request->baseUrl; ?>/images/loading.gif" style="padding-right: 10px"/> Please wait and do not close or refresh your browser window...</h6>
     </div>
 </div>
