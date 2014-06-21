@@ -17,6 +17,7 @@ class UploadAction extends CAction
     public function run()
     {
         $user_id = 0;
+        $warningsArray = array();
 
         if (isset($_POST['user'])) {
 
@@ -58,7 +59,21 @@ class UploadAction extends CAction
                         $rowCount = 0;
                         foreach ($sheet_array as $row) {
 
-                            if ($rowCount > 0) {
+                            if ($rowCount > 0 && $row['A'] != '') {
+
+                                /*---( Skip existing records based on number, streetaddress, areaname, townname )---*/
+                                if (Property::model()->exists("owner = " . $user_id . " AND number = '" . $row['O'] . "' AND streetaddress = '" . $row['P'] . "' AND areaname = '" . $row['Q'] . "' AND townname = '" . $row['R'] . "'")) {
+
+                                    $warning = new stdClass();
+
+                                    $warning->id = $row['A'];
+                                    $warning->type = 'warning';
+                                    $warning->desc = 'Property with ID : ' . $row['A'] . ' already exists in database';
+
+                                    $warningsArray[] = $warning;
+
+                                    continue;
+                                }
 
                                 $property = new Property();
                                 $propertytyperelation = new Propertytyperelation();
@@ -68,8 +83,13 @@ class UploadAction extends CAction
                                 $property->otheragent = 0;
                                 $property->availabledate = date("Y-m-d");
                                 $property->entrydate = date("Y-m-d");
-                                $property->status = 1;
                                 $property->pricetype = 1;
+
+                                if (count(glob(Yii::getPathOfAlias('webroot.upload.bulkupload') . DIRECTORY_SEPARATOR . 'property_bulk_upload_' . $user_id . DIRECTORY_SEPARATOR . 'property'. DIRECTORY_SEPARATOR. $row['A'] . DIRECTORY_SEPARATOR . '*')) > 0){
+                                    $property->status = 1;
+                                } else {
+                                    $property->status = 0;
+                                }
 
                                 $property->type = intval($row['B']);
                                 $property->propcondition = intval($row['D']);
@@ -124,63 +144,76 @@ class UploadAction extends CAction
                                 $property->onlinetour1 = $row['BA'];
                                 $property->onlinetour2 = $row['BB'];
 
-                                if ($property->save(false)) {
+                                try {
 
-                                    $propertytyperelation->propertyid = $property->pid;
-                                    $propertytyperelation->typeid = intval($row['C']);
+                                    if ($property->save(false)) {
 
-                                    $propertytyperelation->save();
+                                        $propertytyperelation->propertyid = $property->pid;
+                                        $propertytyperelation->typeid = intval($row['C']);
 
-                                } else {
+                                        $propertytyperelation->save();
+                                    }
 
-                                    print_r($property->getErrors());
+                                } catch (Exception $ex){
+
+                                    $warning = new stdClass();
+
+                                    $warning->id = $row['A'];
+                                    $warning->type = 'error';
+                                    $warning->desc = 'Unable to save Property with ID : ' . $row['A'] . ', please make sure all columns are valid';
+
+                                    $warningsArray[] = $warning;
                                 }
 
                                 /*-----( Upload Property Images )-------*/
-                                $imageIndex = 1;
-                                foreach (glob(Yii::getPathOfAlias('webroot.upload.bulkupload') . DIRECTORY_SEPARATOR . 'property_bulk_upload_' . $user_id . DIRECTORY_SEPARATOR . 'property'. DIRECTORY_SEPARATOR. $row['A'] . DIRECTORY_SEPARATOR . '*') as $fileName) {
+                                if ($property->pid > 0) {
 
-                                    $filename_array = explode('.', $fileName);
-                                    $fileName_without_extention = $filename_array[0];
-                                    $fileName_extention = $filename_array[1];
+                                    $imageIndex = 1;
+                                    foreach (glob(Yii::getPathOfAlias('webroot.upload.bulkupload') . DIRECTORY_SEPARATOR . 'property_bulk_upload_' . $user_id . DIRECTORY_SEPARATOR . 'property'. DIRECTORY_SEPARATOR. $row['A'] . DIRECTORY_SEPARATOR . '*') as $fileName) {
 
-                                    /*---( Scale images to 800 X 600 size )---*/
-                                    Yii::import('ext.CThumbCreator.CThumbCreator');
+                                        $filename_array = explode('.', $fileName);
+                                        $fileName_without_extention = $filename_array[0];
+                                        $fileName_extention = $filename_array[1];
 
-                                    $thumb = new CThumbCreator();
-                                    $thumb->image = $fileName;
-                                    $thumb->width = 800;
-                                    $thumb->height = 600;
-                                    $thumb->square = true;
-                                    $thumb->directory = Yii::getPathOfAlias('webroot.upload.propertyimages') . DIRECTORY_SEPARATOR;
-                                    $thumb->defaultName = 'image_' . $property->pid . '_' . $imageIndex . '_' .time();
-                                    $thumb->createThumb();
-                                    $thumb->save();
+                                        /*---( Scale images to 800 X 600 size )---*/
+                                        Yii::import('ext.CThumbCreator.CThumbCreator');
 
-                                    /*----( Save to Database )----*/
-                                    $propertyimage = new Propertyimages();
+                                        $thumb = new CThumbCreator();
+                                        $thumb->image = $fileName;
+                                        $thumb->width = 800;
+                                        $thumb->height = 600;
+                                        $thumb->square = true;
+                                        $thumb->directory = Yii::getPathOfAlias('webroot.upload.propertyimages') . DIRECTORY_SEPARATOR;
+                                        $thumb->defaultName = 'image_' . $property->pid . '_' . $imageIndex . '_' .time();
+                                        $thumb->createThumb();
+                                        $thumb->save();
 
-                                    $propertyimage->propertyid = $property->pid;
-                                    $propertyimage->imagename = $thumb->defaultName . '.' .$fileName_extention;
-                                    $propertyimage->imagetype = 0;
+                                        /*----( Save to Database )----*/
+                                        $propertyimage = new Propertyimages();
 
-                                    $propertyimage->save();
+                                        $propertyimage->propertyid = $property->pid;
+                                        $propertyimage->imagename = $thumb->defaultName . '.' .$fileName_extention;
+                                        $propertyimage->imagetype = 0;
 
-                                    $imageIndex++;
+                                        $propertyimage->save();
+
+                                        $imageIndex++;
+                                    }
                                 }
                             }
                             $rowCount++;
                         }
                     }
 
-                    Yii::app()->user->setFlash('success', "Property information imported successfully.");
-
-                    $this->getController()->redirect(Yii::app()->request->baseUrl . '/property/propertylisting?type=0');
+                    if (count($warningsArray) == 0) {
+                        Yii::app()->user->setFlash('success', "Property information imported successfully.");
+                        $this->getController()->redirect(Yii::app()->request->baseUrl . '/property/propertylisting?type=0');
+                    }
                 }
             }
         }
 
-        $this->getController()->render('upload', array('user_id'=>$user_id));
+        $this->getController()->render('upload', array('user_id'=>$user_id, 'warningsArray' => $warningsArray));
     }
 
     private function deleteDir($dirPath) {
