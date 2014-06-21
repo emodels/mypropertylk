@@ -1,4 +1,4 @@
-<div class="span3"  style="float: left; margin-left: 18px">
+<div class="span3" style="margin-left: 0px !important; margin-right: 1.92%; !important">
     <article class="property-item">
     <div class="property-images">
         <a href="<?php echo Yii::app()->baseUrl . '/list/detail?pid=' .$data->pid;?>" title="<?php echo $data->pid; ?>">
