@@ -80,6 +80,9 @@ $this->breadcrumbs=array(
                     <div class="control-group">
                         <label>Profile Image (<i>optional</i>)</label>
                         <?php echo $form->fileField($model, 'userimage'); ?>
+                        <div style="margin-bottom: 0; padding: 8px; margin-top: 10px; color: rgba(128, 0, 0, 0.57); background-color: rgba(255, 149, 132, 0.44); border: solid 1px rgba(177, 41, 36, 0.50); border-radius: 5px;">
+                            <strong>Warning!</strong><br/> Please check your Profile Image width and height is 90px and 100px before uploading ...!
+                        </div>
                     </div>
                     <div class="control-group">
                         <p>Please Select the User Type:</p>

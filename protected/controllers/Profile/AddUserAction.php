@@ -19,6 +19,7 @@ class AddUserAction extends CAction
     {
         $model = new User;
         $model->usertype = 1;
+        $form_valid = true;
 
 
         if (isset($_POST['User'])) {
@@ -37,43 +38,60 @@ class AddUserAction extends CAction
                 $model->userimage = CUploadedFile::getInstance($model, 'userimage');
 
                 if (isset($model->userimage) && !is_null($model->userimage)) {
+
                     $model->userimage = "{$rnd}-{$model->userimage->name}";  // random number + file name
                     $model->userimage = str_replace('.jpg','.jpeg', $model->userimage);
+
+                    CUploadedFile::getInstance($model, 'userimage')->saveAs(Yii::getPathOfAlias('webroot.upload.userimages') . DIRECTORY_SEPARATOR . $model->userimage);
+
+                    list($width, $height, $type, $attr) = getimagesize(Yii::getPathOfAlias('webroot.upload.userimages') . DIRECTORY_SEPARATOR .  $model->userimage);
+
+                    if ($width != 90 && $height != 100) {
+                        Yii::app()->user->setFlash('error', 'Image width & height must be 90px and 100px');
+                        $form_valid = false;
+                    }
+
                 } else {
 
                     $model->userimage = 'user_no_img.png';
                 }
 
-                if ($model->save()){
+                if ($form_valid == true) {
 
-                    /*---(Upload Profile Image)---*/
-                    if ($model->userimage != 'user_no_img.png') {
-                        CUploadedFile::getInstance($model, 'userimage')->saveAs(Yii::getPathOfAlias('webroot.upload.userimages') . DIRECTORY_SEPARATOR . $model->userimage);
+                    if ($model->save()){
+
+                        /*---(Upload Profile Image)---*/
+                        /*if ($model->userimage != 'user_no_img.png') {
+
+
+                        }
+
+                        Yii::import('ext.CThumbCreator.CThumbCreator');
+
+                        $thumb = new CThumbCreator();
+                        $thumb->image = Yii::getPathOfAlias('webroot.upload.userimages') . DIRECTORY_SEPARATOR . $model->userimage;
+
+                        $thumb->width = 90;
+                       //$thumb->height = 100;
+                        $thumb->square = false;
+                        $thumb->directory = Yii::getPathOfAlias('webroot.upload.userimages') . DIRECTORY_SEPARATOR;
+                        $thumb->defaultName = explode('.', $model->userimage)[0];
+                        $thumb->createThumb();
+
+                        unlink(Yii::getPathOfAlias('webroot.upload.userimages') . DIRECTORY_SEPARATOR . $model->userimage);
+
+                        $thumb->save();*/
+
+                        Yii::app()->user->setFlash('success', "User Added Successfully !");
+                        $this->getController()->redirect(Yii::app()->baseUrl . '/profile/manageusers');
+
                     }
-
-                    Yii::import('ext.CThumbCreator.CThumbCreator');
-
-                    $thumb = new CThumbCreator();
-                    $thumb->image = Yii::getPathOfAlias('webroot.upload.userimages') . DIRECTORY_SEPARATOR . $model->userimage;
-                    $thumb->width = 90;
-                   //$thumb->height = 100;
-                    $thumb->square = false;
-                    $thumb->directory = Yii::getPathOfAlias('webroot.upload.userimages') . DIRECTORY_SEPARATOR;
-                    $thumb->defaultName = explode('.', $model->userimage)[0];
-                    $thumb->createThumb();
-
-                    unlink(Yii::getPathOfAlias('webroot.upload.userimages') . DIRECTORY_SEPARATOR . $model->userimage);
-
-                    $thumb->save();
-
-                    Yii::app()->user->setFlash('success', "User Added Successfully !");
-                    $this->getController()->redirect(Yii::app()->baseUrl . '/profile/manageusers');
-
+                    else{
+                        print_r($model->getErrors());
+                        Yii::app()->user->setFlash('error', 'Error Saving Record');
+                    }
                 }
-                else{
-                    print_r($model->getErrors());
-                    Yii::app()->user->setFlash('error', 'Error Saving Record');
-                }
+
             }
         }
 
