@@ -16,6 +16,9 @@ class IndexAction extends CAction
      */
     public function run()
     {
-        $this->getController()->render('index');
+        $model = User::model()->findByPk(Yii::app()->user->id);
+        $parent =  User::model()->findByPk($model->parentuser);
+
+        $this->getController()->render('index', array('model' => $model, 'parent' => $parent));
     }
 }

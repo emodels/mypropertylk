@@ -153,6 +153,7 @@ $this->breadcrumbs=array(
                                                                                  array('labelOptions' => array('style'=>'display:inline; margin-bottom:10px;'),'style'=>'margin: 0.2em 0 0.5em 0;')); ?>
                         <?php echo $form->error($model, 'dispalyprice'); ?>
                     </div>
+                </div>
             </div>
             <?php } ?>
         </div>

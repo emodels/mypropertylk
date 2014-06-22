@@ -37,7 +37,8 @@ class PropertyController extends Controller
             'editproperty_step4'=>'application.controllers.Property.EditPropertyAction_Step4',  //action for admin - Edit Property Step4 page controller
             'propertylisting'=>'application.controllers.Property.PropertyListingAction',  //action for admin - Property Listing page controller
             'propertyimageupload'=>'application.controllers.Property.PropertyImageUploadAction',  //action for admin - Property Image Upload controller
-            'viewproperty'=>'application.controllers.Property.ViewPropertyAction',  //action for admin - Property Image Upload controller
+            'viewproperty'=>'application.controllers.Property.ViewPropertyAction',  //action for admin - Property View controller
+            'promotelisting'=>'application.controllers.Property.PromotelistingAction',  //action for Promote listing controller
         );
     }
 

@@ -70,8 +70,7 @@
         </div>
         <div class="hidden-phone"></br></br></div>
         <div class="listing-btn">
-            <button class="btn"><a href="#" style="text-decoration: none;">Promote Listing</a></button>
+            <a href="<?php echo Yii::app()->request->baseUrl .'/property/promotelisting?pid='. $data->pid ;?>" class="btn">Promote Listing</a>
         </div>
     </div>
 </div>
-

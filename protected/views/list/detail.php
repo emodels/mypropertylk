@@ -1,6 +1,9 @@
 <link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>/css/wowsliderstyle.css" />
 <script type="text/javascript" src="<?php echo Yii::app()->request->baseUrl; ?>/js/jquery.js"></script>
 <script src="https://maps.googleapis.com/maps/api/js?sensor=false"></script>
+<!-- Go to www.addthis.com/dashboard to customize your tools -->
+<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=lankahotelguide"></script>
+
 <script type="text/javascript">
     $(document).ready(function(){
         $('#headline_wrapper').hide();
@@ -329,25 +332,8 @@
                             ?>
                         </div>
                     </div>
-                    <div class="span12" style="border-top: solid 1px silver; padding-top: 10px; margin-left: 0; margin-top: 20px;">
-                        <div class="span6">
-                            <i class="icon-print icon_gap"></i> Print Page
-                        </div>
-                        <div class="span6">
-                            <i class="icon-folder-open icon_gap"></i> Save Page
-                        </div>
-                    </div>
-                    <div class="span12" style="border-bottom: dotted 1px silver; margin-left: 0;">
-                        <div style="padding: 5px 0 10px 0;">
-                            <img src="<?php echo Yii::app()->request->baseUrl; ?>/images/twitter.png" style="width: 20px; height: 20px;"> Twitter
-                        </div>
-                    </div>
-                    <div class="span12" style="margin-left: 0;">
-                        <div style="padding: 10px 0;">
-                            <a href="http://www.facebook.com/login" target="_blank">
-                            <img src="<?php echo Yii::app()->request->baseUrl; ?>/images/fb_like.png" style="width: auto; height: 25px;"></a>
-                            <a href="http://www.facebook.com" target="_blank"> Sign Up </a>to see what your friends like.
-                        </div>
+                    <div class="span12" style="border-top: solid 1px silver; border-bottom: solid 1px silver; padding: 10px 0; text-align: center; margin-left: 0; margin-top: 20px;">
+                        <div class="addthis_sharing_toolbox"></div>
                     </div>
                 </div>
             </div>
