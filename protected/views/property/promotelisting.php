@@ -32,7 +32,11 @@
             success: function(data){
                 if (data == 'done'){
                     window.document.location.replace('<?php echo Yii::app()->request->baseUrl?>/property/propertylisting/type/0');
-                } else {
+                }
+                if (data == 'exceed'){
+                    window.document.location.replace('<?php echo Yii::app()->request->baseUrl?>/property/promotelisting/pid/' + id);
+                }
+                if (data == 'redirect') {
                     window.document.location.replace('http://www.paypal.com/lk');
                 }
             }

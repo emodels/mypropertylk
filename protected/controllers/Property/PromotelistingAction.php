@@ -16,6 +16,8 @@ class PromotelistingAction extends CAction
      */
     public function run()
     {
+        $featured=0;
+
         if (isset($_GET['pid'])) {
             $model =  Property::model()->findByPk($_GET['pid']);
         } else {
@@ -49,26 +51,36 @@ class PromotelistingAction extends CAction
         }
         if (Yii::app()->request->isAjaxRequest && isset($_GET['mode']) && $_GET['mode'] == 'FEATURED' && isset($_GET['pid'])) {
 
-            if (Yii::app()->user->usertype == 0) {
+            $featured = Property::model()->count('pricetype=3');
 
-                $property =  Property::model()->find('pid=' . $_GET['pid']);
+            if ($featured < 20) {
 
-                if (isset($property)) {
+                if (Yii::app()->user->usertype == 0) {
 
-                    $property->pricetype = 3;
+                    $property =  Property::model()->find('pid=' . $_GET['pid']);
 
-                    $property->save(false);
+                    if (isset($property)) {
 
-                    Yii::app()->user->setFlash('success', "Property Upgraded as a Featured Property.");
-                    echo 'done';
+                        $property->pricetype = 3;
 
+                        $property->save(false);
+
+                        Yii::app()->user->setFlash('success', "Property Upgraded as a Featured Property.");
+                        echo 'done';
+
+                    }
+
+                } else {
+
+                    echo 'redirect';
                 }
 
             } else {
-
-                echo 'redirect';
+                echo 'exceed';
+                Yii::app()->user->setFlash('error', "Featured Property Limit can not exceeded...!");
             }
             Yii::app()->end();
+
 
         }
 
