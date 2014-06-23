@@ -82,63 +82,77 @@
             ),
             'htmlOptions'=>array('class'=>'form-horizontal'),
         )); ?>
-            <div class="span9">
-                <div id="title-listing" class="container" style="margin-bottom: 20px; margin-left: 25px">
-                    <div class="property-list-title" >Home Ideas By <?php echo $model->fname . " " . $model->lname; ?></div>
-                </div>
-                <div class="span12 row-fluid" style="margin-left: 0; margin-bottom: 20px; margin-left: 25px">
-                    <div class="span6">
-                        <i class="icon-phone icon_gap"> </i><?php echo $model->phone; ?>&nbsp; &nbsp;
-                        <i class="icon-envelope icon_gap"></i><?php echo $model->email; ?>
-                    </div>
-                    <div class="span6" style="text-align: right;">
-                        <div class="addthis_sharing_toolbox"></div>
-                    </div>
-                </div>
-                <ul class="nav nav-tabs" style="margin-left: 25px;">
-                    <li id="all" class="active">
-                        <a href="<?php echo Yii::app()->request->baseUrl . '/list/architecture/uid/' . $_GET['uid'] .'/cid/0'; ?>">All</a>
-                    </li>
-                    <li id="living"><a href="<?php echo Yii::app()->request->baseUrl . '/list/architecture/uid/' . $_GET['uid'] .'/cid/1'; ?>">Livingrooms</a></li>
-                    <li id="dining"><a href="<?php echo Yii::app()->request->baseUrl . '/list/architecture/uid/' . $_GET['uid'] .'/cid/2'; ?>">Diningrooms</a></li>
-                    <li id="bed"><a href="<?php echo Yii::app()->request->baseUrl . '/list/architecture/uid/' . $_GET['uid'] .'/cid/3'; ?>">Bedrooms</a></li>
-                    <li id="bath"><a href="<?php echo Yii::app()->request->baseUrl . '/list/architecture/uid/' . $_GET['uid'] .'/cid/4'; ?>">Bathrooms</a></li>
-                    <li id="kitchens"><a href="<?php echo Yii::app()->request->baseUrl . '/list/architecture/uid/' . $_GET['uid'] .'/cid/5'; ?>">Kitchens</a></li>
-                    <li id="outdoor"><a href="<?php echo Yii::app()->request->baseUrl . '/list/architecture/uid/' . $_GET['uid'] .'/cid/6'; ?>">Outdoor</a></li>
-                    <li id="pools"><a href="<?php echo Yii::app()->request->baseUrl . '/list/architecture/uid/' . $_GET['uid'] .'/cid/7'; ?>">Pools</a></li>
-                    <li id="garden"><a href="<?php echo Yii::app()->request->baseUrl . '/list/architecture/uid/' . $_GET['uid'] .'/cid/8'; ?>">Garden</a></li>
-                    <li id="facades"><a href="<?php echo Yii::app()->request->baseUrl . '/list/architecture/uid/' . $_GET['uid'] .'/cid/9'; ?>">Facades</a></li>
-                </ul>
-                <div class="container row-fluid">
-                    <?php
-                    $condition = (($_GET['cid'] == 0) ? 'category > 0' : 'category = ' . $_GET['cid'] . ' AND userid =' . $_GET['uid']);
+        <div class="container-fluid" style="margin: 0 35px;">
+            <div class="row-fluid">
+                <div class="span12">
+                    <div class="row-fluid">
+                        <div class="span9">
+                            <div id="title-listing" style="margin-bottom: 20px;">
+                                <div class="property-list-title" >Home Ideas By <?php echo $model->fname . " " . $model->lname; ?></div>
+                            </div>
+                            <div class="row-fluid" style="margin-left: 0; margin-bottom: 20px;">
+                                <div class="span12">
+                                    <div class="span8">
+                                        <div class="span4">
+                                            <i class="icon-phone icon_gap"></i><?php echo $model->phone; ?>
+                                        </div>
+                                        <div class="span4">
+                                            <i class="icon-envelope icon_gap"></i><?php echo $model->email; ?>
+                                        </div>
+                                    </div>
+                                    <div class="span4" style="text-align: right;">
+                                        <div class="addthis_sharing_toolbox"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <ul class="nav nav-tabs">
+                                <li id="all" class="active">
+                                    <a href="<?php echo Yii::app()->request->baseUrl . '/list/architecture/uid/' . $_GET['uid'] .'/cid/0'; ?>">All</a>
+                                </li>
+                                <li id="living"><a href="<?php echo Yii::app()->request->baseUrl . '/list/architecture/uid/' . $_GET['uid'] .'/cid/1'; ?>">Livingrooms</a></li>
+                                <li id="dining"><a href="<?php echo Yii::app()->request->baseUrl . '/list/architecture/uid/' . $_GET['uid'] .'/cid/2'; ?>">Diningrooms</a></li>
+                                <li id="bed"><a href="<?php echo Yii::app()->request->baseUrl . '/list/architecture/uid/' . $_GET['uid'] .'/cid/3'; ?>">Bedrooms</a></li>
+                                <li id="bath"><a href="<?php echo Yii::app()->request->baseUrl . '/list/architecture/uid/' . $_GET['uid'] .'/cid/4'; ?>">Bathrooms</a></li>
+                                <li id="kitchens"><a href="<?php echo Yii::app()->request->baseUrl . '/list/architecture/uid/' . $_GET['uid'] .'/cid/5'; ?>">Kitchens</a></li>
+                                <li id="outdoor"><a href="<?php echo Yii::app()->request->baseUrl . '/list/architecture/uid/' . $_GET['uid'] .'/cid/6'; ?>">Outdoor</a></li>
+                                <li id="pools"><a href="<?php echo Yii::app()->request->baseUrl . '/list/architecture/uid/' . $_GET['uid'] .'/cid/7'; ?>">Pools</a></li>
+                                <li id="garden"><a href="<?php echo Yii::app()->request->baseUrl . '/list/architecture/uid/' . $_GET['uid'] .'/cid/8'; ?>">Garden</a></li>
+                                <li id="facades"><a href="<?php echo Yii::app()->request->baseUrl . '/list/architecture/uid/' . $_GET['uid'] .'/cid/9'; ?>">Facades</a></li>
+                            </ul>
+                            <div class="container row-fluid">
+                                <?php
+                                $condition = (($_GET['cid'] == 0) ? 'category > 0' : 'category = ' . $_GET['cid'] . ' AND userid =' . $_GET['uid']);
 
-                    $this->widget('zii.widgets.CListView', array(
-                        'id' => 'list_architecture',
-                        'dataProvider'=>new CActiveDataProvider('Homeideas', array('criteria'=>array('condition'=> $condition,'order' => 'id DESC'),'pagination'=>array('pageSize'=>5))),
-                        'itemView' => '_architecture_list_view',
-                        'template'=>'{items}<div class="span12" style="margin-left: 0">{pager}</div>'
-                    ));
-                    ?>
+                                $this->widget('zii.widgets.CListView', array(
+                                    'id' => 'list_architecture',
+                                    'dataProvider'=>new CActiveDataProvider('Homeideas', array('criteria'=>array('condition'=> $condition,'order' => 'id DESC'),'pagination'=>array('pageSize'=>5))),
+                                    'itemView' => '_architecture_list_view',
+                                    'template'=>'{items}<div class="span12" style="margin-left: 0">{pager}</div>'
+                                ));
+                                ?>
+                            </div>
+                        </div>
+                        <!--Advertiesments--->
+                        <div class="span3 hidden-phone">
+                            <div class="row-fluid">
+                                <div calss="ads_placeholder span6" style="padding-top: 30px;">
+                                    <img src="<?php echo Yii::app()->request->baseUrl; ?>/images/ad.jpg" alt="advertiesment"/>
+                                </div>
+                                <div calss="ads_placeholder span6" style="padding-top: 20px;">
+                                    <img src="<?php echo Yii::app()->request->baseUrl; ?>/images/Advertise-Here.jpg" alt="advertiesment"/>
+                                </div>
+                                <div calss="ads_placeholder span6"  style="padding-top: 20px;">
+                                    <img src="<?php echo Yii::app()->request->baseUrl; ?>/images/zillow.png" alt="advertiesment"/>
+                                </div>
+                                <div calss="ads_placeholder_large span6"  style="padding-top: 20px;">
+                                    <img src="<?php echo Yii::app()->request->baseUrl; ?>/images/ad_large.jpg" alt="advertiesment"/>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
-            <!--Advertiesments--->
-            <div class="span3 hidden-phone hidden-tablet">
-                <div class="row-fluid">
-                    <div calss="ads_placeholder span6" style="padding-top: 30px;">
-                        <img src="<?php echo Yii::app()->request->baseUrl; ?>/images/ad.jpg" alt="advertiesment"/>
-                    </div>
-                    <div calss="ads_placeholder span6" style="padding-top: 20px;">
-                        <img src="<?php echo Yii::app()->request->baseUrl; ?>/images/Advertise-Here.jpg" alt="advertiesment"/>
-                    </div>
-                    <div calss="ads_placeholder span6"  style="padding-top: 20px;">
-                        <img src="<?php echo Yii::app()->request->baseUrl; ?>/images/zillow.png" alt="advertiesment"/>
-                    </div>
-                    <div calss="ads_placeholder_large span6"  style="padding-top: 20px;">
-                        <img src="<?php echo Yii::app()->request->baseUrl; ?>/images/ad_large.jpg" alt="advertiesment"/>
-                    </div>
-                </div>
-            </div>
+        </div>
         <?php $this->endWidget(); ?>
     </div>
 </div><!-- /.content-wrapper -->
