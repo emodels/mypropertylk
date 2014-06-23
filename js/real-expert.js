@@ -26,19 +26,19 @@ jQuery(document).ready(function($) {
 				list:'.jcontainer',
 				item:'.span3',
 				animation:1000,
-				wrap:'circular',
+				wrap:'circular'
 			});
-			
+
 			$('.jcarousel').jcarouselAutoscroll({
 				target:'+=1',
-				interval:5000,
+				interval:5000
 			});
-			
+
 			$('.jcarousel-control-prev').jcarouselControl({
-				target:'-=1',
+				target:'-=1'
 			});
 			$('.jcarousel-control-next').jcarouselControl({
-				target:'+=1',
+				target:'+=1'
 			});
 		});
 		
@@ -46,14 +46,14 @@ jQuery(document).ready(function($) {
 			$('.partners-logo-wrapper').jcarousel({
 				list:'.partner-list',
 				item:'.partner-item',
-				animation:600,
+				animation:600
 			});
 			
 			$('.partner-prev').jcarouselControl({
-				target:'-=1',
+				target:'-=1'
 			});
 			$('.partner-next').jcarouselControl({
-				target:'+=1',
+				target:'+=1'
 			});
 		});
 		

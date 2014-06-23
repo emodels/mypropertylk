@@ -355,6 +355,18 @@
                                 </div>
                             </div>
                         </div>
+                        <style type="text/css">
+                            .jcarousel{
+                                height: 500px;
+                            }
+                            .jcontainer{
+                                width: 2100px;
+                            }
+
+                            .jcarousel .span3{
+                                height: 500px;
+                            }
+                        </style>
                         <div id="property_info">
                             <div class="carousel-wrapper">
                                 <div id="recent-title-listing">
@@ -377,7 +389,7 @@
                                     </div>
                                 </div><!-- /#title-listing -->
                                 <div class="jcarousel">
-                                    <div class="row-fluid">
+                                    <!--<div class="row-fluid">-->
                                         <div class="jcontainer">
                                             <?php
                                             $condition = '(type = 1 OR type = 2 OR type = 3) AND status = 1';
@@ -400,8 +412,7 @@
                                                             </div>
                                                         </div><!-- /.property-images -->
                                                         <div class="property-attribute">
-                                                            <h3 class="attribute-title"><a href="<?php echo Yii::app()->baseUrl . '/list/detail?pid=' .$data->pid;?>" title="<?php echo $data->pid; ?>" ><?php echo ucwords($data->number) . ', ' . ucwords($data->streetaddress) . ', '. ucwords($data->areaname);?></a></h3>
-                                                            <span class="attribute-city"><?php echo $data->townname; ?></span>
+                                                            <h3 class="attribute-title text-center"><a href="<?php echo Yii::app()->baseUrl . '/list/detail?pid=' .$data->pid;?>"><?php echo $data->townname; ?></a></h3>
                                                             <div class="attribute-price">
                                                                     <span class="attr-pricing"><sup class="price-curr">Rs.</sup>
                                                                         <?php
@@ -427,7 +438,7 @@
                                                 </div>
                                             <?php } ?>
                                         </div><!-- jcontainer -->
-                                    </div>
+                                    <!--</div>-->
                                 </div><!-- /.jcarousel -->
                             </div><!-- /.container -->
                         </div>

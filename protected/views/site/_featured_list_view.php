@@ -30,8 +30,7 @@
         </div>
     </div><!-- /.property-images -->
     <div class="property-attribute">
-        <h3 class="attribute-title"><a href="<?php echo Yii::app()->baseUrl . '/list/detail?pid=' .$data->pid;?>" title="<?php echo $data->pid; ?>" ><?php echo ucwords($data->number) . ', ' . ucwords($data->streetaddress) . ', '. ucwords($data->areaname) ; ?></a></h3>
-        <span class="attribute-city"><?php echo $data->townname; ?></span>
+        <h3 class="attribute-title text-center"><a href="<?php echo Yii::app()->baseUrl . '/list/detail?pid=' .$data->pid;?>"><?php echo $data->townname; ?></a></h3>
         <div class="attribute-price">
             <span class="attr-pricing"><sup class="price-curr">Rs.</sup>
                 <?php
