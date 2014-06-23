@@ -33,7 +33,7 @@ class AddUserAction extends CAction
             }
             else{
 
-                $model->parentuser = Yii::app()->user->id;
+                $model->parentuser = ((Yii::app()->user->usertype == 0) ? 0 : Yii::app()->user->id);
                 $model->status = 1;
                 $model->userimage = CUploadedFile::getInstance($model, 'userimage');
 
