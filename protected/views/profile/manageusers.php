@@ -81,9 +81,15 @@
     <div class="span12" style="margin-left: 0 ">
         <div class="container row-fluid" style="margin-left: 0">
             <?php
+            if (Yii::app()->user->usertype == 0) {
+                $condition = 'usertype != 0';
+            } else {
+                $condition = 'parentuser = ' . Yii::app()->user->id;
+            }
+
             $this->widget('zii.widgets.CListView', array(
                 'id' => 'list_user',
-                'dataProvider'=>new CActiveDataProvider('User', array('criteria'=>array('condition'=>'usertype!=0','order' => 'id DESC'),'pagination'=>array('pageSize'=>5))),
+                'dataProvider'=>new CActiveDataProvider('User', array('criteria'=>array('condition'=>$condition,'order' => 'id DESC'),'pagination'=>array('pageSize'=>5))),
                 'itemView' => '_user_list_view',
                 'template'=>'{items}<div class="span12"></div>{pager}<div class="span12"></div>'
             ));

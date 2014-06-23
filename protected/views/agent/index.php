@@ -48,7 +48,7 @@
         </div>
     </div>
     <div class="span10 hidden-phone" style="text-align: center;">
-        <?php if ($model->id != $model->parentuser && $model->parentuser != 1) {?>
+        <?php if ($model->parentuser > 0) {?>
             <div>
                 <img src="<?php echo Yii::app()->request->baseUrl. '/upload/userimages/' . $parent->userimage ;?> " style="width: 90px; height: 100px; border: solid 1px silver; padding: 3px;">
                 <h2>You are a member of <?php echo ucwords($parent->fname); ?></h2>
