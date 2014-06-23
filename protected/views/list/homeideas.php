@@ -79,54 +79,62 @@
             ),
             'htmlOptions'=>array('class'=>'form-horizontal'),
         )); ?>
-            <div class="span9">
-                <div id="title-listing" class="container" style="margin-left: 25px">
-                    <div class="property-list-title">Home Ideas</div>
-                </div>
-                <ul class="nav nav-tabs" style="margin-left: 25px;">
-                    <li id="all" class="active">
-                        <a href="<?php echo Yii::app()->request->baseUrl; ?>/list/homeideas/cid/0">All</a>
-                    </li>
-                    <li id="living"><a href="<?php echo Yii::app()->request->baseUrl; ?>/list/homeideas/cid/1">Livingrooms</a></li>
-                    <li id="dining"><a href="<?php echo Yii::app()->request->baseUrl; ?>/list/homeideas/cid/2">Diningrooms</a></li>
-                    <li id="bed"><a href="<?php echo Yii::app()->request->baseUrl; ?>/list/homeideas/cid/3">Bedrooms</a></li>
-                    <li id="bath"><a href="<?php echo Yii::app()->request->baseUrl; ?>/list/homeideas/cid/4">Bathrooms</a></li>
-                    <li id="kitchens"><a href="<?php echo Yii::app()->request->baseUrl; ?>/list/homeideas/cid/5">Kitchens</a></li>
-                    <li id="outdoor"><a href="<?php echo Yii::app()->request->baseUrl; ?>/list/homeideas/cid/6">Outdoor</a></li>
-                    <li id="pools"><a href="<?php echo Yii::app()->request->baseUrl; ?>/list/homeideas/cid/7">Pools</a></li>
-                    <li id="garden"><a href="<?php echo Yii::app()->request->baseUrl; ?>/list/homeideas/cid/8">Garden</a></li>
-                    <li id="facades"><a href="<?php echo Yii::app()->request->baseUrl; ?>/list/homeideas/cid/9">Facades</a></li>
-                </ul>
-                <div class="container row-fluid">
-                    <?php
-                    $condition =  (($_GET['cid'] == 0) ? 'category > 0' : 'category = ' . $_GET['cid']);
+        <div class="container-fluid"  style="margin: 0 35px;">
+            <div class="row-fluid">
+                <div class="span12">
+                    <div class="row-fluid">
+                        <div class="span9">
+                            <div id="title-listing">
+                                <div class="property-list-title">Home Ideas</div>
+                            </div>
+                            <ul class="nav nav-tabs">
+                                <li id="all" class="active">
+                                    <a href="<?php echo Yii::app()->request->baseUrl; ?>/list/homeideas/cid/0">All</a>
+                                </li>
+                                <li id="living"><a href="<?php echo Yii::app()->request->baseUrl; ?>/list/homeideas/cid/1">Livingrooms</a></li>
+                                <li id="dining"><a href="<?php echo Yii::app()->request->baseUrl; ?>/list/homeideas/cid/2">Diningrooms</a></li>
+                                <li id="bed"><a href="<?php echo Yii::app()->request->baseUrl; ?>/list/homeideas/cid/3">Bedrooms</a></li>
+                                <li id="bath"><a href="<?php echo Yii::app()->request->baseUrl; ?>/list/homeideas/cid/4">Bathrooms</a></li>
+                                <li id="kitchens"><a href="<?php echo Yii::app()->request->baseUrl; ?>/list/homeideas/cid/5">Kitchens</a></li>
+                                <li id="outdoor"><a href="<?php echo Yii::app()->request->baseUrl; ?>/list/homeideas/cid/6">Outdoor</a></li>
+                                <li id="pools"><a href="<?php echo Yii::app()->request->baseUrl; ?>/list/homeideas/cid/7">Pools</a></li>
+                                <li id="garden"><a href="<?php echo Yii::app()->request->baseUrl; ?>/list/homeideas/cid/8">Garden</a></li>
+                                <li id="facades"><a href="<?php echo Yii::app()->request->baseUrl; ?>/list/homeideas/cid/9">Facades</a></li>
+                            </ul>
+                            <div class="row-fluid span12">
+                                <?php
+                                $condition =  (($_GET['cid'] == 0) ? 'category > 0' : 'category = ' . $_GET['cid']);
 
-                    $this->widget('zii.widgets.CListView', array(
-                        'id' => 'list_homeideas',
-                        'dataProvider'=>new CActiveDataProvider('Homeideas', array('criteria'=>array('condition'=> $condition,'order' => 'id DESC'),'pagination'=>array('pageSize'=>5))),
-                        'itemView' => '_homeideas_image_list_view',
-                        'template'=>'{items}<div class="span12" style="margin-left: 0">{pager}</div>'
-                    ));
-                    ?>
+                                $this->widget('zii.widgets.CListView', array(
+                                    'id' => 'list_homeideas',
+                                    'dataProvider'=>new CActiveDataProvider('Homeideas', array('criteria'=>array('condition'=> $condition,'order' => 'id DESC'),'pagination'=>array('pageSize'=>5))),
+                                    'itemView' => '_homeideas_image_list_view',
+                                    'template'=>'{items}<div class="row-fluid span12" style="margin-left: 0;">{pager}</div>'
+                                ));
+                                ?>
+                            </div>
+                        </div>
+                        <!--Advertiesments--->
+                        <div class="span3 hidden-phone">
+                            <div class="row-fluid">
+                                <div calss="ads_placeholder span6" style="padding-top: 30px;">
+                                    <img src="<?php echo Yii::app()->request->baseUrl; ?>/images/ad.jpg" alt="advertiesment"/>
+                                </div>
+                                <div calss="ads_placeholder span6" style="padding-top: 20px;">
+                                    <img src="<?php echo Yii::app()->request->baseUrl; ?>/images/Advertise-Here.jpg" alt="advertiesment"/>
+                                </div>
+                                <div calss="ads_placeholder span6"  style="padding-top: 20px;">
+                                    <img src="<?php echo Yii::app()->request->baseUrl; ?>/images/zillow.png" alt="advertiesment"/>
+                                </div>
+                                <div calss="ads_placeholder_large span6"  style="padding-top: 20px;">
+                                    <img src="<?php echo Yii::app()->request->baseUrl; ?>/images/ad_large.jpg" alt="advertiesment"/>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
-            <!--Advertiesments--->
-            <div class="span3 hidden-phone hidden-tablet">
-                <div class="row-fluid">
-                    <div calss="ads_placeholder span6" style="padding-top: 30px;">
-                        <img src="<?php echo Yii::app()->request->baseUrl; ?>/images/ad.jpg" alt="advertiesment"/>
-                    </div>
-                    <div calss="ads_placeholder span6" style="padding-top: 20px;">
-                        <img src="<?php echo Yii::app()->request->baseUrl; ?>/images/Advertise-Here.jpg" alt="advertiesment"/>
-                    </div>
-                    <div calss="ads_placeholder span6"  style="padding-top: 20px;">
-                        <img src="<?php echo Yii::app()->request->baseUrl; ?>/images/zillow.png" alt="advertiesment"/>
-                    </div>
-                    <div calss="ads_placeholder_large span6"  style="padding-top: 20px;">
-                        <img src="<?php echo Yii::app()->request->baseUrl; ?>/images/ad_large.jpg" alt="advertiesment"/>
-                    </div>
-                </div>
-            </div>
+        </div>
         <?php $this->endWidget(); ?>
     </div>
 </div><!-- /.content-wrapper -->
