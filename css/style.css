@@ -3155,8 +3155,13 @@ a img.aligncenter {
 		margin:20px 0;
 	}
 
-	#property_list img, .property-item img{
-		width:100%;
+    #property_list .property-meta .span4{
+        width: 33.3%;
+        float: left;
+    }
+
+    #property_list img, .property-item img{
+		width:auto;
 	}
 	
 	.flexslider .slides img {
@@ -3553,8 +3558,13 @@ a img.aligncenter {
 		display:none;
 	}
 
-	#property_list img, .property-item img{
-		width:100%;
+    #property_list .property-meta .span4{
+        width: 33.3%;
+        float: left;
+    }
+
+    #property_list img, .property-item img{
+		width:auto;
 	}
 	
 	.agent-thumbnail{

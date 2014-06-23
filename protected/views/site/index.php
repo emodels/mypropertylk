@@ -333,7 +333,7 @@
                                             <?php
                                             if (isset($_GET['type'])) {
                                                 if ($_GET['type'] == "all") {
-                                                    $condition = '(type = 1 OR type = 2 OR type = 3) AND pricetype = 3 AND status = 1 ';
+                                                    $condition = 'pricetype = 3 AND status = 1 ';
                                                 } elseif($_GET['type'] == "buy"){
                                                     $condition = '(type = 1 OR type = 2) AND pricetype = 3 AND status = 1';
                                                 } elseif($_GET['type'] == "rent"){
@@ -341,13 +341,13 @@
                                                 }
                                             }
                                             else {
-                                                $condition = '(type = 1 OR type = 2 OR type = 3) AND pricetype = 3 AND status = 1 ';
+                                                $condition = 'pricetype = 3 AND status = 1 ';
                                             }
 
                                             $this->widget('zii.widgets.CListView', array(
                                                 'id' => 'list_featured',
-                                                'dataProvider'=>new CActiveDataProvider('Property', array('criteria'=>array('condition'=> $condition,'order' => 'entrydate DESC LIMIT 8'),'pagination'=>false)),
-                                                'itemView' => '_featured_list_view',
+                                                'dataProvider'=>new CActiveDataProvider('Property', array('criteria'=>array('condition'=> $condition,'order' => 'entrydate DESC LIMIT 20'),'pagination'=>false)),
+                                                'itemView' => '_featured_list_view'
                                             ));
                                             ?>
                                         </div>

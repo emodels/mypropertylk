@@ -3,23 +3,21 @@
     <div class="property-images">
         <a href="<?php echo Yii::app()->baseUrl . '/list/detail?pid=' .$data->pid;?>" title="<?php echo $data->pid; ?>">
             <?php
-            if (($data->type == 1 || $data->type == 2) && $data->status == 1) {?>
+            if (($data->type == 1 || $data->type == 2 || $data->type == 4) && $data->status == 1) {?>
                 <img width="540" height="360" src="<?php echo Yii::app()->baseUrl . '/upload/propertyimages/'. ((count($data->propertyimages) > 0) ? $data->propertyimages[0]->imagename : 'prop_no_img.jpg') ?>" class="status-35 wp-post-image" alt="<?php echo $data->pid; ?>" title="<?php echo $data->pid; ?>" />
-            <?php } elseif ($data->type == 3 && $data->status == 1) { ?>
+            <?php } elseif (($data->type == 3  || $data->type == 5) && $data->status == 1) { ?>
                 <img width="540" height="360" src="<?php echo Yii::app()->baseUrl . '/upload/propertyimages/'. ((count($data->propertyimages) > 0) ? $data->propertyimages[0]->imagename : 'prop_no_img.jpg') ?>" class="status-28 wp-post-image" alt="<?php echo $data->pid; ?>" title="<?php echo $data->pid; ?>" />
             <?php } ?>
 
             <?php if ($data->status == 2) { ?>
-
                 <img width="540" height="360" src="<?php echo Yii::app()->baseUrl . '/upload/propertyimages/'. ((count($data->propertyimages) > 0) ? $data->propertyimages[0]->imagename : 'prop_no_img.jpg') ?>" class="status-sold wp-post-image" alt="<?php echo $data->pid; ?>" title="<?php echo $data->pid; ?>" />
             <?php }?>
-
         </a>
         <div>
             <?php
-            if (($data->type == 1 || $data->type == 2) && $data->status == 1) {
+            if (($data->type == 1 || $data->type == 2 || $data->type == 4) && $data->status == 1) {
                 echo "<div class='property-status status-35-text'> On Sale</div>";
-            } elseif ($data->type == 3 && $data->status == 1) {
+            } elseif (($data->type == 3 || $data->type == 5) && $data->status == 1) {
                 echo "<div class='property-status status-28-text'> For Rent</div>";
             } ?>
             <?php
@@ -34,9 +32,9 @@
         <div class="attribute-price">
             <span class="attr-pricing"><sup class="price-curr">Rs.</sup>
                 <?php
-                if ($data->type == 1 || $data->type == 2) {
+                if ($data->type == 1 || $data->type == 2 || $data->type == 4) {
                     echo Yii::app()->numberFormatter->format("#,##0.00", $data->price);
-                } elseif ($data->type == 3) {
+                } elseif ($data->type == 3 || $data->type == 5) {
                     echo Yii::app()->numberFormatter->format("#,##0.00", $data->monthlyrent);
                 }
                 ?>
