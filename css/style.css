@@ -638,7 +638,7 @@ area[title]{
 	width:100%;
 	color:#000;
 	text-align:left;
-    padding-top: 70px;
+    padding-top: 50px;
 }
 
 .search-wrapper .search-title {
@@ -675,7 +675,7 @@ area[title]{
 
 .search-form-v1 p.search-info{
 	font-weight:normal;
-	font-size:13px !important;
+	font-size:12px !important;
 	color:#000 !important;
 }
 

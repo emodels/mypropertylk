@@ -29,8 +29,12 @@ class SiteController extends Controller
 	{
 		// renders the view file 'protected/views/site/index.php'
 		// using the default layout 'protected/views/layouts/main.php'
+        unset(Yii::app()->session['search']);
+
         $model = new Property();
         $modeltype = new Propertytyperelation();
+
+        $model->type = 'buy';
 
         $this->render('index', array('model' => $model, 'modeltype'=>$modeltype));
 		//$this->render('index');

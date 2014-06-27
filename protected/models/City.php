@@ -1,22 +1,19 @@
 <?php
 
 /**
- * This is the model class for table "district".
+ * This is the model class for table "city".
  *
- * The followings are the available columns in table 'district':
+ * The followings are the available columns in table 'city':
  * @property integer $id
  * @property string $name
- * @property integer $code
- *
- * The followings are the available model relations:
- * @property Property[] $properties
+ * @property integer $district
  */
-class District extends CActiveRecord
+class City extends CActiveRecord
 {
 	/**
 	 * Returns the static model of the specified AR class.
 	 * @param string $className active record class name.
-	 * @return District the static model class
+	 * @return City the static model class
 	 */
 	public static function model($className=__CLASS__)
 	{
@@ -28,7 +25,7 @@ class District extends CActiveRecord
 	 */
 	public function tableName()
 	{
-		return 'district';
+		return 'city';
 	}
 
 	/**
@@ -39,12 +36,12 @@ class District extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('name, code', 'required'),
-			array('code', 'numerical', 'integerOnly'=>true),
-			array('name', 'length', 'max'=>100),
+			array('name, district', 'required'),
+			array('district', 'numerical', 'integerOnly'=>true),
+			array('name', 'length', 'max'=>200),
 			// The following rule is used by search().
 			// Please remove those attributes that should not be searched.
-			array('id, name, code', 'safe', 'on'=>'search'),
+			array('id, name, district', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -56,7 +53,6 @@ class District extends CActiveRecord
 		// NOTE: you may need to adjust the relation name and the related
 		// class name for the relations automatically generated below.
 		return array(
-			'properties' => array(self::HAS_MANY, 'Property', 'district'),
 		);
 	}
 
@@ -68,7 +64,7 @@ class District extends CActiveRecord
 		return array(
 			'id' => 'ID',
 			'name' => 'Name',
-			'code' => 'Code',
+			'district' => 'District',
 		);
 	}
 
@@ -85,7 +81,7 @@ class District extends CActiveRecord
 
 		$criteria->compare('id',$this->id);
 		$criteria->compare('name',$this->name,true);
-		$criteria->compare('code',$this->code);
+		$criteria->compare('district',$this->district);
 
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,

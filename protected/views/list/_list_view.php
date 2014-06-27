@@ -1,5 +1,5 @@
 <div class="container-fluid" style="padding: 0;">
-    <div class="row-fluid" style="padding-top: 15px;">
+    <div class="row-fluid" style="padding-top: 0px;">
         <div class="span12 property-box">
             <div class="row-fluid">
                 <div class="span12 heading_buy" id="box-heading" style="height: auto">
@@ -41,7 +41,7 @@
                     <div>
                         <?php if($data->type != 2 ){?>
                             <img src="<?php echo Yii::app()->request->baseUrl; ?>/images/beds.png"/>&nbsp;<?php echo $data->bedrooms;?>&nbsp;
-                            <img src="<?php echo Yii::app()->request->baseUrl; ?>/images/beds.png"/>&nbsp;<?php echo $data->bathrooms;?>&nbsp;
+                            <img src="<?php echo Yii::app()->request->baseUrl; ?>/images/baths.png"/>&nbsp;<?php echo $data->bathrooms;?>&nbsp;
                             <img src="<?php echo Yii::app()->request->baseUrl; ?>/images/parking_spaces.png"/>&nbsp;<?php echo $data->parkingspaces;?>
                         <?php } ?>
                     </div>
@@ -57,8 +57,8 @@
         </div>
     </div>
 </div>
-<div class="row-fluid" style="margin-top: 15px;">
-    <?php if($index % 2 == 0 && $index != 0){?>
+<div class="row-fluid" style="margin: 15px 0;">
+    <?php if($index % 3 == 0 && $index != 0){?>
         <img src="<?php echo Yii::app()->request->baseUrl; ?>/images/ad_property_between.gif" alt="advertiesment"/>
     <?php } ?>
 </div>

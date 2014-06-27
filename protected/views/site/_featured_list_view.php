@@ -28,7 +28,7 @@
         </div>
     </div><!-- /.property-images -->
     <div class="property-attribute">
-        <h3 class="attribute-title text-center"><a href="<?php echo Yii::app()->baseUrl . '/list/detail?pid=' .$data->pid;?>"><?php echo $data->townname; ?></a></h3>
+        <h3 class="attribute-title text-center"><a href="<?php echo Yii::app()->baseUrl . '/list/detail?pid=' .$data->pid;?>"><?php echo ucwords($data->townname); ?></a></h3>
         <div class="attribute-price">
             <span class="attr-pricing"><sup class="price-curr">Rs.</sup>
                 <?php

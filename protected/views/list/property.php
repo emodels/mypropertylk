@@ -39,7 +39,7 @@
         jQuery('.tooltip').tooltipster();
 
         $('#headline_wrapper').hide();
-        if (<?php echo $_GET['type']; ?> == buy) {
+        if ('<?php echo $_GET['type']; ?>' == 'buy') {
             $('#menu-primary-menu li').removeClass('current_page_item');
             $('#menu-primary-menu li#buy').addClass('current_page_item');
             $('.heading_buy').css('background-color', '#660099');
@@ -47,20 +47,58 @@
 
         }
 
-        if (<?php echo $_GET['type']?> == rent) {
+        if ('<?php echo $_GET['type']?>' == 'rent') {
             $('#menu-primary-menu li').removeClass('current_page_item');
             $('#menu-primary-menu li#rent').addClass('current_page_item');
             $('.heading_buy').css('background-color', '#009900');
         }
 
-        if (<?php echo $_GET['type']?> == sold) {
+        if ('<?php echo $_GET['type']?>' == 'sold') {
             $('#menu-primary-menu li').removeClass('current_page_item');
             $('#menu-primary-menu li#sold').addClass('current_page_item');
             $('.heading_buy').css('background-color', '#CC0000');
         }
 
+    });
 
-    })
+    function Refine_Search(){
+        alert("refine");
+        //$('select').val('0');
+    }
+
+    function SearchProperty(district){
+
+        var array_search = [];
+
+        array_search.push({name: 'search[type]', value: '<?php echo $_GET['type']; ?>'});
+        array_search.push({name: 'search[town]', value: $("#townname").val()});
+        array_search.push({name: 'search[category]', value: $("#prop_type").val()});
+        array_search.push({name: 'search[minbed]', value: $("#min_bed").val()});
+        array_search.push({name: 'search[maxbed]', value: $("#max_bed").val()});
+        array_search.push({name: 'search[minprice]', value: $("#min_price").val()});
+        array_search.push({name: 'search[maxprice]', value: $("#max_price").val()});
+        array_search.push({name: 'search[bathrooms]', value: $("#bathrooms").val()});
+        array_search.push({name: 'search[carspaces]', value: $("#carspaces").val()});
+        array_search.push({name: 'search[landsize]', value: $("#landsize").val()});
+        array_search.push({name: 'search[condition]', value: $("#condition").val()});
+        array_search.push({name: 'search[premiere]', value: $("#pricetype_0").is(':checked')});
+
+        if (district != null) {
+            array_search.push({name: 'search[district]', value: district});
+        }
+
+        $.ajax({
+            type: "POST",
+            url: '<?php echo Yii::app()->request->baseUrl; ?>/list/searchjson',
+            data: $.param(array_search),
+            success: function(data){
+                if (data == 'done'){
+                    window.document.location.replace('<?php echo Yii::app()->request->baseUrl; ?>/list/property/type/<?php echo $_GET['type']; ?>');
+                }
+            }
+        });
+    }
+
 </script>
 <style type="text/css">
 
@@ -283,275 +321,399 @@
                         <div class="row-fluid">
                             <div class="span4">
                                 <div class="row-fluid">
-                            <div id="title-listing" class="container">
-                                <div class="property-list-title" style="font-size: 18px; color: #ff0000">Refine Search By:</div>
-                            </div>
-                            <div class="span12"><a href="#" style="font-size: 12px;">clear all</a> </div>
-                            <div class="span12">
-                                <label>Location</label>
-                                <div class="span12 input-append" style="margin-left: 0;">
-                                    <?php echo $form->textField($model,'townname', array('placeholder'=>'e.g: Colombo; Colombo 08 ; Borella', 'class' => 'span10', 'id' => 'appendedDropdownButton')); ?>
-                                    <div class="btn-group">
-                                        <button class="btn dropdown-toggle" data-toggle="dropdown">
-                                            <span class="caret"></span>
-                                        </button>
-                                        <ul class="dropdown-menu">
-                                            <li><a href="#">Suggetions</a></li>
-                                            <li><a href="#">Recent Locations</a></li>
-                                            <li class="divider"></li>
-                                            <li><a href="#">Clear</a></li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="span12">
-                                <?php $this->widget('ext.bootstrap-select.TbSelect',array(
-                                    'model' => $modeltype,
-                                    'attribute' => 'typeid',
-                                    'data' => CHtml::listData(Propertytype::model()->findAll(),'id','proptype'),
-                                    'htmlOptions' => array(
-                                        'multiple' => true,
-                                        'multiple title'=> 'Property Type',
-                                        'class' => 'span10'
-                                    ),
-                                )); ?>
-                                <?php echo $form->error($modeltype, 'typeid'); ?>
+                                     <div class="form">
+                                     <?php $form=$this->beginWidget('CActiveForm', array(
+                                         'id'=>'refinrsearch',
+                                         'enableClientValidation'=>true,
+                                         'clientOptions'=>array(
+                                             'validateOnSubmit'=>true,
+                                             'validateOnChange'=>true
+                                         ),
+                                         'htmlOptions'=>array('class'=>'form-horizontal')
+                                     )); ?>
+                                         <div id="title-listing" class="container">
+                                             <div class="property-list-title" style="font-size: 18px; color: #ff0000">Refine Search By:</div>
+                                         </div>
+                                         <div class="span12" style="display: none">
+                                             <label>Location</label>
+                                             <div class="span12" style="margin-left: 0;">
+                                                 <?php echo $form->textField($model,'townname', array('placeholder'=>'e.g: Colombo; Anuradhapura; ', 'class' => 'span10', 'id' => 'townname')); ?>
+                                             </div>
+                                         </div>
+                                         <div class="span12">
+                                             <?php
+                                             $this->widget('ext.bootstrap-select.TbSelect',array(
+                                                 'model' => $modeltype,
+                                                 'attribute' => 'typeid',
+                                                 'data' => CHtml::listData(Propertytype::model()->findAll(),'id','proptype'),
+                                                 'htmlOptions' => array(
+                                                     'multiple' => true,
+                                                     'multiple title'=> 'Property Type',
+                                                     'class' => 'span10',
+                                                     'id' => 'prop_type'
+                                                 ),
+                                             )); ?>
+                                             <?php echo $form->error($modeltype, 'typeid'); ?>
 
-                            </div>
-                            <div class="span12">
-                                <label>Min. Land</label>
-                                <div class="span11"  style="margin-left: 0;">
-                                    <?php echo $form->textField($model,'landsize', array('placeholder'=>'Min Size', 'class' => 'span11')); ?>
-                                </div>
-                            </div>
-                            <div class="span12">
-                                <div class="row-fluid">
-                                    <div class="span6">
-                                        <label>Min. Price</label>
-                                        <div class="btn-group">
-                                            <button class="btn">Any</button>
-                                            <button class="btn dropdown-toggle" data-toggle="dropdown">
-                                                <span class="caret"></span>
-                                            </button>
-                                            <ul class="dropdown-menu" style="height: 250px; overflow-y: auto;">
-                                                <li><a href="#">Any</a></li>
-                                                <li class="divider"></li>
-                                                <li><a href="#">50,000</a></li>
-                                                <li><a href="#">100,000</a></li>
-                                                <li><a href="#">150,000</a></li>
-                                                <li><a href="#">200,000</a></li>
-                                                <li><a href="#">250,000</a></li>
-                                                <li><a href="#">300,000</a></li>
-                                                <li><a href="#">350,000</a></li>
-                                                <li><a href="#">400,000</a></li>
-                                                <li><a href="#">450,000</a></li>
-                                                <li><a href="#">500,000</a></li>
-                                                <li><a href="#">550,000</a></li>
-                                                <li><a href="#">600,000</a></li>
-                                                <li><a href="#">650,000</a></li>
-                                                <li><a href="#">700,000</a></li>
-                                                <li><a href="#">750,000</a></li>
-                                                <li><a href="#">800,000</a></li>
-                                                <li><a href="#">8500,000</a></li>
-                                                <li><a href="#">900,000</a></li>
-                                                <li><a href="#">950,000</a></li>
-                                                <li><a href="#">1,000,000</a></li>
-                                                <li><a href="#">1,250,000</a></li>
-                                                <li><a href="#">1,500,000</a></li>
-                                                <li><a href="#">1,750,000</a></li>
-                                                <li><a href="#">2,000,000</a></li>
-                                                <li><a href="#">2,500,000</a></li>
-                                                <li><a href="#">3,000,000</a></li>
-                                                <li><a href="#">4,000,000</a></li>
-                                            </ul>
+                                         </div>
+                                         <div class="span12">
+                                             <label>Min. Land</label>
+                                             <div class="span11"  style="margin-left: 0;">
+                                                 <?php echo $form->textField($model,'landsize', array('placeholder'=>'Min Size', 'class' => 'span11', 'id' => 'landsize', 'value' => $array_searchpara->landsize)); ?>
+                                             </div>
+                                         </div>
+                                         <div class="span12">
+                                             <div class="row-fluid">
+                                                 <div class="span6">
+                                                     <label>Min. Price</label>
+                                                     <?php
+                                                     $array_minprice= array(0 => 'Any',
+                                                         '50,000' => '50,000',
+                                                         '100,000' => '100,000',
+                                                         '150,000' => '150,000',
+                                                         '200,000' => '200,000',
+                                                         '250,000' => '250,000',
+                                                         '300,000' => '300,000',
+                                                         '350,000' => '350,000',
+                                                         '400,000' => '400,000',
+                                                         '450,000' => '450,000',
+                                                         '500,000' => '500,000',
+                                                         '550,000' => '550,000',
+                                                         '600,000' => '600,000',
+                                                         '650,000' => '650,000',
+                                                         '700,000' => '700,000',
+                                                         '750,000' => '750,000',
+                                                         '800,000' => '800,000',
+                                                         '8500,000' => '8500,000',
+                                                         '900,000' => '900,000',
+                                                         '950,000' => '950,000',
+                                                         '1,000,000' => '1,000,000',
+                                                         '1,250,000' => '1,250,000',
+                                                         '1,500,000' => '1,500,000',
+                                                         '1,750,000' => '1,750,000',
+                                                         '2,000,000' => '2,000,000',
+                                                         '2,500,000' => '2,500,000',
+                                                         '3,000,000' => '3,000,000',
+                                                         '4,000,000' => '4,000,000',);
+                                                     ?>
+                                                     <?php $this->widget('ext.bootstrap-select.TbSelect',array(
+                                                         'name' => 'min_price',
+                                                         'value' => $array_searchpara->minprice,
+                                                         'data' => $array_minprice,
+                                                         'options'=> array('width'=>'fit'),
+                                                         'htmlOptions'=> array('id' => 'min_price')
+                                                     )); ?>
+                                                 </div>
+                                                 <div class="span6">
+                                                     <label>Max. Price</label>
+                                                     <?php
+                                                     $array_maxprice= array(0 => 'Any',
+                                                         '50,000' => '50,000',
+                                                         '100,000' => '100,000',
+                                                         '150,000' => '150,000',
+                                                         '200,000' => '200,000',
+                                                         '250,000' => '250,000',
+                                                         '300,000' => '300,000',
+                                                         '350,000' => '350,000',
+                                                         '400,000' => '400,000',
+                                                         '450,000' => '450,000',
+                                                         '500,000' => '500,000',
+                                                         '550,000' => '550,000',
+                                                         '600,000' => '600,000',
+                                                         '650,000' => '650,000',
+                                                         '700,000' => '700,000',
+                                                         '750,000' => '750,000',
+                                                         '800,000' => '800,000',
+                                                         '8500,000' => '8500,000',
+                                                         '900,000' => '900,000',
+                                                         '950,000' => '950,000',
+                                                         '1,000,000' => '1,000,000',
+                                                         '1,250,000' => '1,250,000',
+                                                         '1,500,000' => '1,500,000',
+                                                         '1,750,000' => '1,750,000',
+                                                         '2,000,000' => '2,000,000',
+                                                         '2,500,000' => '2,500,000',
+                                                         '3,000,000' => '3,000,000',
+                                                         '4,000,000' => '4,000,000',);
+                                                     ?>
+                                                     <?php $this->widget('ext.bootstrap-select.TbSelect',array(
+                                                         'name' => 'max_price',
+                                                         'value' => $array_searchpara->maxprice,
+                                                         'data' => $array_maxprice,
+                                                         'options'=> array('width'=>'fit'),
+                                                         'htmlOptions'=> array('id' => 'max_price')
+                                                     ));
+                                                     ?>
+                                                 </div>
+                                             </div>
+                                         </div>
+                                         <div class="span12" style="padding-top: 10px;">
+                                             <div class="span6">
+                                                 <label>Min. Beds</label>
+                                                 <?php
+                                                 $array_minbedrooms= array(0 => 'Any',
+                                                     1 => '1',
+                                                     2 => '2',
+                                                     3 => '3',
+                                                     4 => '4',
+                                                     5 => '5',
+                                                     6 => '6',
+                                                     7 => '7',
+                                                     8 => '8',
+                                                     9 => '9',
+                                                     10 => '10');
+                                                 ?>
+                                                 <?php $this->widget('ext.bootstrap-select.TbSelect',array(
+                                                     'name' => 'min_beds',
+                                                     'value' => $array_searchpara->minbed,
+                                                     'data' => $array_minbedrooms,
+                                                     'options'=> array('width'=>'fit'),
+                                                     'htmlOptions'=> array('id' => 'min_bed')
+                                                 )); ?>
+                                             </div>
+                                             <div class="span6">
+                                                 <label>Max. Beds</label>
+                                                 <?php
+                                                 $array_maxbedrooms= array(0 => 'Any',
+                                                     1 => '1',
+                                                     2 => '2',
+                                                     3 => '3',
+                                                     4 => '4',
+                                                     5 => '5',
+                                                     6 => '6',
+                                                     7 => '7',
+                                                     8 => '8',
+                                                     9 => '9',
+                                                     10 => '10');
+                                                 ?>
+                                                 <?php $this->widget('ext.bootstrap-select.TbSelect',array(
+                                                     'name' => 'max_beds',
+                                                     'value' => $array_searchpara->maxbed,
+                                                     'data' => $array_maxbedrooms,
+                                                     'options'=> array('width'=>'fit'),
+                                                     'htmlOptions'=> array('id' => 'max_bed')
+                                                 )); ?>
+                                             </div>
+
+                                         </div>
+                                         <div class="span12" style="padding-top: 10px;">
+                                             <div class="span6">
+                                                 <label>Bathrooms</label>
+                                                 <?php
+                                                 $array_bathrooms= array(0 => 'Any',
+                                                     1 => '1+',
+                                                     2 => '2+',
+                                                     3 => '3+',
+                                                     4 => '4+',
+                                                     5 => '5+');
+                                                 ?>
+                                                 <?php $this->widget('ext.bootstrap-select.TbSelect',array(
+                                                     'name' => 'bathrooms',
+                                                     'value' => $array_searchpara->bathrooms,
+                                                     'data' => $array_bathrooms,
+                                                     'options'=> array('width'=>'fit'),
+                                                     'htmlOptions'=> array('id' => 'bathrooms')
+                                                 )); ?>
+                                             </div>
+                                             <div class="span6">
+                                                 <label>Car Spaces</label>
+                                                 <?php
+                                                 $array_carspaces= array(0 => 'Any',
+                                                     1 => '1+',
+                                                     2 => '2+',
+                                                     3 => '3+',
+                                                     4 => '4+',
+                                                     5 => '5+');
+                                                 ?>
+                                                 <?php $this->widget('ext.bootstrap-select.TbSelect',array(
+                                                     'name' => 'carspaces',
+                                                     'value' => $array_searchpara->carspaces,
+                                                     'data' => $array_carspaces,
+                                                     'options'=> array('width'=>'fit'),
+                                                     'htmlOptions'=> array('id' => 'carspaces')
+                                                 )); ?>
+                                             </div>
+                                         </div>
+                                         <div class="span12" style="padding-top: 10px;">
+                                             <label>New or Established</label>
+                                             <?php
+                                             $array_condition= array(0 => 'Any',
+                                                 1 => 'New Construction',
+                                                 2 => 'Established Property');
+                                             ?>
+                                             <?php $this->widget('ext.bootstrap-select.TbSelect',array(
+                                                 'name' => 'condition',
+                                                 'value' => $array_searchpara->condition,
+                                                 'data' => $array_condition,
+                                                 'options'=> array('width'=>'fit'),
+                                                 'htmlOptions'=> array('id' => 'condition')
+                                             )); ?>
+                                         </div>
+                                         <div class="span12" style="padding-top: 10px;">
+                                             <label class="checkbox">
+                                                 <?php echo $array_searchpara->premiere; ?>
+                                                 <?php echo CHtml::checkBoxList('pricetype', '', array(1 => 'Search only Premiere Properties'), array('labelOptions'=> array('class'=>'span9'))); ?>
+                                             </label>
+                                         </div>
+                                         <div class="span12" style="padding: 10px 0;">
+                                             <div class="span6">
+                                                 <a href="javascript:SearchProperty();" class="btn btn-primary">Update</a>
+                                             </div>
+                                             <div class="span6">
+                                                 <a href="javascript:Refine_Search();" style="font-size: 12px;">clear all</a>
+                                             </div>
+                                         </div>
+                                     <?php $this->endWidget(); ?>
+                                     </div>
+                                    <div calss="span12">
+                                        <div class="row-fluid  hidden-phone">
+                                            <div calss="ads_placeholder_large"  style="padding-top: 20px;">
+                                                <img src="<?php echo Yii::app()->request->baseUrl; ?>/images/add-left.jpg" alt="advertiesment"/>
+                                            </div>
                                         </div>
                                     </div>
-                                    <div class="span6">
-                                        <label>Max. Price</label>
-                                        <div class="btn-group">
-                                            <button class="btn">Any</button>
-                                            <button class="btn dropdown-toggle" data-toggle="dropdown">
-                                                <span class="caret"></span>
-                                            </button>
-                                            <ul class="dropdown-menu" style="height: 250px; overflow-y: auto;">
-                                                <li><a href="#">Any</a></li>
-                                                <li class="divider"></li>
-                                                <li><a href="#">50,000</a></li>
-                                                <li><a href="#">100,000</a></li>
-                                                <li><a href="#">150,000</a></li>
-                                                <li><a href="#">200,000</a></li>
-                                                <li><a href="#">250,000</a></li>
-                                                <li><a href="#">300,000</a></li>
-                                                <li><a href="#">350,000</a></li>
-                                                <li><a href="#">400,000</a></li>
-                                                <li><a href="#">450,000</a></li>
-                                                <li><a href="#">500,000</a></li>
-                                                <li><a href="#">550,000</a></li>
-                                                <li><a href="#">600,000</a></li>
-                                                <li><a href="#">650,000</a></li>
-                                                <li><a href="#">700,000</a></li>
-                                                <li><a href="#">750,000</a></li>
-                                                <li><a href="#">800,000</a></li>
-                                                <li><a href="#">8500,000</a></li>
-                                                <li><a href="#">900,000</a></li>
-                                                <li><a href="#">950,000</a></li>
-                                                <li><a href="#">1,000,000</a></li>
-                                                <li><a href="#">1,250,000</a></li>
-                                                <li><a href="#">1,500,000</a></li>
-                                                <li><a href="#">1,750,000</a></li>
-                                                <li><a href="#">2,000,000</a></li>
-                                                <li><a href="#">2,500,000</a></li>
-                                                <li><a href="#">3,000,000</a></li>
-                                                <li><a href="#">4,000,000</a></li>
-                                            </ul>
-                                        </div>
-                                    </div>
                                 </div>
-                            </div>
-                            <div class="span12" style="padding-top: 10px;">
-                                <div class="span6">
-                                    <label>Min. Beds</label>
-                                    <div class="btn-group">
-                                        <button class="btn">Any</button>
-                                        <button class="btn dropdown-toggle" data-toggle="dropdown">
-                                            <span class="caret"></span>
-                                        </button>
-                                        <ul class="dropdown-menu">
-                                            <li><a href="#">Any</a></li>
-                                            <li><a href="#">Studio</a></li>
-                                            <li class="divider"></li>
-                                            <li><a href="#">1</a></li>
-                                            <li><a href="#">2</a></li>
-                                            <li><a href="#">3</a></li>
-                                            <li><a href="#">4</a></li>
-                                            <li><a href="#">5</a></li>
-                                        </ul>
-                                    </div>
-                                </div>
-                                <div class="span6">
-                                    <label>Max. Beds</label>
-                                    <div class="btn-group">
-                                        <button class="btn">Any</button>
-                                        <button class="btn dropdown-toggle" data-toggle="dropdown">
-                                            <span class="caret"></span>
-                                        </button>
-                                        <ul class="dropdown-menu">
-                                            <li><a href="#">Any</a></li>
-                                            <li><a href="#">Studio</a></li>
-                                            <li class="divider"></li>
-                                            <li><a href="#">1</a></li>
-                                            <li><a href="#">2</a></li>
-                                            <li><a href="#">3</a></li>
-                                            <li><a href="#">4</a></li>
-                                            <li><a href="#">5</a></li>
-                                        </ul>
-                                    </div>
-                                </div>
-
-                            </div>
-                            <div class="span12" style="padding-top: 10px;">
-                                <div class="span6">
-                                    <label>Bathrooms</label>
-                                    <div class="btn-group">
-                                        <button class="btn">Any</button>
-                                        <button class="btn dropdown-toggle" data-toggle="dropdown">
-                                            <span class="caret"></span>
-                                        </button>
-                                        <ul class="dropdown-menu">
-                                            <li><a href="#">Any</a></li>
-                                            <li class="divider"></li>
-                                            <li><a href="#">1+</a></li>
-                                            <li><a href="#">2+</a></li>
-                                            <li><a href="#">3+</a></li>
-                                            <li><a href="#">4+</a></li>
-                                            <li><a href="#">5+</a></li>
-                                        </ul>
-                                    </div>
-                                </div>
-                                <div class="span6">
-                                    <label>Car Spaces</label>
-                                    <div class="btn-group">
-                                        <button class="btn">Any</button>
-                                        <button class="btn dropdown-toggle" data-toggle="dropdown">
-                                            <span class="caret"></span>
-                                        </button>
-                                        <ul class="dropdown-menu">
-                                            <li><a href="#">Any</a></li>
-                                            <li class="divider"></li>
-                                            <li><a href="#">1+</a></li>
-                                            <li><a href="#">2+</a></li>
-                                            <li><a href="#">3+</a></li>
-                                            <li><a href="#">4+</a></li>
-                                            <li><a href="#">5+</a></li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="span12" style="padding-top: 10px;">
-                                <label>Keywords</label>
-                                <div class="span11"  style="margin-left: 0;">
-                                    <?php echo $form->textField($model,'landsize', array('placeholder'=>'e.g. investment', 'class' => 'span11')); ?>
-                                </div>
-                            </div>
-                            <div class="span12" style="padding-top: 10px;">
-                                <label>New or Established</label>
-                                <div class="btn-group">
-                                    <button class="btn">Any</button>
-                                    <button class="btn dropdown-toggle" data-toggle="dropdown">
-                                        <span class="caret"></span>
-                                    </button>
-                                    <ul class="dropdown-menu">
-                                        <li><a href="#">Any</a></li>
-                                        <li class="divider"></li>
-                                        <li><a href="#">New Construction</a></li>
-                                        <li><a href="#">Established Property</a></li>
-                                    </ul>
-                                </div>
-                            </div>
-                            <div class="span12" style="padding-top: 10px;">
-                                <label class="checkbox">
-                                    <?php echo CHtml::checkBoxList('type','', array(1 => 'Search only Premiere Properties'), array('labelOptions'=> array('class'=>'span9'))); ?>
-                                </label>
-                            </div>
-                            <div class="span12" style="padding: 10px 0;">
-                                <?php echo CHtml::submitButton('Update', array('class' => 'btn btn-primary')); ?>
-                            </div>
-                            <div calss="span12">
-                                <div class="row-fluid  hidden-phone">
-                                    <div calss="ads_placeholder_large"  style="padding-top: 20px;">
-                                        <img src="<?php echo Yii::app()->request->baseUrl; ?>/images/add-left.jpg" alt="advertiesment"/>
-                                    </div>
-                                </div>
-                            </div>
-                            </div>
                             </div>
                             <div class="span8">
                                 <div class="row-fluid">
                                     <div id="title-listing" class="container-fluid">
                                         <div class="property-list-title">
                                             <?php
-                                            if($_GET['type'] == "buy"){
-                                                echo "Properties for Sale";
-                                            } elseif($_GET['type'] == "rent"){
-                                                echo "Properties for Rent";
-                                            } elseif($_GET['type'] == "sold"){
-                                                echo "Sold Properties";
-                                            }?>
+
+                                            if (isset($_GET['type'])) {
+
+                                                if ($_GET['type'] == "buy") {
+
+                                                    if (isset($_SESSION['search']['district'])) {
+
+                                                        $district =  District::model()->findByPk($_SESSION['search']['district']);
+                                                        echo "Properties for Sale in " . $district->name;
+
+                                                    } else {
+                                                        echo "Properties for Sale";
+                                                    }
+
+                                                } elseif ($_GET['type'] == "rent") {
+
+                                                    if (isset($_SESSION['search']['district'])) {
+
+                                                        $district =  District::model()->findByPk($_GET['district']);
+                                                        echo "Properties for Rent in " . $district->name;
+
+                                                    } else {
+                                                        echo "Properties for Rent";
+                                                    }
+
+                                                } elseif ($_GET['type'] == "sold") {
+
+                                                    if (isset($_SESSION['search']['district'])) {
+
+                                                        $district =  District::model()->findByPk($_GET['district']);
+                                                        echo "Properties for Sold in " . $district->name;
+
+                                                    } else {
+                                                        echo "Properties for Sold";
+                                                    }
+
+                                                }
+
+                                            }
+
+                                            ?>
 
                                         </div>
                                     </div>
                                     <?php
+                                    $criteria = new CDbCriteria();
+
                                     if($_GET['type'] == "buy"){
-                                        $condition = '(type = 1 OR type = 2) AND status = 1';
+
+                                        $criteria->compare('type',1,false);
+                                        $criteria->compare('type',2,false,'OR');
+                                        $criteria->compare('status',1,false,'AND');
+
                                     } elseif($_GET['type'] == "rent"){
-                                        $condition = 'type = 3 AND status = 1';
+
+                                        $criteria->compare('type',3,false);
+                                        $criteria->compare('status',1,false,'AND');
+
                                     } elseif($_GET['type'] == "sold"){
-                                        $condition = '(type = 1 OR type = 2 OR type = 3) AND status = 2';
+
+                                        $criteria->addCondition('type = 1 OR type = 2 OR type = 3');
+                                        $criteria->compare('status',2,false,'AND');
                                     }
+
+                                    if ($array_searchpara->town != "") {
+                                        $criteria->compare('townname',$array_searchpara->town,true,'AND',true);
+                                    }
+
+
+                                    if ($array_searchpara->category != "") {
+
+                                        $criteria->with = array('propertytyperelations');
+                                        $criteria->together = true;
+
+                                        $criteria->addCondition('propertytyperelations.typeid IN (' . $array_searchpara->category . ')');
+                                    }
+
+                                    if ($array_searchpara->minbed > 0  ) {
+                                        $criteria->addCondition('bedrooms >= ' . $array_searchpara->minbed);
+                                    }
+
+                                    if ($array_searchpara->maxbed > 0  ) {
+                                        $criteria->addCondition('bedrooms >0 AND bedrooms <= ' . $array_searchpara->maxbed);
+                                    }
+
+                                    if ($array_searchpara->minprice > 0  ) {
+
+                                        $minprice = str_replace(',', '', $array_searchpara->minprice);
+                                        $criteria->addCondition('price >= ' . (double)$minprice);
+                                    }
+
+                                    if ($array_searchpara->maxprice > 0  ) {
+
+                                        $maxprice = str_replace(',', '', $array_searchpara->maxprice);
+                                        $criteria->addCondition('price > 0 AND price <= ' . (double)$maxprice);
+                                    }
+
+                                    if ($array_searchpara->district > 0) {
+
+                                        $criteria->addCondition('district = ' . $array_searchpara->district);
+                                    }
+
+                                    if ($array_searchpara->bathrooms > 0  ) {
+                                        $criteria->addCondition('bathrooms >= ' . $array_searchpara->bathrooms);
+                                    }
+
+                                    if ($array_searchpara->carspaces > 0  ) {
+                                        $criteria->addCondition('parkingspaces >= ' . $array_searchpara->carspaces);
+                                    }
+
+                                    if ($array_searchpara->landsize > 0  ) {
+
+                                        $criteria->addCondition('landsize >= ' . $array_searchpara->landsize);
+                                    }
+
+                                    if ($array_searchpara->condition > 0  ) {
+
+                                        $criteria->addCondition('propcondition >= ' . $array_searchpara->condition);
+                                    }
+
+                                    if ($array_searchpara->premiere == 'true') {
+
+                                        $criteria->addCondition('pricetype = 2');
+                                    }
+
+
+                                    $criteria->order = 'pricetype DESC';
+
+                                    $dataprovider = new CActiveDataProvider('Property', array('criteria'=> $criteria ,'pagination'=>array('pageSize'=>10)));
+
+                                   //echo $dataprovider->criteria->condition . '<br>';
 
                                     $this->widget('zii.widgets.CListView', array(
                                         'id' => 'list_property',
-                                        'dataProvider'=>new CActiveDataProvider('Property', array('criteria'=>array('condition'=> $condition,'order' => 'pid DESC'),'pagination'=>array('pageSize'=>10))),
+                                        'dataProvider'=>$dataprovider,
                                         'itemView' => '_list_view',
                                         'template'=>'{items}<div class="span12"></div>{pager}<div class="span12"></div>'
                                     ));
