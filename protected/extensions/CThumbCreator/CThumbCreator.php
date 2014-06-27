@@ -171,7 +171,7 @@
                     $this->img = imagecreatefrompng($this->image);
                     break;
                 default:
-                    throw new Exception("Tipo de imagem nao suportado",500);
+                    //throw new Exception("Tipo de imagem nao suportado",500);
             }
         }
 
@@ -186,6 +186,11 @@
             if(!$this->tmp)
             {
                 $this->createImg();
+
+                if (!$this->img) { //-------Added by Danesh
+                    return;
+                }
+
             } else {
                 $this->img = $this->tmp;
             }
