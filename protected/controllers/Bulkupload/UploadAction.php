@@ -165,6 +165,23 @@ class UploadAction extends CAction
                                     $warningsArray[] = $warning;
                                 }
 
+                                /*---( Rename upper case Image extentions to lower case  )---*/
+                                $gallerydir = Yii::getPathOfAlias('webroot.upload.bulkupload') . DIRECTORY_SEPARATOR . 'property_bulk_upload_' . $user_id . DIRECTORY_SEPARATOR . 'property'. DIRECTORY_SEPARATOR. $row['A'];
+                                $currentdir = opendir($gallerydir);
+
+                                while (false !== ($file = readdir($currentdir))) {
+                                    if(strpos($file,'.JPG',1) || strpos($file,'.GIF',1) || strpos($file,'.PNG',1)) {
+                                        $srcfile = "$gallerydir/$file";
+                                        $filearray = explode(".",$file);
+                                        $count = count($filearray);
+                                        $pos = $count - 1;
+                                        $filearray[$pos] = strtolower($filearray[$pos]);
+                                        $file = implode(".",$filearray);
+                                        $dstfile = "$gallerydir/$file";
+                                        rename($srcfile,$dstfile);
+                                    }
+                                }
+
                                 /*-----( Upload Property Images )-------*/
                                 if ($property->pid > 0) {
 
@@ -174,6 +191,23 @@ class UploadAction extends CAction
                                         $filename_array = explode('.', $fileName);
                                         $fileName_without_extention = $filename_array[0];
                                         $fileName_extention = $filename_array[1];
+
+                                        /*---( Allowed extensions only others Skip )---*/
+                                        if (!in_array(strtolower($fileName_extention),array('jpg','jpeg','gif','png'))) {
+
+                                            if ($fileName_extention != 'db') {
+
+                                                $warning = new stdClass();
+
+                                                $warning->id = $row['A'];
+                                                $warning->type = 'warning';
+                                                $warning->desc = 'Property Image : ' . $fileName . ' has unsupported extention .' . $fileName_extention . ' and therefore it will be not uploaded';
+
+                                                $warningsArray[] = $warning;
+                                            }
+
+                                            continue;
+                                        }
 
                                         /*---( Scale images to 800 X 600 size )---*/
                                         Yii::import('ext.CThumbCreator.CThumbCreator');
