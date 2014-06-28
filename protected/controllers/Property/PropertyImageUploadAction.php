@@ -40,6 +40,8 @@ class PropertyImageUploadAction extends CAction
             }
         }
 
+        FileExtentionRename::RenameFileExtention(Yii::getPathOfAlias('webroot.upload.propertyimages'), $fileName);
+
         $filename_array = explode('.', $fileName);
         $fileName_without_extention = $filename_array[0];
 
