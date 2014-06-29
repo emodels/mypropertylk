@@ -53,155 +53,219 @@ class UploadAction extends CAction
                         $zip->extractTo($dest);
                         $zip->close();
 
-                        $yexcel = new Yexcel();
-                        $sheet_array = $yexcel->readActiveSheet(Yii::getPathOfAlias('webroot.upload.bulkupload') . DIRECTORY_SEPARATOR . 'property_bulk_upload_' . $user_id . DIRECTORY_SEPARATOR . 'property'. DIRECTORY_SEPARATOR . 'property.xlsx');
+                        /*---( Make sure Property folder exits )---*/
+                        if (!file_exists(Yii::getPathOfAlias('webroot.upload.bulkupload') . DIRECTORY_SEPARATOR . 'property_bulk_upload_' . $user_id . DIRECTORY_SEPARATOR . 'property')) {
 
-                        $rowCount = 0;
-                        foreach ($sheet_array as $row) {
+                            $warning = new stdClass();
 
-                            if ($rowCount > 0 && $row['A'] != '') {
+                            $warning->id = 'NA';
+                            $warning->type = 'error';
+                            $warning->desc = 'ZIP file does not have "property" folder. Please make sure you have this folder insize your ZIP file.';
 
-                                /*---( Skip existing records based on number, streetaddress, areaname, townname )---*/
-                                if (Property::model()->exists("owner = " . $user_id . " AND number = '" . $row['O'] . "' AND streetaddress = '" . $row['P'] . "' AND areaname = '" . $row['Q'] . "' AND townname = '" . $row['R'] . "'")) {
+                            $warningsArray[] = $warning;
+                        }
 
-                                    $warning = new stdClass();
+                        /*---( Make sure Excel file exits )---*/
+                        if (count($warningsArray) == 0 && !file_exists(Yii::getPathOfAlias('webroot.upload.bulkupload') . DIRECTORY_SEPARATOR . 'property_bulk_upload_' . $user_id . DIRECTORY_SEPARATOR . 'property'. DIRECTORY_SEPARATOR . 'property.xlsx')) {
 
-                                    $warning->id = $row['A'];
-                                    $warning->type = 'warning';
-                                    $warning->desc = 'Property with ID : ' . $row['A'] . ' already exists in database';
+                            $warning = new stdClass();
 
-                                    $warningsArray[] = $warning;
+                            $warning->id = 'NA';
+                            $warning->type = 'error';
+                            $warning->desc = 'Invalid Excel file name. Please make sure you have Excel file with name as "property.xlsx"';
 
-                                    continue;
-                                }
+                            $warningsArray[] = $warning;
+                        }
 
-                                $property = new Property();
-                                $propertytyperelation = new Propertytyperelation();
+                        if (count($warningsArray) == 0) {
 
-                                $property->owner = $user_id;
-                                $property->agent = $user_id;
-                                $property->otheragent = 0;
-                                $property->availabledate = date("Y-m-d");
-                                $property->entrydate = date("Y-m-d");
-                                $property->pricetype = 1;
+                            $yexcel = new Yexcel();
+                            $sheet_array = $yexcel->readActiveSheet(Yii::getPathOfAlias('webroot.upload.bulkupload') . DIRECTORY_SEPARATOR . 'property_bulk_upload_' . $user_id . DIRECTORY_SEPARATOR . 'property'. DIRECTORY_SEPARATOR . 'property.xlsx');
 
-                                if (count(glob(Yii::getPathOfAlias('webroot.upload.bulkupload') . DIRECTORY_SEPARATOR . 'property_bulk_upload_' . $user_id . DIRECTORY_SEPARATOR . 'property'. DIRECTORY_SEPARATOR. $row['A'] . DIRECTORY_SEPARATOR . '*')) > 0){
-                                    $property->status = 1;
-                                } else {
-                                    $property->status = 0;
-                                }
+                            $rowCount = 0;
+                            foreach ($sheet_array as $row) {
 
-                                $property->type = intval($row['B']);
-                                $property->propcondition = intval($row['D']);
-                                $property->weeklyrent = $row['E'];
-                                $property->monthlyrent = $row['F'];
-                                $property->securebond = $row['G'];
-                                $property->price = $row['H'];
-                                $property->dispalyprice = intval($row['I']);
-                                $property->vendorname = $row['J'];
-                                $property->vendoremail = $row['K'];
-                                $property->vendorphone = $row['L'];
-                                $property->unitnum = $row['M'];
-                                $property->lotnum = $row['N'];
-                                $property->number = $row['O'];
-                                $property->streetaddress = $row['P'];
-                                $property->areaname = $row['Q'];
-                                $property->townname = $row['R'];
-                                $property->hidestreetaddress = intval($row['S']);
-                                $property->district = intval($row['T']);
-                                $property->province = intval($row['U']);
-                                $property->bedrooms = $row['V'];
-                                $property->bathrooms = $row['W'];
-                                $property->toilets = $row['X'];
-                                $property->housesize = $row['Y'];
-                                $property->landsize = $row['Z'];
-                                $property->floorarea = $row['AA'];
-                                $property->parkcarpetspaces = $row['AB'];
-                                $property->balcony = intval($row['AC']);
-                                $property->remotegarage = intval($row['AD']);
-                                $property->swimpool = intval($row['AE']);
-                                $property->courtyard = intval($row['AF']);
-                                $property->fullyfenced = intval($row['AG']);
-                                $property->outsidespa = intval($row['AH']);
-                                $property->securepark = intval($row['AI']);
-                                $property->tenniscourt = intval($row['AJ']);
-                                $property->alarmsys = intval($row['AK']);
-                                $property->gym = intval($row['AL']);
-                                $property->intercom = intval($row['AM']);
-                                $property->workshop = intval($row['AN']);
-                                $property->broadbandinternet = intval($row['AO']);
-                                $property->dishwasher = intval($row['AP']);
-                                $property->ac = intval($row['AQ']);
-                                $property->heating = intval($row['AR']);
-                                $property->cooling = intval($row['AS']);
-                                $property->solarpower = intval($row['AT']);
-                                $property->solarhotwater = intval($row['AU']);
-                                $property->watertank = intval($row['AV']);
-                                $property->otherfeatures = $row['AW'];
-                                $property->headline = $row['AX'];
-                                $property->desc = $row['AY'];
-                                $property->vediourl = $row['AZ'];
-                                $property->onlinetour1 = $row['BA'];
-                                $property->onlinetour2 = $row['BB'];
+                                if ($rowCount > 0 && $row['A'] != '') {
 
-                                try {
+                                    /*---( Skip existing records based on number, streetaddress, areaname, townname )---*/
+                                    if (Property::model()->exists("owner = " . $user_id . " AND number = '" . $row['O'] . "' AND streetaddress = '" . $row['P'] . "' AND areaname = '" . $row['Q'] . "' AND townname = '" . $row['R'] . "'")) {
 
-                                    if ($property->save(false)) {
+                                        $warning = new stdClass();
 
-                                        $propertytyperelation->propertyid = $property->pid;
-                                        $propertytyperelation->typeid = intval($row['C']);
+                                        $warning->id = $row['A'];
+                                        $warning->type = 'warning';
+                                        $warning->desc = 'Property with ID : ' . $row['A'] . ' already exists in database';
 
-                                        $propertytyperelation->save();
+                                        $warningsArray[] = $warning;
+
+                                        continue;
                                     }
 
-                                } catch (Exception $ex){
+                                    $property = new Property();
+                                    $propertytyperelation = new Propertytyperelation();
 
-                                    $warning = new stdClass();
+                                    $property->owner = $user_id;
+                                    $property->agent = $user_id;
+                                    $property->otheragent = 0;
+                                    $property->availabledate = date("Y-m-d");
+                                    $property->entrydate = date("Y-m-d");
+                                    $property->pricetype = 1;
 
-                                    $warning->id = $row['A'];
-                                    $warning->type = 'error';
-                                    $warning->desc = 'Unable to save Property with ID : ' . $row['A'] . ', please make sure all columns are valid';
+                                    if (count(glob(Yii::getPathOfAlias('webroot.upload.bulkupload') . DIRECTORY_SEPARATOR . 'property_bulk_upload_' . $user_id . DIRECTORY_SEPARATOR . 'property'. DIRECTORY_SEPARATOR. $row['A'] . DIRECTORY_SEPARATOR . '*')) > 0){
+                                        $property->status = 1;
+                                    } else {
+                                        $property->status = 0;
+                                    }
 
-                                    $warningsArray[] = $warning;
-                                }
+                                    $property->type = intval($row['B']);
+                                    $property->propcondition = intval($row['D']);
+                                    $property->weeklyrent = $row['E'];
+                                    $property->monthlyrent = $row['F'];
+                                    $property->securebond = $row['G'];
+                                    $property->price = $row['H'];
+                                    $property->dispalyprice = intval($row['I']);
+                                    $property->vendorname = $row['J'];
+                                    $property->vendoremail = $row['K'];
+                                    $property->vendorphone = $row['L'];
+                                    $property->unitnum = $row['M'];
+                                    $property->lotnum = $row['N'];
+                                    $property->number = $row['O'];
+                                    $property->streetaddress = $row['P'];
+                                    $property->areaname = $row['Q'];
+                                    $property->townname = $row['R'];
+                                    $property->hidestreetaddress = intval($row['S']);
+                                    $property->district = intval($row['T']);
+                                    $property->province = intval($row['U']);
+                                    $property->bedrooms = $row['V'];
+                                    $property->bathrooms = $row['W'];
+                                    $property->toilets = $row['X'];
+                                    $property->housesize = $row['Y'];
+                                    $property->landsize = $row['Z'];
+                                    $property->floorarea = $row['AA'];
+                                    $property->parkcarpetspaces = $row['AB'];
+                                    $property->balcony = intval($row['AC']);
+                                    $property->remotegarage = intval($row['AD']);
+                                    $property->swimpool = intval($row['AE']);
+                                    $property->courtyard = intval($row['AF']);
+                                    $property->fullyfenced = intval($row['AG']);
+                                    $property->outsidespa = intval($row['AH']);
+                                    $property->securepark = intval($row['AI']);
+                                    $property->tenniscourt = intval($row['AJ']);
+                                    $property->alarmsys = intval($row['AK']);
+                                    $property->gym = intval($row['AL']);
+                                    $property->intercom = intval($row['AM']);
+                                    $property->workshop = intval($row['AN']);
+                                    $property->broadbandinternet = intval($row['AO']);
+                                    $property->dishwasher = intval($row['AP']);
+                                    $property->ac = intval($row['AQ']);
+                                    $property->heating = intval($row['AR']);
+                                    $property->cooling = intval($row['AS']);
+                                    $property->solarpower = intval($row['AT']);
+                                    $property->solarhotwater = intval($row['AU']);
+                                    $property->watertank = intval($row['AV']);
+                                    $property->otherfeatures = $row['AW'];
+                                    $property->headline = $row['AX'];
+                                    $property->desc = $row['AY'];
+                                    $property->vediourl = $row['AZ'];
+                                    $property->onlinetour1 = $row['BA'];
+                                    $property->onlinetour2 = $row['BB'];
 
-                                /*-----( Upload Property Images )-------*/
-                                if ($property->pid > 0) {
+                                    try {
 
-                                    $imageIndex = 1;
-                                    foreach (glob(Yii::getPathOfAlias('webroot.upload.bulkupload') . DIRECTORY_SEPARATOR . 'property_bulk_upload_' . $user_id . DIRECTORY_SEPARATOR . 'property'. DIRECTORY_SEPARATOR. $row['A'] . DIRECTORY_SEPARATOR . '*') as $fileName) {
+                                        if ($property->save(false)) {
 
-                                        $filename_array = explode('.', $fileName);
-                                        $fileName_without_extention = $filename_array[0];
-                                        $fileName_extention = $filename_array[1];
+                                            $propertytyperelation->propertyid = $property->pid;
+                                            $propertytyperelation->typeid = intval($row['C']);
 
-                                        /*---( Scale images to 800 X 600 size )---*/
-                                        Yii::import('ext.CThumbCreator.CThumbCreator');
+                                            $propertytyperelation->save();
+                                        }
 
-                                        $thumb = new CThumbCreator();
-                                        $thumb->image = $fileName;
-                                        $thumb->width = 800;
-                                        $thumb->height = 600;
-                                        $thumb->square = true;
-                                        $thumb->directory = Yii::getPathOfAlias('webroot.upload.propertyimages') . DIRECTORY_SEPARATOR;
-                                        $thumb->defaultName = 'image_' . $property->pid . '_' . $imageIndex . '_' .time();
-                                        $thumb->createThumb();
-                                        $thumb->save();
+                                    } catch (Exception $ex){
 
-                                        /*----( Save to Database )----*/
-                                        $propertyimage = new Propertyimages();
+                                        $warning = new stdClass();
 
-                                        $propertyimage->propertyid = $property->pid;
-                                        $propertyimage->imagename = $thumb->defaultName . '.' .$fileName_extention;
-                                        $propertyimage->imagetype = 0;
+                                        $warning->id = $row['A'];
+                                        $warning->type = 'error';
+                                        $warning->desc = 'Unable to save Property with ID : ' . $row['A'] . ', please make sure all columns are valid';
 
-                                        $propertyimage->save();
+                                        $warningsArray[] = $warning;
+                                    }
 
-                                        $imageIndex++;
+                                    /*---( Rename upper case Image extentions to lower case  )---*/
+                                    $gallerydir = Yii::getPathOfAlias('webroot.upload.bulkupload') . DIRECTORY_SEPARATOR . 'property_bulk_upload_' . $user_id . DIRECTORY_SEPARATOR . 'property'. DIRECTORY_SEPARATOR. $row['A'];
+                                    $currentdir = opendir($gallerydir);
+
+                                    while (false !== ($file = readdir($currentdir))) {
+                                        if(strpos($file,'.JPG',1) || strpos($file,'.GIF',1) || strpos($file,'.PNG',1)) {
+                                            $srcfile = "$gallerydir/$file";
+                                            $filearray = explode(".",$file);
+                                            $count = count($filearray);
+                                            $pos = $count - 1;
+                                            $filearray[$pos] = strtolower($filearray[$pos]);
+                                            $file = implode(".",$filearray);
+                                            $dstfile = "$gallerydir/$file";
+                                            rename($srcfile,$dstfile);
+                                        }
+                                    }
+
+                                    /*-----( Upload Property Images )-------*/
+                                    if ($property->pid > 0) {
+
+                                        $imageIndex = 1;
+                                        foreach (glob(Yii::getPathOfAlias('webroot.upload.bulkupload') . DIRECTORY_SEPARATOR . 'property_bulk_upload_' . $user_id . DIRECTORY_SEPARATOR . 'property'. DIRECTORY_SEPARATOR. $row['A'] . DIRECTORY_SEPARATOR . '*') as $fileName) {
+
+                                            $filename_array = explode('.', $fileName);
+                                            $fileName_without_extention = $filename_array[0];
+                                            $fileName_extention = $filename_array[1];
+
+                                            /*---( Allowed extensions only others Skip )---*/
+                                            if (!in_array(strtolower($fileName_extention),array('jpg','jpeg','gif','png'))) {
+
+                                                if ($fileName_extention != 'db') {
+
+                                                    $warning = new stdClass();
+
+                                                    $warning->id = $row['A'];
+                                                    $warning->type = 'warning';
+                                                    $warning->desc = 'Property Image : ' . $fileName . ' has unsupported extention .' . $fileName_extention . ' and therefore it will be not uploaded';
+
+                                                    $warningsArray[] = $warning;
+                                                }
+
+                                                continue;
+                                            }
+
+                                            /*---( Scale images to 800 X 600 size )---*/
+                                            Yii::import('ext.CThumbCreator.CThumbCreator');
+
+                                            $thumb = new CThumbCreator();
+                                            $thumb->image = $fileName;
+                                            $thumb->width = 800;
+                                            $thumb->height = 600;
+                                            $thumb->square = true;
+                                            $thumb->directory = Yii::getPathOfAlias('webroot.upload.propertyimages') . DIRECTORY_SEPARATOR;
+                                            $thumb->defaultName = 'image_' . $property->pid . '_' . $imageIndex . '_' .time();
+                                            $thumb->createThumb();
+                                            $thumb->save();
+
+                                            /*---( Add watermark to image )---*/
+                                            WatermarkGenerator::GenerateWatermark($thumb->directory, $thumb->defaultName, $fileName_extention);
+
+                                            /*----( Save to Database )----*/
+                                            $propertyimage = new Propertyimages();
+
+                                            $propertyimage->propertyid = $property->pid;
+                                            $propertyimage->imagename = $thumb->defaultName . '.' .$fileName_extention;
+                                            $propertyimage->imagetype = 0;
+
+                                            $propertyimage->save();
+
+                                            $imageIndex++;
+                                        }
                                     }
                                 }
+                                $rowCount++;
                             }
-                            $rowCount++;
                         }
                     }
 
