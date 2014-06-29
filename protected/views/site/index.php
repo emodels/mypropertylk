@@ -270,7 +270,7 @@
                     <div class="span7">
                         <div class="search-wrapper">
                             <div class="search-form-v1">
-                                <div class="row-fluid" style="padding-bottom:15px;">
+                                <div class="row-fluid" style="padding-bottom:15px; margin-left: 0">
                                     <p style="color: #000; font-size: 20px; font-weight: bold">Search Properties</p>
                                     <div class="form">
                                         <?php $form=$this->beginWidget('CActiveForm', array(
@@ -282,7 +282,7 @@
                                             ),
                                             'htmlOptions'=>array('class'=>'form-horizontal')
                                         )); ?>
-                                        <div class="span12">
+                                        <div class="span12" style="margin-top: 15px;">
                                             <div class="span5">
                                                 <p class="search-info" style="font-size: 15px !important;">Please Select the Property Type:</p>
                                             </div>
@@ -296,7 +296,7 @@
                                                 </div>
                                             </div>
                                         </div>
-                                        <p class="search-info">Address, Town or City (separated by commas)</p>
+                                        <p class="search-info" style="margin-top: 10px">Address, Town or City (separated by commas)</p>
                                         <div class="span12" style="margin-left: 0;">
                                             <div class="span10">
                                                 <?php echo $form->textField($model,'townname', array('placeholder'=>'e.g: Colombo; Gampaha ; Anuradhapura', 'class' => 'span11 typeahead', 'id' => 'townname', 'style' => 'z-index: 2')); ?>
@@ -305,13 +305,7 @@
                                                 <a href="javascript:SearchProperty();" class="btn btn-info">Search</a>
                                             </div>
                                         </div>
-
-                                        <div class="span12" style="margin-left: 0; padding-top: 10px;">
-                                            <label class="checkbox">
-                                                <input type="checkbox"> Include Surrounding City/Town
-                                            </label>
-                                        </div>
-                                        <div class="span12"  style="margin-left: 0">
+                                        <div class="span12"  style="margin-left: 0; margin-top: 15px">
                                             <div class="span3 row-fluid">
                                                 <!--<style type="text/css">
                                                     .bootstrap-select > .btn {
