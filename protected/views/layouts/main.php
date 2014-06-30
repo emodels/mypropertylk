@@ -34,7 +34,7 @@
                         </a>
                     </div>
                     <div class="span4" style="float: right; text-align: right; padding:30px 35px 30px 0;">
-                        <a class="btn btn-warning" href="<?php echo Yii::app()->request->baseUrl; ?>/login" title="click here to post a free ad" rel="home">POST YOUR FREE AD</a>
+                        <a class="btn btn-primary" href="<?php echo Yii::app()->request->baseUrl; ?>/login" title="click here to post a free ad" rel="home">POST YOUR FREE AD</a>
                     </div>
                 </div>
             </div>
@@ -61,7 +61,7 @@
 
                                     </ul>
                                     <div id="social-network">
-                                        <a class="signin" href="<?php echo Yii::app()->request->baseUrl; ?>/login" style="text-decoration: none; font-size: 15px;">Sign In</a>
+                                        <a class="signin" href="<?php echo Yii::app()->request->baseUrl; ?>/login" style="text-decoration: none; font-size: 15px">Sign In</a>
                                         <a class="join" href="<?php echo Yii::app()->request->baseUrl; ?>/register" style="text-decoration: none; font-size: 15px;">Join</a>
                                         <a class="fb" href="http://www.facebook.com/" title="Facebook" style="line-height: inherit"><i class="icon-facebook" style="line-height: inherit;"></i></a>
                                         <a class="tw" href="http://www.twitter.com/" title="Twitter" style="line-height: inherit"><i class="icon-twitter" style="line-height: inherit;"></i></a>

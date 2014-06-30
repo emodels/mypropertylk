@@ -460,7 +460,7 @@
             </section>
         </div>
     </div><!-- /#headline-wrapper -->
-    <div class="container-fluid">
+    <div class="container-fluid fix_container">
         <div class="row-fluid">
             <div class="span12">
                 <div class="row-fluid">
@@ -565,9 +565,9 @@
                                                                     <span class="attr-pricing"><sup class="price-curr">Rs.</sup>
                                                                         <?php
                                                                         if ($data->type == 1 || $data->type == 2) {
-                                                                            echo Yii::app()->numberFormatter->format("#,##0.00", $data->price);
+                                                                            echo Yii::app()->numberFormatter->format("#,##0", $data->price);
                                                                         } elseif ($data->type == 3) {
-                                                                            echo Yii::app()->numberFormatter->format("#,##0.00", $data->monthlyrent);
+                                                                            echo Yii::app()->numberFormatter->format("#,##0", $data->monthlyrent);
                                                                         }
                                                                         ?>
                                                                     </span>

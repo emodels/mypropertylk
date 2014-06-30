@@ -16,9 +16,9 @@
                 <div style="text-align: right; color: #6a0812; font-weight: bold">
                     <b>Rs.</b>
                     <?php if($data->type == 4){
-                        echo Yii::app()->numberFormatter->format("#,##0.00", $data->price);
+                        echo Yii::app()->numberFormatter->format("#,##0", $data->price);
                     } elseif ($data->type == 5) {
-                        echo Yii::app()->numberFormatter->format("#,##0.00", $data->monthlyrent) . " (monthly rental)";
+                        echo Yii::app()->numberFormatter->format("#,##0", $data->monthlyrent) . " (monthly rental)";
                     }
                     ?>
                 </div>

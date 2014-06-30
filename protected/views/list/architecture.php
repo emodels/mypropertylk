@@ -82,7 +82,7 @@
             ),
             'htmlOptions'=>array('class'=>'form-horizontal'),
         )); ?>
-        <div class="container-fluid" style="margin: 0 35px;">
+        <div class="container-fluid fix_container">
             <div class="row-fluid">
                 <div class="span12">
                     <div class="row-fluid">

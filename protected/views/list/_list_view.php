@@ -5,7 +5,31 @@
                 <div class="span12 heading_buy" id="box-heading" style="height: auto">
                     <div class="row-fluid" style="padding-top: 5px;">
                         <div class="span8">
-                            <?php echo $data->number . ', ' . ucwords($data->streetaddress) . ', '. ucwords($data->areaname) . ', ' . ucwords($data->townname) ?>
+                            <?php
+                            $address = "";
+
+                            if ($data->number != "") {
+
+                                $address .= $data->number . ", ";
+                            }
+
+                            if ($data->streetaddress != "") {
+
+                                $address .= ucwords($data->streetaddress) . ", ";
+                            }
+
+                            if ($data->areaname != ""){
+
+                                $address .= ucwords($data->areaname) . ", ";
+                            }
+
+                            if ($data->townname != "") {
+
+                                $address .= ucwords($data->townname);
+                            }
+
+                            echo $address;
+                            ?>
                         </div>
                         <div class="span4" style="text-align: right; font-family: Monotype Corsiva; font-size: 20px; ">
                             <?php echo $data->pricetype0->proptype ?>
@@ -23,9 +47,9 @@
                     <div style="text-align: right; color: #6a0812; font-weight: bold">
                         <b>Rs.</b>
                         <?php if($data->type == 1 || $data->type == 2){
-                            echo Yii::app()->numberFormatter->format("#,##0.00", $data->price);
+                            echo Yii::app()->numberFormatter->format("#,##0", $data->price);
                         } elseif ($data->type == 3) {
-                            echo Yii::app()->numberFormatter->format("#,##0.00", $data->monthlyrent) . " (monthly rental)";
+                            echo Yii::app()->numberFormatter->format("#,##0", $data->monthlyrent) . " (monthly rental)";
                         }
                         ?>
                     </div>

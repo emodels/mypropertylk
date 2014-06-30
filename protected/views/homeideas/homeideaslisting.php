@@ -27,8 +27,9 @@
 
     }
 
+
 </script>
-<div class="col_right" style="padding-top: 0;">
+<div class="col_right" style="padding-top: 0; min-height: 400px;">
     <div class="form">
         <div class="span12" style="border-bottom: solid 1px silver">
 
@@ -42,29 +43,23 @@
             </div>
         </div>
         <div class="span12" style="padding-top: 10px; padding-bottom:10px; margin-left: 0; background-color: #f7f7f7;border-bottom: solid 1px silver">
-            <div class="span8" style="padding-right: 10px; padding-left: 10px;">
+            <div class="span10" style="padding-right: 10px; padding-left: 10px;">
                 <div class="btn-group">
-                    <a class="btn btn-small dropdown-toggle" data-toggle="dropdown" href="#"> Category <span class="caret"></span>
+                    <a class="btn dropdown-toggle" data-toggle="dropdown" href="#"> Sort by Category <span class="caret"></span>
                     </a>
                     <ul class="dropdown-menu">
-                        <li><a href="#">All Categories</a></li>
-                        <li><a href="#">Livingrooms</a></li>
-                        <li><a href="#">Diningrooms</a></li>
-                        <li><a href="#">Bedrooms</a></li>
-                        <li><a href="#">Bathrooms</a></li>
-                        <li><a href="#">Kitchens</a></li>
-                        <li><a href="#">Outdoor</a></li>
-                        <li><a href="#">Pools</a></li>
-                        <li><a href="#">Gardens</a></li>
-                        <li><a href="#">Facades</a></li>
+                        <li><a href="<?php echo Yii::app()->request->baseUrl; ?>/homeideas/homeideaslisting/cid/0">All Categories</a></li>
+                        <li><a href="<?php echo Yii::app()->request->baseUrl; ?>/homeideas/homeideaslisting/cid/1">Livingrooms</a></li>
+                        <li><a href="<?php echo Yii::app()->request->baseUrl; ?>/homeideas/homeideaslisting/cid/2">Diningrooms</a></li>
+                        <li><a href="<?php echo Yii::app()->request->baseUrl; ?>/homeideas/homeideaslisting/cid/3">Bedrooms</a></li>
+                        <li><a href="<?php echo Yii::app()->request->baseUrl; ?>/homeideas/homeideaslisting/cid/4">Bathrooms</a></li>
+                        <li><a href="<?php echo Yii::app()->request->baseUrl; ?>/homeideas/homeideaslisting/cid/5">Kitchens</a></li>
+                        <li><a href="<?php echo Yii::app()->request->baseUrl; ?>/homeideas/homeideaslisting/cid/6">Outdoor</a></li>
+                        <li><a href="<?php echo Yii::app()->request->baseUrl; ?>/homeideas/homeideaslisting/cid/7">Pools</a></li>
+                        <li><a href="<?php echo Yii::app()->request->baseUrl; ?>/homeideas/homeideaslisting/cid/8">Gardens</a></li>
+                        <li><a href="<?php echo Yii::app()->request->baseUrl; ?>/homeideas/homeideaslisting/cid/9">Facades</a></li>
                     </ul>
                 </div>
-            </div>
-            <div class="span4" style="text-align: right; padding-right: 10px">
-                <select class="btn-small" style="width: auto;">
-                    <option>Sort By</option>
-                    <option>Date</option>
-                </select>
             </div>
         </div>
         <div class="span12" style="margin-left: 0 ">
@@ -80,15 +75,29 @@
             )); ?>
             <div class="container row-fluid">
                 <?php
+                $cid = 0;
+                $condition =  '';
+
                 if (Yii::app()->user->usertype != 0) {
                     $condition =  'userid = ' . Yii::app()->user->id ;
+
+                    if (isset($_GET['cid'])) {
+
+                        $condition .= ' AND ' . (($_GET['cid'] == 0) ? 'category > 0' : 'category = ' . $_GET['cid']);
+                    }
+
                 } else {
-                    $condition =  '';
+
+                    if (isset($_GET['cid'])) {
+
+                        $condition .= (($_GET['cid'] == 0) ? 'category > 0' : 'category = ' . $_GET['cid']);
+                    }
                 }
+
 
                 $this->widget('zii.widgets.CListView', array(
                     'id' => 'list_homeideas',
-                    'dataProvider'=>new CActiveDataProvider('Homeideas', array('criteria'=>array('condition'=> $condition,'order' => 'dateadded DESC'),'pagination'=>array('pageSize'=>5))),
+                    'dataProvider'=>new CActiveDataProvider('Homeideas', array('criteria'=>array('condition'=> $condition,'order' => 'dateadded DESC' ),'pagination'=>array('pageSize'=>5))),
                     'itemView' => '_homeideas_image_list_view',
                     'template'=>'{items}<div class="span12" style="margin-left: 0">{pager}</div>'
                 ));

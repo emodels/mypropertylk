@@ -132,7 +132,31 @@
                 <div class="span8" style="padding: 10px 0;">
                     <div class="span12" style="border-bottom: solid 1px silver; ">
                         <div class="span12" style="font-size: 16px; font-weight: bold; ">
-                            <?php echo $model->number . ', ' . ucwords($model->streetaddress) . ', '. ucwords($model->areaname) . ', ' . ucwords($model->townname) ?>
+                            <?php
+                                $address = "";
+
+                                if ($model->number != "") {
+
+                                    $address .= $model->number . ", ";
+                                }
+
+                                if ($model->streetaddress != "") {
+
+                                    $address .= ucwords($model->streetaddress) . ", ";
+                                }
+
+                                if ($model->areaname != ""){
+
+                                    $address .= ucwords($model->areaname) . ", ";
+                                }
+
+                                if ($model->townname != "") {
+
+                                    $address .= ucwords($model->townname);
+                                }
+
+                             echo $address;
+                             ?>
                         </div>
                     </div>
                     <div class="span12" style="margin-left: 0; padding-top: 10px">
@@ -154,9 +178,9 @@
                         </div>
                         <div class="span6 listing-red" style="text-align: right"> Rs.
                             <?php if($model->type == 1 || $model->type == 2 || $model->type == 4){
-                                echo Yii::app()->numberFormatter->format("#,##0.00", $model->price);
+                                echo Yii::app()->numberFormatter->format("#,##0", $model->price);
                             } elseif ($model->type == 3 || $model->type == 5) {
-                                echo Yii::app()->numberFormatter->format("#,##0.00", $model->monthlyrent) . " (monthly rental)";
+                                echo Yii::app()->numberFormatter->format("#,##0", $model->monthlyrent) . " (monthly rental)";
                             }
                             ?>
                         </div>

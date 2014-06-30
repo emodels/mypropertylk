@@ -323,7 +323,7 @@
                     </section>
                 </div>
             </div><!-- /#headline-wrapper -->
-            <div class="container-fluid">
+            <div class="container-fluid fix_container">
                 <div class="row-fluid">
                     <div class="span9">
                         <div class="row-fluid">

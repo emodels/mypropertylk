@@ -39,7 +39,7 @@ $this->breadcrumbs=array(
                         <div class="input-prepend">
                             <?php echo $form->textField($model,'lname', array('placeholder'=>'LastName')); ?>
                         </div>
-                        <?php echo $form->error($model,'lname'); ?>
+                        <?php //echo $form->error($model,'lname'); ?>
                     </div>
                     <div class="control-group">
                         <div class="input-prepend">
