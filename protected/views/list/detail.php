@@ -61,6 +61,9 @@
     #id{
         display: none;
     }
+    #wowslider-container1 .ws_thumbs img{
+        max-height: 80px !important;
+    }
 </style>
 <div class="span12">
     <div class="offset1 span8">
@@ -116,7 +119,7 @@
                                     <a href="#" title=""><img src="<?php echo Yii::app()->baseUrl . '/upload/propertyimages/'. $value->imagename; ?>"></a>
                                 <?php }
                             } else { ?>
-                                <a href="#" title=""><img src="<?php echo Yii::app()->baseUrl ?> /upload/propertyimages/prop_no_img.jpg" ></a>
+                                <a href="#" title=""><img src="<?php echo Yii::app()->baseUrl ?> /upload/propertyimages/prop_no_img.jpg"></a>
                             <?php }?>
                         </div>
                     </div>

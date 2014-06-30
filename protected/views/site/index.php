@@ -282,7 +282,7 @@
                                             ),
                                             'htmlOptions'=>array('class'=>'form-horizontal')
                                         )); ?>
-                                        <div class="span12" style="margin-top: 15px;">
+                                        <div class="span12" style="margin-top: 15px; margin-bottom: 10px">
                                             <div class="span5">
                                                 <p class="search-info" style="font-size: 15px !important;">Please Select the Property Type:</p>
                                             </div>
@@ -296,8 +296,8 @@
                                                 </div>
                                             </div>
                                         </div>
-                                        <p class="search-info" style="margin-top: 10px">Address, Town or City (separated by commas)</p>
-                                        <div class="span12" style="margin-left: 0;">
+                                        <label>Enter your Town or City</label>
+                                        <div class="span12" style="margin-left: 0;margin-bottom: 10px">
                                             <div class="span10">
                                                 <?php echo $form->textField($model,'townname', array('placeholder'=>'e.g: Colombo; Gampaha ; Anuradhapura', 'class' => 'span11 typeahead', 'id' => 'townname', 'style' => 'z-index: 2')); ?>
                                             </div>
