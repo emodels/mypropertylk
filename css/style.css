@@ -2793,9 +2793,9 @@ a img.aligncenter {
 		width: 180px;
 	}
 
-    #nav-bar{
+    /*#nav-bar{
         margin-left: 58px;
-    }
+    }*/
 
     .span6{
         width:650px;
@@ -2833,9 +2833,9 @@ a img.aligncenter {
 		display:block;
 	}
 
-    .fix_container{
+    /*.fix_container{
         padding: 0 58px;
-    }
+    }*/
 }
 
 @media (max-width: 1199px) and (min-width: 980px){

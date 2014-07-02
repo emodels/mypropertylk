@@ -21,6 +21,33 @@
             loop();
         });
 
+        $('input[field_required]').blur(function () {
+            if ($(this).val()=='') {
+                $(this).next('errorMessage').show();
+            } else {
+                $(this).next('errorMessage').hide();
+            }
+        });
+
+        $('#btn_email_agent').click(function () {
+
+            var isValid = true;
+
+            if ($('#name').val()=='') {
+                $('#name_em_').show();
+                isValid = false;
+            } else {
+                $('#name_em_').hide();
+            }
+
+            if ($('#email').val()=='') {
+                $('#email_em_').show();
+                isValid = false;
+            } else {
+                $('#email_em_').hide();
+            }
+
+        });
     });
 
     function initialize() {
@@ -197,7 +224,7 @@
                             <?php echo $model->agent0->phone; ?></br>
                             <?php echo ucwords($model->agent0->address); ?>
                             <div style="padding-top:5px ">
-                                <a href="mail:<?php echo $model->agent0->email; ?>" class="btn btn-primary">Email Agent</a>
+                                <a href="#email_agent_model" class="btn btn-primary" data-toggle="modal">Email Agent</a>
                             </div>
                         </div>
                         <?php if ($model->otheragent > 0) {
@@ -367,5 +394,61 @@
         </div>
     </div>
 </div>
+<!--( Email Agent Model window )-->
+<div class="form">
+    <div id="email_agent_model" class="modal hide fade container-fluid" style="padding-left: 0px; padding-right: 0px" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+            <h5 id="myModalLabel">Contact Agent for Property #<?php echo $model->pid; ?></h5>
+        </div>
+        <div class="modal-body row-fluid span12" style="margin: 0px">
+            <div class="control-group">
+                <?php echo CHtml::textField('name','', array('placeholder'=>'Name','class'=>'span11','field_required'=>'field_required')); ?>
+                <div class="errorMessage hide" id="name_em_">Name cannot be blank.</div>
+            </div>
+            <div class="control-group">
+                <?php echo CHtml::textField('email','', array('placeholder'=>'Email','class'=>'span11','field_required'=>'field_required')); ?>
+                <div class="errorMessage hide" id="email_em_">Email cannot be blank.</div>
+            </div>
+            <div class="control-group">
+                <?php echo CHtml::textField('phone','', array('placeholder'=>'Phone','class'=>'span11')); ?>
+            </div>
+            <div class="control-group">
+                <?php echo CHtml::dropDownList('about_me','', array('I own my own home','I am renting','I have recently sold','I am a first home buyer','I am looking to invest','I am monitoring the market'), array('empty'=>'About Me','class'=>'span11')); ?>
+            </div>
+            <div class="control-group">
+                <?php echo CHtml::textArea('comment','', array('placeholder'=>'Comments','class'=>'span11')); ?>
+            </div>
+            <div class="control-group">
+                <label>I would like to:</label>
+            </div>
+            <div>
+                <label class="checkbox" style="font-weight: normal">
+                    <?php echo CHtml::checkBox('get_price', false,array('value'=>1, 'uncheckValue'=>0));?>  Get an indication of price
+                </label>
+            </div>
+            <div>
+                <label class="checkbox" style="font-weight: normal">
+                    <?php echo CHtml::checkBox('sale_contract', false,array('value'=>1, 'uncheckValue'=>0));?>  Obtain the contract of sale
+                </label>
+            </div>
+            <div>
+                <label class="checkbox" style="font-weight: normal">
+                    <?php echo CHtml::checkBox('inspect_property', false,array('value'=>1, 'uncheckValue'=>0));?>  Inspect the property
+                </label>
+            </div>
+            <div>
+                <label class="checkbox" style="font-weight: normal">
+                    <?php echo CHtml::checkBox('simillar_properties', false,array('value'=>1, 'uncheckValue'=>0));?>  Be contacted about similar properties
+                </label>
+            </div>
+        </div>
+        <div class="modal-footer">
+            <button class="btn" data-dismiss="modal" aria-hidden="true">Close</button>
+            <button id="btn_email_agent" class="btn btn-primary">Send Email</button>
+        </div>
+    </div>
+</div>
+<!--( // Email Agent Model window )-->
 <script type="text/javascript" src="<?php echo Yii::app()->request->baseUrl; ?>/js/wowslider.js"></script>
 <script type="text/javascript" src="<?php echo Yii::app()->request->baseUrl; ?>/js/script.js"></script>

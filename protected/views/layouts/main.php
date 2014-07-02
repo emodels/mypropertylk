@@ -63,10 +63,10 @@
                                     <div id="social-network">
                                         <a class="signin" href="<?php echo Yii::app()->request->baseUrl; ?>/login" style="text-decoration: none; font-size: 15px">Sign In</a>
                                         <a class="join" href="<?php echo Yii::app()->request->baseUrl; ?>/register" style="text-decoration: none; font-size: 15px;">Join</a>
-                                        <a class="fb" href="http://www.facebook.com/" title="Facebook" style="line-height: inherit"><i class="icon-facebook" style="line-height: inherit;"></i></a>
-                                        <a class="tw" href="http://www.twitter.com/" title="Twitter" style="line-height: inherit"><i class="icon-twitter" style="line-height: inherit;"></i></a>
-                                        <a class="rss" href="http://feeds.feedburner.com/" title="RSS" style="line-height: inherit"><i class="icon-rss" style="line-height: inherit;"></i></a>
-                                        <a class="gp" href="http://www.plus.google.com/" title="Google Plus" style="line-height: inherit"><i class="icon-google-plus" style="line-height: inherit;"></i></a>
+                                        <a class="fb" href="http://www.facebook.com/" title="Facebook" target="_blank" style="line-height: inherit"><i class="icon-facebook" style="line-height: inherit;"></i></a>
+                                        <a class="tw" href="http://www.twitter.com/" title="Twitter" target="_blank" style="line-height: inherit"><i class="icon-twitter" style="line-height: inherit;"></i></a>
+                                        <a class="rss" href="http://feeds.feedburner.com/" title="RSS" target="_blank" style="line-height: inherit"><i class="icon-rss" style="line-height: inherit;"></i></a>
+                                        <a class="gp" href="http://www.plus.google.com/" title="Google Plus" target="_blank" style="line-height: inherit"><i class="icon-google-plus" style="line-height: inherit;"></i></a>
                                     </div>
                                 </nav> <!-- #nav-main -->
                             </div>
