@@ -44,6 +44,7 @@ class PropertyImageUploadAction extends CAction
 
         $filename_array = explode('.', $fileName);
         $fileName_without_extention = $filename_array[0];
+        $fileName_extention = $filename_array[1];
 
             /*---( Scale images to 800 X 600 size )---*/
         Yii::import('ext.CThumbCreator.CThumbCreator');
@@ -60,6 +61,9 @@ class PropertyImageUploadAction extends CAction
         unlink(Yii::getPathOfAlias('webroot.upload.propertyimages') . DIRECTORY_SEPARATOR . $fileName);
 
         $thumb->save();
+
+        /*---( Add watermark to image )---*/
+        WatermarkGenerator::GenerateWatermark($thumb->directory, $thumb->defaultName, $fileName_extention);
 
         //----------Add to Database--------
         $image = new Propertyimages();
