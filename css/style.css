@@ -2889,7 +2889,7 @@ a img.aligncenter {
 	}
 	#social-network a {
 		padding: 15px 5px;
-		width:30px;
+		/*width:30px;*/
 	}
 	.nav-background .navbar .nav {
 		height: 49px;
@@ -2938,8 +2938,8 @@ a img.aligncenter {
 		padding-bottom:13px !important;
 	}
 	.nav-background .navbar .nav>li>a:hover, .nav-background .navbar .nav .current_page_item a{
-		border-bottom:2px solid #363d41;
-		padding-bottom:13px;
+		/*border-bottom:2px solid #363d41;*/
+		padding-bottom:15px;
 	}
 	
 	#myCarousel .carousel-indicators li {

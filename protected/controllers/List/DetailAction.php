@@ -16,6 +16,7 @@ class DetailAction extends CAction
      */
     public function run()
     {
+
         if (isset($_GET['pid'])) {
 
             $outdoorfeatures_array = array();
