@@ -40,7 +40,7 @@ $this->breadcrumbs=array(
                             <div class="input-prepend">
                                 <?php echo $form->textField($model,'lname', array('placeholder'=>'LastName')); ?>
                             </div>
-                            <?php echo $form->error($model,'lname'); ?>
+                            <?php //echo $form->error($model,'lname'); ?>
                         </div>
                        <div class="control-group">
                            <label>Phone</label>
@@ -68,7 +68,7 @@ $this->breadcrumbs=array(
                             <?php echo $form->fileField($model, 'userimage',array(),array('tabindex'=>13));
                             if(isset($model->userimage))
                             {
-                                echo CHtml::image(Yii::app()->controller->createUrl('upload/userimages/'.$model->userimage), "No Image",array('style'=>'width:90pxs; height:100px; border:solid 1px silver;'));
+                                echo CHtml::image(Yii::app()->controller->createUrl('upload/userimages/'.$model->userimage), "No Image",array('style'=>'width:90pxs; height:90px; border:solid 1px silver;'));
                             }
                             ?>
                             <div style="margin-bottom: 0; padding: 8px; margin-top: 10px; color: rgba(128, 0, 0, 0.57); background-color: rgba(255, 149, 132, 0.44); border: solid 1px rgba(177, 41, 36, 0.50); border-radius: 5px;">

@@ -62,8 +62,16 @@
     });
 
     function Refine_Search(){
-        alert("refine");
-        //$('select').val('0');
+        $('#min_price').val(0).selectpicker('render');
+        $('#max_price').val(0).selectpicker('render');
+        $('#min_bed').val(0).selectpicker('render');
+        $('#max_bed').val(0).selectpicker('render');
+        $('#bathrooms').val(0).selectpicker('render');
+        $('#carspaces').val(0).selectpicker('render');
+        $('#landsize').val('');
+        $('#condition').val(0).selectpicker('render');
+        $('#prop_type').val(0).selectpicker('render');
+        $('#pricetype_0').removeAttr('checked');
     }
 
     function SearchProperty(district){
@@ -315,7 +323,7 @@
                     </section>
                 </div>
             </div><!-- /#headline-wrapper -->
-            <div class="container-fluid">
+            <div class="container-fluid fix_container">
                 <div class="row-fluid">
                     <div class="span9">
                         <div class="row-fluid">
@@ -356,7 +364,7 @@
                                              <?php echo $form->error($modeltype, 'typeid'); ?>
 
                                          </div>
-                                         <div class="span12">
+                                         <div class="span12" style="margin-top: 10px; margin-bottom: 10px">
                                              <label>Min. Land</label>
                                              <div class="span11"  style="margin-left: 0;">
                                                  <?php echo $form->textField($model,'landsize', array('placeholder'=>'Min Size', 'class' => 'span11', 'id' => 'landsize', 'value' => $array_searchpara->landsize)); ?>
@@ -400,8 +408,7 @@
                                                          'name' => 'min_price',
                                                          'value' => $array_searchpara->minprice,
                                                          'data' => $array_minprice,
-                                                         'options'=> array('width'=>'fit'),
-                                                         'htmlOptions'=> array('id' => 'min_price')
+                                                         'htmlOptions'=> array('id' => 'min_price','class'=>'span8')
                                                      )); ?>
                                                  </div>
                                                  <div class="span6">
@@ -440,8 +447,7 @@
                                                          'name' => 'max_price',
                                                          'value' => $array_searchpara->maxprice,
                                                          'data' => $array_maxprice,
-                                                         'options'=> array('width'=>'fit'),
-                                                         'htmlOptions'=> array('id' => 'max_price')
+                                                         'htmlOptions'=> array('id' => 'max_price','class'=>'span8')
                                                      ));
                                                      ?>
                                                  </div>
@@ -467,8 +473,7 @@
                                                      'name' => 'min_beds',
                                                      'value' => $array_searchpara->minbed,
                                                      'data' => $array_minbedrooms,
-                                                     'options'=> array('width'=>'fit'),
-                                                     'htmlOptions'=> array('id' => 'min_bed')
+                                                     'htmlOptions'=> array('id' => 'min_bed','class'=>'span8')
                                                  )); ?>
                                              </div>
                                              <div class="span6">
@@ -490,8 +495,7 @@
                                                      'name' => 'max_beds',
                                                      'value' => $array_searchpara->maxbed,
                                                      'data' => $array_maxbedrooms,
-                                                     'options'=> array('width'=>'fit'),
-                                                     'htmlOptions'=> array('id' => 'max_bed')
+                                                     'htmlOptions'=> array('id' => 'max_bed','class'=>'span8')
                                                  )); ?>
                                              </div>
 
@@ -511,8 +515,7 @@
                                                      'name' => 'bathrooms',
                                                      'value' => $array_searchpara->bathrooms,
                                                      'data' => $array_bathrooms,
-                                                     'options'=> array('width'=>'fit'),
-                                                     'htmlOptions'=> array('id' => 'bathrooms')
+                                                     'htmlOptions'=> array('id' => 'bathrooms','class'=>'span8')
                                                  )); ?>
                                              </div>
                                              <div class="span6">
@@ -529,8 +532,7 @@
                                                      'name' => 'carspaces',
                                                      'value' => $array_searchpara->carspaces,
                                                      'data' => $array_carspaces,
-                                                     'options'=> array('width'=>'fit'),
-                                                     'htmlOptions'=> array('id' => 'carspaces')
+                                                     'htmlOptions'=> array('id' => 'carspaces','class'=>'span8')
                                                  )); ?>
                                              </div>
                                          </div>
@@ -545,22 +547,31 @@
                                                  'name' => 'condition',
                                                  'value' => $array_searchpara->condition,
                                                  'data' => $array_condition,
-                                                 'options'=> array('width'=>'fit'),
-                                                 'htmlOptions'=> array('id' => 'condition')
+                                                 'htmlOptions'=> array(
+                                                     'id' => 'condition',
+                                                     'class' => 'span10'
+                                                 )
                                              )); ?>
                                          </div>
                                          <div class="span12" style="padding-top: 10px;">
                                              <label class="checkbox">
-                                                 <?php echo $array_searchpara->premiere; ?>
-                                                 <?php echo CHtml::checkBoxList('pricetype', '', array(1 => 'Search only Premiere Properties'), array('labelOptions'=> array('class'=>'span9'))); ?>
+                                                 <?php
+                                                 if($array_searchpara->premiere == 'true'){
+                                                     $value = true;
+                                                 } else {
+                                                     $value = false;
+                                                 }
+
+                                                 echo CHtml::checkBoxList('pricetype', $value, array(1 => 'Search only Premiere Properties'), array('labelOptions'=> array('class'=>'span9')));
+                                                 ?>
                                              </label>
                                          </div>
                                          <div class="span12" style="padding: 10px 0;">
                                              <div class="span6">
                                                  <a href="javascript:SearchProperty();" class="btn btn-primary">Update</a>
                                              </div>
-                                             <div class="span6">
-                                                 <a href="javascript:Refine_Search();" style="font-size: 12px;">clear all</a>
+                                             <div class="span6 text-right">
+                                                 <a href="javascript:Refine_Search();" class="span8" style="font-size: 12px;" type="reset">clear all</a>
                                              </div>
                                          </div>
                                      <?php $this->endWidget(); ?>

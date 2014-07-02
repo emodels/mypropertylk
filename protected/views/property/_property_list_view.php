@@ -5,10 +5,35 @@
             </a>
     </div>
     <div class="span5">
-        <div class="listing-Address">
-            <a href="javascript:ViewProperty(<?php echo $data->pid ?>);" title="view" style="text-decoration: none">
-                <?php echo ucwords($data->number) . ', ' . ucwords($data->streetaddress) . ', '. ucwords($data->areaname) . ', ' . ucwords($data->townname) ?></div>
-            </a>
+        <a href="javascript:ViewProperty(<?php echo $data->pid ?>);" title="view" style="text-decoration: none">
+            <div class="listing-Address">
+                    <?php
+                    $address = "";
+
+                    if ($data->number != "") {
+
+                        $address .= $data->number . ", ";
+                    }
+
+                    if ($data->streetaddress != "") {
+
+                        $address .= ucwords($data->streetaddress) . ", ";
+                    }
+
+                    if ($data->areaname != ""){
+
+                        $address .= ucwords($data->areaname) . ", ";
+                    }
+
+                    if ($data->townname != "") {
+
+                        $address .= ucwords($data->townname);
+                    }
+
+                    echo $address;
+                    ?>
+            </div>
+        </a>
         <div class="listing-normal"><?php echo $data->district0->name ?> District</div>
         <div class="listing-small"><b>Agent:</b> <?php echo ucwords($data->agent0->fname) .' '. ucwords($data->agent0->lname)  ?></div>
         <div class="listing-small">
@@ -43,9 +68,9 @@
         </div>
         <div class="listing-small"><b>Rs.</b>
             <?php if($data->type == 1 || $data->type == 2 || $data->type == 4){
-                echo Yii::app()->numberFormatter->format("#,##0.00", $data->price);
+                echo Yii::app()->numberFormatter->format("#,##0", $data->price);
             } elseif ($data->type == 3 || $data->type == 5) {
-                echo Yii::app()->numberFormatter->format("#,##0.00", $data->monthlyrent) . " (monthly rental)";
+                echo Yii::app()->numberFormatter->format("#,##0", $data->monthlyrent) . " (monthly rental)";
             }
             ?>
         </div>
@@ -68,9 +93,15 @@
             <a href="<?php echo Yii::app()->request->baseUrl .'/property/editproperty?pid='. $data->pid ;?>" title="edit" style="text-decoration: none"> <i class="icon-edit icon_gap"></i></a>
             <a href="javascript:Delete_Property(<?php echo $data->pid; ?>);" title="delete" style="text-decoration: none"><i class="icon-trash icon_gap"></i></a>
         </div>
-        <div class="hidden-phone"></br></br></div>
+        <div class="listing-btn" style="margin: 10px 0;">
+            <?php if ($data->status == 0 || $data->status == 1) { ?>
+                   <a class="btn btn-danger" href="javascript:PropertySold(<?php echo $data->pid; ?>);" style="width: 125px;"><i class="icon-bookmark icon_gap"></i>Mark as Sold</a>
+            <?php  } if ($data->status == 2) { ?>
+                   <a class="btn btn-success" href="javascript:PropertySold(<?php echo $data->pid; ?>);" style="width: 125px;"><i class="icon-ok icon-white icon_gap"></i>Mark as Unsold</a>
+            <?php } ?>
+            </div>
         <div class="listing-btn">
-            <a href="<?php echo Yii::app()->request->baseUrl .'/property/promotelisting?pid='. $data->pid ;?>" class="btn">Promote Listing</a>
+            <a class="btn btn-warning"  href="<?php echo Yii::app()->request->baseUrl .'/property/promotelisting?pid='. $data->pid ;?>" style="width: 125px;"><i class="icon-star icon_gap"></i>Promote Listing</a>
         </div>
     </div>
 </div>

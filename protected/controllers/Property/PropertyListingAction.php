@@ -44,6 +44,26 @@ class PropertyListingAction extends CAction
 
             Yii::app()->end();
         }
+        if (Yii::app()->request->isAjaxRequest && isset($_GET['mode']) && $_GET['mode'] == 'SOLD' && isset($_GET['pid'])) {
+
+            $property =  Property::model()->find('pid=' . $_GET['pid']);
+
+            if (isset($property)) {
+
+                if ($property->status == 2) {
+                    $property->status = 1;
+                } else if ($property->status == 1 || $property->status == 0){
+                    $property->status = 2;
+                }
+                $property->save(false);
+
+                Yii::app()->user->setFlash('success', "Property Updated.");
+                echo 'done';
+
+            }
+
+            Yii::app()->end();
+        }
 
         $this->getController()->render('propertylisting');
     }

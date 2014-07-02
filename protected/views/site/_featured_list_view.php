@@ -33,9 +33,9 @@
             <span class="attr-pricing"><sup class="price-curr">Rs.</sup>
                 <?php
                 if ($data->type == 1 || $data->type == 2 || $data->type == 4) {
-                    echo Yii::app()->numberFormatter->format("#,##0.00", $data->price);
+                    echo Yii::app()->numberFormatter->format("#,##0", $data->price);
                 } elseif ($data->type == 3 || $data->type == 5) {
-                    echo Yii::app()->numberFormatter->format("#,##0.00", $data->monthlyrent);
+                    echo Yii::app()->numberFormatter->format("#,##0", $data->monthlyrent);
                 }
                 ?>
             </span>

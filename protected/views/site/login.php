@@ -6,7 +6,6 @@ $this->breadcrumbs=array(
 ?>
 
 <div class="content-wrapper clearfix">
-
         <div class="span9 pull-left">
             <div class="content-holder">
                 <div id="title-listing" class="container">

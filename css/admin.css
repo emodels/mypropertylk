@@ -203,8 +203,8 @@ select, textarea, input[type="text"], input[type="password"], input[type="dateti
     padding: 3px;
 }
 .listing-userimg{
-    width: 80px;
-    height: 100px;
+    width: 90px;
+    height: 90px;
     border: solid 1px silver;
     padding: 3px;
 }
@@ -244,7 +244,7 @@ select, textarea, input[type="text"], input[type="password"], input[type="dateti
 .listing-Address{
     font-size: 18px;
     padding: 5px 0;
-    color: #8d8d8d;
+    color: #25a6df;
 }
 .listing-normal
 {

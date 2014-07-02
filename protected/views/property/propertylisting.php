@@ -22,10 +22,50 @@
 
     }
 
+    function Filter_Property(){
+
+        var sort = '';
+        var agent = '';
+        var status = '';
+        var pid = '';
+
+        if ($('#filter_sort').val() != '') {
+            sort = $('#filter_sort').val();
+        }
+
+        if ($('#filter_agent').val() != '') {
+            agent = $('#filter_agent').val();
+        }
+
+        if ($('#filter_status').val() != '') {
+            status = $('#filter_status').val();
+        }
+
+        if ($('#propertyid').val() != '') {
+            pid = $('#propertyid').val();
+        }
+
+        $.fn.yiiListView.update('list_property',{data: {'sort': sort, 'agent': agent, 'status': status, 'pid': pid}});
+    }
+
     function PropertyStatusChange(id) {
         $.ajax({
             type: "GET",
             url: 'propertylisting/mode/STATUS/pid/' + id,
+            success: function(data){
+                if (data == 'done'){
+                    $.fn.yiiListView.update('list_property');
+                } else {
+                    alert(data);
+                }
+            }
+        });
+    }
+
+    function PropertySold(id) {
+        $.ajax({
+            type: "GET",
+            url: 'propertylisting/mode/SOLD/pid/' + id,
             success: function(data){
                 if (data == 'done'){
                     $.fn.yiiListView.update('list_property');
@@ -75,9 +115,9 @@ $model = (object) $model;
             </div>
         </div>
         <div class="span12" style="padding-top: 10px; padding-bottom:10px; margin-left: 0; border-bottom: solid 1px silver">
-            <div class="span2" style="padding-right: 10px; padding-left: 10px;">
+            <div class="span3" style="padding-right: 10px; padding-left: 10px;">
                 <div class="btn-group">
-                    <a class="btn btn-small dropdown-toggle" data-toggle="dropdown" href="#">
+                    <a class="btn dropdown-toggle" data-toggle="dropdown" href="#">
                         <?php
                         switch ($model->type){
                             case 0:
@@ -113,41 +153,35 @@ $model = (object) $model;
                 </div>
             </div>
             <div class="span2">
-                <select class="btn-small" style="width: auto;">
-                    <option>Status</option>
-                    <option>Active</option>
-                    <option>In Active</option>
-                    <option>Sold</option>
+                <select class="btn-small" style="width: auto;" id="filter_status" onchange="javascript:Filter_Property();">
+                    <option value="">Status</option>
+                    <option value="0">In Active</option>
+                    <option value="1">Active</option>
+                    <option value="2">Sold</option>
                 </select>
             </div>
             <?php if (Yii::app()->user->usertype == 0) {?>
             <div class="span2">
-                <select class="btn-small" style="width: auto;">
-                    <option>Agents</option>
-                    <option>All Agents</option>
-                    <option>Not Specified</option>
-                    <option>Agent 1</option>
-                    <option>Agent 2</option>
-                </select>
+                <?php echo CHtml::dropDownList('filter_agent', '', CHtml::listData(User::model()->findAll('usertype = 2'),'id', 'fname'),
+                      array('empty'=>'All Agents', 'class'=>'btn-small', 'style'=>'width: auto', 'onChange'=>'javascript:Filter_Property();')); ?>
             </div>
             <?php }?>
             <div class="span2">
-                <select class="btn-small" style="width: auto;">
-                    <option>Sort By</option>
-                    <option>Date</option>
-                    <option>Street</option>
-                    <option>District</option>
-                    <option>Province</option>
-                    <option>Price</option>
-                    <option>Agent</option>
+                <select class="btn-small" style="width: auto;" id="filter_sort" onchange="javascript:Filter_Property();">
+                    <option value="">Sort By</option>
+                    <option value="entrydate">Date</option>
+                    <option value="district">District</option>
+                    <option value="pricetype">Property Type</option>
+                    <option value="price">Price</option>
+                    <option value="agent">Agent</option>
                 </select>
             </div>
-            <div class="span4">
-                <div class="span9">
+            <div class="span3">
+                <div class="span8">
                     <form class="form-search" style="margin-bottom: 0">
                         <div class="input-append">
-                            <input type="text" class="span12 search-query" placeholder="Enter Property ID, Address / District">
-                            <button type="submit" class="btn" style="margin-left: 0px;"><i class="icon-search"></i>&nbsp;Find</button>
+                            <?php echo CHtml::textField('propertyid', '', array('class' => 'span12 search-query', 'placeholder'=>'Enter Property ID')); ?>
+                            <a href="javascript:Filter_Property();" class="btn" style="margin-left: 0px;"><i class="icon-search"></i>&nbsp;Find</a>
                         </div>
                     </form>
                 </div>
@@ -170,6 +204,31 @@ $model = (object) $model;
             )); ?>
             <div class="container row-fluid">
                 <?php
+                $sort_order = 'pid DESC';
+                $status_filter = '';
+                $agent_filter = '';
+                $pid_filter = '';
+
+                if (Yii::app()->request->isAjaxRequest && isset($_GET['sort'])) {
+
+                    $sort_order = ($_GET['sort'] == '') ? 'pid DESC' : $_GET['sort'] ;
+                }
+
+                if (Yii::app()->request->isAjaxRequest && isset($_GET['status'])) {
+
+                    $status_filter = ($_GET['status'] == '') ? '' : $_GET['status'] ;
+                }
+
+                if (Yii::app()->request->isAjaxRequest && isset($_GET['agent'])) {
+
+                    $agent_filter = ($_GET['agent'] == '') ? '' : $_GET['agent'] ;
+                }
+
+                if (Yii::app()->request->isAjaxRequest && isset($_GET['pid'])) {
+
+                    $pid_filter = ($_GET['pid'] == '') ? '' : $_GET['pid'] ;
+                }
+
                 if (Yii::app()->user->usertype != 0) {
 
                     $owner = User::model()->findByPk(Yii::app()->user->id);
@@ -196,9 +255,28 @@ $model = (object) $model;
                     $condition =  (($model->type == 0) ? 'type > 0' : 'type = ' . $model->type) /*. ' AND status = 1' */;
                 }
 
+                /*---( Filter records by Agent )---*/
+                if ($agent_filter != '') {
+
+                    $condition .= ' AND agent = ' . $agent_filter;
+                }
+
+                if ($status_filter != '') {
+
+                    $condition .= ' AND status = ' . $status_filter;
+                } else {
+
+                    $condition .= ' AND status != 2 ';
+                }
+
+                if ($pid_filter != '') {
+
+                    $condition .= ' AND pid = ' . $pid_filter;
+                }
+
                 $this->widget('zii.widgets.CListView', array(
                     'id' => 'list_property',
-                    'dataProvider'=>new CActiveDataProvider('Property', array('criteria'=>array('condition'=> $condition,'order' => 'pid DESC'),'pagination'=>array('pageSize'=>5))),
+                    'dataProvider'=>new CActiveDataProvider('Property', array('criteria'=>array('condition'=> $condition,'order' => $sort_order),'pagination'=>array('pageSize'=>10))),
                     'itemView' => '_property_list_view',
                     'template'=>'{items}<div class="span12"></div>{pager}<div class="span12"></div>'
                 ));
