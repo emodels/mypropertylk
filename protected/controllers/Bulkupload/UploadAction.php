@@ -88,7 +88,8 @@ class UploadAction extends CAction
                                 if ($rowCount > 0 && $row['A'] != '') {
 
                                     /*---( Skip existing records based on number, streetaddress, areaname, townname )---*/
-                                    if (Property::model()->exists("owner = " . $user_id . " AND number = '" . $row['O'] . "' AND streetaddress = '" . $row['P'] . "' AND areaname = '" . $row['Q'] . "' AND townname = '" . $row['R'] . "'")) {
+                                    if (Property::model()->exists("owner = :owner AND number = :number AND streetaddress = :streetaddress AND areaname = :areaname AND townname = :townname",
+                                                                  array(':owner' => $user_id, ':number' => $row['O'], ':streetaddress' => $row['P'], ':areaname' => $row['Q'], ':townname' => $row['R']))) {
 
                                         $warning = new stdClass();
 
