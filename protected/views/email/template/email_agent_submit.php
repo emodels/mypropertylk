@@ -3,16 +3,35 @@
 <div style="position: relative; padding: 10px">
     <table border="0" cellpadding="0" cellspacing="0" width="100%">
         <tr>
-            <td style="text-align: left">
+            <td style="text-align: left; border-bottom: solid 4px #002a80;">
+                <img class="site-logo" src="<?php echo Yii::app()->request->baseUrl; ?>/images/logo.png"/>
+            </td>
+        </tr>
+        <tr>
+            <td>
                 <p>
-                    Dear Agent, <br/><br/>New contact enquiry received with following information on <?php echo Yii::app()->dateFormatter->formatDateTime(time(), 'short'); ?>
-                    <br/>
-                    <br/>Best regards,
-                    <!--<br/><br/><img src="<?php /*echo 'http://'. ((Yii::app()->request->getServerName() == 'localhost' || Yii::app()->request->getServerName() == '54.243.210.21') ? Yii::app()->request->getServerName() . '/myproperty.lk' : Yii::app()->request->getServerName()); */?>/images/logo.png" style="width: 150px"/>-->
+                    You have received a new lead from myproperty.lk for:
                 </p>
             </td>
         </tr>
+        <tr>
+            <td>
+                <?php
+                 $propertyList = Property::model()->findByPk($model['id']);
+
+                ?>
+                <p>Property id: <?php echo  $propertyList->pid; ?></p>
+
+
+                <p>Property address: <?php echo  $propertyList->townname; ?></p>
+
+                <p>Property URL: <a href="'www.myproperty.lk/list/detail/pid/'. <?php echo  $propertyList->pid; ?>" target="_blank">www.myproperty.lk/list/detail/pid/<?php echo  $propertyList->pid; ?></a> </p>
+            </td>
+        </tr>
     </table>
+</div>
+<div>
+    <p>User Details:</p>
 </div>
 <div style="position: relative; padding: 20px; margin-left: 10px; border: solid 1px silver; background: #f7f7f7; border-radius: 10px; font-size: 15px; width: 100%">
     <table border="0" cellpadding="2" cellspacing="2" width="100%">

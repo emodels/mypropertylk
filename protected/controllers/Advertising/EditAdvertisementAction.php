@@ -9,30 +9,35 @@
  * **This is the Admin Index Action Page.
  */
 
-class AddAdvertisementAction extends CAction
+class EditAdvertisementAction extends CAction
 {
     /*
      * Action controller for Admin index page
      */
     public function run()
     {
-        $form_valid = true;
 
-        $model =  new Advertising();
-        $model->entrydate = date("Y-m-d");
-        $model->status = 0;
+        if (isset($_GET['id'])) {
+            $model =  Advertising::model()->findByPk($_GET['id']);
+        } else {
+            Yii::app()->user->setFlash('error', 'Error Page Request');
+            $this->getController()->redirect(Yii::app()->baseUrl);
+        }
 
         $advertiserListData = CHtml::listData(User::model()->findAll('usertype = 0 OR usertype = 3'), 'id', 'fullName');
+
+        $form_valid = true;
+        $previmage = $model->adimage;
 
         if (isset($_POST['Advertising'])) {
 
             $rnd = rand(0,9999);  // generate random number between 0-9999
             $model->attributes = $_POST['Advertising'];
 
-            $model->adimage = CUploadedFile::getInstance($model, 'adimage');
+            $adimage = CUploadedFile::getInstance($model, 'adimage');
 
-            if (isset($model->adimage) && !is_null($model->adimage)) {
-                $model->adimage = "{$rnd}-{$model->adimage->name}";  // random number + file name
+            if (isset($adimage) && !is_null($adimage)) {
+                $model->adimage = "{$rnd}-{$adimage->name}";  // random number + file name
                 $model->adimage = str_replace('.jpg','.jpeg', $model->adimage);
 
                 CUploadedFile::getInstance($model, 'adimage')->saveAs(Yii::getPathOfAlias('webroot.upload.adimages') . DIRECTORY_SEPARATOR . $model->adimage);
@@ -40,16 +45,19 @@ class AddAdvertisementAction extends CAction
                 list($width, $height, $type, $attr) = getimagesize(Yii::getPathOfAlias('webroot.upload.adimages') . DIRECTORY_SEPARATOR .  $model->adimage);
 
                 if ($width != ($model->size0->width) || $height != ($model->size0->height)) {
-                    Yii::app()->user->setFlash('error', 'Image width & height invalid..! Your image should be similar to the selected image size...!');
+                    Yii::app()->user->setFlash('error', 'Image width & height is invalid..! Your image should be similar to the selected image size...!');
                     $form_valid = false;
                 }
+
+            } else {
+
+                $model->adimage = $previmage;
             }
 
             if ($form_valid == true) {
 
                 if ($model->save()){
-                    //CUploadedFile::getInstance($model, 'adimage')->saveAs(Yii::getPathOfAlias('webroot.upload.adimages') . DIRECTORY_SEPARATOR . $model->adimage);
-                    Yii::app()->user->setFlash('success', "Data Added Successfully !");
+                    Yii::app()->user->setFlash('success', "Data Updated Successfully !");
                     $this->getController()->redirect(Yii::app()->baseUrl . '/advertising/advertisement');
                 } else{
                     print_r($model->getErrors());
@@ -60,6 +68,6 @@ class AddAdvertisementAction extends CAction
 
         }
 
-        $this->getController()->render('addadvertisement', array('model'=>$model, 'advertiserListData' => $advertiserListData));
+        $this->getController()->render('editadvertisement', array('model'=>$model, 'advertiserListData' => $advertiserListData));
     }
 }

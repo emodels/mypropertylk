@@ -16,10 +16,39 @@ class AdvertisementAction extends CAction
      */
     public function run()
     {
-        /*if (Yii::app()->request->isPostRequest)
-        {
-            $this->redirect(array("admin/addproperty_step2"));
-        }*/
+        if (Yii::app()->request->isAjaxRequest && isset($_GET['mode']) && $_GET['mode'] == 'DELETE' && isset($_GET['id'])) {
+
+            $result = Advertising::model()->deleteByPk($_GET['id']);
+
+            if ($result) {
+                Yii::app()->user->setFlash('success', "Advertisement deleted.");
+                echo 'done';
+
+            }
+
+            Yii::app()->end();
+        }
+
+        if (Yii::app()->request->isAjaxRequest && isset($_GET['mode']) && $_GET['mode'] == 'STATUS' && isset($_GET['id'])) {
+
+            $advertising =  Advertising::model()->find('id=' . $_GET['id']);
+
+            if (isset($advertising)) {
+
+                if ($advertising->status == 0) {
+                    $advertising->status = 1;
+                } else if ($advertising->status == 1){
+                    $advertising->status = 0;
+                }
+                $advertising->save(false);
+
+                Yii::app()->user->setFlash('success', "Advertisement Updated");
+                echo 'done';
+
+            }
+
+            Yii::app()->end();
+        }
         $this->getController()->render('advertisement');
     }
 }

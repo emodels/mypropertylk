@@ -74,7 +74,31 @@
             mapTypeId: google.maps.MapTypeId.ROADMAP
         }
         var map = new google.maps.Map(map_canvas, map_options);
-        var address = "<?php echo $model->number . ',' . $model->streetaddress . ','. $model->areaname ; ?>, sri lanka";
+        <?php
+            $address = "";
+
+            if ($model->number != "") {
+
+                $address .= $model->number . ", ";
+            }
+
+            if ($model->streetaddress != "") {
+
+                $address .= ucwords($model->streetaddress) . ", ";
+            }
+
+            if ($model->areaname != ""){
+
+                $address .= ucwords($model->areaname) . ", ";
+            }
+
+            if ($model->townname != "") {
+
+                $address .= ucwords($model->townname);
+            }
+
+         ?>
+        var address = "<?php echo $address; ?>, Sri Lanka";
         var geocoder= new google.maps.Geocoder();
         geocoder.geocode( { 'address': address}, function(results, status) {
             if (status == google.maps.GeocoderStatus.OK) {
@@ -419,6 +443,9 @@
                 <h5 id="myModalLabel">Contact Agent for Property #<?php echo $model->pid; ?></h5>
             </div>
             <div class="modal-body row-fluid span12" style="margin: 0px">
+                <div class="control-group" style="display: hidden;">
+                    <?php echo CHtml::textField('Enquery[pid]', $model->pid, array('class'=>'span11')); ?>
+                </div>
                 <div class="control-group">
                     <?php echo CHtml::textField('Enquery[name]','', array('placeholder'=>'Name','class'=>'span11','field_required'=>'field_required')); ?>
                     <div class="errorMessage hide" id="name_em_">Name cannot be blank.</div>
