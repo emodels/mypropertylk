@@ -282,9 +282,12 @@
                             <?php echo ucwords($model->agent0->fname) .' ' . ucwords($model->agent0->lname); ?></br>
                             <?php echo $model->agent0->phone; ?></br>
                             <?php echo ucwords($model->agent0->address); ?>
+                            <?php
+                            if ($model->agent0->email != "") { ?>
                             <div style="padding-top:5px ">
                                 <a href="#email_agent_model" class="btn btn-primary" data-toggle="modal">Email Agent</a>
                             </div>
+                            <?php } ?>
                         </div>
                         <?php if ($model->otheragent > 0) {
                         $otheragent = User::model()->findByPk($model->otheragent);
@@ -297,8 +300,8 @@
                             <?php echo $otheragent->phone; ?></br>
                             <?php echo ucwords($otheragent->address); ?>
                             <?php
-                            if ($model->agent0->email != "") { ?>
-                                <br/><a href="<?php echo $model->agent0->email; ?>" class="btn btn-primary">Email Agent</a>
+                            if ($otheragent->email != "") { ?>
+                                <br/><a href="#email_agent_model" class="btn btn-primary">Email Agent</a>
                             <?php } ?>
                         </div>
                         <?php } ?>

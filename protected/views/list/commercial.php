@@ -91,7 +91,7 @@
 
                                         $this->widget('zii.widgets.CListView', array(
                                             'id' => 'list_commercial',
-                                            'dataProvider'=>new CActiveDataProvider('Property', array('criteria'=>array('condition'=> $condition,'order' => 'pid DESC'),'pagination'=>array('pageSize'=>10))),
+                                            'dataProvider'=>new CActiveDataProvider('Property', array('criteria'=>array('condition'=> $condition,'order' => 'entrydate DESC'),'pagination'=>array('pageSize'=>10))),
                                             'itemView' => '_commercial_list_view',
                                             'template'=>'{items}<div class="span12"></div>{pager}<div class="span12"></div>'
                                         ));

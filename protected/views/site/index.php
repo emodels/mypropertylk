@@ -497,7 +497,7 @@
 
                                             $this->widget('zii.widgets.CListView', array(
                                                 'id' => 'list_featured',
-                                                'dataProvider'=>new CActiveDataProvider('Property', array('criteria'=>array('condition'=> $condition,'order' => 'entrydate DESC LIMIT 20'),'pagination'=>false)),
+                                                'dataProvider'=>new CActiveDataProvider('Property', array('criteria'=>array('condition'=> $condition,'order' => 'entrydate DESC, entrydate DESC LIMIT 20'),'pagination'=>false)),
                                                 'itemView' => '_featured_list_view'
                                             ));
                                             ?>

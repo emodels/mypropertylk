@@ -125,7 +125,7 @@
 
                                 $this->widget('zii.widgets.CListView', array(
                                     'id' => 'list_architecture',
-                                    'dataProvider'=>new CActiveDataProvider('Homeideas', array('criteria'=>array('condition'=> $condition,'order' => 'id DESC'),'pagination'=>array('pageSize'=>5))),
+                                    'dataProvider'=>new CActiveDataProvider('Homeideas', array('criteria'=>array('condition'=> $condition,'order' => 'dateadded DESC'),'pagination'=>array('pageSize'=>5))),
                                     'itemView' => '_architecture_list_view',
                                     'template'=>'{items}<div class="span12" style="margin-left: 0">{pager}</div>'
                                 ));

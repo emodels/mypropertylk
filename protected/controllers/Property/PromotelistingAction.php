@@ -53,7 +53,7 @@ class PromotelistingAction extends CAction
 
             $featured = Property::model()->count('pricetype=3');
 
-            if ($featured < 20) {
+            if ($featured <= 20) {
 
                 if (Yii::app()->user->usertype == 0) {
 

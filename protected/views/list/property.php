@@ -716,7 +716,7 @@
                                     }
 
 
-                                    $criteria->order = 'pricetype DESC';
+                                    $criteria->order = 'pricetype DESC, entrydate DESC';
 
                                     $dataprovider = new CActiveDataProvider('Property', array('criteria'=> $criteria ,'pagination'=>array('pageSize'=>10)));
 
