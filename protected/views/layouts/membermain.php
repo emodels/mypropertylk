@@ -47,7 +47,7 @@
                 <div class="client-controls">
                     <div class="btn-group">
                         <a class="btn dropdown-toggle" data-toggle="dropdown" href="#">
-                            Welcome <?php echo Yii::app()->user->username; ?>
+                            Welcome <?php echo ucwords(Yii::app()->user->username); ?>
                             <span class="caret"></span>
                         </a>
                         <ul class="dropdown-menu">

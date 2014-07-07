@@ -23,7 +23,8 @@ class ListController extends Controller
             'homeideas'=>'application.controllers.List.HomeideasAction',  //action for Home Ideas page controller
             'architecture'=>'application.controllers.List.ArchitectureAction',  //action for Home Ideas by Architecture page controller
             'commercial'=>'application.controllers.List.CommercialAction',  //action for Commercial page controller
-            'searchjson'=>'application.controllers.List.SearchjsonAction',  //action for Commercial page controller
+            'searchjson'=>'application.controllers.List.SearchjsonAction',  //action for Search Jason page controller
+            'emailagent'=>'application.controllers.List.EmailagentAction',  //action for Email Agent page controller
         );
     }
 

@@ -11,7 +11,7 @@
 <div class="col_right" style="padding-top: 0;">
     <div class="span12" style="border-bottom: solid 1px silver">
         <div class="span7">
-            <h3>Add New Advertisement</h3>
+            <h3>Edit Advertisement</h3>
         </div>
         <div class="offset2 span2">
             <div class="hidden-phone" style="padding-top: 20px;"></div>
@@ -24,7 +24,7 @@
     <div class="span12" style="margin-left: 0;">
         <div class="form">
             <?php $form = $this->beginWidget('CActiveForm', array(
-                'id'=>'addadvertisement-form',
+                'id'=>'editadvertisement-form',
                 'enableClientValidation' => true,
                 'enableAjaxValidation' => false,
                 'clientOptions' => array(
@@ -59,7 +59,12 @@
                 <div class="control-group-admin">
                     <label>Select an Advertisement Image</label>
                     <div>
-                        <?php echo $form->fileField($model, 'adimage'); ?>
+                        <?php echo $form->fileField($model, 'adimage');
+                        if(isset($model->adimage))
+                        {
+                            echo CHtml::image(Yii::app()->controller->createUrl('upload/adimages/'.$model->adimage), "No Image",array('style'=>'border:solid 1px silver;'));
+                        }
+                        ?>
                     </div>
                     <div style="margin-bottom: 0; padding: 8px; margin-top: 10px; color: rgba(128, 0, 0, 0.57); background-color: rgba(255, 149, 132, 0.44); border: solid 1px rgba(177, 41, 36, 0.50); border-radius: 5px;">
                         <strong>Warning!</strong><br/> Please check your Advertisement Image width and height is similar to selected ad size, before uploading ...!
@@ -94,7 +99,7 @@
 
                 <div class="control-group-admin-btn">
                     <div class="span12" style="padding-top: 5px;">
-                        <?php echo CHtml::submitButton('Add', array('class' => 'btn btn-primary')); ?>&nbsp;
+                        <?php echo CHtml::submitButton('Update', array('class' => 'btn btn-primary')); ?>&nbsp;
                         <?php echo CHtml::submitButton('Cancel', array('class' => 'btn btn-info')); ?>
                     </div>
                 </div>

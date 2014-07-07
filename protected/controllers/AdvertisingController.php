@@ -29,6 +29,10 @@ class AdvertisingController extends Controller
         return array(
             'advertisement'=>'application.controllers.Advertising.AdvertisementAction',  //action for admin - Advertisement page controller
             'addadvertisement'=>'application.controllers.Advertising.AddAdvertisementAction',  //action for admin - Add New Advertisement page controller
+            'adpricelisting'=>'application.controllers.Advertising.AdpricelistingAction',  //action for admin - Ad price Listing page controller
+            'addprices'=>'application.controllers.Advertising.AddpricesAction',  //action for admin - Add prices page controller
+            'editprices'=>'application.controllers.Advertising.EditpricesAction',  //action for admin - Add prices page controller
+            'editadvertisement'=>'application.controllers.Advertising.EditAdvertisementAction',  //action for admin - Edit Advertisement page controller
         );
     }
 

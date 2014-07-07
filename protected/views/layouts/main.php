@@ -124,20 +124,20 @@
                     <div id="pages-2" class="span2 widget widget_pages">
                         <h3 class="widget-title">Quick Links</h3>
                         <ul>
-                            <li class="page_item page-item-18"><a href="#">Buy</a></li>
-                            <li class="page_item page-item-115"><a href="#">Rent</a></li>
-                            <li class="page_item page-item-1864"><a href="#">Sold</a></li>
-                            <li class="page_item page-item-1681"><a href="#">Home Ideas</a></li>
-                            <li class="page_item page-item-1675"><a href="#">Commercial</a></li>
+                            <li class="page_item page-item-18"><a href="<?php echo Yii::app()->request->baseUrl; ?>/list/property/type/buy">Buy</a></li>
+                            <li class="page_item page-item-115"><a href="<?php echo Yii::app()->request->baseUrl; ?>/list/property/type/rent">Rent</a></li>
+                            <li class="page_item page-item-1864"><a href="<?php echo Yii::app()->request->baseUrl; ?>/list/property/type/sold">Sold</a></li>
+                            <li class="page_item page-item-1681"><a href="<?php echo Yii::app()->request->baseUrl; ?>/list/homeideas/cid/0">Home Ideas</a></li>
+                            <li class="page_item page-item-1675"><a href="<?php echo Yii::app()->request->baseUrl; ?>/list/commercial/type/all">Commercial</a></li>
                         </ul>
                     </div>
                     <div id="pages-5" class="span2 widget widget_pages">
                         <h3 class="widget-title">Another Links</h3>
                         <ul>
-                            <li class="page_item page-item-14"><a href="#">Sign In </a></li>
-                            <li class="page_item page-item-18"><a href="#">Join</a></li>
-                            <li class="page_item page-item-115"><a href="#">Advertise With Us</a></li>
-                            <li class="page_item page-item-1864"><a href="#">Agent Admin</a></li>
+                            <li class="page_item page-item-14"><a href="<?php echo Yii::app()->request->baseUrl; ?>/login">Sign In </a></li>
+                            <li class="page_item page-item-18"><a href="<?php echo Yii::app()->request->baseUrl; ?>/register">Join</a></li>
+                            <li class="page_item page-item-115"><a href="<?php echo Yii::app()->request->baseUrl; ?>/login">Advertise With Us</a></li>
+                            <li class="page_item page-item-1864"><a href="<?php echo Yii::app()->request->baseUrl; ?>/login">Agent Admin</a></li>
                             <li class="page_item page-item-1681"><a href="#">Contact Us</a></li>
                         </ul>
                     </div>
@@ -149,12 +149,12 @@
                         <ul class="footer-blog">
                             <li>
                                 <a href="#">
-                                    <i class="icon-phone"></i> +94 777 345 567
+                                    <i class="icon-phone"></i> +61431 108 137
                                 </a>
                             </li>
                             <li>
                                 <a href="#">
-                                    <i class="icon-print"></i> +94 777 345 567
+                                    <i class="icon-print"></i> +61425 732 711
                                 </a>
                             </li><li>
                                 <a href="#">

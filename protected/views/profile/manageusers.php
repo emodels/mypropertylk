@@ -122,7 +122,7 @@
             if (Yii::app()->request->isAjaxRequest && isset($_GET['status'])) {
 
                 $status_filter = ($_GET['status'] == '') ? '' : $_GET['status'] ;
-                echo $status_filter;
+                //echo $status_filter;
             }
 
             if (Yii::app()->request->isAjaxRequest && isset($_GET['usertype'])) {

@@ -7,117 +7,165 @@
             $('#myModal').modal();
         });
     });
+
+    function Delete_Ad(id){
+        if (confirm('Are you sure want to delete?'))
+        {
+            $.ajax({
+                type: "GET",
+                url: 'advertisement/mode/DELETE/id/' + id,
+                success: function(data){
+                    if (data == 'done'){
+                        $.fn.yiiListView.update('list_advertisement');
+
+                    } else {
+                        alert(data);
+                    }
+                }
+            });
+        }
+    }
+
+    function AdStatusChange(id) {
+        $.ajax({
+            type: "GET",
+            url: 'advertisement/mode/STATUS/id/' + id,
+            success: function(data){
+                if (data == 'done'){
+                    $.fn.yiiListView.update('list_advertisement');
+                } else {
+                    alert(data);
+                }
+            }
+        });
+    }
+
+    function Filter_Advertisement(){
+
+        var page = '';
+        var size = '';
+
+        if ($('#filter_pages').val() != '') {
+            page = $('#filter_pages').val();
+        }
+        if ($('#filter_sizes').val() != '') {
+            size = $('#filter_sizes').val();
+        }
+
+        $.fn.yiiListView.update('list_advertisement',{data: {'page': page, 'size': size}});
+    }
+
 </script>
 <div class="col_right" style="padding-top: 0;">
     <div class="span12" style="border-bottom: solid 1px silver">
-        <div class="span7">
+        <div class="span3">
             <h3>Advertising</h3>
         </div>
-        <div class="offset2 span2">
+        <div class="offset5 span4">
             <div class="hidden-phone" style="padding-top: 20px;"></div>
-            <!---------( For Add NewUsers )------------------>
-            <div class="btn-group" style="padding-bottom: 5px;">
+            <div style="padding-bottom: 5px;">
+                <!---------( For View Advertisement Price List )------------------>
+                <a class="btn btn-primary" href="<?php echo Yii::app()->request->baseUrl; ?>/advertising/adpricelisting" style="text-decoration: none; color: #ffffff">Ad Price List</a>
+
+                <!---------( For Add New Advertisements )------------------>
                 <a class="btn btn-primary" href="<?php echo Yii::app()->request->baseUrl; ?>/advertising/addadvertisement" style="text-decoration: none; color: #ffffff">Add New Advertisement</a>
             </div>
         </div>
     </div>
     <div class="span12" style="margin-left: 0; border-bottom: solid 1px silver ">
         <div class="form_bg span">
-            <div class="span2">
-                <select class="btn-small" style="width: auto;">
-                    <option>Pages</option>
-                    <option>Home</option>
-                    <option>Buy</option>
-                    <option>Rent</option>
-                    <option>Sold</option>
-                    <option>Commercial</option>
-                    <option>Home Ideas</option>
-                    <option>Login</option>
-                    <option>Register</option>
+            <div class="span4">
+                <select class="btn-small" style="width: auto;" id="filter_pages" onchange="javascript:Filter_Advertisement();">
+                    <option value="" >Filter by Page</option>
+                    <?php
+
+                    $pageList = Adpages::model()->findAll();
+
+                    //var_dump($pageList);
+                    foreach($pageList as $value){
+
+                        echo "<option value=" . $value->id . " >" . $value->page . "</option>";
+                    }
+
+                    ?>
                 </select>
             </div>
             <div class="visible-phone" style="padding-top: 5px;"></div>
-            <div class="span4">
-                <select class="btn-small" style="width: auto;">
-                    <option>Size</option>
-                    <option>300 x 250 - Page Left</option>
-                    <option>300 x 600 - Page Left</option>
-                    <option>300 x 60- Page Left</option>
-                    <option>600 x 100 - Between Properties</option>
+            <div class="offset4 span4">
+                <select class="btn-small" style="width: auto;" id="filter_sizes" onchange="javascript:Filter_Advertisement();">
+                    <option value="" >Filter by Ad Size</option>
+                    <?php
+
+                    $pageList = Adsizes::model()->findAll();
+
+                    //var_dump($pageList);
+                    foreach($pageList as $value){
+
+                        echo "<option value=" . $value->id . " >" . $value->size . "</option>";
+                    }
+
+                    ?>
                 </select>
             </div>
         </div>
     </div>
     <div class="span12" style="margin-left: 0 ">
-        <div class="container row-fluid span listing-row">
-            <div class="span5">
-                    <img src="<?php echo Yii::app()->request->baseUrl; ?>/images/geico-banner.jpg">
-                </a>
-            </div>
-            <div class="span2">
-                <div class="listing-normal">Page</div>
-                <div class="listing-normal">Size</div>
-                <div class="listing-normal">Position</div>
-            </div>
-            <div class="offset2 span3">
-                <div class="hidden-phone"></br></div>
-                <div>
-                    <a href="#" class="icon_gap lnkno-style">In-Active</a>
-                    <a href="#" class="lnklnkno-style" title="edit  "><i class="icon-edit icon_gap"></i></a>
-                    <a href="#" class="lnklnkno-style" title="delete"><i class="icon-remove icon_gap"></i></a>
-                </div>
-            </div>
-        </div>
-        <div class="container row-fluid span listing-row" style="margin-left: 0">
-            <div class="span5">
-                    <img src="<?php echo Yii::app()->request->baseUrl; ?>/images/ad.jpg">
-                </a>
-            </div>
-            <div class="span2">
-                <div class="listing-normal">Page</div>
-                <div class="listing-normal">Size</div>
-                <div class="listing-normal">Position</div>
-            </div>
-            <div class="offset2 span3">
-                <div class="hidden-phone"></br></div>
-                <div>
-                    <a href="#" class="icon_gap lnkno-style">In-Active</a>
-                    <a href="#" class="lnklnkno-style" title="edit  "><i class="icon-edit icon_gap"></i></a>
-                    <a href="#" class="lnklnkno-style" title="delete"><i class="icon-remove icon_gap"></i></a>
-                </div>
-            </div>
-        </div>
-        <div class="container row-fluid span listing-row" style="margin-left: 0">
-            <div class="span5">
-                    <img src="<?php echo Yii::app()->request->baseUrl; ?>/images/ad_large.jpg">
-                </a>
-            </div>
-            <div class="span2">
-                <div class="listing-normal">Page</div>
-                <div class="listing-normal">Size</div>
-                <div class="listing-normal">Position</div>
-            </div>
-            <div class="offset2 span3">
-                <div class="hidden-phone"></br></div>
-                <div>
-                    <a href="#" class="icon_gap lnkno-style">In-Active</a>
-                    <a href="#" class="lnklnkno-style" title="edit  "><i class="icon-edit icon_gap"></i></a>
-                    <a href="#" class="lnklnkno-style" title="delete"><i class="icon-remove icon_gap"></i></a>
-                </div>
-            </div>
-        </div>
-        <div class="container row-fluid span">
-            <div class="pagination pagination-small pagination-centered">
-                <ul>
-                    <li class="disabled"><a href="#">&laquo;</a></li>
-                    <li class="active"><a href="#">1</a></li>
-                    <li><a href="#">2</a></li>
-                    <li><a href="#">3</a></li>
-                    <li><a href="#">4</a></li>
-                    <li><a href="#">5</a></li>
-                    <li><a href="#">&raquo</a></li>
-                </ul>
-            </div>
+        <div class="container-fluid" style="padding: 0">
+            <?php
+            $page_filter = '';
+            $size_filter = '';
+
+            if (Yii::app()->request->isAjaxRequest && isset($_GET['page'])) {
+
+                $page_filter = ($_GET['page'] == '') ? '' : $_GET['page'] ;
+                //echo $status_filter;
+            }
+
+            if (Yii::app()->request->isAjaxRequest && isset($_GET['size'])) {
+
+                $size_filter = ($_GET['size'] == '') ? '' : $_GET['size'] ;
+                //echo $status_filter;
+            }
+
+            if (Yii::app()->user->usertype == 0) {
+
+                $condition = '';
+
+            } else {
+
+                $condition = 'advertiser = ' . Yii::app()->user->id;
+            }
+
+            if ($page_filter != '') {
+
+                if ($condition != "") {
+
+                    $condition .= ' AND page = ' . $page_filter;
+                } else {
+
+                    $condition .= 'page = ' . $page_filter;
+                }
+            }
+
+            if ($size_filter != '') {
+
+                if ($condition != "") {
+
+                    $condition .= ' AND size = ' . $size_filter;
+                } else {
+
+                    $condition .= 'size = ' . $size_filter;
+                }
+
+            }
+
+            $this->widget('zii.widgets.CListView', array(
+                'id' => 'list_advertisement',
+                'dataProvider'=>new CActiveDataProvider('Advertising', array('criteria'=>array('condition'=> $condition,'order' => 'id'),'pagination'=>array('pageSize'=>10))),
+                'itemView' => '_advertisement_list_view',
+                'template'=>'{items}<div class="span12"></div>{pager}<div class="span12"></div>'
+            ));
+            ?>
         </div>
     </div>
 </div>
