@@ -296,7 +296,10 @@
                             <?php echo ucwords($otheragent->fname) .' ' . ucwords($otheragent->lname); ?></br>
                             <?php echo $otheragent->phone; ?></br>
                             <?php echo ucwords($otheragent->address); ?>
-                            <br/><a href="<?php echo $model->agent0->email; ?>" class="btn btn-primary">Email Agent</a>
+                            <?php
+                            if ($model->agent0->email != "") { ?>
+                                <br/><a href="<?php echo $model->agent0->email; ?>" class="btn btn-primary">Email Agent</a>
+                            <?php } ?>
                         </div>
                         <?php } ?>
                     </div>
