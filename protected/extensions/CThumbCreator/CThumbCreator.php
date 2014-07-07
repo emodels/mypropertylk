@@ -205,7 +205,10 @@
             if($this->square)
             {
                 $this->tmp = imagecreatetruecolor($this->width, $this->height);
-                imagefilledrectangle($this->tmp, 0, 0, $this->width-1, $this->height-1, 0);
+                $white = imagecolorallocate($this->tmp, 255, 255, 255);
+
+                imagefilledrectangle($this->tmp, 0, 0, $this->width-1, $this->height-1, $white);
+
                 if(imagecopyresampled($this->tmp, $this->img, ($this->width-$newDimension[0])/2, ($this->height - $newDimension[1])/2, 0, 0, $newDimension[0], $newDimension[1], $this->image_info[0], $this->image_info[1]))
                 {
                     $this->updateDimensions($newDimension[0], $newDimension[1]);

@@ -83,6 +83,8 @@ class UploadAction extends CAction
                             $sheet_array = $yexcel->readActiveSheet(Yii::getPathOfAlias('webroot.upload.bulkupload') . DIRECTORY_SEPARATOR . 'property_bulk_upload_' . $user_id . DIRECTORY_SEPARATOR . 'property'. DIRECTORY_SEPARATOR . 'property.xlsx');
 
                             $rowCount = 0;
+                            $saveCount = 0;
+
                             foreach ($sheet_array as $row) {
 
                                 if ($rowCount > 0 && $row['A'] != '') {
@@ -179,6 +181,8 @@ class UploadAction extends CAction
                                             $propertytyperelation->typeid = intval($row['C']);
 
                                             $propertytyperelation->save();
+
+                                            $saveCount++;
                                         }
 
                                     } catch (Exception $ex){
@@ -237,6 +241,8 @@ class UploadAction extends CAction
                                             }
 
                                             /*---( Scale images to 800 X 600 size )---*/
+                                            $isThumbCreated = false;
+
                                             Yii::import('ext.CThumbCreator.CThumbCreator');
 
                                             $thumb = new CThumbCreator();
@@ -246,22 +252,57 @@ class UploadAction extends CAction
                                             $thumb->square = true;
                                             $thumb->directory = Yii::getPathOfAlias('webroot.upload.propertyimages') . DIRECTORY_SEPARATOR;
                                             $thumb->defaultName = 'image_' . $property->pid . '_' . $imageIndex . '_' .time();
-                                            $thumb->createThumb();
-                                            $thumb->save();
 
-                                            /*---( Add watermark to image )---*/
-                                            WatermarkGenerator::GenerateWatermark($thumb->directory, $thumb->defaultName, $fileName_extention);
+                                            try{
 
-                                            /*----( Save to Database )----*/
-                                            $propertyimage = new Propertyimages();
+                                                $thumb->createThumb();
+                                                $thumb->save();
 
-                                            $propertyimage->propertyid = $property->pid;
-                                            $propertyimage->imagename = $thumb->defaultName . '.' .$fileName_extention;
-                                            $propertyimage->imagetype = 0;
+                                                $isThumbCreated = true;
 
-                                            $propertyimage->save();
+                                            } catch (Exception $ex) {
 
-                                            $imageIndex++;
+
+                                                $warning = new stdClass();
+
+                                                $warning->id = $row['A'];
+                                                $warning->type = 'error';
+                                                $warning->desc = 'Due to unsupported dimention, unable to create Thumbnail image for Property Image : ' . $fileName . ' and therefore will be not uploaded';
+
+                                                $warningsArray[] = $warning;
+                                            }
+
+                                            if ($isThumbCreated) {
+
+                                                /*---( Add watermark to image )---*/
+                                                WatermarkGenerator::GenerateWatermark($thumb->directory, $thumb->defaultName, $fileName_extention);
+
+                                                /*----( Save to Database )----*/
+                                                $propertyimage = new Propertyimages();
+
+                                                $propertyimage->propertyid = $property->pid;
+                                                $propertyimage->imagename = $thumb->defaultName . '.' .$fileName_extention;
+                                                $propertyimage->imagetype = 0;
+
+                                                $propertyimage->save();
+
+                                                $imageIndex++;
+                                            }
+                                        }
+
+                                        /*---( If Thumbs are not created make Property In-Active )---*/
+                                        if ($imageIndex == 1) {
+
+                                            $property->status = 0;
+                                            $property->save(false);
+
+                                            $warning = new stdClass();
+
+                                            $warning->id = $row['A'];
+                                            $warning->type = 'warning';
+                                            $warning->desc = 'None of the Property Images are uploaded for Property No : ' . $property->pid . ' and therefore Property status changes to In-Active. Please upload images manualy from Admin control';
+
+                                            $warningsArray[] = $warning;
                                         }
                                     }
                                 }
@@ -270,9 +311,20 @@ class UploadAction extends CAction
                         }
                     }
 
-                    if (count($warningsArray) == 0) {
+                    if (count($warningsArray) == 0 && $saveCount > 0) {
                         Yii::app()->user->setFlash('success', "Property information imported successfully.");
                         $this->getController()->redirect(Yii::app()->request->baseUrl . '/property/propertylisting?type=0');
+                    }
+
+                    if (count($warningsArray) > 0 && $saveCount > 0) {
+
+                        $warning = new stdClass();
+
+                        $warning->id = 'N/A';
+                        $warning->type = 'warning';
+                        $warning->desc = $saveCount . ' number of Properties Uploaded successfully but with warnings and errors as listed above.';
+
+                        $warningsArray[] = $warning;
                     }
                 }
             }
