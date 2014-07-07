@@ -98,22 +98,41 @@
             }
 
          ?>
-        var address = "<?php echo $address; ?>, Sri Lanka";
-        var geocoder= new google.maps.Geocoder();
+
+        if (geoLocation("<?php echo $address; ?>, Sri Lanka", map) == false){
+
+            geoLocation("<?php echo $model->district0->name; ?>, Sri Lanka", map);
+        }
+    }
+
+    google.maps.event.addDomListener(window, 'load', initialize);
+
+    function geoLocation(address, map) {
+
+        var returnValue = false;
+        var address = address;
+        var geocoder = new google.maps.Geocoder();
+
         geocoder.geocode( { 'address': address}, function(results, status) {
+
             if (status == google.maps.GeocoderStatus.OK) {
+
                 map.setCenter(results[0].geometry.location);
                 var marker = new google.maps.Marker({
                     map: map,
                     position: results[0].geometry.location
                 });
+
+                returnValue = true;
+
             } else {
-                alert('Geocode was not successful for the following reason: ' + status);
+
+                returnValue = false;
             }
         });
-    }
 
-    google.maps.event.addDomListener(window, 'load', initialize);
+        return returnValue;
+    }
 </script>
 <style>
     #map_canvas {
@@ -330,7 +349,12 @@
                                     echo "Living Area: " . $model->livingarea . "<br/>";
                                 }
                                 if ($model->housesize != 0){
-                                    echo "House Size: " . $model->housesize . " " . $model->housesquares = 1 ? "f²" : "m²";
+                                    echo "House Size: " . $model->housesize . " " ;
+                                    if ($model->housesquares == 1)  {
+                                        echo  "f²";
+                                    } elseif ($model->housesquares == 2){
+                                        echo "m²";
+                                    }
                                     echo "<br/>";
                                 }
                                 if ($model->landsize){
@@ -341,7 +365,7 @@
                                         echo "m²";
                                     } else if ($model->landsquares == 3){
                                         echo "Hec";
-                                    } else if ($model->landsquares == 2){
+                                    } else if ($model->landsquares == 4){
                                         echo "Acres";
                                     }
                                     echo "<br/>";
