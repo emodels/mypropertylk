@@ -49,12 +49,14 @@
     .nav-tabs {
         border-bottom: 1px solid #ff4b23;
     }
+
     .nav-tabs a{
         color: #131326;
         background-color: #f7f7f9;
         border: 1px solid #ff4b23 !important;
         border-bottom-color: #ff4b23;
     }
+
     .nav-tabs > .active > a,
     .nav-tabs > .active > a:focus {
         color: #fff;
@@ -62,11 +64,20 @@
         border: 1px solid #ff4b23 !important;
         border-bottom-color: #ff4b23!important;
     }
+
     .nav-tabs > li > a:hover, .nav-tabs > li > a:focus {
         color: #fff;
         background-color: #ff4b23;
         border: 1px solid #ff4b23 !important;
         border-bottom-color: #ff4b23!important;
+    }
+
+    .list-view .summary {
+        display: none;
+    }
+
+    .list-view .empty {
+        display: none;
     }
 </style>
 <div class="content-wrapper clearfix">
@@ -135,18 +146,16 @@
                         <!--Advertiesments--->
                         <div class="span3 hidden-phone">
                             <div class="row-fluid">
-                                <div calss="ads_placeholder span6" style="padding-top: 30px;">
-                                    <img src="<?php echo Yii::app()->request->baseUrl; ?>/images/ad.jpg" alt="advertiesment"/>
-                                </div>
-                                <div calss="ads_placeholder span6" style="padding-top: 20px;">
-                                    <img src="<?php echo Yii::app()->request->baseUrl; ?>/images/Advertise-Here.jpg" alt="advertiesment"/>
-                                </div>
-                                <div calss="ads_placeholder span6"  style="padding-top: 20px;">
-                                    <img src="<?php echo Yii::app()->request->baseUrl; ?>/images/zillow.png" alt="advertiesment"/>
-                                </div>
-                                <div calss="ads_placeholder_large span6"  style="padding-top: 20px;">
-                                    <img src="<?php echo Yii::app()->request->baseUrl; ?>/images/ad_large.jpg" alt="advertiesment"/>
-                                </div>
+                                <?php
+
+                                $condition = '(page = 9 AND (size = 1 OR size = 3 OR size = 5) AND status = 1) AND expiredate >= CURDATE()';
+
+                                $this->widget('zii.widgets.CListView', array(
+                                    'id' => 'list_advertisement',
+                                    'dataProvider'=>new CActiveDataProvider('Advertising', array('criteria'=>array('condition'=> $condition,'order' => 'entrydate DESC'),'pagination'=>false)),
+                                    'itemView' => '_ads_list_view'
+                                ));
+                                ?>
                             </div>
                         </div>
                     </div>

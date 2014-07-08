@@ -1,3 +1,15 @@
+<style type="text/css">
+
+    .list-view .summary {
+        display: none;
+    }
+
+    .list-view .empty {
+        display: none;
+    }
+
+</style>
+
 <?php
 $this->pageTitle=Yii::app()->name . ' - Register';
 $this->breadcrumbs=array(
@@ -14,8 +26,8 @@ $this->breadcrumbs=array(
                             <div id="title-listing" class="container">
                                 <div class="property-list-title">Register</div>
                             </div>
-                            <div class="span-12 offset1">
-                                <p>Please fill the following fields to register with myproperty.lk:</p>
+                            <div class="span10 offset1">
+                                <p class="alert alert-danger">Please fill the following fields to register with myproperty.lk....!</p>
                                 <div class="form">
                                     <?php $form=$this->beginWidget('CActiveForm', array(
                                         'id'=>'register-form',
@@ -102,12 +114,16 @@ $this->breadcrumbs=array(
                     </div>
                     <div class="span3 hidden-phone">
                         <div class="row-fluid">
-                            <div calss="ads_placeholder span6" style="padding-top: 30px;">
-                                <img src="<?php echo Yii::app()->request->baseUrl; ?>/images/ad.jpg" alt="advertiesment"/>
-                            </div>
-                            <div calss="ads_placeholder span6" style="padding-top: 10px;">
-                                <img src="<?php echo Yii::app()->request->baseUrl; ?>/images/Advertise-Here.jpg" alt="advertiesment"/>
-                            </div>
+                            <?php
+
+                            $condition = '(page = 7 AND (size = 1 OR size = 3 OR size = 5) AND status = 1) AND expiredate >= CURDATE()';
+
+                            $this->widget('zii.widgets.CListView', array(
+                                'id' => 'list_advertisement',
+                                'dataProvider'=>new CActiveDataProvider('Advertising', array('criteria'=>array('condition'=> $condition,'order' => 'entrydate DESC'),'pagination'=>false)),
+                                'itemView' => '_ads_list_view'
+                            ));
+                            ?>
                         </div>
                     </div>
                 </div>

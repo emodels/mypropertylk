@@ -48,9 +48,20 @@
     </div>
 </div>
 <div class="row-fluid" style="margin-top: 15px;">
-    <?php if($index % 2 == 0 && $index != 0){?>
-        <img src="<?php echo Yii::app()->request->baseUrl; ?>/images/ad_property_between.gif" alt="advertiesment"/>
-    <?php } ?>
+    <?php
+
+    if($index % 2 == 0 && $index != 0){
+
+        $condition = '(page = 5 AND (size = 8) AND status = 1) AND expiredate >= CURDATE()';
+
+        $this->widget('zii.widgets.CListView', array(
+            'id' => 'list_advertisement',
+            'dataProvider'=>new CActiveDataProvider('Advertising', array('criteria'=>array('condition'=> $condition,'order' => 'entrydate DESC'),'pagination'=>false)),
+            'itemView' => '_ads_list_view'
+        ));
+    }
+
+    ?>
 </div>
 
 

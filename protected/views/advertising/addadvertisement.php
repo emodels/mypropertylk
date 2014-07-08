@@ -72,26 +72,32 @@
                 <div class="control-group-admin">
                     <label>Advertisement Expiration Date</label>
                     <?php
-                    $this->widget('zii.widgets.jui.CJuiDatePicker', array(
-                        'model'=>$model,
-                        'attribute'=>'expiredate',
-                        'options'=>array(
-                            'showAnim'=>'fold',
-                            'dateFormat'=>'yy-mm-dd',
-                            'changeMonth' => 'true',
-                            'changeYear' => 'true',
-                            'constrainInput' => 'false',
-                            'yearRange' => 'c-15:c+15'
-                        ),
-                        'htmlOptions'=>array(
-                            'style'=>'width: 300px',
-                            'readonly'=>'readonly'
-                        ),
-                    ));
+                    if (Yii::app()->user->usertype == 0) {
+
+                        $this->widget('zii.widgets.jui.CJuiDatePicker', array(
+                            'model'=>$model,
+                            'attribute'=>'expiredate',
+                            'options'=>array(
+                                'showAnim'=>'fold',
+                                'dateFormat'=>'yy-mm-dd',
+                                'changeMonth' => 'true',
+                                'changeYear' => 'true',
+                                'constrainInput' => 'false',
+                                'yearRange' => 'c-15:c+15'
+                            ),
+                            'htmlOptions'=>array(
+                                'style'=>'width: 300px',
+                                'readonly'=>'readonly'
+                            ),
+                        ));
+                    } else {
                     ?>
+                    <div class="alert alert-info">
+                        This Advertisement will be expired on : <strong><?php echo date('Y-m-d',strtotime("+30 days")); ?></strong>
+                    </div>
+                    <?php } ?>
                     <?php echo $form->error($model, 'expiredate', array('style'=>'width: auto')); ?><span class="star">*</span>
                 </div>
-
                 <div class="control-group-admin-btn">
                     <div class="span12" style="padding-top: 5px;">
                         <?php echo CHtml::submitButton('Add', array('class' => 'btn btn-primary')); ?>&nbsp;

@@ -34,7 +34,7 @@
                         </a>
                     </div>
                     <div class="span4" style="float: right; text-align: right; padding:30px 35px 30px 0;">
-                        <a class="btn btn-primary" href="<?php echo Yii::app()->request->baseUrl; ?>/login" title="click here to post a free ad" rel="home">POST YOUR FREE AD</a>
+                        <a class="btn btn-primary" href="<?php echo Yii::app()->request->baseUrl; ?>/property/addproperty?type=1" title="click here to post a free ad" rel="home">POST YOUR FREE AD</a>
                     </div>
                 </div>
             </div>

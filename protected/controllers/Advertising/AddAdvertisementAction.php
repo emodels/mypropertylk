@@ -20,6 +20,7 @@ class AddAdvertisementAction extends CAction
 
         $model =  new Advertising();
         $model->entrydate = date("Y-m-d");
+        $model->expiredate = date('Y-m-d',strtotime("+30 days"));
         $model->status = 0;
 
         $advertiserListData = CHtml::listData(User::model()->findAll('usertype = 0 OR usertype = 3'), 'id', 'fullName');

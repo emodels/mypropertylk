@@ -43,6 +43,15 @@
         border: 1px solid #fcb30f !important;
         border-bottom-color: #fcb30f!important;
     }
+
+
+    .list-view .summary {
+        display: none;
+    }
+
+    .list-view .empty {
+        display: none;
+    }
 </style>
 <div class="content-wrapper clearfix">
     <div class="form">
@@ -89,9 +98,18 @@
                                             $condition = '(type = 4 OR type = 5 ) AND status = 2';
                                         }
 
+                                        $dataprovider = new CActiveDataProvider('Property', array('criteria'=>array('condition'=> $condition,'order' => 'entrydate DESC'),'pagination'=>array('pageSize'=>10)));
+
+                                        if ($dataprovider->totalItemCount == 0) {
+
+                                            echo '<div class="alert alert-danger" style="font-size: 16px;">';
+                                            echo "No Property found....!";
+                                            echo '</div>';
+                                        }
+
                                         $this->widget('zii.widgets.CListView', array(
                                             'id' => 'list_commercial',
-                                            'dataProvider'=>new CActiveDataProvider('Property', array('criteria'=>array('condition'=> $condition,'order' => 'entrydate DESC'),'pagination'=>array('pageSize'=>10))),
+                                            'dataProvider'=>$dataprovider,
                                             'itemView' => '_commercial_list_view',
                                             'template'=>'{items}<div class="span12"></div>{pager}<div class="span12"></div>'
                                         ));
@@ -103,18 +121,16 @@
                         <!--Advertiesments--->
                         <div class="span3 hidden-phone">
                             <div class="row-fluid">
-                                <div calss="ads_placeholder span6" style="padding-top: 30px;">
-                                    <img src="<?php echo Yii::app()->request->baseUrl; ?>/images/ad.jpg" alt="advertiesment"/>
-                                </div>
-                                <div calss="ads_placeholder span6" style="padding-top: 20px;">
-                                    <img src="<?php echo Yii::app()->request->baseUrl; ?>/images/Advertise-Here.jpg" alt="advertiesment"/>
-                                </div>
-                                <div calss="ads_placeholder span6"  style="padding-top: 20px;">
-                                    <img src="<?php echo Yii::app()->request->baseUrl; ?>/images/zillow.png" alt="advertiesment"/>
-                                </div>
-                                <div calss="ads_placeholder_large span6"  style="padding-top: 20px;">
-                                    <img src="<?php echo Yii::app()->request->baseUrl; ?>/images/ad_large.jpg" alt="advertiesment"/>
-                                </div>
+                                <?php
+
+                                $condition = '(page = 5 AND (size = 1 OR size = 3 OR size = 5) AND status = 1) AND expiredate >= CURDATE()';
+
+                                $this->widget('zii.widgets.CListView', array(
+                                    'id' => 'list_advertisement',
+                                    'dataProvider'=>new CActiveDataProvider('Advertising', array('criteria'=>array('condition'=> $condition,'order' => 'entrydate DESC'),'pagination'=>false)),
+                                    'itemView' => '_ads_list_view'
+                                ));
+                                ?>
                             </div>
                         </div>
                     </div>

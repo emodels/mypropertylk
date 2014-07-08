@@ -106,9 +106,12 @@
     .qq-upload-list {
         display: none;
     }
+
     .list-view .summary {
         display: none;
     }
+
+
     .img-icon{
         text-align: center;
         padding-top: 10px;
@@ -213,7 +216,7 @@
 
     .tt-suggestion.tt-cursor {
         color: #fff;
-        background-color: #0097cf;
+        background-color: #fcf9b2;
 
     }
 
@@ -302,7 +305,7 @@
                                         <?php echo $form->textField($model,'townname', array('placeholder'=>'e.g: Colombo; Gampaha ; Anuradhapura', 'class' => 'span11 typeahead', 'id' => 'townname', 'style' => 'z-index: 2')); ?>
                                     </div>
                                     <div class="span2" >
-                                        <a href="javascript:SearchProperty();" class="btn btn-info">Search</a>
+                                        <a href="javascript:SearchProperty();" class="btn btn-primary">Search</a>
                                     </div>
                                 </div>
                                 <div class="span12"  style="margin-left: 0; margin-top: 15px">
@@ -497,7 +500,7 @@
 
                                             $this->widget('zii.widgets.CListView', array(
                                                 'id' => 'list_featured',
-                                                'dataProvider'=>new CActiveDataProvider('Property', array('criteria'=>array('condition'=> $condition,'order' => 'entrydate DESC, entrydate DESC LIMIT 20'),'pagination'=>false)),
+                                                'dataProvider'=>new CActiveDataProvider('Property', array('criteria'=>array('condition'=> $condition,'order' => 'entrydate DESC LIMIT 20'),'pagination'=>false)),
                                                 'itemView' => '_featured_list_view'
                                             ));
                                             ?>
@@ -594,20 +597,20 @@
                             </div><!-- /.container -->
                         </div>
                     </div>
+                    <!-----------Advertisement Section Begin----------->
                     <div class="span3 hidden-phone">
-                        <div calss="ads_placeholder span6" style="padding-top: 30px;">
-                            <img src="images/ad.jpg" alt="advertiesment"/>
-                        </div>
-                        <div calss="ads_placeholder span6" style="padding-top: 20px;">
-                            <img src="images/Advertise-Here.jpg" alt="advertiesment"/>
-                        </div>
-                        <div calss="ads_placeholder span6"  style="padding-top: 20px;">
-                            <img src="images/zillow.png" alt="advertiesment"/>
-                        </div>
-                        <div calss="ads_placeholder_large span6"  style="padding-top: 20px;">
-                            <img src="images/ad_large.jpg" alt="advertiesment"/>
-                        </div>
+                        <?php
+
+                        $condition = '(page = 1 AND (size = 1 OR size = 3 OR size = 5) AND status = 1) AND expiredate >= CURDATE()';
+
+                        $this->widget('zii.widgets.CListView', array(
+                            'id' => 'list_advertisement',
+                            'dataProvider'=>new CActiveDataProvider('Advertising', array('criteria'=>array('condition'=> $condition,'order' => 'entrydate DESC'),'pagination'=>false)),
+                            'itemView' => '_ads_list_view'
+                        ));
+                        ?>
                     </div>
+                    <!-----------Advertisement Section End----------->
                 </div>
             </div>
         </div>

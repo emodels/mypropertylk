@@ -81,8 +81,30 @@
         </div>
     </div>
 </div>
-<div class="row-fluid" style="margin: 15px 0;">
-    <?php if($index % 3 == 0 && $index != 0){?>
-        <img src="<?php echo Yii::app()->request->baseUrl; ?>/images/ad_property_between.gif" alt="advertiesment"/>
-    <?php } ?>
+<div class="row-fluid" style="margin: 0 0 30px 0;">
+    <?php
+
+    if($index % 3 == 0 && $index != 0){
+
+        if ($_GET['type'] == "buy") {
+
+            $page = 2;
+        } elseif ($_GET['type'] == "rent"){
+
+            $page = 3;
+        } elseif ($_GET['type'] == "sold"){
+
+            $page = 4;
+        }
+
+        $condition = '(page = ' . $page . ' AND (size = 7) AND status = 1) AND expiredate >= CURDATE()';
+
+        $this->widget('zii.widgets.CListView', array(
+            'id' => 'list_advertisement',
+            'dataProvider'=>new CActiveDataProvider('Advertising', array('criteria'=>array('condition'=> $condition,'order' => 'entrydate DESC'),'pagination'=>false)),
+            'itemView' => '_ads_list_view'
+        ));
+    }
+
+    ?>
 </div>
