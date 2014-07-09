@@ -552,7 +552,7 @@
 
                                                     if (isset($_SESSION['search']['district'])) {
 
-                                                        $district =  District::model()->findByPk($_GET['district']);
+                                                        $district =  District::model()->findByPk($_SESSION['search']['district']);
                                                         echo "Properties for Rent in " . $district->name;
 
                                                     } else {
@@ -563,7 +563,7 @@
 
                                                     if (isset($_SESSION['search']['district'])) {
 
-                                                        $district =  District::model()->findByPk($_GET['district']);
+                                                        $district =  District::model()->findByPk($_SESSION['search']['district']);
                                                         echo "Properties for Sold in " . $district->name;
 
                                                     } else {
