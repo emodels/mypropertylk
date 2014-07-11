@@ -544,7 +544,12 @@
                                                         $district =  District::model()->findByPk($_SESSION['search']['district']);
                                                         echo "Properties for Sale in " . $district->name;
 
+                                                    } else if (isset($_SESSION['search']['town'])){
+
+                                                        echo "Properties for Sale in " . $_SESSION['search']['town'];
+
                                                     } else {
+
                                                         echo "Properties for Sale";
                                                     }
 
@@ -555,7 +560,12 @@
                                                         $district =  District::model()->findByPk($_SESSION['search']['district']);
                                                         echo "Properties for Rent in " . $district->name;
 
+                                                    } else if (isset($_SESSION['search']['town'])){
+
+                                                        echo "Properties for Sale in " . $_SESSION['search']['town'];
+
                                                     } else {
+
                                                         echo "Properties for Rent";
                                                     }
 
@@ -566,7 +576,12 @@
                                                         $district =  District::model()->findByPk($_SESSION['search']['district']);
                                                         echo "Properties for Sold in " . $district->name;
 
+                                                    } else if (isset($_SESSION['search']['town'])){
+
+                                                        echo "Properties for Sale in " . $_SESSION['search']['town'];
+
                                                     } else {
+
                                                         echo "Properties for Sold";
                                                     }
 
