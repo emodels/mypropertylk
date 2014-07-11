@@ -18,6 +18,21 @@
 
     }
 
+    function SetPrimary_Image(id){
+        $.ajax({
+            type: "GET",
+            url: 'addproperty_step3/mode/PRIMARY/id/' + id,
+            success: function(data){
+                if (data == 'done'){
+                    $.fn.yiiListView.update('list_images_house');
+                } else {
+                    alert(data);
+                }
+            }
+        });
+
+    }
+
     function formSend(form, data, hasError){
 
         if (hasError) {

@@ -3,37 +3,61 @@
 <div style="position: relative; padding: 10px">
     <table border="0" cellpadding="0" cellspacing="0" width="100%">
         <tr>
-            <td style="text-align: left; border-bottom: solid 4px #002a80;">
-                <img class="site-logo" src="<?php echo Yii::app()->request->baseUrl; ?>/images/logo.png"/>
+            <td style="text-align: left; border-bottom: solid 4px #002a80; padding-bottom: 15px;">
+                <img class="site-logo" src="http://www.myproperty.lk/images/logo.png"/>
             </td>
         </tr>
         <tr>
-            <td>
+            <td style="padding-top: 15px;">
                 <p>
-                    You have received a new lead from myproperty.lk for:
+                    You have received a new lead from <a href="http://www.myproperty.lk">myproperty.lk</a> for:
                 </p>
             </td>
         </tr>
         <tr>
             <td>
                 <?php
-                 $propertyList = Property::model()->findByPk($model['id']);
+
+                 $propertyList = Property::model()->findByPk($model['pid']);
 
                 ?>
-                <p>Property id: <?php echo  $propertyList->pid; ?></p>
+                <p><b>Property ID: #</b> <?php echo  $propertyList->pid; ?></p>
 
+                <?php
+                $address = "";
 
-                <p>Property address: <?php echo  $propertyList->townname; ?></p>
+                if ($propertyList->number != "") {
 
-                <p>Property URL: <a href="'www.myproperty.lk/list/detail/pid/'. <?php echo  $propertyList->pid; ?>" target="_blank">www.myproperty.lk/list/detail/pid/<?php echo  $propertyList->pid; ?></a> </p>
+                    $address .= $propertyList->number . ", ";
+                }
+
+                if ($propertyList->streetaddress != "") {
+
+                    $address .= $propertyList->streetaddress . ", ";
+                }
+
+                if ($propertyList->areaname != ""){
+
+                    $address .= $propertyList->areaname . ", ";
+                }
+
+                if ($propertyList->townname != "") {
+
+                    $address .= $propertyList->townname;
+                }
+
+                ?>
+                <p><b>Property Address :</b> <?php echo ucwords($address); ?></p>
+
+                <p><b>Property URL :</b> <a href="http://www.myproperty.lk/list/detail/pid/<?php echo $propertyList->pid; ?>" target="_blank">www.myproperty.lk/list/detail/pid/<?php echo  $propertyList->pid; ?></a> </p>
             </td>
         </tr>
     </table>
 </div>
-<div>
-    <p>User Details:</p>
+<div style="margin-left: 10px;">
+    <p><b>User Details:</b></p>
 </div>
-<div style="position: relative; padding: 20px; margin-left: 10px; border: solid 1px silver; background: #f7f7f7; border-radius: 10px; font-size: 15px; width: 100%">
+<div style="position: relative; padding: 20px; margin-left: 10px; border: solid 1px silver; background: #f7f7f7; border-radius: 10px; font-size: 15px; width: 80%">
     <table border="0" cellpadding="2" cellspacing="2" width="100%">
         <tr>
             <td style="width: 200px"><b>Name</b></td>

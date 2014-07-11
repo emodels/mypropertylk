@@ -554,7 +554,85 @@
                                                     <article class="property-item">
                                                         <div class="property-images">
                                                             <a href="<?php echo Yii::app()->baseUrl . '/list/detail?pid=' .$data->pid;?>" title="<?php echo $data->pid; ?>">
-                                                                <img src="<?php echo Yii::app()->baseUrl . '/upload/propertyimages/'. ((count($data->propertyimages) > 0) ? $data->propertyimages[0]->imagename : 'prop_no_img.jpg') ?>" class="status-35 wp-post-image" alt="<?php echo $data->pid; ?>" title="<?php echo $data->pid; ?>" /></a>
+                                                                <?php
+                                                                $imgname = "";
+
+                                                                if (count($data->propertyimages) > 0) {
+
+                                                                    foreach ($data->propertyimages as $value) {
+
+                                                                        if ($value->primaryimg == 1) {
+
+                                                                            $imgname = $value->imagename;
+                                                                        }
+                                                                    }
+
+                                                                    if ($imgname != "") {
+
+                                                                        if (($data->type == 1 || $data->type == 2 || $data->type == 4) && $data->status == 1) { ?>
+
+                                                                            <img width="540" height="360" src="<?php echo Yii::app()->baseUrl . '/upload/propertyimages/'. $imgname ?>" class="status-35 wp-post-image" alt="<?php echo $data->pid; ?>" title="<?php echo $data->pid; ?>" />
+
+                                                                        <?php }
+
+                                                                        if (($data->type == 3  || $data->type == 5) && $data->status == 1) { ?>
+
+                                                                            <img width="540" height="360" src="<?php echo Yii::app()->baseUrl . '/upload/propertyimages/'. $imgname ?>" class="status-28 wp-post-image" alt="<?php echo $data->pid; ?>" title="<?php echo $data->pid; ?>" />
+
+                                                                        <?php }
+
+                                                                        if ($data->status == 2) { ?>
+
+                                                                            <img width="540" height="360" src="<?php echo Yii::app()->baseUrl . '/upload/propertyimages/'. $imgname ?>" class="status-sold wp-post-image" alt="<?php echo $data->pid; ?>" title="<?php echo $data->pid; ?>" />
+
+                                                                        <?php }
+
+
+                                                                    } else {
+
+                                                                        if (($data->type == 1 || $data->type == 2 || $data->type == 4) && $data->status == 1) { ?>
+
+                                                                            <img width="540" height="360" src="<?php echo Yii::app()->baseUrl . '/upload/propertyimages/'. $data->propertyimages[0]->imagename ?>" class="status-35 wp-post-image" alt="<?php echo $data->pid; ?>" title="<?php echo $data->pid; ?>" />
+
+                                                                        <?php }
+
+                                                                        if (($data->type == 3  || $data->type == 5) && $data->status == 1) { ?>
+
+                                                                            <img width="540" height="360" src="<?php echo Yii::app()->baseUrl . '/upload/propertyimages/'. $data->propertyimages[0]->imagename ?>" class="status-28 wp-post-image" alt="<?php echo $data->pid; ?>" title="<?php echo $data->pid; ?>" />
+
+                                                                        <?php }
+
+                                                                        if ($data->status == 2) { ?>
+
+                                                                            <img width="540" height="360" src="<?php echo Yii::app()->baseUrl . '/upload/propertyimages/'. $data->propertyimages[0]->imagename ?>" class="status-sold wp-post-image" alt="<?php echo $data->pid; ?>" title="<?php echo $data->pid; ?>" />
+
+                                                                        <?php }
+
+
+
+                                                                    }
+                                                                } else {
+
+                                                                    if (($data->type == 1 || $data->type == 2 || $data->type == 4) && $data->status == 1) { ?>
+
+                                                                        <img width="540" height="360" src="<?php echo Yii::app()->baseUrl;?>/upload/propertyimages/prop_no_img.jpg" class="status-35 wp-post-image" alt="<?php echo $data->pid; ?>" title="<?php echo $data->pid; ?>" />
+
+                                                                    <?php }
+
+                                                                    if (($data->type == 3  || $data->type == 5) && $data->status == 1) { ?>
+
+                                                                        <img width="540" height="360" src="<?php echo Yii::app()->baseUrl;?>/upload/propertyimages/prop_no_img.jpg" class="status-28 wp-post-image" alt="<?php echo $data->pid; ?>" title="<?php echo $data->pid; ?>" />
+
+                                                                    <?php }
+
+                                                                    if ($data->status == 2) { ?>
+
+                                                                        <img width="540" height="360" src="<?php echo Yii::app()->baseUrl;?>/upload/propertyimages/prop_no_img.jpg" class="status-sold wp-post-image" alt="<?php echo $data->pid; ?>" title="<?php echo $data->pid; ?>" />
+
+                                                                    <?php }
+                                                                } ?>
+
+                                                            </a>
                                                             <div>
                                                                 <?php
                                                                 if ($data->type == 1 || $data->type == 2) {

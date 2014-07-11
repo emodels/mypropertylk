@@ -24,6 +24,21 @@ class EditPropertyAction_Step3 extends CAction
             Yii::app()->end();
         }
 
+        if (Yii::app()->request->isAjaxRequest && isset($_GET['mode']) && $_GET['mode'] == 'PRIMARY' && isset($_GET['id'])) {
+
+            if (isset(Yii::app()->session['property_id'])) {
+
+               $pid = Yii::app()->session['property_id'];
+               Propertyimages::model()->updateAll(array('primaryimg' => 0), 'propertyid = ' . $pid);
+
+               Propertyimages::model()->updateAll(array('primaryimg' => 1), 'id = ' . $_GET['id']);
+
+            }
+            echo 'done';
+            Yii::app()->user->setFlash('success', 'Image Set as Primary Image..!');
+            Yii::app()->end();
+        }
+
         if (isset(Yii::app()->session['property_id'])) {
 
             Yii::import("ext.EAjaxUpload.qqFileUploader");

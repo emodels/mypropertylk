@@ -1,7 +1,34 @@
 <div data-id="<?php echo $data->pid; ?>" style="margin-left: 0px; padding-bottom: 10px;" class="container row-fluid span listing-row">
         <div class="span2">
             <a href="javascript:ViewProperty(<?php echo $data->pid ?>);" title="view property" style="text-decoration: none">
-                <img src="<?php echo Yii::app()->baseUrl . '/upload/propertyimages/'. ((count($data->propertyimages) > 0) ? $data->propertyimages[0]->imagename : 'prop_no_img.jpg') ?>" class="listing-img">
+                <?php
+                $imgname = "";
+
+                if (count($data->propertyimages) > 0) {
+
+                    foreach ($data->propertyimages as $value) {
+
+                        if ($value->primaryimg == 1) {
+
+                            $imgname = $value->imagename;
+                        }
+                    }
+
+                    if ($imgname != "") {?>
+
+                        <img src="<?php echo Yii::app()->baseUrl . '/upload/propertyimages/' . $imgname ?>" class="listing-img">
+
+                    <?php
+                    } else{ ?>
+
+                        <img src="<?php echo Yii::app()->baseUrl . '/upload/propertyimages/' . $data->propertyimages[0]->imagename ?>" class="listing-img">
+
+                    <?php
+                    }
+                } else{ ?>
+
+                    <img src="<?php echo Yii::app()->baseUrl;?> . /upload/propertyimages/prop_no_img.jpg" class="listing-img">
+                <?php } ?>
             </a>
     </div>
     <div class="span5">

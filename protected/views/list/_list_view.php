@@ -38,9 +38,36 @@
                 </div>
             </div>
             <div class="row-fluid">
-                <div class="span7" style="padding-top: 0;">
+                <div class="span7" style="padding-top: 0; border-right: solid 1px silver">
                     <a href="<?php echo Yii::app()->baseUrl . '/list/detail?pid=' .$data->pid;?> ">
-                        <img src="<?php echo Yii::app()->baseUrl . '/upload/propertyimages/'. ((count($data->propertyimages) > 0) ? $data->propertyimages[0]->imagename : 'prop_no_img.jpg') ?>" >
+                        <?php
+                        $imgname = "";
+
+                        if (count($data->propertyimages) > 0) {
+
+                            foreach ($data->propertyimages as $value) {
+
+                                if ($value->primaryimg == 1) {
+
+                                    $imgname = $value->imagename;
+                                }
+                            }
+
+                            if ($imgname != "") {?>
+
+                                <img src="<?php echo Yii::app()->baseUrl . '/upload/propertyimages/' . $imgname ?>" class="listing-img">
+
+                            <?php
+                            } else{ ?>
+
+                                <img src="<?php echo Yii::app()->baseUrl . '/upload/propertyimages/' . $data->propertyimages[0]->imagename ?>" class="listing-img">
+
+                            <?php
+                            }
+                        } else{ ?>
+
+                            <img src="<?php echo Yii::app()->baseUrl;?> . /upload/propertyimages/prop_no_img.jpg" class="listing-img">
+                        <?php } ?>
                     </a>
                 </div>
                 <div class="span5 content">
@@ -70,7 +97,7 @@
                         <?php } ?>
                     </div>
                     <div class="listing-bold" style="margin-top: 10px; margin-bottom: 5px"><?php echo$data->headline; ?></div>
-                    <div class="listing-small-normal"><?php echo substr($data->desc, 0, 160).'....'; ?></div>
+                    <!--<div class="listing-small-normal"><?php /*echo substr($data->desc, 0, 50).'....'; */?></div>-->
                     <div class="listing-small"><b>Agent :</b> <?php echo ucwords($data->agent0->fname) .' '. ucwords($data->agent0->lname)  ?></div>
                     <div style="text-align: right; padding-top: 15px;">
                         <a class="btn" href="#"><i class="icon-star-empty"></i> Save</a>

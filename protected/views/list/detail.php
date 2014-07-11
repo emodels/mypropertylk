@@ -473,7 +473,7 @@
                 <h5 id="myModalLabel">Contact Agent for Property #<?php echo $model->pid; ?></h5>
             </div>
             <div class="modal-body row-fluid span12" style="margin: 0px">
-                <div class="control-group" style="display: hidden;">
+                <div class="control-group" style="display: none;">
                     <?php echo CHtml::textField('Enquery[pid]', $model->pid, array('class'=>'span11')); ?>
                 </div>
                 <div class="control-group">

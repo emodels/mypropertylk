@@ -8,6 +8,7 @@
  * @property integer $propertyid
  * @property string $imagename
  * @property integer $imagetype
+ * @property integer $primaryimg
  *
  * The followings are the available model relations:
  * @property Property $property
@@ -40,12 +41,12 @@ class Propertyimages extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('propertyid, imagename, imagetype', 'required'),
-			array('propertyid, imagetype', 'numerical', 'integerOnly'=>true),
+			array('propertyid, imagename, imagetype, primaryimg', 'required'),
+			array('propertyid, imagetype, primaryimg', 'numerical', 'integerOnly'=>true),
 			array('imagename', 'length', 'max'=>200),
 			// The following rule is used by search().
 			// Please remove those attributes that should not be searched.
-			array('id, propertyid, imagename, imagetype', 'safe', 'on'=>'search'),
+			array('id, propertyid, imagename, imagetype, primaryimg', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -71,6 +72,7 @@ class Propertyimages extends CActiveRecord
 			'propertyid' => 'Propertyid',
 			'imagename' => 'Imagename',
 			'imagetype' => 'Imagetype',
+			'primaryimg' => 'Primaryimg',
 		);
 	}
 
@@ -89,6 +91,7 @@ class Propertyimages extends CActiveRecord
 		$criteria->compare('propertyid',$this->propertyid);
 		$criteria->compare('imagename',$this->imagename,true);
 		$criteria->compare('imagetype',$this->imagetype);
+		$criteria->compare('primaryimg',$this->primaryimg);
 
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,

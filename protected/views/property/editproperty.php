@@ -17,7 +17,34 @@ $this->breadcrumbs=array(
     <div class="edit-header">
         <h1 id="listing-address-title"><?php echo $model->headline ?></h1>
         <h2 id="listing-address-subtitle"><?php echo $model->number . ',' . $model->streetaddress . ','. $model->areaname . ',' . $model->townname ?></h2>
-        <img class="listing-background-image" src="<?php echo Yii::app()->request->baseUrl.'/upload/propertyimages/'. ((count($model->propertyimages) > 0) ? $model->propertyimages[0]->imagename : 'prop_no_img.jpg'); ?>">
+        <?php
+        $imgname = "";
+
+        if (count($model->propertyimages) > 0) {
+
+            foreach ($model->propertyimages as $value) {
+
+                if ($value->primaryimg == 1) {
+
+                    $imgname = $value->imagename;
+                }
+            }
+
+            if ($imgname != "") {?>
+
+                <img src="<?php echo Yii::app()->baseUrl . '/upload/propertyimages/' . $imgname ?>" class="listing-background-image">
+
+            <?php
+            } else{ ?>
+
+                <img src="<?php echo Yii::app()->baseUrl . '/upload/propertyimages/' . $model->propertyimages[0]->imagename ?>" class="listing-background-image">
+
+            <?php
+            }
+        } else{ ?>
+
+            <img src="<?php echo Yii::app()->baseUrl;?> . /upload/propertyimages/prop_no_img.jpg" class="listing-background-image">
+        <?php } ?>
     </div>
     <div style="text-align: center;">
         <div>
