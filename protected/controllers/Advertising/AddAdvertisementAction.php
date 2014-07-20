@@ -25,6 +25,41 @@ class AddAdvertisementAction extends CAction
 
         $advertiserListData = CHtml::listData(User::model()->findAll('usertype = 0 OR usertype = 3'), 'id', 'fullName');
 
+        if (Yii::app()->request->isAjaxRequest && Yii::app()->request->isPostRequest) {
+
+            if (isset($_POST['action'])) {
+
+                switch($_POST['action']){
+
+                    case 'getAddSizes':
+
+                        $adSizes = Adprice::model()->findAll('page = ' . $_POST['page']);
+
+                        $array_adSizes = array();
+                        foreach($adSizes as $value){
+
+                            $array_adSizes[] = array('id'=>$value->size, 'size'=> $value->size0->size);
+                        }
+
+                        echo json_encode($array_adSizes);
+
+                        break;
+
+                    case 'getAddPrice':
+
+                        $adPrice = Adprice::model()->find('page = '. $_POST['page'] . ' AND size = ' . $_POST['size']);
+
+                        echo "Rs. " . $adPrice->price . ".00";
+
+                        break;
+
+                }
+
+            }
+
+            Yii::app()->end();
+        }
+
         if (isset($_POST['Advertising'])) {
 
             $rnd = rand(0,9999);  // generate random number between 0-9999
@@ -59,6 +94,11 @@ class AddAdvertisementAction extends CAction
             }
 
 
+        }
+
+        if (isset($_GET['size'])) {
+
+                $model->size = $_GET['size'];
         }
 
         $this->getController()->render('addadvertisement', array('model'=>$model, 'advertiserListData' => $advertiserListData));

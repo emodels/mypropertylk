@@ -16,16 +16,21 @@ class PromotelistingAction extends CAction
      */
     public function run()
     {
-        $featured=0;
-
         if (isset($_GET['pid'])) {
+
             $model =  Property::model()->findByPk($_GET['pid']);
+
+            $priceStandard = Pricelist::model()->find("proptype = 'Standard Property'");
+            $pricePremier = Pricelist::model()->find("proptype = 'Premier Property'");
+            $priceFeatured = Pricelist::model()->find("proptype = 'Featured Property'");
+
         } else {
+
             Yii::app()->user->setFlash('error', 'Error Page Request');
             $this->getController()->redirect(Yii::app()->baseUrl);
         }
 
-
+        /*----( PREMIERE property upgrade - Type = 2 )----*/
         if (Yii::app()->request->isAjaxRequest && isset($_GET['mode']) && $_GET['mode'] == 'PREMIERE' && isset($_GET['pid'])) {
 
             if (Yii::app()->user->usertype == 0) {
@@ -45,19 +50,37 @@ class PromotelistingAction extends CAction
 
             } else {
 
-                echo 'redirect';
+                $transaction = new Transactions();
+
+                $transaction->type = 1;
+                $transaction->user = Yii::app()->user->id;
+                $transaction->transactiondate = date('Y-M-d');
+                $transaction->status = 0;
+                $transaction->amount = $pricePremier->price;
+                $transaction->referenceid = $_GET['pid'];
+                $transaction->description = "Upgrade as Premiere Property for #" . $_GET['pid'];
+
+                if ($transaction->save()) {
+
+                    Yii::app()->session['PAYPAL'] = $transaction;
+                    echo 'paypal';
+                }
             }
+
             Yii::app()->end();
         }
+
+        /*----( FEATURED property upgrade - Type = 3 )----*/
         if (Yii::app()->request->isAjaxRequest && isset($_GET['mode']) && $_GET['mode'] == 'FEATURED' && isset($_GET['pid'])) {
 
-            $featured = Property::model()->count('pricetype=3');
+            $featured = 0;
+            $featured = Property::model()->count('pricetype = 3');
 
             if ($featured <= 20) {
 
                 if (Yii::app()->user->usertype == 0) {
 
-                    $property =  Property::model()->find('pid=' . $_GET['pid']);
+                    $property =  Property::model()->find('pid = ' . $_GET['pid']);
 
                     if (isset($property)) {
 
@@ -72,19 +95,37 @@ class PromotelistingAction extends CAction
 
                 } else {
 
-                    echo 'redirect';
+                    $transaction = new Transactions();
+
+                    $transaction->type = 1;
+                    $transaction->user = Yii::app()->user->id;
+                    $transaction->transactiondate = date('Y-M-d');
+                    $transaction->status = 0;
+                    $transaction->amount = $priceFeatured->price;
+                    $transaction->referenceid = $_GET['pid'];
+                    $transaction->description = "Upgrade as Featured Property for #" . $_GET['pid'];
+
+                    if ($transaction->save()) {
+
+                        Yii::app()->session['PAYPAL'] = $transaction;
+                        echo 'paypal';
+                    }
                 }
 
             } else {
+
                 echo 'exceed';
                 Yii::app()->user->setFlash('error', "Featured Property Limit can not exceeded...!");
             }
+
             Yii::app()->end();
 
 
         }
 
+        /*----( STANDARD property upgrade - Type = 1 )----*/
         if (Yii::app()->request->isAjaxRequest && isset($_GET['mode']) && $_GET['mode'] == 'STANDARD' && isset($_GET['pid'])) {
+
 
             $property =  Property::model()->find('pid=' . $_GET['pid']);
 
@@ -98,8 +139,8 @@ class PromotelistingAction extends CAction
                 echo 'done';
 
             }
-            Yii::app()->end();
 
+            Yii::app()->end();
         }
 
         $this->getController()->render('promotelisting', array('model' => $model));

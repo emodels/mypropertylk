@@ -179,14 +179,15 @@
                         <ul>
                             <?php
                             if (count($model->propertyimages)>0) {
-                                foreach($model->propertyimages as $value) { ?>
-                                    <li>
-                                        <a href="<?php echo Yii::app()->baseUrl . '/upload/propertyimages/'. $value->imagename; ?>" target="_blank" title="click here to enlarge" style="text-decoration: none; cursor: crosshair;">
-                                            <img src="<?php echo Yii::app()->baseUrl . '/upload/propertyimages/'. $value->imagename;?>">
-                                        </a>
-                                    </li>
-
-                                <?php }
+                                foreach($model->propertyimages as $value) {
+                            ?>
+                                        <li>
+                                            <a href="<?php echo Yii::app()->baseUrl . '/upload/propertyimages/'. $value->imagename; ?>" target="_blank" title="click here to enlarge" style="text-decoration: none; cursor: crosshair;">
+                                                <img src="<?php echo Yii::app()->baseUrl . '/upload/propertyimages/'. $value->imagename;?>">
+                                            </a>
+                                        </li>
+                                <?php
+                                }
                             } else { ?>
                                 <li>
                                     <a href="<?php echo Yii::app()->baseUrl ?> /upload/propertyimages/prop_no_img.jpg" title="enlarge" style="text-decoration: none">
@@ -201,9 +202,11 @@
                         <div>
                             <?php
                             if (count($model->propertyimages)>0) {
-                                foreach($model->propertyimages as $value) { ?>
-                                    <a href="#" title=""><img src="<?php echo Yii::app()->baseUrl . '/upload/propertyimages/'. $value->imagename; ?>"></a>
-                                <?php }
+                                foreach($model->propertyimages as $value) {
+                            ?>
+                                        <a href="#" title=""><img src="<?php echo Yii::app()->baseUrl . '/upload/propertyimages/'. $value->imagename; ?>"></a>
+                                <?php
+                                }
                             } else { ?>
                                 <a href="#" title=""><img src="<?php echo Yii::app()->baseUrl ?> /upload/propertyimages/prop_no_img.jpg"></a>
                             <?php }?>
@@ -419,7 +422,44 @@
                             echo implode('&nbsp;&nbsp;|&nbsp;&nbsp;', $otherfeatures_array);
                             ?>
                         </div>
+                        <?php }
+                        if ($model->vediourl != ""){
+                            ?>
+
+                            <div class="row-fluid span12" style="border-top: solid 1px silver; margin-top: 10px;  margin-left: 0;">
+                                <h6 style="color: #4b6bcb"><b>Vedio Url</b></h6>
+                                <a href="<?php echo $model->vediourl ?>" target="_blank">
+                                    <?php
+                                    echo $model->vediourl;
+                                    ?>
+                                </a>
+                            </div>
+                        <?php }
+                        if ($model->onlinetour1 != ""){
+                            ?>
+
+                            <div class="row-fluid span12" style="border-top: solid 1px silver; margin-top: 10px;  margin-left: 0;">
+                                <h6 style="color: #2ecb46"><b>Online Tour 1</b></h6>
+                                <a href="<?php echo $model->onlinetour1 ?>" target="_blank">
+                                    <?php
+                                    echo $model->onlinetour1;
+                                    ?>
+                                </a>
+                            </div>
+                        <?php }
+                        if ($model->onlinetour2 != ""){
+                            ?>
+
+                            <div class="row-fluid span12" style="border-top: solid 1px silver; margin-top: 10px;  margin-left: 0;">
+                                <h6 style="color: #ff931f"><b>Online Tour 2</b></h6>
+                                <a href="<?php echo $model->onlinetour2 ?>" target="_blank">
+                                    <?php
+                                    echo $model->onlinetour2;
+                                    ?>
+                                </a>
+                            </div>
                         <?php } ?>
+
                     </div>
                 </div>
                 <div class="span4" style="">

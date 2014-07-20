@@ -70,6 +70,8 @@ class PropertyImageUploadAction extends CAction
         $image->propertyid = $_GET['id'];
         $image->imagetype = $_GET['type'];
         $image->imagename = $fileName;
+        $image->primaryimg = 0;
+
         $image->save();
         //---------------------------------
 

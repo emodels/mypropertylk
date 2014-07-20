@@ -16,6 +16,7 @@ class EditPropertyAction_Step3 extends CAction
      */
     public function run()
     {
+        //------Delete Property / Floor Image----------//
         if (Yii::app()->request->isAjaxRequest && isset($_GET['mode']) && $_GET['mode'] == 'DELETE' && isset($_GET['id'])) {
 
             Propertyimages::model()->deleteByPk($_GET['id']);
@@ -24,21 +25,41 @@ class EditPropertyAction_Step3 extends CAction
             Yii::app()->end();
         }
 
-        if (Yii::app()->request->isAjaxRequest && isset($_GET['mode']) && $_GET['mode'] == 'PRIMARY' && isset($_GET['id'])) {
+        //----------Set Primary Image from Floor Images------//
+        if (Yii::app()->request->isAjaxRequest && isset($_GET['mode']) && $_GET['mode'] == 'PRIMARY' && $_GET['type'] == 'FLOOR' && isset($_GET['id'])) {
 
             if (isset(Yii::app()->session['property_id'])) {
 
-               $pid = Yii::app()->session['property_id'];
-               Propertyimages::model()->updateAll(array('primaryimg' => 0), 'propertyid = ' . $pid);
+                $pid = Yii::app()->session['property_id'];
 
-               Propertyimages::model()->updateAll(array('primaryimg' => 1), 'id = ' . $_GET['id']);
+                Propertyimages::model()->updateAll(array('primaryimg' => 0), 'propertyid = ' . $pid . ' AND imagetype = 1');
+                Propertyimages::model()->updateAll(array('primaryimg' => 1), 'id = ' . $_GET['id']);
+
+                echo 'done';
 
             }
-            echo 'done';
-            Yii::app()->user->setFlash('success', 'Image Set as Primary Image..!');
+
             Yii::app()->end();
         }
 
+        //----------Set Primary Image from Property Images------//
+        if (Yii::app()->request->isAjaxRequest && isset($_GET['mode']) && $_GET['mode'] == 'PRIMARY' && $_GET['type'] == 'PROP'  && isset($_GET['id'])) {
+
+            if (isset(Yii::app()->session['property_id'])) {
+
+                $pid = Yii::app()->session['property_id'];
+
+                Propertyimages::model()->updateAll(array('primaryimg' => 0), 'propertyid = ' . $pid . ' AND imagetype = 0');
+                Propertyimages::model()->updateAll(array('primaryimg' => 1), 'id = ' . $_GET['id']);
+
+                echo 'done';
+
+            }
+
+            Yii::app()->end();
+        }
+
+        //-----Save Property Details--------//
         if (isset(Yii::app()->session['property_id'])) {
 
             Yii::import("ext.EAjaxUpload.qqFileUploader");
@@ -67,6 +88,7 @@ class EditPropertyAction_Step3 extends CAction
             Yii::app()->user->setFlash('error', 'Invalid Page Request');
             $this->getController()->redirect(Yii::app()->baseUrl);
         }
+
         $this->getController()->render('editproperty_step3', array('model'=>$model));
     }
 }

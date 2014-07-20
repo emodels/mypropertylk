@@ -50,9 +50,11 @@ class AddPropertyAction_Step4 extends CAction
 
                 if (Yii::app()->request->isPostRequest && !Yii::app()->request->isAjaxRequest) {
 
+                    $this->getController()->redirect(Yii::app()->baseUrl . '/property/promotelisting?pid=' .Yii::app()->session['property_id']);
                     unset(Yii::app()->session['property_id']);
                     Yii::app()->user->setFlash('success', 'Property Added Successfully');
-                    $this->getController()->redirect(Yii::app()->baseUrl . '/property/propertylisting?type=0');
+
+                    //$this->getController()->redirect(Yii::app()->baseUrl . '/property/propertylisting?type=0');
                 }
 
             } else {

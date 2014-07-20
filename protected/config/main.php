@@ -78,6 +78,28 @@ return array(
 				*/
 			),
 		),
+        //-------Paypal Component--------
+        'Paypal' => array(
+
+            'class'=>'application.components.Paypal',
+
+            /*@TODO uncomment Live PAYPAL lines and comment Testing Sandbox PAYPAL lines to go live*/
+
+            /*---( Live PAYPAL )---*/
+/*          'apiUsername' => 'info_api1.emodelslanka.com',
+            'apiPassword' => 'UTJB9CG7CM8RB87Z',
+            'apiSignature' => 'AuunftkSDTd4USVDhV6Hy-lfyeCzANdQU0bstigeJS5SRcmGWDvFxajY',*/
+
+            /*---( Testing Sandbox PAYPAL )---*/
+            'apiUsername' => 'info-facilitator_api1.emodelslanka.com',
+            'apiPassword' => '1382410898',
+            'apiSignature' => 'AiPC9BjkCyDFQXbSkoZcgqH3hpacAxDvKPXbNISSx77OwH.6JtUWLWr-',
+
+            'apiLive' => false,
+
+            'returnUrl' => 'paypal/confirm/', //regardless of url management component
+            'cancelUrl' => 'paypal/cancel/', //regardless of url management component
+        ),
 	),
 
 	// application-level parameters that can be accessed

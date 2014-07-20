@@ -1,8 +1,30 @@
 <script type="text/javascript">
+
     function Delete_Image(id){
+        if (confirm('Are you sure want to delete?'))
+        {
+
+            $.ajax({
+                type: "GET",
+                url: 'editproperty_step3/mode/DELETE/type/PROP/id/' + id,
+                success: function(data){
+                    if (data == 'done'){
+                        $.fn.yiiListView.update('list_images_house');
+                        $.fn.yiiListView.update('list_images_floor');
+                        setTimeout(function(){$('#flshMsg').fadeOut("slow");}, 3000);
+                    } else {
+                        alert(data);
+                    }
+                }
+            });
+        }
+
+    }
+
+    function SetPrimary_Image_Property(id){
         $.ajax({
             type: "GET",
-            url: 'editproperty_step3/mode/DELETE/id/' + id,
+            url: 'editproperty_step3/mode/PRIMARY/type/PROP/id/' + id,
             success: function(data){
                 if (data == 'done'){
                     $.fn.yiiListView.update('list_images_house');
@@ -14,13 +36,13 @@
 
     }
 
-    function SetPrimary_Image(id){
+    function SetPrimary_Image_Floor(id){
         $.ajax({
             type: "GET",
-            url: 'editproperty_step3/mode/PRIMARY/id/' + id,
+            url: 'editproperty_step3/mode/PRIMARY/type/FLOOR/id/' + id,
             success: function(data){
                 if (data == 'done'){
-                    $.fn.yiiListView.update('list_images_house');
+                    $.fn.yiiListView.update('list_images_floor');
                 } else {
                     alert(data);
                 }
@@ -50,7 +72,34 @@
     <div class="edit-header">
         <h1 id="listing-address-title"><?php echo $model->headline ?></h1>
         <h2 id="listing-address-subtitle"><?php echo $model->number . ',' . $model->streetaddress . ','. $model->areaname . ',' . $model->townname ?></h2>
-        <img class="listing-background-image" src="<?php echo Yii::app()->request->baseUrl.'/upload/propertyimages/'.((count($model->propertyimages) > 0) ? $model->propertyimages[0]->imagename : 'prop_no_img.jpg') ?>">
+        <?php
+        $imgname = "";
+
+        if (count($model->propertyimages) > 0) {
+
+            foreach ($model->propertyimages as $value) {
+
+                if ($value->primaryimg == 1 && $value->imagetype == 0) {
+
+                    $imgname = $value->imagename;
+                }
+            }
+
+            if ($imgname != "") {?>
+
+                <img src="<?php echo Yii::app()->baseUrl . '/upload/propertyimages/' . $imgname ?>" class="listing-background-image">
+
+            <?php
+            } else{ ?>
+
+                <img src="<?php echo Yii::app()->baseUrl . '/upload/propertyimages/' . $model->propertyimages[0]->imagename ?>" class="listing-background-image">
+
+            <?php
+            }
+        } else{ ?>
+
+            <img src="<?php echo Yii::app()->baseUrl;?> . /upload/propertyimages/prop_no_img.jpg" class="listing-background-image">
+        <?php } ?>
     </div>
     <div style="text-align: center;">
         <div>
@@ -164,14 +213,25 @@
                                     'action'=>Yii::app()->createUrl('property/propertyimageupload/id/'.$model->pid . '/type/1'),
                                     'allowedExtensions'=>array("jpg", "png"),
                                     'sizeLimit'=>1*1024*1024,
-                                    'onComplete'=>'js:function(){$.fn.yiiListView.update("list_images_floor")}'
+                                    'onComplete'=>'js:function(id, filename, responseJSON){
+                                                        if (responseJSON.success == true){
+                                                            $.fn.yiiListView.update("list_images_floor");
+                                                        } else {
+                                                            $("#imageScaleErrorMessage p").html(responseJSON.message);
+                                                            $("#imageScaleErrorMessage").show().animate({opacity: 1.0}, 3000).fadeOut("slow");
+                                                        }
+                                                      }'
                                 )
                             )); ?>
+                        <div id="imageScaleErrorMessage" class="alert alert-block alert-error fade in hide" style="margin-top: 10px;">
+                            <h4 class="alert-heading">Oh.. You got an error!</h4>
+                            <p></p>
+                        </div>
                         <?php
                         $this->widget('zii.widgets.CListView', array(
                             'id' => 'list_images_floor',
                             'dataProvider'=>new CActiveDataProvider('Propertyimages', array('criteria'=>array('condition'=>'propertyid=' . $model->pid . ' AND imagetype = 1', 'order' => 'id ASC'), 'pagination' => false)),
-                            'itemView' => '_property_image_list_view',
+                            'itemView' => '_floor_image_list_view',
                         ));
                         ?>
                     </div>

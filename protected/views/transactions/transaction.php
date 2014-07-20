@@ -36,53 +36,81 @@
     </div>
     <div class="span12" style="margin-left: 0 ">
         <div class="container row-fluid span">
-            <table class="table table-striped">
-                <thead>
-                <tr>
-                    <th>#</th>
-                    <th>Add Name</th>
-                    <th>Add Type</th>
-                    <th>Transaction Date</th>
-                    <th>Amount Rs.</th>
-                </tr>
-                </thead>
-                <tbody>
-                <tr>
-                    <td>1</td>
-                    <td>Advertisement 1</td>
-                    <td>Premium</td>
-                    <td>3/5/2014</td>
-                    <td>1500.00</td>
-                </tr>
-                <tr>
-                    <td>2</td>
-                    <td>Advertisement 2</td>
-                    <td>Premium</td>
-                    <td>2/4/2014</td>
-                    <td>1500.00</td>
-                </tr>
-                <tr>
-                    <td>3</td>
-                    <td>Advertisement 3</td>
-                    <td>Standard</td>
-                    <td>5/5/2014</td>
-                    <td>1000.00</td>
-                </tr>
-                </tbody>
-            </table>
-        </div>
-        <div class="container row-fluid span">
-            <div class="pagination pagination-small pagination-centered">
-                <ul>
-                    <li class="disabled"><a href="#">&laquo;</a></li>
-                    <li class="active"><a href="#">1</a></li>
-                    <li><a href="#">2</a></li>
-                    <li><a href="#">3</a></li>
-                    <li><a href="#">4</a></li>
-                    <li><a href="#">5</a></li>
-                    <li><a href="#">&raquo</a></li>
-                </ul>
+            <div class="span listing-row" style="font-weight: bold">
+                <div class="span1">
+                    #ID
+                </div>
+                <div class="span2">
+                    Referenced ID
+                </div>
+                <div class="span2">
+                    Type
+                </div>
+                <div class="span2">
+                    Date
+                </div>
+                <div class="span2">
+                    Amount
+                </div>
+                <div class="span3">
+                    Status
+                </div>
             </div>
+            <?php
+            /*$page_filter = '';
+            $size_filter = '';
+
+            if (Yii::app()->request->isAjaxRequest && isset($_GET['page'])) {
+
+                $page_filter = ($_GET['page'] == '') ? '' : $_GET['page'] ;
+                //echo $status_filter;
+            }
+
+            if (Yii::app()->request->isAjaxRequest && isset($_GET['size'])) {
+
+                $size_filter = ($_GET['size'] == '') ? '' : $_GET['size'] ;
+                //echo $status_filter;
+            }*/
+
+            if (Yii::app()->user->usertype == 0) {
+
+                $condition = '';
+
+            } else {
+
+                $condition = 'user = ' . Yii::app()->user->id;
+            }
+
+            /*if ($page_filter != '') {
+
+                if ($condition != "") {
+
+                    $condition .= ' AND page = ' . $page_filter;
+                } else {
+
+                    $condition .= 'page = ' . $page_filter;
+                }
+            }
+
+            if ($size_filter != '') {
+
+                if ($condition != "") {
+
+                    $condition .= ' AND size = ' . $size_filter;
+                } else {
+
+                    $condition .= 'size = ' . $size_filter;
+                }
+
+            }*/
+
+            $this->widget('zii.widgets.CListView', array(
+                'id' => 'list_transaction',
+                'dataProvider'=>new CActiveDataProvider('Transactions', array('criteria'=>array('condition'=> $condition,'order' => 'transactiondate DESC'),'pagination'=>array('pageSize'=>10))),
+                'itemView' => '_transaction_list_view',
+                'template'=>'{items}<div class="span12"></div>{pager}<div class="span12"></div>'
+            ));
+            ?>
         </div>
     </div>
 </div>

@@ -33,9 +33,10 @@ class AddPropertyAction_Step3 extends CAction
 
                 Propertyimages::model()->updateAll(array('primaryimg' => 1), 'id = ' . $_GET['id']);
 
+                echo 'done';
+
             }
-            Yii::app()->user->setFlash('success', 'Image Set as Primary Image..!');
-            echo 'done';
+
             Yii::app()->end();
         }
 

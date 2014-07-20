@@ -16,7 +16,7 @@
 
                         foreach ($data->propertyimages as $value) {
 
-                            if ($value->primaryimg == 1) {
+                            if ($value->primaryimg == 1 && $value->imagetype == 0) {
 
                                 $imgname = $value->imagename;
                             }
@@ -77,15 +77,10 @@
 <div class="row-fluid" style="margin-top: 15px;">
     <?php
 
-    if($index % 2 == 0 && $index != 0){
+    if($index % 3 == 0 && $index != 0){
 
-        $condition = '(page = 5 AND (size = 8) AND status = 1) AND expiredate >= CURDATE()';
+        echo loadMiddleAdvertisement($adv_All);
 
-        $this->widget('zii.widgets.CListView', array(
-            'id' => 'list_advertisement',
-            'dataProvider'=>new CActiveDataProvider('Advertising', array('criteria'=>array('condition'=> $condition,'order' => 'entrydate DESC'),'pagination'=>false)),
-            'itemView' => '_ads_list_view'
-        ));
     }
 
     ?>

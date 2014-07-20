@@ -592,7 +592,7 @@
 
                                                                     foreach ($data->propertyimages as $value) {
 
-                                                                        if ($value->primaryimg == 1) {
+                                                                        if ($value->primaryimg == 1 && $value->imagetype == 0) {
 
                                                                             $imgname = $value->imagename;
                                                                         }

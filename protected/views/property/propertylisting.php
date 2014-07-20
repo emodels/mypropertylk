@@ -55,7 +55,8 @@
             success: function(data){
                 if (data == 'done'){
                     $.fn.yiiListView.update('list_property');
-                } else {
+                }
+                else {
                     alert(data);
                 }
             }

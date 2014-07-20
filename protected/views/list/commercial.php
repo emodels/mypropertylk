@@ -107,10 +107,44 @@
                                             echo '</div>';
                                         }
 
+                                        /*---( Middle Advertisements )---*/
+                                        $condition_middle_ads = '(page = 5 AND (size = 8) AND status = 1) AND expiredate >= CURDATE()';
+
+                                        $array_advertisements_used = array();
+                                        $array_advertisements_all = Advertising::model()->findAll(array('condition'=> $condition_middle_ads,'order' => 'entrydate DESC'));
+
+                                        Yii::app()->session['utilized_middle_advertisements'] = $array_advertisements_used;
+
+                                        function loadMiddleAdvertisement($adv_All){
+
+                                            $adv_used = Yii::app()->session['utilized_middle_advertisements'];
+
+                                            $nextAdvID = 0;
+
+                                            foreach ($adv_All as $value) {
+
+                                                if (!in_array($value->id, $adv_used)) {
+
+                                                    $adv_used[] = $value->id;
+                                                    $nextAdvID = $value->id;
+
+                                                    Yii::app()->session['utilized_middle_advertisements'] = $adv_used;
+
+                                                    break;
+                                                }
+                                            }
+
+                                            $next_Advertisement = Advertising::model()->findByPk($nextAdvID);
+
+                                            return Yii::app()->controller->renderPartial('_ads_list_view', array('data'=>$next_Advertisement), true);
+                                        }
+                                        /*---( //end of Middle Advertisements )---*/
+
                                         $this->widget('zii.widgets.CListView', array(
                                             'id' => 'list_commercial',
                                             'dataProvider'=>$dataprovider,
                                             'itemView' => '_commercial_list_view',
+                                            'viewData' => array('adv_All' => $array_advertisements_all),
                                             'template'=>'{items}<div class="span12"></div>{pager}<div class="span12"></div>'
                                         ));
                                         ?>

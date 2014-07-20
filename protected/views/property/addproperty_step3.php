@@ -10,6 +10,7 @@
             success: function(data){
                 if (data == 'done'){
                     $.fn.yiiListView.update('list_images_house');
+
                 } else {
                     alert(data);
                 }
@@ -87,6 +88,7 @@
         <?php $form = $this->beginWidget('CActiveForm', array(
             'id'=>'addproperty3-form',
             'enableClientValidation' => true,
+            'ajaxUpdate' => 'flshMsg',
             'enableAjaxValidation' => false,
             'clientOptions' => array(
                 'validateOnSubmit' => true,

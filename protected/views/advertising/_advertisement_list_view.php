@@ -16,9 +16,9 @@
                 <a href="javascript:AdStatusChange(<?php echo $data->id; ?>);" class="icon_gap lnkno-style">
                     <?php
                     if ($data->status == 0) {
-                        echo "Active";
-                    } elseif ($data->status == 1) {
                         echo "InActive";
+                    } elseif ($data->status == 1) {
+                        echo "Active";
                     }
                     ?>
                 </a>

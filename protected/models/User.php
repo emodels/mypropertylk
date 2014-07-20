@@ -19,8 +19,10 @@
  * @property string $userimage
  *
  * The followings are the available model relations:
+ * @property Advertising[] $advertisings
  * @property Homeideas[] $homeideases
  * @property Property[] $properties
+ * @property Transactions[] $transactions
  */
 class User extends CActiveRecord
 {
@@ -50,7 +52,7 @@ class User extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('fname, phone, address, email, username, password, passwordconf, usertype, parentuser, status, userimage', 'required'),
+			array('fname, lname, phone, address, email, username, password, passwordconf, usertype, parentuser, status, userimage', 'required'),
 			array('usertype, parentuser, status', 'numerical', 'integerOnly'=>true),
 			array('fname, lname, email', 'length', 'max'=>100),
 			array('phone, password, passwordconf', 'length', 'max'=>20),
@@ -70,8 +72,10 @@ class User extends CActiveRecord
 		// NOTE: you may need to adjust the relation name and the related
 		// class name for the relations automatically generated below.
 		return array(
+			'advertisings' => array(self::HAS_MANY, 'Advertising', 'advertiser'),
 			'homeideases' => array(self::HAS_MANY, 'Homeideas', 'userid'),
 			'properties' => array(self::HAS_MANY, 'Property', 'agent'),
+			'transactions' => array(self::HAS_MANY, 'Transactions', 'user'),
 		);
 	}
 
@@ -130,5 +134,5 @@ class User extends CActiveRecord
     public function getFullName()
     {
         return $this->fname.' '.$this->lname;
-    }
+	}
 }

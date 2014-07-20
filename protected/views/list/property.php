@@ -686,11 +686,57 @@
                                         echo '</div>';
                                     }
 
+                                    /*---( Get Page Type )---*/
+                                    if ($_GET['type'] == "buy") {
+
+                                        $page = 2;
+                                    } elseif ($_GET['type'] == "rent"){
+
+                                        $page = 3;
+                                    } elseif ($_GET['type'] == "sold"){
+
+                                        $page = 4;
+                                    }
+
+                                    /*---( Middle Advertisements )---*/
+                                    $condition_middle_ads = '(page = ' . $page . ' AND (size = 7) AND status = 1) AND expiredate >= CURDATE()';
+
+                                    $array_advertisements_used = array();
+                                    $array_advertisements_all = Advertising::model()->findAll(array('condition'=> $condition_middle_ads,'order' => 'entrydate DESC'));
+
+                                    Yii::app()->session['utilized_middle_advertisements'] = $array_advertisements_used;
+
+                                    function loadMiddleAdvertisement($adv_All){
+
+                                        $adv_used = Yii::app()->session['utilized_middle_advertisements'];
+
+                                        $nextAdvID = 0;
+
+                                        foreach ($adv_All as $value) {
+
+                                            if (!in_array($value->id, $adv_used)) {
+
+                                                $adv_used[] = $value->id;
+                                                $nextAdvID = $value->id;
+
+                                                Yii::app()->session['utilized_middle_advertisements'] = $adv_used;
+
+                                                break;
+                                            }
+                                        }
+
+                                        $next_Advertisement = Advertising::model()->findByPk($nextAdvID);
+
+                                        return Yii::app()->controller->renderPartial('_ads_list_view', array('data'=>$next_Advertisement), true);
+                                    }
+                                    /*---( //end of Middle Advertisements )---*/
+
                                     $this->widget('zii.widgets.CListView', array(
                                         'id' => 'list_property',
                                         'dataProvider'=>$dataprovider,
                                         'itemView' => '_list_view',
-                                        'template'=>'{items}<div class="span12"></div>{pager}<div class="span12"></div>'
+                                        'viewData' => array('adv_All' => $array_advertisements_all),
+                                        'template'=>'{items}<div class="span12"></div>{pager}<div class="span12"></div>',
                                     ));
                                     ?>
                                 </div>
@@ -709,17 +755,6 @@
                             }
                         </style>
                         <?php
-
-                        if ($_GET['type'] == "buy") {
-
-                            $page = 2;
-                        } elseif ($_GET['type'] == "rent"){
-
-                            $page = 3;
-                        } elseif ($_GET['type'] == "sold"){
-
-                            $page = 4;
-                        }
 
                         $condition = '(page = ' . $page . ' AND (size = 1 OR size = 3 OR size = 5) AND status = 1) AND expiredate >= CURDATE()';
 

@@ -7,6 +7,55 @@
             $('#myModal').modal();
         });
     });
+
+    function LoadAdSizes(){
+
+        var page = $('#Advertising_page').val();
+
+        $.ajax({
+            type: "POST",
+            url: '<?php echo Yii::app()->request->baseUrl; ?>/advertising/addadvertisement',
+            data: {page: page, action: 'getAddSizes'},
+            success: function(data){
+
+                if (data != ''){
+
+                    $('#Advertising_size').removeAttr('disabled');
+
+                    var array_adSizes = JSON.parse(data);
+
+                    $('#Advertising_size').empty();
+                    $('#Advertising_size').append($('<option></option>').val('').text('Select Ad Size'));
+
+                    array_adSizes.forEach(function (element) {
+
+                        $('#Advertising_size').append($('<option></option>').val(element.id).text(element.size));
+                    });
+                }
+            }
+        })
+
+    }
+
+    function LoadAdPrices() {
+
+        var size = $('#Advertising_size').val();
+        var page = $('#Advertising_page').val();
+
+        $.ajax({
+            type: "POST",
+            url: '<?php echo Yii::app()->request->baseUrl; ?>/advertising/addadvertisement',
+            data: {size: size, page: page, action: 'getAddPrice'},
+            success: function(data){
+                if (data != ''){
+
+                     $('#div_price').show();
+                     $('#Advertising_price').val(data);
+                }
+            }
+        });
+
+    }
 </script>
 <div class="col_right" style="padding-top: 0;">
     <div class="span12" style="border-bottom: solid 1px silver">
@@ -17,9 +66,9 @@
             <div class="hidden-phone" style="padding-top: 20px;"></div>
             <!---------( For Add NewUsers )------------------>
             <div class="btn-group" style="padding-bottom: 5px;">
-                <button class="btn btn-primary"><a href="<?php echo Yii::app()->request->baseUrl; ?>/advertising/addadvertisement" style="text-decoration: none; color: #ffffff">Add New Advertisement</a></button>
+                <a href="<?php echo Yii::app()->request->baseUrl; ?>/advertising/viewaddsizes" class="btn btn-primary">View All Sample Ads Sizes </a>
             </div>
-            </div>
+        </div>
     </div>
     <div class="span12" style="margin-left: 0;">
         <div class="form">
@@ -30,7 +79,7 @@
                 'clientOptions' => array(
                     'validateOnSubmit' => true,
                     'validateOnChange' => true,
-                    'afterValidate' => 'js:formSend',
+                    //'afterValidate' => 'js:formSend',
                 ),
                 'htmlOptions'=>array('class'=>'form-horizontal', 'enctype' => 'multipart/form-data'),
             )); ?>
@@ -38,15 +87,21 @@
                 <div class="control-group-admin">
                     <label>Select Page</label>
                     <div>
-                        <?php echo $form->dropDownList($model, 'page', CHtml::listData(Adpages::model()->findAll(), 'id', 'page'), array('empty'=>'Pages')); ?><span class="star">*</span>
+                        <?php echo $form->dropDownList($model, 'page', CHtml::listData(Adpages::model()->findAll(), 'id', 'page'), array('empty'=>'Pages', 'onChange' => 'javascript:LoadAdSizes();')); ?><span class="star">*</span>
                         <?php echo $form->error($model,'page'); ?>
                     </div>
                 </div>
                 <div class="control-group-admin">
                     <label>Select an Advertisement Size & Location</label>
                     <div>
-                        <?php echo $form->dropDownList($model, 'size', CHtml::listData(Adsizes::model()->findAll(), 'id', 'size'), array('empty'=>'Ad Sizes')); ?><span class="star">*</span>
+                        <?php echo $form->dropDownList($model, 'size', array(), array('empty'=>'Ad Sizes', 'onChange' => 'javascript:LoadAdPrices();', 'disabled' => 'disabled')); ?><span class="star">*</span>
                         <?php echo $form->error($model,'size'); ?>
+                    </div>
+                </div>
+                <div class="control-group-admin" id="div_price" style="display: none">
+                    <label>Advertisement Price for Selected Size</label>
+                    <div>
+                        <input type="text" name="price" id="Advertising_price" disabled="disabled">
                     </div>
                 </div>
                 <div class="control-group-admin">
