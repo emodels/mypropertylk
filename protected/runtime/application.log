@@ -993,3 +993,155 @@ Stack trace:
 #14 {main}
 REQUEST_URI=/mypropertylk/paypal/confirm?token=EC-12148849RE763351V&PayerID=FA2BN5YBB937L
 ---
+2014/07/22 05:39:40 [error] [system.db.CDbCommand] CDbCommand::fetchColumn() failed: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'property' in 'where clause'. The SQL statement executed was: SELECT COUNT(*) FROM `transactions` `t` WHERE user = 72 AND type = property.
+in C:\xampp\htdocs\mypropertylk\protected\views\transactions\transaction.php (131)
+in C:\xampp\htdocs\mypropertylk\protected\controllers\Transactions\TransactionAction.php (23)
+in C:\xampp\htdocs\mypropertylk\protected\controllers\TransactionsController.php (63)
+2014/07/22 05:39:40 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand failed to execute the SQL statement: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'property' in 'where clause'. The SQL statement executed was: SELECT COUNT(*) FROM `transactions` `t` WHERE user = 72 AND type = property' in C:\xampp\htdocs\mypropertylk\protected\framework\db\CDbCommand.php:528
+Stack trace:
+#0 C:\xampp\htdocs\mypropertylk\protected\framework\db\CDbCommand.php(425): CDbCommand->queryInternal('fetchColumn', 0, Array)
+#1 C:\xampp\htdocs\mypropertylk\protected\framework\db\ar\CActiveRecord.php(1536): CDbCommand->queryScalar()
+#2 C:\xampp\htdocs\mypropertylk\protected\framework\web\CActiveDataProvider.php(179): CActiveRecord->count(Object(CDbCriteria))
+#3 C:\xampp\htdocs\mypropertylk\protected\framework\web\CDataProvider.php(193): CActiveDataProvider->calculateTotalItemCount()
+#4 C:\xampp\htdocs\mypropertylk\protected\framework\web\CActiveDataProvider.php(129): CDataProvider->getTotalItemCount()
+#5 C:\xampp\htdocs\mypropertylk\protected\framework\web\CDataProvider.php(137): CActiveDataProvider->fetchData()
+#6 C:\xampp\htdocs\mypropertylk\protected\framework\zii\widgets\CBaseListView.php(105): CDataProvider->getData()
+#7 C:\xampp\htdocs\mypropertylk\protected\framework\zii\widgets\CListView.php(173): CBaseListView->init()
+#8 C:\xampp\htdocs\mypropertylk\protected\framework\web\CBaseController.php(148): CListView->init()
+#9 C:\xampp\htdocs\mypropertylk\protected\framework\web\CBaseController.php(173): CBaseController->createWidget('zii.widgets.CLi...', Array)
+#10 C:\xampp\htdocs\mypropertylk\protected\views\transactions\transaction.php(131): CBaseController->widget('zii.widgets.CLi...', Array)
+#11 C:\xampp\htdocs\mypropertylk\protected\framework\web\CBaseController.php(127): require('C:\\xampp\\htdocs...')
+#12 C:\xampp\htdocs\mypropertylk\protected\framework\web\CBaseController.php(96): CBaseController->renderInternal('C:\\xampp\\htdocs...', NULL, true)
+#13 C:\xampp\htdocs\mypropertylk\protected\framework\web\CController.php(870): CBaseController->renderFile('C:\\xampp\\htdocs...', NULL, true)
+#14 C:\xampp\htdocs\mypropertylk\protected\framework\web\CController.php(783): CController->renderPartial('transaction', NULL, true)
+#15 C:\xampp\htdocs\mypropertylk\protected\controllers\Transactions\TransactionAction.php(23): CController->render('transaction')
+#16 C:\xampp\htdocs\mypropertylk\protected\framework\web\actions\CAction.php(75): TransactionAction->run()
+#17 C:\xampp\htdocs\mypropertylk\protected\framework\web\CController.php(309): CAction->runWithParams(Array)
+#18 C:\xampp\htdocs\mypropertylk\protected\framework\web\filters\CFilterChain.php(134): CController->runAction(Object(TransactionAction))
+#19 C:\xampp\htdocs\mypropertylk\protected\controllers\TransactionsController.php(63): CFilterChain->run()
+#20 C:\xampp\htdocs\mypropertylk\protected\framework\web\filters\CInlineFilter.php(59): TransactionsController->filterAccessControl(Object(CFilterChain))
+#21 C:\xampp\htdocs\mypropertylk\protected\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#22 C:\xampp\htdocs\mypropertylk\protected\framework\web\CController.php(292): CFilterChain->run()
+#23 C:\xampp\htdocs\mypropertylk\protected\framework\web\CController.php(266): CController->runActionWithFilters(Object(TransactionAction), Array)
+#24 C:\xampp\htdocs\mypropertylk\protected\framework\web\CWebApplication.php(276): CController->run('transaction')
+#25 C:\xampp\htdocs\mypropertylk\protected\framework\web\CWebApplication.php(135): CWebApplication->runController('transactions/tr...')
+#26 C:\xampp\htdocs\mypropertylk\protected\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#27 C:\xampp\htdocs\mypropertylk\index.php(15): CApplication->run()
+#28 {main}
+REQUEST_URI=/mypropertylk/transactions/transaction?transactions=property&ajax=list_transaction
+HTTP_REFERER=http://localhost/mypropertylk/transactions/transaction
+---
+2014/07/22 05:40:06 [error] [system.db.CDbCommand] CDbCommand::fetchColumn() failed: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'advertisement' in 'where clause'. The SQL statement executed was: SELECT COUNT(*) FROM `transactions` `t` WHERE user = 72 AND type = advertisement.
+in C:\xampp\htdocs\mypropertylk\protected\views\transactions\transaction.php (131)
+in C:\xampp\htdocs\mypropertylk\protected\controllers\Transactions\TransactionAction.php (23)
+in C:\xampp\htdocs\mypropertylk\protected\controllers\TransactionsController.php (63)
+2014/07/22 05:40:06 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand failed to execute the SQL statement: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'advertisement' in 'where clause'. The SQL statement executed was: SELECT COUNT(*) FROM `transactions` `t` WHERE user = 72 AND type = advertisement' in C:\xampp\htdocs\mypropertylk\protected\framework\db\CDbCommand.php:528
+Stack trace:
+#0 C:\xampp\htdocs\mypropertylk\protected\framework\db\CDbCommand.php(425): CDbCommand->queryInternal('fetchColumn', 0, Array)
+#1 C:\xampp\htdocs\mypropertylk\protected\framework\db\ar\CActiveRecord.php(1536): CDbCommand->queryScalar()
+#2 C:\xampp\htdocs\mypropertylk\protected\framework\web\CActiveDataProvider.php(179): CActiveRecord->count(Object(CDbCriteria))
+#3 C:\xampp\htdocs\mypropertylk\protected\framework\web\CDataProvider.php(193): CActiveDataProvider->calculateTotalItemCount()
+#4 C:\xampp\htdocs\mypropertylk\protected\framework\web\CActiveDataProvider.php(129): CDataProvider->getTotalItemCount()
+#5 C:\xampp\htdocs\mypropertylk\protected\framework\web\CDataProvider.php(137): CActiveDataProvider->fetchData()
+#6 C:\xampp\htdocs\mypropertylk\protected\framework\zii\widgets\CBaseListView.php(105): CDataProvider->getData()
+#7 C:\xampp\htdocs\mypropertylk\protected\framework\zii\widgets\CListView.php(173): CBaseListView->init()
+#8 C:\xampp\htdocs\mypropertylk\protected\framework\web\CBaseController.php(148): CListView->init()
+#9 C:\xampp\htdocs\mypropertylk\protected\framework\web\CBaseController.php(173): CBaseController->createWidget('zii.widgets.CLi...', Array)
+#10 C:\xampp\htdocs\mypropertylk\protected\views\transactions\transaction.php(131): CBaseController->widget('zii.widgets.CLi...', Array)
+#11 C:\xampp\htdocs\mypropertylk\protected\framework\web\CBaseController.php(127): require('C:\\xampp\\htdocs...')
+#12 C:\xampp\htdocs\mypropertylk\protected\framework\web\CBaseController.php(96): CBaseController->renderInternal('C:\\xampp\\htdocs...', NULL, true)
+#13 C:\xampp\htdocs\mypropertylk\protected\framework\web\CController.php(870): CBaseController->renderFile('C:\\xampp\\htdocs...', NULL, true)
+#14 C:\xampp\htdocs\mypropertylk\protected\framework\web\CController.php(783): CController->renderPartial('transaction', NULL, true)
+#15 C:\xampp\htdocs\mypropertylk\protected\controllers\Transactions\TransactionAction.php(23): CController->render('transaction')
+#16 C:\xampp\htdocs\mypropertylk\protected\framework\web\actions\CAction.php(75): TransactionAction->run()
+#17 C:\xampp\htdocs\mypropertylk\protected\framework\web\CController.php(309): CAction->runWithParams(Array)
+#18 C:\xampp\htdocs\mypropertylk\protected\framework\web\filters\CFilterChain.php(134): CController->runAction(Object(TransactionAction))
+#19 C:\xampp\htdocs\mypropertylk\protected\controllers\TransactionsController.php(63): CFilterChain->run()
+#20 C:\xampp\htdocs\mypropertylk\protected\framework\web\filters\CInlineFilter.php(59): TransactionsController->filterAccessControl(Object(CFilterChain))
+#21 C:\xampp\htdocs\mypropertylk\protected\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#22 C:\xampp\htdocs\mypropertylk\protected\framework\web\CController.php(292): CFilterChain->run()
+#23 C:\xampp\htdocs\mypropertylk\protected\framework\web\CController.php(266): CController->runActionWithFilters(Object(TransactionAction), Array)
+#24 C:\xampp\htdocs\mypropertylk\protected\framework\web\CWebApplication.php(276): CController->run('transaction')
+#25 C:\xampp\htdocs\mypropertylk\protected\framework\web\CWebApplication.php(135): CWebApplication->runController('transactions/tr...')
+#26 C:\xampp\htdocs\mypropertylk\protected\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#27 C:\xampp\htdocs\mypropertylk\index.php(15): CApplication->run()
+#28 {main}
+REQUEST_URI=/mypropertylk/transactions/transaction?transactions=advertisement&ajax=list_transaction
+HTTP_REFERER=http://localhost/mypropertylk/transactions/transaction
+---
+2014/07/22 06:09:33 [error] [system.db.CDbCommand] CDbCommand::fetchColumn() failed: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 1. The SQL statement executed was: SELECT COUNT(*) FROM `transactions` `t` WHERE user = 72 AND transactiondate BETWEEN 2014-07-22AND2014-07-22.
+in C:\xampp\htdocs\mypropertylk\protected\views\transactions\transaction.php (172)
+in C:\xampp\htdocs\mypropertylk\protected\controllers\Transactions\TransactionAction.php (23)
+in C:\xampp\htdocs\mypropertylk\protected\controllers\TransactionsController.php (63)
+2014/07/22 06:09:33 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand failed to execute the SQL statement: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 1. The SQL statement executed was: SELECT COUNT(*) FROM `transactions` `t` WHERE user = 72 AND transactiondate BETWEEN 2014-07-22AND2014-07-22' in C:\xampp\htdocs\mypropertylk\protected\framework\db\CDbCommand.php:528
+Stack trace:
+#0 C:\xampp\htdocs\mypropertylk\protected\framework\db\CDbCommand.php(425): CDbCommand->queryInternal('fetchColumn', 0, Array)
+#1 C:\xampp\htdocs\mypropertylk\protected\framework\db\ar\CActiveRecord.php(1536): CDbCommand->queryScalar()
+#2 C:\xampp\htdocs\mypropertylk\protected\framework\web\CActiveDataProvider.php(179): CActiveRecord->count(Object(CDbCriteria))
+#3 C:\xampp\htdocs\mypropertylk\protected\framework\web\CDataProvider.php(193): CActiveDataProvider->calculateTotalItemCount()
+#4 C:\xampp\htdocs\mypropertylk\protected\framework\web\CActiveDataProvider.php(129): CDataProvider->getTotalItemCount()
+#5 C:\xampp\htdocs\mypropertylk\protected\framework\web\CDataProvider.php(137): CActiveDataProvider->fetchData()
+#6 C:\xampp\htdocs\mypropertylk\protected\framework\zii\widgets\CBaseListView.php(105): CDataProvider->getData()
+#7 C:\xampp\htdocs\mypropertylk\protected\framework\zii\widgets\CListView.php(173): CBaseListView->init()
+#8 C:\xampp\htdocs\mypropertylk\protected\framework\web\CBaseController.php(148): CListView->init()
+#9 C:\xampp\htdocs\mypropertylk\protected\framework\web\CBaseController.php(173): CBaseController->createWidget('zii.widgets.CLi...', Array)
+#10 C:\xampp\htdocs\mypropertylk\protected\views\transactions\transaction.php(172): CBaseController->widget('zii.widgets.CLi...', Array)
+#11 C:\xampp\htdocs\mypropertylk\protected\framework\web\CBaseController.php(127): require('C:\\xampp\\htdocs...')
+#12 C:\xampp\htdocs\mypropertylk\protected\framework\web\CBaseController.php(96): CBaseController->renderInternal('C:\\xampp\\htdocs...', NULL, true)
+#13 C:\xampp\htdocs\mypropertylk\protected\framework\web\CController.php(870): CBaseController->renderFile('C:\\xampp\\htdocs...', NULL, true)
+#14 C:\xampp\htdocs\mypropertylk\protected\framework\web\CController.php(783): CController->renderPartial('transaction', NULL, true)
+#15 C:\xampp\htdocs\mypropertylk\protected\controllers\Transactions\TransactionAction.php(23): CController->render('transaction')
+#16 C:\xampp\htdocs\mypropertylk\protected\framework\web\actions\CAction.php(75): TransactionAction->run()
+#17 C:\xampp\htdocs\mypropertylk\protected\framework\web\CController.php(309): CAction->runWithParams(Array)
+#18 C:\xampp\htdocs\mypropertylk\protected\framework\web\filters\CFilterChain.php(134): CController->runAction(Object(TransactionAction))
+#19 C:\xampp\htdocs\mypropertylk\protected\controllers\TransactionsController.php(63): CFilterChain->run()
+#20 C:\xampp\htdocs\mypropertylk\protected\framework\web\filters\CInlineFilter.php(59): TransactionsController->filterAccessControl(Object(CFilterChain))
+#21 C:\xampp\htdocs\mypropertylk\protected\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#22 C:\xampp\htdocs\mypropertylk\protected\framework\web\CController.php(292): CFilterChain->run()
+#23 C:\xampp\htdocs\mypropertylk\protected\framework\web\CController.php(266): CController->runActionWithFilters(Object(TransactionAction), Array)
+#24 C:\xampp\htdocs\mypropertylk\protected\framework\web\CWebApplication.php(276): CController->run('transaction')
+#25 C:\xampp\htdocs\mypropertylk\protected\framework\web\CWebApplication.php(135): CWebApplication->runController('transactions/tr...')
+#26 C:\xampp\htdocs\mypropertylk\protected\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#27 C:\xampp\htdocs\mypropertylk\index.php(15): CApplication->run()
+#28 {main}
+REQUEST_URI=/mypropertylk/transactions/transaction?transactions=&start_date=2014-07-22&end_date=2014-07-22&ajax=list_transaction
+HTTP_REFERER=http://localhost/mypropertylk/transactions/transaction
+---
+2014/07/22 06:09:44 [error] [system.db.CDbCommand] CDbCommand::fetchColumn() failed: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 1. The SQL statement executed was: SELECT COUNT(*) FROM `transactions` `t` WHERE user = 72 AND transactiondate BETWEEN 2014-07-22AND2014-07-22.
+in C:\xampp\htdocs\mypropertylk\protected\views\transactions\transaction.php (172)
+in C:\xampp\htdocs\mypropertylk\protected\controllers\Transactions\TransactionAction.php (23)
+in C:\xampp\htdocs\mypropertylk\protected\controllers\TransactionsController.php (63)
+2014/07/22 06:09:44 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand failed to execute the SQL statement: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 1. The SQL statement executed was: SELECT COUNT(*) FROM `transactions` `t` WHERE user = 72 AND transactiondate BETWEEN 2014-07-22AND2014-07-22' in C:\xampp\htdocs\mypropertylk\protected\framework\db\CDbCommand.php:528
+Stack trace:
+#0 C:\xampp\htdocs\mypropertylk\protected\framework\db\CDbCommand.php(425): CDbCommand->queryInternal('fetchColumn', 0, Array)
+#1 C:\xampp\htdocs\mypropertylk\protected\framework\db\ar\CActiveRecord.php(1536): CDbCommand->queryScalar()
+#2 C:\xampp\htdocs\mypropertylk\protected\framework\web\CActiveDataProvider.php(179): CActiveRecord->count(Object(CDbCriteria))
+#3 C:\xampp\htdocs\mypropertylk\protected\framework\web\CDataProvider.php(193): CActiveDataProvider->calculateTotalItemCount()
+#4 C:\xampp\htdocs\mypropertylk\protected\framework\web\CActiveDataProvider.php(129): CDataProvider->getTotalItemCount()
+#5 C:\xampp\htdocs\mypropertylk\protected\framework\web\CDataProvider.php(137): CActiveDataProvider->fetchData()
+#6 C:\xampp\htdocs\mypropertylk\protected\framework\zii\widgets\CBaseListView.php(105): CDataProvider->getData()
+#7 C:\xampp\htdocs\mypropertylk\protected\framework\zii\widgets\CListView.php(173): CBaseListView->init()
+#8 C:\xampp\htdocs\mypropertylk\protected\framework\web\CBaseController.php(148): CListView->init()
+#9 C:\xampp\htdocs\mypropertylk\protected\framework\web\CBaseController.php(173): CBaseController->createWidget('zii.widgets.CLi...', Array)
+#10 C:\xampp\htdocs\mypropertylk\protected\views\transactions\transaction.php(172): CBaseController->widget('zii.widgets.CLi...', Array)
+#11 C:\xampp\htdocs\mypropertylk\protected\framework\web\CBaseController.php(127): require('C:\\xampp\\htdocs...')
+#12 C:\xampp\htdocs\mypropertylk\protected\framework\web\CBaseController.php(96): CBaseController->renderInternal('C:\\xampp\\htdocs...', NULL, true)
+#13 C:\xampp\htdocs\mypropertylk\protected\framework\web\CController.php(870): CBaseController->renderFile('C:\\xampp\\htdocs...', NULL, true)
+#14 C:\xampp\htdocs\mypropertylk\protected\framework\web\CController.php(783): CController->renderPartial('transaction', NULL, true)
+#15 C:\xampp\htdocs\mypropertylk\protected\controllers\Transactions\TransactionAction.php(23): CController->render('transaction')
+#16 C:\xampp\htdocs\mypropertylk\protected\framework\web\actions\CAction.php(75): TransactionAction->run()
+#17 C:\xampp\htdocs\mypropertylk\protected\framework\web\CController.php(309): CAction->runWithParams(Array)
+#18 C:\xampp\htdocs\mypropertylk\protected\framework\web\filters\CFilterChain.php(134): CController->runAction(Object(TransactionAction))
+#19 C:\xampp\htdocs\mypropertylk\protected\controllers\TransactionsController.php(63): CFilterChain->run()
+#20 C:\xampp\htdocs\mypropertylk\protected\framework\web\filters\CInlineFilter.php(59): TransactionsController->filterAccessControl(Object(CFilterChain))
+#21 C:\xampp\htdocs\mypropertylk\protected\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#22 C:\xampp\htdocs\mypropertylk\protected\framework\web\CController.php(292): CFilterChain->run()
+#23 C:\xampp\htdocs\mypropertylk\protected\framework\web\CController.php(266): CController->runActionWithFilters(Object(TransactionAction), Array)
+#24 C:\xampp\htdocs\mypropertylk\protected\framework\web\CWebApplication.php(276): CController->run('transaction')
+#25 C:\xampp\htdocs\mypropertylk\protected\framework\web\CWebApplication.php(135): CWebApplication->runController('transactions/tr...')
+#26 C:\xampp\htdocs\mypropertylk\protected\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#27 C:\xampp\htdocs\mypropertylk\index.php(15): CApplication->run()
+#28 {main}
+REQUEST_URI=/mypropertylk/transactions/transaction?transactions=&start_date=2014-07-22&end_date=2014-07-22&ajax=list_transaction
+HTTP_REFERER=http://localhost/mypropertylk/transactions/transaction
+---

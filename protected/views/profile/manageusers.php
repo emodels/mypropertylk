@@ -76,7 +76,7 @@
                 <form class="form-search" style="margin-bottom: 0">
                     <div class="input-append">
                         <?php echo CHtml::textField('fname', '', array('class' => 'span10 search-query', 'placeholder'=>'Enter First Name')); ?>
-                        <<a href="javascript:Filter_Users();" class="btn" style="margin-left: 0px;"><i class="icon-search"></i>&nbsp;Find</a>
+                        <a href="javascript:Filter_Users();" class="btn" style="margin-left: 0px;"><i class="icon-search"></i>&nbsp;Find</a>
                     </div>
                 </form>
             </div>

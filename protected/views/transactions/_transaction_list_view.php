@@ -3,14 +3,17 @@
         <div class="span1">
             <?php echo $data->id ?>
         </div>
-        <div class="span2">
-            <?php echo $data->referenceid ?>
+        <div class="span2" style="text-align: center">
+            <?php
+            if ($data->type == 1) {?>
+                <a href="<?php echo Yii::app()->baseUrl . '/list/detail/pid/' .$data->referenceid;?> " target="_blank"><?php echo "#". $data->referenceid ?></a>
+            <?php }?>
         </div>
-        <div class="span2">
+        <div class="span3" style="text-align: center">
             <?php
             if ($data->type == 1) {
 
-                echo "Property";
+                echo "Property Upgraded";
             }
             if ($data->type == 2) {
 
@@ -24,17 +27,16 @@
         <div class="span2">
             <?php echo $data->amount ?>
         </div>
-        <div class="span3">
+        <div class="span2">
             <?php
-            if ($data->status == 0) {
+            if ($data->status == 0) { ?>
 
-                echo "Pending";
-            }
-            if ($data->status == 1) {
+                <p style="color: #ff0000">Pending </p>
+            <?php }
+            if ($data->status == 1) { ?>
 
-                echo "Complete";
-            }
-            ?>
+                <p style="color: #2ecb46">Completed </p>
+            <?php } ?>
         </div>
     </div>
 </div>
