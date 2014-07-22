@@ -12,6 +12,7 @@
 
 
     function Premier_Property(id) {
+
         $.ajax({
             type: "GET",
             url: 'promotelisting/mode/PREMIERE/pid/' + id,
@@ -27,6 +28,7 @@
     }
 
     function Featured_Property(id) {
+
         $.ajax({
             type: "GET",
             url: 'promotelisting/mode/FEATURED/pid/' + id,
@@ -45,6 +47,7 @@
     }
 
     function Standard_Property(id) {
+
         $.ajax({
             type: "GET",
             url: 'promotelisting/mode/STANDARD/pid/' + id,
@@ -89,6 +92,7 @@
                     <div style="font-size: 12px;">
                         <p><i class="icon-tag icon_gap"></i>Your advertisement will be display at <b>Home Page</b> for a period of <b> one month.</b></p>
                         <p><i class="icon-tag icon_gap"></i>Featured Properties are more visible to buyers and that will drive more opportunities to sell your property much <b>faster</b>...</p>
+                        <p><i class="icon-tag icon_gap"></i>You have to pay LKR. <b><?php echo $priceFeatured->price ;?> </b>/= only.</p>
                     </div>
                     <p>If you would like to upgrade your property as a <b>Featured Property</b> click "Upgrade as Featured Property" button below.</p>
                     <div style="text-align: right; border-top: solid 1px silver; padding-top: 10px;">
@@ -108,6 +112,7 @@
                         <p><i class="icon-tag icon_gap"></i>Your advertisement will be listed top of the "Search Result" just after the Featured Properties.</p>
                         <p><i class="icon-tag icon_gap"></i>That will drive more opportunities to sell your property much <b>faster</b>.</b></p>
                         <p><i class="icon-tag icon_gap"></i>Your advertisement will not expire at all.</p>
+                        <p><i class="icon-tag icon_gap"></i>You have to pay LKR. <b><?php echo $pricePremier->price ;?> </b>/= only.</p>
                     </div>
 
                     <p>If you would like to upgrade your property as a <b>Premiere Property</b> click "Upgrade as Premiere Property" button.</p>
@@ -130,6 +135,7 @@
                     <div style="font-size: 12px;">
                         <p><i class="icon-tag icon_gap"></i>Standard Properties are listed below the Premiere Properties.</b></p>
                         <p><i class="icon-tag icon_gap"></i>Your advertisement will not expire at all.</p>
+                        <p><i class="icon-tag icon_gap"></i>We will published your advertisement <b> Free of Charge</b>.</p>
                     </div>
 
                     <div style="text-align: right;  border-top: solid 1px silver; padding-top: 10px;">

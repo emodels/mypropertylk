@@ -2,6 +2,23 @@
 
 class PaypalController extends Controller
 {
+    public $layout = "";
+
+    public function filters()
+    {
+        return array(
+            'AccessControl'
+        );
+    }
+
+    public function actions()
+    {
+        return array(
+            'cancel'=>'application.controllers.Paypal.CancelAction',  //action for Buy property page controller
+            'confirm'=>'application.controllers.Paypal.ConfirmAction',  //action for Property Detail page controller
+        );
+    }
+
 	public function actionBuy(){
 
         if (isset(Yii::app()->session['PAYPAL'])) {
@@ -9,12 +26,12 @@ class PaypalController extends Controller
             $transaction = Yii::app()->session['PAYPAL'];
 
             /*---( Get currency exchange rate - LKR to USD )---*/
-            $currencyConversion = json_decode(file_get_contents('http://rate-exchange.appspot.com/currency?from=LKR&to=USD'), true);
+            $currencyConversion = json_decode(file_get_contents('http://rate-exchange.herokuapp.com/fetchRate?from=LKR&to=USD'), true);
 
             if (isset($currencyConversion)) {
 
                 // set
-                $paymentInfo['Order']['theTotal'] = ($transaction->amount * number_format($currencyConversion['rate'], 4));
+                $paymentInfo['Order']['theTotal'] = ($transaction->amount * number_format($currencyConversion['Rate'], 4));
                 $paymentInfo['Order']['description'] = $transaction->description;
                 $paymentInfo['Order']['quantity'] = '1';
 
@@ -59,62 +76,7 @@ class PaypalController extends Controller
 		}
 	}
 
-	public function actionConfirm()
-	{
-		$token = trim($_GET['token']);
-		$payerId = trim($_GET['PayerID']);
-		
-		
-		
-		$result = Yii::app()->Paypal->GetExpressCheckoutDetails($token);
-
-		$result['PAYERID'] = $payerId; 
-		$result['TOKEN'] = $token; 
-		$result['ORDERTOTAL'] = Yii::app()->session['theTotal'];
-
-		//Detect errors 
-		if(!Yii::app()->Paypal->isCallSucceeded($result)){ 
-			if(Yii::app()->Paypal->apiLive === true){
-				//Live mode basic error message
-				$error = 'We were unable to process your request. Please try again later';
-			}else{
-				//Sandbox output the actual error message to dive in.
-				$error = $result['L_LONGMESSAGE0'];
-			}
-			echo $error;
-			Yii::app()->end();
-		}else{ 
-			
-			$paymentResult = Yii::app()->Paypal->DoExpressCheckoutPayment($result);
-			//Detect errors  
-			if(!Yii::app()->Paypal->isCallSucceeded($paymentResult)){
-				if(Yii::app()->Paypal->apiLive === true){
-					//Live mode basic error message
-					$error = 'We were unable to process your request. Please try again later';
-				}else{
-					//Sandbox output the actual error message to dive in.
-					$error = $paymentResult['L_LONGMESSAGE0'];
-				}
-				echo $error;
-				Yii::app()->end();
-			}else{
-				//payment was completed successfully
-				
-				$this->render('confirm');
-			}
-			
-		}
-	}
-        
-    public function actionCancel()
-	{
-		//The token of the cancelled payment typically used to cancel the payment within your application
-		$token = $_GET['token'];
-		
-		$this->render('cancel');
-	}
-	
-	public function actionDirectPayment(){ 
+	public function actionDirectPayment(){
 		$paymentInfo = array('Member'=> 
 			array( 
 				'first_name'=>'name_here', 
@@ -164,5 +126,34 @@ class PaypalController extends Controller
 		}
 
 		Yii::app()->end();
-	} 
+	}
+
+    public function filterAccessControl($filterChain)
+    {
+        /*
+         * checking user logged or not
+         */
+        if (Yii::app()->user->isGuest){
+            Yii::app()->user->setReturnUrl(Yii::app()->request->requestUri);
+            $this->redirect(Yii::app()->baseUrl . '/login');
+        } else {
+
+            switch (Yii::app()->user->usertype){
+                case 0:
+                    $this->layout = 'adminmain';
+                    break;
+                case 1:
+                    $this->layout = 'membermain';
+                    break;
+                case 2:
+                    $this->layout = 'agentmain';
+                    break;
+                case 3:
+                    $this->layout = 'advertisermain';
+                    break;
+            }
+        }
+
+        $filterChain->run();//default action
+    }
 }

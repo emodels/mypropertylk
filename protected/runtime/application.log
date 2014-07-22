@@ -580,3 +580,416 @@ REQUEST_URI=/mypropertylk/paypal/buy
 in C:\xampp\htdocs\mypropertylk\protected\components\Paypal.php (204)
 in C:\xampp\htdocs\mypropertylk\protected\controllers\PaypalController.php (40)
 in C:\xampp\htdocs\mypropertylk\index.php (15)
+2014/07/20 08:02:24 [error] [exception.CException] exception 'CException' with message 'Property "CWebUser.type" is not defined.' in C:\xampp\htdocs\mypropertylk\protected\framework\base\CComponent.php:131
+Stack trace:
+#0 C:\xampp\htdocs\mypropertylk\protected\framework\web\auth\CWebUser.php(141): CComponent->__get('type')
+#1 C:\xampp\htdocs\mypropertylk\protected\controllers\PaypalController.php(69): CWebUser->__get('type')
+#2 C:\xampp\htdocs\mypropertylk\protected\framework\web\actions\CInlineAction.php(50): PaypalController->actionConfirm()
+#3 C:\xampp\htdocs\mypropertylk\protected\framework\web\CController.php(309): CInlineAction->runWithParams(Array)
+#4 C:\xampp\htdocs\mypropertylk\protected\framework\web\CController.php(287): CController->runAction(Object(CInlineAction))
+#5 C:\xampp\htdocs\mypropertylk\protected\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#6 C:\xampp\htdocs\mypropertylk\protected\framework\web\CWebApplication.php(276): CController->run('confirm')
+#7 C:\xampp\htdocs\mypropertylk\protected\framework\web\CWebApplication.php(135): CWebApplication->runController('paypal/confirm')
+#8 C:\xampp\htdocs\mypropertylk\protected\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#9 C:\xampp\htdocs\mypropertylk\index.php(15): CApplication->run()
+#10 {main}
+REQUEST_URI=/mypropertylk/paypal/confirm?token=EC-59A01689EE685933D&PayerID=FA2BN5YBB937L
+---
+2014/07/21 07:25:59 [error] [exception.CException] exception 'CException' with message 'Property "Transactions.pricetype" is not defined.' in C:\xampp\htdocs\mypropertylk\protected\framework\base\CComponent.php:131
+Stack trace:
+#0 C:\xampp\htdocs\mypropertylk\protected\framework\db\ar\CActiveRecord.php(144): CComponent->__get('pricetype')
+#1 C:\xampp\htdocs\mypropertylk\protected\controllers\Paypal\ConfirmAction.php(66): CActiveRecord->__get('pricetype')
+#2 C:\xampp\htdocs\mypropertylk\protected\framework\web\actions\CAction.php(75): ConfirmAction->run()
+#3 C:\xampp\htdocs\mypropertylk\protected\framework\web\CController.php(309): CAction->runWithParams(Array)
+#4 C:\xampp\htdocs\mypropertylk\protected\framework\web\filters\CFilterChain.php(134): CController->runAction(Object(ConfirmAction))
+#5 C:\xampp\htdocs\mypropertylk\protected\controllers\PaypalController.php(157): CFilterChain->run()
+#6 C:\xampp\htdocs\mypropertylk\protected\framework\web\filters\CInlineFilter.php(59): PaypalController->filterAccessControl(Object(CFilterChain))
+#7 C:\xampp\htdocs\mypropertylk\protected\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#8 C:\xampp\htdocs\mypropertylk\protected\framework\web\CController.php(292): CFilterChain->run()
+#9 C:\xampp\htdocs\mypropertylk\protected\framework\web\CController.php(266): CController->runActionWithFilters(Object(ConfirmAction), Array)
+#10 C:\xampp\htdocs\mypropertylk\protected\framework\web\CWebApplication.php(276): CController->run('confirm')
+#11 C:\xampp\htdocs\mypropertylk\protected\framework\web\CWebApplication.php(135): CWebApplication->runController('paypal/confirm')
+#12 C:\xampp\htdocs\mypropertylk\protected\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#13 C:\xampp\htdocs\mypropertylk\index.php(15): CApplication->run()
+#14 {main}
+REQUEST_URI=/mypropertylk/paypal/confirm?token=EC-5TL746689A934583L&PayerID=FA2BN5YBB937L
+---
+2014/07/21 07:28:53 [error] [exception.CException] exception 'CException' with message 'Property "Transactions.pricetype" is not defined.' in C:\xampp\htdocs\mypropertylk\protected\framework\base\CComponent.php:174
+Stack trace:
+#0 C:\xampp\htdocs\mypropertylk\protected\framework\db\ar\CActiveRecord.php(160): CComponent->__set('pricetype', 'PREMIERE')
+#1 C:\xampp\htdocs\mypropertylk\protected\controllers\Property\PromotelistingAction.php(62): CActiveRecord->__set('pricetype', 'PREMIERE')
+#2 C:\xampp\htdocs\mypropertylk\protected\framework\web\actions\CAction.php(75): PromotelistingAction->run()
+#3 C:\xampp\htdocs\mypropertylk\protected\framework\web\CController.php(309): CAction->runWithParams(Array)
+#4 C:\xampp\htdocs\mypropertylk\protected\framework\web\filters\CFilterChain.php(134): CController->runAction(Object(PromotelistingAction))
+#5 C:\xampp\htdocs\mypropertylk\protected\controllers\PropertyController.php(74): CFilterChain->run()
+#6 C:\xampp\htdocs\mypropertylk\protected\framework\web\filters\CInlineFilter.php(59): PropertyController->filterAccessControl(Object(CFilterChain))
+#7 C:\xampp\htdocs\mypropertylk\protected\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#8 C:\xampp\htdocs\mypropertylk\protected\framework\web\CController.php(292): CFilterChain->run()
+#9 C:\xampp\htdocs\mypropertylk\protected\framework\web\CController.php(266): CController->runActionWithFilters(Object(PromotelistingAction), Array)
+#10 C:\xampp\htdocs\mypropertylk\protected\framework\web\CWebApplication.php(276): CController->run('promotelisting')
+#11 C:\xampp\htdocs\mypropertylk\protected\framework\web\CWebApplication.php(135): CWebApplication->runController('property/promot...')
+#12 C:\xampp\htdocs\mypropertylk\protected\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#13 C:\xampp\htdocs\mypropertylk\index.php(15): CApplication->run()
+#14 {main}
+REQUEST_URI=/mypropertylk/property/promotelisting/mode/PREMIERE/pid/40
+HTTP_REFERER=http://localhost/mypropertylk/property/promotelisting?pid=40
+---
+2014/07/21 07:28:58 [error] [exception.CException] exception 'CException' with message 'Property "Transactions.pricetype" is not defined.' in C:\xampp\htdocs\mypropertylk\protected\framework\base\CComponent.php:174
+Stack trace:
+#0 C:\xampp\htdocs\mypropertylk\protected\framework\db\ar\CActiveRecord.php(160): CComponent->__set('pricetype', 'PREMIERE')
+#1 C:\xampp\htdocs\mypropertylk\protected\controllers\Property\PromotelistingAction.php(62): CActiveRecord->__set('pricetype', 'PREMIERE')
+#2 C:\xampp\htdocs\mypropertylk\protected\framework\web\actions\CAction.php(75): PromotelistingAction->run()
+#3 C:\xampp\htdocs\mypropertylk\protected\framework\web\CController.php(309): CAction->runWithParams(Array)
+#4 C:\xampp\htdocs\mypropertylk\protected\framework\web\filters\CFilterChain.php(134): CController->runAction(Object(PromotelistingAction))
+#5 C:\xampp\htdocs\mypropertylk\protected\controllers\PropertyController.php(74): CFilterChain->run()
+#6 C:\xampp\htdocs\mypropertylk\protected\framework\web\filters\CInlineFilter.php(59): PropertyController->filterAccessControl(Object(CFilterChain))
+#7 C:\xampp\htdocs\mypropertylk\protected\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#8 C:\xampp\htdocs\mypropertylk\protected\framework\web\CController.php(292): CFilterChain->run()
+#9 C:\xampp\htdocs\mypropertylk\protected\framework\web\CController.php(266): CController->runActionWithFilters(Object(PromotelistingAction), Array)
+#10 C:\xampp\htdocs\mypropertylk\protected\framework\web\CWebApplication.php(276): CController->run('promotelisting')
+#11 C:\xampp\htdocs\mypropertylk\protected\framework\web\CWebApplication.php(135): CWebApplication->runController('property/promot...')
+#12 C:\xampp\htdocs\mypropertylk\protected\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#13 C:\xampp\htdocs\mypropertylk\index.php(15): CApplication->run()
+#14 {main}
+REQUEST_URI=/mypropertylk/property/promotelisting/mode/PREMIERE/pid/40
+HTTP_REFERER=http://localhost/mypropertylk/property/promotelisting?pid=40
+---
+2014/07/21 07:29:00 [error] [exception.CException] exception 'CException' with message 'Property "Transactions.pricetype" is not defined.' in C:\xampp\htdocs\mypropertylk\protected\framework\base\CComponent.php:174
+Stack trace:
+#0 C:\xampp\htdocs\mypropertylk\protected\framework\db\ar\CActiveRecord.php(160): CComponent->__set('pricetype', 'PREMIERE')
+#1 C:\xampp\htdocs\mypropertylk\protected\controllers\Property\PromotelistingAction.php(62): CActiveRecord->__set('pricetype', 'PREMIERE')
+#2 C:\xampp\htdocs\mypropertylk\protected\framework\web\actions\CAction.php(75): PromotelistingAction->run()
+#3 C:\xampp\htdocs\mypropertylk\protected\framework\web\CController.php(309): CAction->runWithParams(Array)
+#4 C:\xampp\htdocs\mypropertylk\protected\framework\web\filters\CFilterChain.php(134): CController->runAction(Object(PromotelistingAction))
+#5 C:\xampp\htdocs\mypropertylk\protected\controllers\PropertyController.php(74): CFilterChain->run()
+#6 C:\xampp\htdocs\mypropertylk\protected\framework\web\filters\CInlineFilter.php(59): PropertyController->filterAccessControl(Object(CFilterChain))
+#7 C:\xampp\htdocs\mypropertylk\protected\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#8 C:\xampp\htdocs\mypropertylk\protected\framework\web\CController.php(292): CFilterChain->run()
+#9 C:\xampp\htdocs\mypropertylk\protected\framework\web\CController.php(266): CController->runActionWithFilters(Object(PromotelistingAction), Array)
+#10 C:\xampp\htdocs\mypropertylk\protected\framework\web\CWebApplication.php(276): CController->run('promotelisting')
+#11 C:\xampp\htdocs\mypropertylk\protected\framework\web\CWebApplication.php(135): CWebApplication->runController('property/promot...')
+#12 C:\xampp\htdocs\mypropertylk\protected\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#13 C:\xampp\htdocs\mypropertylk\index.php(15): CApplication->run()
+#14 {main}
+REQUEST_URI=/mypropertylk/property/promotelisting/mode/PREMIERE/pid/40
+HTTP_REFERER=http://localhost/mypropertylk/property/promotelisting?pid=40
+---
+2014/07/21 07:29:05 [error] [exception.CException] exception 'CException' with message 'Property "Transactions.pricetype" is not defined.' in C:\xampp\htdocs\mypropertylk\protected\framework\base\CComponent.php:174
+Stack trace:
+#0 C:\xampp\htdocs\mypropertylk\protected\framework\db\ar\CActiveRecord.php(160): CComponent->__set('pricetype', 'PREMIERE')
+#1 C:\xampp\htdocs\mypropertylk\protected\controllers\Property\PromotelistingAction.php(62): CActiveRecord->__set('pricetype', 'PREMIERE')
+#2 C:\xampp\htdocs\mypropertylk\protected\framework\web\actions\CAction.php(75): PromotelistingAction->run()
+#3 C:\xampp\htdocs\mypropertylk\protected\framework\web\CController.php(309): CAction->runWithParams(Array)
+#4 C:\xampp\htdocs\mypropertylk\protected\framework\web\filters\CFilterChain.php(134): CController->runAction(Object(PromotelistingAction))
+#5 C:\xampp\htdocs\mypropertylk\protected\controllers\PropertyController.php(74): CFilterChain->run()
+#6 C:\xampp\htdocs\mypropertylk\protected\framework\web\filters\CInlineFilter.php(59): PropertyController->filterAccessControl(Object(CFilterChain))
+#7 C:\xampp\htdocs\mypropertylk\protected\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#8 C:\xampp\htdocs\mypropertylk\protected\framework\web\CController.php(292): CFilterChain->run()
+#9 C:\xampp\htdocs\mypropertylk\protected\framework\web\CController.php(266): CController->runActionWithFilters(Object(PromotelistingAction), Array)
+#10 C:\xampp\htdocs\mypropertylk\protected\framework\web\CWebApplication.php(276): CController->run('promotelisting')
+#11 C:\xampp\htdocs\mypropertylk\protected\framework\web\CWebApplication.php(135): CWebApplication->runController('property/promot...')
+#12 C:\xampp\htdocs\mypropertylk\protected\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#13 C:\xampp\htdocs\mypropertylk\index.php(15): CApplication->run()
+#14 {main}
+REQUEST_URI=/mypropertylk/property/promotelisting/mode/PREMIERE/pid/40
+HTTP_REFERER=http://localhost/mypropertylk/property/promotelisting?pid=40
+---
+2014/07/21 07:29:07 [error] [exception.CException] exception 'CException' with message 'Property "Transactions.pricetype" is not defined.' in C:\xampp\htdocs\mypropertylk\protected\framework\base\CComponent.php:174
+Stack trace:
+#0 C:\xampp\htdocs\mypropertylk\protected\framework\db\ar\CActiveRecord.php(160): CComponent->__set('pricetype', 'PREMIERE')
+#1 C:\xampp\htdocs\mypropertylk\protected\controllers\Property\PromotelistingAction.php(62): CActiveRecord->__set('pricetype', 'PREMIERE')
+#2 C:\xampp\htdocs\mypropertylk\protected\framework\web\actions\CAction.php(75): PromotelistingAction->run()
+#3 C:\xampp\htdocs\mypropertylk\protected\framework\web\CController.php(309): CAction->runWithParams(Array)
+#4 C:\xampp\htdocs\mypropertylk\protected\framework\web\filters\CFilterChain.php(134): CController->runAction(Object(PromotelistingAction))
+#5 C:\xampp\htdocs\mypropertylk\protected\controllers\PropertyController.php(74): CFilterChain->run()
+#6 C:\xampp\htdocs\mypropertylk\protected\framework\web\filters\CInlineFilter.php(59): PropertyController->filterAccessControl(Object(CFilterChain))
+#7 C:\xampp\htdocs\mypropertylk\protected\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#8 C:\xampp\htdocs\mypropertylk\protected\framework\web\CController.php(292): CFilterChain->run()
+#9 C:\xampp\htdocs\mypropertylk\protected\framework\web\CController.php(266): CController->runActionWithFilters(Object(PromotelistingAction), Array)
+#10 C:\xampp\htdocs\mypropertylk\protected\framework\web\CWebApplication.php(276): CController->run('promotelisting')
+#11 C:\xampp\htdocs\mypropertylk\protected\framework\web\CWebApplication.php(135): CWebApplication->runController('property/promot...')
+#12 C:\xampp\htdocs\mypropertylk\protected\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#13 C:\xampp\htdocs\mypropertylk\index.php(15): CApplication->run()
+#14 {main}
+REQUEST_URI=/mypropertylk/property/promotelisting/mode/PREMIERE/pid/40
+HTTP_REFERER=http://localhost/mypropertylk/property/promotelisting?pid=40
+---
+2014/07/21 07:29:41 [error] [exception.CException] exception 'CException' with message 'Property "Transactions.pricetype" is not defined.' in C:\xampp\htdocs\mypropertylk\protected\framework\base\CComponent.php:174
+Stack trace:
+#0 C:\xampp\htdocs\mypropertylk\protected\framework\db\ar\CActiveRecord.php(160): CComponent->__set('pricetype', 'PREMIERE')
+#1 C:\xampp\htdocs\mypropertylk\protected\controllers\Property\PromotelistingAction.php(62): CActiveRecord->__set('pricetype', 'PREMIERE')
+#2 C:\xampp\htdocs\mypropertylk\protected\framework\web\actions\CAction.php(75): PromotelistingAction->run()
+#3 C:\xampp\htdocs\mypropertylk\protected\framework\web\CController.php(309): CAction->runWithParams(Array)
+#4 C:\xampp\htdocs\mypropertylk\protected\framework\web\filters\CFilterChain.php(134): CController->runAction(Object(PromotelistingAction))
+#5 C:\xampp\htdocs\mypropertylk\protected\controllers\PropertyController.php(74): CFilterChain->run()
+#6 C:\xampp\htdocs\mypropertylk\protected\framework\web\filters\CInlineFilter.php(59): PropertyController->filterAccessControl(Object(CFilterChain))
+#7 C:\xampp\htdocs\mypropertylk\protected\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#8 C:\xampp\htdocs\mypropertylk\protected\framework\web\CController.php(292): CFilterChain->run()
+#9 C:\xampp\htdocs\mypropertylk\protected\framework\web\CController.php(266): CController->runActionWithFilters(Object(PromotelistingAction), Array)
+#10 C:\xampp\htdocs\mypropertylk\protected\framework\web\CWebApplication.php(276): CController->run('promotelisting')
+#11 C:\xampp\htdocs\mypropertylk\protected\framework\web\CWebApplication.php(135): CWebApplication->runController('property/promot...')
+#12 C:\xampp\htdocs\mypropertylk\protected\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#13 C:\xampp\htdocs\mypropertylk\index.php(15): CApplication->run()
+#14 {main}
+REQUEST_URI=/mypropertylk/property/promotelisting/mode/PREMIERE/pid/39
+HTTP_REFERER=http://localhost/mypropertylk/property/promotelisting?pid=39
+---
+2014/07/21 07:29:42 [error] [exception.CException] exception 'CException' with message 'Property "Transactions.pricetype" is not defined.' in C:\xampp\htdocs\mypropertylk\protected\framework\base\CComponent.php:174
+Stack trace:
+#0 C:\xampp\htdocs\mypropertylk\protected\framework\db\ar\CActiveRecord.php(160): CComponent->__set('pricetype', 'PREMIERE')
+#1 C:\xampp\htdocs\mypropertylk\protected\controllers\Property\PromotelistingAction.php(62): CActiveRecord->__set('pricetype', 'PREMIERE')
+#2 C:\xampp\htdocs\mypropertylk\protected\framework\web\actions\CAction.php(75): PromotelistingAction->run()
+#3 C:\xampp\htdocs\mypropertylk\protected\framework\web\CController.php(309): CAction->runWithParams(Array)
+#4 C:\xampp\htdocs\mypropertylk\protected\framework\web\filters\CFilterChain.php(134): CController->runAction(Object(PromotelistingAction))
+#5 C:\xampp\htdocs\mypropertylk\protected\controllers\PropertyController.php(74): CFilterChain->run()
+#6 C:\xampp\htdocs\mypropertylk\protected\framework\web\filters\CInlineFilter.php(59): PropertyController->filterAccessControl(Object(CFilterChain))
+#7 C:\xampp\htdocs\mypropertylk\protected\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#8 C:\xampp\htdocs\mypropertylk\protected\framework\web\CController.php(292): CFilterChain->run()
+#9 C:\xampp\htdocs\mypropertylk\protected\framework\web\CController.php(266): CController->runActionWithFilters(Object(PromotelistingAction), Array)
+#10 C:\xampp\htdocs\mypropertylk\protected\framework\web\CWebApplication.php(276): CController->run('promotelisting')
+#11 C:\xampp\htdocs\mypropertylk\protected\framework\web\CWebApplication.php(135): CWebApplication->runController('property/promot...')
+#12 C:\xampp\htdocs\mypropertylk\protected\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#13 C:\xampp\htdocs\mypropertylk\index.php(15): CApplication->run()
+#14 {main}
+REQUEST_URI=/mypropertylk/property/promotelisting/mode/PREMIERE/pid/39
+HTTP_REFERER=http://localhost/mypropertylk/property/promotelisting?pid=39
+---
+2014/07/21 07:29:43 [error] [exception.CException] exception 'CException' with message 'Property "Transactions.pricetype" is not defined.' in C:\xampp\htdocs\mypropertylk\protected\framework\base\CComponent.php:174
+Stack trace:
+#0 C:\xampp\htdocs\mypropertylk\protected\framework\db\ar\CActiveRecord.php(160): CComponent->__set('pricetype', 'PREMIERE')
+#1 C:\xampp\htdocs\mypropertylk\protected\controllers\Property\PromotelistingAction.php(62): CActiveRecord->__set('pricetype', 'PREMIERE')
+#2 C:\xampp\htdocs\mypropertylk\protected\framework\web\actions\CAction.php(75): PromotelistingAction->run()
+#3 C:\xampp\htdocs\mypropertylk\protected\framework\web\CController.php(309): CAction->runWithParams(Array)
+#4 C:\xampp\htdocs\mypropertylk\protected\framework\web\filters\CFilterChain.php(134): CController->runAction(Object(PromotelistingAction))
+#5 C:\xampp\htdocs\mypropertylk\protected\controllers\PropertyController.php(74): CFilterChain->run()
+#6 C:\xampp\htdocs\mypropertylk\protected\framework\web\filters\CInlineFilter.php(59): PropertyController->filterAccessControl(Object(CFilterChain))
+#7 C:\xampp\htdocs\mypropertylk\protected\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#8 C:\xampp\htdocs\mypropertylk\protected\framework\web\CController.php(292): CFilterChain->run()
+#9 C:\xampp\htdocs\mypropertylk\protected\framework\web\CController.php(266): CController->runActionWithFilters(Object(PromotelistingAction), Array)
+#10 C:\xampp\htdocs\mypropertylk\protected\framework\web\CWebApplication.php(276): CController->run('promotelisting')
+#11 C:\xampp\htdocs\mypropertylk\protected\framework\web\CWebApplication.php(135): CWebApplication->runController('property/promot...')
+#12 C:\xampp\htdocs\mypropertylk\protected\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#13 C:\xampp\htdocs\mypropertylk\index.php(15): CApplication->run()
+#14 {main}
+REQUEST_URI=/mypropertylk/property/promotelisting/mode/PREMIERE/pid/39
+HTTP_REFERER=http://localhost/mypropertylk/property/promotelisting?pid=39
+---
+2014/07/21 07:29:44 [error] [exception.CException] exception 'CException' with message 'Property "Transactions.pricetype" is not defined.' in C:\xampp\htdocs\mypropertylk\protected\framework\base\CComponent.php:174
+Stack trace:
+#0 C:\xampp\htdocs\mypropertylk\protected\framework\db\ar\CActiveRecord.php(160): CComponent->__set('pricetype', 'PREMIERE')
+#1 C:\xampp\htdocs\mypropertylk\protected\controllers\Property\PromotelistingAction.php(62): CActiveRecord->__set('pricetype', 'PREMIERE')
+#2 C:\xampp\htdocs\mypropertylk\protected\framework\web\actions\CAction.php(75): PromotelistingAction->run()
+#3 C:\xampp\htdocs\mypropertylk\protected\framework\web\CController.php(309): CAction->runWithParams(Array)
+#4 C:\xampp\htdocs\mypropertylk\protected\framework\web\filters\CFilterChain.php(134): CController->runAction(Object(PromotelistingAction))
+#5 C:\xampp\htdocs\mypropertylk\protected\controllers\PropertyController.php(74): CFilterChain->run()
+#6 C:\xampp\htdocs\mypropertylk\protected\framework\web\filters\CInlineFilter.php(59): PropertyController->filterAccessControl(Object(CFilterChain))
+#7 C:\xampp\htdocs\mypropertylk\protected\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#8 C:\xampp\htdocs\mypropertylk\protected\framework\web\CController.php(292): CFilterChain->run()
+#9 C:\xampp\htdocs\mypropertylk\protected\framework\web\CController.php(266): CController->runActionWithFilters(Object(PromotelistingAction), Array)
+#10 C:\xampp\htdocs\mypropertylk\protected\framework\web\CWebApplication.php(276): CController->run('promotelisting')
+#11 C:\xampp\htdocs\mypropertylk\protected\framework\web\CWebApplication.php(135): CWebApplication->runController('property/promot...')
+#12 C:\xampp\htdocs\mypropertylk\protected\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#13 C:\xampp\htdocs\mypropertylk\index.php(15): CApplication->run()
+#14 {main}
+REQUEST_URI=/mypropertylk/property/promotelisting/mode/PREMIERE/pid/39
+HTTP_REFERER=http://localhost/mypropertylk/property/promotelisting?pid=39
+---
+2014/07/21 07:29:44 [error] [exception.CException] exception 'CException' with message 'Property "Transactions.pricetype" is not defined.' in C:\xampp\htdocs\mypropertylk\protected\framework\base\CComponent.php:174
+Stack trace:
+#0 C:\xampp\htdocs\mypropertylk\protected\framework\db\ar\CActiveRecord.php(160): CComponent->__set('pricetype', 'PREMIERE')
+#1 C:\xampp\htdocs\mypropertylk\protected\controllers\Property\PromotelistingAction.php(62): CActiveRecord->__set('pricetype', 'PREMIERE')
+#2 C:\xampp\htdocs\mypropertylk\protected\framework\web\actions\CAction.php(75): PromotelistingAction->run()
+#3 C:\xampp\htdocs\mypropertylk\protected\framework\web\CController.php(309): CAction->runWithParams(Array)
+#4 C:\xampp\htdocs\mypropertylk\protected\framework\web\filters\CFilterChain.php(134): CController->runAction(Object(PromotelistingAction))
+#5 C:\xampp\htdocs\mypropertylk\protected\controllers\PropertyController.php(74): CFilterChain->run()
+#6 C:\xampp\htdocs\mypropertylk\protected\framework\web\filters\CInlineFilter.php(59): PropertyController->filterAccessControl(Object(CFilterChain))
+#7 C:\xampp\htdocs\mypropertylk\protected\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#8 C:\xampp\htdocs\mypropertylk\protected\framework\web\CController.php(292): CFilterChain->run()
+#9 C:\xampp\htdocs\mypropertylk\protected\framework\web\CController.php(266): CController->runActionWithFilters(Object(PromotelistingAction), Array)
+#10 C:\xampp\htdocs\mypropertylk\protected\framework\web\CWebApplication.php(276): CController->run('promotelisting')
+#11 C:\xampp\htdocs\mypropertylk\protected\framework\web\CWebApplication.php(135): CWebApplication->runController('property/promot...')
+#12 C:\xampp\htdocs\mypropertylk\protected\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#13 C:\xampp\htdocs\mypropertylk\index.php(15): CApplication->run()
+#14 {main}
+REQUEST_URI=/mypropertylk/property/promotelisting/mode/PREMIERE/pid/39
+HTTP_REFERER=http://localhost/mypropertylk/property/promotelisting?pid=39
+---
+2014/07/21 07:29:44 [error] [exception.CException] exception 'CException' with message 'Property "Transactions.pricetype" is not defined.' in C:\xampp\htdocs\mypropertylk\protected\framework\base\CComponent.php:174
+Stack trace:
+#0 C:\xampp\htdocs\mypropertylk\protected\framework\db\ar\CActiveRecord.php(160): CComponent->__set('pricetype', 'PREMIERE')
+#1 C:\xampp\htdocs\mypropertylk\protected\controllers\Property\PromotelistingAction.php(62): CActiveRecord->__set('pricetype', 'PREMIERE')
+#2 C:\xampp\htdocs\mypropertylk\protected\framework\web\actions\CAction.php(75): PromotelistingAction->run()
+#3 C:\xampp\htdocs\mypropertylk\protected\framework\web\CController.php(309): CAction->runWithParams(Array)
+#4 C:\xampp\htdocs\mypropertylk\protected\framework\web\filters\CFilterChain.php(134): CController->runAction(Object(PromotelistingAction))
+#5 C:\xampp\htdocs\mypropertylk\protected\controllers\PropertyController.php(74): CFilterChain->run()
+#6 C:\xampp\htdocs\mypropertylk\protected\framework\web\filters\CInlineFilter.php(59): PropertyController->filterAccessControl(Object(CFilterChain))
+#7 C:\xampp\htdocs\mypropertylk\protected\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#8 C:\xampp\htdocs\mypropertylk\protected\framework\web\CController.php(292): CFilterChain->run()
+#9 C:\xampp\htdocs\mypropertylk\protected\framework\web\CController.php(266): CController->runActionWithFilters(Object(PromotelistingAction), Array)
+#10 C:\xampp\htdocs\mypropertylk\protected\framework\web\CWebApplication.php(276): CController->run('promotelisting')
+#11 C:\xampp\htdocs\mypropertylk\protected\framework\web\CWebApplication.php(135): CWebApplication->runController('property/promot...')
+#12 C:\xampp\htdocs\mypropertylk\protected\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#13 C:\xampp\htdocs\mypropertylk\index.php(15): CApplication->run()
+#14 {main}
+REQUEST_URI=/mypropertylk/property/promotelisting/mode/PREMIERE/pid/39
+HTTP_REFERER=http://localhost/mypropertylk/property/promotelisting?pid=39
+---
+2014/07/21 07:29:44 [error] [exception.CException] exception 'CException' with message 'Property "Transactions.pricetype" is not defined.' in C:\xampp\htdocs\mypropertylk\protected\framework\base\CComponent.php:174
+Stack trace:
+#0 C:\xampp\htdocs\mypropertylk\protected\framework\db\ar\CActiveRecord.php(160): CComponent->__set('pricetype', 'PREMIERE')
+#1 C:\xampp\htdocs\mypropertylk\protected\controllers\Property\PromotelistingAction.php(62): CActiveRecord->__set('pricetype', 'PREMIERE')
+#2 C:\xampp\htdocs\mypropertylk\protected\framework\web\actions\CAction.php(75): PromotelistingAction->run()
+#3 C:\xampp\htdocs\mypropertylk\protected\framework\web\CController.php(309): CAction->runWithParams(Array)
+#4 C:\xampp\htdocs\mypropertylk\protected\framework\web\filters\CFilterChain.php(134): CController->runAction(Object(PromotelistingAction))
+#5 C:\xampp\htdocs\mypropertylk\protected\controllers\PropertyController.php(74): CFilterChain->run()
+#6 C:\xampp\htdocs\mypropertylk\protected\framework\web\filters\CInlineFilter.php(59): PropertyController->filterAccessControl(Object(CFilterChain))
+#7 C:\xampp\htdocs\mypropertylk\protected\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#8 C:\xampp\htdocs\mypropertylk\protected\framework\web\CController.php(292): CFilterChain->run()
+#9 C:\xampp\htdocs\mypropertylk\protected\framework\web\CController.php(266): CController->runActionWithFilters(Object(PromotelistingAction), Array)
+#10 C:\xampp\htdocs\mypropertylk\protected\framework\web\CWebApplication.php(276): CController->run('promotelisting')
+#11 C:\xampp\htdocs\mypropertylk\protected\framework\web\CWebApplication.php(135): CWebApplication->runController('property/promot...')
+#12 C:\xampp\htdocs\mypropertylk\protected\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#13 C:\xampp\htdocs\mypropertylk\index.php(15): CApplication->run()
+#14 {main}
+REQUEST_URI=/mypropertylk/property/promotelisting/mode/PREMIERE/pid/39
+HTTP_REFERER=http://localhost/mypropertylk/property/promotelisting?pid=39
+---
+2014/07/21 07:29:45 [error] [exception.CException] exception 'CException' with message 'Property "Transactions.pricetype" is not defined.' in C:\xampp\htdocs\mypropertylk\protected\framework\base\CComponent.php:174
+Stack trace:
+#0 C:\xampp\htdocs\mypropertylk\protected\framework\db\ar\CActiveRecord.php(160): CComponent->__set('pricetype', 'PREMIERE')
+#1 C:\xampp\htdocs\mypropertylk\protected\controllers\Property\PromotelistingAction.php(62): CActiveRecord->__set('pricetype', 'PREMIERE')
+#2 C:\xampp\htdocs\mypropertylk\protected\framework\web\actions\CAction.php(75): PromotelistingAction->run()
+#3 C:\xampp\htdocs\mypropertylk\protected\framework\web\CController.php(309): CAction->runWithParams(Array)
+#4 C:\xampp\htdocs\mypropertylk\protected\framework\web\filters\CFilterChain.php(134): CController->runAction(Object(PromotelistingAction))
+#5 C:\xampp\htdocs\mypropertylk\protected\controllers\PropertyController.php(74): CFilterChain->run()
+#6 C:\xampp\htdocs\mypropertylk\protected\framework\web\filters\CInlineFilter.php(59): PropertyController->filterAccessControl(Object(CFilterChain))
+#7 C:\xampp\htdocs\mypropertylk\protected\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#8 C:\xampp\htdocs\mypropertylk\protected\framework\web\CController.php(292): CFilterChain->run()
+#9 C:\xampp\htdocs\mypropertylk\protected\framework\web\CController.php(266): CController->runActionWithFilters(Object(PromotelistingAction), Array)
+#10 C:\xampp\htdocs\mypropertylk\protected\framework\web\CWebApplication.php(276): CController->run('promotelisting')
+#11 C:\xampp\htdocs\mypropertylk\protected\framework\web\CWebApplication.php(135): CWebApplication->runController('property/promot...')
+#12 C:\xampp\htdocs\mypropertylk\protected\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#13 C:\xampp\htdocs\mypropertylk\index.php(15): CApplication->run()
+#14 {main}
+REQUEST_URI=/mypropertylk/property/promotelisting/mode/PREMIERE/pid/39
+HTTP_REFERER=http://localhost/mypropertylk/property/promotelisting?pid=39
+---
+2014/07/21 07:32:35 [error] [exception.CException] exception 'CException' with message 'Property "Transactions.pricetype" is not defined.' in C:\xampp\htdocs\mypropertylk\protected\framework\base\CComponent.php:174
+Stack trace:
+#0 C:\xampp\htdocs\mypropertylk\protected\framework\db\ar\CActiveRecord.php(160): CComponent->__set('pricetype', 'PREMIERE')
+#1 C:\xampp\htdocs\mypropertylk\protected\controllers\Property\PromotelistingAction.php(62): CActiveRecord->__set('pricetype', 'PREMIERE')
+#2 C:\xampp\htdocs\mypropertylk\protected\framework\web\actions\CAction.php(75): PromotelistingAction->run()
+#3 C:\xampp\htdocs\mypropertylk\protected\framework\web\CController.php(309): CAction->runWithParams(Array)
+#4 C:\xampp\htdocs\mypropertylk\protected\framework\web\filters\CFilterChain.php(134): CController->runAction(Object(PromotelistingAction))
+#5 C:\xampp\htdocs\mypropertylk\protected\controllers\PropertyController.php(74): CFilterChain->run()
+#6 C:\xampp\htdocs\mypropertylk\protected\framework\web\filters\CInlineFilter.php(59): PropertyController->filterAccessControl(Object(CFilterChain))
+#7 C:\xampp\htdocs\mypropertylk\protected\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#8 C:\xampp\htdocs\mypropertylk\protected\framework\web\CController.php(292): CFilterChain->run()
+#9 C:\xampp\htdocs\mypropertylk\protected\framework\web\CController.php(266): CController->runActionWithFilters(Object(PromotelistingAction), Array)
+#10 C:\xampp\htdocs\mypropertylk\protected\framework\web\CWebApplication.php(276): CController->run('promotelisting')
+#11 C:\xampp\htdocs\mypropertylk\protected\framework\web\CWebApplication.php(135): CWebApplication->runController('property/promot...')
+#12 C:\xampp\htdocs\mypropertylk\protected\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#13 C:\xampp\htdocs\mypropertylk\index.php(15): CApplication->run()
+#14 {main}
+REQUEST_URI=/mypropertylk/property/promotelisting/mode/PREMIERE/pid/39
+HTTP_REFERER=http://localhost/mypropertylk/property/promotelisting?pid=39
+---
+2014/07/21 07:32:36 [error] [exception.CException] exception 'CException' with message 'Property "Transactions.pricetype" is not defined.' in C:\xampp\htdocs\mypropertylk\protected\framework\base\CComponent.php:174
+Stack trace:
+#0 C:\xampp\htdocs\mypropertylk\protected\framework\db\ar\CActiveRecord.php(160): CComponent->__set('pricetype', 'PREMIERE')
+#1 C:\xampp\htdocs\mypropertylk\protected\controllers\Property\PromotelistingAction.php(62): CActiveRecord->__set('pricetype', 'PREMIERE')
+#2 C:\xampp\htdocs\mypropertylk\protected\framework\web\actions\CAction.php(75): PromotelistingAction->run()
+#3 C:\xampp\htdocs\mypropertylk\protected\framework\web\CController.php(309): CAction->runWithParams(Array)
+#4 C:\xampp\htdocs\mypropertylk\protected\framework\web\filters\CFilterChain.php(134): CController->runAction(Object(PromotelistingAction))
+#5 C:\xampp\htdocs\mypropertylk\protected\controllers\PropertyController.php(74): CFilterChain->run()
+#6 C:\xampp\htdocs\mypropertylk\protected\framework\web\filters\CInlineFilter.php(59): PropertyController->filterAccessControl(Object(CFilterChain))
+#7 C:\xampp\htdocs\mypropertylk\protected\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#8 C:\xampp\htdocs\mypropertylk\protected\framework\web\CController.php(292): CFilterChain->run()
+#9 C:\xampp\htdocs\mypropertylk\protected\framework\web\CController.php(266): CController->runActionWithFilters(Object(PromotelistingAction), Array)
+#10 C:\xampp\htdocs\mypropertylk\protected\framework\web\CWebApplication.php(276): CController->run('promotelisting')
+#11 C:\xampp\htdocs\mypropertylk\protected\framework\web\CWebApplication.php(135): CWebApplication->runController('property/promot...')
+#12 C:\xampp\htdocs\mypropertylk\protected\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#13 C:\xampp\htdocs\mypropertylk\index.php(15): CApplication->run()
+#14 {main}
+REQUEST_URI=/mypropertylk/property/promotelisting/mode/PREMIERE/pid/39
+HTTP_REFERER=http://localhost/mypropertylk/property/promotelisting?pid=39
+---
+2014/07/21 07:32:37 [error] [exception.CException] exception 'CException' with message 'Property "Transactions.pricetype" is not defined.' in C:\xampp\htdocs\mypropertylk\protected\framework\base\CComponent.php:174
+Stack trace:
+#0 C:\xampp\htdocs\mypropertylk\protected\framework\db\ar\CActiveRecord.php(160): CComponent->__set('pricetype', 'PREMIERE')
+#1 C:\xampp\htdocs\mypropertylk\protected\controllers\Property\PromotelistingAction.php(62): CActiveRecord->__set('pricetype', 'PREMIERE')
+#2 C:\xampp\htdocs\mypropertylk\protected\framework\web\actions\CAction.php(75): PromotelistingAction->run()
+#3 C:\xampp\htdocs\mypropertylk\protected\framework\web\CController.php(309): CAction->runWithParams(Array)
+#4 C:\xampp\htdocs\mypropertylk\protected\framework\web\filters\CFilterChain.php(134): CController->runAction(Object(PromotelistingAction))
+#5 C:\xampp\htdocs\mypropertylk\protected\controllers\PropertyController.php(74): CFilterChain->run()
+#6 C:\xampp\htdocs\mypropertylk\protected\framework\web\filters\CInlineFilter.php(59): PropertyController->filterAccessControl(Object(CFilterChain))
+#7 C:\xampp\htdocs\mypropertylk\protected\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#8 C:\xampp\htdocs\mypropertylk\protected\framework\web\CController.php(292): CFilterChain->run()
+#9 C:\xampp\htdocs\mypropertylk\protected\framework\web\CController.php(266): CController->runActionWithFilters(Object(PromotelistingAction), Array)
+#10 C:\xampp\htdocs\mypropertylk\protected\framework\web\CWebApplication.php(276): CController->run('promotelisting')
+#11 C:\xampp\htdocs\mypropertylk\protected\framework\web\CWebApplication.php(135): CWebApplication->runController('property/promot...')
+#12 C:\xampp\htdocs\mypropertylk\protected\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#13 C:\xampp\htdocs\mypropertylk\index.php(15): CApplication->run()
+#14 {main}
+REQUEST_URI=/mypropertylk/property/promotelisting/mode/PREMIERE/pid/39
+HTTP_REFERER=http://localhost/mypropertylk/property/promotelisting?pid=39
+---
+2014/07/21 07:32:38 [error] [exception.CException] exception 'CException' with message 'Property "Transactions.pricetype" is not defined.' in C:\xampp\htdocs\mypropertylk\protected\framework\base\CComponent.php:174
+Stack trace:
+#0 C:\xampp\htdocs\mypropertylk\protected\framework\db\ar\CActiveRecord.php(160): CComponent->__set('pricetype', 'PREMIERE')
+#1 C:\xampp\htdocs\mypropertylk\protected\controllers\Property\PromotelistingAction.php(62): CActiveRecord->__set('pricetype', 'PREMIERE')
+#2 C:\xampp\htdocs\mypropertylk\protected\framework\web\actions\CAction.php(75): PromotelistingAction->run()
+#3 C:\xampp\htdocs\mypropertylk\protected\framework\web\CController.php(309): CAction->runWithParams(Array)
+#4 C:\xampp\htdocs\mypropertylk\protected\framework\web\filters\CFilterChain.php(134): CController->runAction(Object(PromotelistingAction))
+#5 C:\xampp\htdocs\mypropertylk\protected\controllers\PropertyController.php(74): CFilterChain->run()
+#6 C:\xampp\htdocs\mypropertylk\protected\framework\web\filters\CInlineFilter.php(59): PropertyController->filterAccessControl(Object(CFilterChain))
+#7 C:\xampp\htdocs\mypropertylk\protected\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#8 C:\xampp\htdocs\mypropertylk\protected\framework\web\CController.php(292): CFilterChain->run()
+#9 C:\xampp\htdocs\mypropertylk\protected\framework\web\CController.php(266): CController->runActionWithFilters(Object(PromotelistingAction), Array)
+#10 C:\xampp\htdocs\mypropertylk\protected\framework\web\CWebApplication.php(276): CController->run('promotelisting')
+#11 C:\xampp\htdocs\mypropertylk\protected\framework\web\CWebApplication.php(135): CWebApplication->runController('property/promot...')
+#12 C:\xampp\htdocs\mypropertylk\protected\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#13 C:\xampp\htdocs\mypropertylk\index.php(15): CApplication->run()
+#14 {main}
+REQUEST_URI=/mypropertylk/property/promotelisting/mode/PREMIERE/pid/39
+HTTP_REFERER=http://localhost/mypropertylk/property/promotelisting?pid=39
+---
+2014/07/21 07:32:43 [error] [exception.CException] exception 'CException' with message 'Property "Transactions.pricetype" is not defined.' in C:\xampp\htdocs\mypropertylk\protected\framework\base\CComponent.php:174
+Stack trace:
+#0 C:\xampp\htdocs\mypropertylk\protected\framework\db\ar\CActiveRecord.php(160): CComponent->__set('pricetype', 'PREMIERE')
+#1 C:\xampp\htdocs\mypropertylk\protected\controllers\Property\PromotelistingAction.php(62): CActiveRecord->__set('pricetype', 'PREMIERE')
+#2 C:\xampp\htdocs\mypropertylk\protected\framework\web\actions\CAction.php(75): PromotelistingAction->run()
+#3 C:\xampp\htdocs\mypropertylk\protected\framework\web\CController.php(309): CAction->runWithParams(Array)
+#4 C:\xampp\htdocs\mypropertylk\protected\framework\web\filters\CFilterChain.php(134): CController->runAction(Object(PromotelistingAction))
+#5 C:\xampp\htdocs\mypropertylk\protected\controllers\PropertyController.php(74): CFilterChain->run()
+#6 C:\xampp\htdocs\mypropertylk\protected\framework\web\filters\CInlineFilter.php(59): PropertyController->filterAccessControl(Object(CFilterChain))
+#7 C:\xampp\htdocs\mypropertylk\protected\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#8 C:\xampp\htdocs\mypropertylk\protected\framework\web\CController.php(292): CFilterChain->run()
+#9 C:\xampp\htdocs\mypropertylk\protected\framework\web\CController.php(266): CController->runActionWithFilters(Object(PromotelistingAction), Array)
+#10 C:\xampp\htdocs\mypropertylk\protected\framework\web\CWebApplication.php(276): CController->run('promotelisting')
+#11 C:\xampp\htdocs\mypropertylk\protected\framework\web\CWebApplication.php(135): CWebApplication->runController('property/promot...')
+#12 C:\xampp\htdocs\mypropertylk\protected\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#13 C:\xampp\htdocs\mypropertylk\index.php(15): CApplication->run()
+#14 {main}
+REQUEST_URI=/mypropertylk/property/promotelisting/mode/PREMIERE/pid/39
+HTTP_REFERER=http://localhost/mypropertylk/property/promotelisting?pid=39
+---
+2014/07/21 07:34:10 [error] [exception.CException] exception 'CException' with message 'Property "Transactions.pricetype" is not defined.' in C:\xampp\htdocs\mypropertylk\protected\framework\base\CComponent.php:131
+Stack trace:
+#0 C:\xampp\htdocs\mypropertylk\protected\framework\db\ar\CActiveRecord.php(144): CComponent->__get('pricetype')
+#1 C:\xampp\htdocs\mypropertylk\protected\controllers\Paypal\ConfirmAction.php(66): CActiveRecord->__get('pricetype')
+#2 C:\xampp\htdocs\mypropertylk\protected\framework\web\actions\CAction.php(75): ConfirmAction->run()
+#3 C:\xampp\htdocs\mypropertylk\protected\framework\web\CController.php(309): CAction->runWithParams(Array)
+#4 C:\xampp\htdocs\mypropertylk\protected\framework\web\filters\CFilterChain.php(134): CController->runAction(Object(ConfirmAction))
+#5 C:\xampp\htdocs\mypropertylk\protected\controllers\PaypalController.php(157): CFilterChain->run()
+#6 C:\xampp\htdocs\mypropertylk\protected\framework\web\filters\CInlineFilter.php(59): PaypalController->filterAccessControl(Object(CFilterChain))
+#7 C:\xampp\htdocs\mypropertylk\protected\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#8 C:\xampp\htdocs\mypropertylk\protected\framework\web\CController.php(292): CFilterChain->run()
+#9 C:\xampp\htdocs\mypropertylk\protected\framework\web\CController.php(266): CController->runActionWithFilters(Object(ConfirmAction), Array)
+#10 C:\xampp\htdocs\mypropertylk\protected\framework\web\CWebApplication.php(276): CController->run('confirm')
+#11 C:\xampp\htdocs\mypropertylk\protected\framework\web\CWebApplication.php(135): CWebApplication->runController('paypal/confirm')
+#12 C:\xampp\htdocs\mypropertylk\protected\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#13 C:\xampp\htdocs\mypropertylk\index.php(15): CApplication->run()
+#14 {main}
+REQUEST_URI=/mypropertylk/paypal/confirm?token=EC-12148849RE763351V&PayerID=FA2BN5YBB937L
+---

@@ -28,16 +28,13 @@
             <?php
             if ($data->status == 0) {
 
-                echo "Inactive";
+                echo "Pending";
             }
             if ($data->status == 1) {
 
-                echo "Pending";
-            }
-            if ($data->status == 2) {
-
                 echo "Complete";
-            } ?>
+            }
+            ?>
         </div>
     </div>
 </div>

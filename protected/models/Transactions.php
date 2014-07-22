@@ -12,6 +12,7 @@
  * @property string $amount
  * @property integer $referenceid
  * @property string $description
+ * @property string $pricetype
  *
  * The followings are the available model relations:
  * @property User $user0
@@ -44,13 +45,14 @@ class Transactions extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('type, user, transactiondate, status, amount, referenceid, description', 'required'),
+			array('type, user, transactiondate, status, amount, referenceid, description, pricetype', 'required'),
 			array('type, user, status, referenceid', 'numerical', 'integerOnly'=>true),
 			array('amount', 'length', 'max'=>10),
 			array('description', 'length', 'max'=>200),
+			array('pricetype', 'length', 'max'=>100),
 			// The following rule is used by search().
 			// Please remove those attributes that should not be searched.
-			array('id, type, user, transactiondate, status, amount, referenceid, description', 'safe', 'on'=>'search'),
+			array('id, type, user, transactiondate, status, amount, referenceid, description, pricetype', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -80,6 +82,7 @@ class Transactions extends CActiveRecord
 			'amount' => 'Amount',
 			'referenceid' => 'Referenceid',
 			'description' => 'Description',
+			'pricetype' => 'Pricetype',
 		);
 	}
 
@@ -102,6 +105,7 @@ class Transactions extends CActiveRecord
 		$criteria->compare('amount',$this->amount,true);
 		$criteria->compare('referenceid',$this->referenceid);
 		$criteria->compare('description',$this->description,true);
+		$criteria->compare('pricetype',$this->pricetype,true);
 
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,

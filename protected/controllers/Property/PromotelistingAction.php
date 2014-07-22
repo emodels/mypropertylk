@@ -59,6 +59,7 @@ class PromotelistingAction extends CAction
                 $transaction->amount = $pricePremier->price;
                 $transaction->referenceid = $_GET['pid'];
                 $transaction->description = "Upgrade as Premiere Property for #" . $_GET['pid'];
+                $transaction->pricetype = $_GET['mode'];
 
                 if ($transaction->save()) {
 
@@ -99,11 +100,12 @@ class PromotelistingAction extends CAction
 
                     $transaction->type = 1;
                     $transaction->user = Yii::app()->user->id;
-                    $transaction->transactiondate = date('Y-M-d');
+                    $transaction->transactiondate = date("Y-m-d");
                     $transaction->status = 0;
                     $transaction->amount = $priceFeatured->price;
                     $transaction->referenceid = $_GET['pid'];
                     $transaction->description = "Upgrade as Featured Property for #" . $_GET['pid'];
+                    $transaction->pricetype = $_GET['mode'];
 
                     if ($transaction->save()) {
 
@@ -143,6 +145,6 @@ class PromotelistingAction extends CAction
             Yii::app()->end();
         }
 
-        $this->getController()->render('promotelisting', array('model' => $model));
+        $this->getController()->render('promotelisting', array('model' => $model, 'priceStandard' => $priceStandard, 'pricePremier' => $pricePremier, 'priceFeatured' => $priceFeatured));
     }
 }
