@@ -21,8 +21,7 @@ class EmailagentAction extends CAction
             if (isset($_POST['Enquery'])) {
 
                 //---------------Email notification to Admin--------------------------------------------------------
-                $message = $this->getController()->render('//email/template/email_agent_submit', array('model'=>$_POST['Enquery']), true);
-                //echo $message;
+                $message = $this->getController()->renderPartial('//email/template/email_agent_submit', array('model'=>$_POST['Enquery']), true);
 
                 if (isset($_POST['Enquery']) && isset($message) && $message != "") {
 
@@ -59,7 +58,7 @@ class EmailagentAction extends CAction
                         $mailer->AddAddress(Yii::app()->params['mailCC_1']);
                         $mailer->FromName = 'myproperty.lk Enquiry';
                         $mailer->CharSet = 'UTF-8';
-                        $mailer->Subject = 'myproperty.lk : enquiry from - ' . $_POST['Enquery']['name'];
+                        $mailer->Subject = 'Property Id : # ' . $_POST['Enquery']['pid'] . ' - Enquiry from - ' . ucwords($_POST['Enquery']['name']);
                         $mailer->IsHTML();
                         $mailer->Body = $message;
                         $mailer->SMTPDebug  = Yii::app()->params['SMTPDebug'];
