@@ -156,41 +156,40 @@ $this->breadcrumbs=array(
                 </div>
             </div>
             <?php } ?>
-        </div>
-        <!---------( For Rental )------------------>
-        <?php if ($model->type == 3){  ?>
-                <div class="control-group-admin">
-                    <label>Available Date</label>
-                    <?php
-                    $this->widget('zii.widgets.jui.CJuiDatePicker', array(
-                        'model'=>$model,
-                        'attribute'=>'availabledate',
-                        'options'=>array(
-                            'showAnim'=>'fold',
-                            'dateFormat'=>'yy-mm-dd',
-                            'changeMonth' => 'true',
-                            'changeYear' => 'true',
-                            'constrainInput' => 'false',
-                            'yearRange' => 'c-15:c+15'
-                        ),
-                        'htmlOptions'=>array(
-                            'style'=>'width: 300px',
-                            'readonly'=>'readonly'
-                        ),
-                    ));
-                    ?>
-                    <?php echo $form->error($model, 'availabledate', array('style'=>'width: auto')); ?><span class="star">*</span>
-                    <?php echo CHtml::submitButton('Available Now', array('class' => 'btn btn-primary')); ?>
-                </div>
+            </div>
+            <!---------( For Rental )------------------>
+            <?php if ($model->type == 3){  ?>
+                    <div class="control-group-admin">
+                        <label>Available Date</label>
+                        <?php
+                        $this->widget('zii.widgets.jui.CJuiDatePicker', array(
+                            'model'=>$model,
+                            'attribute'=>'availabledate',
+                            'options'=>array(
+                                'showAnim'=>'fold',
+                                'dateFormat'=>'yy-mm-dd',
+                                'changeMonth' => 'true',
+                                'changeYear' => 'true',
+                                'constrainInput' => 'false',
+                                'yearRange' => 'c-15:c+15'
+                            ),
+                            'htmlOptions'=>array(
+                                'style'=>'width: 300px',
+                                'readonly'=>'readonly'
+                            ),
+                        ));
+                        ?>
+                        <?php echo $form->error($model, 'availabledate', array('style'=>'width: auto')); ?><span class="star">*</span>
+                        <?php echo CHtml::submitButton('Available Now', array('class' => 'btn btn-primary')); ?>
+                    </div>
             <?php } ?>
             <!--------( End Rental)----------------->
-        </div>
         </div>
 
         <!---------( For Home Sales, Land Sales )------------------>
         <?php if ($model->type == 1 || $model->type == 2){  ?>
             <legend>
-                Vendor Details &nbsp;<i style="font-size: 14px">( Optional )</i>
+                Vendor Details
             </legend>
         <?php } ?>
         <!--------( End Home Sales, Land Sales)----------------->

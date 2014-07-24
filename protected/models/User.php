@@ -56,6 +56,7 @@ class User extends CActiveRecord
 			array('usertype, parentuser, status', 'numerical', 'integerOnly'=>true),
 			array('fname, lname, email', 'length', 'max'=>100),
 			array('phone, password, passwordconf', 'length', 'max'=>20),
+            array('phone', 'match', 'pattern' => '/^[+]/', 'message' => 'Country code required. Example: +94'),
 			array('address, userimage', 'length', 'max'=>200),
 			array('username', 'length', 'max'=>50),
 			// The following rule is used by search().

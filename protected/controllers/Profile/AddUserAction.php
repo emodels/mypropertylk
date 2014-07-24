@@ -19,6 +19,7 @@ class AddUserAction extends CAction
     {
         $model = new User;
         $model->usertype = 1;
+        $model->phone = '+94';
         $form_valid = true;
 
 
