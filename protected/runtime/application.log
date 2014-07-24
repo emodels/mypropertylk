@@ -1546,3 +1546,23 @@ Stack trace:
 REQUEST_URI=/mypropertylk/advertising/editadvertisement44
 HTTP_REFERER=http://localhost/mypropertylk/advertising/editadvertisement/id/44
 ---
+2014/07/24 12:15:57 [error] [exception.CException] exception 'CException' with message 'AdvertisingController cannot find the requested view "editadvertisement".' in C:\xampp\htdocs\mypropertylk\protected\framework\web\CController.php:879
+Stack trace:
+#0 C:\xampp\htdocs\mypropertylk\protected\framework\web\CController.php(783): CController->renderPartial('editadvertiseme...', Array, true)
+#1 C:\xampp\htdocs\mypropertylk\protected\controllers\Advertising\EditAdvertisementAction.php(111): CController->render('editadvertiseme...', Array)
+#2 C:\xampp\htdocs\mypropertylk\protected\framework\web\actions\CAction.php(75): EditAdvertisementAction->run()
+#3 C:\xampp\htdocs\mypropertylk\protected\framework\web\CController.php(309): CAction->runWithParams(Array)
+#4 C:\xampp\htdocs\mypropertylk\protected\framework\web\filters\CFilterChain.php(134): CController->runAction(Object(EditAdvertisementAction))
+#5 C:\xampp\htdocs\mypropertylk\protected\controllers\AdvertisingController.php(69): CFilterChain->run()
+#6 C:\xampp\htdocs\mypropertylk\protected\framework\web\filters\CInlineFilter.php(59): AdvertisingController->filterAccessControl(Object(CFilterChain))
+#7 C:\xampp\htdocs\mypropertylk\protected\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#8 C:\xampp\htdocs\mypropertylk\protected\framework\web\CController.php(292): CFilterChain->run()
+#9 C:\xampp\htdocs\mypropertylk\protected\framework\web\CController.php(266): CController->runActionWithFilters(Object(EditAdvertisementAction), Array)
+#10 C:\xampp\htdocs\mypropertylk\protected\framework\web\CWebApplication.php(276): CController->run('editadvertiseme...')
+#11 C:\xampp\htdocs\mypropertylk\protected\framework\web\CWebApplication.php(135): CWebApplication->runController('advertising/edi...')
+#12 C:\xampp\htdocs\mypropertylk\protected\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#13 C:\xampp\htdocs\mypropertylk\index.php(15): CApplication->run()
+#14 {main}
+REQUEST_URI=/mypropertylk/advertising/editadvertisement/id/44
+HTTP_REFERER=http://localhost/mypropertylk/advertising/advertisement
+---

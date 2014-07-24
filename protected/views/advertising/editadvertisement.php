@@ -46,7 +46,7 @@
 
         $.ajax({
             type: "POST",
-            url: '<?php echo Yii::app()->request->baseUrl; ?>/advertising/editadvertisement',
+            url: '<?php echo Yii::app()->request->baseUrl; ?>/advertising/editadvertisement/id/<?php echo $model->id; ?>',
             data: {size: size, page: page, action: 'getAddPrice'},
             success: function(data){
                 if (data != ''){
@@ -54,6 +54,8 @@
                     $('#div_price').show();
                     $('#Advertising_price').val(data);
                     $('#Advertising_adprice').val(data);
+                    $('#Advertising_period').val(1);
+
                 }
             }
         });
@@ -175,7 +177,7 @@
                         ?>
                         <?php echo $form->dropDownList($model, 'period', $array_period, array('empty'=>'Change Period', 'onChange' => 'javascript:ChangeAdPrices();')); ?>
                         <label id="discount" hidden="hidden" style="color: #ff0000; font-weight: normal; padding-top: 10px"></label>
-                        <input type="text" name="adprice_hidden" id="Advertising_adprice" style="" value="<?php echo $adprice->price; ?>">
+                        <input type="text" name="adprice_hidden" id="Advertising_adprice" style="display:none" value="<?php echo $adprice->price; ?>">
                         <div class="alert alert-info" style="margin-top: 10px">
                             This price for only <b>one week period</b>.<br/> If you like to advertise your advertisement for <b>one month or more</b> we will give you a <b>10% discount</b>...
                         </div>
@@ -184,7 +186,7 @@
                 <div class="control-group-admin">
                     <label>Select an Advertiser</label>
                     <div>
-                        <?php echo $form->dropDownList($model, 'advertiser', $advertiserListData, array('empty'=>'Advertiser')); ?><span class="star">*</span>
+                        <?php echo $form->dropDownList($model, 'advertiser', $advertiserListData); ?><span class="star">*</span>
                         <?php echo $form->error($model, 'advertiser', array('style'=>'width:auto')); ?>
                     </div>
                 </div>
