@@ -275,21 +275,36 @@
                         </div>
                     </div>
                     <div class="span12" style="margin-left: 0; padding: 10px 10px; background-color: #6a0812; color: #fff;">
-                        Agent Details
+                        <?php echo $model->sendemail == 1 ? 'Vendor' : 'Agent'; ?> Details
                     </div>
                     <div class="span12" style="margin-left: 0; padding: 20px 10px;">
                         <div class="span3">
                             <img src="<?php echo Yii::app()->request->baseUrl; ?>/upload/userimages/<?php echo $model->agent0->userimage?>" class="listing-userimg"/>
                         </div>
                         <div class="span3">
-                            <?php echo ucwords($model->agent0->fname) .' ' . ucwords($model->agent0->lname); ?></br>
-                            <?php echo $model->agent0->phone; ?></br>
-                            <?php echo ucwords($model->agent0->address); ?>
-                            <?php
-                            if ($model->agent0->email != "") { ?>
-                            <div style="padding-top:5px ">
-                                <a href="#email_agent_model" class="btn btn-primary" data-toggle="modal">Email Agent</a>
-                            </div>
+                            <!--( Vendor information )-->
+                            <?php if ($model->sendemail == 1) { ?>
+
+                                <?php echo ucwords($model->vendorname); ?></br>
+                                <?php echo $model->vendorphone; ?></br>
+                                <?php
+                                if ($model->vendoremail != "") { ?>
+                                    <div style="padding-top:5px ">
+                                        <a href="#email_agent_model" class="btn btn-primary" data-toggle="modal">Email Vendor</a>
+                                    </div>
+                                <?php } ?>
+
+                            <?php } else { ?><!--( Agent information )-->
+
+                                <?php echo ucwords($model->agent0->fname) .' ' . ucwords($model->agent0->lname); ?></br>
+                                <?php echo $model->agent0->phone; ?></br>
+                                <?php echo ucwords($model->agent0->address); ?>
+                                <?php
+                                if ($model->agent0->email != "") { ?>
+                                <div style="padding-top:5px ">
+                                    <a href="#email_agent_model" class="btn btn-primary" data-toggle="modal">Email Agent</a>
+                                </div>
+                                <?php } ?>
                             <?php } ?>
                         </div>
                         <?php if ($model->otheragent > 0) {
