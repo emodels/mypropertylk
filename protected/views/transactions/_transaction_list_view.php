@@ -7,7 +7,9 @@
             <?php
             if ($data->type == 1) {?>
                 <a href="<?php echo Yii::app()->baseUrl . '/list/detail/pid/' .$data->referenceid;?> " target="_blank"><?php echo "#". $data->referenceid ?></a>
-            <?php }?>
+            <?php } else {
+                echo "#". $data->referenceid;
+            }?>
         </div>
         <div class="span3" style="text-align: center">
             <?php

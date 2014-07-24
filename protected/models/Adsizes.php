@@ -6,9 +6,12 @@
  * The followings are the available columns in table 'adsizes':
  * @property integer $id
  * @property string $size
+ * @property integer $width
+ * @property integer $height
  *
  * The followings are the available model relations:
  * @property Adprice[] $adprices
+ * @property Advertising[] $advertisings
  */
 class Adsizes extends CActiveRecord
 {
@@ -38,11 +41,12 @@ class Adsizes extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('size', 'required'),
+			array('size, width, height', 'required'),
+			array('width, height', 'numerical', 'integerOnly'=>true),
 			array('size', 'length', 'max'=>200),
 			// The following rule is used by search().
 			// Please remove those attributes that should not be searched.
-			array('id, size', 'safe', 'on'=>'search'),
+			array('id, size, width, height', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -55,6 +59,7 @@ class Adsizes extends CActiveRecord
 		// class name for the relations automatically generated below.
 		return array(
 			'adprices' => array(self::HAS_MANY, 'Adprice', 'size'),
+			'advertisings' => array(self::HAS_MANY, 'Advertising', 'size'),
 		);
 	}
 
@@ -66,6 +71,8 @@ class Adsizes extends CActiveRecord
 		return array(
 			'id' => 'ID',
 			'size' => 'Size',
+			'width' => 'Width',
+			'height' => 'Height',
 		);
 	}
 
@@ -82,6 +89,8 @@ class Adsizes extends CActiveRecord
 
 		$criteria->compare('id',$this->id);
 		$criteria->compare('size',$this->size,true);
+		$criteria->compare('width',$this->width);
+		$criteria->compare('height',$this->height);
 
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,

@@ -25,7 +25,7 @@
                     'validateOnChange' => true,
                     'afterValidate' => 'js:formSend',
                 ),
-                'htmlOptions'=>array('class'=>'form-horizontal'),
+                'htmlOptions'=>array('class'=>'form-horizontal', 'enctype' => 'multipart/form-data'),
             )); ?>
             <div class="form_bg span">
                 <div class="control-group-admin">
@@ -45,6 +45,12 @@
                 <div class="control-group-admin">
                     <?php echo $form->textField($model,'price', array('placeholder'=>'Price')); ?>
                     <?php echo $form->error($model,'price'); ?><span class="star">*</span>
+                </div>
+                <div class="control-group-admin">
+                    <label>Select an Advertisement Sample Image</label>
+                    <div>
+                        <?php echo $form->fileField($model, 'adsample'); ?>
+                    </div>
                 </div>
                 <div class="control-group-admin-btn">
                     <div class="span12" style="padding-top: 5px;">

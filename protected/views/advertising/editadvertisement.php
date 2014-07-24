@@ -6,7 +6,103 @@
             $('#modal-img').attr('src',$(this).attr('data-href'));
             $('#myModal').modal();
         });
+
     });
+
+    //--------Load Advertisement Sizes---------//
+    function LoadAdSizes(){
+
+        var page = $('#Advertising_page').val();
+
+        $.ajax({
+            type: "POST",
+            url: '<?php echo Yii::app()->request->baseUrl; ?>/advertising/editadvertisement/id/<?php echo $model->id; ?>',
+            data: {page: page, action: 'getAddSizes'},
+            success: function(data){
+
+                if (data != ''){
+
+                    $('#Advertising_size').removeAttr('disabled');
+
+                    var array_adSizes = JSON.parse(data);
+
+                    $('#Advertising_size').empty();
+                    $('#Advertising_size').append($('<option></option>').val('').text('Select Ad Size'));
+
+                    array_adSizes.forEach(function (element) {
+
+                        $('#Advertising_size').append($('<option></option>').val(element.id).text(element.size));
+                    });
+                }
+            }
+        })
+
+    }
+    //--------Load Advertisement Prices---------//
+    function LoadAdPrices() {
+
+        var size = $('#Advertising_size').val();
+        var page = $('#Advertising_page').val();
+
+        $.ajax({
+            type: "POST",
+            url: '<?php echo Yii::app()->request->baseUrl; ?>/advertising/editadvertisement',
+            data: {size: size, page: page, action: 'getAddPrice'},
+            success: function(data){
+                if (data != ''){
+
+                    $('#div_price').show();
+                    $('#Advertising_price').val(data);
+                    $('#Advertising_adprice').val(data);
+                }
+            }
+        });
+
+    }
+    //-------Cahneg Advertisement Prices According to the Period--------//
+    function ChangeAdPrices() {
+
+        var price = parseInt($('#Advertising_adprice').val());
+        var period = $('#Advertising_period').val();
+        var adprice = 0.00;
+
+        //-----calculate the price for the duration time period---//
+        adprice = price*period;
+        $('#discount').hide();
+
+        //----calculate the discount price--------------//
+        if (period >= 4) {
+
+            var discount = ((adprice)*(10/100));
+            adprice = adprice-discount;
+            $('#discount').show();
+            $('#discount').text("You will get Rs. " + discount + ".00 Discount ...!");
+
+        }
+
+        $('#Advertising_price').val(parseFloat(adprice).toFixed(2));
+
+        //----------calculate the expire date of advertisement---//
+        var today = new Date();
+
+        if (period <= 3) {
+
+            today.setDate(today.getDate()+ (period*7));
+        }
+        if (period >= 4) {
+
+            today.setMonth(today.getMonth()+ (period/4));
+        }
+
+        var dd = today.getDate();
+        var mm = today.getMonth() + 1;
+        var y = today.getFullYear();
+        var expiredate = y + '/'+ mm + '/'+ dd;
+
+        $('#expdate').val(expiredate);
+
+    }
+
 </script>
 <div class="col_right" style="padding-top: 0;">
     <div class="span12" style="border-bottom: solid 1px silver">
@@ -30,7 +126,7 @@
                 'clientOptions' => array(
                     'validateOnSubmit' => true,
                     'validateOnChange' => true,
-                    'afterValidate' => 'js:formSend',
+                    //'afterValidate' => 'js:formSend',
                 ),
                 'htmlOptions'=>array('class'=>'form-horizontal', 'enctype' => 'multipart/form-data'),
             )); ?>
@@ -38,15 +134,51 @@
                 <div class="control-group-admin">
                     <label>Select Page</label>
                     <div>
-                        <?php echo $form->dropDownList($model, 'page', CHtml::listData(Adpages::model()->findAll(), 'id', 'page'), array('empty'=>'Pages')); ?><span class="star">*</span>
+                        <?php echo $form->dropDownList($model, 'page', CHtml::listData(Adpages::model()->findAll(), 'id', 'page'), array('onChange' => 'javascript:LoadAdSizes();')); ?><span class="star">*</span>
                         <?php echo $form->error($model,'page'); ?>
                     </div>
                 </div>
                 <div class="control-group-admin">
                     <label>Select an Advertisement Size & Location</label>
                     <div>
-                        <?php echo $form->dropDownList($model, 'size', CHtml::listData(Adsizes::model()->findAll(), 'id', 'size'), array('empty'=>'Ad Sizes')); ?><span class="star">*</span>
+                        <?php
+                        foreach(Adprice::model()->findAll('page = ' . $model->page) as $value) {
+                            $adSizeListData[$value->size] = $value->size0->size;
+                        }
+                        ?>
+                        <?php echo $form->dropDownList($model, 'size', $adSizeListData, array('onChange' => 'javascript:LoadAdPrices();')); ?><span class="star">*</span>
                         <?php echo $form->error($model,'size'); ?>
+                    </div>
+                </div>
+                <div class="control-group-admin" id="div_price">
+                    <label>Advertisement Price for Selected Size (LKR)</label>
+                    <div>
+                        <?php echo $form->textField($model,'adprice', array('id'=>'Advertising_price', 'readonly'=> 'readonly')); ?>
+                        <?php
+                        $array_period= array(1 => '1 Week',
+                            2 => '2 Weeks',
+                            3 => '3 Weeks',
+                            4 => '1 Month',
+                            8 => '2 Months',
+                            12 => '3 Months',
+                            16 => '4 Months',
+                            20 => '5 Months',
+                            24 => '6 Months',
+                            28 => '7 Months',
+                            32 => '8 Months',
+                            36 => '9 Months',
+                            40 => '10 Months',
+                            44 => '11 Months',
+                            48 => '1 Year',
+                            96 => '2 Years',
+                        );
+                        ?>
+                        <?php echo $form->dropDownList($model, 'period', $array_period, array('empty'=>'Change Period', 'onChange' => 'javascript:ChangeAdPrices();')); ?>
+                        <label id="discount" hidden="hidden" style="color: #ff0000; font-weight: normal; padding-top: 10px"></label>
+                        <input type="text" name="adprice_hidden" id="Advertising_adprice" style="" value="<?php echo $adprice->price; ?>">
+                        <div class="alert alert-info" style="margin-top: 10px">
+                            This price for only <b>one week period</b>.<br/> If you like to advertise your advertisement for <b>one month or more</b> we will give you a <b>10% discount</b>...
+                        </div>
                     </div>
                 </div>
                 <div class="control-group-admin">
@@ -76,34 +208,12 @@
                 </div>
                 <div class="control-group-admin">
                     <label>Advertisement Expiration Date</label>
-                    <?php
-                    if (Yii::app()->user->usertype == 0) {
-
-                        $this->widget('zii.widgets.jui.CJuiDatePicker', array(
-                            'model'=>$model,
-                            'attribute'=>'expiredate',
-                            'options'=>array(
-                                'showAnim'=>'fold',
-                                'dateFormat'=>'yy-mm-dd',
-                                'changeMonth' => 'true',
-                                'changeYear' => 'true',
-                                'constrainInput' => 'false',
-                                'yearRange' => 'c-15:c+15'
-                            ),
-                            'htmlOptions'=>array(
-                                'style'=>'width: 300px',
-                                'readonly'=>'readonly'
-                            ),
-                        ));
-                    } else {
-                    ?>
-
-                    <?php echo $form->textField($model,'expiredate', array('readonly'=>'readonly')); ?>
-
-                    <?php } ?>
-                    <?php echo $form->error($model, 'expiredate', array('style'=>'width: auto')); ?><span class="star">*</span>
+                    <div class="alert alert-info">
+                        This Advertisement will be expired on :<strong>
+                            <?php echo $form->textField($model,'expiredate', array('id'=>'expdate', 'readonly'=> 'readonly')); ?>
+                        </strong>
+                    </div>
                 </div>
-
                 <div class="control-group-admin-btn">
                     <div class="span12" style="padding-top: 5px;">
                         <?php echo CHtml::submitButton('Update', array('class' => 'btn btn-primary')); ?>&nbsp;

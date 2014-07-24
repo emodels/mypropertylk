@@ -18,10 +18,50 @@ class EditAdvertisementAction extends CAction
     {
 
         if (isset($_GET['id'])) {
+
             $model =  Advertising::model()->findByPk($_GET['id']);
+            $adprice = Adprice::model()->find('page = ' . $model->page . ' AND size = ' . $model->size);
         } else {
+
             Yii::app()->user->setFlash('error', 'Error Page Request');
             $this->getController()->redirect(Yii::app()->baseUrl);
+        }
+
+        //-----------------Get Advertisement Size and Price--------------//
+
+        if (Yii::app()->request->isAjaxRequest && Yii::app()->request->isPostRequest) {
+
+            if (isset($_POST['action'])) {
+
+                switch($_POST['action']){
+
+                    case 'getAddSizes':
+
+                        $adSizes = Adprice::model()->findAll('page = ' . $_POST['page']);
+
+                        $array_adSizes = array();
+                        foreach($adSizes as $value){
+
+                            $array_adSizes[] = array('id'=>$value->size, 'size'=> $value->size0->size);
+                        }
+
+                        echo json_encode($array_adSizes);
+
+                        break;
+
+                    case 'getAddPrice':
+
+                        $adPrices = Adprice::model()->find('page = '. $_POST['page'] . ' AND size = ' . $_POST['size']);
+
+                        echo $adPrices->price . ".00";
+
+                        break;
+
+                }
+
+            }
+
+            Yii::app()->end();
         }
 
         $advertiserListData = CHtml::listData(User::model()->findAll('usertype = 0 OR usertype = 3'), 'id', 'fullName');
@@ -68,6 +108,6 @@ class EditAdvertisementAction extends CAction
 
         }
 
-        $this->getController()->render('editadvertisement', array('model'=>$model, 'advertiserListData' => $advertiserListData));
+        $this->getController()->render('editadvertisement', array('model'=>$model, 'advertiserListData' => $advertiserListData, 'adprice' => $adprice));
     }
 }

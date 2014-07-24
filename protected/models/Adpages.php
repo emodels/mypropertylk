@@ -9,6 +9,7 @@
  *
  * The followings are the available model relations:
  * @property Adprice[] $adprices
+ * @property Advertising[] $advertisings
  */
 class Adpages extends CActiveRecord
 {
@@ -55,6 +56,7 @@ class Adpages extends CActiveRecord
 		// class name for the relations automatically generated below.
 		return array(
 			'adprices' => array(self::HAS_MANY, 'Adprice', 'page'),
+			'advertisings' => array(self::HAS_MANY, 'Advertising', 'page'),
 		);
 	}
 

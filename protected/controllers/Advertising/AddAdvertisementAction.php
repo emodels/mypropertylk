@@ -20,6 +20,7 @@ class AddAdvertisementAction extends CAction
 
         $model =  new Advertising();
         $model->entrydate = date("Y-m-d");
+        $model->expiredate = date('Y-m-d',strtotime("+7 days"));
         $model->status = 0;
 
         $advertiserListData = CHtml::listData(User::model()->findAll('id = ' . Yii::app()->user->id), 'id', 'fullName');
@@ -69,6 +70,9 @@ class AddAdvertisementAction extends CAction
             //---------------Save Advertisement Image--------------//
             $model->adimage = CUploadedFile::getInstance($model, 'adimage');
 
+            var_dump($model->attributes);
+            exit();
+
             if (isset($model->adimage) && !is_null($model->adimage)) {
                 $model->adimage = "{$rnd}-{$model->adimage->name}";  // random number + file name
                 $model->adimage = str_replace('.jpg','.jpeg', $model->adimage);
@@ -102,7 +106,7 @@ class AddAdvertisementAction extends CAction
 
                         $transaction->type = 2;
                         $transaction->user = Yii::app()->user->id;
-                        $transaction->transactiondate = date('Y-M-d');
+                        $transaction->transactiondate = date("Y-m-d");
                         $transaction->status = 0;
                         $transaction->amount = $model->adprice;
                         $transaction->referenceid = $model->id;

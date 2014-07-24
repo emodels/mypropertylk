@@ -20,7 +20,19 @@ class AddpricesAction extends CAction
 
         if (isset($_POST['Adprice'])) {
 
+            $rnd = rand(0,9999);  // generate random number between 0-9999
             $model->attributes = $_POST['Adprice'];
+
+            //--------------Save advertisement sample image------//
+            $model->adsample = CUploadedFile::getInstance($model, 'adsample');
+
+            if (isset($model->adsample) && !is_null($model->adsample)) {
+                $model->adsample = "{$rnd}-{$model->adsample->name}";  // random number + file name
+                $model->adsample = str_replace('.jpg','.jpeg', $model->adsample);
+
+                CUploadedFile::getInstance($model, 'adsample')->saveAs(Yii::getPathOfAlias('webroot.upload.adsampleimages') . DIRECTORY_SEPARATOR . $model->adsample);
+
+            }
 
             if ($model->save(false)){
 

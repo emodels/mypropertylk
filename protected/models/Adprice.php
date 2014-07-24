@@ -8,10 +8,11 @@
  * @property integer $page
  * @property integer $size
  * @property double $price
+ * @property string $adsample
  *
  * The followings are the available model relations:
- * @property Adpages $page0
  * @property Adsizes $size0
+ * @property Adpages $page0
  */
 class Adprice extends CActiveRecord
 {
@@ -41,12 +42,13 @@ class Adprice extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('page, size, price', 'required'),
+			array('page, size, price, adsample', 'required'),
 			array('page, size', 'numerical', 'integerOnly'=>true),
 			array('price', 'numerical'),
+			array('adsample', 'length', 'max'=>200),
 			// The following rule is used by search().
 			// Please remove those attributes that should not be searched.
-			array('id, page, size, price', 'safe', 'on'=>'search'),
+			array('id, page, size, price, adsample', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -58,8 +60,8 @@ class Adprice extends CActiveRecord
 		// NOTE: you may need to adjust the relation name and the related
 		// class name for the relations automatically generated below.
 		return array(
-			'page0' => array(self::BELONGS_TO, 'Adpages', 'page'),
 			'size0' => array(self::BELONGS_TO, 'Adsizes', 'size'),
+			'page0' => array(self::BELONGS_TO, 'Adpages', 'page'),
 		);
 	}
 
@@ -73,6 +75,7 @@ class Adprice extends CActiveRecord
 			'page' => 'Page',
 			'size' => 'Size',
 			'price' => 'Price',
+			'adsample' => 'Adsample',
 		);
 	}
 
@@ -91,6 +94,7 @@ class Adprice extends CActiveRecord
 		$criteria->compare('page',$this->page);
 		$criteria->compare('size',$this->size);
 		$criteria->compare('price',$this->price);
+		$criteria->compare('adsample',$this->adsample,true);
 
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,

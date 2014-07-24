@@ -92,7 +92,25 @@ class ConfirmAction extends CAction
 
                     if ($paypal->type == 2) {
 
-                        echo "Advertisement";
+                        $advertisement =  Advertising::model()->find('id = ' . $paypal->referenceid);
+                        $transaction = Transactions::model()->find('id = '. $paypal->id);
+                        $transaction->status = 1;
+
+                        if (isset($advertisement)) {
+
+                            $advertisement->status = 1;
+
+
+                            $advertisement->save(false);
+
+                            if ($transaction->save()) {
+
+                                Yii::app()->user->setFlash('success', "Your Advertisement Added Successfully..!");
+                                //echo 'done';
+                            }
+                        }
+
+                        $this->getController()->render('confirm', array('transaction' => $transaction ));
                     }
 
                 }
