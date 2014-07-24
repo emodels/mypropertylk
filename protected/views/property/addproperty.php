@@ -156,41 +156,40 @@ $this->breadcrumbs=array(
                 </div>
             </div>
             <?php } ?>
-        </div>
-        <!---------( For Rental )------------------>
-        <?php if ($model->type == 3){  ?>
-                <div class="control-group-admin">
-                    <label>Available Date</label>
-                    <?php
-                    $this->widget('zii.widgets.jui.CJuiDatePicker', array(
-                        'model'=>$model,
-                        'attribute'=>'availabledate',
-                        'options'=>array(
-                            'showAnim'=>'fold',
-                            'dateFormat'=>'yy-mm-dd',
-                            'changeMonth' => 'true',
-                            'changeYear' => 'true',
-                            'constrainInput' => 'false',
-                            'yearRange' => 'c-15:c+15'
-                        ),
-                        'htmlOptions'=>array(
-                            'style'=>'width: 300px',
-                            'readonly'=>'readonly'
-                        ),
-                    ));
-                    ?>
-                    <?php echo $form->error($model, 'availabledate', array('style'=>'width: auto')); ?><span class="star">*</span>
-                    <?php echo CHtml::submitButton('Available Now', array('class' => 'btn btn-primary')); ?>
-                </div>
+            </div>
+            <!---------( For Rental )------------------>
+            <?php if ($model->type == 3){  ?>
+                    <div class="control-group-admin">
+                        <label>Available Date</label>
+                        <?php
+                        $this->widget('zii.widgets.jui.CJuiDatePicker', array(
+                            'model'=>$model,
+                            'attribute'=>'availabledate',
+                            'options'=>array(
+                                'showAnim'=>'fold',
+                                'dateFormat'=>'yy-mm-dd',
+                                'changeMonth' => 'true',
+                                'changeYear' => 'true',
+                                'constrainInput' => 'false',
+                                'yearRange' => 'c-15:c+15'
+                            ),
+                            'htmlOptions'=>array(
+                                'style'=>'width: 300px',
+                                'readonly'=>'readonly'
+                            ),
+                        ));
+                        ?>
+                        <?php echo $form->error($model, 'availabledate', array('style'=>'width: auto')); ?><span class="star">*</span>
+                        <?php echo CHtml::submitButton('Available Now', array('class' => 'btn btn-primary')); ?>
+                    </div>
             <?php } ?>
             <!--------( End Rental)----------------->
-        </div>
         </div>
 
         <!---------( For Home Sales, Land Sales )------------------>
         <?php if ($model->type == 1 || $model->type == 2){  ?>
             <legend>
-                Vendor Details &nbsp;<i style="font-size: 14px">( Optional )</i>
+                Vendor Details
             </legend>
         <?php } ?>
         <!--------( End Home Sales, Land Sales)----------------->
@@ -217,19 +216,16 @@ $this->breadcrumbs=array(
                         <?php echo $form->textField($model,'vendorphone', array('placeholder'=>'Phone Number')); ?><span class="star">*</span>
                         <?php echo $form->error($model,'vendorphone'); ?>
                     </div>
-                    <div class="control-group-admin">
-                        <label>Communication Preferences:</label>
+                    <div class="control-group-admin <?php echo Yii::app()->user->usertype != 0 ? ' hide' : ''; ?>">
                         <label class="checkbox">
-                            <?php echo CHtml::checkBoxList('sendemail','', array(1 => 'Send vendor the <a href="#">Property Live email</a> when listing is published.'), array('labelOptions'=> array('class'=>'span9'))); ?>
-                            <a href="#" data-toggle="tooltip" title="The Property Live email is sent to the vendor informing them that the listing has been published." data-placement="right" class="tooltip-custom"></a>
+                            <?php echo $form->checkBoxList($model,'sendemail', array(1 => 'Show vendor details instead of Agent details'), array('labelOptions'=> array('class'=>'span9'))); ?>
+                            <a href="#" data-toggle="tooltip" title="The Property detail page will display Vendors contact information, instead of Agent's contact information." data-placement="right" class="tooltip-custom"></a>
                         </label>
                     </div>
                 </div>
             </div>
             <div class="span4">
                 <p>The vendor information gathered is not displayed on the website. This information allows you to send communications directly to the vendor of the property in the following emails:</p>
-                <p><u>Property Live email</u></br>
-                This email is sent to the vendor informing them that the listing has been published</p>
             </div>
         </div>
         <legend>

@@ -8,7 +8,37 @@ $this->breadcrumbs=array(
 <script type="text/javascript">
     $(document).ready(function () {
         $('[data-toggle="tooltip"]').tooltip();
+
+        $('#Propertytyperelation_typeid').change(function () {
+            if ($(this).val() == null){
+                $(this).parent().removeClass('success').addClass('error');
+                $(this).parent().find('.errorMessage').css('display','block');
+            } else {
+                $(this).parent().removeClass('error').addClass('success');
+                $(this).parent().find('.errorMessage').css('display','none');
+            }
+        });
     });
+
+    function formSend(form, data, hasError){
+
+        if ($('#Propertytyperelation_typeid').val() == null){
+            $('#Propertytyperelation_typeid').parent().removeClass('success').addClass('error');
+            $('#Propertytyperelation_typeid').parent().find('.errorMessage').css('display','block');
+            hasError = true;
+        }
+
+        if (hasError) {
+
+            if ($('.error:first').length > 0){
+                $(window).scrollTop($('.error:first').offset().top);
+            }
+
+            return false;
+        }
+
+        return true;
+    }
 </script>
 <div class="col_right" style="padding-top: 0;">
     <div>
@@ -82,7 +112,7 @@ $this->breadcrumbs=array(
                                 'multiple title'=> 'Property Type'
                             ),
                         )); ?><span class=star>*</span>
-                        <?php echo $form->error($modeltype, 'typeid'); ?>
+                        <div class="errorMessage" style="display: none">Property Type cannot be blank.</div>
                     </div>
                     <div class="control-group-admin">
                         <div class="row">
@@ -169,7 +199,7 @@ $this->breadcrumbs=array(
             <!---------( For Home Sales, Land Sales )------------------>
             <?php if ($model->type == 1 || $model->type == 2){  ?>
                 <legend>
-                    Vendor Details &nbsp;<i style="font-size: 14px">( Optional )</i>
+                    Vendor Details
                 </legend>
             <?php } ?>
             <!--------( End Home Sales, Land Sales)----------------->
@@ -196,19 +226,16 @@ $this->breadcrumbs=array(
                             <?php echo $form->textField($model,'vendorphone', array('placeholder'=>'Phone Number')); ?><span class="star">*</span>
                             <?php echo $form->error($model,'vendorphone'); ?>
                         </div>
-                        <div class="control-group-admin">
-                            <label>Communication Preferences:</label>
+                        <div class="control-group-admin <?php echo Yii::app()->user->usertype != 0 ? ' hide' : ''; ?>">
                             <label class="checkbox">
-                                <?php echo CHtml::checkBoxList('sendemail','', array(1 => 'Send vendor the <a href="#">Property Live email</a> when listing is published.'), array('labelOptions'=> array('class'=>'span9'))); ?>
-                                <a href="#" data-toggle="tooltip" title="The Property Live email is sent to the vendor informing them that the listing has been published." data-placement="right" class="tooltip-custom"></a>
+                                <?php echo $form->checkBoxList($model,'sendemail', array(1 => 'Show vendor details instead of Agent details'), array('labelOptions'=> array('class'=>'span9'))); ?>
+                                <a href="#" data-toggle="tooltip" title="The Property detail page will display Vendors contact information, instead of Agent's contact information." data-placement="right" class="tooltip-custom"></a>
                             </label>
                         </div>
                     </div>
                 </div>
                 <div class="span4">
                     <p>The vendor information gathered is not displayed on the website. This information allows you to send communications directly to the vendor of the property in the following emails:</p>
-                    <p><u>Property Live email</u></br>
-                        This email is sent to the vendor informing them that the listing has been published</p>
                 </div>
             </div>
             <legend>
