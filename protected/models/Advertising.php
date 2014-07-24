@@ -12,6 +12,8 @@
  * @property string $adlink
  * @property string $entrydate
  * @property string $expiredate
+ * @property double $adprice
+ * @property integer $period
  * @property integer $status
  *
  * The followings are the available model relations:
@@ -47,12 +49,13 @@ class Advertising extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('page, size, advertiser, adimage, adlink, entrydate, expiredate, status', 'required'),
-			array('page, size, advertiser, status', 'numerical', 'integerOnly'=>true),
+			array('page, size, advertiser, adimage, adlink, entrydate, expiredate, adprice, period, status', 'required'),
+			array('page, size, advertiser, period, status', 'numerical', 'integerOnly'=>true),
+			array('adprice', 'numerical'),
 			array('adimage, adlink', 'length', 'max'=>200),
 			// The following rule is used by search().
 			// Please remove those attributes that should not be searched.
-			array('id, page, size, advertiser, adimage, adlink, entrydate, expiredate, status', 'safe', 'on'=>'search'),
+			array('id, page, size, advertiser, adimage, adlink, entrydate, expiredate, adprice, period, status', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -84,6 +87,8 @@ class Advertising extends CActiveRecord
 			'adlink' => 'Adlink',
 			'entrydate' => 'Entrydate',
 			'expiredate' => 'Expiredate',
+			'adprice' => 'Adprice',
+			'period' => 'Period',
 			'status' => 'Status',
 		);
 	}
@@ -107,6 +112,8 @@ class Advertising extends CActiveRecord
 		$criteria->compare('adlink',$this->adlink,true);
 		$criteria->compare('entrydate',$this->entrydate,true);
 		$criteria->compare('expiredate',$this->expiredate,true);
+		$criteria->compare('adprice',$this->adprice);
+		$criteria->compare('period',$this->period);
 		$criteria->compare('status',$this->status);
 
 		return new CActiveDataProvider($this, array(

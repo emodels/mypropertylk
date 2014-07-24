@@ -7,7 +7,7 @@
             $('#myModal').modal();
         });
     });
-
+    //--------Load Advertisement Sizes---------//
     function LoadAdSizes(){
 
         var page = $('#Advertising_page').val();
@@ -36,7 +36,7 @@
         })
 
     }
-
+    //--------Load Advertisement Prices---------//
     function LoadAdPrices() {
 
         var size = $('#Advertising_size').val();
@@ -51,11 +51,56 @@
 
                      $('#div_price').show();
                      $('#Advertising_price').val(data);
+                    $('#Advertising_adprice').val(data);
                 }
             }
         });
 
     }
+    //-------Cahneg Advertisement Prices According to the Period--------//
+    function ChangeAdPrices() {
+
+        var price = parseInt($('#Advertising_adprice').val());
+        var period = $('#Advertising_period').val();
+        var adprice = 0.00;
+
+        //-----calculate the price for the duration time period---//
+        adprice = price*period;
+        $('#discount').hide();
+
+        //----calculate the discount price--------------//
+        if (period >= 4) {
+
+            var discount = ((adprice)*(10/100));
+            adprice = adprice-discount;
+            $('#discount').show();
+            $('#discount').text("You will get Rs. " + discount + ".00 Discount ...!");
+
+        }
+
+        $('#Advertising_price').val(parseFloat(adprice).toFixed(2));
+
+        //----------calculate the expire date of advertisement---//
+        var today = new Date();
+
+        if (period <= 3) {
+
+            today.setDate(today.getDate()+ (period*7));
+        }
+        if (period >= 4) {
+
+            today.setMonth(today.getMonth()+ (period/4));
+        }
+
+        var dd = today.getDate();
+        var mm = today.getMonth() + 1;
+        var y = today.getFullYear();
+        var expiredate = y + '/'+ mm + '/'+ dd;
+
+        $('#expdate').val(expiredate);
+
+    }
+
 </script>
 <div class="col_right" style="padding-top: 0;">
     <div class="span12" style="border-bottom: solid 1px silver">
@@ -99,9 +144,34 @@
                     </div>
                 </div>
                 <div class="control-group-admin" id="div_price" style="display: none">
-                    <label>Advertisement Price for Selected Size</label>
+                    <label>Advertisement Price for Selected Size (LKR)</label>
                     <div>
-                        <input type="text" name="price" id="Advertising_price" disabled="disabled">
+                        <?php echo $form->textField($model,'adprice', array('id'=>'Advertising_price', 'readonly'=> 'readonly')); ?>
+                        <?php
+                            $array_period= array(1 => '1 Week',
+                                                2 => '2 Weeks',
+                                                3 => '3 Weeks',
+                                                4 => '1 Month',
+                                                8 => '2 Months',
+                                                12 => '3 Months',
+                                                16 => '4 Months',
+                                                20 => '5 Months',
+                                                24 => '6 Months',
+                                                28 => '7 Months',
+                                                32 => '8 Months',
+                                                36 => '9 Months',
+                                                40 => '10 Months',
+                                                44 => '11 Months',
+                                                48 => '1 Year',
+                                                96 => '2 Years',
+                                                );
+                        ?>
+                        <?php echo $form->dropDownList($model, 'period', $array_period, array('empty'=>'Change Period', 'onChange' => 'javascript:ChangeAdPrices();')); ?>
+                        <label id="discount" hidden="hidden" style="color: #ff0000; font-weight: normal; padding-top: 10px"></label>
+                        <input type="text" name="adprice_hidden" id="Advertising_adprice" style="display: none">
+                        <div class="alert alert-info" style="margin-top: 10px">
+                            This price for only <b>one week period</b>.<br/> If you like to advertise your advertisement for <b>one month or more</b> we will give you a <b>10% discount</b>...
+                        </div>
                     </div>
                 </div>
                 <div class="control-group-admin">
@@ -126,32 +196,11 @@
                 </div>
                 <div class="control-group-admin">
                     <label>Advertisement Expiration Date</label>
-                    <?php
-                    if (Yii::app()->user->usertype == 0) {
-
-                        $this->widget('zii.widgets.jui.CJuiDatePicker', array(
-                            'model'=>$model,
-                            'attribute'=>'expiredate',
-                            'options'=>array(
-                                'showAnim'=>'fold',
-                                'dateFormat'=>'yy-mm-dd',
-                                'changeMonth' => 'true',
-                                'changeYear' => 'true',
-                                'constrainInput' => 'false',
-                                'yearRange' => 'c-15:c+15'
-                            ),
-                            'htmlOptions'=>array(
-                                'style'=>'width: 300px',
-                                'readonly'=>'readonly'
-                            ),
-                        ));
-                    } else {
-                    ?>
                     <div class="alert alert-info">
-                        This Advertisement will be expired on : <strong><?php echo date('Y-m-d',strtotime("+30 days")); ?></strong>
+                        This Advertisement will be expired on :<strong>
+                            <?php echo $form->textField($model,'expiredate', array('id'=>'expdate', 'readonly'=> 'readonly')); ?>
+                        </strong>
                     </div>
-                    <?php } ?>
-                    <?php echo $form->error($model, 'expiredate', array('style'=>'width: auto')); ?><span class="star">*</span>
                 </div>
                 <div class="control-group-admin-btn">
                     <div class="span12" style="padding-top: 5px;">

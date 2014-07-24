@@ -56,36 +56,47 @@ class ConfirmAction extends CAction
 
                     $paypal = Yii::app()->session['PAYPAL'];
 
-                    $property =  Property::model()->find('pid = ' . $paypal->referenceid);
-                    $transaction = Transactions::model()->find('id = '. $paypal->id);
-                    $transaction->status = 1;
+                    if ($paypal->type == 1) {
 
-                    if (isset($property)) {
+                        $property =  Property::model()->find('pid = ' . $paypal->referenceid);
+                        $transaction = Transactions::model()->find('id = '. $paypal->id);
+                        $transaction->status = 1;
 
-                        switch ($paypal->pricetype) {
+                        if (isset($property)) {
 
-                            case "FEATURED":
-                                $property->pricetype = 3;
-                                break;
-                            case "PREMIERE":
-                                $property->pricetype = 2;
-                                break;
-                            case "STANDARD":
-                                $property->pricetype = 1;
-                                break;
+                            switch ($paypal->pricetype) {
+
+                                case "FEATURED":
+                                    $property->pricetype = 3;
+                                    break;
+                                case "PREMIERE":
+                                    $property->pricetype = 2;
+                                    break;
+                                case "STANDARD":
+                                    $property->pricetype = 1;
+                                    break;
+                            }
+
+
+                            $property->save(false);
+
+                            if ($transaction->save()) {
+
+                                Yii::app()->user->setFlash('success', "Property Upgraded as a Premiere Property.");
+                                //echo 'done';
+                            }
                         }
 
-
-                        $property->save(false);
-
-                        if ($transaction->save()) {
-
-                            Yii::app()->user->setFlash('success', "Property Upgraded as a Premiere Property.");
-                            //echo 'done';
-                        }
+                        $this->getController()->render('confirm', array('transaction' => $transaction ));
                     }
+
+                    if ($paypal->type == 2) {
+
+                        echo "Advertisement";
+                    }
+
                 }
-                $this->getController()->render('confirm', array('transaction' => $transaction ));
+
             }
 
         }
