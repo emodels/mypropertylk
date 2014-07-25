@@ -38,7 +38,7 @@
                 </div>
             </div>
             <div class="row-fluid">
-                <div class="span7" style="padding-top: 0; border-right: solid 1px silver">
+                <div class="span6" style="padding-top: 0; border-right: solid 1px silver; width: auto; max-height: 210px;">
                     <a href="<?php echo Yii::app()->baseUrl . '/list/detail?pid=' .$data->pid;?> ">
                         <?php
                         $imgname = "";
@@ -55,22 +55,22 @@
 
                             if ($imgname != "") {?>
 
-                                <img src="<?php echo Yii::app()->baseUrl . '/upload/propertyimages/' . $imgname ?>" class="listing-img">
+                                <img src="<?php echo Yii::app()->baseUrl . '/upload/propertyimages/' . $imgname ?>" style="max-height: 195px;">
 
                             <?php
                             } else{ ?>
 
-                                <img src="<?php echo Yii::app()->baseUrl . '/upload/propertyimages/' . $data->propertyimages[0]->imagename ?>" class="listing-img">
+                                <img src="<?php echo Yii::app()->baseUrl . '/upload/propertyimages/' . $data->propertyimages[0]->imagename ?>" style="max-height: 195px;">
 
                             <?php
                             }
                         } else{ ?>
 
-                            <img src="<?php echo Yii::app()->baseUrl;?> . /upload/propertyimages/prop_no_img.jpg" class="listing-img">
+                            <img src="<?php echo Yii::app()->baseUrl;?> . /upload/propertyimages/prop_no_img.jpg" style="max-height: 195px;">
                         <?php } ?>
                     </a>
                 </div>
-                <div class="span5 content">
+                <div class="span6 content" >
                     <div style="text-align: right; color: #6a0812; font-weight: bold">
                         <b>Rs.</b>
                         <?php if($data->type == 1 || $data->type == 2){

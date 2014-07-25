@@ -725,9 +725,15 @@
                                             }
                                         }
 
-                                        $next_Advertisement = Advertising::model()->findByPk($nextAdvID);
+                                        if ($nextAdvID > 0) {
 
-                                        return Yii::app()->controller->renderPartial('_ads_list_view', array('data'=>$next_Advertisement), true);
+                                            $next_Advertisement = Advertising::model()->findByPk($nextAdvID);
+                                            return Yii::app()->controller->renderPartial('_ads_list_view', array('data'=>$next_Advertisement), true);
+
+                                        } else {
+
+                                            return '';
+                                        }
                                     }
                                     /*---( //end of Middle Advertisements )---*/
 

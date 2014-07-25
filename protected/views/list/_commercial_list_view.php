@@ -2,12 +2,36 @@
     <div class="span12 property-box">
         <div class="heading_commercial" id="box-heading">
             <div class="span8">
-                <?php echo $data->number . ', ' . ucwords($data->streetaddress) . ', '. ucwords($data->areaname) . ', ' . ucwords($data->townname) ?>
+                <?php
+                $address = "";
+
+                if ($data->number != "") {
+
+                    $address .= $data->number . ", ";
+                }
+
+                if ($data->streetaddress != "") {
+
+                    $address .= ucwords($data->streetaddress) . ", ";
+                }
+
+                if ($data->areaname != ""){
+
+                    $address .= ucwords($data->areaname) . ", ";
+                }
+
+                if ($data->townname != "") {
+
+                    $address .= ucwords($data->townname);
+                }
+
+                echo $address;
+                ?>
             </div>
             <div class="span4" style="text-align: right; font-family: Monotype Corsiva; font-size: 20px; "><?php echo $data->pricetype0->proptype ?></div>
         </div>
         <div>
-            <div class="span7" style="padding-top: 0;">
+            <div class="span6" style="padding-top: 0;border-right: solid 1px silver;">
                 <a href="<?php echo Yii::app()->baseUrl . '/list/detail?pid=' .$data->pid;?> ">
                     <?php
                     $imgname = "";
@@ -24,22 +48,22 @@
 
                         if ($imgname != "") {?>
 
-                            <img src="<?php echo Yii::app()->baseUrl . '/upload/propertyimages/' . $imgname ?>" class="listing-img">
+                            <img src="<?php echo Yii::app()->baseUrl . '/upload/propertyimages/' . $imgname ?>" style="max-height: 310px;">
 
                         <?php
                         } else{ ?>
 
-                            <img src="<?php echo Yii::app()->baseUrl . '/upload/propertyimages/' . $data->propertyimages[0]->imagename ?>" class="listing-img">
+                            <img src="<?php echo Yii::app()->baseUrl . '/upload/propertyimages/' . $data->propertyimages[0]->imagename ?>" style="max-height: 310px;">
 
                         <?php
                         }
                     } else{ ?>
 
-                        <img src="<?php echo Yii::app()->baseUrl;?> . /upload/propertyimages/prop_no_img.jpg" class="listing-img">
+                        <img src="<?php echo Yii::app()->baseUrl;?> . /upload/propertyimages/prop_no_img.jpg" style="max-height: 310px;">
                     <?php } ?>
                 </a>
             </div>
-            <div class="span5 content">
+            <div class="span6 content">
                 <div style="text-align: right; color: #6a0812; font-weight: bold">
                     <b>Rs.</b>
                     <?php if($data->type == 4){
@@ -64,7 +88,7 @@
                     <?php } ?>
                 </div>
                 <div class="listing-bold"><?php echo$data->headline; ?></div>
-                <div class="listing-small-normal"><?php echo substr($data->desc, 0, 360).'....'; ?></div>
+                <div class="listing-small-normal"><?php echo substr($data->desc, 0, 260).'....'; ?></div>
                 <div class="listing-small"><b>Agent :</b> <?php echo ucwords($data->agent0->fname) .' '. ucwords($data->agent0->lname)  ?></div>
                 <div style="text-align: right; padding-top: 15px;">
                     <a class="btn" href="#"><i class="icon-star-empty"></i> Save</a>
