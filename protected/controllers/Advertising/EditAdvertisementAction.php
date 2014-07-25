@@ -21,6 +21,7 @@ class EditAdvertisementAction extends CAction
 
             $model =  Advertising::model()->findByPk($_GET['id']);
             $adprice = Adprice::model()->find('page = ' . $model->page . ' AND size = ' . $model->size);
+            $advertiserListData = CHtml::listData(User::model()->findAll('id = ' . $model->id . ' OR id = ' . Yii::app()->user->id), 'id', 'fullName');
         } else {
 
             Yii::app()->user->setFlash('error', 'Error Page Request');
@@ -64,7 +65,7 @@ class EditAdvertisementAction extends CAction
             Yii::app()->end();
         }
 
-        $advertiserListData = CHtml::listData(User::model()->findAll('usertype = 0 OR usertype = 3'), 'id', 'fullName');
+        //$advertiserListData = CHtml::listData(User::model()->findAll('usertype = 0 OR usertype = 3'), 'id', 'fullName');
 
         $form_valid = true;
         $previmage = $model->adimage;

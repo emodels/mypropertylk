@@ -96,7 +96,7 @@ $this->breadcrumbs=array(
                         <div class="row-fluid">
                             <?php
 
-                            $condition = '(page = 6 AND (size = 1 OR size = 3 OR size = 5) AND status = 1) AND expiredate >= CURDATE()';
+                            $condition = '(page = 6 AND (size = 2 OR size = 4) AND status = 1) AND expiredate >= CURDATE()';
 
                             $this->widget('zii.widgets.CListView', array(
                                 'id' => 'list_advertisement',

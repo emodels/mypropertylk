@@ -48,10 +48,16 @@
             data: {size: size, page: page, action: 'getAddPrice'},
             success: function(data){
                 if (data != ''){
+                        data = JSON.parse(data);
+                        $('#div_price').show();
+                        $('#Advertising_price').val(data.price);
+                        $('#Advertising_adprice').val(data.price);
 
-                     $('#div_price').show();
-                     $('#Advertising_price').val(data);
-                    $('#Advertising_adprice').val(data);
+                    //-----------Load image-----//
+                        $('#viewAdSample').show();
+                        var adSampleLink = new Image();
+                        adSampleLink.src = '<?php echo Yii::app()->request->baseUrl; ?>/upload/adsampleimages/' + data.image;
+                        $('#adSampleImg').attr("src", adSampleLink.src);
                 }
             }
         });
@@ -136,12 +142,13 @@
                         <?php echo $form->error($model,'page'); ?>
                     </div>
                 </div>
-                <div class="control-group-admin">
+                <div class="span12 control-group-admin" style="margin-left: 0">
                     <label>Select an Advertisement Size & Location</label>
-                    <div>
+                    <div class="span4" style="margin-left: 0">
                         <?php echo $form->dropDownList($model, 'size', array(), array('empty'=>'Ad Sizes', 'onChange' => 'javascript:LoadAdPrices();', 'disabled' => 'disabled')); ?><span class="star">*</span>
                         <?php echo $form->error($model,'size'); ?>
                     </div>
+                    <div class="span8" id="viewAdSample" style="display: none"><a href="#sampleAd" role="button" class="btn btn-small btn-primary" data-toggle="modal"><i class="icon-th-large icon_gap"></i>Click here to View Sample Ad</a></div>
                 </div>
                 <div class="control-group-admin" id="div_price" style="display: none">
                     <label>Advertisement Price for Selected Size (LKR)</label>
@@ -211,5 +218,20 @@
             </div>
             <?php $this->endWidget(); ?>
         </div>
+    </div>
+</div>
+
+<!-- Modal -->
+
+<div id="sampleAd" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+        <h3 id="myModalLabel">Sample Advertisement</h3>
+    </div>
+    <div class="modal-body" style="max-height: 600px;">
+        <img src="" id="adSampleImg">
+    </div>
+    <div class="modal-footer">
+        <button class="btn" data-dismiss="modal" aria-hidden="true">Close</button>
     </div>
 </div>

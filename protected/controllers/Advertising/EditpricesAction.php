@@ -20,7 +20,6 @@ class EditpricesAction extends CAction
         if (isset($_GET['id'])) {
 
             $model =  Adprice::model()->findByPk($_GET['id']);
-            $advertiserListData = CHtml::listData(User::model()->find('id = ' . $model->id . 'OR id = ' . Yii::app()->user->id), 'id', 'fullName');
 
         } else {
 
@@ -56,6 +55,6 @@ class EditpricesAction extends CAction
             }
 
         }
-        $this->getController()->render('editprices', array('model' => $model, 'advertiserListData' => $advertiserListData));
+        $this->getController()->render('editprices', array('model' => $model));
     }
 }

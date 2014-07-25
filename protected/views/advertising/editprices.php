@@ -49,7 +49,12 @@
                 <div class="control-group-admin">
                     <label>Select an Advertisement Sample Image</label>
                     <div>
-                        <?php echo $form->fileField($model, 'adsample'); ?>
+                        <?php echo $form->fileField($model, 'adsample');
+                        if(isset($model->adsample))
+                        {
+                        echo CHtml::image(Yii::app()->controller->createUrl('upload/adsampleimages/'.$model->adsample), "No Image",array('style'=>'border:solid 1px silver; width:600px; height:500px'));
+                        }
+                        ?>
                     </div>
                 </div>
                 <div class="control-group-admin-btn">

@@ -710,7 +710,7 @@
                     <div class="span3 hidden-phone">
                         <?php
 
-                        $condition = '(page = 1 AND (size = 1 OR size = 3 OR size = 5) AND status = 1) AND expiredate >= CURDATE()';
+                        $condition = '(page = 1 AND (size = 2 OR size = 4 OR size = 6) AND status = 1) AND expiredate >= CURDATE()';
 
                         $this->widget('zii.widgets.CListView', array(
                             'id' => 'list_advertisement',

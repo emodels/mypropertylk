@@ -77,7 +77,7 @@
 <div class="row-fluid" style="margin-top: 15px;">
     <?php
 
-    if($index % 3 == 0 && $index != 0){
+    if($index % 1 == 0 && $index != 0){
 
         echo loadMiddleAdvertisement($adv_All);
 

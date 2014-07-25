@@ -17,11 +17,13 @@ class AddAdvertisementAction extends CAction
     public function run()
     {
         $form_valid = true;
+        $adPrice = new Adprice();
 
         $model =  new Advertising();
         $model->entrydate = date("Y-m-d");
         $model->expiredate = date('Y-m-d',strtotime("+7 days"));
         $model->status = 0;
+        $model->period = 1;
 
         $advertiserListData = CHtml::listData(User::model()->findAll('id = ' . Yii::app()->user->id), 'id', 'fullName');
 
@@ -51,7 +53,11 @@ class AddAdvertisementAction extends CAction
 
                         $adPrice = Adprice::model()->find('page = '. $_POST['page'] . ' AND size = ' . $_POST['size']);
 
-                        echo $adPrice->price . ".00";
+                        if (isset($adPrice)) {
+
+                            $adPriceArray = array('price' => $adPrice->price . ".00", 'image' => $adPrice->adsample);
+                            echo json_encode($adPriceArray);
+                        }
 
                         break;
 
@@ -69,9 +75,6 @@ class AddAdvertisementAction extends CAction
 
             //---------------Save Advertisement Image--------------//
             $model->adimage = CUploadedFile::getInstance($model, 'adimage');
-
-            var_dump($model->attributes);
-            exit();
 
             if (isset($model->adimage) && !is_null($model->adimage)) {
                 $model->adimage = "{$rnd}-{$model->adimage->name}";  // random number + file name
@@ -137,6 +140,6 @@ class AddAdvertisementAction extends CAction
                 $model->size = $_GET['size'];
         }
 
-        $this->getController()->render('addadvertisement', array('model'=>$model, 'advertiserListData' => $advertiserListData));
+        $this->getController()->render('addadvertisement', array('model'=>$model, 'advertiserListData' => $advertiserListData, 'adPrice' => $adPrice));
     }
 }

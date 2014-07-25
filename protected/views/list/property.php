@@ -517,7 +517,7 @@
                                                 $page = 4;
                                             }
 
-                                            $condition = '(page = ' . $page . ' AND (size = 2 OR size = 4 OR size = 6) AND status = 1) AND expiredate >= CURDATE()';
+                                            $condition = '(page = ' . $page . ' AND (size = 1 OR size = 3 OR size = 5) AND status = 1) AND expiredate >= CURDATE()';
 
                                             $this->widget('zii.widgets.CListView', array(
                                                 'id' => 'list_advertisement',
@@ -756,7 +756,7 @@
                         </style>
                         <?php
 
-                        $condition = '(page = ' . $page . ' AND (size = 1 OR size = 3 OR size = 5) AND status = 1) AND expiredate >= CURDATE()';
+                        $condition = '(page = ' . $page . ' AND (size = 2 OR size = 4 OR size = 6) AND status = 1) AND expiredate >= CURDATE()';
 
                         $this->widget('zii.widgets.CListView', array(
                             'id' => 'list_advertisement',
