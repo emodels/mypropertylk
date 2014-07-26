@@ -12,7 +12,9 @@
 <script type="text/javascript" src='<?php echo Yii::app()->request->baseUrl; ?>/js/jquery.maphilight.min.js'></script>
 <script type="text/javascript" src='<?php echo Yii::app()->request->baseUrl; ?>/js/jquery.tooltipster.min.js'></script>
 <script type="text/javascript" src='<?php echo Yii::app()->request->baseUrl; ?>/js/typeahead.bundle.min.js'></script>
-
+<!-- Start WOWSlider.com HEAD section -->
+<link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>/engine1/style.css" />
+<!-- End WOWSlider.com HEAD section -->
 <script type="text/javascript">
     jQuery(document).ready(function () {
 
@@ -42,6 +44,7 @@
         jQuery('.tooltip').tooltipster();
 
         $('#headline_wrapper').hide();
+
         if ('<?php echo $_GET['type']; ?>' == 'buy') {
             $('#menu-primary-menu li').removeClass('current_page_item');
             $('#menu-primary-menu li#buy').addClass('current_page_item');
@@ -677,7 +680,7 @@
 
                                     $criteria->order = 'pricetype DESC, entrydate DESC';
 
-                                    $dataprovider = new CActiveDataProvider('Property', array('criteria'=> $criteria ,'pagination'=>array('pageSize'=>10)));
+                                    $dataprovider = new CActiveDataProvider('Property', array('criteria'=> $criteria ,'pagination'=>array('pageSize'=>15)));
 
                                     if ($dataprovider->totalItemCount == 0) {
 
@@ -743,6 +746,7 @@
                                         'itemView' => '_list_view',
                                         'viewData' => array('adv_All' => $array_advertisements_all),
                                         'template'=>'{items}<div class="span12"></div>{pager}<div class="span12"></div>',
+                                        'afterAjaxUpdate'=>'function(id, data){ renderPropertySlidersAfetrPagination(); }'
                                     ));
                                     ?>
                                 </div>
@@ -776,3 +780,5 @@
         <?php $this->endWidget(); ?>
     </div>
 </div><!-- /.content-wrapper -->
+<script type="text/javascript" src="<?php echo Yii::app()->request->baseUrl; ?>/engine1/wowslider.js"></script>
+<script type="text/javascript" src="<?php echo Yii::app()->request->baseUrl; ?>/engine1/script.js"></script>

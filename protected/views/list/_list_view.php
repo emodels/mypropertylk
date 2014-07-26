@@ -2,7 +2,7 @@
     <div class="row-fluid" style="padding-top: 0px;">
         <div class="span12 property-box">
             <div class="row-fluid">
-                <div class="span12 heading_buy" id="box-heading" style="height: auto">
+                <div class="span12 heading_buy" id="box-heading" style="height: auto;">
                     <div class="row-fluid" style="padding-top: 5px;">
                         <div class="span8">
                             <?php
@@ -38,37 +38,58 @@
                 </div>
             </div>
             <div class="row-fluid">
-                <div class="span6" style="padding-top: 0; border-right: solid 1px silver; width: auto; max-height: 210px;">
-                    <a href="<?php echo Yii::app()->baseUrl . '/list/detail?pid=' .$data->pid;?> ">
-                        <?php
-                        $imgname = "";
+                <div class="span6" style="padding-top: 0; border-right: solid 1px silver; width: auto; max-height: 210px; position: relative; top:0; left: 0;">
+                    <?php
 
-                        if (count($data->propertyimages) > 0) {
+                    $prevdate = date('Y-m-d', strtotime('-7 days'));
 
-                            foreach ($data->propertyimages as $value) {
+                    if ($data->entrydate >= $prevdate) {?>
+                        <div class="newIcon"><img src="<?php echo Yii::app()->baseUrl . '/images/new_icon.png'?>" style="max-height: 195px;"></div>
+                    <?php }
 
-                                if ($value->primaryimg == 1 && $value->imagetype == 0) {
+                    if ($data->status == 2 ) {?>
+                        <div class="newIcon"><img src="<?php echo Yii::app()->baseUrl . '/images/sold.png'?>" style="max-height: 195px;"></div>
+                    <?php }
+                    ?>
+                    <div class="wowslider-container-listview">
+                        <div>
+                            <div class="ws_images">
+                                <ul>
+                                    <?php
+                                    $imgname = "";
 
-                                    $imgname = $value->imagename;
-                                }
-                            }
+                                    if (count($data->propertyimages) > 0) {
 
-                            if ($imgname != "") {?>
+                                        foreach ($data->propertyimages as $value) {
 
-                                <img src="<?php echo Yii::app()->baseUrl . '/upload/propertyimages/' . $imgname ?>" style="max-height: 195px;">
+                                            if ($value->imagetype == 0) {
 
-                            <?php
-                            } else{ ?>
+                                                $imgname = $value->imagename;
+                                                if ($imgname != "") {?>
+                                                    <li>
+                                                        <img src="<?php echo Yii::app()->baseUrl . '/upload/propertyimages/' . $imgname ?>" style="max-height: 195px;">
+                                                    </li>
 
-                                <img src="<?php echo Yii::app()->baseUrl . '/upload/propertyimages/' . $data->propertyimages[0]->imagename ?>" style="max-height: 195px;">
+                                                <?php
+                                                } else{ ?>
+                                                    <li>
+                                                        <img src="<?php echo Yii::app()->baseUrl . '/upload/propertyimages/' . $data->propertyimages[0]->imagename ?>" style="max-height: 195px;">
+                                                    </li>
+                                                <?php
+                                                }
+                                            }
+                                        }
 
-                            <?php
-                            }
-                        } else{ ?>
-
-                            <img src="<?php echo Yii::app()->baseUrl;?> . /upload/propertyimages/prop_no_img.jpg" style="max-height: 195px;">
-                        <?php } ?>
-                    </a>
+                                    } else{ ?>
+                                        <li>
+                                            <img src="<?php echo Yii::app()->baseUrl;?> . /upload/propertyimages/prop_no_img.jpg" style="max-height: 195px;">
+                                        </li>
+                                    <?php } ?>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="ws_shadow"></div>
+                    </div>
                 </div>
                 <div class="span6 content" >
                     <div style="text-align: right; color: #6a0812; font-weight: bold">
