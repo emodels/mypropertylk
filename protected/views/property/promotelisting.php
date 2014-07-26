@@ -65,7 +65,7 @@
     <div class="span12">
         <div class="span12">
             <legend>
-                <h3>Promote Listings</h3>
+                <h3>Make Your Property Advertisement Stand Out!</h3>
             </legend>
         </div>
     </div>

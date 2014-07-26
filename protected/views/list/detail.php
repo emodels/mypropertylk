@@ -511,8 +511,20 @@
                             ?>
                         </div>
                     </div>
+                    <!--------Sharing Tool box---------->
                     <div class="span12" style="border-top: solid 1px silver; border-bottom: solid 1px silver; padding: 10px 0; text-align: center; margin-left: 0; margin-top: 20px;">
                         <div class="addthis_sharing_toolbox"></div>
+                    </div>
+                    <!------------Currency Convertor---------->
+                    <div class="span12" style="border: solid 1px silver;  border-radius:5px; text-align: center; margin-left: 0; margin-top: 20px;">
+                        <div class="span12">
+                            <!--Currency Converter widget - HTML code - fx-rates.net -->
+                            <div style="background-color: #E6E6E6; border-bottom: solid 1px silver; color: #C21814; margin: 0; line-height: 28px; font-weight: bold; border-top-left-radius: 5px; border-top-right-radius: 5px; text-align: center;">Currency Converter</div>
+                            <div style="width:auto; background-color: #fff; text-align:center; padding:10px; margin:10px">
+                                <script type="text/javascript" src="http://fx-rate.net/converter.php?size=short&layout=vertical"></script>
+                            </div>
+                            <!--end of code-->
+                        </div>
                     </div>
                 </div>
             </div>

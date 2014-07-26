@@ -48,21 +48,16 @@
         if ('<?php echo $_GET['type']; ?>' == 'buy') {
             $('#menu-primary-menu li').removeClass('current_page_item');
             $('#menu-primary-menu li#buy').addClass('current_page_item');
-            $('.heading_buy').css('background-color', '#660099');
-
-
         }
 
         if ('<?php echo $_GET['type']?>' == 'rent') {
             $('#menu-primary-menu li').removeClass('current_page_item');
             $('#menu-primary-menu li#rent').addClass('current_page_item');
-            $('.heading_buy').css('background-color', '#009900');
         }
 
         if ('<?php echo $_GET['type']?>' == 'sold') {
             $('#menu-primary-menu li').removeClass('current_page_item');
             $('#menu-primary-menu li#sold').addClass('current_page_item');
-            $('.heading_buy').css('background-color', '#CC0000');
         }
 
         var array_cities = new Bloodhound({

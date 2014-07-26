@@ -1,8 +1,94 @@
+<?php
+$backgroundColor = '';
+$propertyBoxClass = '';
+//------------Buy Page-----//
+if ($_GET['type'] == 'buy'){
+
+    switch ($data->pricetype){
+
+        case 1: /*---Standard property---*/
+
+            $backgroundColor = '#fff';
+            $propertyBoxClass = ' property-box-bottom-only';
+
+            break;
+
+        case 2: /*---Premier property---*/
+
+            $backgroundColor = '#A459C9';
+            $propertyBoxClass = ' property-box';
+
+            break;
+
+        case 3: /*---Featured property---*/
+
+            $backgroundColor = '#660099';
+            $propertyBoxClass = ' property-box';
+
+            break;
+    }
+}
+//-------------Rent Page-----------//
+if ($_GET['type'] == 'rent'){
+
+    switch ($data->pricetype){
+
+        case 1: /*---Standard property---*/
+
+            $backgroundColor = '#fff';
+            $propertyBoxClass = ' property-box-bottom-only';
+
+            break;
+
+        case 2: /*---Premier property---*/
+
+            $backgroundColor = '#3ABD3A';
+            $propertyBoxClass = ' property-box';
+
+            break;
+
+        case 3: /*---Featured property---*/
+
+            $backgroundColor = '#009900';
+            $propertyBoxClass = ' property-box';
+
+            break;
+    }
+}
+//---------------Sold Page------------//
+if ($_GET['type'] == 'sold'){
+
+    switch ($data->pricetype){
+
+        case 1: /*---Standard property---*/
+
+            $backgroundColor = '#fff';
+            $propertyBoxClass = ' property-box-bottom-only';
+
+            break;
+
+        case 2: /*---Premier property---*/
+
+            $backgroundColor = 'D13D3D';
+            $propertyBoxClass = ' property-box';
+
+            break;
+
+        case 3: /*---Featured property---*/
+
+            $backgroundColor = '#CC0000';
+            $propertyBoxClass = ' property-box';
+
+            break;
+    }
+}
+
+?>
 <div class="container-fluid" style="padding: 0;">
     <div class="row-fluid" style="padding-top: 0px;">
-        <div class="span12 property-box">
+        <div class="span12 <?php echo $propertyBoxClass; ?>">
             <div class="row-fluid">
-                <div class="span12 heading_buy" id="box-heading" style="height: auto;">
+                <div class="span12 heading_buy" id="box-heading" style="height: auto; background-color: <?php echo $backgroundColor; ?>">
                     <div class="row-fluid" style="padding-top: 5px;">
                         <div class="span8">
                             <?php

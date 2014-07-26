@@ -3661,6 +3661,13 @@ a img.aligncenter {
 .property-box{
     border: solid 1px silver;
 }
+
+.property-box-bottom-only{
+
+    padding-bottom: 10px;
+    border-bottom: solid 1px silver;
+}
+
 .property-box .heading_buy{
     background-color: #660099;
     color: #fff;
