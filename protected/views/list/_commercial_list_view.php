@@ -1,4 +1,4 @@
-<div class="row-fluid" style="padding-top: 15px;">
+<div class="row-fluid" style="margin-top: 15px;">
     <div class="span12 property-box">
         <div class="heading_commercial" id="box-heading">
             <div class="span8">
@@ -98,7 +98,7 @@
         </div>
     </div>
 </div>
-<div class="row-fluid" style="margin-top: 15px;">
+<div class="row-fluid" style="margin-top: 0px;">
     <?php
 
     if($index % 1 == 0 && $index != 0){

@@ -72,12 +72,17 @@
                 </div>
                 <div class="span6 content" >
                     <div style="text-align: right; color: #6a0812; font-weight: bold">
-                        <b>Rs.</b>
-                        <?php if($data->type == 1 || $data->type == 2){
-                            echo Yii::app()->numberFormatter->format("#,##0", $data->price);
-                        } elseif ($data->type == 3) {
-                            echo Yii::app()->numberFormatter->format("#,##0", $data->monthlyrent) . " (monthly rental)";
+                        <?php
+                        if ($data->price != 0) {
+                            if($data->type == 1 || $data->type == 2){
+                                echo "Rs. " . Yii::app()->numberFormatter->format("#,##0", $data->price);
+                            } elseif ($data->type == 3) {
+                                echo "Rs. " . Yii::app()->numberFormatter->format("#,##0", $data->monthlyrent) . " (monthly rental)";
+                            }
+                        } else{
+                            echo "Contact Agent";
                         }
+
                         ?>
                     </div>
                     <div class="listing-small">
@@ -99,7 +104,7 @@
                     <div class="listing-bold" style="margin-top: 10px; margin-bottom: 5px"><?php echo$data->headline; ?></div>
                     <!--<div class="listing-small-normal"><?php /*echo substr($data->desc, 0, 50).'....'; */?></div>-->
                     <div class="listing-small"><b>Agent :</b> <?php echo ucwords($data->agent0->fname) .' '. ucwords($data->agent0->lname)  ?></div>
-                    <div style="text-align: right; padding-top: 15px;">
+                    <div style="text-align: right; padding-top: 10px;">
                         <a class="btn" href="#"><i class="icon-star-empty"></i> Save</a>
                         <a class="btn" href="<?php echo Yii::app()->baseUrl . '/list/detail?pid=' .$data->pid;?> ">Detail</a>
                     </div>
@@ -108,7 +113,7 @@
         </div>
     </div>
 </div>
-<div class="row-fluid" style="margin: 0 0 30px 0;">
+<div class="row-fluid" style="margin: 0 0 15px 0;">
     <?php
 
         if($index % 3 == 0 && $index != 0){
