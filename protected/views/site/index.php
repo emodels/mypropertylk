@@ -502,37 +502,62 @@
             <div class="span12">
                 <div class="row-fluid">
                     <div class="span9">
+                        <!------Featured Property List Begin------------>
+                            <div id="property_list">
+                                <div id="title-listing" class="container">
+                                    <div class="property-list-title">Featured Properties</div>
+                                    <div class="property-list-by">
+                                        <a class="current" href="javascript:LoadFeaturedList('all');">All</a>
+                                        <a class="" href="javascript:LoadFeaturedList('buy');">Buy</a>
+                                        <a class="" href="javascript:LoadFeaturedList('rent');">Rent</a>
+                                    </div>
+                                </div><!-- /#title-listing -->
+                                <div class="property-row">
+                                    <div class="container-fluid">
+                                        <div class="row-fluid">
+                                            <div class="span12">
+                                                <?php
+                                                if (isset($_GET['type'])) {
+                                                    if ($_GET['type'] == "all") {
+                                                        $condition = 'pricetype = 3 AND status = 1 ';
+                                                    } elseif($_GET['type'] == "buy"){
+                                                        $condition = '(type = 1 OR type = 2) AND pricetype = 3 AND status = 1';
+                                                    } elseif($_GET['type'] == "rent"){
+                                                        $condition = 'type = 3 AND pricetype = 3 AND status = 1';
+                                                    }
+                                                }
+                                                else {
+                                                    $condition = 'pricetype = 3 AND status = 1 ';
+                                                }
+
+                                                $this->widget('zii.widgets.CListView', array(
+                                                    'id' => 'list_featured',
+                                                    'dataProvider'=>new CActiveDataProvider('Property', array('criteria'=>array('condition'=> $condition,'order' => 'entrydate DESC LIMIT 20'),'pagination'=>false)),
+                                                    'itemView' => '_featured_list_view'
+                                                ));
+                                                ?>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        <!-------Featured Property List End----->
+                        <!--------Recent Property List Begin--->
                         <div id="property_list">
                             <div id="title-listing" class="container">
-                                <div class="property-list-title">Featured Properties</div>
-                                <div class="property-list-by">
-                                    <a class="current" href="javascript:LoadFeaturedList('all');">All</a>
-                                    <a class="" href="javascript:LoadFeaturedList('buy');">Buy</a>
-                                    <a class="" href="javascript:LoadFeaturedList('rent');">Rent</a>
-                                </div>
+                                <div class="property-list-title">Recent Properties</div>
                             </div><!-- /#title-listing -->
                             <div class="property-row">
                                 <div class="container-fluid">
                                     <div class="row-fluid">
                                         <div class="span12">
                                             <?php
-                                            if (isset($_GET['type'])) {
-                                                if ($_GET['type'] == "all") {
-                                                    $condition = 'pricetype = 3 AND status = 1 ';
-                                                } elseif($_GET['type'] == "buy"){
-                                                    $condition = '(type = 1 OR type = 2) AND pricetype = 3 AND status = 1';
-                                                } elseif($_GET['type'] == "rent"){
-                                                    $condition = 'type = 3 AND pricetype = 3 AND status = 1';
-                                                }
-                                            }
-                                            else {
-                                                $condition = 'pricetype = 3 AND status = 1 ';
-                                            }
+                                            $condition = '(type = 1 OR type = 2 OR type = 3) AND status = 1';
 
                                             $this->widget('zii.widgets.CListView', array(
                                                 'id' => 'list_featured',
-                                                'dataProvider'=>new CActiveDataProvider('Property', array('criteria'=>array('condition'=> $condition,'order' => 'entrydate DESC LIMIT 20'),'pagination'=>false)),
-                                                'itemView' => '_featured_list_view'
+                                                'dataProvider'=>new CActiveDataProvider('Property', array('criteria'=>array('condition'=> $condition,'order' => 'entrydate DESC LIMIT 4'),'pagination'=>false)),
+                                                'itemView' => '_recent_list_view'
                                             ));
                                             ?>
                                         </div>
@@ -540,171 +565,7 @@
                                 </div>
                             </div>
                         </div>
-                        <style type="text/css">
-                            .jcarousel{
-                                height: 500px;
-                            }
-                            .jcontainer{
-                                width: 2100px;
-                            }
-
-                            .jcarousel .span3{
-                                height: 500px;
-                            }
-                        </style>
-                        <div id="property_info">
-                            <div class="carousel-wrapper">
-                                <div id="recent-title-listing">
-                                    <div class="recent-property-list-title">Recent Properties</div>
-                                    <div class="recent-property-list-by">
-                                        <div class="jcarousel-control">
-                                            <a href="#" class="jcarousel-control-prev">
-                                                        <span class="icon-stack">
-                                                          <i class="icon-stop icon-stack-base"></i>
-                                                          <i class="icon-chevron-left"></i>
-                                                        </span>
-                                            </a>
-                                            <a href="#" class="jcarousel-control-next">
-                                                        <span class="icon-stack">
-                                                          <i class="icon-stop icon-stack-base"></i>
-                                                          <i class="icon-chevron-right"></i>
-                                                        </span>
-                                            </a>
-                                        </div>
-                                    </div>
-                                </div><!-- /#title-listing -->
-                                <div class="jcarousel">
-                                    <!--<div class="row-fluid">-->
-                                        <div class="jcontainer">
-                                            <?php
-                                            $condition = '(type = 1 OR type = 2 OR type = 3) AND status = 1';
-                                            $recent_property_array = Property::model()->findAll(array('condition'=> $condition,'order' => 'entrydate DESC LIMIT 8'));
-
-                                            foreach($recent_property_array as $data){ ?>
-                                                <div class="span3">
-                                                    <article class="property-item">
-                                                        <div class="property-images">
-                                                            <a href="<?php echo Yii::app()->baseUrl . '/list/detail?pid=' .$data->pid;?>" title="<?php echo $data->pid; ?>">
-                                                                <?php
-                                                                $imgname = "";
-
-                                                                if (count($data->propertyimages) > 0) {
-
-                                                                    foreach ($data->propertyimages as $value) {
-
-                                                                        if ($value->primaryimg == 1 && $value->imagetype == 0) {
-
-                                                                            $imgname = $value->imagename;
-                                                                        }
-                                                                    }
-
-                                                                    if ($imgname != "") {
-
-                                                                        if (($data->type == 1 || $data->type == 2 || $data->type == 4) && $data->status == 1) { ?>
-
-                                                                            <img width="540" height="360" src="<?php echo Yii::app()->baseUrl . '/upload/propertyimages/'. $imgname ?>" class="status-35 wp-post-image" alt="<?php echo $data->pid; ?>" title="<?php echo $data->pid; ?>" />
-
-                                                                        <?php }
-
-                                                                        if (($data->type == 3  || $data->type == 5) && $data->status == 1) { ?>
-
-                                                                            <img width="540" height="360" src="<?php echo Yii::app()->baseUrl . '/upload/propertyimages/'. $imgname ?>" class="status-28 wp-post-image" alt="<?php echo $data->pid; ?>" title="<?php echo $data->pid; ?>" />
-
-                                                                        <?php }
-
-                                                                        if ($data->status == 2) { ?>
-
-                                                                            <img width="540" height="360" src="<?php echo Yii::app()->baseUrl . '/upload/propertyimages/'. $imgname ?>" class="status-sold wp-post-image" alt="<?php echo $data->pid; ?>" title="<?php echo $data->pid; ?>" />
-
-                                                                        <?php }
-
-
-                                                                    } else {
-
-                                                                        if (($data->type == 1 || $data->type == 2 || $data->type == 4) && $data->status == 1) { ?>
-
-                                                                            <img width="540" height="360" src="<?php echo Yii::app()->baseUrl . '/upload/propertyimages/'. $data->propertyimages[0]->imagename ?>" class="status-35 wp-post-image" alt="<?php echo $data->pid; ?>" title="<?php echo $data->pid; ?>" />
-
-                                                                        <?php }
-
-                                                                        if (($data->type == 3  || $data->type == 5) && $data->status == 1) { ?>
-
-                                                                            <img width="540" height="360" src="<?php echo Yii::app()->baseUrl . '/upload/propertyimages/'. $data->propertyimages[0]->imagename ?>" class="status-28 wp-post-image" alt="<?php echo $data->pid; ?>" title="<?php echo $data->pid; ?>" />
-
-                                                                        <?php }
-
-                                                                        if ($data->status == 2) { ?>
-
-                                                                            <img width="540" height="360" src="<?php echo Yii::app()->baseUrl . '/upload/propertyimages/'. $data->propertyimages[0]->imagename ?>" class="status-sold wp-post-image" alt="<?php echo $data->pid; ?>" title="<?php echo $data->pid; ?>" />
-
-                                                                        <?php }
-
-
-
-                                                                    }
-                                                                } else {
-
-                                                                    if (($data->type == 1 || $data->type == 2 || $data->type == 4) && $data->status == 1) { ?>
-
-                                                                        <img width="540" height="360" src="<?php echo Yii::app()->baseUrl;?>/upload/propertyimages/prop_no_img.jpg" class="status-35 wp-post-image" alt="<?php echo $data->pid; ?>" title="<?php echo $data->pid; ?>" />
-
-                                                                    <?php }
-
-                                                                    if (($data->type == 3  || $data->type == 5) && $data->status == 1) { ?>
-
-                                                                        <img width="540" height="360" src="<?php echo Yii::app()->baseUrl;?>/upload/propertyimages/prop_no_img.jpg" class="status-28 wp-post-image" alt="<?php echo $data->pid; ?>" title="<?php echo $data->pid; ?>" />
-
-                                                                    <?php }
-
-                                                                    if ($data->status == 2) { ?>
-
-                                                                        <img width="540" height="360" src="<?php echo Yii::app()->baseUrl;?>/upload/propertyimages/prop_no_img.jpg" class="status-sold wp-post-image" alt="<?php echo $data->pid; ?>" title="<?php echo $data->pid; ?>" />
-
-                                                                    <?php }
-                                                                } ?>
-
-                                                            </a>
-                                                            <div>
-                                                                <?php
-                                                                if ($data->type == 1 || $data->type == 2) {
-                                                                    echo "<div class='property-status status-35-text'> On Sale</div>";
-                                                                } elseif ($data->type == 3) {
-                                                                    echo "<div class='property-status status-28-text'> For Rent</div>";
-                                                                }
-                                                                ?>
-                                                            </div>
-                                                        </div><!-- /.property-images -->
-                                                        <div class="property-attribute">
-                                                            <h3 class="attribute-title text-center"><a href="<?php echo Yii::app()->baseUrl . '/list/detail?pid=' .$data->pid;?>"><?php echo ucwords($data->townname); ?></a></h3>
-                                                            <div class="attribute-price">
-                                                                    <span class="attr-pricing"><sup class="price-curr">Rs.</sup>
-                                                                        <?php
-                                                                        if ($data->type == 1 || $data->type == 2) {
-                                                                            echo Yii::app()->numberFormatter->format("#,##0", $data->price);
-                                                                        } elseif ($data->type == 3) {
-                                                                            echo Yii::app()->numberFormatter->format("#,##0", $data->monthlyrent);
-                                                                        }
-                                                                        ?>
-                                                                    </span>
-
-                                                            </div>
-                                                        </div>
-                                                        <div class="property-meta clearfix row-fluid">
-                                                            <div class="span4 img-icon" ><img src="<?php echo Yii::app()->request->baseUrl; ?>/images/beds.png"/>&nbsp;<?php echo $data->bedrooms;?></div>
-                                                            <div class="span4 img-icon"><img src="<?php echo Yii::app()->request->baseUrl; ?>/images/baths.png"/>&nbsp;<?php echo $data->bathrooms;?></div>
-                                                            <div class="span4 img-icon"><img src="<?php echo Yii::app()->request->baseUrl; ?>/images/parking_spaces.png"/>&nbsp;<?php echo $data->parkingspaces;?></div>
-                                                            <!--<div class="meta-size meta-block"><i class="ico-size"></i><span class="meta-text">240M</span></div>
-                                                            <div class="meta-bedroom meta-block"><i class="ico-bedroom"></i><span class="meta-text">3</span></div>
-                                                            <div class="meta-bathroom meta-block"><i class="ico-bathroom"></i><span class="meta-text">5</span></div>-->
-                                                        </div>
-                                                    </article>
-                                                </div>
-                                            <?php } ?>
-                                        </div><!-- jcontainer -->
-                                    <!--</div>-->
-                                </div><!-- /.jcarousel -->
-                            </div><!-- /.container -->
-                        </div>
+                        <!--------Recent Proeprties List End-->
                     </div>
                     <!-----------Advertisement Section Begin----------->
                     <div class="span3 hidden-phone">

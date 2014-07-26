@@ -51,45 +51,47 @@
                         <div class="newIcon"><img src="<?php echo Yii::app()->baseUrl . '/images/sold.png'?>" style="max-height: 195px;"></div>
                     <?php }
                     ?>
-                    <div class="wowslider-container-listview">
-                        <div>
-                            <div class="ws_images">
-                                <ul>
-                                    <?php
-                                    $imgname = "";
+                    <a href="<?php echo Yii::app()->baseUrl . '/list/detail?pid=' .$data->pid;?>" title="<?php echo $data->pid; ?>">
+                        <div class="wowslider-container-listview">
+                            <div>
+                                <div class="ws_images">
+                                    <ul>
+                                        <?php
+                                        $imgname = "";
 
-                                    if (count($data->propertyimages) > 0) {
+                                        if (count($data->propertyimages) > 0) {
 
-                                        foreach ($data->propertyimages as $value) {
+                                            foreach ($data->propertyimages as $value) {
 
-                                            if ($value->imagetype == 0) {
+                                                if ($value->imagetype == 0) {
 
-                                                $imgname = $value->imagename;
-                                                if ($imgname != "") {?>
-                                                    <li>
-                                                        <img src="<?php echo Yii::app()->baseUrl . '/upload/propertyimages/' . $imgname ?>" style="max-height: 195px;">
-                                                    </li>
+                                                    $imgname = $value->imagename;
+                                                    if ($imgname != "") {?>
+                                                        <li>
+                                                            <img src="<?php echo Yii::app()->baseUrl . '/upload/propertyimages/' . $imgname ?>" style="max-height: 195px;">
+                                                        </li>
 
-                                                <?php
-                                                } else{ ?>
-                                                    <li>
-                                                        <img src="<?php echo Yii::app()->baseUrl . '/upload/propertyimages/' . $data->propertyimages[0]->imagename ?>" style="max-height: 195px;">
-                                                    </li>
-                                                <?php
+                                                    <?php
+                                                    } else{ ?>
+                                                        <li>
+                                                            <img src="<?php echo Yii::app()->baseUrl . '/upload/propertyimages/' . $data->propertyimages[0]->imagename ?>" style="max-height: 195px;">
+                                                        </li>
+                                                    <?php
+                                                    }
                                                 }
                                             }
-                                        }
 
-                                    } else{ ?>
-                                        <li>
-                                            <img src="<?php echo Yii::app()->baseUrl;?> . /upload/propertyimages/prop_no_img.jpg" style="max-height: 195px;">
-                                        </li>
-                                    <?php } ?>
-                                </ul>
+                                        } else{ ?>
+                                            <li>
+                                                <img src="<?php echo Yii::app()->baseUrl;?> . /upload/propertyimages/prop_no_img.jpg" style="max-height: 195px;">
+                                            </li>
+                                        <?php } ?>
+                                    </ul>
+                                </div>
                             </div>
+                            <div class="ws_shadow"></div>
                         </div>
-                        <div class="ws_shadow"></div>
-                    </div>
+                    </a>
                 </div>
                 <div class="span6 content" >
                     <div style="text-align: right; color: #6a0812; font-weight: bold">
