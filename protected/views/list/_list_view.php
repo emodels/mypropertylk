@@ -44,11 +44,11 @@
                     $prevdate = date('Y-m-d', strtotime('-7 days'));
 
                     if ($data->entrydate >= $prevdate) {?>
-                        <div class="newIcon"><img src="<?php echo Yii::app()->baseUrl . '/images/new_icon.png'?>" style="max-height: 195px;"></div>
+                        <div class="newIcon"><img src="<?php echo Yii::app()->baseUrl . '/images/new_icon.png'?>"></div>
                     <?php }
 
                     if ($data->status == 2 ) {?>
-                        <div class="newIcon"><img src="<?php echo Yii::app()->baseUrl . '/images/sold.png'?>" style="max-height: 195px;"></div>
+                        <div class="newIcon"><img src="<?php echo Yii::app()->baseUrl . '/images/sold.png'?>"></div>
                     <?php }
                     ?>
                     <a href="<?php echo Yii::app()->baseUrl . '/list/detail?pid=' .$data->pid;?>" title="<?php echo $data->pid; ?>">

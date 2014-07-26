@@ -1,4 +1,6 @@
-
+<!-- Start sider HEAD section -->
+<link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>/engine1/stylecommercial.css" />
+<!-- End slider HEAD section -->
 <script type="text/javascript">
     $(document).ready(function(){
         $('#menu-primary-menu li').removeClass('current_page_item');
@@ -180,3 +182,5 @@
         <?php $this->endWidget(); ?>
     </div>
 </div><!-- /.content-wrapper -->
+<script type="text/javascript" src="<?php echo Yii::app()->request->baseUrl; ?>/engine1/wowslider.js"></script>
+<script type="text/javascript" src="<?php echo Yii::app()->request->baseUrl; ?>/engine1/commercial.js"></script>
