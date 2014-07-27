@@ -133,6 +133,7 @@
 
         return returnValue;
     }
+
 </script>
 <style>
     #map_canvas {
@@ -272,6 +273,9 @@
                                 echo Yii::app()->numberFormatter->format("#,##0", $model->monthlyrent) . " (monthly rental)";
                             }
                             ?>
+                            <div style="font-size: 12px; font-weight: normal; text-decoration: underline">
+                                <a href="#myModal" role="button" data-toggle="modal">In Other Curencies</a>
+                            </div>
                         </div>
                     </div>
                     <div class="span12" style="margin-left: 0; padding: 10px 10px; background-color: #6a0812; color: #fff;">
@@ -592,5 +596,95 @@
     </div>
 </form>
 <!--( // Email Agent Model window )-->
+
+<!-- Modal -->
+<div id="myModal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="border-radius: 5px; background: transparent;">
+    <div class="modal-header" style="background-color: #00afe9; color: #fff; border-top-right-radius: 5px; border-top-left-radius: 5px; font-size: 16px; font-weight: bold; text-align: center; padding: 10px 0;">
+        Price in other Currencies
+    </div>
+    <div class="modal-body" style="background-color: #f7f7f9">
+            <?php
+            echo "<b>Rs. " . Yii::app()->numberFormatter->format("#,##0", $model->price) . " equal to:</b> </br></br>";
+
+            $usd = json_decode(file_get_contents('http://rate-exchange.herokuapp.com/fetchRate?from=LKR&to=USD'), true);
+            $gbp = json_decode(file_get_contents('http://rate-exchange.herokuapp.com/fetchRate?from=LKR&to=GBP'), true);
+            $eur = json_decode(file_get_contents('http://rate-exchange.herokuapp.com/fetchRate?from=LKR&to=EUR'), true);
+            $inr = json_decode(file_get_contents('http://rate-exchange.herokuapp.com/fetchRate?from=LKR&to=INR'), true);
+            $jpy = json_decode(file_get_contents('http://rate-exchange.herokuapp.com/fetchRate?from=LKR&to=JPY'), true);
+            $aud = json_decode(file_get_contents('http://rate-exchange.herokuapp.com/fetchRate?from=LKR&to=AUD'), true);
+            $cad = json_decode(file_get_contents('http://rate-exchange.herokuapp.com/fetchRate?from=LKR&to=CAD'), true);
+            $aed = json_decode(file_get_contents('http://rate-exchange.herokuapp.com/fetchRate?from=LKR&to=AED'), true);
+            ?>
+        <table class="table table-striped table-bordered">
+            <tr class="success">
+                <td>
+                    US Dollars:
+                </td>
+                <td>
+                    <?php echo Yii::app()->numberFormatter->format("#,##0", $model->price * number_format($usd['Rate'], 4)) . " (USD)";?>
+                </td>
+            </tr>
+            <tr class="warning">
+                <td>
+                    British Pound
+                </td>
+                <td>
+                    <?php echo Yii::app()->numberFormatter->format("#,##0", $model->price * number_format($gbp['Rate'], 4)) . " (GBP)</br>";?>
+                </td>
+            </tr>
+            <tr class="success">
+                <td>
+                    Euro:
+                </td>
+                <td>
+                    <?php echo Yii::app()->numberFormatter->format("#,##0", $model->price * number_format($eur['Rate'], 4)) . " (EUR)</br>";?>
+                </td>
+            </tr>
+            <tr class="warning">
+                <td>
+                    Indian Rupee
+                </td>
+                <td>
+                    <?php echo Yii::app()->numberFormatter->format("#,##0", $model->price * number_format($inr['Rate'], 4)) . " (INR)</br>"; ?>
+                </td>
+            </tr>
+            <tr class="success">
+                <td>
+                    Japanese Yen
+                </td>
+                <td>
+                    <?php echo Yii::app()->numberFormatter->format("#,##0", $model->price * number_format($jpy['Rate'], 4)) . " (JPY)</br>";?>
+                </td>
+            </tr>
+            <tr class="warning">
+                <td>
+                    Australian Dollars
+                </td>
+                <td>
+                    <?php echo Yii::app()->numberFormatter->format("#,##0", $model->price * number_format($aud['Rate'], 4)) . " (AUD)</br>";?>
+                </td>
+            </tr>
+            <tr class="success">
+                <td>
+                    Canadian Dollars
+                </td>
+                <td>
+                    <?php echo Yii::app()->numberFormatter->format("#,##0", $model->price * number_format($cad['Rate'], 4)) . " (CAD)</br>";?>
+                </td>
+            </tr>
+            <tr class="warning">
+                <td>
+                    Emirati Dirham
+                </td>
+                <td>
+                    <?php echo Yii::app()->numberFormatter->format("#,##0", $model->price * number_format($aed['Rate'], 4)) . " (AED)</br>";?>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="modal-footer">
+        <button class="btn" data-dismiss="modal" aria-hidden="true">Close</button>
+    </div>
+</div>
 <script type="text/javascript" src="<?php echo Yii::app()->request->baseUrl; ?>/js/wowslider.js"></script>
 <script type="text/javascript" src="<?php echo Yii::app()->request->baseUrl; ?>/js/script.js"></script>
