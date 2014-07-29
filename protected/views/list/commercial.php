@@ -100,7 +100,7 @@
                                             $condition = '(type = 4 OR type = 5 ) AND status = 2';
                                         }
 
-                                        $dataprovider = new CActiveDataProvider('Property', array('criteria'=>array('condition'=> $condition,'order' => 'entrydate DESC'),'pagination'=>array('pageSize'=>10)));
+                                        $dataprovider = new CActiveDataProvider('Property', array('criteria'=>array('condition'=> $condition,'order' => 'pricetype DESC, entrydate DESC'),'pagination'=>array('pageSize'=>10)));
 
                                         if ($dataprovider->totalItemCount == 0) {
 

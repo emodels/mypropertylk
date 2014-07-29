@@ -19,13 +19,13 @@ function ws_basic(c,a,b){this.go=function(d){b.find("ul").css("transform","trans
 // http://javascript-source.com
 //***********************************************
 jQuery(".wowslider-container-listview").each(function(){
-    jQuery(this).wowSlider({effect:"basic",prev:"",next:"",duration:20*100,delay:20*100,width:415,height:305,autoPlay:false,playPause:false,stopOnHover:false,loop:false,bullets:0,caption:false,captionEffect:"slide",controls:true,onBeforeStep:0,images:0});
+    jQuery(this).wowSlider({effect:"basic",prev:"",next:"",duration:20*100,delay:20*100,width:415,height:225,autoPlay:false,playPause:false,stopOnHover:false,loop:false,bullets:0,caption:false,captionEffect:"slide",controls:true,onBeforeStep:0,images:0});
 });
 
 function renderPropertySlidersAfetrPagination(){
 
     jQuery(".wowslider-container-listview").each(function(){
 
-        jQuery(this).wowSlider({effect:"basic",prev:"",next:"",duration:20*100,delay:20*100,width:415,height:305,autoPlay:false,playPause:false,stopOnHover:false,loop:false,bullets:0,caption:false,captionEffect:"slide",controls:true,onBeforeStep:0,images:0});
+        jQuery(this).wowSlider({effect:"basic",prev:"",next:"",duration:20*100,delay:20*100,width:415,height:225,autoPlay:false,playPause:false,stopOnHover:false,loop:false,bullets:0,caption:false,captionEffect:"slide",controls:true,onBeforeStep:0,images:0});
     });
 }
