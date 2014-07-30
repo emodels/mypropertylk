@@ -97,7 +97,24 @@
     });
 
     function LoadFeaturedList(type) {
+
+        if (type == 'buy') {
+            $('.property-list-by a').removeClass('current');
+            $('.property-list-by a#buy').addClass('current');
+        }
+
+        if (type == 'rent') {
+            $('.property-list-by a').removeClass('current');
+            $('.property-list-by a#rent').addClass('current');
+        }
+
+        if (type == 'all') {
+            $('.property-list-by a').removeClass('current');
+            $('.property-list-by a#all').addClass('current');
+        }
+
         $.fn.yiiListView.update('list_featured', {data:{type: type}});
+
     }
 
     function SearchProperty(district){
@@ -507,9 +524,9 @@
                                 <div id="title-listing" class="container">
                                     <div class="property-list-title">Featured Properties</div>
                                     <div class="property-list-by">
-                                        <a class="current" href="javascript:LoadFeaturedList('all');">All</a>
-                                        <a class="" href="javascript:LoadFeaturedList('buy');">Buy</a>
-                                        <a class="" href="javascript:LoadFeaturedList('rent');">Rent</a>
+                                        <a id="all" class="current" href="javascript:LoadFeaturedList('all');">All</a>
+                                        <a id="buy" href="javascript:LoadFeaturedList('buy');">Buy</a>
+                                        <a id="rent" href="javascript:LoadFeaturedList('rent');">Rent</a>
                                     </div>
                                 </div><!-- /#title-listing -->
                                 <div class="property-row">
