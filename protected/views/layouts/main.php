@@ -138,7 +138,7 @@
                             <li class="page_item page-item-18"><a href="<?php echo Yii::app()->request->baseUrl; ?>/register">Join</a></li>
                             <li class="page_item page-item-115"><a href="<?php echo Yii::app()->request->baseUrl; ?>/login">Advertise With Us</a></li>
                             <li class="page_item page-item-1864"><a href="<?php echo Yii::app()->request->baseUrl; ?>/login">Agent Admin</a></li>
-                            <li class="page_item page-item-1681"><a href="#">Contact Us</a></li>
+                            <li class="page_item page-item-1681"><a href="<?php echo Yii::app()->request->baseUrl; ?>/contact">Contact Us</a></li>
                         </ul>
                     </div>
                     <div id="blog-widget-2" class="span4 widget blog">

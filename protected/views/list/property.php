@@ -127,6 +127,22 @@
         });
     }
 
+    //-----------Save Property to watch list-------------//
+    function SaveProperty(id){
+
+        $.ajax({
+            type: "GET",
+            url: '<?php echo Yii::app()->request->baseUrl; ?>/profile/watchlist/mode/SAVE/pid/' + id,
+            success: function(data){
+                if (data == 'done'){
+                    $.fn.yiiListView.update('list_property');
+                } else {
+                    alert(data);
+                }
+            }
+        });
+    }
+
 </script>
 <style type="text/css">
 
@@ -257,9 +273,10 @@
                                      <?php $form=$this->beginWidget('CActiveForm', array(
                                          'id'=>'refinrsearch',
                                          'enableClientValidation'=>true,
+                                         'enableAjaxValidation' => false,
                                          'clientOptions'=>array(
                                              'validateOnSubmit'=>true,
-                                             'validateOnChange'=>true
+                                             'validateOnChange'=>true,
                                          ),
                                          'htmlOptions'=>array('class'=>'form-horizontal')
                                      )); ?>

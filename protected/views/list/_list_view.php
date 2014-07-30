@@ -217,7 +217,7 @@ if ($_GET['type'] == 'sold'){
                         <!--<div class="listing-small-normal"><?php /*echo substr($data->desc, 0, 50).'....'; */?></div>-->
                         <div class="listing-small"><b>Agent :</b> <?php echo ucwords($data->agent0->fname) .' '. ucwords($data->agent0->lname)  ?></div>
                         <div style="text-align: right; padding-top: 10px;">
-                            <a class="btn" href="#"><i class="icon-star-empty"></i> Save</a>
+                            <a class="btn" href="javascript: SaveProperty(<?php echo $data->pid; ?>);"><i class="icon-star-empty"></i> Save</a>
                             <a class="btn" href="<?php echo Yii::app()->baseUrl . '/list/detail?pid=' .$data->pid;?> ">Detail</a>
                         </div>
                     </div>

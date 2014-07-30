@@ -519,7 +519,7 @@
                                                 <?php
                                                 if (isset($_GET['type'])) {
                                                     if ($_GET['type'] == "all") {
-                                                        $condition = 'pricetype = 3 AND status = 1 ';
+                                                        $condition = '(type = 1 OR type = 2 OR type = 3) AND pricetype = 3 AND status = 1 ';
                                                     } elseif($_GET['type'] == "buy"){
                                                         $condition = '(type = 1 OR type = 2) AND pricetype = 3 AND status = 1';
                                                     } elseif($_GET['type'] == "rent"){
@@ -527,7 +527,7 @@
                                                     }
                                                 }
                                                 else {
-                                                    $condition = 'pricetype = 3 AND status = 1 ';
+                                                    $condition = '(type = 1 OR type = 2 OR type = 3) AND pricetype = 3 AND status = 1 ';
                                                 }
 
                                                 $this->widget('zii.widgets.CListView', array(
@@ -555,7 +555,7 @@
                                             $condition = '(type = 1 OR type = 2 OR type = 3) AND status = 1';
 
                                             $this->widget('zii.widgets.CListView', array(
-                                                'id' => 'list_featured',
+                                                'id' => 'list_recent',
                                                 'dataProvider'=>new CActiveDataProvider('Property', array('criteria'=>array('condition'=> $condition,'order' => 'entrydate DESC LIMIT 4'),'pagination'=>false)),
                                                 'itemView' => '_recent_list_view'
                                             ));
