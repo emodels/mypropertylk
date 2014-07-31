@@ -1,81 +1,192 @@
+<script src="https://maps.googleapis.com/maps/api/js?sensor=false"></script>
+<script type="text/javascript">
+    function initialize() {
+        var map_canvas = document.getElementById('map_canvas');
+        var map_options = {
+            center: new google.maps.LatLng(44.5403, -78.5463),
+            zoom: 12,
+            mapTypeId: google.maps.MapTypeId.ROADMAP
+        }
+        var map = new google.maps.Map(map_canvas, map_options);
+        geoLocation("McLarens Building,Bauddhaloka Mawatha,Colombo 03,Sri Lanka", map);
+    }
+
+    google.maps.event.addDomListener(window, 'load', initialize);
+
+    function geoLocation(address, map) {
+
+        var returnValue = false;
+        var address = address;
+        var geocoder = new google.maps.Geocoder();
+
+        geocoder.geocode( { 'address': address}, function(results, status) {
+
+            if (status == google.maps.GeocoderStatus.OK) {
+
+                map.setCenter(results[0].geometry.location);
+                var marker = new google.maps.Marker({
+                    map: map,
+                    position: results[0].geometry.location
+                });
+
+                returnValue = true;
+
+            } else {
+
+                returnValue = false;
+            }
+        });
+
+        return returnValue;
+    }
+
+</script>
+
+<style type="text/css">
+    #map_canvas {
+        width: 98%;
+        height: 250px;
+        border: solid 1px silver;
+    }
+    .list-view .summary {
+        display: none;
+    }
+
+    .list-view .empty {
+        display: none;
+    }
+
+</style>
 <?php
 $this->pageTitle=Yii::app()->name . ' - Contact Us';
 $this->breadcrumbs=array(
 	'Contact',
 );
 ?>
+    <div class="container">
+        <div class="row-fluid">
+            <div class="span12">
+                <div class="row-fluid">
+                    <div class="content-wrapper clearfix">
+                        <div class="span9">
+                            <div class="content-holder">
+                                <div id="title-listing" class="container">
+                                    <div class="property-list-title">Contact Us</div>
+                                </div>
+                                <div class="span10 offset1">
+                                    <?php if(Yii::app()->user->hasFlash('contact')): ?>
 
-<h1>Contact Us</h1>
+                                        <div class="flash-success">
+                                            <?php echo Yii::app()->user->getFlash('contact'); ?>
+                                        </div>
 
-<?php if(Yii::app()->user->hasFlash('contact')): ?>
+                                    <?php else: ?>
 
-<div class="flash-success">
-	<?php echo Yii::app()->user->getFlash('contact'); ?>
-</div>
+                                        <p>
+                                            If you have business inquiries or other questions, please fill out the following form to contact us. Thank you.
+                                        </p>
 
-<?php else: ?>
+                                        <div class="form">
 
-<p>
-If you have business inquiries or other questions, please fill out the following form to contact us. Thank you.
-</p>
+                                            <?php $form=$this->beginWidget('CActiveForm', array(
+                                                'id'=>'contact-form',
+                                                'enableClientValidation'=>true,
+                                                'clientOptions'=>array(
+                                                    'validateOnSubmit'=>true,
+                                                ),
+                                            )); ?>
 
-<div class="form">
+                                            <p class="note">Fields with <span class="required">*</span> are required.</p>
 
-<?php $form=$this->beginWidget('CActiveForm', array(
-	'id'=>'contact-form',
-	'enableClientValidation'=>true,
-	'clientOptions'=>array(
-		'validateOnSubmit'=>true,
-	),
-)); ?>
+                                            <?php echo $form->errorSummary($model); ?>
 
-	<p class="note">Fields with <span class="required">*</span> are required.</p>
+                                            <div class="row">
+                                                <?php echo $form->labelEx($model,'name'); ?>
+                                                <?php echo $form->textField($model,'name'); ?>
+                                                <?php echo $form->error($model,'name'); ?>
+                                            </div>
 
-	<?php echo $form->errorSummary($model); ?>
+                                            <div class="row">
+                                                <?php echo $form->labelEx($model,'email'); ?>
+                                                <?php echo $form->textField($model,'email'); ?>
+                                                <?php echo $form->error($model,'email'); ?>
+                                            </div>
 
-	<div class="row">
-		<?php echo $form->labelEx($model,'name'); ?>
-		<?php echo $form->textField($model,'name'); ?>
-		<?php echo $form->error($model,'name'); ?>
-	</div>
+                                            <div class="row">
+                                                <?php echo $form->labelEx($model,'subject'); ?>
+                                                <?php echo $form->textField($model,'subject',array('size'=>60,'maxlength'=>128)); ?>
+                                                <?php echo $form->error($model,'subject'); ?>
+                                            </div>
 
-	<div class="row">
-		<?php echo $form->labelEx($model,'email'); ?>
-		<?php echo $form->textField($model,'email'); ?>
-		<?php echo $form->error($model,'email'); ?>
-	</div>
+                                            <div class="row">
+                                                <?php echo $form->labelEx($model,'body'); ?>
+                                                <?php echo $form->textArea($model,'body',array('rows'=>6, 'cols'=>50)); ?>
+                                                <?php echo $form->error($model,'body'); ?>
+                                            </div>
 
-	<div class="row">
-		<?php echo $form->labelEx($model,'subject'); ?>
-		<?php echo $form->textField($model,'subject',array('size'=>60,'maxlength'=>128)); ?>
-		<?php echo $form->error($model,'subject'); ?>
-	</div>
+                                            <?php if(CCaptcha::checkRequirements()): ?>
+                                                <div class="row">
+                                                    <?php echo $form->labelEx($model,'verifyCode'); ?>
+                                                    <div>
+                                                        <?php $this->widget('CCaptcha'); ?>
+                                                        <?php echo $form->textField($model,'verifyCode'); ?>
+                                                    </div>
+                                                    <div class="hint text-small"><i>(Please enter the letters as they are shown in the image above.
+                                                        <br/>Letters are not case-sensitive.)</i></div>
+                                                    <?php echo $form->error($model,'verifyCode'); ?>
+                                                </div>
+                                            <?php endif; ?>
 
-	<div class="row">
-		<?php echo $form->labelEx($model,'body'); ?>
-		<?php echo $form->textArea($model,'body',array('rows'=>6, 'cols'=>50)); ?>
-		<?php echo $form->error($model,'body'); ?>
-	</div>
+                                            <div class="row buttons" style="margin-top: 15px;">
+                                                <?php echo CHtml::submitButton('Submit', array('class' => 'btn btn-primary')); ?>&nbsp;
+                                            </div>
 
-	<?php if(CCaptcha::checkRequirements()): ?>
-	<div class="row">
-		<?php echo $form->labelEx($model,'verifyCode'); ?>
-		<div>
-		<?php $this->widget('CCaptcha'); ?>
-		<?php echo $form->textField($model,'verifyCode'); ?>
-		</div>
-		<div class="hint">Please enter the letters as they are shown in the image above.
-		<br/>Letters are not case-sensitive.</div>
-		<?php echo $form->error($model,'verifyCode'); ?>
-	</div>
-	<?php endif; ?>
+                                            <?php $this->endWidget(); ?>
 
-	<div class="row buttons">
-		<?php echo CHtml::submitButton('Submit'); ?>
-	</div>
+                                        </div><!-- form -->
 
-<?php $this->endWidget(); ?>
+                                    <?php endif; ?>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="span3" style="margin-top: 30px;">
+                            <div class="row-fluid">
+                                <div class="span12">
+                                    <b>Address : </b>
+                                    <div class="offset1 span10" style="padding-bottom: 20px;">
+                                        McLarens Building, 2nd Floor,<br/> No 123,
+                                        Bauddhaloka Mawatha,<br/></ Bambalapitiya,<br/>
+                                        Colombo 4,<br/>
+                                        Sri Lanka.
+                                    </div>
+                                </div>
+                                <div class="span12">
+                                    <b>Telephone : </b>
+                                    <div class="offset1 span10" style="padding-bottom: 20px;">
+                                        +61 431 108 137
+                                    </div>
+                                </div>
+                                <div class="span12">
+                                    <b>Fax : </b>
+                                    <div class="offset1 span10" style="padding-bottom: 20px;">
+                                        +61 425 732 711
+                                    </div>
+                                </div>
+                                <div class="span12">
+                                    <b>e-Mail : </b>
+                                    <div class="offset1 span10"  style="padding-bottom: 20px;">
+                                        info@myproperty.lk
+                                    </div>
+                                </div>
+                                <div class="span12">
+                                    <b>Our Location : </b>
+                                    <div id="map_canvas"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 
-</div><!-- form -->
-
-<?php endif; ?>

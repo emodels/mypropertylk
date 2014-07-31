@@ -60,16 +60,49 @@ class SiteController extends Controller
 	public function actionContact()
 	{
 		$model=new ContactForm;
+
 		if(isset($_POST['ContactForm']))
 		{
 			$model->attributes=$_POST['ContactForm'];
+
 			if($model->validate())
 			{
-				$headers="From: {$model->email}\r\nReply-To: {$model->email}";
-				mail(Yii::app()->params['adminEmail'],$model->subject,$model->body,$headers);
-				Yii::app()->user->setFlash('contact','Thank you for contacting us. We will respond to you as soon as possible.');
-				$this->refresh();
-			}
+                //---------------Email notification to Admin--------------------------------------------------------
+                $message = $this->renderPartial('//email/template/email_contact_submit', array('model'=>$model), true);
+
+                if (isset($_POST['ContactForm']) && isset($message) && $message != "") {
+
+                    $mailer = Yii::createComponent('application.extensions.mailer.EMailer');
+                    $mailer->Host = Yii::app()->params['SMTP_Host'];
+                    $mailer->Port = Yii::app()->params['SMTP_Port'];
+                    if (Yii::app()->params['SMTPSecure'] == TRUE){
+                        $mailer->SMTPSecure = 'ssl';
+                    }
+                    $mailer->IsSMTP();
+                    $mailer->SMTPAuth = true;
+                    $mailer->Username = Yii::app()->params['SMTP_Username'];
+                    $mailer->Password = Yii::app()->params['SMTP_password'];
+                    $mailer->From = Yii::app()->params['SMTP_Username'];
+                    $mailer->AddReplyTo($model->email);
+                    $mailer->AddAddress(Yii::app()->params['adminEmail']);
+                    $mailer->AddAddress(Yii::app()->params['mailCC_1']);
+                    $mailer->FromName = $model->name;
+                    $mailer->CharSet = 'UTF-8';
+                    $mailer->Subject = 'myproperty.lk Contact Us Enquiry';;
+                    $mailer->IsHTML();
+                    $mailer->Body = $message;
+                    $mailer->SMTPDebug  = Yii::app()->params['SMTPDebug'];
+
+                    try{
+                        $mailer->Send();
+                    }
+                    catch (Exception $ex){
+                        echo $ex->getMessage();
+                    }
+                }
+
+                Yii::app()->user->setFlash('success','Thank you for contacting us. We will respond to you as soon as possible.');
+            }
 		}
 		$this->render('contact',array('model'=>$model));
 	}

@@ -40,6 +40,13 @@ class ProfileController extends Controller
      */
     public function filterAccessControl($filterChain)
     {
+        /*---( If page = watchlist do not check access permission )---*/
+        if (substr_count(Yii::app()->request->requestUri,'watchlist') > 0){
+
+            $filterChain->run();//default action
+            return true;
+        }
+
         /*
          * checking user logged or not
          */

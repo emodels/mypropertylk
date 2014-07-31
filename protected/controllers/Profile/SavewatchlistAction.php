@@ -16,42 +16,78 @@ class SavewatchlistAction extends CAction
      */
     public function run()
     {
+        /*---( Handle page requests via AJAX calls )---*/
         if (Yii::app()->request->isAjaxRequest && isset($_GET['mode']) && $_GET['mode'] == 'SAVE' && isset($_GET['id'])) {
 
             if (Yii::app()->user->isGuest){
 
-                Yii::app()->user->setReturnUrl(Yii::app()->request->requestUri);
-                $this->getController()->redirect(Yii::app()->baseUrl . '/login');
+                $property = Property::model()->findByPk($_GET['id']);
 
-            } else {
+                if (isset($property)) {
 
-                $watchlist = Watchlist::model()->find('propertyid = ' .$_GET['id'] . 'AND userid = ' . Yii::app()->user->id);
+                    $redirectURL = '';
+                    switch ($property->type){
 
-                if (isset($watchlist)) {
+                        case 1: /*---( Home Sales )---*/
+                        case 2: /*---( Land Sales )---*/
 
-                    Yii::app()->user->setFlash('error', "Property Already Added to Your Watch List...!");
-                } else {
+                            $redirectURL = Yii::app()->baseUrl . '/list/property/type/buy';
+                            break;
 
-                    $model = new Watchlist();
+                        case 3: /*---( Home Rental )---*/
 
-                    $model->userid = Yii::app()->user->id;
-                    $model->propertyid = $_GET['id'];
+                            $redirectURL = Yii::app()->baseUrl . '/list/property/type/rent';
+                            break;
 
-                    if($model->save()){
-                        Yii::app()->user->setFlash('success', "Property Successfully Added to you Watch List...!");
-                        echo 'done';
-                    }
-                    else{
-                        print_r($model->getErrors());
-                        Yii::app()->user->setFlash('error', 'Error Saving Record');
+                        case 4: /*---( Commercial Sales )---*/
+
+                            $redirectURL = Yii::app()->baseUrl . 'list/commercial/type/sale';
+                            break;
+
+                        case 5: /*---( Commercial Leased )---*/
+
+                            $redirectURL = Yii::app()->baseUrl . 'list/commercial/type/lease';
+                            break;
                     }
                 }
 
+
+                Yii::app()->user->setReturnUrl($redirectURL);
+                echo "redirect";
+
+            } else {
+
+                $this->SaveWatch();
+                echo 'done';
             }
 
             Yii::app()->end();
         }
+    }
 
-        $this->getController()->render('watchlist');
+    public function SaveWatch(){
+
+        $watchlist = Watchlist::model()->find('propertyid = ' . $_GET['id'] . ' AND userid = ' . Yii::app()->user->id);
+
+        if (isset($watchlist)) {
+
+            $watchlist->delete();
+
+        } else {
+
+            $model = new Watchlist();
+
+            $model->userid = Yii::app()->user->id;
+            $model->propertyid = $_GET['id'];
+
+            if($model->save()){
+
+                return true;
+            }
+            else{
+
+                print_r($model->getErrors());
+            }
+        }
     }
 }

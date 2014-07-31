@@ -132,15 +132,20 @@
 
         $.ajax({
             type: "GET",
-            url: '<?php echo Yii::app()->request->baseUrl; ?>/profile/watchlist/mode/SAVE/pid/' + id,
+            url: '<?php echo Yii::app()->request->baseUrl; ?>/profile/watchlist/mode/SAVE/id/' + id,
             success: function(data){
+
+                if (data == 'redirect'){
+                    window.document.location.replace('<?php echo Yii::app()->request->baseUrl; ?>/login');
+                }
+
                 if (data == 'done'){
                     $.fn.yiiListView.update('list_property');
-                } else {
-                    alert(data);
                 }
             }
         });
+
+        return false;
     }
 
 </script>
