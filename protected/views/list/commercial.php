@@ -110,6 +110,18 @@
 
         return false;
     }
+
+    //--------------Sort Property-------//
+    function Filter_Property(){
+
+        var sort = '';
+
+        if ($('#filter_sort').val() != '') {
+            sort = $('#filter_sort').val();
+        }
+
+        $.fn.yiiListView.update('list_commercial',{data: {'sort': sort}});
+    }
 </script>
 <style>
     .nav-tabs {
@@ -500,6 +512,17 @@
                                     <div id="title-listing">
                                         <div class="property-list-title">Commercial Properties</div>
                                     </div>
+                                    <div class="span12" style="padding: 5px 5px; margin-left:0; margin-bottom: 10px; text-align: right; background-color: #ececec; border-radius: 15px; border-bottom-left-radius: 0; border-bottom-right-radius: 0;  border: solid 1px silver; border-bottom: dotted 1px #000;">
+                                        <label style="display: inline">Sorted By : </label>
+                                        <select class="btn-small" style="width: auto;" id="filter_sort" onchange="javascript:Filter_Property();">
+                                            <option value="">Sort Properties</option>
+                                            <option value="entrydate">Date</option>
+                                            <option value="district">District</option>
+                                            <option value="pricetype">Property Type</option>
+                                            <option value="price">Price</option>
+                                            <option value="agent">Agent</option>
+                                        </select>
+                                    </div>
                                     <div>
                                         <ul class="nav nav-tabs">
                                             <li id="all" class="active">
@@ -601,6 +624,12 @@
 
                                         $criteria->order = 'pricetype DESC, entrydate DESC';
 
+                                        /*---( Override Sort Order based on selected filter )---*/
+                                        if (Yii::app()->request->isAjaxRequest && isset($_GET['sort']) && $_GET['sort'] != '') {
+
+                                            $criteria->order = $_GET['sort'];
+                                        }
+
                                         $dataprovider = new CActiveDataProvider('Property', array('criteria'=> $criteria ,'pagination'=>array('pageSize'=>15)));
 
                                         if ($dataprovider->totalItemCount == 0) {
@@ -654,7 +683,8 @@
                                             'dataProvider'=>$dataprovider,
                                             'itemView' => '_commercial_list_view',
                                             'viewData' => array('adv_All' => $array_advertisements_all),
-                                            'template'=>'{items}<div class="span12"></div>{pager}<div class="span12"></div>'
+                                            'template'=>'{items}<div class="span12"></div>{pager}<div class="span12"></div>',
+                                            'afterAjaxUpdate'=>'function(id, data){ renderPropertySlidersAfetrPagination(); window.scroll(0,0); }',
                                         ));
                                         ?>
                                     </div>

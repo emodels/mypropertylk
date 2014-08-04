@@ -175,7 +175,16 @@
                             96 => '2 Years',
                         );
                         ?>
-                        <?php echo $form->dropDownList($model, 'period', $array_period, array('empty'=>'Change Period', 'onChange' => 'javascript:ChangeAdPrices();')); ?>
+                        <?php
+                        if (Yii::app()->user->usertype == 0) {
+
+                            echo $form->dropDownList($model, 'period', $array_period, array('empty'=>'Change Period', 'onChange' => 'javascript:ChangeAdPrices();'));
+
+                        } else {
+
+                            echo $form->dropDownList($model, 'period', $array_period, array('empty'=>'Change Period', 'onChange' => 'javascript:ChangeAdPrices();', 'disabled'=>'disabled'));
+                        }
+                        ?>
                         <label id="discount" hidden="hidden" style="color: #ff0000; font-weight: normal; padding-top: 10px"></label>
                         <input type="text" name="adprice_hidden" id="Advertising_adprice" style="display:none" value="<?php echo $adprice->price; ?>">
                         <div class="alert alert-info" style="margin-top: 10px">

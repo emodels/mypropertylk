@@ -163,7 +163,8 @@
                 'id' => 'list_user',
                 'dataProvider'=>new CActiveDataProvider('User', array('criteria'=>array('condition'=>$condition,'order' => 'id DESC'),'pagination'=>array('pageSize'=>5))),
                 'itemView' => '_user_list_view',
-                'template'=>'{items}<div class="span12"></div>{pager}<div class="span12"></div>'
+                'template'=>'{items}<div class="span12"></div>{pager}<div class="span12"></div>',
+                'afterAjaxUpdate'=>'function(id,options){window.scroll(0,0);}',
             ));
             ?>
         </div>

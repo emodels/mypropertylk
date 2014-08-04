@@ -83,6 +83,8 @@
                 'htmlOptions'=>array('class'=>'form-horizontal'),
             )); ?>
             <form id="form-price-list" class="form">
+                <?php if (count($faeturedProp) < 20) { ?>
+
                 <div style="padding:10px 20px 20px 20px; border: solid 1px silver; border-radius: 5px; margin-bottom: 10px; background-color: paleturquoise ">
                     <h4 style="color: blue; border-bottom: solid 1px silver;">
                         Featured Property
@@ -102,6 +104,7 @@
                         </div>
                     </div>
                 </div>
+                <?php } ?>
                 <div style="padding:10px 20px 20px 20px; border: solid 1px silver; border-radius: 5px; margin-bottom: 10px; background-color: mistyrose">
                     <h4 style="color: red; border-bottom: solid 1px silver;">
                         Premiere Property

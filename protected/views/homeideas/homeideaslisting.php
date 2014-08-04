@@ -99,7 +99,8 @@
                     'id' => 'list_homeideas',
                     'dataProvider'=>new CActiveDataProvider('Homeideas', array('criteria'=>array('condition'=> $condition,'order' => 'dateadded DESC' ),'pagination'=>array('pageSize'=>5))),
                     'itemView' => '_homeideas_image_list_view',
-                    'template'=>'{items}<div class="span12" style="margin-left: 0">{pager}</div>'
+                    'template'=>'{items}<div class="span12" style="margin-left: 0">{pager}</div>',
+                    'afterAjaxUpdate'=>'function(id,options){window.scroll(0,0);}',
                 ));
                 ?>
             </div>

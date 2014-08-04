@@ -88,7 +88,6 @@
         <?php $form = $this->beginWidget('CActiveForm', array(
             'id'=>'addproperty3-form',
             'enableClientValidation' => true,
-            'ajaxUpdate' => 'flshMsg',
             'enableAjaxValidation' => false,
             'clientOptions' => array(
                 'validateOnSubmit' => true,

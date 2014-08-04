@@ -525,7 +525,7 @@
                             <!--Currency Converter widget - HTML code - fx-rates.net -->
                             <div style="background-color: #E6E6E6; border-bottom: solid 1px silver; color: #C21814; margin: 0; line-height: 28px; font-weight: bold; border-top-left-radius: 5px; border-top-right-radius: 5px; text-align: center;">Currency Converter</div>
                             <div style="width:auto; background-color: #fff; text-align:center; padding:10px; margin:10px">
-                                <script type="text/javascript" src="http://fx-rate.net/converter.php?size=short&layout=vertical"></script>
+                                <script type="text/javascript" src="http://fx-rate.net/converter.php?layout=vertical&amount=1&tcolor=000000&default_pair=USD/LKR"></script>
                             </div>
                             <!--end of code-->
                         </div>
@@ -604,7 +604,13 @@
     </div>
     <div class="modal-body" style="background-color: #f7f7f9">
             <?php
-            echo "<b>Rs. " . Yii::app()->numberFormatter->format("#,##0", $model->price) . " equal to:</b> </br></br>";
+            if($model->type == 1 || $model->type == 2 || $model->type == 4){
+                $priceRate =  $model->price;
+            } elseif ($model->type == 3 || $model->type == 5) {
+                $priceRate =  $model->monthlyrent;
+            }
+
+            echo "<b>Rs. " . Yii::app()->numberFormatter->format("#,##0", $priceRate) . " equal to:</b> </br></br>";
 
             $usd = json_decode(file_get_contents('http://rate-exchange.herokuapp.com/fetchRate?from=LKR&to=USD'), true);
             $gbp = json_decode(file_get_contents('http://rate-exchange.herokuapp.com/fetchRate?from=LKR&to=GBP'), true);
@@ -621,7 +627,7 @@
                     US Dollars:
                 </td>
                 <td>
-                    <?php echo Yii::app()->numberFormatter->format("#,##0", $model->price * number_format($usd['Rate'], 4)) . " (USD)";?>
+                    <?php echo Yii::app()->numberFormatter->format("#,##0", $priceRate * number_format($usd['Rate'], 4)) . " (USD)";?>
                 </td>
             </tr>
             <tr class="warning">
@@ -629,7 +635,7 @@
                     British Pound
                 </td>
                 <td>
-                    <?php echo Yii::app()->numberFormatter->format("#,##0", $model->price * number_format($gbp['Rate'], 4)) . " (GBP)</br>";?>
+                    <?php echo Yii::app()->numberFormatter->format("#,##0", $priceRate * number_format($gbp['Rate'], 4)) . " (GBP)</br>";?>
                 </td>
             </tr>
             <tr class="success">
@@ -637,7 +643,7 @@
                     Euro:
                 </td>
                 <td>
-                    <?php echo Yii::app()->numberFormatter->format("#,##0", $model->price * number_format($eur['Rate'], 4)) . " (EUR)</br>";?>
+                    <?php echo Yii::app()->numberFormatter->format("#,##0", $priceRate * number_format($eur['Rate'], 4)) . " (EUR)</br>";?>
                 </td>
             </tr>
             <tr class="warning">
@@ -645,7 +651,7 @@
                     Indian Rupee
                 </td>
                 <td>
-                    <?php echo Yii::app()->numberFormatter->format("#,##0", $model->price * number_format($inr['Rate'], 4)) . " (INR)</br>"; ?>
+                    <?php echo Yii::app()->numberFormatter->format("#,##0", $priceRate * number_format($inr['Rate'], 4)) . " (INR)</br>"; ?>
                 </td>
             </tr>
             <tr class="success">
@@ -653,7 +659,7 @@
                     Japanese Yen
                 </td>
                 <td>
-                    <?php echo Yii::app()->numberFormatter->format("#,##0", $model->price * number_format($jpy['Rate'], 4)) . " (JPY)</br>";?>
+                    <?php echo Yii::app()->numberFormatter->format("#,##0", $priceRate * number_format($jpy['Rate'], 4)) . " (JPY)</br>";?>
                 </td>
             </tr>
             <tr class="warning">
@@ -661,7 +667,7 @@
                     Australian Dollars
                 </td>
                 <td>
-                    <?php echo Yii::app()->numberFormatter->format("#,##0", $model->price * number_format($aud['Rate'], 4)) . " (AUD)</br>";?>
+                    <?php echo Yii::app()->numberFormatter->format("#,##0", $priceRate * number_format($aud['Rate'], 4)) . " (AUD)</br>";?>
                 </td>
             </tr>
             <tr class="success">
@@ -669,7 +675,7 @@
                     Canadian Dollars
                 </td>
                 <td>
-                    <?php echo Yii::app()->numberFormatter->format("#,##0", $model->price * number_format($cad['Rate'], 4)) . " (CAD)</br>";?>
+                    <?php echo Yii::app()->numberFormatter->format("#,##0", $priceRate * number_format($cad['Rate'], 4)) . " (CAD)</br>";?>
                 </td>
             </tr>
             <tr class="warning">
@@ -677,7 +683,7 @@
                     Emirati Dirham
                 </td>
                 <td>
-                    <?php echo Yii::app()->numberFormatter->format("#,##0", $model->price * number_format($aed['Rate'], 4)) . " (AED)</br>";?>
+                    <?php echo Yii::app()->numberFormatter->format("#,##0", $priceRate * number_format($aed['Rate'], 4)) . " (AED)</br>";?>
                 </td>
             </tr>
         </table>

@@ -98,8 +98,11 @@ class EditAdvertisementAction extends CAction
             if ($form_valid == true) {
 
                 if ($model->save()){
+
+                    $model->status = 1;
                     Yii::app()->user->setFlash('success', "Data Updated Successfully !");
                     $this->getController()->redirect(Yii::app()->baseUrl . '/advertising/advertisement');
+
                 } else{
                     print_r($model->getErrors());
                     Yii::app()->user->setFlash('error', 'Error Saving Record');

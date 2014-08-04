@@ -68,6 +68,7 @@
         <div class="container row-fluid span12">
             <form id="form-price-list" class="form">
             <?php
+
             $this->widget('zii.widgets.grid.CGridView', array(
                 'id' => 'grid_pricelist',
                 'dataProvider' => $dataProvider,

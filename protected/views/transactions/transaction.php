@@ -34,6 +34,16 @@
         </div>
     </div>
     <div class="span12" style="margin-left: 0; border-bottom: solid 1px silver ">
+        <?php $form = $this->beginWidget('CActiveForm', array(
+            'id'=>'transaction-form',
+            'enableClientValidation' => true,
+            'enableAjaxValidation' => false,
+            'clientOptions' => array(
+                'validateOnSubmit' => true,
+                'validateOnChange' => true,
+            ),
+            'htmlOptions'=>array('class'=>'form-horizontal'),
+        )); ?>
         <div class="form_bg span">
             <div class="span2">
                 <select class="btn-small" id="filter_transactions" style="width: auto;" onchange="javascript:Filter_Transactions();">
@@ -54,6 +64,7 @@
                 <a href="javascript:Filter_Transactions();" class="btn btn-primary" style="margin-left: 0px;">Filter</a>
             </div>
         </div>
+        <?php $this->endWidget(); ?>
     </div>
     <div class="span12" style="margin-left: 0 ">
         <div class="container row-fluid span">
@@ -162,7 +173,8 @@
                 'id' => 'list_transaction',
                 'dataProvider'=>new CActiveDataProvider('Transactions', array('criteria'=>array('condition'=> $condition,'order' => 'transactiondate DESC'),'pagination'=>array('pageSize'=>10))),
                 'itemView' => '_transaction_list_view',
-                'template'=>'{items}<div class="span12"></div>{pager}<div class="span12"></div>'
+                'template'=>'{items}<div class="span12"></div>{pager}<div class="span12"></div>',
+                'afterAjaxUpdate'=>'function(id,options){window.scroll(0,0);}',
             ));
             ?>
         </div>

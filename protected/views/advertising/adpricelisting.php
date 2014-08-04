@@ -73,6 +73,16 @@
         </div>
     </div>
     <div class="span12" style="margin-left: 0 ">
+        <?php $form = $this->beginWidget('CActiveForm', array(
+            'id'=>'adpricelist-form',
+            'enableClientValidation' => true,
+            'enableAjaxValidation' => false,
+            'clientOptions' => array(
+                'validateOnSubmit' => true,
+                'validateOnChange' => true,
+            ),
+            'htmlOptions'=>array('class'=>'form-horizontal'),
+        )); ?>
         <div class="container-fluid" style="padding: 0;">
             <?php
             $page_filter = '';
@@ -94,9 +104,11 @@
                 'id' => 'list_price',
                 'dataProvider'=>new CActiveDataProvider('Adprice', array('criteria'=>array('condition'=> $condition,'order' => 'id'),'pagination'=>array('pageSize'=>10))),
                 'itemView' => '_adprice_list_view',
-                'template'=>'{items}<div class="span12"></div>{pager}<div class="span12"></div>'
+                'template'=>'{items}<div class="span12"></div>{pager}<div class="span12"></div>',
+                'afterAjaxUpdate'=>'function(id,options){window.scroll(0,0);}',
             ));
             ?>
         </div>
+        <?php $this->endWidget(); ?>
     </div>
 </div>

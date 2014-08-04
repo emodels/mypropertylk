@@ -185,7 +185,7 @@ if ($_GET['type'] == 'sold'){
                     <div class="content">
                         <div style="text-align: right; color: #6a0812; font-weight: bold">
                             <?php
-                            if ($data->price != 0) {
+                            if ($data->price != 0 || $data->monthlyrent != 0) {
                                 if($data->type == 1 || $data->type == 2){
                                     echo "Rs. " . Yii::app()->numberFormatter->format("#,##0", $data->price);
                                 } elseif ($data->type == 3) {

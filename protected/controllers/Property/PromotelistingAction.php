@@ -16,6 +16,8 @@ class PromotelistingAction extends CAction
      */
     public function run()
     {
+        $faeturedProp = Property::model()->findAll('pricetype = 3 AND status = 1');
+
         if (isset($_GET['pid'])) {
 
             $model =  Property::model()->findByPk($_GET['pid']);
@@ -145,6 +147,6 @@ class PromotelistingAction extends CAction
             Yii::app()->end();
         }
 
-        $this->getController()->render('promotelisting', array('model' => $model, 'priceStandard' => $priceStandard, 'pricePremier' => $pricePremier, 'priceFeatured' => $priceFeatured));
+        $this->getController()->render('promotelisting', array('model' => $model, 'priceStandard' => $priceStandard, 'pricePremier' => $pricePremier, 'priceFeatured' => $priceFeatured, 'faeturedProp' => $faeturedProp));
     }
 }

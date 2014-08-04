@@ -138,7 +138,8 @@
                                     'id' => 'list_architecture',
                                     'dataProvider'=>new CActiveDataProvider('Homeideas', array('criteria'=>array('condition'=> $condition,'order' => 'dateadded DESC'),'pagination'=>array('pageSize'=>5))),
                                     'itemView' => '_architecture_list_view',
-                                    'template'=>'{items}<div class="span12" style="margin-left: 0">{pager}</div>'
+                                    'template'=>'{items}<div class="span12" style="margin-left: 0">{pager}</div>',
+                                    'afterAjaxUpdate'=>'function(id,options){window.scroll(0,0);}',
                                 ));
                                 ?>
                             </div>
@@ -153,7 +154,7 @@
                                 $this->widget('zii.widgets.CListView', array(
                                     'id' => 'list_advertisement',
                                     'dataProvider'=>new CActiveDataProvider('Advertising', array('criteria'=>array('condition'=> $condition,'order' => 'entrydate DESC'),'pagination'=>false)),
-                                    'itemView' => '_ads_list_view'
+                                    'itemView' => '_ads_list_view',
                                 ));
                                 ?>
                             </div>

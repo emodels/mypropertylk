@@ -2766,3 +2766,247 @@ Stack trace:
 #12 {main}
 REQUEST_URI=/mypropertylk/cronjob/evaluateanddowngradefeaturedproperties
 ---
+2014/07/31 08:43:24 [error] [php] Undefined variable: data (C:\xampp\htdocs\mypropertylk\protected\views\list\detail.php:607)
+Stack trace:
+#0 C:\xampp\htdocs\mypropertylk\protected\framework\web\CController.php(870): ListController->renderFile()
+#1 C:\xampp\htdocs\mypropertylk\protected\framework\web\CController.php(783): ListController->renderPartial()
+#2 C:\xampp\htdocs\mypropertylk\protected\controllers\List\DetailAction.php(126): ListController->render()
+#3 C:\xampp\htdocs\mypropertylk\protected\framework\web\actions\CAction.php(75): DetailAction->run()
+#4 C:\xampp\htdocs\mypropertylk\protected\framework\web\CController.php(309): DetailAction->runWithParams()
+#5 C:\xampp\htdocs\mypropertylk\protected\framework\web\CController.php(287): ListController->runAction()
+#6 C:\xampp\htdocs\mypropertylk\protected\framework\web\CController.php(266): ListController->runActionWithFilters()
+#7 C:\xampp\htdocs\mypropertylk\protected\framework\web\CWebApplication.php(276): ListController->run()
+#8 C:\xampp\htdocs\mypropertylk\protected\framework\web\CWebApplication.php(135): CWebApplication->runController()
+#9 C:\xampp\htdocs\mypropertylk\protected\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#10 C:\xampp\htdocs\mypropertylk\index.php(15): CWebApplication->run()
+REQUEST_URI=/mypropertylk/list/detail?pid=45
+in C:\xampp\htdocs\mypropertylk\protected\views\list\detail.php (607)
+in C:\xampp\htdocs\mypropertylk\protected\controllers\List\DetailAction.php (126)
+in C:\xampp\htdocs\mypropertylk\index.php (15)
+2014/07/31 11:14:50 [error] [php] Undefined variable: data (C:\xampp\htdocs\mypropertylk\protected\views\admin\pricelist.php:69)
+Stack trace:
+#0 C:\xampp\htdocs\mypropertylk\protected\framework\web\CController.php(870): AdminController->renderFile()
+#1 C:\xampp\htdocs\mypropertylk\protected\framework\web\CController.php(783): AdminController->renderPartial()
+#2 C:\xampp\htdocs\mypropertylk\protected\controllers\Admin\PricelistAction.php(42): AdminController->render()
+#3 C:\xampp\htdocs\mypropertylk\protected\framework\web\actions\CAction.php(75): PricelistAction->run()
+#4 C:\xampp\htdocs\mypropertylk\protected\framework\web\CController.php(309): PricelistAction->runWithParams()
+#5 C:\xampp\htdocs\mypropertylk\protected\framework\web\filters\CFilterChain.php(134): AdminController->runAction()
+#6 C:\xampp\htdocs\mypropertylk\protected\controllers\AdminController.php(56): CFilterChain->run()
+#7 C:\xampp\htdocs\mypropertylk\protected\framework\web\filters\CInlineFilter.php(59): AdminController->filterAccessControl()
+#8 C:\xampp\htdocs\mypropertylk\protected\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter()
+#9 C:\xampp\htdocs\mypropertylk\protected\framework\web\CController.php(292): CFilterChain->run()
+#10 C:\xampp\htdocs\mypropertylk\protected\framework\web\CController.php(266): AdminController->runActionWithFilters()
+#11 C:\xampp\htdocs\mypropertylk\protected\framework\web\CWebApplication.php(276): AdminController->run()
+#12 C:\xampp\htdocs\mypropertylk\protected\framework\web\CWebApplication.php(135): CWebApplication->runController()
+#13 C:\xampp\htdocs\mypropertylk\protected\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#14 C:\xampp\htdocs\mypropertylk\index.php(15): CWebApplication->run()
+REQUEST_URI=/mypropertylk/admin/pricelist
+in C:\xampp\htdocs\mypropertylk\protected\views\admin\pricelist.php (69)
+in C:\xampp\htdocs\mypropertylk\protected\controllers\Admin\PricelistAction.php (42)
+in C:\xampp\htdocs\mypropertylk\protected\controllers\AdminController.php (56)
+2014/07/31 11:15:15 [error] [php] Undefined variable: data (C:\xampp\htdocs\mypropertylk\protected\views\admin\pricelist.php:71)
+Stack trace:
+#0 C:\xampp\htdocs\mypropertylk\protected\framework\web\CController.php(870): AdminController->renderFile()
+#1 C:\xampp\htdocs\mypropertylk\protected\framework\web\CController.php(783): AdminController->renderPartial()
+#2 C:\xampp\htdocs\mypropertylk\protected\controllers\Admin\PricelistAction.php(42): AdminController->render()
+#3 C:\xampp\htdocs\mypropertylk\protected\framework\web\actions\CAction.php(75): PricelistAction->run()
+#4 C:\xampp\htdocs\mypropertylk\protected\framework\web\CController.php(309): PricelistAction->runWithParams()
+#5 C:\xampp\htdocs\mypropertylk\protected\framework\web\filters\CFilterChain.php(134): AdminController->runAction()
+#6 C:\xampp\htdocs\mypropertylk\protected\controllers\AdminController.php(56): CFilterChain->run()
+#7 C:\xampp\htdocs\mypropertylk\protected\framework\web\filters\CInlineFilter.php(59): AdminController->filterAccessControl()
+#8 C:\xampp\htdocs\mypropertylk\protected\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter()
+#9 C:\xampp\htdocs\mypropertylk\protected\framework\web\CController.php(292): CFilterChain->run()
+#10 C:\xampp\htdocs\mypropertylk\protected\framework\web\CController.php(266): AdminController->runActionWithFilters()
+#11 C:\xampp\htdocs\mypropertylk\protected\framework\web\CWebApplication.php(276): AdminController->run()
+#12 C:\xampp\htdocs\mypropertylk\protected\framework\web\CWebApplication.php(135): CWebApplication->runController()
+#13 C:\xampp\htdocs\mypropertylk\protected\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#14 C:\xampp\htdocs\mypropertylk\index.php(15): CWebApplication->run()
+REQUEST_URI=/mypropertylk/admin/pricelist
+in C:\xampp\htdocs\mypropertylk\protected\views\admin\pricelist.php (71)
+in C:\xampp\htdocs\mypropertylk\protected\controllers\Admin\PricelistAction.php (42)
+in C:\xampp\htdocs\mypropertylk\protected\controllers\AdminController.php (56)
+2014/07/31 14:31:44 [error] [exception.CException] exception 'CException' with message 'Property "CListView.0" is not defined.' in C:\xampp\htdocs\mypropertylk\protected\framework\base\CComponent.php:174
+Stack trace:
+#0 C:\xampp\htdocs\mypropertylk\protected\framework\web\CWidgetFactory.php(162): CComponent->__set('0', 'window.scrollTo...')
+#1 C:\xampp\htdocs\mypropertylk\protected\framework\web\CBaseController.php(147): CWidgetFactory->createWidget(Object(ListController), 'zii.widgets.CLi...', Array)
+#2 C:\xampp\htdocs\mypropertylk\protected\framework\web\CBaseController.php(173): CBaseController->createWidget('zii.widgets.CLi...', Array)
+#3 C:\xampp\htdocs\mypropertylk\protected\views\list\property.php(767): CBaseController->widget('zii.widgets.CLi...', Array)
+#4 C:\xampp\htdocs\mypropertylk\protected\framework\web\CBaseController.php(127): require('C:\\xampp\\htdocs...')
+#5 C:\xampp\htdocs\mypropertylk\protected\framework\web\CBaseController.php(96): CBaseController->renderInternal('C:\\xampp\\htdocs...', Array, true)
+#6 C:\xampp\htdocs\mypropertylk\protected\framework\web\CController.php(870): CBaseController->renderFile('C:\\xampp\\htdocs...', Array, true)
+#7 C:\xampp\htdocs\mypropertylk\protected\framework\web\CController.php(783): CController->renderPartial('property', Array, true)
+#8 C:\xampp\htdocs\mypropertylk\protected\controllers\List\PropertyAction.php(91): CController->render('property', Array)
+#9 C:\xampp\htdocs\mypropertylk\protected\framework\web\actions\CAction.php(75): PropertyAction->run()
+#10 C:\xampp\htdocs\mypropertylk\protected\framework\web\CController.php(309): CAction->runWithParams(Array)
+#11 C:\xampp\htdocs\mypropertylk\protected\framework\web\CController.php(287): CController->runAction(Object(PropertyAction))
+#12 C:\xampp\htdocs\mypropertylk\protected\framework\web\CController.php(266): CController->runActionWithFilters(Object(PropertyAction), Array)
+#13 C:\xampp\htdocs\mypropertylk\protected\framework\web\CWebApplication.php(276): CController->run('property')
+#14 C:\xampp\htdocs\mypropertylk\protected\framework\web\CWebApplication.php(135): CWebApplication->runController('list/property/t...')
+#15 C:\xampp\htdocs\mypropertylk\protected\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#16 C:\xampp\htdocs\mypropertylk\index.php(15): CApplication->run()
+#17 {main}
+REQUEST_URI=/mypropertylk/list/property/type/buy
+HTTP_REFERER=http://localhost/mypropertylk/
+---
+2014/07/31 15:55:21 [error] [system.db.CDbCommand] CDbCommand::fetchAll() failed: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'pid' in 'order clause'. The SQL statement executed was: SELECT * FROM `advertising` `t` WHERE (page = 2 AND (size = 7) AND status = 1) AND expiredate >= CURDATE() ORDER BY pid DESC.
+in C:\xampp\htdocs\mypropertylk\protected\views\list\property.php (755)
+in C:\xampp\htdocs\mypropertylk\protected\controllers\List\PropertyAction.php (91)
+in C:\xampp\htdocs\mypropertylk\index.php (15)
+2014/07/31 15:55:21 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand failed to execute the SQL statement: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'pid' in 'order clause'. The SQL statement executed was: SELECT * FROM `advertising` `t` WHERE (page = 2 AND (size = 7) AND status = 1) AND expiredate >= CURDATE() ORDER BY pid DESC' in C:\xampp\htdocs\mypropertylk\protected\framework\db\CDbCommand.php:528
+Stack trace:
+#0 C:\xampp\htdocs\mypropertylk\protected\framework\db\CDbCommand.php(390): CDbCommand->queryInternal('fetchAll', Array, Array)
+#1 C:\xampp\htdocs\mypropertylk\protected\framework\db\ar\CActiveRecord.php(1287): CDbCommand->queryAll()
+#2 C:\xampp\htdocs\mypropertylk\protected\framework\db\ar\CActiveRecord.php(1406): CActiveRecord->query(Object(CDbCriteria), true)
+#3 C:\xampp\htdocs\mypropertylk\protected\views\list\property.php(755): CActiveRecord->findAll(Array)
+#4 C:\xampp\htdocs\mypropertylk\protected\framework\web\CBaseController.php(127): require('C:\\xampp\\htdocs...')
+#5 C:\xampp\htdocs\mypropertylk\protected\framework\web\CBaseController.php(96): CBaseController->renderInternal('C:\\xampp\\htdocs...', Array, true)
+#6 C:\xampp\htdocs\mypropertylk\protected\framework\web\CController.php(870): CBaseController->renderFile('C:\\xampp\\htdocs...', Array, true)
+#7 C:\xampp\htdocs\mypropertylk\protected\framework\web\CController.php(783): CController->renderPartial('property', Array, true)
+#8 C:\xampp\htdocs\mypropertylk\protected\controllers\List\PropertyAction.php(91): CController->render('property', Array)
+#9 C:\xampp\htdocs\mypropertylk\protected\framework\web\actions\CAction.php(75): PropertyAction->run()
+#10 C:\xampp\htdocs\mypropertylk\protected\framework\web\CController.php(309): CAction->runWithParams(Array)
+#11 C:\xampp\htdocs\mypropertylk\protected\framework\web\CController.php(287): CController->runAction(Object(PropertyAction))
+#12 C:\xampp\htdocs\mypropertylk\protected\framework\web\CController.php(266): CController->runActionWithFilters(Object(PropertyAction), Array)
+#13 C:\xampp\htdocs\mypropertylk\protected\framework\web\CWebApplication.php(276): CController->run('property')
+#14 C:\xampp\htdocs\mypropertylk\protected\framework\web\CWebApplication.php(135): CWebApplication->runController('list/property/t...')
+#15 C:\xampp\htdocs\mypropertylk\protected\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#16 C:\xampp\htdocs\mypropertylk\index.php(15): CApplication->run()
+#17 {main}
+REQUEST_URI=/mypropertylk/list/property/type/buy
+HTTP_REFERER=http://localhost/mypropertylk/
+---
+2014/08/01 03:42:13 [error] [system.db.CDbCommand] CDbCommand::fetchAll() failed: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'price' in 'order clause'. The SQL statement executed was: SELECT * FROM `advertising` `t` WHERE (page = 2 AND (size = 7) AND status = 1) AND expiredate >= CURDATE() ORDER BY price.
+in C:\xampp\htdocs\mypropertylk\protected\views\list\property.php (755)
+in C:\xampp\htdocs\mypropertylk\protected\controllers\List\PropertyAction.php (91)
+in C:\xampp\htdocs\mypropertylk\index.php (15)
+2014/08/01 03:42:13 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand failed to execute the SQL statement: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'price' in 'order clause'. The SQL statement executed was: SELECT * FROM `advertising` `t` WHERE (page = 2 AND (size = 7) AND status = 1) AND expiredate >= CURDATE() ORDER BY price' in C:\xampp\htdocs\mypropertylk\protected\framework\db\CDbCommand.php:528
+Stack trace:
+#0 C:\xampp\htdocs\mypropertylk\protected\framework\db\CDbCommand.php(390): CDbCommand->queryInternal('fetchAll', Array, Array)
+#1 C:\xampp\htdocs\mypropertylk\protected\framework\db\ar\CActiveRecord.php(1287): CDbCommand->queryAll()
+#2 C:\xampp\htdocs\mypropertylk\protected\framework\db\ar\CActiveRecord.php(1406): CActiveRecord->query(Object(CDbCriteria), true)
+#3 C:\xampp\htdocs\mypropertylk\protected\views\list\property.php(755): CActiveRecord->findAll(Array)
+#4 C:\xampp\htdocs\mypropertylk\protected\framework\web\CBaseController.php(127): require('C:\\xampp\\htdocs...')
+#5 C:\xampp\htdocs\mypropertylk\protected\framework\web\CBaseController.php(96): CBaseController->renderInternal('C:\\xampp\\htdocs...', Array, true)
+#6 C:\xampp\htdocs\mypropertylk\protected\framework\web\CController.php(870): CBaseController->renderFile('C:\\xampp\\htdocs...', Array, true)
+#7 C:\xampp\htdocs\mypropertylk\protected\framework\web\CController.php(783): CController->renderPartial('property', Array, true)
+#8 C:\xampp\htdocs\mypropertylk\protected\controllers\List\PropertyAction.php(91): CController->render('property', Array)
+#9 C:\xampp\htdocs\mypropertylk\protected\framework\web\actions\CAction.php(75): PropertyAction->run()
+#10 C:\xampp\htdocs\mypropertylk\protected\framework\web\CController.php(309): CAction->runWithParams(Array)
+#11 C:\xampp\htdocs\mypropertylk\protected\framework\web\CController.php(287): CController->runAction(Object(PropertyAction))
+#12 C:\xampp\htdocs\mypropertylk\protected\framework\web\CController.php(266): CController->runActionWithFilters(Object(PropertyAction), Array)
+#13 C:\xampp\htdocs\mypropertylk\protected\framework\web\CWebApplication.php(276): CController->run('property')
+#14 C:\xampp\htdocs\mypropertylk\protected\framework\web\CWebApplication.php(135): CWebApplication->runController('list/property/t...')
+#15 C:\xampp\htdocs\mypropertylk\protected\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#16 C:\xampp\htdocs\mypropertylk\index.php(15): CApplication->run()
+#17 {main}
+REQUEST_URI=/mypropertylk/list/property/type/buy?sort=price&ajax=list_property
+HTTP_REFERER=http://localhost/mypropertylk/list/property/type/buy
+---
+2014/08/01 03:43:28 [error] [system.db.CDbCommand] CDbCommand::fetchAll() failed: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'pricetype' in 'order clause'. The SQL statement executed was: SELECT * FROM `advertising` `t` WHERE (page = 2 AND (size = 7) AND status = 1) AND expiredate >= CURDATE() ORDER BY pricetype.
+in C:\xampp\htdocs\mypropertylk\protected\views\list\property.php (755)
+in C:\xampp\htdocs\mypropertylk\protected\controllers\List\PropertyAction.php (91)
+in C:\xampp\htdocs\mypropertylk\index.php (15)
+2014/08/01 03:43:28 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand failed to execute the SQL statement: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'pricetype' in 'order clause'. The SQL statement executed was: SELECT * FROM `advertising` `t` WHERE (page = 2 AND (size = 7) AND status = 1) AND expiredate >= CURDATE() ORDER BY pricetype' in C:\xampp\htdocs\mypropertylk\protected\framework\db\CDbCommand.php:528
+Stack trace:
+#0 C:\xampp\htdocs\mypropertylk\protected\framework\db\CDbCommand.php(390): CDbCommand->queryInternal('fetchAll', Array, Array)
+#1 C:\xampp\htdocs\mypropertylk\protected\framework\db\ar\CActiveRecord.php(1287): CDbCommand->queryAll()
+#2 C:\xampp\htdocs\mypropertylk\protected\framework\db\ar\CActiveRecord.php(1406): CActiveRecord->query(Object(CDbCriteria), true)
+#3 C:\xampp\htdocs\mypropertylk\protected\views\list\property.php(755): CActiveRecord->findAll(Array)
+#4 C:\xampp\htdocs\mypropertylk\protected\framework\web\CBaseController.php(127): require('C:\\xampp\\htdocs...')
+#5 C:\xampp\htdocs\mypropertylk\protected\framework\web\CBaseController.php(96): CBaseController->renderInternal('C:\\xampp\\htdocs...', Array, true)
+#6 C:\xampp\htdocs\mypropertylk\protected\framework\web\CController.php(870): CBaseController->renderFile('C:\\xampp\\htdocs...', Array, true)
+#7 C:\xampp\htdocs\mypropertylk\protected\framework\web\CController.php(783): CController->renderPartial('property', Array, true)
+#8 C:\xampp\htdocs\mypropertylk\protected\controllers\List\PropertyAction.php(91): CController->render('property', Array)
+#9 C:\xampp\htdocs\mypropertylk\protected\framework\web\actions\CAction.php(75): PropertyAction->run()
+#10 C:\xampp\htdocs\mypropertylk\protected\framework\web\CController.php(309): CAction->runWithParams(Array)
+#11 C:\xampp\htdocs\mypropertylk\protected\framework\web\CController.php(287): CController->runAction(Object(PropertyAction))
+#12 C:\xampp\htdocs\mypropertylk\protected\framework\web\CController.php(266): CController->runActionWithFilters(Object(PropertyAction), Array)
+#13 C:\xampp\htdocs\mypropertylk\protected\framework\web\CWebApplication.php(276): CController->run('property')
+#14 C:\xampp\htdocs\mypropertylk\protected\framework\web\CWebApplication.php(135): CWebApplication->runController('list/property/t...')
+#15 C:\xampp\htdocs\mypropertylk\protected\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#16 C:\xampp\htdocs\mypropertylk\index.php(15): CApplication->run()
+#17 {main}
+REQUEST_URI=/mypropertylk/list/property/type/buy?sort=pricetype&ajax=list_property
+HTTP_REFERER=http://localhost/mypropertylk/list/property/type/buy
+---
+2014/08/01 03:43:34 [error] [system.db.CDbCommand] CDbCommand::fetchAll() failed: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'price' in 'order clause'. The SQL statement executed was: SELECT * FROM `advertising` `t` WHERE (page = 2 AND (size = 7) AND status = 1) AND expiredate >= CURDATE() ORDER BY price.
+in C:\xampp\htdocs\mypropertylk\protected\views\list\property.php (755)
+in C:\xampp\htdocs\mypropertylk\protected\controllers\List\PropertyAction.php (91)
+in C:\xampp\htdocs\mypropertylk\index.php (15)
+2014/08/01 03:43:34 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand failed to execute the SQL statement: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'price' in 'order clause'. The SQL statement executed was: SELECT * FROM `advertising` `t` WHERE (page = 2 AND (size = 7) AND status = 1) AND expiredate >= CURDATE() ORDER BY price' in C:\xampp\htdocs\mypropertylk\protected\framework\db\CDbCommand.php:528
+Stack trace:
+#0 C:\xampp\htdocs\mypropertylk\protected\framework\db\CDbCommand.php(390): CDbCommand->queryInternal('fetchAll', Array, Array)
+#1 C:\xampp\htdocs\mypropertylk\protected\framework\db\ar\CActiveRecord.php(1287): CDbCommand->queryAll()
+#2 C:\xampp\htdocs\mypropertylk\protected\framework\db\ar\CActiveRecord.php(1406): CActiveRecord->query(Object(CDbCriteria), true)
+#3 C:\xampp\htdocs\mypropertylk\protected\views\list\property.php(755): CActiveRecord->findAll(Array)
+#4 C:\xampp\htdocs\mypropertylk\protected\framework\web\CBaseController.php(127): require('C:\\xampp\\htdocs...')
+#5 C:\xampp\htdocs\mypropertylk\protected\framework\web\CBaseController.php(96): CBaseController->renderInternal('C:\\xampp\\htdocs...', Array, true)
+#6 C:\xampp\htdocs\mypropertylk\protected\framework\web\CController.php(870): CBaseController->renderFile('C:\\xampp\\htdocs...', Array, true)
+#7 C:\xampp\htdocs\mypropertylk\protected\framework\web\CController.php(783): CController->renderPartial('property', Array, true)
+#8 C:\xampp\htdocs\mypropertylk\protected\controllers\List\PropertyAction.php(91): CController->render('property', Array)
+#9 C:\xampp\htdocs\mypropertylk\protected\framework\web\actions\CAction.php(75): PropertyAction->run()
+#10 C:\xampp\htdocs\mypropertylk\protected\framework\web\CController.php(309): CAction->runWithParams(Array)
+#11 C:\xampp\htdocs\mypropertylk\protected\framework\web\CController.php(287): CController->runAction(Object(PropertyAction))
+#12 C:\xampp\htdocs\mypropertylk\protected\framework\web\CController.php(266): CController->runActionWithFilters(Object(PropertyAction), Array)
+#13 C:\xampp\htdocs\mypropertylk\protected\framework\web\CWebApplication.php(276): CController->run('property')
+#14 C:\xampp\htdocs\mypropertylk\protected\framework\web\CWebApplication.php(135): CWebApplication->runController('list/property/t...')
+#15 C:\xampp\htdocs\mypropertylk\protected\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#16 C:\xampp\htdocs\mypropertylk\index.php(15): CApplication->run()
+#17 {main}
+REQUEST_URI=/mypropertylk/list/property/type/buy?sort=price&ajax=list_property
+HTTP_REFERER=http://localhost/mypropertylk/list/property/type/buy
+---
+2014/08/01 03:44:20 [error] [system.db.CDbCommand] CDbCommand::fetchAll() failed: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'district' in 'order clause'. The SQL statement executed was: SELECT * FROM `advertising` `t` WHERE (page = 2 AND (size = 7) AND status = 1) AND expiredate >= CURDATE() ORDER BY district.
+in C:\xampp\htdocs\mypropertylk\protected\views\list\property.php (755)
+in C:\xampp\htdocs\mypropertylk\protected\controllers\List\PropertyAction.php (91)
+in C:\xampp\htdocs\mypropertylk\index.php (15)
+2014/08/01 03:44:20 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand failed to execute the SQL statement: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'district' in 'order clause'. The SQL statement executed was: SELECT * FROM `advertising` `t` WHERE (page = 2 AND (size = 7) AND status = 1) AND expiredate >= CURDATE() ORDER BY district' in C:\xampp\htdocs\mypropertylk\protected\framework\db\CDbCommand.php:528
+Stack trace:
+#0 C:\xampp\htdocs\mypropertylk\protected\framework\db\CDbCommand.php(390): CDbCommand->queryInternal('fetchAll', Array, Array)
+#1 C:\xampp\htdocs\mypropertylk\protected\framework\db\ar\CActiveRecord.php(1287): CDbCommand->queryAll()
+#2 C:\xampp\htdocs\mypropertylk\protected\framework\db\ar\CActiveRecord.php(1406): CActiveRecord->query(Object(CDbCriteria), true)
+#3 C:\xampp\htdocs\mypropertylk\protected\views\list\property.php(755): CActiveRecord->findAll(Array)
+#4 C:\xampp\htdocs\mypropertylk\protected\framework\web\CBaseController.php(127): require('C:\\xampp\\htdocs...')
+#5 C:\xampp\htdocs\mypropertylk\protected\framework\web\CBaseController.php(96): CBaseController->renderInternal('C:\\xampp\\htdocs...', Array, true)
+#6 C:\xampp\htdocs\mypropertylk\protected\framework\web\CController.php(870): CBaseController->renderFile('C:\\xampp\\htdocs...', Array, true)
+#7 C:\xampp\htdocs\mypropertylk\protected\framework\web\CController.php(783): CController->renderPartial('property', Array, true)
+#8 C:\xampp\htdocs\mypropertylk\protected\controllers\List\PropertyAction.php(91): CController->render('property', Array)
+#9 C:\xampp\htdocs\mypropertylk\protected\framework\web\actions\CAction.php(75): PropertyAction->run()
+#10 C:\xampp\htdocs\mypropertylk\protected\framework\web\CController.php(309): CAction->runWithParams(Array)
+#11 C:\xampp\htdocs\mypropertylk\protected\framework\web\CController.php(287): CController->runAction(Object(PropertyAction))
+#12 C:\xampp\htdocs\mypropertylk\protected\framework\web\CController.php(266): CController->runActionWithFilters(Object(PropertyAction), Array)
+#13 C:\xampp\htdocs\mypropertylk\protected\framework\web\CWebApplication.php(276): CController->run('property')
+#14 C:\xampp\htdocs\mypropertylk\protected\framework\web\CWebApplication.php(135): CWebApplication->runController('list/property/t...')
+#15 C:\xampp\htdocs\mypropertylk\protected\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#16 C:\xampp\htdocs\mypropertylk\index.php(15): CApplication->run()
+#17 {main}
+REQUEST_URI=/mypropertylk/list/property/type/buy?sort=district&ajax=list_property
+HTTP_REFERER=http://localhost/mypropertylk/list/property/type/buy
+---
+2014/08/01 03:47:31 [error] [system.db.CDbCommand] CDbCommand::fetchAll() failed: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'district' in 'order clause'. The SQL statement executed was: SELECT * FROM `advertising` `t` WHERE (page = 2 AND (size = 7) AND status = 1) AND expiredate >= CURDATE() ORDER BY district.
+in C:\xampp\htdocs\mypropertylk\protected\views\list\property.php (755)
+in C:\xampp\htdocs\mypropertylk\protected\controllers\List\PropertyAction.php (91)
+in C:\xampp\htdocs\mypropertylk\index.php (15)
+2014/08/01 03:47:31 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand failed to execute the SQL statement: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'district' in 'order clause'. The SQL statement executed was: SELECT * FROM `advertising` `t` WHERE (page = 2 AND (size = 7) AND status = 1) AND expiredate >= CURDATE() ORDER BY district' in C:\xampp\htdocs\mypropertylk\protected\framework\db\CDbCommand.php:528
+Stack trace:
+#0 C:\xampp\htdocs\mypropertylk\protected\framework\db\CDbCommand.php(390): CDbCommand->queryInternal('fetchAll', Array, Array)
+#1 C:\xampp\htdocs\mypropertylk\protected\framework\db\ar\CActiveRecord.php(1287): CDbCommand->queryAll()
+#2 C:\xampp\htdocs\mypropertylk\protected\framework\db\ar\CActiveRecord.php(1406): CActiveRecord->query(Object(CDbCriteria), true)
+#3 C:\xampp\htdocs\mypropertylk\protected\views\list\property.php(755): CActiveRecord->findAll(Array)
+#4 C:\xampp\htdocs\mypropertylk\protected\framework\web\CBaseController.php(127): require('C:\\xampp\\htdocs...')
+#5 C:\xampp\htdocs\mypropertylk\protected\framework\web\CBaseController.php(96): CBaseController->renderInternal('C:\\xampp\\htdocs...', Array, true)
+#6 C:\xampp\htdocs\mypropertylk\protected\framework\web\CController.php(870): CBaseController->renderFile('C:\\xampp\\htdocs...', Array, true)
+#7 C:\xampp\htdocs\mypropertylk\protected\framework\web\CController.php(783): CController->renderPartial('property', Array, true)
+#8 C:\xampp\htdocs\mypropertylk\protected\controllers\List\PropertyAction.php(91): CController->render('property', Array)
+#9 C:\xampp\htdocs\mypropertylk\protected\framework\web\actions\CAction.php(75): PropertyAction->run()
+#10 C:\xampp\htdocs\mypropertylk\protected\framework\web\CController.php(309): CAction->runWithParams(Array)
+#11 C:\xampp\htdocs\mypropertylk\protected\framework\web\CController.php(287): CController->runAction(Object(PropertyAction))
+#12 C:\xampp\htdocs\mypropertylk\protected\framework\web\CController.php(266): CController->runActionWithFilters(Object(PropertyAction), Array)
+#13 C:\xampp\htdocs\mypropertylk\protected\framework\web\CWebApplication.php(276): CController->run('property')
+#14 C:\xampp\htdocs\mypropertylk\protected\framework\web\CWebApplication.php(135): CWebApplication->runController('list/property/t...')
+#15 C:\xampp\htdocs\mypropertylk\protected\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#16 C:\xampp\htdocs\mypropertylk\index.php(15): CApplication->run()
+#17 {main}
+REQUEST_URI=/mypropertylk/list/property/type/buy?sort=district&ajax=list_property
+HTTP_REFERER=http://localhost/mypropertylk/list/property/type/buy
+---
