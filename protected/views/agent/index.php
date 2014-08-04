@@ -1,3 +1,15 @@
+<script type="text/javascript">
+    function Filter_Property(){
+
+        var pid = '';
+
+        if ($('#propertyid').val() != '') {
+            pid = $('#propertyid').val();
+        }
+
+        window.document.location.replace('<?php echo Yii::app()->request->baseUrl; ?>/property/propertylisting?type=0&pid=' + pid);
+    }
+</script>
 <div class="col_right">
     <div class="span-10">
         <p>Welcome back, what would you like to do?</p>
@@ -40,9 +52,8 @@
         <div class="control-group">
             <form class="form-search">
                 <div class="input-append">
-                    <input type="text" class="span7 search-query hidden-phone"  placeholder="Input Propertry ID">
-                    <input type="text" class="span1 search-query visible-phone"  placeholder="Input Propertry ID">
-                    <button type="submit" class="btn"><i class="icon-search"></i>&nbsp;Find</button>
+                    <?php echo CHtml::textField('propertyid', '', array('class' => 'span12 search-query', 'placeholder'=>'Enter Property ID')); ?>
+                    <a href="javascript:Filter_Property();" class="btn" style="margin-left: 0px;"><i class="icon-search"></i>&nbsp;Find</a>
                 </div>
             </form>
         </div>
