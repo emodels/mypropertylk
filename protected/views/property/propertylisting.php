@@ -2,9 +2,28 @@
     $(document).ready(function(){
         $('.nav-stacked a').removeClass('active');
         $('#admin_list').addClass('active');
+
+        $('#propertyid').keypress(function(event) {
+            if (event.which == 13) {
+                event.preventDefault();
+            }
+        });
+
+        var pid = '<?php echo (isset($_GET["pid"]) ? $_GET["pid"] : "");?>'
+
+        if (pid != '') {
+
+            $('#propertyid').val(pid);
+            setTimeout(function(){ Filter_Property(); }, 500);
+
+        } else {
+
+            $('#list_property').show();
+        }
     });
 
     function Delete_Property(id){
+
         if (confirm('Are you sure want to delete?'))
         {
             $.ajax({
@@ -45,7 +64,10 @@
             pid = $('#propertyid').val();
         }
 
-        $.fn.yiiListView.update('list_property',{data: {'sort': sort, 'agent': agent, 'status': status, 'pid': pid}});
+        $.fn.yiiListView.update('list_property',{data: {'sort': sort, 'agent': agent, 'status': status, 'pid': pid},
+            complete:function() {
+                $('#list_property').show();
+            }});
     }
 
     function PropertyStatusChange(id) {
@@ -120,25 +142,29 @@ $model = (object) $model;
                 <div class="btn-group">
                     <a class="btn dropdown-toggle" data-toggle="dropdown" href="#">
                         <?php
-                        switch ($model->type){
-                            case 0:
-                                echo 'Category';
-                                break;
-                            case 1:
-                                echo 'Home Sales';
-                                break;
-                            case 2:
-                                echo 'Land Sales';
-                                break;
-                            case 3:
-                                echo 'Home Rental';
-                                break;
-                            case 4:
-                                echo 'Commercial Sales';
-                                break;
-                            case 5:
-                                echo 'Commercial Leased';
-                                break;
+                        if (isset($model->type)) {
+
+                            switch ($model->type){
+                                case 0:
+                                    echo 'Category';
+                                    break;
+                                case 1:
+                                    echo 'Home Sales';
+                                    break;
+                                case 2:
+                                    echo 'Land Sales';
+                                    break;
+                                case 3:
+                                    echo 'Home Rental';
+                                    break;
+                                case 4:
+                                    echo 'Commercial Sales';
+                                    break;
+                                case 5:
+                                    echo 'Commercial Leased';
+                                    break;
+                            }
+
                         }
                         ?>
                         <span class="caret"></span>
@@ -192,17 +218,7 @@ $model = (object) $model;
             </div>
         </div>
         <div class="span12" style="margin-left: 0 ">
-            <?php $form = $this->beginWidget('CActiveForm', array(
-                'id'=>'propertylisting-form',
-                'enableClientValidation' => true,
-                'enableAjaxValidation' => false,
-                'clientOptions' => array(
-                    'validateOnSubmit' => true,
-                    'validateOnChange' => true,
-                    'afterValidate' => 'js:formSend',
-                ),
-                'htmlOptions'=>array('class'=>'form-horizontal'),
-            )); ?>
+
             <div class="container row-fluid">
                 <?php
                 $sort_order = 'pid DESC';
@@ -253,6 +269,7 @@ $model = (object) $model;
                     }
 
                 } else {
+
                     $condition =  (($model->type == 0) ? 'type > 0' : 'type = ' . $model->type) /*. ' AND status = 1' */;
                 }
 
@@ -281,10 +298,11 @@ $model = (object) $model;
                     'itemView' => '_property_list_view',
                     'template'=>'{items}<div class="span12"></div>{pager}<div class="span12"></div>',
                     'afterAjaxUpdate'=>'function(id,options){window.scroll(0,0);}',
+                    'htmlOptions'=>array('style'=>'display:none')
                 ));
                 ?>
             </div>
-            <?php $this->endWidget(); ?>
+
         </div>
     </div>
 </div>
