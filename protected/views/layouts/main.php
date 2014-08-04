@@ -33,8 +33,29 @@
                             <img class="site-logo" src="<?php echo Yii::app()->request->baseUrl; ?>/images/logo.png" alt="Real Expert" />
                         </a>
                     </div>
-                    <div class="span4" style="float: right; text-align: right; padding:30px 35px 30px 0;">
+                    <div class="span4" style="float: right; text-align: right; padding:30px 35px 20px 0;">
                         <a class="btn btn-primary" href="<?php echo Yii::app()->request->baseUrl; ?>/property/addproperty?type=1" title="click here to post a free ad" rel="home">POST YOUR FREE AD</a>
+                        <div style="padding-top: 10px; font-size: 12px;">
+                            <?php if (Yii::app()->user->id != 0) {
+                                $url = "";
+                                switch (Yii::app()->user->usertype){
+                                    case 0:
+                                        $url = Yii::app()->baseUrl . '/admin/home';
+                                        break;
+                                    case 1:
+                                        $url = Yii::app()->baseUrl . '/member/home';
+                                        break;
+                                    case 2:
+                                        $url = Yii::app()->baseUrl . '/agent/home';
+                                        break;
+                                    case 3:
+                                        $url = Yii::app()->baseUrl . '/advertiser/home';
+                                        break;
+                                }
+                            ?>
+                            <a href="<?php echo $url; ?>"> Welcome <?php echo Yii::app()->user->username; ?></a>&nbsp;&nbsp; | &nbsp;&nbsp;<a href="<?php echo Yii::app()->request->baseUrl; ?>/site/logout">Sign Out</a>
+                            <?php } ?>
+                        </div>
                     </div>
                 </div>
             </div>
