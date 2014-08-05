@@ -97,8 +97,26 @@ $this->breadcrumbs=array(
                     </div>
                     <div class="control-group">
                         <div>
-                            <?php echo CHtml::submitButton('Register', array('class' => 'btn btn-primary')); ?>&nbsp;
-                            <?php echo CHtml::submitButton('Cancel', array('class' => 'btn btn-info', 'onClick'=>'history.go(-1);return true;')); ?>
+                            <?php echo CHtml::submitButton('Register', array('class' => 'btn btn-primary')); ?>
+                            &nbsp;
+                            <?php
+                            $url = "";
+                            switch (Yii::app()->user->usertype){
+                                case 0:
+                                    $url = Yii::app()->baseUrl . '/admin/home';
+                                    break;
+                                case 1:
+                                    $url = Yii::app()->baseUrl . '/member/home';
+                                    break;
+                                case 2:
+                                    $url = Yii::app()->baseUrl . '/agent/home';
+                                    break;
+                                case 3:
+                                    $url = Yii::app()->baseUrl . '/advertiser/home';
+                                    break;
+                            }
+                            ?>
+                            <a href="<?php echo $url; ?>" class="btn btn-info">Cancel</a>
                         </div>
                     </div>
                     <?php $this->endWidget(); ?>

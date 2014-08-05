@@ -3263,3 +3263,78 @@ REQUEST_URI=/mypropertylk/property/propertylisting?propertyid=50
 in C:\xampp\htdocs\mypropertylk\protected\views\property\propertylisting.php (260)
 in C:\xampp\htdocs\mypropertylk\protected\controllers\Property\PropertyListingAction.php (68)
 in C:\xampp\htdocs\mypropertylk\protected\controllers\PropertyController.php (74)
+2014/08/04 16:56:09 [error] [exception.CException] exception 'CException' with message 'ConfirmAction and its behaviors do not have a method or closure named "renderPartial".' in C:\xampp\htdocs\mypropertylk\protected\framework\base\CComponent.php:266
+Stack trace:
+#0 C:\xampp\htdocs\mypropertylk\protected\controllers\Paypal\ConfirmAction.php(88): CComponent->__call('renderPartial', Array)
+#1 C:\xampp\htdocs\mypropertylk\protected\controllers\Paypal\ConfirmAction.php(88): ConfirmAction->renderPartial('//email/templat...', Array, true)
+#2 C:\xampp\htdocs\mypropertylk\protected\framework\web\actions\CAction.php(75): ConfirmAction->run()
+#3 C:\xampp\htdocs\mypropertylk\protected\framework\web\CController.php(309): CAction->runWithParams(Array)
+#4 C:\xampp\htdocs\mypropertylk\protected\framework\web\filters\CFilterChain.php(134): CController->runAction(Object(ConfirmAction))
+#5 C:\xampp\htdocs\mypropertylk\protected\controllers\PaypalController.php(157): CFilterChain->run()
+#6 C:\xampp\htdocs\mypropertylk\protected\framework\web\filters\CInlineFilter.php(59): PaypalController->filterAccessControl(Object(CFilterChain))
+#7 C:\xampp\htdocs\mypropertylk\protected\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#8 C:\xampp\htdocs\mypropertylk\protected\framework\web\CController.php(292): CFilterChain->run()
+#9 C:\xampp\htdocs\mypropertylk\protected\framework\web\CController.php(266): CController->runActionWithFilters(Object(ConfirmAction), Array)
+#10 C:\xampp\htdocs\mypropertylk\protected\framework\web\CWebApplication.php(276): CController->run('confirm')
+#11 C:\xampp\htdocs\mypropertylk\protected\framework\web\CWebApplication.php(135): CWebApplication->runController('paypal/confirm')
+#12 C:\xampp\htdocs\mypropertylk\protected\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#13 C:\xampp\htdocs\mypropertylk\index.php(15): CApplication->run()
+#14 {main}
+REQUEST_URI=/mypropertylk/paypal/confirm?token=EC-8CM99072883264433&PayerID=FA2BN5YBB937L
+---
+2014/08/04 16:58:01 [error] [php] Undefined variable: property (C:\xampp\htdocs\mypropertylk\protected\views\email\template\email_user_submit.php:21)
+Stack trace:
+#0 C:\xampp\htdocs\mypropertylk\protected\framework\web\CController.php(870): PaypalController->renderFile()
+#1 C:\xampp\htdocs\mypropertylk\protected\controllers\Paypal\ConfirmAction.php(88): PaypalController->renderPartial()
+#2 C:\xampp\htdocs\mypropertylk\protected\framework\web\actions\CAction.php(75): ConfirmAction->run()
+#3 C:\xampp\htdocs\mypropertylk\protected\framework\web\CController.php(309): ConfirmAction->runWithParams()
+#4 C:\xampp\htdocs\mypropertylk\protected\framework\web\filters\CFilterChain.php(134): PaypalController->runAction()
+#5 C:\xampp\htdocs\mypropertylk\protected\controllers\PaypalController.php(157): CFilterChain->run()
+#6 C:\xampp\htdocs\mypropertylk\protected\framework\web\filters\CInlineFilter.php(59): PaypalController->filterAccessControl()
+#7 C:\xampp\htdocs\mypropertylk\protected\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter()
+#8 C:\xampp\htdocs\mypropertylk\protected\framework\web\CController.php(292): CFilterChain->run()
+#9 C:\xampp\htdocs\mypropertylk\protected\framework\web\CController.php(266): PaypalController->runActionWithFilters()
+#10 C:\xampp\htdocs\mypropertylk\protected\framework\web\CWebApplication.php(276): PaypalController->run()
+#11 C:\xampp\htdocs\mypropertylk\protected\framework\web\CWebApplication.php(135): CWebApplication->runController()
+#12 C:\xampp\htdocs\mypropertylk\protected\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#13 C:\xampp\htdocs\mypropertylk\index.php(15): CWebApplication->run()
+REQUEST_URI=/mypropertylk/paypal/confirm?token=EC-5N012436BG4278107&PayerID=FA2BN5YBB937L
+in C:\xampp\htdocs\mypropertylk\protected\views\email\template\email_user_submit.php (21)
+in C:\xampp\htdocs\mypropertylk\protected\controllers\Paypal\ConfirmAction.php (88)
+in C:\xampp\htdocs\mypropertylk\protected\controllers\PaypalController.php (157)
+2014/08/04 17:00:36 [error] [php] Undefined index: ACK (C:\xampp\htdocs\mypropertylk\protected\components\Paypal.php:204)
+Stack trace:
+#0 C:\xampp\htdocs\mypropertylk\protected\framework\web\CController.php(309): CInlineAction->runWithParams()
+#1 C:\xampp\htdocs\mypropertylk\protected\framework\web\filters\CFilterChain.php(134): PaypalController->runAction()
+#2 C:\xampp\htdocs\mypropertylk\protected\controllers\PaypalController.php(157): CFilterChain->run()
+#3 C:\xampp\htdocs\mypropertylk\protected\framework\web\filters\CInlineFilter.php(59): PaypalController->filterAccessControl()
+#4 C:\xampp\htdocs\mypropertylk\protected\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter()
+#5 C:\xampp\htdocs\mypropertylk\protected\framework\web\CController.php(292): CFilterChain->run()
+#6 C:\xampp\htdocs\mypropertylk\protected\framework\web\CController.php(266): PaypalController->runActionWithFilters()
+#7 C:\xampp\htdocs\mypropertylk\protected\framework\web\CWebApplication.php(276): PaypalController->run()
+#8 C:\xampp\htdocs\mypropertylk\protected\framework\web\CWebApplication.php(135): CWebApplication->runController()
+#9 C:\xampp\htdocs\mypropertylk\protected\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#10 C:\xampp\htdocs\mypropertylk\index.php(15): CWebApplication->run()
+REQUEST_URI=/mypropertylk/paypal/buy
+in C:\xampp\htdocs\mypropertylk\protected\components\Paypal.php (204)
+in C:\xampp\htdocs\mypropertylk\protected\controllers\PaypalController.php (59)
+in C:\xampp\htdocs\mypropertylk\protected\controllers\PaypalController.php (157)
+2014/08/04 17:43:52 [error] [exception.CException] exception 'CException' with message 'Property "Property.email" is not defined.' in C:\xampp\htdocs\mypropertylk\protected\framework\base\CComponent.php:131
+Stack trace:
+#0 C:\xampp\htdocs\mypropertylk\protected\framework\db\ar\CActiveRecord.php(144): CComponent->__get('email')
+#1 C:\xampp\htdocs\mypropertylk\protected\controllers\Paypal\ConfirmAction.php(103): CActiveRecord->__get('email')
+#2 C:\xampp\htdocs\mypropertylk\protected\framework\web\actions\CAction.php(75): ConfirmAction->run()
+#3 C:\xampp\htdocs\mypropertylk\protected\framework\web\CController.php(309): CAction->runWithParams(Array)
+#4 C:\xampp\htdocs\mypropertylk\protected\framework\web\filters\CFilterChain.php(134): CController->runAction(Object(ConfirmAction))
+#5 C:\xampp\htdocs\mypropertylk\protected\controllers\PaypalController.php(157): CFilterChain->run()
+#6 C:\xampp\htdocs\mypropertylk\protected\framework\web\filters\CInlineFilter.php(59): PaypalController->filterAccessControl(Object(CFilterChain))
+#7 C:\xampp\htdocs\mypropertylk\protected\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#8 C:\xampp\htdocs\mypropertylk\protected\framework\web\CController.php(292): CFilterChain->run()
+#9 C:\xampp\htdocs\mypropertylk\protected\framework\web\CController.php(266): CController->runActionWithFilters(Object(ConfirmAction), Array)
+#10 C:\xampp\htdocs\mypropertylk\protected\framework\web\CWebApplication.php(276): CController->run('confirm')
+#11 C:\xampp\htdocs\mypropertylk\protected\framework\web\CWebApplication.php(135): CWebApplication->runController('paypal/confirm')
+#12 C:\xampp\htdocs\mypropertylk\protected\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#13 C:\xampp\htdocs\mypropertylk\index.php(15): CApplication->run()
+#14 {main}
+REQUEST_URI=/mypropertylk/paypal/confirm?token=EC-68C39802UK5716142&PayerID=FA2BN5YBB937L
+---

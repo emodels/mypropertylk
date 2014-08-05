@@ -79,7 +79,24 @@ $this->breadcrumbs=array(
                             <div>
                                 <?php echo CHtml::submitButton('Save', array('class' => 'btn btn-primary')); ?>
                                 &nbsp;
-                                <?php echo CHtml::submitButton('Cancel', array('class' => 'btn btn-info')); ?>
+                                <?php
+                                    $url = "";
+                                    switch (Yii::app()->user->usertype){
+                                        case 0:
+                                            $url = Yii::app()->baseUrl . '/admin/home';
+                                            break;
+                                        case 1:
+                                            $url = Yii::app()->baseUrl . '/member/home';
+                                            break;
+                                        case 2:
+                                            $url = Yii::app()->baseUrl . '/agent/home';
+                                            break;
+                                        case 3:
+                                            $url = Yii::app()->baseUrl . '/advertiser/home';
+                                            break;
+                                    }
+                                ?>
+                                <a href="<?php echo $url; ?>" class="btn btn-info">Cancel</a>
                             </div>
                         </div>
                     </div>

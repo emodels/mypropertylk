@@ -82,8 +82,42 @@ class ConfirmAction extends CAction
 
                             if ($transaction->save()) {
 
-                                Yii::app()->user->setFlash('success', "Property Upgraded as a Premiere Property.");
+                                Yii::app()->user->setFlash('success', "Property Upgraded Successfully.");
                                 //echo 'done';
+
+                                //---------------Email notification to User--------------------------------------------------------
+                                $message = $this->getController()->renderPartial('//email/template/email_user_submit', array('model'=>$transaction), true);
+
+                                if (isset($message) && $message != "") {
+
+                                    $mailer = Yii::createComponent('application.extensions.mailer.EMailer');
+                                    $mailer->Host = Yii::app()->params['SMTP_Host'];
+                                    $mailer->Port = Yii::app()->params['SMTP_Port'];
+                                    if (Yii::app()->params['SMTPSecure'] == TRUE){
+                                        $mailer->SMTPSecure = 'ssl';
+                                    }
+                                    $mailer->IsSMTP();
+                                    $mailer->SMTPAuth = true;
+                                    $mailer->Username = Yii::app()->params['SMTP_Username'];
+                                    $mailer->Password = Yii::app()->params['SMTP_password'];
+                                    $mailer->From = Yii::app()->params['SMTP_Username'];
+                                    $mailer->AddReplyTo(Yii::app()->params['adminEmail']);
+                                    $mailer->AddAddress(Yii::app()->params['adminEmail']);
+                                    $mailer->AddAddress(Yii::app()->params['mailCC_1']);
+                                    $mailer->FromName = 'myproperty.lk';
+                                    $mailer->CharSet = 'UTF-8';
+                                    $mailer->Subject = 'myproperty.lk Property Transaction - # ' . $transaction->id . ' Successfully Completed...';
+                                    $mailer->IsHTML();
+                                    $mailer->Body = $message;
+                                    $mailer->SMTPDebug  = Yii::app()->params['SMTPDebug'];
+
+                                    try{
+                                        $mailer->Send();
+                                    }
+                                    catch (Exception $ex){
+                                        echo $ex->getMessage();
+                                    }
+                                }
                             }
                         }
 
@@ -107,6 +141,40 @@ class ConfirmAction extends CAction
 
                                 Yii::app()->user->setFlash('success', "Your Advertisement Added Successfully..!");
                                 //echo 'done';
+
+                                //---------------Email notification to User--------------------------------------------------------
+                                $message = $this->getController()->renderPartial('//email/template/email_advertisement_submit', array('model'=>$transaction), true);
+
+                                if (isset($message) && $message != "") {
+
+                                    $mailer = Yii::createComponent('application.extensions.mailer.EMailer');
+                                    $mailer->Host = Yii::app()->params['SMTP_Host'];
+                                    $mailer->Port = Yii::app()->params['SMTP_Port'];
+                                    if (Yii::app()->params['SMTPSecure'] == TRUE){
+                                        $mailer->SMTPSecure = 'ssl';
+                                    }
+                                    $mailer->IsSMTP();
+                                    $mailer->SMTPAuth = true;
+                                    $mailer->Username = Yii::app()->params['SMTP_Username'];
+                                    $mailer->Password = Yii::app()->params['SMTP_password'];
+                                    $mailer->From = Yii::app()->params['SMTP_Username'];
+                                    $mailer->AddReplyTo(Yii::app()->params['adminEmail']);
+                                    $mailer->AddAddress(Yii::app()->params['adminEmail']);
+                                    $mailer->AddAddress(Yii::app()->params['mailCC_1']);
+                                    $mailer->FromName = 'myproperty.lk';
+                                    $mailer->CharSet = 'UTF-8';
+                                    $mailer->Subject = 'myproperty.lk Advertisement Transaction  - # ' . $transaction->id . ' Successfully Completed...';
+                                    $mailer->IsHTML();
+                                    $mailer->Body = $message;
+                                    $mailer->SMTPDebug  = Yii::app()->params['SMTPDebug'];
+
+                                    try{
+                                        $mailer->Send();
+                                    }
+                                    catch (Exception $ex){
+                                        echo $ex->getMessage();
+                                    }
+                                }
                             }
                         }
 
