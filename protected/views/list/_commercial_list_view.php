@@ -37,31 +37,36 @@ switch ($data->pricetype){
                     <div class="row-fluid" style="padding-top: 5px;">
                         <div class="span8">
                             <?php
-                            $address = "";
+                            if ($data->hidestreetaddress != 1) {
+                                $address = "";
 
-                            if ($data->number != "") {
+                                if (strlen($data->number) > 3) {
 
-                                $address .= $data->number . ", ";
+                                    $address .= $data->number . ", ";
+                                }
+
+                                if (strlen($data->streetaddress) > 3) {
+
+                                    $address .= ucwords($data->streetaddress) . ", ";
+                                }
+
+                                if (strlen($data->areaname) > 3){
+
+                                    $address .= ucwords($data->areaname) . ", ";
+                                }
+
+                                if (strlen($data->townname) > 3) {
+
+                                    $address .= ucwords($data->townname);
+                                }
+
+                                echo $address;
+                            } else{
+
+                                echo "Contact Agent for Address...";
                             }
-
-                            if ($data->streetaddress != "") {
-
-                                $address .= ucwords($data->streetaddress) . ", ";
-                            }
-
-                            if ($data->areaname != ""){
-
-                                $address .= ucwords($data->areaname) . ", ";
-                            }
-
-                            if ($data->townname != "") {
-
-                                $address .= ucwords($data->townname);
-                            }
-
-                            echo $address;
                             ?>
-                        </div>
+                            </div>
                         <div class="span4" style="text-align: right; font-family: Monotype Corsiva; font-size: 20px; ">
                             <?php echo $data->pricetype0->proptype ?>
                         </div>
@@ -128,16 +133,30 @@ switch ($data->pricetype){
                     <div class="content">
                         <div style="text-align: right; color: #6a0812; font-weight: bold">
                             <?php
-                            if ($data->price != 0 || $data->monthlyrent != 0) {
-                                if($data->type == 4){
-                                    echo "Rs. " . Yii::app()->numberFormatter->format("#,##0", $data->price);
-                                } elseif ($data->type == 5) {
-                                    echo "Rs. " . Yii::app()->numberFormatter->format("#,##0", $data->monthlyrent) . " (monthly rental)";
+                            if ($data->dispalyprice == 1) {
+
+                                if ($data->price != 0 || $data->monthlyrent != 0) {
+
+                                    if($data->type == 4){
+                                        echo "Rs. " . Yii::app()->numberFormatter->format("#,##0", $data->price);
+                                    } elseif ($data->type == 5) {
+
+                                        echo "Rs. " . Yii::app()->numberFormatter->format("#,##0", $data->monthlyrent) . " (monthly rental)";
+                                    }
+
+                                } else{
+
+                                    echo "Contact Agent";
                                 }
-                            } else{
+
+                            } elseif ($data->dispalyprice == 2) {
+
+                                echo "N/A";
+
+                            } elseif ($data->dispalyprice == 3 || $data->dispalyprice == 0) {
+
                                 echo "Contact Agent";
                             }
-
                             ?>
                         </div>
                         <div class="listing-small">

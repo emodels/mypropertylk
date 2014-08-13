@@ -135,6 +135,8 @@ class Property extends CActiveRecord
 			array('vendorname, vendoremail, vendorphone, streetaddress, areaname, townname, tenuretype, building, parkcomment, zoning, outgoings, otherfeatures, headline', 'length', 'max'=>200),
 			array('unitnum, lotnum, number', 'length', 'max'=>100),
 			array('vediourl, onlinetour1, onlinetour2', 'length', 'max'=>500),
+            array('vendoremail', 'email'),
+            array('vendorphone', 'match', 'pattern' => '/^\+?[0-9]/', 'message' => 'Not a Valid phone number'),
 			// The following rule is used by search().
 			// Please remove those attributes that should not be searched.
 			array('pid, propcondition, owner, agent, otheragent, weeklyrent, monthlyrent, securebond, price, dispalyprice, availabledate, vendorname, vendoremail, vendorphone, sendemail, unitnum, lotnum, number, streetaddress, areaname, townname, hidestreetaddress, district, province, bedrooms, bathrooms, ensuites, toilets, parkgaragespaces, parkcarpetspaces, parkopenspaces, livingarea, housesize, housesquares, landsize, landsquares, floorarea, floorsquares, tenuretype, building, parkingspaces, parkcomment, zoning, outgoings, eer, balcony, deck, oea, shed, remotegarage, swimpool, courtyard, fullyfenced, outsidespa, securepark, tenniscourt, spabovroundeg, alarmsys, biltinwardrobes, dvs, gym, intercom, rumpusroom, workshop, broadbandinternet, dishwasher, floorboards, insidespa, paytv, study, ac, heating, cooling, solarpower, solarhotwater, watertank, otherfeatures, headline, desc, vediourl, onlinetour1, onlinetour2, entrydate, status, type, pricetype', 'safe', 'on'=>'search'),

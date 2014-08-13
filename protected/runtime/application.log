@@ -3338,3 +3338,399 @@ Stack trace:
 #14 {main}
 REQUEST_URI=/mypropertylk/paypal/confirm?token=EC-68C39802UK5716142&PayerID=FA2BN5YBB937L
 ---
+2014/08/06 13:58:26 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "mypropertylk/property/addproperty".' in C:\xampp\htdocs\mypropertylk\protected\framework\web\CWebApplication.php:280
+Stack trace:
+#0 C:\xampp\htdocs\mypropertylk\protected\framework\web\CWebApplication.php(135): CWebApplication->runController('mypropertylk/pr...')
+#1 C:\xampp\htdocs\mypropertylk\protected\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\mypropertylk\index.php(15): CApplication->run()
+#3 {main}
+REQUEST_URI=/mypropertylk/mypropertylk/property/addproperty?type=1
+HTTP_REFERER=http://localhost/mypropertylk/login
+---
+2014/08/08 15:02:59 [error] [system.db.CDbCommand] CDbCommand::fetchColumn() failed: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'gh' in 'where clause'. The SQL statement executed was: SELECT COUNT(*) FROM `property` `t` WHERE type > 0 AND status != 2  AND pid = gh.
+in C:\xampp\htdocs\mypropertylk\protected\views\property\propertylisting.php (302)
+in C:\xampp\htdocs\mypropertylk\protected\controllers\Property\PropertyListingAction.php (68)
+in C:\xampp\htdocs\mypropertylk\protected\controllers\PropertyController.php (74)
+2014/08/08 15:02:59 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand failed to execute the SQL statement: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'gh' in 'where clause'. The SQL statement executed was: SELECT COUNT(*) FROM `property` `t` WHERE type > 0 AND status != 2  AND pid = gh' in C:\xampp\htdocs\mypropertylk\protected\framework\db\CDbCommand.php:528
+Stack trace:
+#0 C:\xampp\htdocs\mypropertylk\protected\framework\db\CDbCommand.php(425): CDbCommand->queryInternal('fetchColumn', 0, Array)
+#1 C:\xampp\htdocs\mypropertylk\protected\framework\db\ar\CActiveRecord.php(1536): CDbCommand->queryScalar()
+#2 C:\xampp\htdocs\mypropertylk\protected\framework\web\CActiveDataProvider.php(179): CActiveRecord->count(Object(CDbCriteria))
+#3 C:\xampp\htdocs\mypropertylk\protected\framework\web\CDataProvider.php(193): CActiveDataProvider->calculateTotalItemCount()
+#4 C:\xampp\htdocs\mypropertylk\protected\framework\web\CActiveDataProvider.php(129): CDataProvider->getTotalItemCount()
+#5 C:\xampp\htdocs\mypropertylk\protected\framework\web\CDataProvider.php(137): CActiveDataProvider->fetchData()
+#6 C:\xampp\htdocs\mypropertylk\protected\framework\zii\widgets\CBaseListView.php(105): CDataProvider->getData()
+#7 C:\xampp\htdocs\mypropertylk\protected\framework\zii\widgets\CListView.php(173): CBaseListView->init()
+#8 C:\xampp\htdocs\mypropertylk\protected\framework\web\CBaseController.php(148): CListView->init()
+#9 C:\xampp\htdocs\mypropertylk\protected\framework\web\CBaseController.php(173): CBaseController->createWidget('zii.widgets.CLi...', Array)
+#10 C:\xampp\htdocs\mypropertylk\protected\views\property\propertylisting.php(302): CBaseController->widget('zii.widgets.CLi...', Array)
+#11 C:\xampp\htdocs\mypropertylk\protected\framework\web\CBaseController.php(127): require('C:\\xampp\\htdocs...')
+#12 C:\xampp\htdocs\mypropertylk\protected\framework\web\CBaseController.php(96): CBaseController->renderInternal('C:\\xampp\\htdocs...', NULL, true)
+#13 C:\xampp\htdocs\mypropertylk\protected\framework\web\CController.php(870): CBaseController->renderFile('C:\\xampp\\htdocs...', NULL, true)
+#14 C:\xampp\htdocs\mypropertylk\protected\framework\web\CController.php(783): CController->renderPartial('propertylisting', NULL, true)
+#15 C:\xampp\htdocs\mypropertylk\protected\controllers\Property\PropertyListingAction.php(68): CController->render('propertylisting')
+#16 C:\xampp\htdocs\mypropertylk\protected\framework\web\actions\CAction.php(75): PropertyListingAction->run()
+#17 C:\xampp\htdocs\mypropertylk\protected\framework\web\CController.php(309): CAction->runWithParams(Array)
+#18 C:\xampp\htdocs\mypropertylk\protected\framework\web\filters\CFilterChain.php(134): CController->runAction(Object(PropertyListingAction))
+#19 C:\xampp\htdocs\mypropertylk\protected\controllers\PropertyController.php(74): CFilterChain->run()
+#20 C:\xampp\htdocs\mypropertylk\protected\framework\web\filters\CInlineFilter.php(59): PropertyController->filterAccessControl(Object(CFilterChain))
+#21 C:\xampp\htdocs\mypropertylk\protected\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#22 C:\xampp\htdocs\mypropertylk\protected\framework\web\CController.php(292): CFilterChain->run()
+#23 C:\xampp\htdocs\mypropertylk\protected\framework\web\CController.php(266): CController->runActionWithFilters(Object(PropertyListingAction), Array)
+#24 C:\xampp\htdocs\mypropertylk\protected\framework\web\CWebApplication.php(276): CController->run('propertylisting')
+#25 C:\xampp\htdocs\mypropertylk\protected\framework\web\CWebApplication.php(135): CWebApplication->runController('property/proper...')
+#26 C:\xampp\htdocs\mypropertylk\protected\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#27 C:\xampp\htdocs\mypropertylk\index.php(15): CApplication->run()
+#28 {main}
+REQUEST_URI=/mypropertylk/property/propertylisting?type=0&pid=gh&sort=&agent=&status=&ajax=list_property
+HTTP_REFERER=http://localhost/mypropertylk/property/propertylisting?type=0&pid=gh
+---
+2014/08/08 15:06:01 [error] [system.db.CDbCommand] CDbCommand::fetchColumn() failed: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'jk' in 'where clause'. The SQL statement executed was: SELECT COUNT(*) FROM `property` `t` WHERE type > 0 AND status != 2  AND pid = jk.
+in C:\xampp\htdocs\mypropertylk\protected\views\property\propertylisting.php (302)
+in C:\xampp\htdocs\mypropertylk\protected\controllers\Property\PropertyListingAction.php (68)
+in C:\xampp\htdocs\mypropertylk\protected\controllers\PropertyController.php (74)
+2014/08/08 15:06:01 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand failed to execute the SQL statement: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'jk' in 'where clause'. The SQL statement executed was: SELECT COUNT(*) FROM `property` `t` WHERE type > 0 AND status != 2  AND pid = jk' in C:\xampp\htdocs\mypropertylk\protected\framework\db\CDbCommand.php:528
+Stack trace:
+#0 C:\xampp\htdocs\mypropertylk\protected\framework\db\CDbCommand.php(425): CDbCommand->queryInternal('fetchColumn', 0, Array)
+#1 C:\xampp\htdocs\mypropertylk\protected\framework\db\ar\CActiveRecord.php(1536): CDbCommand->queryScalar()
+#2 C:\xampp\htdocs\mypropertylk\protected\framework\web\CActiveDataProvider.php(179): CActiveRecord->count(Object(CDbCriteria))
+#3 C:\xampp\htdocs\mypropertylk\protected\framework\web\CDataProvider.php(193): CActiveDataProvider->calculateTotalItemCount()
+#4 C:\xampp\htdocs\mypropertylk\protected\framework\web\CActiveDataProvider.php(129): CDataProvider->getTotalItemCount()
+#5 C:\xampp\htdocs\mypropertylk\protected\framework\web\CDataProvider.php(137): CActiveDataProvider->fetchData()
+#6 C:\xampp\htdocs\mypropertylk\protected\framework\zii\widgets\CBaseListView.php(105): CDataProvider->getData()
+#7 C:\xampp\htdocs\mypropertylk\protected\framework\zii\widgets\CListView.php(173): CBaseListView->init()
+#8 C:\xampp\htdocs\mypropertylk\protected\framework\web\CBaseController.php(148): CListView->init()
+#9 C:\xampp\htdocs\mypropertylk\protected\framework\web\CBaseController.php(173): CBaseController->createWidget('zii.widgets.CLi...', Array)
+#10 C:\xampp\htdocs\mypropertylk\protected\views\property\propertylisting.php(302): CBaseController->widget('zii.widgets.CLi...', Array)
+#11 C:\xampp\htdocs\mypropertylk\protected\framework\web\CBaseController.php(127): require('C:\\xampp\\htdocs...')
+#12 C:\xampp\htdocs\mypropertylk\protected\framework\web\CBaseController.php(96): CBaseController->renderInternal('C:\\xampp\\htdocs...', NULL, true)
+#13 C:\xampp\htdocs\mypropertylk\protected\framework\web\CController.php(870): CBaseController->renderFile('C:\\xampp\\htdocs...', NULL, true)
+#14 C:\xampp\htdocs\mypropertylk\protected\framework\web\CController.php(783): CController->renderPartial('propertylisting', NULL, true)
+#15 C:\xampp\htdocs\mypropertylk\protected\controllers\Property\PropertyListingAction.php(68): CController->render('propertylisting')
+#16 C:\xampp\htdocs\mypropertylk\protected\framework\web\actions\CAction.php(75): PropertyListingAction->run()
+#17 C:\xampp\htdocs\mypropertylk\protected\framework\web\CController.php(309): CAction->runWithParams(Array)
+#18 C:\xampp\htdocs\mypropertylk\protected\framework\web\filters\CFilterChain.php(134): CController->runAction(Object(PropertyListingAction))
+#19 C:\xampp\htdocs\mypropertylk\protected\controllers\PropertyController.php(74): CFilterChain->run()
+#20 C:\xampp\htdocs\mypropertylk\protected\framework\web\filters\CInlineFilter.php(59): PropertyController->filterAccessControl(Object(CFilterChain))
+#21 C:\xampp\htdocs\mypropertylk\protected\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#22 C:\xampp\htdocs\mypropertylk\protected\framework\web\CController.php(292): CFilterChain->run()
+#23 C:\xampp\htdocs\mypropertylk\protected\framework\web\CController.php(266): CController->runActionWithFilters(Object(PropertyListingAction), Array)
+#24 C:\xampp\htdocs\mypropertylk\protected\framework\web\CWebApplication.php(276): CController->run('propertylisting')
+#25 C:\xampp\htdocs\mypropertylk\protected\framework\web\CWebApplication.php(135): CWebApplication->runController('property/proper...')
+#26 C:\xampp\htdocs\mypropertylk\protected\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#27 C:\xampp\htdocs\mypropertylk\index.php(15): CApplication->run()
+#28 {main}
+REQUEST_URI=/mypropertylk/property/propertylisting?type=0&pid=jk&sort=&agent=&status=&ajax=list_property
+HTTP_REFERER=http://localhost/mypropertylk/property/propertylisting?type=0&pid=jk
+---
+2014/08/08 15:15:34 [error] [system.db.CDbCommand] CDbCommand::fetchColumn() failed: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'jk' in 'where clause'. The SQL statement executed was: SELECT COUNT(*) FROM `property` `t` WHERE type > 0 AND status != 2  AND pid = jk.
+in C:\xampp\htdocs\mypropertylk\protected\views\property\propertylisting.php (302)
+in C:\xampp\htdocs\mypropertylk\protected\controllers\Property\PropertyListingAction.php (68)
+in C:\xampp\htdocs\mypropertylk\protected\controllers\PropertyController.php (74)
+2014/08/08 15:15:34 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand failed to execute the SQL statement: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'jk' in 'where clause'. The SQL statement executed was: SELECT COUNT(*) FROM `property` `t` WHERE type > 0 AND status != 2  AND pid = jk' in C:\xampp\htdocs\mypropertylk\protected\framework\db\CDbCommand.php:528
+Stack trace:
+#0 C:\xampp\htdocs\mypropertylk\protected\framework\db\CDbCommand.php(425): CDbCommand->queryInternal('fetchColumn', 0, Array)
+#1 C:\xampp\htdocs\mypropertylk\protected\framework\db\ar\CActiveRecord.php(1536): CDbCommand->queryScalar()
+#2 C:\xampp\htdocs\mypropertylk\protected\framework\web\CActiveDataProvider.php(179): CActiveRecord->count(Object(CDbCriteria))
+#3 C:\xampp\htdocs\mypropertylk\protected\framework\web\CDataProvider.php(193): CActiveDataProvider->calculateTotalItemCount()
+#4 C:\xampp\htdocs\mypropertylk\protected\framework\web\CActiveDataProvider.php(129): CDataProvider->getTotalItemCount()
+#5 C:\xampp\htdocs\mypropertylk\protected\framework\web\CDataProvider.php(137): CActiveDataProvider->fetchData()
+#6 C:\xampp\htdocs\mypropertylk\protected\framework\zii\widgets\CBaseListView.php(105): CDataProvider->getData()
+#7 C:\xampp\htdocs\mypropertylk\protected\framework\zii\widgets\CListView.php(173): CBaseListView->init()
+#8 C:\xampp\htdocs\mypropertylk\protected\framework\web\CBaseController.php(148): CListView->init()
+#9 C:\xampp\htdocs\mypropertylk\protected\framework\web\CBaseController.php(173): CBaseController->createWidget('zii.widgets.CLi...', Array)
+#10 C:\xampp\htdocs\mypropertylk\protected\views\property\propertylisting.php(302): CBaseController->widget('zii.widgets.CLi...', Array)
+#11 C:\xampp\htdocs\mypropertylk\protected\framework\web\CBaseController.php(127): require('C:\\xampp\\htdocs...')
+#12 C:\xampp\htdocs\mypropertylk\protected\framework\web\CBaseController.php(96): CBaseController->renderInternal('C:\\xampp\\htdocs...', NULL, true)
+#13 C:\xampp\htdocs\mypropertylk\protected\framework\web\CController.php(870): CBaseController->renderFile('C:\\xampp\\htdocs...', NULL, true)
+#14 C:\xampp\htdocs\mypropertylk\protected\framework\web\CController.php(783): CController->renderPartial('propertylisting', NULL, true)
+#15 C:\xampp\htdocs\mypropertylk\protected\controllers\Property\PropertyListingAction.php(68): CController->render('propertylisting')
+#16 C:\xampp\htdocs\mypropertylk\protected\framework\web\actions\CAction.php(75): PropertyListingAction->run()
+#17 C:\xampp\htdocs\mypropertylk\protected\framework\web\CController.php(309): CAction->runWithParams(Array)
+#18 C:\xampp\htdocs\mypropertylk\protected\framework\web\filters\CFilterChain.php(134): CController->runAction(Object(PropertyListingAction))
+#19 C:\xampp\htdocs\mypropertylk\protected\controllers\PropertyController.php(74): CFilterChain->run()
+#20 C:\xampp\htdocs\mypropertylk\protected\framework\web\filters\CInlineFilter.php(59): PropertyController->filterAccessControl(Object(CFilterChain))
+#21 C:\xampp\htdocs\mypropertylk\protected\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#22 C:\xampp\htdocs\mypropertylk\protected\framework\web\CController.php(292): CFilterChain->run()
+#23 C:\xampp\htdocs\mypropertylk\protected\framework\web\CController.php(266): CController->runActionWithFilters(Object(PropertyListingAction), Array)
+#24 C:\xampp\htdocs\mypropertylk\protected\framework\web\CWebApplication.php(276): CController->run('propertylisting')
+#25 C:\xampp\htdocs\mypropertylk\protected\framework\web\CWebApplication.php(135): CWebApplication->runController('property/proper...')
+#26 C:\xampp\htdocs\mypropertylk\protected\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#27 C:\xampp\htdocs\mypropertylk\index.php(15): CApplication->run()
+#28 {main}
+REQUEST_URI=/mypropertylk/property/propertylisting?type=0&pid=jk&sort=&agent=&status=&ajax=list_property
+HTTP_REFERER=http://localhost/mypropertylk/property/propertylisting?type=0&pid=jk
+---
+2014/08/08 15:52:34 [error] [system.db.CDbCommand] CDbCommand::fetchColumn() failed: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'df' in 'where clause'. The SQL statement executed was: SELECT COUNT(*) FROM `property` `t` WHERE type > 0 AND status != 2  AND pid = df.
+in C:\xampp\htdocs\mypropertylk\protected\views\property\propertylisting.php (302)
+in C:\xampp\htdocs\mypropertylk\protected\controllers\Property\PropertyListingAction.php (68)
+in C:\xampp\htdocs\mypropertylk\protected\controllers\PropertyController.php (74)
+2014/08/08 15:52:34 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand failed to execute the SQL statement: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'df' in 'where clause'. The SQL statement executed was: SELECT COUNT(*) FROM `property` `t` WHERE type > 0 AND status != 2  AND pid = df' in C:\xampp\htdocs\mypropertylk\protected\framework\db\CDbCommand.php:528
+Stack trace:
+#0 C:\xampp\htdocs\mypropertylk\protected\framework\db\CDbCommand.php(425): CDbCommand->queryInternal('fetchColumn', 0, Array)
+#1 C:\xampp\htdocs\mypropertylk\protected\framework\db\ar\CActiveRecord.php(1536): CDbCommand->queryScalar()
+#2 C:\xampp\htdocs\mypropertylk\protected\framework\web\CActiveDataProvider.php(179): CActiveRecord->count(Object(CDbCriteria))
+#3 C:\xampp\htdocs\mypropertylk\protected\framework\web\CDataProvider.php(193): CActiveDataProvider->calculateTotalItemCount()
+#4 C:\xampp\htdocs\mypropertylk\protected\framework\web\CActiveDataProvider.php(129): CDataProvider->getTotalItemCount()
+#5 C:\xampp\htdocs\mypropertylk\protected\framework\web\CDataProvider.php(137): CActiveDataProvider->fetchData()
+#6 C:\xampp\htdocs\mypropertylk\protected\framework\zii\widgets\CBaseListView.php(105): CDataProvider->getData()
+#7 C:\xampp\htdocs\mypropertylk\protected\framework\zii\widgets\CListView.php(173): CBaseListView->init()
+#8 C:\xampp\htdocs\mypropertylk\protected\framework\web\CBaseController.php(148): CListView->init()
+#9 C:\xampp\htdocs\mypropertylk\protected\framework\web\CBaseController.php(173): CBaseController->createWidget('zii.widgets.CLi...', Array)
+#10 C:\xampp\htdocs\mypropertylk\protected\views\property\propertylisting.php(302): CBaseController->widget('zii.widgets.CLi...', Array)
+#11 C:\xampp\htdocs\mypropertylk\protected\framework\web\CBaseController.php(127): require('C:\\xampp\\htdocs...')
+#12 C:\xampp\htdocs\mypropertylk\protected\framework\web\CBaseController.php(96): CBaseController->renderInternal('C:\\xampp\\htdocs...', NULL, true)
+#13 C:\xampp\htdocs\mypropertylk\protected\framework\web\CController.php(870): CBaseController->renderFile('C:\\xampp\\htdocs...', NULL, true)
+#14 C:\xampp\htdocs\mypropertylk\protected\framework\web\CController.php(783): CController->renderPartial('propertylisting', NULL, true)
+#15 C:\xampp\htdocs\mypropertylk\protected\controllers\Property\PropertyListingAction.php(68): CController->render('propertylisting')
+#16 C:\xampp\htdocs\mypropertylk\protected\framework\web\actions\CAction.php(75): PropertyListingAction->run()
+#17 C:\xampp\htdocs\mypropertylk\protected\framework\web\CController.php(309): CAction->runWithParams(Array)
+#18 C:\xampp\htdocs\mypropertylk\protected\framework\web\filters\CFilterChain.php(134): CController->runAction(Object(PropertyListingAction))
+#19 C:\xampp\htdocs\mypropertylk\protected\controllers\PropertyController.php(74): CFilterChain->run()
+#20 C:\xampp\htdocs\mypropertylk\protected\framework\web\filters\CInlineFilter.php(59): PropertyController->filterAccessControl(Object(CFilterChain))
+#21 C:\xampp\htdocs\mypropertylk\protected\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#22 C:\xampp\htdocs\mypropertylk\protected\framework\web\CController.php(292): CFilterChain->run()
+#23 C:\xampp\htdocs\mypropertylk\protected\framework\web\CController.php(266): CController->runActionWithFilters(Object(PropertyListingAction), Array)
+#24 C:\xampp\htdocs\mypropertylk\protected\framework\web\CWebApplication.php(276): CController->run('propertylisting')
+#25 C:\xampp\htdocs\mypropertylk\protected\framework\web\CWebApplication.php(135): CWebApplication->runController('property/proper...')
+#26 C:\xampp\htdocs\mypropertylk\protected\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#27 C:\xampp\htdocs\mypropertylk\index.php(15): CApplication->run()
+#28 {main}
+REQUEST_URI=/mypropertylk/property/propertylisting/type/0?sort=&agent=&status=&pid=df&ajax=list_property
+HTTP_REFERER=http://localhost/mypropertylk/property/propertylisting/type/0
+---
+2014/08/11 04:18:53 [error] [php] Object of class Adprice could not be converted to string (C:\xampp\htdocs\mypropertylk\protected\controllers\Advertising\AddpricesAction.php:23)
+Stack trace:
+#0 C:\xampp\htdocs\mypropertylk\protected\framework\web\filters\CFilterChain.php(134): AdvertisingController->runAction()
+#1 C:\xampp\htdocs\mypropertylk\protected\controllers\AdvertisingController.php(69): CFilterChain->run()
+#2 C:\xampp\htdocs\mypropertylk\protected\framework\web\filters\CInlineFilter.php(59): AdvertisingController->filterAccessControl()
+#3 C:\xampp\htdocs\mypropertylk\protected\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter()
+#4 C:\xampp\htdocs\mypropertylk\protected\framework\web\CController.php(292): CFilterChain->run()
+#5 C:\xampp\htdocs\mypropertylk\protected\framework\web\CController.php(266): AdvertisingController->runActionWithFilters()
+#6 C:\xampp\htdocs\mypropertylk\protected\framework\web\CWebApplication.php(276): AdvertisingController->run()
+#7 C:\xampp\htdocs\mypropertylk\protected\framework\web\CWebApplication.php(135): CWebApplication->runController()
+#8 C:\xampp\htdocs\mypropertylk\protected\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#9 C:\xampp\htdocs\mypropertylk\index.php(15): CWebApplication->run()
+REQUEST_URI=/mypropertylk/advertising/addprices
+in C:\xampp\htdocs\mypropertylk\protected\controllers\Advertising\AddpricesAction.php (23)
+in C:\xampp\htdocs\mypropertylk\protected\controllers\AdvertisingController.php (69)
+in C:\xampp\htdocs\mypropertylk\index.php (15)
+2014/08/11 04:23:35 [error] [php] Object of class Adprice could not be converted to string (C:\xampp\htdocs\mypropertylk\protected\controllers\Advertising\AddpricesAction.php:23)
+Stack trace:
+#0 C:\xampp\htdocs\mypropertylk\protected\framework\web\filters\CFilterChain.php(134): AdvertisingController->runAction()
+#1 C:\xampp\htdocs\mypropertylk\protected\controllers\AdvertisingController.php(69): CFilterChain->run()
+#2 C:\xampp\htdocs\mypropertylk\protected\framework\web\filters\CInlineFilter.php(59): AdvertisingController->filterAccessControl()
+#3 C:\xampp\htdocs\mypropertylk\protected\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter()
+#4 C:\xampp\htdocs\mypropertylk\protected\framework\web\CController.php(292): CFilterChain->run()
+#5 C:\xampp\htdocs\mypropertylk\protected\framework\web\CController.php(266): AdvertisingController->runActionWithFilters()
+#6 C:\xampp\htdocs\mypropertylk\protected\framework\web\CWebApplication.php(276): AdvertisingController->run()
+#7 C:\xampp\htdocs\mypropertylk\protected\framework\web\CWebApplication.php(135): CWebApplication->runController()
+#8 C:\xampp\htdocs\mypropertylk\protected\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#9 C:\xampp\htdocs\mypropertylk\index.php(15): CWebApplication->run()
+REQUEST_URI=/mypropertylk/advertising/addprices
+in C:\xampp\htdocs\mypropertylk\protected\controllers\Advertising\AddpricesAction.php (23)
+in C:\xampp\htdocs\mypropertylk\protected\controllers\AdvertisingController.php (69)
+in C:\xampp\htdocs\mypropertylk\index.php (15)
+2014/08/11 04:24:29 [error] [php] Object of class Adprice could not be converted to string (C:\xampp\htdocs\mypropertylk\protected\controllers\Advertising\AddpricesAction.php:26)
+Stack trace:
+#0 C:\xampp\htdocs\mypropertylk\protected\framework\web\filters\CFilterChain.php(134): AdvertisingController->runAction()
+#1 C:\xampp\htdocs\mypropertylk\protected\controllers\AdvertisingController.php(69): CFilterChain->run()
+#2 C:\xampp\htdocs\mypropertylk\protected\framework\web\filters\CInlineFilter.php(59): AdvertisingController->filterAccessControl()
+#3 C:\xampp\htdocs\mypropertylk\protected\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter()
+#4 C:\xampp\htdocs\mypropertylk\protected\framework\web\CController.php(292): CFilterChain->run()
+#5 C:\xampp\htdocs\mypropertylk\protected\framework\web\CController.php(266): AdvertisingController->runActionWithFilters()
+#6 C:\xampp\htdocs\mypropertylk\protected\framework\web\CWebApplication.php(276): AdvertisingController->run()
+#7 C:\xampp\htdocs\mypropertylk\protected\framework\web\CWebApplication.php(135): CWebApplication->runController()
+#8 C:\xampp\htdocs\mypropertylk\protected\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#9 C:\xampp\htdocs\mypropertylk\index.php(15): CWebApplication->run()
+REQUEST_URI=/mypropertylk/advertising/addprices
+in C:\xampp\htdocs\mypropertylk\protected\controllers\Advertising\AddpricesAction.php (26)
+in C:\xampp\htdocs\mypropertylk\protected\controllers\AdvertisingController.php (69)
+in C:\xampp\htdocs\mypropertylk\index.php (15)
+2014/08/11 04:25:01 [error] [php] Object of class Adprice could not be converted to string (C:\xampp\htdocs\mypropertylk\protected\controllers\Advertising\AddpricesAction.php:27)
+Stack trace:
+#0 C:\xampp\htdocs\mypropertylk\protected\framework\web\filters\CFilterChain.php(134): AdvertisingController->runAction()
+#1 C:\xampp\htdocs\mypropertylk\protected\controllers\AdvertisingController.php(69): CFilterChain->run()
+#2 C:\xampp\htdocs\mypropertylk\protected\framework\web\filters\CInlineFilter.php(59): AdvertisingController->filterAccessControl()
+#3 C:\xampp\htdocs\mypropertylk\protected\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter()
+#4 C:\xampp\htdocs\mypropertylk\protected\framework\web\CController.php(292): CFilterChain->run()
+#5 C:\xampp\htdocs\mypropertylk\protected\framework\web\CController.php(266): AdvertisingController->runActionWithFilters()
+#6 C:\xampp\htdocs\mypropertylk\protected\framework\web\CWebApplication.php(276): AdvertisingController->run()
+#7 C:\xampp\htdocs\mypropertylk\protected\framework\web\CWebApplication.php(135): CWebApplication->runController()
+#8 C:\xampp\htdocs\mypropertylk\protected\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#9 C:\xampp\htdocs\mypropertylk\index.php(15): CWebApplication->run()
+REQUEST_URI=/mypropertylk/advertising/addprices
+in C:\xampp\htdocs\mypropertylk\protected\controllers\Advertising\AddpricesAction.php (27)
+in C:\xampp\htdocs\mypropertylk\protected\controllers\AdvertisingController.php (69)
+in C:\xampp\htdocs\mypropertylk\index.php (15)
+2014/08/11 04:27:09 [error] [php] Use of undefined constant size - assumed 'size' (C:\xampp\htdocs\mypropertylk\protected\controllers\Advertising\AddpricesAction.php:26)
+Stack trace:
+#0 C:\xampp\htdocs\mypropertylk\protected\framework\web\filters\CFilterChain.php(134): AdvertisingController->runAction()
+#1 C:\xampp\htdocs\mypropertylk\protected\controllers\AdvertisingController.php(69): CFilterChain->run()
+#2 C:\xampp\htdocs\mypropertylk\protected\framework\web\filters\CInlineFilter.php(59): AdvertisingController->filterAccessControl()
+#3 C:\xampp\htdocs\mypropertylk\protected\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter()
+#4 C:\xampp\htdocs\mypropertylk\protected\framework\web\CController.php(292): CFilterChain->run()
+#5 C:\xampp\htdocs\mypropertylk\protected\framework\web\CController.php(266): AdvertisingController->runActionWithFilters()
+#6 C:\xampp\htdocs\mypropertylk\protected\framework\web\CWebApplication.php(276): AdvertisingController->run()
+#7 C:\xampp\htdocs\mypropertylk\protected\framework\web\CWebApplication.php(135): CWebApplication->runController()
+#8 C:\xampp\htdocs\mypropertylk\protected\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#9 C:\xampp\htdocs\mypropertylk\index.php(15): CWebApplication->run()
+REQUEST_URI=/mypropertylk/advertising/addprices
+in C:\xampp\htdocs\mypropertylk\protected\controllers\Advertising\AddpricesAction.php (26)
+in C:\xampp\htdocs\mypropertylk\protected\controllers\AdvertisingController.php (69)
+in C:\xampp\htdocs\mypropertylk\index.php (15)
+2014/08/11 05:08:45 [error] [system.db.CDbCommand] CDbCommand::execute() failed: SQLSTATE[23000]: Integrity constraint violation: 1452 Cannot add or update a child row: a foreign key constraint fails (`mypropertylk`.`property`, CONSTRAINT `property_ibfk_2` FOREIGN KEY (`agent`) REFERENCES `user` (`id`) ON DELETE CASCADE). The SQL statement executed was: INSERT INTO `property` (`type`, `sendemail`, `hidestreetaddress`, `dispalyprice`, `propcondition`, `pricetype`, `entrydate`, `agent`, `otheragent`, `price`, `vendorname`, `vendoremail`, `vendorphone`, `unitnum`, `number`, `streetaddress`, `areaname`, `townname`, `district`, `province`, `owner`) VALUES (:yp0, :yp1, :yp2, :yp3, :yp4, :yp5, :yp6, :yp7, :yp8, :yp9, :yp10, :yp11, :yp12, :yp13, :yp14, :yp15, :yp16, :yp17, :yp18, :yp19, :yp20).
+in C:\xampp\htdocs\mypropertylk\protected\controllers\Property\AddPropertyAction.php (69)
+in C:\xampp\htdocs\mypropertylk\protected\controllers\PropertyController.php (74)
+in C:\xampp\htdocs\mypropertylk\index.php (15)
+2014/08/11 05:08:45 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand failed to execute the SQL statement: SQLSTATE[23000]: Integrity constraint violation: 1452 Cannot add or update a child row: a foreign key constraint fails (`mypropertylk`.`property`, CONSTRAINT `property_ibfk_2` FOREIGN KEY (`agent`) REFERENCES `user` (`id`) ON DELETE CASCADE). The SQL statement executed was: INSERT INTO `property` (`type`, `sendemail`, `hidestreetaddress`, `dispalyprice`, `propcondition`, `pricetype`, `entrydate`, `agent`, `otheragent`, `price`, `vendorname`, `vendoremail`, `vendorphone`, `unitnum`, `number`, `streetaddress`, `areaname`, `townname`, `district`, `province`, `owner`) VALUES (:yp0, :yp1, :yp2, :yp3, :yp4, :yp5, :yp6, :yp7, :yp8, :yp9, :yp10, :yp11, :yp12, :yp13, :yp14, :yp15, :yp16, :yp17, :yp18, :yp19, :yp20)' in C:\xampp\htdocs\mypropertylk\protected\framework\db\CDbCommand.php:354
+Stack trace:
+#0 C:\xampp\htdocs\mypropertylk\protected\framework\db\ar\CActiveRecord.php(1014): CDbCommand->execute()
+#1 C:\xampp\htdocs\mypropertylk\protected\framework\db\ar\CActiveRecord.php(787): CActiveRecord->insert(NULL)
+#2 C:\xampp\htdocs\mypropertylk\protected\controllers\Property\AddPropertyAction.php(69): CActiveRecord->save(false)
+#3 C:\xampp\htdocs\mypropertylk\protected\framework\web\actions\CAction.php(75): AddPropertyAction->run()
+#4 C:\xampp\htdocs\mypropertylk\protected\framework\web\CController.php(309): CAction->runWithParams(Array)
+#5 C:\xampp\htdocs\mypropertylk\protected\framework\web\filters\CFilterChain.php(134): CController->runAction(Object(AddPropertyAction))
+#6 C:\xampp\htdocs\mypropertylk\protected\controllers\PropertyController.php(74): CFilterChain->run()
+#7 C:\xampp\htdocs\mypropertylk\protected\framework\web\filters\CInlineFilter.php(59): PropertyController->filterAccessControl(Object(CFilterChain))
+#8 C:\xampp\htdocs\mypropertylk\protected\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#9 C:\xampp\htdocs\mypropertylk\protected\framework\web\CController.php(292): CFilterChain->run()
+#10 C:\xampp\htdocs\mypropertylk\protected\framework\web\CController.php(266): CController->runActionWithFilters(Object(AddPropertyAction), Array)
+#11 C:\xampp\htdocs\mypropertylk\protected\framework\web\CWebApplication.php(276): CController->run('addproperty')
+#12 C:\xampp\htdocs\mypropertylk\protected\framework\web\CWebApplication.php(135): CWebApplication->runController('property/addpro...')
+#13 C:\xampp\htdocs\mypropertylk\protected\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#14 C:\xampp\htdocs\mypropertylk\index.php(15): CApplication->run()
+#15 {main}
+REQUEST_URI=/mypropertylk/property/addproperty?type=1
+HTTP_REFERER=http://localhost/mypropertylk/property/addproperty?type=1
+---
+2014/08/11 05:10:17 [error] [system.db.CDbCommand] CDbCommand::execute() failed: SQLSTATE[23000]: Integrity constraint violation: 1452 Cannot add or update a child row: a foreign key constraint fails (`mypropertylk`.`property`, CONSTRAINT `property_ibfk_2` FOREIGN KEY (`agent`) REFERENCES `user` (`id`) ON DELETE CASCADE). The SQL statement executed was: INSERT INTO `property` (`type`, `sendemail`, `hidestreetaddress`, `dispalyprice`, `propcondition`, `pricetype`, `entrydate`, `agent`, `otheragent`, `price`, `vendorname`, `vendoremail`, `vendorphone`, `unitnum`, `number`, `streetaddress`, `areaname`, `townname`, `district`, `province`, `owner`) VALUES (:yp0, :yp1, :yp2, :yp3, :yp4, :yp5, :yp6, :yp7, :yp8, :yp9, :yp10, :yp11, :yp12, :yp13, :yp14, :yp15, :yp16, :yp17, :yp18, :yp19, :yp20).
+in C:\xampp\htdocs\mypropertylk\protected\controllers\Property\AddPropertyAction.php (69)
+in C:\xampp\htdocs\mypropertylk\protected\controllers\PropertyController.php (74)
+in C:\xampp\htdocs\mypropertylk\index.php (15)
+2014/08/11 05:10:17 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand failed to execute the SQL statement: SQLSTATE[23000]: Integrity constraint violation: 1452 Cannot add or update a child row: a foreign key constraint fails (`mypropertylk`.`property`, CONSTRAINT `property_ibfk_2` FOREIGN KEY (`agent`) REFERENCES `user` (`id`) ON DELETE CASCADE). The SQL statement executed was: INSERT INTO `property` (`type`, `sendemail`, `hidestreetaddress`, `dispalyprice`, `propcondition`, `pricetype`, `entrydate`, `agent`, `otheragent`, `price`, `vendorname`, `vendoremail`, `vendorphone`, `unitnum`, `number`, `streetaddress`, `areaname`, `townname`, `district`, `province`, `owner`) VALUES (:yp0, :yp1, :yp2, :yp3, :yp4, :yp5, :yp6, :yp7, :yp8, :yp9, :yp10, :yp11, :yp12, :yp13, :yp14, :yp15, :yp16, :yp17, :yp18, :yp19, :yp20)' in C:\xampp\htdocs\mypropertylk\protected\framework\db\CDbCommand.php:354
+Stack trace:
+#0 C:\xampp\htdocs\mypropertylk\protected\framework\db\ar\CActiveRecord.php(1014): CDbCommand->execute()
+#1 C:\xampp\htdocs\mypropertylk\protected\framework\db\ar\CActiveRecord.php(787): CActiveRecord->insert(NULL)
+#2 C:\xampp\htdocs\mypropertylk\protected\controllers\Property\AddPropertyAction.php(69): CActiveRecord->save(false)
+#3 C:\xampp\htdocs\mypropertylk\protected\framework\web\actions\CAction.php(75): AddPropertyAction->run()
+#4 C:\xampp\htdocs\mypropertylk\protected\framework\web\CController.php(309): CAction->runWithParams(Array)
+#5 C:\xampp\htdocs\mypropertylk\protected\framework\web\filters\CFilterChain.php(134): CController->runAction(Object(AddPropertyAction))
+#6 C:\xampp\htdocs\mypropertylk\protected\controllers\PropertyController.php(74): CFilterChain->run()
+#7 C:\xampp\htdocs\mypropertylk\protected\framework\web\filters\CInlineFilter.php(59): PropertyController->filterAccessControl(Object(CFilterChain))
+#8 C:\xampp\htdocs\mypropertylk\protected\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#9 C:\xampp\htdocs\mypropertylk\protected\framework\web\CController.php(292): CFilterChain->run()
+#10 C:\xampp\htdocs\mypropertylk\protected\framework\web\CController.php(266): CController->runActionWithFilters(Object(AddPropertyAction), Array)
+#11 C:\xampp\htdocs\mypropertylk\protected\framework\web\CWebApplication.php(276): CController->run('addproperty')
+#12 C:\xampp\htdocs\mypropertylk\protected\framework\web\CWebApplication.php(135): CWebApplication->runController('property/addpro...')
+#13 C:\xampp\htdocs\mypropertylk\protected\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#14 C:\xampp\htdocs\mypropertylk\index.php(15): CApplication->run()
+#15 {main}
+REQUEST_URI=/mypropertylk/property/addproperty?type=1
+HTTP_REFERER=http://localhost/mypropertylk/property/addproperty?type=1
+---
+2014/08/11 18:04:22 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "www.google.lk".' in C:\xampp\htdocs\mypropertylk\protected\framework\web\CController.php:484
+Stack trace:
+#0 C:\xampp\htdocs\mypropertylk\protected\framework\web\CController.php(271): CController->missingAction('www.google.lk')
+#1 C:\xampp\htdocs\mypropertylk\protected\framework\web\CWebApplication.php(276): CController->run('www.google.lk')
+#2 C:\xampp\htdocs\mypropertylk\protected\framework\web\CWebApplication.php(135): CWebApplication->runController('property/www.go...')
+#3 C:\xampp\htdocs\mypropertylk\protected\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\mypropertylk\index.php(15): CApplication->run()
+#5 {main}
+REQUEST_URI=/mypropertylk/property/www.google.lk
+HTTP_REFERER=http://localhost/mypropertylk/property/editproperty_step3
+---
+2014/08/12 06:46:07 [error] [exception.CException] exception 'CException' with message 'Property "Propertyimages.primary" is not defined.' in C:\xampp\htdocs\mypropertylk\protected\framework\base\CComponent.php:131
+Stack trace:
+#0 C:\xampp\htdocs\mypropertylk\protected\framework\db\ar\CActiveRecord.php(144): CComponent->__get('primary')
+#1 C:\xampp\htdocs\mypropertylk\protected\views\property\_property_image_list_view.php(13): CActiveRecord->__get('primary')
+#2 C:\xampp\htdocs\mypropertylk\protected\framework\web\CBaseController.php(127): require('C:\\xampp\\htdocs...')
+#3 C:\xampp\htdocs\mypropertylk\protected\framework\web\CBaseController.php(96): CBaseController->renderInternal('C:\\xampp\\htdocs...', Array, true)
+#4 C:\xampp\htdocs\mypropertylk\protected\framework\web\CController.php(870): CBaseController->renderFile('C:\\xampp\\htdocs...', Array, true)
+#5 C:\xampp\htdocs\mypropertylk\protected\framework\zii\widgets\CListView.php(242): CController->renderPartial('_property_image...', Array)
+#6 C:\xampp\htdocs\mypropertylk\protected\framework\zii\widgets\CBaseListView.php(158): CListView->renderItems()
+#7 [internal function]: CBaseListView->renderSection(Array)
+#8 C:\xampp\htdocs\mypropertylk\protected\framework\zii\widgets\CBaseListView.php(141): preg_replace_callback('/{(\\w+)}/', Array, '{summary}\n{sort...')
+#9 C:\xampp\htdocs\mypropertylk\protected\framework\zii\widgets\CBaseListView.php(126): CBaseListView->renderContent()
+#10 C:\xampp\htdocs\mypropertylk\protected\framework\web\CBaseController.php(174): CBaseListView->run()
+#11 C:\xampp\htdocs\mypropertylk\protected\views\property\editproperty_step3.php(194): CBaseController->widget('zii.widgets.CLi...', Array)
+#12 C:\xampp\htdocs\mypropertylk\protected\framework\web\CBaseController.php(127): require('C:\\xampp\\htdocs...')
+#13 C:\xampp\htdocs\mypropertylk\protected\framework\web\CBaseController.php(96): CBaseController->renderInternal('C:\\xampp\\htdocs...', Array, true)
+#14 C:\xampp\htdocs\mypropertylk\protected\framework\web\CController.php(870): CBaseController->renderFile('C:\\xampp\\htdocs...', Array, true)
+#15 C:\xampp\htdocs\mypropertylk\protected\framework\web\CController.php(783): CController->renderPartial('editproperty_st...', Array, true)
+#16 C:\xampp\htdocs\mypropertylk\protected\controllers\Property\EditPropertyAction_Step3.php(92): CController->render('editproperty_st...', Array)
+#17 C:\xampp\htdocs\mypropertylk\protected\framework\web\actions\CAction.php(75): EditPropertyAction_Step3->run()
+#18 C:\xampp\htdocs\mypropertylk\protected\framework\web\CController.php(309): CAction->runWithParams(Array)
+#19 C:\xampp\htdocs\mypropertylk\protected\framework\web\filters\CFilterChain.php(134): CController->runAction(Object(EditPropertyAction_Step3))
+#20 C:\xampp\htdocs\mypropertylk\protected\controllers\PropertyController.php(74): CFilterChain->run()
+#21 C:\xampp\htdocs\mypropertylk\protected\framework\web\filters\CInlineFilter.php(59): PropertyController->filterAccessControl(Object(CFilterChain))
+#22 C:\xampp\htdocs\mypropertylk\protected\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#23 C:\xampp\htdocs\mypropertylk\protected\framework\web\CController.php(292): CFilterChain->run()
+#24 C:\xampp\htdocs\mypropertylk\protected\framework\web\CController.php(266): CController->runActionWithFilters(Object(EditPropertyAction_Step3), Array)
+#25 C:\xampp\htdocs\mypropertylk\protected\framework\web\CWebApplication.php(276): CController->run('editproperty_st...')
+#26 C:\xampp\htdocs\mypropertylk\protected\framework\web\CWebApplication.php(135): CWebApplication->runController('property/editpr...')
+#27 C:\xampp\htdocs\mypropertylk\protected\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#28 C:\xampp\htdocs\mypropertylk\index.php(15): CApplication->run()
+#29 {main}
+REQUEST_URI=/mypropertylk/property/editproperty_step3
+HTTP_REFERER=http://localhost/mypropertylk/property/editproperty_step2
+---
+2014/08/12 07:02:58 [error] [system.db.CDbCommand] CDbCommand::execute() failed: SQLSTATE[23000]: Integrity constraint violation: 1452 Cannot add or update a child row: a foreign key constraint fails (`mypropertylk`.`adprice`, CONSTRAINT `adprice_ibfk_2` FOREIGN KEY (`page`) REFERENCES `adpages` (`id`) ON DELETE CASCADE). The SQL statement executed was: INSERT INTO `adprice` (`page`, `size`, `price`) VALUES (:yp0, :yp1, :yp2).
+in C:\xampp\htdocs\mypropertylk\protected\controllers\Advertising\AddpricesAction.php (43)
+in C:\xampp\htdocs\mypropertylk\protected\controllers\AdvertisingController.php (69)
+in C:\xampp\htdocs\mypropertylk\index.php (15)
+2014/08/12 07:02:58 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand failed to execute the SQL statement: SQLSTATE[23000]: Integrity constraint violation: 1452 Cannot add or update a child row: a foreign key constraint fails (`mypropertylk`.`adprice`, CONSTRAINT `adprice_ibfk_2` FOREIGN KEY (`page`) REFERENCES `adpages` (`id`) ON DELETE CASCADE). The SQL statement executed was: INSERT INTO `adprice` (`page`, `size`, `price`) VALUES (:yp0, :yp1, :yp2)' in C:\xampp\htdocs\mypropertylk\protected\framework\db\CDbCommand.php:354
+Stack trace:
+#0 C:\xampp\htdocs\mypropertylk\protected\framework\db\ar\CActiveRecord.php(1014): CDbCommand->execute()
+#1 C:\xampp\htdocs\mypropertylk\protected\framework\db\ar\CActiveRecord.php(787): CActiveRecord->insert(NULL)
+#2 C:\xampp\htdocs\mypropertylk\protected\controllers\Advertising\AddpricesAction.php(43): CActiveRecord->save(false)
+#3 C:\xampp\htdocs\mypropertylk\protected\framework\web\actions\CAction.php(75): AddpricesAction->run()
+#4 C:\xampp\htdocs\mypropertylk\protected\framework\web\CController.php(309): CAction->runWithParams(Array)
+#5 C:\xampp\htdocs\mypropertylk\protected\framework\web\filters\CFilterChain.php(134): CController->runAction(Object(AddpricesAction))
+#6 C:\xampp\htdocs\mypropertylk\protected\controllers\AdvertisingController.php(69): CFilterChain->run()
+#7 C:\xampp\htdocs\mypropertylk\protected\framework\web\filters\CInlineFilter.php(59): AdvertisingController->filterAccessControl(Object(CFilterChain))
+#8 C:\xampp\htdocs\mypropertylk\protected\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#9 C:\xampp\htdocs\mypropertylk\protected\framework\web\CController.php(292): CFilterChain->run()
+#10 C:\xampp\htdocs\mypropertylk\protected\framework\web\CController.php(266): CController->runActionWithFilters(Object(AddpricesAction), Array)
+#11 C:\xampp\htdocs\mypropertylk\protected\framework\web\CWebApplication.php(276): CController->run('addprices')
+#12 C:\xampp\htdocs\mypropertylk\protected\framework\web\CWebApplication.php(135): CWebApplication->runController('advertising/add...')
+#13 C:\xampp\htdocs\mypropertylk\protected\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#14 C:\xampp\htdocs\mypropertylk\index.php(15): CApplication->run()
+#15 {main}
+REQUEST_URI=/mypropertylk/advertising/addprices
+HTTP_REFERER=http://localhost/mypropertylk/advertising/addprices
+---
+2014/08/12 07:03:42 [error] [system.db.CDbCommand] CDbCommand::execute() failed: SQLSTATE[23000]: Integrity constraint violation: 1452 Cannot add or update a child row: a foreign key constraint fails (`mypropertylk`.`adprice`, CONSTRAINT `adprice_ibfk_2` FOREIGN KEY (`page`) REFERENCES `adpages` (`id`) ON DELETE CASCADE). The SQL statement executed was: INSERT INTO `adprice` (`page`, `size`, `price`) VALUES (:yp0, :yp1, :yp2).
+in C:\xampp\htdocs\mypropertylk\protected\controllers\Advertising\AddpricesAction.php (43)
+in C:\xampp\htdocs\mypropertylk\protected\controllers\AdvertisingController.php (69)
+in C:\xampp\htdocs\mypropertylk\index.php (15)
+2014/08/12 07:03:42 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand failed to execute the SQL statement: SQLSTATE[23000]: Integrity constraint violation: 1452 Cannot add or update a child row: a foreign key constraint fails (`mypropertylk`.`adprice`, CONSTRAINT `adprice_ibfk_2` FOREIGN KEY (`page`) REFERENCES `adpages` (`id`) ON DELETE CASCADE). The SQL statement executed was: INSERT INTO `adprice` (`page`, `size`, `price`) VALUES (:yp0, :yp1, :yp2)' in C:\xampp\htdocs\mypropertylk\protected\framework\db\CDbCommand.php:354
+Stack trace:
+#0 C:\xampp\htdocs\mypropertylk\protected\framework\db\ar\CActiveRecord.php(1014): CDbCommand->execute()
+#1 C:\xampp\htdocs\mypropertylk\protected\framework\db\ar\CActiveRecord.php(787): CActiveRecord->insert(NULL)
+#2 C:\xampp\htdocs\mypropertylk\protected\controllers\Advertising\AddpricesAction.php(43): CActiveRecord->save(false)
+#3 C:\xampp\htdocs\mypropertylk\protected\framework\web\actions\CAction.php(75): AddpricesAction->run()
+#4 C:\xampp\htdocs\mypropertylk\protected\framework\web\CController.php(309): CAction->runWithParams(Array)
+#5 C:\xampp\htdocs\mypropertylk\protected\framework\web\filters\CFilterChain.php(134): CController->runAction(Object(AddpricesAction))
+#6 C:\xampp\htdocs\mypropertylk\protected\controllers\AdvertisingController.php(69): CFilterChain->run()
+#7 C:\xampp\htdocs\mypropertylk\protected\framework\web\filters\CInlineFilter.php(59): AdvertisingController->filterAccessControl(Object(CFilterChain))
+#8 C:\xampp\htdocs\mypropertylk\protected\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#9 C:\xampp\htdocs\mypropertylk\protected\framework\web\CController.php(292): CFilterChain->run()
+#10 C:\xampp\htdocs\mypropertylk\protected\framework\web\CController.php(266): CController->runActionWithFilters(Object(AddpricesAction), Array)
+#11 C:\xampp\htdocs\mypropertylk\protected\framework\web\CWebApplication.php(276): CController->run('addprices')
+#12 C:\xampp\htdocs\mypropertylk\protected\framework\web\CWebApplication.php(135): CWebApplication->runController('advertising/add...')
+#13 C:\xampp\htdocs\mypropertylk\protected\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#14 C:\xampp\htdocs\mypropertylk\index.php(15): CApplication->run()
+#15 {main}
+REQUEST_URI=/mypropertylk/advertising/addprices
+HTTP_REFERER=http://localhost/mypropertylk/advertising/addprices
+---
+2014/08/13 07:35:54 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "home".' in C:\xampp\htdocs\mypropertylk\protected\framework\web\CWebApplication.php:280
+Stack trace:
+#0 C:\xampp\htdocs\mypropertylk\protected\framework\web\CWebApplication.php(135): CWebApplication->runController('home')
+#1 C:\xampp\htdocs\mypropertylk\protected\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\mypropertylk\index.php(15): CApplication->run()
+#3 {main}
+REQUEST_URI=/mypropertylk/home
+HTTP_REFERER=http://localhost/mypropertylk/register
+---

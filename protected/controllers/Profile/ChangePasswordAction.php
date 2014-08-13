@@ -37,9 +37,23 @@ class ChangePasswordAction extends CAction
             /*
              * save data to the db
              */
-            if($user->save()){
+            if($user->save(false)){
                 Yii::app()->user->setFlash('success', "Password updated.");
-                $this->getController()->redirect(Yii::app()->baseUrl . '/member/home');
+
+                switch (Yii::app()->user->usertype){
+                    case 0:
+                        $this->getController()->redirect(Yii::app()->baseUrl . '/admin/home');
+                        break;
+                    case 1:
+                        $this->getController()->redirect(Yii::app()->baseUrl . '/member/home');
+                        break;
+                    case 2:
+                        $this->getController()->redirect(Yii::app()->baseUrl . '/agent/home');
+                        break;
+                    case 3:
+                        $this->getController()->redirect(Yii::app()->baseUrl . '/advertiser/home');
+                        break;
+                }
             }
             else{
                 print_r($model->getErrors());

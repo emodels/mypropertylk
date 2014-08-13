@@ -4,10 +4,18 @@
         var pid = '';
 
         if ($('#propertyid').val() != '') {
-            pid = $('#propertyid').val();
+
+            if (!isNaN($('#propertyid').val())) {
+
+                pid = $('#propertyid').val();
+                window.document.location.replace('<?php echo Yii::app()->request->baseUrl; ?>/property/propertylisting?type=0&pid=' + pid);
+
+            } else {
+                alert("Property ID must be a Numeric Value..!");
+            }
+
         }
 
-        window.document.location.replace('<?php echo Yii::app()->request->baseUrl; ?>/property/propertylisting?type=0&pid=' + pid);
     }
 </script>
 <div class="col_right">

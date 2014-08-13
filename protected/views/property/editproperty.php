@@ -40,6 +40,13 @@ $this->breadcrumbs=array(
         return true;
     }
 </script>
+<style type="text/css">
+    div.form label {
+        font-weight: normal;
+        font-size: 0.9em;
+        display: block;
+    }
+</style>
 <div class="col_right" style="padding-top: 0;">
     <div>
         <h3 style="margin-top: 0;">Edit Property</h3>
@@ -103,6 +110,7 @@ $this->breadcrumbs=array(
             <div class="span8">
                 <div class="form_bg">
                     <div class="control-group-admin">
+                        <label>Property Type</label>
                         <?php $this->widget('ext.bootstrap-select.TbSelect',array(
                             'model' => $modeltype,
                             'attribute' => 'typeid',
@@ -123,25 +131,30 @@ $this->breadcrumbs=array(
                         </div>
                     </div>
                     <div class="control-group-admin">
+                        <label>Agents</label>
                         <?php echo $form->dropDownList($model, 'agent', $agentListData, array('empty'=>'Agents')); ?><span class="star">*</span>
                         <a href="#" data-toggle="tooltip" title="The agent name list is maintained in 'Your Profile - Agents' section." data-placement="right" class="tooltip-custom"></a>
                         <?php echo $form->error($model, 'agent', array('style'=>'width:auto')); ?>
                     </div>
                     <div class="control-group-admin">
+                        <label>Other Agents</label>
                         <?php echo $form->dropDownList($model, 'otheragent', $otherAgentListData, array('empty'=>'Other Agents')); ?>
                         <a href="#" data-toggle="tooltip" title="The agent name list is maintained in 'Your Profile - Agents' section." data-placement="right" class="tooltip-custom"></a>
                     </div>
                     <!---------( For Rental )------------------>
                     <?php if ($model->type == 3 || $model->type == 5){  ?>
                         <div class="control-group-admin">
+                            <label>Rental Per Week</label>
                             <?php echo $form->textField($model,'weeklyrent', array('placeholder'=>'Rental Per Week')); ?><span class="star">*</span>
                             <?php echo $form->error($model,'weeklyrent'); ?>
                         </div>
                         <div class="control-group-admin">
+                            <label>Rental Per Calendar Month</label>
                             <?php echo $form->textField($model,'monthlyrent', array('placeholder'=>'Rental Per Calendar Month')); ?><span class="star">*</span>
                             <?php echo $form->error($model,'monthlyrent'); ?>
                         </div>
                         <div class="control-group-admin">
+                            <label>Security Bond</label>
                             <?php echo $form->textField($model,'securebond', array('placeholder'=>'Security Bond')); ?><span class="star">*</span>
                             <?php echo $form->error($model,'securebond'); ?>
                         </div>
@@ -149,6 +162,7 @@ $this->breadcrumbs=array(
                     <!--------( End Rental)----------------->
                     <?php if ($model->type == 1 || $model->type == 2 || $model->type == 4){  ?>
                     <div class="control-group-admin">
+                        <label>Price</label>
                         <?php echo $form->textField($model,'price', array('placeholder'=>'Price')); ?><span class="star">*</span>
                         <a href="#" data-toggle="tooltip" title="Price is used to determine the listing's relevance in search results. Price will display on the property unless the option to hide price is used." data-placement="right" class="tooltip-custom"></a>
                         <?php echo $form->error($model,'price'); ?>
@@ -164,8 +178,8 @@ $this->breadcrumbs=array(
                                 <?php echo $form->error($model, 'dispalyprice'); ?>
                             </div>
                         </div>
-                        <?php } ?>
                     </div>
+                    <?php } ?>
                     <!---------( For Rental )------------------>
                     <?php if ($model->type == 3){  ?>
                         <div class="control-group-admin">
@@ -214,15 +228,18 @@ $this->breadcrumbs=array(
                 <div class="span8">
                     <div class="form_bg">
                         <div class="control-group-admin">
+                            <label>Name</label>
                             <?php echo $form->textField($model,'vendorname', array('placeholder'=>'Name')); ?><span class="star">*</span>
                             <?php echo $form->error($model,'vendorname'); ?>
                         </div>
                         <div class="control-group-admin">
+                            <label>Eamil Address</label>
                             <?php echo $form->textField($model,'vendoremail', array('placeholder'=>'Eamil Address')); ?><span class="star">*</span>
                             <a href="#" data-toggle="tooltip" title="You may enter multiple email addresses separated by a comma (e.g. mary@email.com, john@email.com)." data-placement="right" class="tooltip-custom"></a>
                             <?php echo $form->error($model,'vendoremail'); ?>
                         </div>
                         <div class="control-group-admin">
+                            <label>Phone Number</label>
                             <?php echo $form->textField($model,'vendorphone', array('placeholder'=>'Phone Number')); ?><span class="star">*</span>
                             <?php echo $form->error($model,'vendorphone'); ?>
                         </div>
@@ -247,6 +264,7 @@ $this->breadcrumbs=array(
                         <!---------( For Home Sales, Land Sales )------------------>
                         <?php if ($model->type == 1 || $model->type == 3){  ?>
                             <div class="control-group-admin">
+                                <label>Unit Number</label>
                                 <?php echo $form->textField($model,'unitnum', array('placeholder'=>'Unit Number')); ?><span class="star">*</span>
                                 <?php echo $form->error($model,'unitnum'); ?>
                             </div>
@@ -255,22 +273,31 @@ $this->breadcrumbs=array(
                         <!---------( For Home Sales, Land Sales )------------------>
                         <?php if ($model->type == 2){  ?>
                             <div class="control-group-admin">
+                                <label>Lot Number</label>
                                 <?php echo $form->textField($model,'lotnum', array('placeholder'=>'Lot Number')); ?><span class="star">*</span>
                                 <?php echo $form->error($model,'lotnum'); ?>
                             </div>
                         <?php } ?>
                         <!---------( End Home Sales, Land Sales )------------------>
-                        <div class="control-group-admin">
-                            <?php echo $form->textField($model,'number', array('placeholder'=>'Number', 'class'=>'span2')); ?>
-                            <?php echo $form->error($model,'number'); ?>
-                            <?php echo $form->textField($model,'streetaddress', array('placeholder'=>'Street Address')); ?><span class="star">*</span>
-                            <?php echo $form->error($model,'streetaddress'); ?>
+                        <div class="span12 control-group-admin" style="margin-left: 0">
+                            <div class="span2">
+                                <label>Number</label>
+                                <?php echo $form->textField($model,'number', array('placeholder'=>'Number', 'class'=>'span11')); ?>
+                                <?php echo $form->error($model,'number'); ?>
+                            </div>
+                            <div class="span10">
+                                <label>Street Address</label>
+                                <?php echo $form->textField($model,'streetaddress', array('placeholder'=>'Street Address')); ?><span class="star">*</span>
+                                <?php echo $form->error($model,'streetaddress'); ?>
+                            </div>
                         </div>
                         <div class="control-group-admin">
+                            <label>Area Name</label>
                             <?php echo $form->textField($model,'areaname', array('placeholder'=>'Area Name')); ?><span class="star">*</span>
                             <?php echo $form->error($model,'areaname'); ?>
                         </div>
                         <div class="control-group-admin">
+                            <label>Town Name</label>
                             <?php echo $form->textField($model,'townname', array('placeholder'=>'Town Name')); ?><span class="star">*</span>
                             <?php echo $form->error($model,'townname'); ?>
                         </div>
@@ -282,10 +309,12 @@ $this->breadcrumbs=array(
                             </label>
                         </div>
                         <div class="control-group-admin">
+                            <label>District</label>
                             <?php echo $form->dropDownList($model, 'district', CHtml::listData(District::model()->findAll(), 'id', 'name'), array('empty'=>'District')); ?><span class="star">*</span>
                             <?php echo $form->error($model,'district'); ?>
                         </div>
                         <div class="control-group-admin">
+                            <label>Province</label>
                             <?php echo $form->dropDownList($model, 'province', CHtml::listData(Province::model()->findAll(), 'id', 'name'), array('empty'=>'Province')); ?><span class="star">*</span>
                             <?php echo $form->error($model,'province'); ?>
                         </div>

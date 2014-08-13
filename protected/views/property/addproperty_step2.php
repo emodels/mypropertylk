@@ -1,3 +1,9 @@
+<?php
+$this->pageTitle=Yii::app()->name . ' - AddProperty-step2';
+$this->breadcrumbs=array(
+    'AddProperty-step2',
+);
+?>
 <script type="text/javascript">
     $(document).ready(function () {
         $('[data-toggle="tooltip"]').tooltip();

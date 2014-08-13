@@ -1,3 +1,36 @@
+<script type="text/javascript">
+
+    //---------------Form Send Function----//
+
+    function formSend(form, data, hasError){
+
+        if ($('#User_userimage').val() != ''){
+
+            var path = $('#User_userimage').val();
+            var arrSplit = path.split('.');
+            var extension = arrSplit[1].toLowerCase();
+
+            if ($.inArray(extension, ['jpg','jpeg','png','gif']) == -1) {
+
+                alert('Invalid Image File Type');
+                hasError = true;
+            }
+        }
+
+        if (hasError) {
+
+            if ($('.error:first').length > 0){
+
+                $(window).scrollTop($('.error:first').offset().top);
+            }
+
+            return false;
+        }
+
+        return true;
+    }
+
+</script>
 <style type="text/css">
 
     .list-view .summary {
@@ -34,7 +67,8 @@ $this->breadcrumbs=array(
                                         'enableClientValidation'=>true,
                                         'clientOptions'=>array(
                                             'validateOnSubmit'=>true,
-                                            'validateOnChange'=>true
+                                            'validateOnChange'=>true,
+                                            'afterValidate' => 'js:formSend',
                                         ),
                                         'htmlOptions'=>array('class'=>'form-horizontal', 'enctype' => 'multipart/form-data')
                                     )); ?>
@@ -104,7 +138,7 @@ $this->breadcrumbs=array(
                                     <div class="control-group">
                                         <div>
                                             <?php echo CHtml::submitButton('Register', array('class' => 'btn btn-primary')); ?>&nbsp;
-                                            <?php echo CHtml::submitButton('Cancel', array('class' => 'btn btn-info', 'onClick'=>'history.go(-1);return true;')); ?>
+                                            <a href="<?php echo Yii::app()->baseUrl; ?>" class="btn btn-info">Cancel</a>
                                         </div>
                                     </div>
                                     <?php $this->endWidget(); ?>

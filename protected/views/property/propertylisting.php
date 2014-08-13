@@ -31,7 +31,7 @@
                 url: 'propertylisting/mode/DELETE/pid/' + id,
                 success: function(data){
                     if (data == 'done'){
-                        $.fn.yiiListView.update('list_property');
+                        Filter_Property();
                     } else {
                         alert(data);
                     }
@@ -61,7 +61,15 @@
         }
 
         if ($('#propertyid').val() != '') {
-            pid = $('#propertyid').val();
+
+            if (!isNaN($('#propertyid').val())) {
+
+                pid = $('#propertyid').val();
+
+            } else{
+
+                alert("Property ID must be a Numeric Value..!");
+            }
         }
 
         $.fn.yiiListView.update('list_property',{data: {'sort': sort, 'agent': agent, 'status': status, 'pid': pid},
@@ -76,7 +84,7 @@
             url: 'propertylisting/mode/STATUS/pid/' + id,
             success: function(data){
                 if (data == 'done'){
-                    $.fn.yiiListView.update('list_property');
+                    Filter_Property();
                 }
                 else {
                     alert(data);
@@ -91,7 +99,7 @@
             url: 'propertylisting/mode/SOLD/pid/' + id,
             success: function(data){
                 if (data == 'done'){
-                    $.fn.yiiListView.update('list_property');
+                    Filter_Property();
                 } else {
                     alert(data);
                 }
@@ -114,7 +122,7 @@ $model = (object) $model;
 //Yii::app()->request->cookies['type'] = new CHttpCookie('type', $_GET['type']);
 
 ?>
-<div class="col_right" style="padding-top: 0;">
+<div class="col_right" style="padding-top: 0; min-height: 320px;">
     <div class="form">
         <div class="span12" style="border-bottom: solid 1px silver">
 

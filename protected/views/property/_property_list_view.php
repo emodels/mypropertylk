@@ -35,29 +35,34 @@
         <a href="javascript:ViewProperty(<?php echo $data->pid ?>);" title="view" style="text-decoration: none">
             <div class="listing-Address">
                     <?php
-                    $address = "";
+                    if ($data->hidestreetaddress != 1) {
+                        $address = "";
 
-                    if ($data->number != "") {
+                        if (strlen($data->number) > 3) {
 
-                        $address .= $data->number . ", ";
+                            $address .= $data->number . ", ";
+                        }
+
+                        if (strlen($data->streetaddress) > 3) {
+
+                            $address .= ucwords($data->streetaddress) . ", ";
+                        }
+
+                        if (strlen($data->areaname) > 3){
+
+                            $address .= ucwords($data->areaname) . ", ";
+                        }
+
+                        if (strlen($data->townname) > 3) {
+
+                            $address .= ucwords($data->townname);
+                        }
+
+                        echo $address;
+                    } else{
+
+                        echo "Contact Agent for Address...";
                     }
-
-                    if ($data->streetaddress != "") {
-
-                        $address .= ucwords($data->streetaddress) . ", ";
-                    }
-
-                    if ($data->areaname != ""){
-
-                        $address .= ucwords($data->areaname) . ", ";
-                    }
-
-                    if ($data->townname != "") {
-
-                        $address .= ucwords($data->townname);
-                    }
-
-                    echo $address;
                     ?>
             </div>
         </a>
@@ -93,11 +98,26 @@
             }
             ?></b>
         </div>
-        <div class="listing-small"><b>Rs.</b>
-            <?php if($data->type == 1 || $data->type == 2 || $data->type == 4){
-                echo Yii::app()->numberFormatter->format("#,##0", $data->price);
-            } elseif ($data->type == 3 || $data->type == 5) {
-                echo Yii::app()->numberFormatter->format("#,##0", $data->monthlyrent) . " (monthly rental)";
+        <div class="listing-small">
+            <?php
+            if ($data->dispalyprice == 1) {
+
+                if ($data->price != 0 || $data->monthlyrent != 0) {
+                    if($data->type == 1 || $data->type == 2){
+                        echo "Rs. " . Yii::app()->numberFormatter->format("#,##0", $data->price);
+                    } elseif ($data->type == 3) {
+                        echo "Rs. " . Yii::app()->numberFormatter->format("#,##0", $data->monthlyrent) . " (monthly rental)";
+                    }
+                } else{
+                    echo "Contact Agent";
+                }
+            } elseif ($data->dispalyprice == 2) {
+
+                echo "N/A";
+
+            } elseif ($data->dispalyprice == 3 || $data->dispalyprice == 0) {
+
+                echo "Contact Agent";
             }
             ?>
         </div>

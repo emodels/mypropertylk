@@ -65,6 +65,13 @@
         return true;
     }
 </script>
+<style type="text/css">
+    div.form label {
+        font-weight: normal;
+        font-size: 0.9em;
+        display: block;
+    }
+</style>
 <div class="col_right" style="padding-top: 0;">
     <div>
         <h3 style="margin-top: 0;">Edit Property</h3>
@@ -128,10 +135,12 @@
             <div class="span8">
                 <div class="form_bg">
                     <div class="control-group-admin">
+                        <label>Head Line</label>
                         <?php echo $form->textArea($model,'headline', array('placeholder'=>'Head Line', 'style' => 'margin-top: 15px', 'rows' => 4, 'class' => 'span8')); ?><span class="star">*</span>
                         <?php echo $form->error($model, 'headline', array('style'=>'width: auto')); ?>
                     </div>
                     <div class="control-group-admin">
+                        <label>Description</label>
                         <?php echo $form->textArea($model,'desc', array('placeholder'=>'Description', 'style' => 'margin-top: 15px', 'rows' => 6, 'class' => 'span8')); ?><span class="star">*</span>
                         <?php echo $form->error($model, 'desc', array('style'=>'width: auto')); ?>
                     </div>

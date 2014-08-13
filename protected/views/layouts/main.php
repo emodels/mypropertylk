@@ -178,7 +178,7 @@
                                     <i class="icon-print"></i> +61425 732 711
                                 </a>
                             </li><li>
-                                <a href="#">
+                                <a href="mailto:info@dwellingsgroup.com.au">
                                     <i class="icon-envelope"></i> info@myproperty.lk
                                 </a>
                             </li>

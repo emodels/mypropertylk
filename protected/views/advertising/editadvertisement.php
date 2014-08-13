@@ -105,6 +105,36 @@
 
     }
 
+    //---------------Form Send Function----//
+
+    function formSend(form, data, hasError){
+
+        if ($('#Advertising_adimage').val() != ''){
+
+            var path = $('#Advertising_adimage').val();
+            var arrSplit = path.split('.');
+            var extension = arrSplit[1].toLowerCase();
+
+            if ($.inArray(extension, ['jpg','jpeg','png','gif']) == -1) {
+
+                alert('Invalid Image File Type');
+                hasError = true;
+            }
+        }
+
+        if (hasError) {
+
+            if ($('.error:first').length > 0){
+
+                $(window).scrollTop($('.error:first').offset().top);
+            }
+
+            return false;
+        }
+
+        return true;
+    }
+
 </script>
 <div class="col_right" style="padding-top: 0;">
     <div class="span12" style="border-bottom: solid 1px silver">
@@ -128,7 +158,7 @@
                 'clientOptions' => array(
                     'validateOnSubmit' => true,
                     'validateOnChange' => true,
-                    //'afterValidate' => 'js:formSend',
+                    'afterValidate' => 'js:formSend',
                 ),
                 'htmlOptions'=>array('class'=>'form-horizontal', 'enctype' => 'multipart/form-data'),
             )); ?>

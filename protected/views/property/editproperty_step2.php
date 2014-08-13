@@ -1,3 +1,33 @@
+<?php
+$this->pageTitle=Yii::app()->name . ' - EditProperty-step2';
+$this->breadcrumbs=array(
+    'EditProperty-step2',
+);
+?>
+<script type="text/javascript">
+
+    function formSend(form, data, hasError){
+
+        if (hasError) {
+
+            if ($('.error :first').length > 0){
+                $(window).scrollTop($('.error :first').offset().top);
+            }
+
+            return false;
+        }
+
+        return true;
+    }
+
+</script>
+<style type="text/css">
+    div.form label {
+        font-weight: normal;
+        font-size: 0.9em;
+        display: block;
+    }
+</style>
 <div class="col_right" style="padding-top: 0;">
     <div>
         <h3 style="margin-top: 0;">Edit Property</h3>
@@ -49,8 +79,7 @@
         'enableAjaxValidation' => false,
         'clientOptions' => array(
             'validateOnSubmit' => true,
-            'validateOnChange' => true,
-            'afterValidate' => 'js:formSend',
+            'validateOnChange' => true
         ),
         'htmlOptions'=>array('class'=>'form-horizontal'),
     )); ?>
@@ -63,6 +92,7 @@
                 <!---------( For Home Sales & Home Rentals )------------------>
                 <?php if ($model->type == 1 || $model->type == 3){  ?>
                     <div class="control-group-admin">
+                        <label>Bed Rooms</label>
                         <?php
                         $array_bedrooms= array(1 => '1',
                             2 => '2',
@@ -79,6 +109,7 @@
                         <?php echo $form->error($model, 'bedrooms', array('style'=>'width: auto')); ?>
                     </div>
                     <div class="control-group-admin">
+                        <label>Bath Rooms</label>
                         <?php
                         $array_bathrooms= array(1 => '1',
                             2 => '2',
@@ -95,25 +126,32 @@
                         <?php echo $form->error($model, 'bathrooms', array('style'=>'width: auto')); ?>
                     </div>
                     <div class="control-group-admin">
+                        <label>Ensuites</label>
                         <?php echo $form->textField($model,'ensuites', array('placeholder'=>'Ensuites')); ?>
                     </div>
                     <div class="control-group-admin">
+                        <label>Toilets</label>
                         <?php echo $form->textField($model,'toilets', array('placeholder'=>'Toilets')); ?>
                     </div>
                     <div class="control-group-admin">
+                        <label>Parking - Garage Spaces</label>
                         <?php echo $form->textField($model,'parkgaragespaces', array('placeholder'=>'Parking - Garage Spaces')); ?>
                     </div>
                     <div class="control-group-admin">
+                        <label>Parking - Carpet Spaces</label>
                         <?php echo $form->textField($model,'parkcarpetspaces', array('placeholder'=>'Parking - Carpet Spaces')); ?>
                     </div>
                     <div class="control-group-admin">
+                        <label>Parking - Open Spaces</label>
                         <?php echo $form->textField($model,'parkopenspaces', array('placeholder'=>'Parking - Open Spaces')); ?>
                         <a href="#" data-toggle="tooltip" title="The number of car spaces available on the property that are neither a garage nor carport (e.g. A paved uncovered tandem parking space would be considered 2 open spaces)" data-placement="right" class="tooltip-custom"></a>
                     </div>
                     <div class="control-group-admin">
+                        <label>Living Areas</label>
                         <?php echo $form->textField($model,'livingarea', array('placeholder'=>'Living Areas')); ?>
                     </div>
                     <div class="control-group-admin">
+                        <label>House Size</label>
                         <?php echo $form->textField($model,'housesize', array('placeholder'=>'House Size')); ?>
                         <?php echo $form->error($model,'housesize'); ?>
                         <?php
@@ -140,6 +178,7 @@
                 <!---------( For Commercial Sales & Commercial Leased )------------------>
                 <?php if ($model->type == 4 || $model->type == 5){  ?>
                     <div class="control-group-admin">
+                        <label>Floor Area</label>
                         <?php echo $form->textField($model,'floorarea', array('placeholder'=>'Floor Area')); ?><span class="star">*</span>
                         <?php echo $form->error($model,'floorarea'); ?>
                         <?php
@@ -149,12 +188,15 @@
                         <?php echo $form->error($model, 'floorsquares', array('style'=>'width: auto')); ?>
                     </div>
                     <div class="control-group-admin">
+                        <label>Tenure Type</label>
                         <?php echo $form->textField($model,'tenuretype', array('placeholder'=>'Tenure Type')); ?>
                     </div>
                     <div class="control-group-admin">
+                        <label>Building</label>
                         <?php echo $form->textField($model,'building', array('placeholder'=>'Building')); ?>
                     </div>
                     <div class="control-group-admin">
+                        <label>Parking Spaces</label>
                         <?php
                         $array_parkingspaces= array(1 => '1',
                             2 => '2',
@@ -174,9 +216,11 @@
                         <?php echo $form->dropDownList($model, 'parkingspaces', $array_parkingspaces, array('empty'=>'Parking Spaces')); ?>
                     </div>
                     <div class="control-group-admin">
+                        <label>Parking Comments</label>
                         <?php echo $form->textField($model,'parkcomment', array('placeholder'=>'Parking Comments')); ?>
                     </div>
                     <div class="control-group-admin">
+                        <label>Zoning</label>
                         <?php echo $form->textField($model,'zoning', array('placeholder'=>'Zoning')); ?>
                     </div>
                 <?php } ?>
@@ -184,6 +228,7 @@
                 <!---------( For Commercial Leased )------------------>
                 <?php if ($model->type == 5){  ?>
                     <div class="control-group-admin">
+                        <label>Outgoings</label>
                         <?php echo $form->textField($model,'outgoings', array('placeholder'=>'Outgoings')); ?>
                     </div>
                 <?php } ?>
@@ -191,6 +236,7 @@
                 <!---------( For Home Sales & Home Rentals )------------------>
                 <?php if ($model->type == 1 || $model->type == 3){  ?>
                     <div class="control-group-admin">
+                        <label>Energy Efficiency Rating</label>
                         <?php
                         $array_parkingspaces= array(1 => '0',
                             2 => '0.5',
@@ -359,7 +405,8 @@
                         </div>
                     </div>
                     <div class="control-group-admin">
-                        <?php echo $form->textArea($model,'otherfeatures', array('placeholder'=>'Other Features...', 'style' => 'margin-top: 15px', 'rows'=>3, 'class' => 'span8')); ?>
+                        <label>Other Features...</label>
+                        <?php echo $form->textArea($model,'otherfeatures', array('placeholder'=>'Other Features...', 'style' => 'margin-top: 5px', 'rows'=>3, 'class' => 'span8')); ?>
                     </div>
                 </div>
             </div>

@@ -23,25 +23,32 @@ class AddpricesAction extends CAction
             $rnd = rand(0,9999);  // generate random number between 0-9999
             $model->attributes = $_POST['Adprice'];
 
-            //--------------Save advertisement sample image------//
-            $model->adsample = CUploadedFile::getInstance($model, 'adsample');
+            if (Adprice::model()->findByAttributes(array('page'=>$model->page, 'size'=>$model->size))) {
 
-            if (isset($model->adsample) && !is_null($model->adsample)) {
-                $model->adsample = "{$rnd}-{$model->adsample->name}";  // random number + file name
-                $model->adsample = str_replace('.jpg','.jpeg', $model->adsample);
+                Yii::app()->user->setFlash('error', "Selected Page and Size already exist...!");
 
-                CUploadedFile::getInstance($model, 'adsample')->saveAs(Yii::getPathOfAlias('webroot.upload.adsampleimages') . DIRECTORY_SEPARATOR . $model->adsample);
+            } else {
 
-            }
+                //--------------Save advertisement sample image------//
+                $model->adsample = CUploadedFile::getInstance($model, 'adsample');
 
-            if ($model->save(false)){
+                if (isset($model->adsample) && !is_null($model->adsample)) {
+                    $model->adsample = "{$rnd}-{$model->adsample->name}";  // random number + file name
+                    $model->adsample = str_replace('.jpg','.jpeg', $model->adsample);
 
-                Yii::app()->user->setFlash('success', 'Price Added Successfully..!');
-                $this->getController()->redirect(Yii::app()->baseUrl . '/advertising/adpricelisting');
+                    CUploadedFile::getInstance($model, 'adsample')->saveAs(Yii::getPathOfAlias('webroot.upload.adsampleimages') . DIRECTORY_SEPARATOR . $model->adsample);
 
-            } else{
-                print_r($model->getErrors());
-                Yii::app()->user->setFlash('error', 'Error Saving Record');
+                }
+
+                if ($model->save(false)){
+
+                    Yii::app()->user->setFlash('success', 'Price Added Successfully..!');
+                    $this->getController()->redirect(Yii::app()->baseUrl . '/advertising/adpricelisting');
+
+                } else{
+                    print_r($model->getErrors());
+                    Yii::app()->user->setFlash('error', 'Error Saving Record');
+                }
             }
 
         }

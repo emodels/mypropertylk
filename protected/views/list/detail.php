@@ -77,22 +77,22 @@
         <?php
             $address = "";
 
-            if ($model->number != "") {
+            if (strlen($model->number) > 3) {
 
                 $address .= $model->number . ", ";
             }
 
-            if ($model->streetaddress != "") {
+            if (strlen($model->streetaddress) > 3) {
 
                 $address .= ucwords($model->streetaddress) . ", ";
             }
 
-            if ($model->areaname != ""){
+            if (strlen($model->areaname) > 3){
 
                 $address .= ucwords($model->areaname) . ", ";
             }
 
-            if ($model->townname != "") {
+            if (strlen($model->townname) > 3) {
 
                 $address .= ucwords($model->townname);
             }
@@ -223,29 +223,35 @@
                     <div class="span12" style="border-bottom: solid 1px silver; ">
                         <div class="span12" style="font-size: 16px; font-weight: bold; ">
                             <?php
+                            if ($model->hidestreetaddress != 1) {
                                 $address = "";
 
-                                if ($model->number != "") {
+                                if (strlen($model->number) > 3) {
 
                                     $address .= $model->number . ", ";
                                 }
 
-                                if ($model->streetaddress != "") {
+                                if (strlen($model->streetaddress) > 3) {
 
                                     $address .= ucwords($model->streetaddress) . ", ";
                                 }
 
-                                if ($model->areaname != ""){
+                                if (strlen($model->areaname) > 3){
 
                                     $address .= ucwords($model->areaname) . ", ";
                                 }
 
-                                if ($model->townname != "") {
+                                if (strlen($model->townname) > 3) {
 
                                     $address .= ucwords($model->townname);
                                 }
 
-                             echo $address;
+                                echo $address;
+                            } else{
+
+                                echo "Contact Agent for Address...";
+                            }
+
                              ?>
                         </div>
                     </div>
@@ -266,17 +272,47 @@
                                 <img src="<?php echo Yii::app()->request->baseUrl; ?>/images/parking_spaces.png"/>&nbsp;<?php echo $model->parkingspaces;?>
                             </div>
                         </div>
-                        <div class="span6 listing-red" style="text-align: right"> Rs.
-                            <?php if($model->type == 1 || $model->type == 2 || $model->type == 4){
-                                echo Yii::app()->numberFormatter->format("#,##0", $model->price);
-                            } elseif ($model->type == 3 || $model->type == 5) {
-                                echo Yii::app()->numberFormatter->format("#,##0", $model->monthlyrent) . " (monthly rental)";
+                        <!--------------Display Price--------->
+                        <div class="span6 listing-red" style="text-align: right">
+                            <?php
+                            if ($model->dispalyprice == 1) {
+
+                                if ($model->price != 0 || $model->monthlyrent != 0) {
+                                    if($model->type == 1 || $model->type == 2 || $model->type == 4){
+                                        echo "Rs." . Yii::app()->numberFormatter->format("#,##0", $model->price);
+                                    } elseif ($model->type == 3 || $model->type == 5) {
+                                        echo "Rs." . Yii::app()->numberFormatter->format("#,##0", $model->monthlyrent) . " (monthly rental)";
+                                    }
+
+                                } else{
+                                    echo "Contact Agent";
+                                }?>
+                                <div style="font-size: 12px; font-weight: normal; text-decoration: underline">
+                                    <a href="#myModal" role="button" data-toggle="modal">In Other Currencies</a>
+                                </div>
+                            <?php
+                            } elseif ($model->dispalyprice == 2) {
+
+                                echo "N/A";
+
+                            } elseif ($model->dispalyprice == 3 || $model->dispalyprice == 0) {
+
+                                echo "Contact Agent";
                             }
                             ?>
-                            <div style="font-size: 12px; font-weight: normal; text-decoration: underline">
-                                <a href="#myModal" role="button" data-toggle="modal">In Other Curencies</a>
+                            <div style="font-weight: normal; color: darkred; font-style: italic" >
+                                <?php
+                                if ($model->dispalyprice == 1) {
+
+                                    if ($model->securebond != 0) {
+
+                                        echo "Secure Bond - Rs." . Yii::app()->numberFormatter->format("#,##0", $model->securebond);
+                                    }
+                                }
+                                ?>
                             </div>
                         </div>
+                        <!--------------Display Price End--------->
                     </div>
                     <div class="span12" style="margin-left: 0; padding: 10px 10px; background-color: #6a0812; color: #fff;">
                         <?php echo $model->sendemail == 1 ? 'Vendor' : 'Agent'; ?> Details

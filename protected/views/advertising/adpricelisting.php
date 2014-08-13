@@ -102,7 +102,7 @@
 
             $this->widget('zii.widgets.CListView', array(
                 'id' => 'list_price',
-                'dataProvider'=>new CActiveDataProvider('Adprice', array('criteria'=>array('condition'=> $condition,'order' => 'id'),'pagination'=>array('pageSize'=>10))),
+                'dataProvider'=>new CActiveDataProvider('Adprice', array('criteria'=>array('condition'=> $condition,'order' => 'id DESC'),'pagination'=>array('pageSize'=>10))),
                 'itemView' => '_adprice_list_view',
                 'template'=>'{items}<div class="span12"></div>{pager}<div class="span12"></div>',
                 'afterAjaxUpdate'=>'function(id,options){window.scroll(0,0);}',

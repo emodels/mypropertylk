@@ -3,6 +3,35 @@
         $('[data-toggle="tooltip"]').tooltip();
     });
 
+    //---------------Form Send Function----//
+
+    function formSend(form, data, hasError){
+
+        if ($('#Homeideas_imagename').val() != ''){
+
+            var path = $('#Homeideas_imagename').val();
+            var arrSplit = path.split('.');
+            var extension = arrSplit[1].toLowerCase();
+
+            if ($.inArray(extension, ['jpg','jpeg','png','gif']) == -1) {
+
+                alert('Invalid Image File Type');
+                hasError = true;
+            }
+        }
+
+        if (hasError) {
+
+            if ($('.error:first').length > 0){
+
+                $(window).scrollTop($('.error:first').offset().top);
+            }
+
+            return false;
+        }
+
+        return true;
+    }
 </script>
 <div class="col_right" style="padding-top: 0;">
     <div>
@@ -47,7 +76,6 @@
                         }
                         ?>
                     </div>
-                    <?php echo $form->error($model,'imagename'); ?>
                 </div>
                 <div class="form_bg control-group-admin">
                     <div class="control-group">

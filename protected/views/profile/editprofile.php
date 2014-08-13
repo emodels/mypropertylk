@@ -3,6 +3,36 @@
         $('.nav-stacked a').removeClass('active');
         $('#admin_editprof').addClass('active');
     });
+
+    //---------------Form Send Function----//
+
+    function formSend(form, data, hasError){
+
+        if ($('#User_userimage').val() != ''){
+
+            var path = $('#User_userimage').val();
+            var arrSplit = path.split('.');
+            var extension = arrSplit[1].toLowerCase();
+
+            if ($.inArray(extension, ['jpg','jpeg','png','gif']) == -1) {
+
+                alert('Invalid Image File Type');
+                hasError = true;
+            }
+        }
+
+        if (hasError) {
+
+            if ($('.error:first').length > 0){
+
+                $(window).scrollTop($('.error:first').offset().top);
+            }
+
+            return false;
+        }
+
+        return true;
+    }
 </script
 <?php
 $this->pageTitle=Yii::app()->name . ' - Edit Profile';
@@ -23,7 +53,8 @@ $this->breadcrumbs=array(
                         'enableClientValidation'=>true,
                         'clientOptions'=>array(
                             'validateOnSubmit'=>true,
-                            'validateOnChange'=>true
+                            'validateOnChange'=>true,
+                            'afterValidate' => 'js:formSend',
                         ),
                         'htmlOptions'=>array('class'=>'form-horizontal', 'enctype' => 'multipart/form-data')
                     )); ?>
@@ -40,7 +71,7 @@ $this->breadcrumbs=array(
                             <div class="input-prepend">
                                 <?php echo $form->textField($model,'lname', array('placeholder'=>'LastName')); ?>
                             </div>
-                            <?php //echo $form->error($model,'lname'); ?>
+                            <?php echo $form->error($model,'lname'); ?>
                         </div>
                        <div class="control-group">
                            <label>Phone</label>
