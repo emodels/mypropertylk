@@ -191,6 +191,9 @@
     <footer id="footer">
         <div class="container cleafix">
             <p class="pull-left" style="font-size: 12px;">Copyright © 2014, All Rights Reserved by <a href="http://www.snt3.com/">SNT3 Team.</a></p>
+            <div class="span6" style="text-align: center">
+                <img src="<?php echo Yii::app()->request->baseUrl; ?>/images/dwg.png" style="width: 100px; height: 40px;"/> MyProperty.lk is member of Dwellings Group.
+            </div>
             <div class="pull-right">
                 <ul class="footer-social">
                     <li><a href="http://www.facebook.com/" title="Facebook"><i class="icon-facebook"></i></a></li>

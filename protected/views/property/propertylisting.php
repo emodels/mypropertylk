@@ -93,6 +93,21 @@
         });
     }
 
+    function ShowVendorDetail(id) {
+        $.ajax({
+            type: "GET",
+            url: 'propertylisting/mode/VENDOR/pid/' + id,
+            success: function(data){
+                if (data == 'done'){
+                    Filter_Property();
+                }
+                else {
+                    alert(data);
+                }
+            }
+        });
+    }
+
     function PropertySold(id) {
         $.ajax({
             type: "GET",

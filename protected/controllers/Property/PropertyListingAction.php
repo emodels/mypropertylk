@@ -44,6 +44,28 @@ class PropertyListingAction extends CAction
 
             Yii::app()->end();
         }
+
+        if (Yii::app()->request->isAjaxRequest && isset($_GET['mode']) && $_GET['mode'] == 'VENDOR' && isset($_GET['pid'])) {
+
+            $property =  Property::model()->find('pid=' . $_GET['pid']);
+
+            if (isset($property)) {
+
+                if ($property->sendemail == 0) {
+                    $property->sendemail = 1;
+                } else if ($property->sendemail == 1){
+                    $property->sendemail = 0;
+                }
+                $property->save(false);
+
+                Yii::app()->user->setFlash('success', "Property Updated.");
+                echo 'done';
+
+            }
+
+            Yii::app()->end();
+        }
+
         if (Yii::app()->request->isAjaxRequest && isset($_GET['mode']) && $_GET['mode'] == 'SOLD' && isset($_GET['pid'])) {
 
             $property =  Property::model()->find('pid=' . $_GET['pid']);

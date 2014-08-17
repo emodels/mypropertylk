@@ -150,5 +150,16 @@
         <div class="listing-btn">
             <a class="btn btn-warning"  href="<?php echo Yii::app()->request->baseUrl .'/property/promotelisting?pid='. $data->pid ;?>" style="width: 125px;"><i class="icon-star icon_gap"></i>Promote Listing</a>
         </div>
+        <div style="padding-top: 5px; font-size: 13px;">
+            <a href="javascript:ShowVendorDetail(<?php echo $data->pid; ?>);" class="icon_gap" style="text-decoration: none">
+                <?php
+                if ($data->sendemail == 0) {
+                    echo "Show Vendor Details";
+                } elseif ($data->sendemail == 1) {
+                    echo "Show Agent Details";
+                }
+                ?>
+            </a>
+        </div>
     </div>
 </div>
