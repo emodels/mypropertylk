@@ -48,7 +48,11 @@
 
             var district = $(this).attr('href').replace('#','');
 
-            $('#map').css('margin-left','-65px');
+            if (district != '') {
+
+                window.document.location.replace('<?php echo Yii::app()->request->baseUrl; ?>/list/property/type/<?php echo $model->type; ?>/district/' + district);
+            }
+            /*$('#map').css('margin-left','-65px');
             $('#div_citylist').css('display','block');
             $('#citylist').empty();
 
@@ -66,7 +70,7 @@
                     $('#citylist option:first').attr('selected','selected');
                     $('#citylist').focus();
                 }
-            });
+            });*/
 
             return false;
         });

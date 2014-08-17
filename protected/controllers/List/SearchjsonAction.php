@@ -29,6 +29,29 @@ class SearchjsonAction extends CAction
 
         $array_city = array();
 
+        if (isset($_GET['query']) && isset($_GET['district'])) {
+
+            $district = District::model()->findByPk($_GET['district']);
+
+            $criteria = new CDbCriteria();
+            $criteria->select = array('name');
+            $criteria->distinct = true;
+            $criteria->order = 'name';
+            $criteria->addCondition('district = ' . $district->code);
+            $criteria->addSearchCondition('name', $_GET['query'], true);
+
+            $cities = City::model()->findAll($criteria);
+
+            foreach ($cities as $city) {
+
+            $array_city[] = $city->name;
+            }
+
+            header('Content-Type: application/json');
+            echo json_encode($array_city);
+            exit();
+        }
+
         if (isset($_GET['query'])) {
 
             $criteria = new CDbCriteria();
@@ -46,6 +69,7 @@ class SearchjsonAction extends CAction
 
             header('Content-Type: application/json');
             echo json_encode($array_city);
+            exit();
 
         } else if (isset($_GET['district'])) {
 
@@ -66,6 +90,7 @@ class SearchjsonAction extends CAction
 
             header('Content-Type: application/json');
             echo json_encode($array_city);
+            exit();
 
         } else {
 
@@ -83,6 +108,7 @@ class SearchjsonAction extends CAction
 
             header('Content-Type: application/json');
             echo json_encode($array_city);
+            exit();
         }
     }
 }

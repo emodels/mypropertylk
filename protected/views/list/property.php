@@ -63,7 +63,12 @@
         var array_cities = new Bloodhound({
             datumTokenizer: Bloodhound.tokenizers.obj.whitespace('name'),
             queryTokenizer: Bloodhound.tokenizers.whitespace,
-            remote: { url: '<?php echo Yii::app()->request->baseUrl; ?>/list/searchjson/query/%QUERY', filter: function(list) { return $.map(list, function(city) { return { name: city }; }); } }
+
+            <?php if (isset($_GET['district'])) { ?>
+                remote: { url: '<?php echo Yii::app()->request->baseUrl; ?>/list/searchjson/query/%QUERY/district/<?php echo $_GET['district']; ?>', filter: function(list) { return $.map(list, function(city) { return { name: city }; }); } }
+            <?php } else { ?>
+                remote: { url: '<?php echo Yii::app()->request->baseUrl; ?>/list/searchjson/query/%QUERY', filter: function(list) { return $.map(list, function(city) { return { name: city }; }); } }
+            <?php } ?>
         });
 
         array_cities.initialize();
@@ -97,6 +102,7 @@
     function SearchProperty(district){
 
         var array_search = [];
+        var redirURL = '<?php echo Yii::app()->request->baseUrl; ?>/list/property/type/<?php echo $_GET['type']; ?>';
 
         array_search.push({name: 'search[type]', value: '<?php echo $_GET['type']; ?>'});
         array_search.push({name: 'search[town]', value: $("#townname").val()});
@@ -112,7 +118,9 @@
         array_search.push({name: 'search[premiere]', value: $("#pricetype_0").is(':checked')});
 
         if (district != null) {
+
             array_search.push({name: 'search[district]', value: district});
+            redirURL += '/district/' + district;
         }
 
         $.ajax({
@@ -121,7 +129,7 @@
             data: $.param(array_search),
             success: function(data){
                 if (data == 'done'){
-                    window.document.location.replace('<?php echo Yii::app()->request->baseUrl; ?>/list/property/type/<?php echo $_GET['type']; ?>');
+                    window.document.location.replace(redirURL);
                 }
             }
         });
@@ -526,7 +534,7 @@
                                          </div>
                                          <div class="span12" style="padding: 10px 0;">
                                              <div class="span6">
-                                                 <a href="javascript:SearchProperty();" class="btn btn-primary">Update</a>
+                                                 <a href="javascript:SearchProperty(<?php if(isset($_GET['district'])){ echo $_GET['district']; };?>);" class="btn btn-primary">Update</a>
                                              </div>
                                              <div class="span6 text-right">
                                                  <a href="javascript:Refine_Search();" class="span8" style="font-size: 12px;" type="reset">clear all</a>
@@ -571,9 +579,9 @@
 
                                                 if ($_GET['type'] == "buy") {
 
-                                                    if (isset($_SESSION['search']['district'])) {
+                                                    if (isset($_GET['district'])) {
 
-                                                        $district =  District::model()->findByPk($_SESSION['search']['district']);
+                                                        $district =  District::model()->findByPk($_GET['district']);
                                                         echo "Properties for Sale in " . $district->name;
 
                                                     } else if (isset($_SESSION['search']['town'])){

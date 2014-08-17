@@ -32,6 +32,11 @@ class PropertyAction extends CAction
         $array_searchpara->condition = 0;
         $array_searchpara->premiere = false;
 
+        if (isset($_GET['district'])) {
+
+            $array_searchpara->district = $_GET['district'];
+        }
+
         $model = new Property();
         $modeltype = new Propertytyperelation();
 
