@@ -221,6 +221,7 @@
                     <label>Select an Advertisement Image</label>
                     <div>
                         <?php echo $form->fileField($model, 'adimage'); ?>
+                        <?php echo $form->error($model,'adimage'); ?><span class="star">*</span>
                     </div>
                     <div style="margin-bottom: 0; padding: 8px; margin-top: 10px; color: rgba(128, 0, 0, 0.57); background-color: rgba(255, 149, 132, 0.44); border: solid 1px rgba(177, 41, 36, 0.50); border-radius: 5px;">
                         <strong>Warning!</strong><br/> Please check your Advertisement Image width and height is similar to selected ad size, before uploading ...!

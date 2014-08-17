@@ -80,6 +80,7 @@
                     <label>Select an Advertisement Sample Image</label>
                     <div>
                         <?php echo $form->fileField($model, 'adsample'); ?>
+                        <?php echo $form->error($model,'adsample'); ?><span class="star">*</span>
                     </div>
                 </div>
                 <div class="control-group-admin-btn">

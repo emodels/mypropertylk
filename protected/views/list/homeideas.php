@@ -112,18 +112,22 @@
                                 <li id="garden"><a href="<?php echo Yii::app()->request->baseUrl; ?>/list/homeideas/cid/8">Garden</a></li>
                                 <li id="facades"><a href="<?php echo Yii::app()->request->baseUrl; ?>/list/homeideas/cid/9">Facades</a></li>
                             </ul>
-                            <div class="row-fluid span12">
-                                <?php
-                                $condition =  (($_GET['cid'] == 0) ? 'category > 0' : 'category = ' . $_GET['cid']);
+                            <div class="container-fluid">
+                                <div class="row-fluid ">
+                                    <div class="span12">
+                                        <?php
+                                        $condition =  (($_GET['cid'] == 0) ? 'category > 0' : 'category = ' . $_GET['cid']);
 
-                                $this->widget('zii.widgets.CListView', array(
-                                    'id' => 'list_homeideas',
-                                    'dataProvider'=>new CActiveDataProvider('Homeideas', array('criteria'=>array('condition'=> $condition,'order' => 'dateadded DESC'),'pagination'=>array('pageSize'=>5))),
-                                    'itemView' => '_homeideas_image_list_view',
-                                    'template'=>'{items}<div class="row-fluid span12" style="margin-left: 0;">{pager}</div>',
-                                    'afterAjaxUpdate'=>'function(id,options){window.scroll(0,0);}',
-                                ));
-                                ?>
+                                        $this->widget('zii.widgets.CListView', array(
+                                            'id' => 'list_homeideas',
+                                            'dataProvider'=>new CActiveDataProvider('Homeideas', array('criteria'=>array('condition'=> $condition,'order' => 'dateadded DESC'),'pagination'=>array('pageSize'=>15))),
+                                            'itemView' => '_homeideas_image_list_view',
+                                            'template'=>'{items}<div class="row-fluid span12" style="margin-left: 0;">{pager}</div>',
+                                            'afterAjaxUpdate'=>'function(id,options){window.scroll(0,0);}',
+                                        ));
+                                        ?>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                         <!--Advertiesments--->
