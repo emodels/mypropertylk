@@ -42,11 +42,12 @@
         <div class="span6">
             <h3>Advertisement Price List</h3>
         </div>
-        <div class="offset4 span2">
+        <div class="offset2 span4" style="text-align: right">
             <div class="hidden-phone" style="padding-top: 20px;"></div>
             <div style="padding-bottom: 5px;">
                 <!---------( For View Advertisement Price List )------------------>
                 <?php if (Yii::app()->user->usertype == 0) {?>
+                    <a class="btn btn-primary" href="<?php echo Yii::app()->request->baseUrl; ?>/advertising/adpricelistingprint" target="_blank" style="text-decoration: none; color: #ffffff"><i class="icon-print icon_gap"></i>Print List</a>
                     <a class="btn btn-primary" href="<?php echo Yii::app()->request->baseUrl; ?>/advertising/addprices" style="text-decoration: none; color: #ffffff">Add Prices</a>
                 <?php } ?>
             </div>

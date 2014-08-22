@@ -1,0 +1,3 @@
+
+2. when upload an image check extension
+

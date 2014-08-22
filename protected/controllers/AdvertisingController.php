@@ -34,6 +34,7 @@ class AdvertisingController extends Controller
             'editprices'=>'application.controllers.Advertising.EditpricesAction',  //action for admin - Add prices page controller
             'editadvertisement'=>'application.controllers.Advertising.EditAdvertisementAction',  //action for admin - Edit Advertisement page controller
             'viewaddsizes'=>'application.controllers.Advertising.ViewaddsizesAction',  //action for admin - Edit Advertisement page controller
+            'adpricelistingprint'=>'application.controllers.Advertising.AdpricelistingprintAction',  //action for admin - Edit Advertisement page controller
         );
     }
 

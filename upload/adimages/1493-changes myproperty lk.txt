@@ -1,0 +1,13 @@
+1. Property listing box need to be smaller by 3/4
+2. Image slide show within buy / rent pages
+3. New property need "New" label for 1 week
+4. Standard properties within buy / rent list must be non-boxed similar to realestate.com.au
+5. Need curreny convertion info popup for detail page
+6. Premier property box heading color must be shade
+7. Sold property need "sold" label
+8. Featured property will downgrade to premier after 1 week
+9. Make your ad stand out! title need to come under landing page
+10.Home page Recent Properties section will be replace by section similar to Featured properties limited only to 4
+11. 1 week, 2 weeks, 1 month, 3 months, 6 months, 1 year, 2 years subscriptions for Advertising module
+12. 10% discount for each advertisement. longer you advertise you get more discount
+13. Image water mark need smaller

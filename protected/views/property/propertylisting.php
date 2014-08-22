@@ -317,7 +317,7 @@ $model = (object) $model;
 
                 $this->widget('zii.widgets.CListView', array(
                     'id' => 'list_property',
-                    'dataProvider'=>new CActiveDataProvider('Property', array('criteria'=>array('condition'=> $condition,'order' => $sort_order),'pagination'=>array('pageSize'=>15))),
+                    'dataProvider'=>new CActiveDataProvider('Property', array('criteria'=>array('condition'=> $condition,'order' => $sort_order),'pagination'=>array('pageSize'=>5))),
                     'itemView' => '_property_list_view',
                     'template'=>'{items}<div class="span12"></div>{pager}<div class="span12"></div>',
                     'afterAjaxUpdate'=>'function(id,options){window.scroll(0,0);}',

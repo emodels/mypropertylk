@@ -3924,3 +3924,76 @@ Stack trace:
 REQUEST_URI=/mypropertylk/list/searchjson/district/matu
 in C:\xampp\htdocs\mypropertylk\protected\controllers\List\SearchjsonAction.php (58)
 in C:\xampp\htdocs\mypropertylk\index.php (15)
+2014/08/17 17:40:13 [error] [exception.CException] exception 'CException' with message 'Property "CActiveDataProvider.enablePagination" is not defined.' in C:\xampp\htdocs\mypropertylk\protected\framework\base\CComponent.php:174
+Stack trace:
+#0 C:\xampp\htdocs\mypropertylk\protected\framework\web\CActiveDataProvider.php(84): CComponent->__set('enablePaginatio...', false)
+#1 C:\xampp\htdocs\mypropertylk\protected\views\advertising\adpricelistingprint.php(78): CActiveDataProvider->__construct('Adprice', Array)
+#2 C:\xampp\htdocs\mypropertylk\protected\framework\web\CBaseController.php(127): require('C:\\xampp\\htdocs...')
+#3 C:\xampp\htdocs\mypropertylk\protected\framework\web\CBaseController.php(96): CBaseController->renderInternal('C:\\xampp\\htdocs...', NULL, true)
+#4 C:\xampp\htdocs\mypropertylk\protected\framework\web\CController.php(870): CBaseController->renderFile('C:\\xampp\\htdocs...', NULL, true)
+#5 C:\xampp\htdocs\mypropertylk\protected\framework\web\CController.php(783): CController->renderPartial('adpricelistingp...', NULL, true)
+#6 C:\xampp\htdocs\mypropertylk\protected\controllers\Advertising\AdpricelistingprintAction.php(18): CController->render('adpricelistingp...')
+#7 C:\xampp\htdocs\mypropertylk\protected\framework\web\actions\CAction.php(75): AdpricelistingprintAction->run()
+#8 C:\xampp\htdocs\mypropertylk\protected\framework\web\CController.php(309): CAction->runWithParams(Array)
+#9 C:\xampp\htdocs\mypropertylk\protected\framework\web\filters\CFilterChain.php(134): CController->runAction(Object(AdpricelistingprintAction))
+#10 C:\xampp\htdocs\mypropertylk\protected\controllers\AdvertisingController.php(70): CFilterChain->run()
+#11 C:\xampp\htdocs\mypropertylk\protected\framework\web\filters\CInlineFilter.php(59): AdvertisingController->filterAccessControl(Object(CFilterChain))
+#12 C:\xampp\htdocs\mypropertylk\protected\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#13 C:\xampp\htdocs\mypropertylk\protected\framework\web\CController.php(292): CFilterChain->run()
+#14 C:\xampp\htdocs\mypropertylk\protected\framework\web\CController.php(266): CController->runActionWithFilters(Object(AdpricelistingprintAction), Array)
+#15 C:\xampp\htdocs\mypropertylk\protected\framework\web\CWebApplication.php(276): CController->run('adpricelistingp...')
+#16 C:\xampp\htdocs\mypropertylk\protected\framework\web\CWebApplication.php(135): CWebApplication->runController('advertising/adp...')
+#17 C:\xampp\htdocs\mypropertylk\protected\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#18 C:\xampp\htdocs\mypropertylk\index.php(15): CApplication->run()
+#19 {main}
+REQUEST_URI=/mypropertylk/advertising/adpricelistingprint
+HTTP_REFERER=http://localhost/mypropertylk/advertising/adpricelisting
+---
+2014/08/17 18:00:17 [error] [exception.CException] exception 'CException' with message 'Property "AdpricelistingprintAction.layout" is not defined.' in C:\xampp\htdocs\mypropertylk\protected\framework\base\CComponent.php:174
+Stack trace:
+#0 C:\xampp\htdocs\mypropertylk\protected\controllers\Advertising\AdpricelistingprintAction.php(17): CComponent->__set('layout', 'main')
+#1 C:\xampp\htdocs\mypropertylk\protected\framework\web\actions\CAction.php(75): AdpricelistingprintAction->run()
+#2 C:\xampp\htdocs\mypropertylk\protected\framework\web\CController.php(309): CAction->runWithParams(Array)
+#3 C:\xampp\htdocs\mypropertylk\protected\framework\web\filters\CFilterChain.php(134): CController->runAction(Object(AdpricelistingprintAction))
+#4 C:\xampp\htdocs\mypropertylk\protected\controllers\AdvertisingController.php(70): CFilterChain->run()
+#5 C:\xampp\htdocs\mypropertylk\protected\framework\web\filters\CInlineFilter.php(59): AdvertisingController->filterAccessControl(Object(CFilterChain))
+#6 C:\xampp\htdocs\mypropertylk\protected\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#7 C:\xampp\htdocs\mypropertylk\protected\framework\web\CController.php(292): CFilterChain->run()
+#8 C:\xampp\htdocs\mypropertylk\protected\framework\web\CController.php(266): CController->runActionWithFilters(Object(AdpricelistingprintAction), Array)
+#9 C:\xampp\htdocs\mypropertylk\protected\framework\web\CWebApplication.php(276): CController->run('adpricelistingp...')
+#10 C:\xampp\htdocs\mypropertylk\protected\framework\web\CWebApplication.php(135): CWebApplication->runController('advertising/adp...')
+#11 C:\xampp\htdocs\mypropertylk\protected\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#12 C:\xampp\htdocs\mypropertylk\index.php(15): CApplication->run()
+#13 {main}
+REQUEST_URI=/mypropertylk/advertising/adpricelistingprint
+HTTP_REFERER=http://localhost/mypropertylk/advertising/adpricelisting
+---
+2014/08/22 15:01:45 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "mypropertylk/advertising/adpricelistingprint".' in C:\xampp\htdocs\mypropertylk\protected\framework\web\CWebApplication.php:280
+Stack trace:
+#0 C:\xampp\htdocs\mypropertylk\protected\framework\web\CWebApplication.php(135): CWebApplication->runController('mypropertylk/ad...')
+#1 C:\xampp\htdocs\mypropertylk\protected\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\mypropertylk\index.php(15): CApplication->run()
+#3 {main}
+REQUEST_URI=/mypropertylk/mypropertylk/advertising/adpricelistingprint
+HTTP_REFERER=http://localhost/mypropertylk/login
+---
+2014/08/22 15:05:33 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "<".' in C:\xampp\htdocs\mypropertylk\protected\framework\web\CController.php:484
+Stack trace:
+#0 C:\xampp\htdocs\mypropertylk\protected\framework\web\CController.php(271): CController->missingAction('<')
+#1 C:\xampp\htdocs\mypropertylk\protected\framework\web\CWebApplication.php(276): CController->run('<')
+#2 C:\xampp\htdocs\mypropertylk\protected\framework\web\CWebApplication.php(135): CWebApplication->runController('advertising/<')
+#3 C:\xampp\htdocs\mypropertylk\protected\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\mypropertylk\index.php(15): CApplication->run()
+#5 {main}
+REQUEST_URI=/mypropertylk/advertising/%3C?php%20echo%20Yii::app()-%3Erequest-%3EbaseUrl;%20?%3E/upload/adsizes/300x60.png
+HTTP_REFERER=http://localhost/mypropertylk/advertising/adpricelistingprint
+---
+2014/08/22 15:06:38 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "upload/adsizes/300x60.png'".' in C:\xampp\htdocs\mypropertylk\protected\framework\web\CWebApplication.php:280
+Stack trace:
+#0 C:\xampp\htdocs\mypropertylk\protected\framework\web\CWebApplication.php(135): CWebApplication->runController('upload/adsizes/...')
+#1 C:\xampp\htdocs\mypropertylk\protected\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\mypropertylk\index.php(15): CApplication->run()
+#3 {main}
+REQUEST_URI=/mypropertylk/upload/adsizes/300x60.png'/
+HTTP_REFERER=http://localhost/mypropertylk/advertising/adpricelistingprint
+---
