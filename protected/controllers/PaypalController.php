@@ -31,7 +31,7 @@ class PaypalController extends Controller
             if (isset($currencyConversion)) {
 
                 // set
-                $paymentInfo['Order']['theTotal'] = ($transaction->amount * number_format($currencyConversion['Rate'], 4));
+                $paymentInfo['Order']['theTotal'] = number_format(($transaction->amount * number_format($currencyConversion['Rate'], 4)), 2);
                 $paymentInfo['Order']['description'] = $transaction->description;
                 $paymentInfo['Order']['quantity'] = '1';
 
@@ -54,8 +54,12 @@ class PaypalController extends Controller
         }
 
 		// call paypal
-		$result = Yii::app()->Paypal->SetExpressCheckout($paymentInfo); 
-		//Detect Errors 
+		$result = Yii::app()->Paypal->SetExpressCheckout($paymentInfo);
+
+        //var_dump($result);
+        //Yii::app()->end();
+
+		//Detect Errors
 		if(!Yii::app()->Paypal->isCallSucceeded($result)){ 
 			if(Yii::app()->Paypal->apiLive === true){
 				//Live mode basic error message

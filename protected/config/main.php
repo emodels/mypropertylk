@@ -95,7 +95,7 @@ return array(
             'apiPassword' => '1382410898',
             'apiSignature' => 'AiPC9BjkCyDFQXbSkoZcgqH3hpacAxDvKPXbNISSx77OwH.6JtUWLWr-',*/
 
-            'apiLive' => false,
+            'apiLive' => true,
 
             'returnUrl' => 'paypal/confirm/', //regardless of url management component
             'cancelUrl' => 'paypal/cancel/', //regardless of url management component
