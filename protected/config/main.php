@@ -86,14 +86,14 @@ return array(
             /*@TODO uncomment Live PAYPAL lines and comment Testing Sandbox PAYPAL lines to go live*/
 
             /*---( Live PAYPAL )---*/
-/*          'apiUsername' => 'info_api1.emodelslanka.com',
-            'apiPassword' => 'UTJB9CG7CM8RB87Z',
-            'apiSignature' => 'AuunftkSDTd4USVDhV6Hy-lfyeCzANdQU0bstigeJS5SRcmGWDvFxajY',*/
+            'apiUsername' => 'MyProperty.lk_api1.dwellingsgroup.com.au',
+            'apiPassword' => '668NDGER4S2XPN4D',
+            'apiSignature' => 'AFcWxV21C7fd0v3bYYYRCpSSRl31AJamWFMLdkjX.HyVY6Gtc0q1tac2',
 
             /*---( Testing Sandbox PAYPAL )---*/
-            'apiUsername' => 'info-facilitator_api1.emodelslanka.com',
+            /*'apiUsername' => 'info-facilitator_api1.emodelslanka.com',
             'apiPassword' => '1382410898',
-            'apiSignature' => 'AiPC9BjkCyDFQXbSkoZcgqH3hpacAxDvKPXbNISSx77OwH.6JtUWLWr-',
+            'apiSignature' => 'AiPC9BjkCyDFQXbSkoZcgqH3hpacAxDvKPXbNISSx77OwH.6JtUWLWr-',*/
 
             'apiLive' => false,
 

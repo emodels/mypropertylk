@@ -84,8 +84,8 @@
                                     <div id="social-network">
                                         <a class="signin" href="<?php echo Yii::app()->request->baseUrl; ?>/login" style="text-decoration: none; font-size: 15px">Sign In</a>
                                         <a class="join" href="<?php echo Yii::app()->request->baseUrl; ?>/register" style="text-decoration: none; font-size: 15px;">Join</a>
-                                        <a class="fb" href="http://www.facebook.com/" title="Facebook" target="_blank" style="line-height: inherit"><i class="icon-facebook" style="line-height: inherit;"></i></a>
-                                        <a class="tw" href="http://www.twitter.com/" title="Twitter" target="_blank" style="line-height: inherit"><i class="icon-twitter" style="line-height: inherit;"></i></a>
+                                        <a class="fb" href="https://www.facebook.com/sharer/sharer.php?u=http://www.myproperty.lk/index.php" title="Facebook" target="_blank" style="line-height: inherit"><i class="icon-facebook" style="line-height: inherit;"></i></a>
+                                        <a class="tw" href="https://twitter.com/share?url=http://www.myproperty.lk/index.php" title="Twitter" target="_blank" style="line-height: inherit"><i class="icon-twitter" style="line-height: inherit;"></i></a>
                                         <a class="rss" href="http://feeds.feedburner.com/" title="RSS" target="_blank" style="line-height: inherit"><i class="icon-rss" style="line-height: inherit;"></i></a>
                                         <a class="gp" href="http://www.plus.google.com/" title="Google Plus" target="_blank" style="line-height: inherit"><i class="icon-google-plus" style="line-height: inherit;"></i></a>
                                     </div>
@@ -196,8 +196,8 @@
             </div>
             <div class="pull-right">
                 <ul class="footer-social">
-                    <li><a href="http://www.facebook.com/" title="Facebook"><i class="icon-facebook"></i></a></li>
-                    <li><a href="http://www.twitter.com/" title="Twitter"><i class="icon-twitter"></i></a></li>
+                    <li><a href="https://www.facebook.com/sharer/sharer.php?u=http://www.myproperty.lk/index.php" title="Facebook"><i class="icon-facebook"></i></a></li>
+                    <li><a href="https://twitter.com/share?url=http://www.myproperty.lk/index.php" title="Twitter"><i class="icon-twitter"></i></a></li>
                     <li><a href="http://feeds.feedburner.com/" title="RSS"><i class="icon-rss"></i></a></li>
                     <li><a href="http://www.plus.google.com/" title="Google Plus"><i class="icon-google-plus"></i></a></li>
                 </ul>
