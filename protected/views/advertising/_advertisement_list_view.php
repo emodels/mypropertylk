@@ -16,13 +16,23 @@
                 <a href="javascript:AdStatusChange(<?php echo $data->id; ?>);" class="icon_gap lnkno-style">
                     <?php
                     if ($data->status == 0) {
-                        echo "InActive";
+                        echo "<i class='icon-exclamation-sign icon_gap'></i>Pending Payment";
                     } elseif ($data->status == 1) {
-                        echo "Active";
+                        echo "<font style='color:green'><i class='icon-ok-sign icon_gap'></i>Active</font>";
+                    } elseif ($data->status == 2) {
+                        echo "<font style='color:red'><i class='icon-warning-sign icon_gap'></i>Expired</font>";
                     }
                     ?>
                 </a>
-                <?php } ?>
+                <?php } else {
+                    if ($data->status == 0) {
+                        echo "<font style='color:blue'><i class='icon-exclamation-sign icon_gap'></i>Pending Payment</font>&nbsp;&nbsp;";
+                    } elseif ($data->status == 1) {
+                        echo "<font style='color:green'><i class='icon-ok-sign icon_gap'></i>Active</font>&nbsp;&nbsp;";
+                    } elseif ($data->status == 2) {
+                        echo "<font style='color:red'><i class='icon-warning-sign icon_gap'></i>Expired</font>&nbsp;&nbsp;";
+                    }
+                }?>
                 <a href="<?php echo Yii::app()->request->baseUrl .'/advertising/editadvertisement/id/'. $data->id ;?>" class="lnklnkno-style" title="edit  "><i class="icon-edit icon_gap"></i></a>
                 <a href="javascript:Delete_Ad(<?php echo $data->id; ?>);" class="lnklnkno-style" title="delete"><i class="icon-remove icon_gap"></i></a>
             </div>

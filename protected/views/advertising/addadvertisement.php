@@ -224,7 +224,8 @@
                         <?php echo $form->error($model,'adimage'); ?><span class="star">*</span>
                     </div>
                     <div style="margin-bottom: 0; padding: 8px; margin-top: 10px; color: rgba(128, 0, 0, 0.57); background-color: rgba(255, 149, 132, 0.44); border: solid 1px rgba(177, 41, 36, 0.50); border-radius: 5px;">
-                        <strong>Warning!</strong><br/> Please check your Advertisement Image width and height is similar to selected ad size, before uploading ...!
+                        <strong>Warning!</strong><br/> Please check your Advertisement Image width and height is similar to selected ad size, before uploading ...!<hr/>
+                        <b>Eg:-</b><br/> If you selected the Advertisement Size of 300 x 250, your <b>Advertisement Image width and height should be exactly 300px and 250px.</b>
                     </div>
                 </div>
                 <div class="control-group-admin">

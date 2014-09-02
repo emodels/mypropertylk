@@ -68,6 +68,7 @@ class EditAdvertisementAction extends CAction
         //$advertiserListData = CHtml::listData(User::model()->findAll('usertype = 0 OR usertype = 3'), 'id', 'fullName');
 
         $form_valid = true;
+        $prevperiod = $model->period;
         $previmage = $model->adimage;
 
         if (isset($_POST['Advertising'])) {

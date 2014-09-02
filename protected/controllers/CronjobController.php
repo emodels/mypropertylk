@@ -34,4 +34,29 @@ class CronjobController extends Controller
             echo "No Properties Found..!";
         }
     }
+
+    public function actionEvaluateAdvertisement(){
+
+        $currentdate = date('Y-m-d');
+
+        $query = "status = 1 AND expiredate <= '". $currentdate . "'";
+
+        $advertisementCollection = Advertising::model()->findAll($query) ;
+
+        if (count($advertisementCollection) > 0) {
+
+            foreach ($advertisementCollection as $advertisement) {
+
+                $advertisement->status = 2;
+
+                if ($advertisement->save(false)) {
+
+                    echo "(" . $advertisement->id . " Advertisement Expired..!)";
+                }
+            }
+        } else {
+
+            echo "No Advertisements Found..!";
+        }
+    }
 }

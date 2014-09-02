@@ -67,7 +67,20 @@
             </div>
         </a>
         <div class="listing-normal"><?php echo $data->district0->name ?> District</div>
-        <div class="listing-small"><b>Agent:</b> <?php echo ucwords($data->agent0->fname) .' '. ucwords($data->agent0->lname)  ?></div>
+        <div class="listing-small">
+            <!--( Vendor information )-->
+            <?php
+            if ($data->sendemail == 1) {
+
+                echo "<b>Vendor:</b> " . ucwords($data->vendorname);
+
+            } else { //--( Agent information )-//
+
+                echo "<b>Agent:</b> " . ucwords($data->agent0->fname) .' ' . ucwords($data->agent0->lname);
+
+            }
+            ?>
+        </div>
         <div class="listing-small">
             <?php
             $proptype_array = array();

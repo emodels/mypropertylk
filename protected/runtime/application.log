@@ -3997,3 +3997,56 @@ Stack trace:
 REQUEST_URI=/mypropertylk/upload/adsizes/300x60.png'/
 HTTP_REFERER=http://localhost/mypropertylk/advertising/adpricelistingprint
 ---
+2014/09/02 07:21:25 [error] [php] Undefined variable: model (C:\xampp\htdocs\mypropertylk\protected\views\list\_list_view.php:241)
+Stack trace:
+#0 C:\xampp\htdocs\mypropertylk\protected\framework\web\CController.php(870): ListController->renderFile()
+#1 C:\xampp\htdocs\mypropertylk\protected\framework\zii\widgets\CListView.php(242): ListController->renderPartial()
+#2 C:\xampp\htdocs\mypropertylk\protected\framework\zii\widgets\CBaseListView.php(158): CListView->renderItems()
+#3 unknown(0): CListView->renderSection()
+#4 C:\xampp\htdocs\mypropertylk\protected\framework\zii\widgets\CBaseListView.php(141): preg_replace_callback()
+#5 C:\xampp\htdocs\mypropertylk\protected\framework\zii\widgets\CBaseListView.php(126): CListView->renderContent()
+#6 C:\xampp\htdocs\mypropertylk\protected\framework\web\CBaseController.php(174): CListView->run()
+#7 C:\xampp\htdocs\mypropertylk\protected\views\list\property.php(803): ListController->widget()
+#8 C:\xampp\htdocs\mypropertylk\protected\framework\web\CBaseController.php(127): require()
+#9 C:\xampp\htdocs\mypropertylk\protected\framework\web\CBaseController.php(96): ListController->renderInternal()
+#10 C:\xampp\htdocs\mypropertylk\protected\framework\web\CController.php(870): ListController->renderFile()
+#11 C:\xampp\htdocs\mypropertylk\protected\framework\web\CController.php(783): ListController->renderPartial()
+#12 C:\xampp\htdocs\mypropertylk\protected\controllers\List\PropertyAction.php(96): ListController->render()
+#13 C:\xampp\htdocs\mypropertylk\protected\framework\web\actions\CAction.php(75): PropertyAction->run()
+#14 C:\xampp\htdocs\mypropertylk\protected\framework\web\CController.php(309): PropertyAction->runWithParams()
+#15 C:\xampp\htdocs\mypropertylk\protected\framework\web\CController.php(287): ListController->runAction()
+#16 C:\xampp\htdocs\mypropertylk\protected\framework\web\CController.php(266): ListController->runActionWithFilters()
+#17 C:\xampp\htdocs\mypropertylk\protected\framework\web\CWebApplication.php(276): ListController->run()
+#18 C:\xampp\htdocs\mypropertylk\protected\framework\web\CWebApplication.php(135): CWebApplication->runController()
+#19 C:\xampp\htdocs\mypropertylk\protected\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#20 C:\xampp\htdocs\mypropertylk\index.php(15): CWebApplication->run()
+REQUEST_URI=/mypropertylk/list/property/type/buy
+in C:\xampp\htdocs\mypropertylk\protected\views\list\_list_view.php (241)
+in C:\xampp\htdocs\mypropertylk\protected\views\list\property.php (803)
+in C:\xampp\htdocs\mypropertylk\protected\controllers\List\PropertyAction.php (96)
+2014/09/02 08:20:47 [error] [system.db.CDbCommand] CDbCommand::fetchAll() failed: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 1. The SQL statement executed was: SELECT * FROM `adprice` `t` WHERE page = .
+in C:\xampp\htdocs\mypropertylk\protected\controllers\Advertising\AddAdvertisementAction.php (40)
+in C:\xampp\htdocs\mypropertylk\protected\controllers\AdvertisingController.php (70)
+in C:\xampp\htdocs\mypropertylk\index.php (15)
+2014/09/02 08:20:48 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand failed to execute the SQL statement: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 1. The SQL statement executed was: SELECT * FROM `adprice` `t` WHERE page = ' in C:\xampp\htdocs\mypropertylk\protected\framework\db\CDbCommand.php:528
+Stack trace:
+#0 C:\xampp\htdocs\mypropertylk\protected\framework\db\CDbCommand.php(390): CDbCommand->queryInternal('fetchAll', Array, Array)
+#1 C:\xampp\htdocs\mypropertylk\protected\framework\db\ar\CActiveRecord.php(1287): CDbCommand->queryAll()
+#2 C:\xampp\htdocs\mypropertylk\protected\framework\db\ar\CActiveRecord.php(1406): CActiveRecord->query(Object(CDbCriteria), true)
+#3 C:\xampp\htdocs\mypropertylk\protected\controllers\Advertising\AddAdvertisementAction.php(40): CActiveRecord->findAll('page = ')
+#4 C:\xampp\htdocs\mypropertylk\protected\framework\web\actions\CAction.php(75): AddAdvertisementAction->run()
+#5 C:\xampp\htdocs\mypropertylk\protected\framework\web\CController.php(309): CAction->runWithParams(Array)
+#6 C:\xampp\htdocs\mypropertylk\protected\framework\web\filters\CFilterChain.php(134): CController->runAction(Object(AddAdvertisementAction))
+#7 C:\xampp\htdocs\mypropertylk\protected\controllers\AdvertisingController.php(70): CFilterChain->run()
+#8 C:\xampp\htdocs\mypropertylk\protected\framework\web\filters\CInlineFilter.php(59): AdvertisingController->filterAccessControl(Object(CFilterChain))
+#9 C:\xampp\htdocs\mypropertylk\protected\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#10 C:\xampp\htdocs\mypropertylk\protected\framework\web\CController.php(292): CFilterChain->run()
+#11 C:\xampp\htdocs\mypropertylk\protected\framework\web\CController.php(266): CController->runActionWithFilters(Object(AddAdvertisementAction), Array)
+#12 C:\xampp\htdocs\mypropertylk\protected\framework\web\CWebApplication.php(276): CController->run('addadvertisemen...')
+#13 C:\xampp\htdocs\mypropertylk\protected\framework\web\CWebApplication.php(135): CWebApplication->runController('advertising/add...')
+#14 C:\xampp\htdocs\mypropertylk\protected\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#15 C:\xampp\htdocs\mypropertylk\index.php(15): CApplication->run()
+#16 {main}
+REQUEST_URI=/mypropertylk/advertising/addadvertisement
+HTTP_REFERER=http://localhost/mypropertylk/advertising/addadvertisement
+---

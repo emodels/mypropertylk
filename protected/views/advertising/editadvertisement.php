@@ -120,6 +120,7 @@
                 alert('Invalid Image File Type');
                 hasError = true;
             }
+
         }
 
         if (hasError) {
@@ -166,7 +167,7 @@
                 <div class="control-group-admin">
                     <label>Select Page</label>
                     <div>
-                        <?php echo $form->dropDownList($model, 'page', CHtml::listData(Adpages::model()->findAll(), 'id', 'page'), array('onChange' => 'javascript:LoadAdSizes();')); ?><span class="star">*</span>
+                        <?php echo $form->dropDownList($model, 'page', CHtml::listData(Adpages::model()->findAll(), 'id', 'page'), array('onChange' => 'javascript:LoadAdSizes();', 'disabled'=>'disabled')); ?><span class="star">*</span>
                         <?php echo $form->error($model,'page'); ?>
                     </div>
                 </div>
@@ -178,7 +179,7 @@
                             $adSizeListData[$value->size] = $value->size0->size;
                         }
                         ?>
-                        <?php echo $form->dropDownList($model, 'size', $adSizeListData, array('onChange' => 'javascript:LoadAdPrices();')); ?><span class="star">*</span>
+                        <?php echo $form->dropDownList($model, 'size', $adSizeListData, array('onChange' => 'javascript:LoadAdPrices();', 'disabled'=>'disabled')); ?><span class="star">*</span>
                         <?php echo $form->error($model,'size'); ?>
                     </div>
                 </div>
@@ -217,7 +218,7 @@
                         ?>
                         <label id="discount" hidden="hidden" style="color: #ff0000; font-weight: normal; padding-top: 10px"></label>
                         <input type="text" name="adprice_hidden" id="Advertising_adprice" style="display:none" value="<?php echo $adprice->price; ?>">
-                        <div class="alert alert-info" style="margin-top: 10px">
+                        <div style="color: #3a87ad; background-color: #d9edf7; border: 1px solid #2abdff; padding: 8px 35px 8px 14px; margin-bottom: 10px; -webkit-border-radius: 4px; -moz-border-radius: 4px; border-radius: 4px;">
                             This price for only <b>one week period</b>.<br/> If you like to advertise your advertisement for <b>one month or more</b> we will give you a <b>10% discount</b>...
                         </div>
                     </div>
@@ -240,7 +241,8 @@
                         ?>
                     </div>
                     <div style="margin-bottom: 0; padding: 8px; margin-top: 10px; color: rgba(128, 0, 0, 0.57); background-color: rgba(255, 149, 132, 0.44); border: solid 1px rgba(177, 41, 36, 0.50); border-radius: 5px;">
-                        <strong>Warning!</strong><br/> Please check your Advertisement Image width and height is similar to selected ad size, before uploading ...!
+                        <strong>Warning!</strong><br/> Please check your Advertisement Image width and height is similar to selected ad size, before uploading ...!<hr/>
+                        <b>Eg:-</b><br/> If you selected the Advertisement Size of 300 x 250, your <b>Advertisement Image width and height should be exactly 300px and 250px.</b>
                     </div>
                 </div>
                 <div class="control-group-admin">
@@ -249,7 +251,7 @@
                 </div>
                 <div class="control-group-admin">
                     <label>Advertisement Expiration Date</label>
-                    <div class="alert alert-info">
+                    <div style="color: #3a87ad; background-color: #d9edf7; border: 1px solid #2abdff; padding: 8px 35px 8px 14px; margin-bottom: 20px; -webkit-border-radius: 4px; -moz-border-radius: 4px; border-radius: 4px;">
                         This Advertisement will be expired on :<strong>
                             <?php echo $form->textField($model,'expiredate', array('id'=>'expdate', 'readonly'=> 'readonly')); ?>
                         </strong>

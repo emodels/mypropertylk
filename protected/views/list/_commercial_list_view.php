@@ -187,7 +187,20 @@ switch ($data->pricetype){
                         </div>
                         <div class="listing-bold" style="margin-top: 10px; margin-bottom: 5px"><?php echo substr($data->headline, 0, 40) . '...'; ?></div>
                         <!--<div class="listing-small-normal"><?php /*echo substr($data->desc, 0, 50).'....'; */?></div>-->
-                        <div class="listing-small"><b>Agent :</b> <?php echo ucwords($data->agent0->fname) .' '. ucwords($data->agent0->lname)  ?></div>
+                        <div class="listing-small">
+                            <!--( Vendor information )-->
+                            <?php
+                            if ($data->sendemail == 1) {
+
+                                echo "<b>Vendor:</b> " . ucwords($data->vendorname);
+
+                            } else { //--( Agent information )-//
+
+                                echo "<b>Agent:</b> " . ucwords($data->agent0->fname) .' ' . ucwords($data->agent0->lname);
+
+                            }
+                            ?>
+                        </div>
                         <div style="text-align: right; padding-top: 10px;">
                             <?php
                             $isWatched = false;
