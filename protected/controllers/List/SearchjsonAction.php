@@ -38,7 +38,7 @@ class SearchjsonAction extends CAction
             $criteria->distinct = true;
             $criteria->order = 'name';
             $criteria->addCondition('district = ' . $district->code);
-            $criteria->addSearchCondition('name', $_GET['query'], true);
+            $criteria->addSearchCondition('name', $_GET['query'] . '%', false);
 
             $cities = City::model()->findAll($criteria);
 
@@ -58,7 +58,7 @@ class SearchjsonAction extends CAction
             $criteria->select = array('name');
             $criteria->distinct = true;
             $criteria->order = 'name';
-            $criteria->addSearchCondition('name', $_GET['query'], true);
+            $criteria->addSearchCondition('name', $_GET['query'] . '%', false);
 
             $cities = City::model()->findAll($criteria);
 
