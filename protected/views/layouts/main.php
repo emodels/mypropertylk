@@ -190,11 +190,13 @@
     </section><!-- #footer_widgets -->
     <footer id="footer">
         <div class="container cleafix">
-            <p class="pull-left" style="font-size: 12px;">Copyright © 2014, All Rights Reserved by <a href="http://www.snt3.com/">SNT3 Team.</a></p>
-            <div class="span6" style="text-align: center">
-                <img src="<?php echo Yii::app()->request->baseUrl; ?>/images/dwg.png" style="width: 100px; height: 40px;"/> MyProperty.lk is member of Dwellings Group.
+            <div class="pull-left" style="margin-top: 24px; font-size: 14px">Copyright © 2014, All Rights Reserved by <a href="http://www.snt3.com/" target="_blank">SNT3 Team.</a></div>
+            <div class="span6" style="padding-left: 10px; width: auto; font-size: 14px">
+                <div class="span2"><a href="http://www.dwellingsgroup.com.au/" target="_blank"><img src="<?php echo Yii::app()->request->baseUrl; ?>/images/dwg.png" /></a></div>
+                <div class="span4 text-left" style="margin-top: 24px"><a href="http://www.dwellingsgroup.com.au/" target="_blank">MyProperty.lk is member of Dwellings Group.</a></div>
+                <div class="clearfix"></div>
             </div>
-            <div class="pull-right">
+            <div class="pull-right" style="margin-top: 24px">
                 <ul class="footer-social">
                     <li><a href="https://www.facebook.com/sharer/sharer.php?u=http://www.myproperty.lk/index.php" title="Facebook"><i class="icon-facebook"></i></a></li>
                     <li><a href="https://twitter.com/share?url=http://www.myproperty.lk/index.php" title="Twitter"><i class="icon-twitter"></i></a></li>
