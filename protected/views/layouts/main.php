@@ -170,12 +170,12 @@
                         <ul class="footer-blog">
                             <li>
                                 <a href="#">
-                                    <i class="icon-phone"></i> +61431 108 137
+                                    <i class="icon-phone"></i> +94 117 444 115
                                 </a>
                             </li>
                             <li>
                                 <a href="#">
-                                    <i class="icon-print"></i> +61425 732 711
+                                    <i class="icon-mobile-phone" style="font-size: 18px"></i> +94 777 348 648
                                 </a>
                             </li><li>
                                 <a href="mailto:info@dwellingsgroup.com.au">

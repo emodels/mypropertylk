@@ -161,21 +161,21 @@ $this->breadcrumbs=array(
                                     </div>
                                 </div>
                                 <div class="span12">
-                                    <b>Telephone : </b>
+                                    <b>Mobile : </b>
                                     <div class="offset1 span10" style="padding-bottom: 20px;">
-                                        +61 431 108 137
+                                        +94 777 348 648
                                     </div>
                                 </div>
                                 <div class="span12">
-                                    <b>Fax : </b>
+                                    <b>Office Phone : </b>
                                     <div class="offset1 span10" style="padding-bottom: 20px;">
-                                        +61 425 732 711
+                                        +94 117 444 115
                                     </div>
                                 </div>
                                 <div class="span12">
                                     <b>e-Mail : </b>
                                     <div class="offset1 span10"  style="padding-bottom: 20px;">
-                                        info@myproperty.lk
+                                        <a href="mailto:info@myproperty.lk">info@myproperty.lk</a>
                                     </div>
                                 </div>
                                 <div class="span12">
