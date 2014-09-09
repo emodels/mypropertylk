@@ -107,6 +107,7 @@
                             <li><a id="admin_adv" href="<?php echo Yii::app()->request->baseUrl; ?>/advertising/advertisement"><i class="icon-bullhorn icon_gap"></i>Advertising</a></li>
                             <li><a id="admin_transact" href="<?php echo Yii::app()->request->baseUrl; ?>/transactions/transaction"><i class="icon-retweet icon_gap"></i>Transactions</a></li>
                             <li><a id="admin_uplaod" href="<?php echo Yii::app()->request->baseUrl; ?>/bulkupload/upload"><i class="icon-upload icon_gap"></i>Bulk Upload</a></li>
+                            <li><a id="admin_city" href="<?php echo Yii::app()->request->baseUrl; ?>/admin/city"><i class="icon-map-marker icon_gap"></i>City List</a></li>
                         </ul>
                     </div>
                 </div>
