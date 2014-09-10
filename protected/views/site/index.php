@@ -538,6 +538,8 @@
                                         <div class="row-fluid">
                                             <div class="span12">
                                                 <?php
+                                                $featureControl = Featurecontrol::model()->find();
+
                                                 if (isset($_GET['type'])) {
                                                     if ($_GET['type'] == "all") {
                                                         $condition = '(type = 1 OR type = 2 OR type = 3) AND pricetype = 3 AND status = 1 ';
@@ -553,7 +555,7 @@
 
                                                 $this->widget('zii.widgets.CListView', array(
                                                     'id' => 'list_featured',
-                                                    'dataProvider'=>new CActiveDataProvider('Property', array('criteria'=>array('condition'=> $condition,'order' => 'entrydate DESC LIMIT 20'),'pagination'=>false)),
+                                                    'dataProvider'=>new CActiveDataProvider('Property', array('criteria'=>array('condition'=> $condition,'order' => 'entrydate DESC LIMIT ' . $featureControl->featured_property_display_count),'pagination'=>false)),
                                                     'itemView' => '_featured_list_view'
                                                 ));
                                                 ?>

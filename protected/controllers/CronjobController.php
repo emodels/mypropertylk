@@ -12,7 +12,9 @@ class CronjobController extends Controller
 {
     public function actionEvaluateAndDowngradeFeaturedProperties(){
 
-        $prevdate = date('Y-m-d', strtotime('-7 days'));
+        $featureControl = Featurecontrol::model()->find();
+
+        $prevdate = date('Y-m-d', strtotime('-' . $featureControl->featured_property_expire_dates . ' days'));
 
         $query = "pricetype = 3 AND entrydate < '". $prevdate . "'";
 

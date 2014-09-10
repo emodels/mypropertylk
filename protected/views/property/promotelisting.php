@@ -83,7 +83,10 @@
                 'htmlOptions'=>array('class'=>'form-horizontal'),
             )); ?>
             <form id="form-price-list" class="form">
-                <?php if (count($faeturedProp) < 20) { ?>
+                <?php
+                    $featureControl = Featurecontrol::model()->find();
+                ?>
+                <?php if (count($faeturedProp) < $featureControl->featured_property_display_count) { ?>
 
                 <div style="padding:10px 20px 20px 20px; border: solid 1px silver; border-radius: 5px; margin-bottom: 10px; background-color: paleturquoise ">
                     <h4 style="color: blue; border-bottom: solid 1px silver;">
@@ -92,7 +95,7 @@
 
                     <p>Featured Properties comes Home page Featured property list. These are the <b>Advantages</b> you meet,</p>
                     <div style="font-size: 12px;">
-                        <p><i class="icon-tag icon_gap"></i>Your advertisement will be display at <b>Home Page</b> for a period of <b> one month.</b></p>
+                        <p><i class="icon-tag icon_gap"></i>Your advertisement will be display at <b>Home Page</b> for a period of <b> <?php echo $featureControl->featured_property_expire_dates; ?> days.</b></p>
                         <p><i class="icon-tag icon_gap"></i>Featured Properties are more visible to buyers and that will drive more opportunities to sell your property much <b>faster</b>...</p>
                         <p><i class="icon-tag icon_gap"></i>You have to pay LKR. <b><?php echo $priceFeatured->price ;?> </b>/= only.</p>
                     </div>
