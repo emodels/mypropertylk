@@ -59,7 +59,7 @@ $this->breadcrumbs=array(
                             <div id="title-listing" class="container">
                                 <div class="property-list-title">Register</div>
                             </div>
-                            <div class="span10 offset1">
+                            <div class="span5 offset1">
                                 <p class="alert alert-danger">Please fill the following fields to register with myproperty.lk....!</p>
                                 <div class="form">
                                     <?php $form=$this->beginWidget('CActiveForm', array(
@@ -142,6 +142,20 @@ $this->breadcrumbs=array(
                                         </div>
                                     </div>
                                     <?php $this->endWidget(); ?>
+                                </div>
+                            </div>
+                            <div class="span5">
+                                <div class="alert alert-success alert-block">
+                                    <h4>Register as a Member</h4>
+                                    You can publish your Property Advertisements under Standard, Featured or Premier category.
+                                </div>
+                                <div class="alert alert-info alert-block">
+                                    <h4>Register as an Agent</h4>
+                                    Become a Agent and you will able to publish large volume of Property advertisements within a short period using our Bulk Upload facility.
+                                </div>
+                                <div class="alert alert-block">
+                                    <h4>Register as an Advertiser</h4>
+                                    You can publish Banner Advertisements at our web site. Simply select preferred Banner size, page location and enter URL link for your banner and then complete your payment using PAYPAL to activate instantly.
                                 </div>
                             </div>
                         </div>
