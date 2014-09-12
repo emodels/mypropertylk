@@ -320,7 +320,8 @@ $model = (object) $model;
                     'dataProvider'=>new CActiveDataProvider('Property', array('criteria'=>array('condition'=> $condition,'order' => $sort_order),'pagination'=>array('pageSize'=>15))),
                     'itemView' => '_property_list_view',
                     'template'=>'{items}<div class="span12"></div>{pager}<div class="span12"></div>',
-                    'afterAjaxUpdate'=>'function(id,options){window.scroll(0,0);}',
+                    'ajaxUpdate'=>true,
+                    'afterAjaxUpdate'=>'function(id,options){window.scroll(0,0);$("#list_property").css("display","block");}',
                     'htmlOptions'=>array('style'=>'display:' . (isset($_GET["pid"]) ? 'none' : 'block'))
                 ));
                 ?>
