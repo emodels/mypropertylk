@@ -22,7 +22,7 @@ class AddAdvertisementAction extends CAction
         $model =  new Advertising();
         $model->entrydate = date("Y-m-d");
         $model->expiredate = date('Y-m-d',strtotime("+7 days"));
-        $model->status = 0;
+        $model->status = ((Yii::app()->user->usertype == 0)? 1 : 0);
         $model->period = 1;
 
         $advertiserListData = CHtml::listData(User::model()->findAll('id = ' . Yii::app()->user->id), 'id', 'fullName');
@@ -97,9 +97,6 @@ class AddAdvertisementAction extends CAction
 
                     if (Yii::app()->user->usertype == 0) {
 
-                        $model->status = 1;
-
-                        //CUploadedFile::getInstance($model, 'adimage')->saveAs(Yii::getPathOfAlias('webroot.upload.adimages') . DIRECTORY_SEPARATOR . $model->adimage);
                         Yii::app()->user->setFlash('success', "Advertisement Added Successfully !");
                         $this->getController()->redirect(Yii::app()->baseUrl . '/advertising/advertisement');
 
