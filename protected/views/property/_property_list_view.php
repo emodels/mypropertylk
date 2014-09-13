@@ -138,7 +138,7 @@
     </div>
     <div class="span3" style="text-align: right">
         <div style="padding-top: 10px;">
-            <a href="javascript:PropertyStatusChange(<?php echo $data->pid; ?>);" class="icon_gap" style="text-decoration: none">
+            <a href="<?php echo ((Yii::app()->user->usertype == 0) ? 'javascript:PropertyStatusChange(' . $data->pid . ');' : '#') ?>" class="icon_gap" style="text-decoration: none; cursor: <?php echo ((Yii::app()->user->usertype == 0) ? 'pointer' : 'default') ?>">
                 <?php
                 if ($data->status == 0) {
                     echo "InActive";

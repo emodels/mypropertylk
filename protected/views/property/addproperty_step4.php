@@ -212,15 +212,10 @@
         <div>
             <div class="span12">
                 <div class="box-info">
-                    <p style="font-size: 14px; font-weight: bold">Display inspections in Saturday's Herald Sun*</p>
+                    <p style="font-size: 14px; font-weight: bold">Activation of your Property Advertisement</p>
                     <p>
-                        Weekend Open for Inspections, loaded before 5pm every Monday will automatically appear*.
-                        There will also be a number of properties selected to be featured with photo and full details.
-                        Reach the readers of Sri Lanka's biggest-selling newspaper at no cost.
-                    </p>
-                    <p>
-                        *Please note: Open for Inspection times will be displayed subject to the availability of advertising space.
-                        Herald Sun does not guarantee that all properties will appear in the Weekend Open for Inspection section
+                        Please note that in order to maintain our quality of service, we will review and authorize each submitted advertisement before it going live.
+                        We will make sure your advertisement will be published and go live within next 24 hours. If you have any question please <a href="site/contact">contact us</a> here.
                     </p>
                 </div>
             </div>

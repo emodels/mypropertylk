@@ -154,6 +154,9 @@
             </form>
             <?php $this->endWidget(); ?>
         </div>
+        <div class="container row-fluid span12 text-center">
+            <!-- PayPal Logo --><a href="https://www.paypal.com/au/webapps/mpp/paypal-popup" title="How PayPal Works" onclick="javascript:window.open('https://www.paypal.com/au/webapps/mpp/paypal-popup','WIPaypal','toolbar=no, location=no, directories=no, status=no, menubar=no, width=600, height=500'); return false;"><img src="https://www.paypalobjects.com/webstatic/en_AU/mktg/logo/Solutions-graphics-1-184x80.jpg" border="0" alt="PayPal Logo"></a><!-- PayPal Logo -->
+        </div>
     </div>
 </div>
 
