@@ -42,6 +42,7 @@ class PromotelistingAction extends CAction
                 if (isset($property)) {
 
                     $property->pricetype = 2;
+                    $property->entrydate = date('Y-m-d H:i:s');
 
                     $property->save(false);
 
@@ -56,7 +57,7 @@ class PromotelistingAction extends CAction
 
                 $transaction->type = 1;
                 $transaction->user = Yii::app()->user->id;
-                $transaction->transactiondate = date('Y-M-d');
+                $transaction->transactiondate = date('Y-m-d H:i:s');
                 $transaction->status = 0;
                 $transaction->amount = $pricePremier->price;
                 $transaction->referenceid = $_GET['pid'];
@@ -88,6 +89,7 @@ class PromotelistingAction extends CAction
                     if (isset($property)) {
 
                         $property->pricetype = 3;
+                        $property->entrydate = date('Y-m-d H:i:s');
 
                         $property->save(false);
 
@@ -102,7 +104,7 @@ class PromotelistingAction extends CAction
 
                     $transaction->type = 1;
                     $transaction->user = Yii::app()->user->id;
-                    $transaction->transactiondate = date("Y-m-d");
+                    $transaction->transactiondate = date("Y-m-d H:i:s");
                     $transaction->status = 0;
                     $transaction->amount = $priceFeatured->price;
                     $transaction->referenceid = $_GET['pid'];
@@ -136,6 +138,7 @@ class PromotelistingAction extends CAction
             if (isset($property)) {
 
                 $property->pricetype = 1;
+                $property->entrydate = date('Y-m-d H:i:s');
 
                 $property->save(false);
 

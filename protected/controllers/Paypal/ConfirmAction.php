@@ -77,6 +77,7 @@ class ConfirmAction extends CAction
                                     break;
                             }
 
+                            $property->entrydate = date('Y-m-d H:i:s');
 
                             $property->save(false);
 

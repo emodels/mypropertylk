@@ -106,7 +106,7 @@ class AddAdvertisementAction extends CAction
 
                         $transaction->type = 2;
                         $transaction->user = Yii::app()->user->id;
-                        $transaction->transactiondate = date("Y-m-d");
+                        $transaction->transactiondate = date("Y-m-d H:i:s");
                         $transaction->status = 0;
                         $transaction->amount = $model->adprice;
                         $transaction->referenceid = $model->id;
