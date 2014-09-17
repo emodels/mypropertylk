@@ -18,16 +18,29 @@ class CityAction extends CAction
     {
         $selected_district = '';
         $selected_district_code = '';
+        $selected_status = 0;
+        $activated_city_list = array();
 
         if (isset(Yii::app()->Session['selected_district'])) {
 
             $selected_district = Yii::app()->Session['selected_district'];
         }
 
+        if (isset(Yii::app()->Session['selected_status'])) {
+
+            $selected_status = Yii::app()->Session['selected_status'];
+        }
+
         if (isset($_POST['Selected_District'])) {
 
             $selected_district = $_POST['Selected_District'];
             Yii::app()->Session['selected_district'] = $selected_district;
+        }
+
+        if (isset($_POST['Selected_Status'])) {
+
+            $selected_status = (($_POST['Selected_Status'] == '') ? 0 : $_POST['Selected_Status']);
+            Yii::app()->Session['selected_status'] = $selected_status;
         }
 
         if ($selected_district != '') {
@@ -49,21 +62,54 @@ class CityAction extends CAction
             $criteria->addCondition('district = ' . $selected_district_code);
         }
 
+        $criteria->addCondition('status = ' . $selected_status);
+
         $dataProvider = new CActiveDataProvider('City', array('criteria'=>$criteria, 'pagination'=>array('pageSize'=>500)));
 
-        if (isset($_POST['DeleteButton']))
+        if (isset($_POST['ActivationButton']))
         {
-            if (isset($_POST['selectedIds']))
-            {
-                $criteria = new CDbCriteria;
-                $criteria->addInCondition('id', $_POST['selectedIds']);
 
-                City::model()->deleteAll($criteria);
+            $csv = array();
 
-                Yii::app()->user->setFlash('success', "Selected Cities are Deleted");
+            // check there are no errors
+            if($_FILES['csv']['error'] == 0){
+
+                $tmpName = $_FILES['csv']['tmp_name'];
+
+                $row = 1;
+                if (($handle = fopen($tmpName, "r")) !== FALSE) {
+                    while (($data = fgetcsv($handle, 1000, ",")) !== FALSE) {
+                        $num = count($data);
+                        //echo "<p> $num fields in line $row: <br /></p>\n";
+                        $row++;
+                        for ($c=0; $c < $num; $c++) {
+                            //echo $data[$c] . "<br />\n";
+                            $csv[] = $data[$c];
+                        }
+                    }
+                    fclose($handle);
+                }
+            }
+
+            if (count($csv) > 0 && $selected_district_code != '') {
+
+                foreach ($csv as $value) {
+
+                    $city =  City::model()->find("LCASE(name) = '" . $value . "' AND district = " . $selected_district_code);
+
+                    if (isset($city)) {
+
+                        $city->status = 1;
+                        $city->save();
+
+                        $activated_city_list[] = $city;
+                    }
+                }
+
+                Yii::app()->user->setFlash('success', "CSV based City status update completed");
             }
         }
 
-        $this->getController()->render('city', array('dataProvider' => $dataProvider, 'selected_district' => $selected_district));
+        $this->getController()->render('city', array('dataProvider' => $dataProvider, 'selected_district' => $selected_district, 'selected_status' => $selected_status, 'activated_city_list' => $activated_city_list));
     }
 }

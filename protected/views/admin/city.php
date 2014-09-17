@@ -8,6 +8,24 @@
         $('.nav-stacked a').removeClass('active');
         $('#admin_city').addClass('active');
     });
+
+    function ValidateCSVFile() {
+
+        if ($('#csv').val() == '') {
+
+            alert('Please select CSV file');
+            return false;
+
+        } else if ($('#csv').val().indexOf(".csv") <= -1) {
+
+            alert('Selected file does not have ".csv" extension');
+            return false;
+
+        } else {
+
+            return true;
+        }
+    }
 </script>
 
 <div class="col_right" style="padding-top: 0;">
@@ -28,17 +46,31 @@
                     'clientOptions' => array(
                         'validateOnSubmit' => true,
                         'validateOnChange' => true,
-                    )
+                    ),
+                    'htmlOptions' => array('enctype' => 'multipart/form-data')
                 )); ?>
-                <input type="submit" id="DeleteButton" name="DeleteButton" value="Delete Selected Cities"/>
                 <?php echo CHtml::dropDownList('Selected_District', $selected_district, CHtml::listData(District::model()->findAll(), 'id', 'name'), array('empty'=>'Select District', 'onChange'=>'js:$("form").submit();')); ?>
+                <?php echo CHtml::dropDownList('Selected_Status', $selected_status, array('0'=>'InActive','1'=>'Active'), array('empty'=>'Select Status', 'onChange'=>'js:$("form").submit();')); ?>
+                <div class="well" style="margin-top: 10px">
+                    <label>CSV File :</label>
+                    <input type="file" id="csv" name="csv"/>
+                    <input type="submit" id="ActivationButton" name="ActivationButton" value="Activate Cities in CSV file" onclick="javascript:return ValidateCSVFile();"/>
+                </div>
+                <?php if(count($activated_city_list) > 0){ ?>
+                    <div class="well" style="background-color: #edffa0">
+                        <button type="button" class="close" data-dismiss="alert">&times;</button>
+                        <h4>Following Cities are Activated :</h4>
+                        <?php foreach($activated_city_list as $city){ ?>
+                            <div><?php echo $city->name; ?></div>
+                        <?php } ?>
+                    </div>
+                <?php } ?>
                 <?php
                 $this->widget('zii.widgets.grid.CGridView', array(
                     'id' => 'grid_city',
                     'dataProvider' => $dataProvider,
                     'ajaxUpdate' => false,
                     'enablePagination' => true,
-                    'selectableRows' => 2,
                     'columns' => array(
                         array(
                             'type'=>'raw',
@@ -48,11 +80,7 @@
                         array(
                             'name'=>'City',
                             'value'=>'$data->name'
-                        ),
-                        array(
-                            'id' => 'selectedIds',
-                            'class' => 'CCheckBoxColumn'
-                        ),
+                        )
                     )));
                 ?>
                 <?php $this->endWidget(); ?>

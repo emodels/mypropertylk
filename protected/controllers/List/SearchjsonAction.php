@@ -38,13 +38,14 @@ class SearchjsonAction extends CAction
             $criteria->distinct = true;
             $criteria->order = 'name';
             $criteria->addCondition('district = ' . $district->code);
+            $criteria->addCondition('status = 1');
             $criteria->addSearchCondition('name', $_GET['query'] . '%', false);
 
             $cities = City::model()->findAll($criteria);
 
             foreach ($cities as $city) {
 
-            $array_city[] = $city->name;
+                $array_city[] = $city->name;
             }
 
             header('Content-Type: application/json');
@@ -58,6 +59,7 @@ class SearchjsonAction extends CAction
             $criteria->select = array('name');
             $criteria->distinct = true;
             $criteria->order = 'name';
+            $criteria->addCondition('status = 1');
             $criteria->addSearchCondition('name', $_GET['query'] . '%', false);
 
             $cities = City::model()->findAll($criteria);
@@ -79,6 +81,7 @@ class SearchjsonAction extends CAction
             $criteria->select = array('name');
             $criteria->distinct = true;
             $criteria->order = 'name';
+            $criteria->addCondition('status = 1');
             $criteria->addCondition('district = ' . $district->code);
 
             $cities = City::model()->findAll($criteria);
@@ -98,6 +101,7 @@ class SearchjsonAction extends CAction
             $criteria->select = array('name');
             $criteria->distinct = true;
             $criteria->order = 'name';
+            $criteria->addCondition('status = 1');
 
             $cities = City::model()->findAll($criteria);
 

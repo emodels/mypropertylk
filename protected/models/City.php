@@ -7,6 +7,7 @@
  * @property integer $id
  * @property string $name
  * @property integer $district
+ * @property integer $status
  */
 class City extends CActiveRecord
 {
@@ -36,12 +37,12 @@ class City extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('name, district', 'required'),
-			array('district', 'numerical', 'integerOnly'=>true),
+			array('name, district, status', 'required'),
+			array('district, status', 'numerical', 'integerOnly'=>true),
 			array('name', 'length', 'max'=>200),
 			// The following rule is used by search().
 			// Please remove those attributes that should not be searched.
-			array('id, name, district', 'safe', 'on'=>'search'),
+			array('id, name, district, status', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -65,6 +66,7 @@ class City extends CActiveRecord
 			'id' => 'ID',
 			'name' => 'Name',
 			'district' => 'District',
+			'status' => 'Status',
 		);
 	}
 
@@ -82,6 +84,7 @@ class City extends CActiveRecord
 		$criteria->compare('id',$this->id);
 		$criteria->compare('name',$this->name,true);
 		$criteria->compare('district',$this->district);
+		$criteria->compare('status',$this->status);
 
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,
