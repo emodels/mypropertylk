@@ -59,7 +59,7 @@
                 <?php if(count($activated_city_list) > 0){ ?>
                     <div class="well" style="background-color: #edffa0">
                         <button type="button" class="close" data-dismiss="alert">&times;</button>
-                        <h4>Following Cities are Activated :</h4>
+                        <h4>Total number of Cities Activated : <?php echo count($activated_city_list); ?></h4>
                         <?php foreach($activated_city_list as $city){ ?>
                             <div><?php echo $city->name; ?></div>
                         <?php } ?>

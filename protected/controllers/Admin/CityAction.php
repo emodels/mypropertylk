@@ -103,6 +103,18 @@ class CityAction extends CAction
                         $city->save();
 
                         $activated_city_list[] = $city;
+
+                    } else {
+
+                        $city = new City();
+
+                        $city->name = $value;
+                        $city->district = $selected_district_code;
+                        $city->status = 1;
+
+                        $city->save();
+
+                        $activated_city_list[] = $city;
                     }
                 }
 
