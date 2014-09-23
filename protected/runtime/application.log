@@ -4721,3 +4721,28 @@ REQUEST_URI=/mypropertylk/admin/city
 in C:\xampp\htdocs\mypropertylk\protected\controllers\Admin\CityAction.php (116)
 in C:\xampp\htdocs\mypropertylk\protected\controllers\AdminController.php (58)
 in C:\xampp\htdocs\mypropertylk\index.php (15)
+2014/09/23 08:56:34 [error] [system.db.CDbCommand] CDbCommand::fetchAll() failed: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'mypropertylk.featurecontrol' doesn't exist. The SQL statement executed was: SHOW COLUMNS FROM `featurecontrol`.
+in C:\xampplite\htdocs\mypropertylk\protected\models\Featurecontrol.php (20)
+in C:\xampplite\htdocs\mypropertylk\protected\views\site\index.php (541)
+in C:\xampplite\htdocs\mypropertylk\protected\controllers\SiteController.php (39)
+2014/09/23 08:56:34 [error] [exception.CDbException] exception 'CDbException' with message 'The table "featurecontrol" for active record class "Featurecontrol" cannot be found in the database.' in C:\xampplite\htdocs\mypropertylk\protected\framework\db\ar\CActiveRecord.php:2264
+Stack trace:
+#0 C:\xampplite\htdocs\mypropertylk\protected\framework\db\ar\CActiveRecord.php(379): CActiveRecordMetaData->__construct(Object(Featurecontrol))
+#1 C:\xampplite\htdocs\mypropertylk\protected\models\Featurecontrol.php(20): CActiveRecord::model('Featurecontrol')
+#2 C:\xampplite\htdocs\mypropertylk\protected\views\site\index.php(541): Featurecontrol::model()
+#3 C:\xampplite\htdocs\mypropertylk\protected\framework\web\CBaseController.php(127): require('C:\xampplite\ht...')
+#4 C:\xampplite\htdocs\mypropertylk\protected\framework\web\CBaseController.php(96): CBaseController->renderInternal('C:\xampplite\ht...', Array, true)
+#5 C:\xampplite\htdocs\mypropertylk\protected\framework\web\CController.php(870): CBaseController->renderFile('C:\xampplite\ht...', Array, true)
+#6 C:\xampplite\htdocs\mypropertylk\protected\framework\web\CController.php(783): CController->renderPartial('index', Array, true)
+#7 C:\xampplite\htdocs\mypropertylk\protected\controllers\SiteController.php(39): CController->render('index', Array)
+#8 C:\xampplite\htdocs\mypropertylk\protected\framework\web\actions\CInlineAction.php(50): SiteController->actionIndex()
+#9 C:\xampplite\htdocs\mypropertylk\protected\framework\web\CController.php(309): CInlineAction->runWithParams(Array)
+#10 C:\xampplite\htdocs\mypropertylk\protected\framework\web\CController.php(287): CController->runAction(Object(CInlineAction))
+#11 C:\xampplite\htdocs\mypropertylk\protected\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#12 C:\xampplite\htdocs\mypropertylk\protected\framework\web\CWebApplication.php(276): CController->run('index')
+#13 C:\xampplite\htdocs\mypropertylk\protected\framework\web\CWebApplication.php(135): CWebApplication->runController('site/index')
+#14 C:\xampplite\htdocs\mypropertylk\protected\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#15 C:\xampplite\htdocs\mypropertylk\index.php(15): CApplication->run()
+#16 {main}
+REQUEST_URI=/mypropertylk/?XDEBUG_SESSION_START=18625
+---

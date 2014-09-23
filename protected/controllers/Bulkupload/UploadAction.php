@@ -283,6 +283,7 @@ class UploadAction extends CAction
                                                 $propertyimage->propertyid = $property->pid;
                                                 $propertyimage->imagename = $thumb->defaultName . '.' .$fileName_extention;
                                                 $propertyimage->imagetype = 0;
+                                                $propertyimage->primaryimg = (($imageIndex == 1) ? 1 : 0);
 
                                                 $propertyimage->save();
 
