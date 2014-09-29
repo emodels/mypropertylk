@@ -98,9 +98,13 @@ class EditAdvertisementAction extends CAction
 
             if ($form_valid == true) {
 
-                if ($model->save()){
+                if (Yii::app()->user->usertype == 0 && date('Y-m-d', strtotime($model->expiredate)) >= date('Y-m-d')) { /*---( Admin can Activate expired Advertisements )---*/
 
                     $model->status = 1;
+                }
+
+                if ($model->save()) {
+
                     Yii::app()->user->setFlash('success', "Data Updated Successfully !");
                     $this->getController()->redirect(Yii::app()->baseUrl . '/advertising/advertisement');
 
