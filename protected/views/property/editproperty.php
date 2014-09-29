@@ -136,7 +136,7 @@ $this->breadcrumbs=array(
                         <a href="#" data-toggle="tooltip" title="The agent name list is maintained in 'Your Profile - Agents' section." data-placement="right" class="tooltip-custom"></a>
                         <?php echo $form->error($model, 'agent', array('style'=>'width:auto')); ?>
                     </div>
-                    <div class="control-group-admin">
+                    <div class="control-group-admin <?php echo ((Yii::app()->user->usertype == 1) ? 'hide' : ''); ?>">
                         <label>Other Agents</label>
                         <?php echo $form->dropDownList($model, 'otheragent', $otherAgentListData, array('empty'=>'Other Agents')); ?>
                         <a href="#" data-toggle="tooltip" title="The agent name list is maintained in 'Your Profile - Agents' section." data-placement="right" class="tooltip-custom"></a>
