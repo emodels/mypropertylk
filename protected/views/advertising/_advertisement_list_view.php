@@ -16,21 +16,25 @@
                 <a href="javascript:AdStatusChange(<?php echo $data->id; ?>);" class="icon_gap lnkno-style">
                     <?php
                     if ($data->status == 0) {
-                        echo "<i class='icon-exclamation-sign icon_gap'></i>Pending Payment";
+                        echo "<i class='icon-exclamation-sign icon_gap'></i>InActive";
                     } elseif ($data->status == 1) {
                         echo "<font style='color:green'><i class='icon-ok-sign icon_gap'></i>Active</font>";
                     } elseif ($data->status == 2) {
                         echo "<font style='color:red'><i class='icon-warning-sign icon_gap'></i>Expired</font>";
+                    } elseif ($data->status == 3) {
+                        echo "<font style='color:#e39c2f'><i class='icon-zoom-in icon_gap'></i>Pending Approval</font>";
                     }
                     ?>
                 </a>
                 <?php } else {
                     if ($data->status == 0) {
-                        echo "<font style='color:blue'><i class='icon-exclamation-sign icon_gap'></i>Pending Payment</font>&nbsp;&nbsp;";
+                        echo "<font style='color:blue'><i class='icon-exclamation-sign icon_gap'></i>InActive</font>&nbsp;&nbsp;";
                     } elseif ($data->status == 1) {
                         echo "<font style='color:green'><i class='icon-ok-sign icon_gap'></i>Active</font>&nbsp;&nbsp;";
                     } elseif ($data->status == 2) {
                         echo "<font style='color:red'><i class='icon-warning-sign icon_gap'></i>Expired</font>&nbsp;&nbsp;";
+                    } elseif ($data->status == 3) {
+                        echo "<font style='color:#e39c2f'><i class='icon-zoom-in icon_gap'></i>Pending Approval</font>&nbsp;&nbsp;";
                     }
                 }?>
                 <a href="<?php echo Yii::app()->request->baseUrl .'/advertising/editadvertisement/id/'. $data->id ;?>" class="lnklnkno-style" title="edit  "><i class="icon-edit icon_gap"></i></a>

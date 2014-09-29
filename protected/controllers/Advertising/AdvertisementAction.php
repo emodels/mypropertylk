@@ -35,11 +35,19 @@ class AdvertisementAction extends CAction
 
             if (isset($advertising)) {
 
-                if ($advertising->status == 0) {
+                if ($advertising->status == 0) { /*---( InActive become Active )---*/
+
                     $advertising->status = 1;
-                } else if ($advertising->status == 1){
+
+                } else if ($advertising->status == 1) { /*---( Active become InActive )---*/
+
                     $advertising->status = 0;
+
+                } else if ($advertising->status == 3) { /*---( Pending Authorization become Active )---*/
+
+                    $advertising->status = 1;
                 }
+
                 $advertising->save(false);
 
                 Yii::app()->user->setFlash('success', "Advertisement Updated");

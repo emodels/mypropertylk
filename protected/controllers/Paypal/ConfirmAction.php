@@ -56,7 +56,7 @@ class ConfirmAction extends CAction
 
                     $paypal = Yii::app()->session['PAYPAL'];
 
-                    if ($paypal->type == 1) {
+                    if ($paypal->type == 1) { /*---( Property )---*/
 
                         $property =  Property::model()->find('pid = ' . $paypal->referenceid);
                         $transaction = Transactions::model()->find('id = '. $paypal->id);
@@ -125,7 +125,7 @@ class ConfirmAction extends CAction
                         $this->getController()->render('confirm', array('transaction' => $transaction ));
                     }
 
-                    if ($paypal->type == 2) {
+                    if ($paypal->type == 2) { /*---( Advertisement )---*/
 
                         $advertisement =  Advertising::model()->find('id = ' . $paypal->referenceid);
                         $transaction = Transactions::model()->find('id = '. $paypal->id);
@@ -133,8 +133,7 @@ class ConfirmAction extends CAction
 
                         if (isset($advertisement)) {
 
-                            $advertisement->status = 1;
-
+                            $advertisement->status = 3;
 
                             $advertisement->save(false);
 

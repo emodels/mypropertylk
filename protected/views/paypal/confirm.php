@@ -13,9 +13,9 @@ $this->breadcrumbs=array(
         <div class="span12" style="background-color: rgba(54, 246, 85, 0.49); padding: 20px; text-align: center; margin-left: 0; ">
             <h3> Your Transaction was Successfully Processed.</h3>
             <?php if ($transaction->type == 1) { ?>
-                <p> Your Property will be Activated soon by Administrator... </p>
+                <p> Your Property will be Activated as soon as possible by our site Administrator...</p>
             <?php } else{?>
-                <p> Your Advertisement has been published successfully...! </p>
+                <p> Your Advertisement will be Activated as soon as possible by our site Administrator...</p>
             <?php } ?>
             <div style="text-align: center; width: 100%">
                 <img src="<?php echo Yii::app()->request->baseUrl; ?>/images/pay_sucess.ico" style="width: 150px; height: 150px;">
