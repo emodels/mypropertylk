@@ -9,6 +9,61 @@
     }
 
 </style>
+<script type="text/javascript">
+
+    function IsEmail(email) {
+        var regex = /^([a-zA-Z0-9_.+-])+\@(([a-zA-Z0-9-])+\.)+([a-zA-Z0-9]{2,4})+$/;
+        return regex.test(email);
+    }
+
+    function RequestPassword() {
+
+        $('#error_request_password').html('');
+        $('#success_request_password').hide();
+        $('#ajax_progress').hide();
+
+        var email = $('#email').val();
+
+        if (email !== '') {
+
+            if (!IsEmail(email)) {
+
+                $('#error_request_password').html('Please enter valid email address');
+                return;
+            }
+
+            $.ajax({
+                url: "site/Requestpassword",
+                type: "POST",
+                data: { email : email },
+                dataType: 'json',
+                beforeSend: function() {
+
+                    $('#ajax_progress').show();
+                },
+                success: function (data) {
+
+                    if (data.status == 1) {
+
+                        $('#success_request_password').show();
+
+                    } else {
+
+                        $('#error_request_password').html('Email address not found in our records, please enter valid email address');
+                    }
+                },
+                complete: function () {
+
+                    $('#ajax_progress').hide();
+                }
+            });
+
+        } else {
+
+            $('#error_request_password').html('Email address can not be blank');
+        }
+    }
+</script>
 <?php
 $this->pageTitle=Yii::app()->name . ' - Login';
 $this->breadcrumbs=array(
@@ -70,7 +125,22 @@ $this->breadcrumbs=array(
                                                     </div>
                                                 </div>
                                                 <div class="control-group">
-                                                    <a href="#">Forgot Your Password ?</a>
+                                                    <a href="javascript:$('#password_request').toggle();">Forgot Your Password ?</a>
+                                                </div>
+                                                <div id="password_request" class="well" style="padding: 5px 25px 5px 25px; display: none">
+                                                    <h5>Enter your email address</h5>
+                                                    <div class="control-group">
+                                                        <div class="input-prepend">
+                                                            <span class="add-on"><i class="icon-envelope"></i></span>
+                                                            <?php echo CHtml::textField('email','', array('placeholder'=>'Your Email Address', 'style' => 'width:auto !important')); ?>
+                                                        </div>
+                                                    </div>
+                                                    <div class="control-group">
+                                                        <?php echo CHtml::Button('Request Password', array('class' => 'btn btn-primary', 'onClick' => 'js:RequestPassword();')); ?>
+                                                    </div>
+                                                    <label id="error_request_password" class="errorMessage"></label>
+                                                    <label id="success_request_password" class="hide" style="color: green">Your password has been sent to your email address.</label>
+                                                    <label id="ajax_progress" class="hide" style="color: blue"><img src="images/loading.gif"/> Please wait...</label>
                                                 </div>
                                                 <?php $this->endWidget(); ?>
                                             </div>

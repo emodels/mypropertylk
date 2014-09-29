@@ -113,6 +113,6 @@ return array(
         'SMTP_Username'=>'info@myproperty.lk',
         'SMTP_password'=>'info@mypropertylk',
         'SMTPSecure'=>TRUE,
-        'SMTPDebug'=>true
+        'SMTPDebug'=>false
     ),
 );

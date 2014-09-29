@@ -275,4 +275,58 @@ class SiteController extends Controller
         $this->render('register',array('model'=>$model));
     }
 
+    public function actionRequestpassword() {
+
+        $data = new stdClass();
+
+        if (Yii::app()->request->isAjaxRequest && isset($_POST['email'])) {
+
+            $user = User::model()->find("email = '" . $_POST['email'] . "'");
+
+            if (isset($user)) {
+
+                //---------------Email notification to Admin--------------------------------------------------------
+                $message = $this->renderPartial('//email/template/email_password_request', array('model'=>$user), true);
+
+                if (isset($message) && $message != "") {
+
+                    $mailer = Yii::createComponent('application.extensions.mailer.EMailer');
+                    $mailer->Host = Yii::app()->params['SMTP_Host'];
+                    $mailer->Port = Yii::app()->params['SMTP_Port'];
+                    if (Yii::app()->params['SMTPSecure'] == TRUE){
+                        $mailer->SMTPSecure = 'ssl';
+                    }
+                    $mailer->IsSMTP();
+                    $mailer->SMTPAuth = true;
+                    $mailer->Username = Yii::app()->params['SMTP_Username'];
+                    $mailer->Password = Yii::app()->params['SMTP_password'];
+                    $mailer->From = Yii::app()->params['SMTP_Username'];
+                    $mailer->AddReplyTo(Yii::app()->params['adminEmail']);
+                    $mailer->AddAddress($user->email);
+                    $mailer->AddAddress(Yii::app()->params['mailCC_1']);
+                    $mailer->FromName = "myproperty.lk";
+                    $mailer->CharSet = 'UTF-8';
+                    $mailer->Subject = 'myproperty.lk - Your Login access information';;
+                    $mailer->IsHTML();
+                    $mailer->Body = $message;
+                    $mailer->SMTPDebug  = Yii::app()->params['SMTPDebug'];
+
+                    try{
+                        $mailer->Send();
+                    }
+                    catch (Exception $ex){
+                        echo $ex->getMessage();
+                    }
+                }
+
+                $data->status = 1;
+
+            } else {
+
+                $data->status = 0;
+            }
+        }
+
+        echo json_encode($data);
+    }
 }
