@@ -2,7 +2,7 @@
     <div class="span listing-row">
         <div class="span5">
             <a href="<?php echo "http://" . $data->adlink;  ?>" title="" target="_blank" style="text-decoration: none">
-                <img src="<?php echo Yii::app()->baseUrl . '/upload/adimages/'.$data->adimage; ?>">
+                <img src="<?php echo Yii::app()->baseUrl . '/upload/adimages/'.$data->adimage; ?>" style="border: solid 1px silver">
             </a>
         </div>
         <div class="span4">
@@ -10,7 +10,7 @@
             <div class="listing-normal"><b>Size :</b> <?php echo $data->size0->size; ?></div>
         </div>
         <div class="span3">
-            <div class="hidden-phone"></br></div>
+            <div class="listing-normal"><b>Advertiser :</b> <?php echo $data->advertiser0->fname . ' ' . $data->advertiser0->lname; ?></div>
             <div>
                 <?php if (Yii::app()->user->usertype == 0) {?>
                 <a href="javascript:AdStatusChange(<?php echo $data->id; ?>);" class="icon_gap lnkno-style">
