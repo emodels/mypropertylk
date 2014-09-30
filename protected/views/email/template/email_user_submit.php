@@ -10,7 +10,7 @@
         <tr>
             <td style="padding-top: 15px;">
                 <p>
-                    Thank You for your payment ! Your Property is Successfully Upgraded as <?php echo $model['pricetype']; ?> Property..
+                    Thank you for your payment and listing with MyProperty.lk and your property will be approved by our administration team soon….!
                 </p>
             </td>
         </tr>
