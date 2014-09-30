@@ -190,7 +190,7 @@
     </section><!-- #footer_widgets -->
     <footer id="footer">
         <div class="container cleafix">
-            <div class="pull-left" style="margin-top: 24px; font-size: 14px">Copyright © 2014, All Rights Reserved by <a href="http://www.snt3.com/" target="_blank">SNT3 Team.</a></div>
+            <div class="pull-left" style="margin-top: 24px; font-size: 14px">Copyright © 2014, Designed & Developed by <a href="http://www.snt3.com/" target="_blank">SNT3.</a></div>
             <div class="span6" style="padding-left: 80px; width: auto; font-size: 14px">
                 <div class="span2" style="max-width: 100px"><a href="http://www.dwellingsgroup.com.au/" target="_blank"><img src="<?php echo Yii::app()->request->baseUrl; ?>/images/dwg.png" /></a></div>
                 <div class="span4 text-left" style="margin-top: 24px; margin-left: 10px"><a href="http://www.dwellingsgroup.com.au/" target="_blank">MyProperty.lk is member of Dwellings Group.</a></div>
