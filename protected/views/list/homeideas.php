@@ -134,12 +134,13 @@
                         <div class="span3 hidden-phone">
                             <div class="row-fluid">
                                 <?php
+                                $condition = '(t.page = 8 AND (t.size = 2 OR t.size = 4 OR t.size = 6) AND t.status = 1) AND t.expiredate >= CURDATE()';
 
-                                $condition = '(page = 8 AND (size = 2 OR size = 4 OR size = 6) AND status = 1) AND expiredate >= CURDATE()';
+                                $with = array('size0'=>array('condition'=>'size0.id = t.size'));
 
                                 $this->widget('zii.widgets.CListView', array(
                                     'id' => 'list_advertisement',
-                                    'dataProvider'=>new CActiveDataProvider('Advertising', array('criteria'=>array('condition'=> $condition,'order' => 'entrydate DESC'),'pagination'=>false)),
+                                    'dataProvider'=>new CActiveDataProvider('Advertising', array('criteria'=>array('condition' => $condition, 'with' => $with, 'order' => 'size0.height DESC', 'together'=>true),'pagination'=>false)),
                                     'itemView' => '_ads_list_view',
                                 ));
                                 ?>
