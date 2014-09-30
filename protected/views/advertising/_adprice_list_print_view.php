@@ -1,9 +1,9 @@
-<div style="width: 100%; page-break-after: always;">
+<div style="width: 100%; page-break-after: always">
     <div class="span listing-row">
         <div>
-            <div class="span3" style="font-size: 18px; font-weight: bold">
+            <div class="span3" style="font-size: 22px; font-weight: bold">
                 <div><?php echo  $data->page0->page ; ?></div>
-                <div class="listing-normal"><?php echo  "Ad Size: " . $data->size0->size ; ?></div>
+                <div class="listing-normal" style="margin-top: 20px"><?php echo  "Ad Size: " . $data->size0->size ; ?></div>
                 <div class="listing-normal"><?php echo "Price: Rs. " . Yii::app()->numberFormatter->format("#,##0.00", $data->price) ; ?></div>
             </div>
             <div class="span5" style="max-width: 445px;">

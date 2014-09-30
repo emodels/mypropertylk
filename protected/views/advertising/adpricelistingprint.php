@@ -1,3 +1,30 @@
+<style type="text/css">
+    @media print {
+        .container {
+            width: 100%;
+            border: none !important;
+        }
+        .form_bg {
+            display: none !important;
+        }
+        .span12 {
+            border: none !important;
+        }
+        .span5 img {
+            zoom: 1;
+            margin-top: 30px;
+            border: solid 1px silver !important;
+        }
+        .span4 img {
+            zoom: 0.7;
+            margin-top: 30px;
+            border: solid 1px silver !important;
+        }
+        .listing-row {
+            border-bottom: none;
+        }
+    }
+</style>
 <script type="text/javascript" xmlns="http://www.w3.org/1999/html">
     $(document).ready(function(){
         $('.nav-stacked a').removeClass('active');
@@ -77,7 +104,8 @@
                 'id' => 'list_price',
                 'dataProvider'=>new CActiveDataProvider('Adprice', array('criteria'=>array('condition'=> $condition,'order' => 'page'),'pagination'=>false)),
                 'itemView' => '_adprice_list_print_view',
-                'template'=>'{items}<div class="span12"></div>{pager}<div class="span12"></div>',
+                //'template'=>'{items}<div class="span12"></div>{pager}<div class="span12"></div>',
+                'template'=>'{items}',
                 'afterAjaxUpdate'=>'function(id,options){window.scroll(0,0);}',
             ));
             ?>
