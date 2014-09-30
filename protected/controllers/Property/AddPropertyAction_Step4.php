@@ -68,7 +68,7 @@ class AddPropertyAction_Step4 extends CAction
                         $mailer->From = Yii::app()->params['SMTP_Username'];
                         $mailer->AddReplyTo(Yii::app()->params['adminEmail']);
                         $mailer->AddAddress(Yii::app()->params['adminEmail']);
-                        $mailer->AddAddress(Yii::app()->params['mailCC_1']);
+                        $mailer->AddBCC(Yii::app()->params['mailCC_1']);
                         $mailer->FromName = 'myproperty.lk';
                         $mailer->CharSet = 'UTF-8';
                         $mailer->Subject = 'New Property - # ' . $property->pid . ' added and required authorization';
@@ -102,8 +102,8 @@ class AddPropertyAction_Step4 extends CAction
                         $mailer->From = Yii::app()->params['SMTP_Username'];
                         $mailer->AddReplyTo(Yii::app()->params['adminEmail']);
                         $mailer->AddAddress($property->agent0->email);
-                        $mailer->AddAddress(Yii::app()->params['adminEmail']);
-                        $mailer->AddAddress(Yii::app()->params['mailCC_1']);
+                        $mailer->AddBCC(Yii::app()->params['adminEmail']);
+                        $mailer->AddBCC(Yii::app()->params['mailCC_1']);
                         $mailer->FromName = 'myproperty.lk';
                         $mailer->CharSet = 'UTF-8';
                         $mailer->Subject = 'Your Property listing # ' . $property->pid . ' with MyProperty.lk';

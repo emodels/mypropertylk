@@ -104,8 +104,8 @@ class ConfirmAction extends CAction
                                     $mailer->From = Yii::app()->params['SMTP_Username'];
                                     $mailer->AddReplyTo(Yii::app()->params['adminEmail']);
                                     $mailer->AddAddress($transaction->user0->email);
-                                    $mailer->AddAddress(Yii::app()->params['adminEmail']);
-                                    $mailer->AddAddress(Yii::app()->params['mailCC_1']);
+                                    $mailer->AddBCC(Yii::app()->params['adminEmail']);
+                                    $mailer->AddBCC(Yii::app()->params['mailCC_1']);
                                     $mailer->FromName = 'myproperty.lk';
                                     $mailer->CharSet = 'UTF-8';
                                     $mailer->Subject = 'myproperty.lk Property Transaction - # ' . $transaction->id . ' Successfully Completed...';
@@ -161,8 +161,8 @@ class ConfirmAction extends CAction
                                     $mailer->From = Yii::app()->params['SMTP_Username'];
                                     $mailer->AddReplyTo(Yii::app()->params['adminEmail']);
                                     $mailer->AddAddress($transaction->user0->email);
-                                    $mailer->AddAddress(Yii::app()->params['adminEmail']);
-                                    $mailer->AddAddress(Yii::app()->params['mailCC_1']);
+                                    $mailer->AddBCC(Yii::app()->params['adminEmail']);
+                                    $mailer->AddBCC(Yii::app()->params['mailCC_1']);
                                     $mailer->FromName = 'myproperty.lk';
                                     $mailer->CharSet = 'UTF-8';
                                     $mailer->Subject = 'myproperty.lk Advertisement Transaction  - # ' . $transaction->id . ' Successfully Completed...';

@@ -85,7 +85,7 @@ class SiteController extends Controller
                     $mailer->From = Yii::app()->params['SMTP_Username'];
                     $mailer->AddReplyTo($model->email);
                     $mailer->AddAddress(Yii::app()->params['adminEmail']);
-                    $mailer->AddAddress(Yii::app()->params['mailCC_1']);
+                    $mailer->AddBCC(Yii::app()->params['mailCC_1']);
                     $mailer->FromName = $model->name;
                     $mailer->CharSet = 'UTF-8';
                     $mailer->Subject = 'myproperty.lk Contact Us Enquiry';;
@@ -303,7 +303,7 @@ class SiteController extends Controller
                     $mailer->From = Yii::app()->params['SMTP_Username'];
                     $mailer->AddReplyTo(Yii::app()->params['adminEmail']);
                     $mailer->AddAddress($user->email);
-                    $mailer->AddAddress(Yii::app()->params['mailCC_1']);
+                    $mailer->AddBCC(Yii::app()->params['mailCC_1']);
                     $mailer->FromName = "myproperty.lk";
                     $mailer->CharSet = 'UTF-8';
                     $mailer->Subject = 'myproperty.lk - Your Login access information';;

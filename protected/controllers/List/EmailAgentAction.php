@@ -54,8 +54,8 @@ class EmailagentAction extends CAction
                         $mailer->From = Yii::app()->params['SMTP_Username'];
                         $mailer->AddReplyTo($_POST['Enquery']['email']);
                         $mailer->AddAddress($agent_vendor_email);
-                        $mailer->AddAddress(Yii::app()->params['adminEmail']);
-                        $mailer->AddAddress(Yii::app()->params['mailCC_1']);
+                        $mailer->AddBCC(Yii::app()->params['adminEmail']);
+                        $mailer->AddBCC(Yii::app()->params['mailCC_1']);
                         $mailer->FromName = 'myproperty.lk Enquiry';
                         $mailer->CharSet = 'UTF-8';
                         $mailer->Subject = 'Property Id : # ' . $_POST['Enquery']['pid'] . ' - Enquiry from - ' . ucwords($_POST['Enquery']['name']);
