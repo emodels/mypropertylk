@@ -141,11 +141,11 @@
             <a href="<?php echo ((Yii::app()->user->usertype == 0) ? 'javascript:PropertyStatusChange(' . $data->pid . ');' : '#') ?>" class="icon_gap" style="text-decoration: none; cursor: <?php echo ((Yii::app()->user->usertype == 0) ? 'pointer' : 'default') ?>">
                 <?php
                 if ($data->status == 0) {
-                    echo "InActive";
+                    echo "<font style='color:red'><i class='icon-warning-sign icon_gap'></i>InActive</font>";
                 } elseif ($data->status == 1) {
-                    echo "Active";
+                    echo "<font style='color:green'><i class='icon-ok-sign icon_gap'></i>Active</font>";
                 } else {
-                    echo "Sold";
+                    echo "<font style='color:#e39c2f'><i class='icon-zoom-in icon_gap'></i>Sold</font>";
                 }
                 ?>
             </a>
