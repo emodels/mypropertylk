@@ -50,11 +50,45 @@ class AddPropertyAction_Step4 extends CAction
 
                 if (Yii::app()->request->isPostRequest && !Yii::app()->request->isAjaxRequest) {
 
-                    $this->getController()->redirect(Yii::app()->baseUrl . '/property/promotelisting?pid=' .Yii::app()->session['property_id']);
-                    unset(Yii::app()->session['property_id']);
-                    Yii::app()->user->setFlash('success', 'Property Added Successfully');
+                    /*---( Send email notification to Admin )---*/
+                    $message = $this->getController()->renderPartial('//email/template/email_new_property_added_admin_notification', array('model'=>$property), true);
 
-                    //$this->getController()->redirect(Yii::app()->baseUrl . '/property/propertylisting?type=0');
+                    if (isset($message) && $message != "") {
+
+                        $mailer = Yii::createComponent('application.extensions.mailer.EMailer');
+                        $mailer->Host = Yii::app()->params['SMTP_Host'];
+                        $mailer->Port = Yii::app()->params['SMTP_Port'];
+                        if (Yii::app()->params['SMTPSecure'] == TRUE){
+                            $mailer->SMTPSecure = 'ssl';
+                        }
+                        $mailer->IsSMTP();
+                        $mailer->SMTPAuth = true;
+                        $mailer->Username = Yii::app()->params['SMTP_Username'];
+                        $mailer->Password = Yii::app()->params['SMTP_password'];
+                        $mailer->From = Yii::app()->params['SMTP_Username'];
+                        $mailer->AddReplyTo(Yii::app()->params['adminEmail']);
+                        $mailer->AddAddress(Yii::app()->params['adminEmail']);
+                        $mailer->AddAddress(Yii::app()->params['mailCC_1']);
+                        $mailer->FromName = 'myproperty.lk';
+                        $mailer->CharSet = 'UTF-8';
+                        $mailer->Subject = 'New Property - # ' . $property->pid . ' added and required authorization';
+                        $mailer->IsHTML();
+                        $mailer->Body = $message;
+                        $mailer->SMTPDebug  = Yii::app()->params['SMTPDebug'];
+
+                        try{
+                            $mailer->Send();
+                        }
+                        catch (Exception $ex){
+                            echo $ex->getMessage();
+                        }
+                    }
+
+                    $this->getController()->redirect(Yii::app()->baseUrl . '/property/promotelisting?pid=' .Yii::app()->session['property_id']);
+
+                    unset(Yii::app()->session['property_id']);
+
+                    Yii::app()->user->setFlash('success', 'Property Added Successfully');
                 }
 
             } else {

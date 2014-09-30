@@ -10,32 +10,28 @@
         <tr>
             <td style="padding-top: 15px;">
                 <p>
-                    Thank You for your payment ! Your Advertisement will be published soon ....
+                    New Property Advertisement added with following information. Please review and authorize this property to go live.
                 </p>
             </td>
         </tr>
     </table>
 </div>
 <div style="margin-left: 10px;">
-    <p><b>Transaction Details:</b></p>
+    <p><b>Property Details:</b></p>
 </div>
 <div style="position: relative; padding: 20px; margin-left: 10px; border: solid 1px silver; background: #f7f7f7; border-radius: 10px; font-size: 15px; width: 80%">
     <table border="0" cellpadding="2" cellspacing="2" width="100%">
         <tr>
-            <td style="width: 200px"><b>Transaction ID:</b></td>
-            <td># <?php echo $model['id']; ?></td>
+            <td style="width: 200px"><b>Property ID:</b></td>
+            <td># <?php echo $model['pid']; ?></td>
         </tr>
         <tr>
-            <td style="width: 200px"><b>Date</b></td>
-            <td><?php echo $model['transactiondate']; ?></td>
+            <td style="width: 200px"><b>Added Date</b></td>
+            <td><?php echo $model['entrydate']; ?></td>
         </tr>
         <tr>
-            <td style="width: 200px"><b>Amount</b></td>
-            <td> Rs. <?php echo $model['amount']; ?></td>
-        </tr>
-        <tr>
-            <td style="width: 200px"><b>Description</b></td>
-            <td><?php echo $model['description']; ?></td>
+            <td style="width: 200px"><b>Property URL</b></td>
+            <td><a href="<?php echo Yii::app()->request->baseUrl; ?>/list/detail/pid/<?php echo $model['pid']; ?>" target="_blank">Click here to view Property information</a></td>
         </tr>
     </table>
 </div>

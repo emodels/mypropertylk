@@ -103,6 +103,7 @@ class ConfirmAction extends CAction
                                     $mailer->Password = Yii::app()->params['SMTP_password'];
                                     $mailer->From = Yii::app()->params['SMTP_Username'];
                                     $mailer->AddReplyTo(Yii::app()->params['adminEmail']);
+                                    $mailer->AddAddress($transaction->user0->email);
                                     $mailer->AddAddress(Yii::app()->params['adminEmail']);
                                     $mailer->AddAddress(Yii::app()->params['mailCC_1']);
                                     $mailer->FromName = 'myproperty.lk';
@@ -159,6 +160,7 @@ class ConfirmAction extends CAction
                                     $mailer->Password = Yii::app()->params['SMTP_password'];
                                     $mailer->From = Yii::app()->params['SMTP_Username'];
                                     $mailer->AddReplyTo(Yii::app()->params['adminEmail']);
+                                    $mailer->AddAddress($transaction->user0->email);
                                     $mailer->AddAddress(Yii::app()->params['adminEmail']);
                                     $mailer->AddAddress(Yii::app()->params['mailCC_1']);
                                     $mailer->FromName = 'myproperty.lk';
