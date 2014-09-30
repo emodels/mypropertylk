@@ -557,11 +557,13 @@
                                                 $page = 4;
                                             }
 
-                                            $condition = '(page = ' . $page . ' AND (size = 1 OR size = 3 OR size = 5) AND status = 1) AND expiredate >= CURDATE()';
+                                            $condition = '(t.page = ' . $page . ' AND (t.size = 1 OR t.size = 3 OR t.size = 5) AND t.status = 1) AND t.expiredate >= CURDATE()';
+
+                                            $with = array('size0'=>array('condition'=>'size0.id = t.size'));
 
                                             $this->widget('zii.widgets.CListView', array(
                                                 'id' => 'list_advertisement',
-                                                'dataProvider'=>new CActiveDataProvider('Advertising', array('criteria'=>array('condition'=> $condition,'order' => 'entrydate DESC'),'pagination'=>false)),
+                                                'dataProvider'=>new CActiveDataProvider('Advertising', array('criteria'=>array('condition' => $condition, 'with' => $with, 'order' => 'size0.height DESC', 'together'=>true),'pagination'=>false)),
                                                 'itemView' => '_ads_list_view'
                                             ));
                                             ?>
@@ -818,12 +820,13 @@
                             }
                         </style>
                         <?php
+                        $condition = '(t.page = ' . $page . ' AND (t.size = 2 OR t.size = 4 OR t.size = 6) AND t.status = 1) AND t.expiredate >= CURDATE()';
 
-                        $condition = '(page = ' . $page . ' AND (size = 2 OR size = 4 OR size = 6) AND status = 1) AND expiredate >= CURDATE()';
+                        $with = array('size0'=>array('condition'=>'size0.id = t.size'));
 
                         $this->widget('zii.widgets.CListView', array(
                             'id' => 'list_advertisement',
-                            'dataProvider'=>new CActiveDataProvider('Advertising', array('criteria'=>array('condition'=> $condition,'order' => 'entrydate DESC'),'pagination'=>false)),
+                            'dataProvider'=>new CActiveDataProvider('Advertising', array('criteria'=>array('condition' => $condition, 'with' => $with, 'order' => 'size0.height DESC', 'together'=>true),'pagination'=>false)),
                             'itemView' => '_ads_list_view'
                         ));
                         ?>
