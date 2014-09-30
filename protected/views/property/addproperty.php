@@ -209,7 +209,7 @@ $this->breadcrumbs=array(
                     </div>
                     <div class="control-group-admin">
                         <?php echo $form->textField($model,'vendoremail', array('placeholder'=>'Eamil Address')); ?><span class="star">*</span>
-                        <a href="#" data-toggle="tooltip" title="You may enter multiple email addresses separated by a comma (e.g. mary@email.com, john@email.com)." data-placement="right" class="tooltip-custom"></a>
+                        <a href="#" data-toggle="tooltip" title="You may enter email address of the vendor" data-placement="right" class="tooltip-custom"></a>
                         <?php echo $form->error($model,'vendoremail'); ?>
                     </div>
                     <div class="control-group-admin">
@@ -225,7 +225,7 @@ $this->breadcrumbs=array(
                 </div>
             </div>
             <div class="span4">
-                <p>The vendor information gathered is not displayed on the website. This information allows you to send communications directly to the vendor of the property in the following emails:</p>
+                <p>The vendor information gathered is not displayed on the website. This information allows you to send communications directly to the vendor of the property</p>
             </div>
         </div>
         <legend>

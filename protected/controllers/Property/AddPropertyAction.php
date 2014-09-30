@@ -60,6 +60,7 @@ class AddPropertyAction extends CAction
         $model->propcondition = 1;
         $model->pricetype = 1;
         $model->entrydate = date("Y-m-d");
+        $model->vendorphone = '+94';
 
         if (isset($_POST['Property'])) {
 

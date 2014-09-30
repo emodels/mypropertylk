@@ -428,7 +428,7 @@
                                     } else if ($model->landsquares == 2){
                                         echo "m²";
                                     } else if ($model->landsquares == 3){
-                                        echo "Hec";
+                                        echo "Perch";
                                     } else if ($model->landsquares == 4){
                                         echo "Acres";
                                     }

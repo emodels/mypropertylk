@@ -168,7 +168,7 @@ $this->breadcrumbs=array(
                         <?php echo $form->textField($model,'landsize', array('placeholder'=>'Land Size')); ?>
                         <?php echo $form->error($model,'landsize'); ?>
                         <?php
-                        $array_landsq= array(1 => 'Square Feet', 2 => 'Square Meters', 3 => 'Hectares', 4 => 'Acres');
+                        $array_landsq= array(1 => 'Square Feet', 2 => 'Square Meters', 3 => 'Perch', 4 => 'Acres');
                         ?>
                         <?php echo $form->dropDownList($model, 'landsquares', $array_landsq); ?><span class="star">*</span>
                         <?php echo $form->error($model, 'landsquares', array('style'=>'width: auto')); ?>
@@ -182,7 +182,7 @@ $this->breadcrumbs=array(
                         <?php echo $form->textField($model,'floorarea', array('placeholder'=>'Floor Area')); ?><span class="star">*</span>
                         <?php echo $form->error($model,'floorarea'); ?>
                         <?php
-                        $array_landsq= array(1 => 'Square Feet', 2 => 'Square Meters', 3 => 'Hectares', 4 => 'Acres');
+                        $array_landsq= array(1 => 'Square Feet', 2 => 'Square Meters', 3 => 'Perch', 4 => 'Acres');
                         ?>
                         <?php echo $form->dropDownList($model, 'floorsquares', $array_landsq); ?><span class="star">*</span>
                         <?php echo $form->error($model, 'floorsquares', array('style'=>'width: auto')); ?>
