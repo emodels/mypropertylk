@@ -542,15 +542,15 @@
 
                                                 if (isset($_GET['type'])) {
                                                     if ($_GET['type'] == "all") {
-                                                        $condition = '(type = 1 OR type = 2 OR type = 3) AND pricetype = 3 AND status = 1 ';
+                                                        $condition = '(type = 1 OR type = 2 OR type = 3 OR type = 4 OR type = 5) AND pricetype = 3 AND status = 1 ';
                                                     } elseif($_GET['type'] == "buy"){
-                                                        $condition = '(type = 1 OR type = 2) AND pricetype = 3 AND status = 1';
+                                                        $condition = '(type = 1 OR type = 2 OR type = 4) AND pricetype = 3 AND status = 1';
                                                     } elseif($_GET['type'] == "rent"){
-                                                        $condition = 'type = 3 AND pricetype = 3 AND status = 1';
+                                                        $condition = '(type = 3 OR type = 5) AND pricetype = 3 AND status = 1';
                                                     }
                                                 }
                                                 else {
-                                                    $condition = '(type = 1 OR type = 2 OR type = 3) AND pricetype = 3 AND status = 1 ';
+                                                    $condition = '(type = 1 OR type = 2 OR type = 3 OR type = 4 OR type = 5) AND pricetype = 3 AND status = 1 ';
                                                 }
 
                                                 $this->widget('zii.widgets.CListView', array(
