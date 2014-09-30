@@ -106,7 +106,9 @@
     <div class="property-attribute">
         <h3 class="attribute-title text-center"><a href="<?php echo Yii::app()->baseUrl . '/list/detail?pid=' .$data->pid;?>"><?php echo ucwords($data->townname); ?></a></h3>
         <div class="attribute-price">
-            <span class="attr-pricing"><sup class="price-curr">Rs.</sup>
+            <span class="attr-pricing">
+                <?php if ($data->dispalyprice < 2 && ($data->price > 0 || $data->monthlyrent > 0)) { ?>
+                <sup class="price-curr">Rs.</sup>
                 <?php
                 if ($data->type == 1 || $data->type == 2 || $data->type == 4) {
                     echo Yii::app()->numberFormatter->format("#,##0", $data->price);
@@ -114,6 +116,9 @@
                     echo Yii::app()->numberFormatter->format("#,##0", $data->monthlyrent);
                 }
                 ?>
+                <?php } else {  ?>
+                    Contact agent
+                <?php } ?>
             </span>
         </div>
     </div>
