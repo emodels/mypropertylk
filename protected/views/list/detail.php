@@ -478,7 +478,7 @@
                             ?>
                         </div>
                         <?php }
-                        if ($model->vediourl != ""){
+                        if ($model->vediourl != "" && $model->vediourl != "http://"){
                             ?>
 
                             <div class="row-fluid span12" style="border-top: solid 1px silver; margin-top: 10px;  margin-left: 0;">
@@ -490,7 +490,7 @@
                                 </a>
                             </div>
                         <?php }
-                        if ($model->onlinetour1 != ""){
+                        if ($model->onlinetour1 != "" && $model->onlinetour1 != "http://"){
                             ?>
 
                             <div class="row-fluid span12" style="border-top: solid 1px silver; margin-top: 10px;  margin-left: 0;">
@@ -502,7 +502,7 @@
                                 </a>
                             </div>
                         <?php }
-                        if ($model->onlinetour2 != ""){
+                        if ($model->onlinetour2 != "" && $model->onlinetour2 != "http://"){
                             ?>
 
                             <div class="row-fluid span12" style="border-top: solid 1px silver; margin-top: 10px;  margin-left: 0;">
