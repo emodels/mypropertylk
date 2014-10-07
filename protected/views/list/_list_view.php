@@ -176,7 +176,7 @@ if ($_GET['type'] == 'sold'){
 
                                         } else{ ?>
                                             <li>
-                                                <img src="<?php echo Yii::app()->baseUrl;?> . /upload/propertyimages/prop_no_img.jpg" style="max-height: 195px;">
+                                                <img src="<?php echo Yii::app()->baseUrl;?>/upload/propertyimages/prop_no_img.jpg" style="max-height: 195px;">
                                             </li>
                                         <?php } ?>
                                     </ul>
