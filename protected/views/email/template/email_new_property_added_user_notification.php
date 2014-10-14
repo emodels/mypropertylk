@@ -31,7 +31,7 @@
         </tr>
         <tr>
             <td style="width: 200px"><b>Property URL</b></td>
-            <td><a href="<?php echo Yii::app()->request->baseUrl; ?>/list/detail/pid/<?php echo $model['pid']; ?>" target="_blank">Click here to view Property information</a></td>
+            <td><a href="http://www.myproperty.lk/list/detail/pid/<?php echo $model['pid']; ?>" target="_blank">Click here to view Property information</a></td>
         </tr>
     </table>
 </div>

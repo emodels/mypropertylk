@@ -167,7 +167,7 @@
                         <div class="textwidget">
                             Sri Lanka's most trusted property portal to promote Sri Lankan real-estate business locally and internationally....
                         </div>
-                        <ul class="footer-blog">
+                        <ul class="footer-blog span6">
                             <li>
                                 <a href="#">
                                     <i class="icon-phone"></i> +94 117 444 115
@@ -181,6 +181,14 @@
                                 <a href="mailto:info@dwellingsgroup.com.au">
                                     <i class="icon-envelope"></i> info@myproperty.lk
                                 </a>
+                            </li>
+                        </ul>
+                        <ul class="footer-blog span5">
+                            <li>
+                                <a href="terms_conditions.pdf" target="_blank">Terms and Conditions</a>
+                            </li>
+                            <li>
+                                <a href="privacy_policy.pdf" target="_blank">Privacy Policy</a>
                             </li>
                         </ul>
                     </div>
