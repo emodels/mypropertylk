@@ -28,6 +28,7 @@ class DetailAction extends CAction
             if (isset($model)) {
 
                 $this->getController()->pageTitle = $model->headline;
+                Yii::app()->clientScript->registerMetaTag($model->desc, 'description');
 
                 if ($model->balcony == 1) {
                     $outdoorfeatures_array[] = "Balcony";
