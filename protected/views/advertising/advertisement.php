@@ -62,11 +62,11 @@
             <div class="span3">
                 <h3>Advertising</h3>
             </div>
-            <div class="offset5 span4">
+            <div class="offset4 span5">
                 <div class="hidden-phone" style="padding-top: 20px;"></div>
                 <div style="padding-bottom: 5px;">
                     <!---------( For View Advertisement Price List )------------------>
-                    <a class="btn btn-primary" href="<?php echo Yii::app()->request->baseUrl; ?>/advertising/adpricelisting" style="text-decoration: none; color: #ffffff">Ad Price List</a>
+                    <a class="btn btn-primary" href="<?php echo Yii::app()->request->baseUrl; ?>/advertising/adpricelisting" style="text-decoration: none; color: #ffffff">View Price list</a>
 
                     <!---------( For Add New Advertisements )------------------>
                     <a class="btn btn-primary" href="<?php echo Yii::app()->request->baseUrl; ?>/advertising/addadvertisement" style="text-decoration: none; color: #ffffff">Add New Advertisement</a>

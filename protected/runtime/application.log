@@ -5148,3 +5148,12 @@ Stack trace:
 REQUEST_URI=/mypropertylk/mypropertylk/advertising/adpricelistingprint
 HTTP_REFERER=http://localhost/mypropertylk/login
 ---
+2014/10/20 18:10:02 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "mypropertylk/homeideas/homeideaslisting".' in C:\xampplite\htdocs\mypropertylk\protected\framework\web\CWebApplication.php:280
+Stack trace:
+#0 C:\xampplite\htdocs\mypropertylk\protected\framework\web\CWebApplication.php(135): CWebApplication->runController('mypropertylk/ho...')
+#1 C:\xampplite\htdocs\mypropertylk\protected\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 C:\xampplite\htdocs\mypropertylk\index.php(15): CApplication->run()
+#3 {main}
+REQUEST_URI=/mypropertylk/mypropertylk/homeideas/homeideaslisting
+HTTP_REFERER=http://localhost/mypropertylk/login
+---

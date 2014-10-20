@@ -97,6 +97,7 @@
                         <div class="span9">
                             <div id="title-listing">
                                 <div class="property-list-title">Home Ideas</div>
+                                <a class="btn btn-warning" style="position: absolute; right: 0px; top: -15px; color: #ffffff" href="<?php echo Yii::app()->request->baseUrl; ?>/homeideas/homeideaslisting">Upload and share your Home ideas</a>
                             </div>
                             <ul class="nav nav-tabs">
                                 <li id="all" class="active">
