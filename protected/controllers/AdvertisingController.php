@@ -47,8 +47,13 @@ class AdvertisingController extends Controller
          * checking user logged or not
          */
         if (Yii::app()->user->isGuest){
-            Yii::app()->user->setReturnUrl(Yii::app()->request->requestUri);
-            $this->redirect(Yii::app()->baseUrl . '/login');
+
+            if ($filterChain->action->id != 'adpricelistingprint') {  /*---( Allow Ad Price List Print page view as Public page )---*/
+
+                Yii::app()->user->setReturnUrl(Yii::app()->request->requestUri);
+                $this->redirect(Yii::app()->baseUrl . '/login');
+            }
+
         } else {
 
             switch (Yii::app()->user->usertype){
