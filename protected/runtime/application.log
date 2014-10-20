@@ -5157,3 +5157,48 @@ Stack trace:
 REQUEST_URI=/mypropertylk/mypropertylk/homeideas/homeideaslisting
 HTTP_REFERER=http://localhost/mypropertylk/login
 ---
+2014/10/20 18:28:40 [error] [exception.CException] exception 'CException' with message 'Property "DetailAction.pageTitle" is not defined.' in C:\xampplite\htdocs\mypropertylk\protected\framework\base\CComponent.php:174
+Stack trace:
+#0 C:\xampplite\htdocs\mypropertylk\protected\controllers\List\DetailAction.php(22): CComponent->__set('pageTitle', 'New Title')
+#1 C:\xampplite\htdocs\mypropertylk\protected\framework\web\actions\CAction.php(75): DetailAction->run()
+#2 C:\xampplite\htdocs\mypropertylk\protected\framework\web\CController.php(309): CAction->runWithParams(Array)
+#3 C:\xampplite\htdocs\mypropertylk\protected\framework\web\CController.php(287): CController->runAction(Object(DetailAction))
+#4 C:\xampplite\htdocs\mypropertylk\protected\framework\web\CController.php(266): CController->runActionWithFilters(Object(DetailAction), Array)
+#5 C:\xampplite\htdocs\mypropertylk\protected\framework\web\CWebApplication.php(276): CController->run('detail')
+#6 C:\xampplite\htdocs\mypropertylk\protected\framework\web\CWebApplication.php(135): CWebApplication->runController('list/detail')
+#7 C:\xampplite\htdocs\mypropertylk\protected\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#8 C:\xampplite\htdocs\mypropertylk\index.php(15): CApplication->run()
+#9 {main}
+REQUEST_URI=/mypropertylk/list/detail?pid=87
+HTTP_REFERER=http://localhost/mypropertylk/
+---
+2014/10/20 18:30:09 [error] [exception.CException] exception 'CException' with message 'Property "DetailAction.pageTitle" is not defined.' in C:\xampplite\htdocs\mypropertylk\protected\framework\base\CComponent.php:174
+Stack trace:
+#0 C:\xampplite\htdocs\mypropertylk\protected\controllers\List\DetailAction.php(30): CComponent->__set('pageTitle', 'Modern House fo...')
+#1 C:\xampplite\htdocs\mypropertylk\protected\framework\web\actions\CAction.php(75): DetailAction->run()
+#2 C:\xampplite\htdocs\mypropertylk\protected\framework\web\CController.php(309): CAction->runWithParams(Array)
+#3 C:\xampplite\htdocs\mypropertylk\protected\framework\web\CController.php(287): CController->runAction(Object(DetailAction))
+#4 C:\xampplite\htdocs\mypropertylk\protected\framework\web\CController.php(266): CController->runActionWithFilters(Object(DetailAction), Array)
+#5 C:\xampplite\htdocs\mypropertylk\protected\framework\web\CWebApplication.php(276): CController->run('detail')
+#6 C:\xampplite\htdocs\mypropertylk\protected\framework\web\CWebApplication.php(135): CWebApplication->runController('list/detail')
+#7 C:\xampplite\htdocs\mypropertylk\protected\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#8 C:\xampplite\htdocs\mypropertylk\index.php(15): CApplication->run()
+#9 {main}
+REQUEST_URI=/mypropertylk/list/detail?pid=87
+HTTP_REFERER=http://localhost/mypropertylk/
+---
+2014/10/20 18:40:25 [error] [exception.CException] exception 'CException' with message 'Property "DetailAction.pageTitle" is not defined.' in C:\xampplite\htdocs\mypropertylk\protected\framework\base\CComponent.php:174
+Stack trace:
+#0 C:\xampplite\htdocs\mypropertylk\protected\controllers\List\DetailAction.php(30): CComponent->__set('pageTitle', 'Modern House fo...')
+#1 C:\xampplite\htdocs\mypropertylk\protected\framework\web\actions\CAction.php(75): DetailAction->run()
+#2 C:\xampplite\htdocs\mypropertylk\protected\framework\web\CController.php(309): CAction->runWithParams(Array)
+#3 C:\xampplite\htdocs\mypropertylk\protected\framework\web\CController.php(287): CController->runAction(Object(DetailAction))
+#4 C:\xampplite\htdocs\mypropertylk\protected\framework\web\CController.php(266): CController->runActionWithFilters(Object(DetailAction), Array)
+#5 C:\xampplite\htdocs\mypropertylk\protected\framework\web\CWebApplication.php(276): CController->run('detail')
+#6 C:\xampplite\htdocs\mypropertylk\protected\framework\web\CWebApplication.php(135): CWebApplication->runController('list/detail')
+#7 C:\xampplite\htdocs\mypropertylk\protected\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#8 C:\xampplite\htdocs\mypropertylk\index.php(15): CApplication->run()
+#9 {main}
+REQUEST_URI=/mypropertylk/list/detail?pid=87
+HTTP_REFERER=http://localhost/mypropertylk/
+---

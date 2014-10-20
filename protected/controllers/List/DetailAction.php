@@ -27,6 +27,8 @@ class DetailAction extends CAction
 
             if (isset($model)) {
 
+                $this->getController()->pageTitle = $model->headline;
+
                 if ($model->balcony == 1) {
                     $outdoorfeatures_array[] = "Balcony";
                 }

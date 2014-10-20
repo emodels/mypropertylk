@@ -10,9 +10,9 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
-    <meta name="description" content="" />
-    <meta name="keyword" content="" />
-    <title>Real Estate Property & Homes For Sale - myproperty.lk</title>
+    <meta name="description" content="myproperty.lk is most trusted property portal to promote Sri Lankan real-estate business locally and internationally. property website for houses for sale, houses for rent/lease and land sales across Sri Lanka, posted directly by the sellers, owners and estate agents/brokers" />
+    <meta name="keywords" content="houses for sale, houses for rent/lease, land sales, Sri Lanka" />
+    <title><?php echo $this->pageTitle; ?></title>
     <link rel="shortcut icon" href="<?php echo Yii::app()->request->baseUrl; ?>/images/fav-ico.ico" />
     <meta name='robots' content='noindex,nofollow' />
     <script type='text/javascript' src='<?php echo Yii::app()->request->baseUrl; ?>/js/bootstrap.min.js'></script>
