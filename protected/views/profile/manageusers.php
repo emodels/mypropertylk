@@ -62,9 +62,12 @@
         <div class="span7">
             <h3>Mange Users</h3>
         </div>
-        <div class="offset3 span2">
+        <div class="offset1 span4">
             <div class="hidden-phone" style="padding-top: 20px;"></div>
             <!---------( For Add NewUsers )------------------>
+            <div class="btn-group" style="padding-bottom: 5px;">
+                <button class="btn btn-primary"><a href="<?php echo Yii::app()->request->baseUrl; ?>/profile/downloadcsv" style="text-decoration: none; color: #ffffff">Download CSV</a></button>
+            </div>
             <div class="btn-group" style="padding-bottom: 5px;">
                 <button class="btn btn-primary"><a href="<?php echo Yii::app()->request->baseUrl; ?>/profile/adduser" style="text-decoration: none; color: #ffffff">Add New User</a></button>
             </div>

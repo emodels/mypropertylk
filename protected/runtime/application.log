@@ -5139,3 +5139,12 @@ Stack trace:
 REQUEST_URI=/mypropertylk/terms_conditions.docx
 HTTP_REFERER=http://localhost/mypropertylk/
 ---
+2014/10/20 16:48:20 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "mypropertylk/advertising/adpricelistingprint".' in C:\xampplite\htdocs\mypropertylk\protected\framework\web\CWebApplication.php:280
+Stack trace:
+#0 C:\xampplite\htdocs\mypropertylk\protected\framework\web\CWebApplication.php(135): CWebApplication->runController('mypropertylk/ad...')
+#1 C:\xampplite\htdocs\mypropertylk\protected\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 C:\xampplite\htdocs\mypropertylk\index.php(15): CApplication->run()
+#3 {main}
+REQUEST_URI=/mypropertylk/mypropertylk/advertising/adpricelistingprint
+HTTP_REFERER=http://localhost/mypropertylk/login
+---

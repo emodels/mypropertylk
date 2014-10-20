@@ -32,6 +32,7 @@ class ProfileController extends Controller
             'manageusers'=>'application.controllers.Profile.ManageUsersAction',  //action for admin - Manage Users page controller
             'adduser'=>'application.controllers.Profile.AddUserAction',  //action for admin - Add Users page controller
             'watchlist'=>'application.controllers.Profile.SavewatchlistAction',  //action for watchlist page controller
+            'downloadcsv'=>'application.controllers.Profile.DownloadCsvAction',  //action for watchlist page controller
         );
     }
 
