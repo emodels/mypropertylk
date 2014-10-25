@@ -66,8 +66,11 @@
                 <div class="hidden-phone" style="padding-top: 20px;"></div>
                 <div style="padding-bottom: 5px;">
                     <!---------( For View Advertisement Price List )------------------>
-                    <a class="btn btn-primary" href="<?php echo Yii::app()->request->baseUrl; ?>/advertising/adpricelisting" style="text-decoration: none; color: #ffffff">View Price list</a>
-
+                    <?php if (Yii::app()->user->usertype == 0) { ?>
+                        <a class="btn btn-primary" href="<?php echo Yii::app()->request->baseUrl; ?>/advertising/adpricelisting" style="text-decoration: none; color: #ffffff">View Price list</a>
+                    <?php } else { ?>
+                        <a class="btn btn-primary" href="<?php echo Yii::app()->request->baseUrl; ?>/advertising/adpricelistingprint" style="text-decoration: none; color: #ffffff" target="_blank">View Price list</a>
+                    <?php } ?>
                     <!---------( For Add New Advertisements )------------------>
                     <a class="btn btn-primary" href="<?php echo Yii::app()->request->baseUrl; ?>/advertising/addadvertisement" style="text-decoration: none; color: #ffffff">Add New Advertisement</a>
                 </div>
