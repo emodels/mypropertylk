@@ -21,7 +21,7 @@ class PropertyImageUploadAction extends CAction
 
         $folder = 'upload/propertyimages/';
         $allowedExtensions = array("jpg", "png");
-        $sizeLimit = 1 * 1024 * 1024;
+        $sizeLimit = 10 * 1024 * 1024;
 
         $uploader = new qqFileUploader($allowedExtensions, $sizeLimit, 'image_' . $_GET['id'] . '_' . time());
 

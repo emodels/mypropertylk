@@ -171,7 +171,7 @@
                                 'config'=>array(
                                     'action'=>Yii::app()->createUrl('property/propertyimageupload/id/'.$model->pid. '/type/0'),
                                     'allowedExtensions'=>array("jpg", "png"),
-                                    'sizeLimit'=>1*1024*1024,
+                                    'sizeLimit'=>10*1024*1024,
                                     'onComplete'=>'js:function(id, filename, responseJSON){
                                                         if (responseJSON.success == true){
                                                             $.fn.yiiListView.update("list_images_house");
@@ -221,7 +221,7 @@
                                 'config'=>array(
                                     'action'=>Yii::app()->createUrl('property/propertyimageupload/id/'.$model->pid . '/type/1'),
                                     'allowedExtensions'=>array("jpg", "png"),
-                                    'sizeLimit'=>1*1024*1024,
+                                    'sizeLimit'=>10*1024*1024,
                                     'onComplete'=>'js:function(id, filename, responseJSON){
                                                         if (responseJSON.success == true){
                                                             $.fn.yiiListView.update("list_images_floor");
