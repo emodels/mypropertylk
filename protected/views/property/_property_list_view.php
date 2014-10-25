@@ -27,7 +27,7 @@
                     }
                 } else{ ?>
 
-                    <img src="<?php echo Yii::app()->baseUrl;?> . /upload/propertyimages/prop_no_img.jpg" class="listing-img">
+                    <img src="<?php echo Yii::app()->baseUrl; ?>/upload/propertyimages/prop_no_img.jpg" class="listing-img">
                 <?php } ?>
             </a>
     </div>
