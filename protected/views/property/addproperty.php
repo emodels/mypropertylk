@@ -237,8 +237,8 @@ $this->breadcrumbs=array(
                     <!---------( For Home Sales, Land Sales )------------------>
                     <?php if ($model->type == 1 || $model->type == 3){  ?>
                     <div class="control-group-admin">
-                        <?php echo $form->textField($model,'unitnum', array('placeholder'=>'Unit Number')); ?><span class="star">*</span>
-                        <?php echo $form->error($model,'unitnum'); ?>
+                        <?php echo $form->textField($model,'unitnum', array('placeholder'=>'Unit Number')); ?><!--<span class="star">*</span>-->
+                        <?php //echo $form->error($model,'unitnum'); ?>
                     </div>
                     <?php } ?>
                     <!---------( End Home Sales, Land Sales )------------------>
@@ -250,11 +250,15 @@ $this->breadcrumbs=array(
                         </div>
                     <?php } ?>
                     <!---------( End Home Sales, Land Sales )------------------>
-                    <div class="control-group-admin">
-                        <?php echo $form->textField($model,'number', array('placeholder'=>'Number', 'class'=>'span2')); ?>
-                        <?php echo $form->error($model,'number'); ?>
-                        <?php echo $form->textField($model,'streetaddress', array('placeholder'=>'Street Address')); ?><span class="star">*</span>
-                        <?php echo $form->error($model,'streetaddress'); ?>
+                    <div class="span12 control-group-admin" style="margin-left: 0">
+                        <div class="span2">
+                            <?php echo $form->textField($model,'number', array('placeholder'=>'Number', 'class'=>'span11')); ?>
+                            <?php //echo $form->error($model,'number'); ?>
+                        </div>
+                        <div class="span10">
+                            <?php echo $form->textField($model,'streetaddress', array('placeholder'=>'Street Address')); ?><span class="star">*</span>
+                            <?php echo $form->error($model,'streetaddress'); ?>
+                        </div>
                     </div>
                     <div class="control-group-admin">
                         <?php echo $form->textField($model,'areaname', array('placeholder'=>'Area Name')); ?><span class="star">*</span>
