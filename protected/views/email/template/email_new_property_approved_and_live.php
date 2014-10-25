@@ -12,6 +12,25 @@
                 <p>
                     Your listing is approved by MyProperty.lk and now live on our website. You can look at your listing through the link below.
                 </p>
+                <?php if(count($model.propertyimages) == 0) { ?>
+                <p>
+                    Please note that your listing doesn’t have any photos of your property and for better results, please upload some photos of your property.
+                </p>
+                <?php } ?>
+                <?php if($model.pricetype == 1) { ?>
+                <p>
+                    Also for higher performance upgrade your property to Premier or Featured property. <a href="http://www.myproperty.lk/property/promotelisting?pid=<?php echo $model['pid']; ?>">Click here to upgrade.</a>
+                </p>
+                <?php } ?>
+                <?php
+                    $featureControl = Featurecontrol::model()->find();
+                    $faeturedProp = Property::model()->findAll('pricetype = 3 AND status = 1');
+                ?>
+                <?php if($model.pricetype == 2 && count($faeturedProp) < $featureControl->featured_property_display_count) { ?>
+                <p>
+                    Also for higher performance upgrade your property to Featured property. <a href="http://www.myproperty.lk/property/promotelisting?pid=<?php echo $model['pid']; ?>">Click here to upgrade.</a>
+                </p>
+                <?php } ?>
             </td>
         </tr>
     </table>
