@@ -185,10 +185,10 @@
                         </ul>
                         <ul class="footer-blog span5">
                             <li>
-                                <a href="terms_conditions.pdf" target="_blank">Terms and Conditions</a>
+                                <a href="<?php echo Yii::app()->request->baseUrl; ?>/terms_conditions.pdf" target="_blank">Terms and Conditions</a>
                             </li>
                             <li>
-                                <a href="privacy_policy.pdf" target="_blank">Privacy Policy</a>
+                                <a href="<?php echo Yii::app()->request->baseUrl; ?>/privacy_policy.pdf" target="_blank">Privacy Policy</a>
                             </li>
                         </ul>
                     </div>
