@@ -229,19 +229,19 @@ $this->breadcrumbs=array(
                     <div class="form_bg">
                         <div class="control-group-admin">
                             <label>Name</label>
-                            <?php echo $form->textField($model,'vendorname', array('placeholder'=>'Name')); ?><span class="star">*</span>
-                            <?php echo $form->error($model,'vendorname'); ?>
+                            <?php echo $form->textField($model,'vendorname', array('placeholder'=>'Name')); ?><span class="star <?php echo (Yii::app()->user->usertype == 2) ? 'hide' : ''; ?>">*</span>
+                            <?php if (Yii::app()->user->usertype != 2) { echo $form->error($model,'vendorname'); } ?>
                         </div>
                         <div class="control-group-admin">
                             <label>Eamil Address</label>
-                            <?php echo $form->textField($model,'vendoremail', array('placeholder'=>'Eamil Address')); ?><span class="star">*</span>
+                            <?php echo $form->textField($model,'vendoremail', array('placeholder'=>'Eamil Address')); ?><span class="star <?php echo (Yii::app()->user->usertype == 2) ? 'hide' : ''; ?>">*</span>
                             <a href="#" data-toggle="tooltip" title="You may enter multiple email addresses separated by a comma (e.g. mary@email.com, john@email.com)." data-placement="right" class="tooltip-custom"></a>
-                            <?php echo $form->error($model,'vendoremail'); ?>
+                            <?php if (Yii::app()->user->usertype != 2) { echo $form->error($model,'vendoremail'); } ?>
                         </div>
                         <div class="control-group-admin">
                             <label>Phone Number</label>
-                            <?php echo $form->textField($model,'vendorphone', array('placeholder'=>'Phone Number')); ?><span class="star">*</span>
-                            <?php echo $form->error($model,'vendorphone'); ?>
+                            <?php echo $form->textField($model,'vendorphone', array('placeholder'=>'Phone Number')); ?><span class="star <?php echo (Yii::app()->user->usertype == 2) ? 'hide' : ''; ?>">*</span>
+                            <?php if (Yii::app()->user->usertype != 2) { echo $form->error($model,'vendorphone'); } ?>
                         </div>
                         <div class="control-group-admin <?php echo Yii::app()->user->usertype != 0 ? ' hide' : ''; ?>">
                             <label class="checkbox">
