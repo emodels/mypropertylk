@@ -139,9 +139,9 @@ $this->breadcrumbs=array(
             <!--------( End Rental)----------------->
             <?php if ($model->type == 1 || $model->type == 2 || $model->type == 4){  ?>
             <div class="control-group-admin">
-                <?php echo $form->textField($model,'price', array('placeholder'=>'Price')); ?><span class="star">*</span>
+                <?php echo $form->textField($model,'price', array('placeholder'=>'Price')); ?><!--<span class="star">*</span>-->
                 <a href="#" data-toggle="tooltip" title="Price is used to determine the listing's relevance in search results. Price will display on the property unless the option to hide price is used." data-placement="right" class="tooltip-custom"></a>
-                <?php echo $form->error($model,'price'); ?>
+                <?php //echo $form->error($model,'price'); ?>
             </div>
             <div class="control-group-admin">
                 <label>Display Price :</label>
