@@ -40,8 +40,10 @@
                 <p style="color: #2ecb46">Completed </p>
             <?php } ?>
         </div>
+        <?php if (Yii::app()->user->usertype == 0) { ?>
         <div class="span1">
             <a href="javascript:Delete_Transaction(<?php echo $data->id; ?>);" class="lnklnkno-style" title="delete"><i class="icon-remove icon_gap"></i></a>
         </div>
+        <?php } ?>
     </div>
 </div>
