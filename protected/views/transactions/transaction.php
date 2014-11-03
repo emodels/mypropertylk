@@ -8,6 +8,28 @@
         });
     });
 
+    function Delete_Transaction(id) {
+        if (confirm('Are you sure want to delete?'))
+        {
+            $.ajax({
+                type: "GET",
+                url: 'transaction/mode/DELETE/id/' + id,
+                success: function(data){
+
+                    if (data == 'done'){
+
+                        $.fn.yiiListView.update('list_transaction');
+                        setTimeout(function(){$('#flshMsg').fadeOut("slow");}, 3000);
+
+                    } else {
+
+                        alert(data);
+                    }
+                }
+            });
+        }
+    }
+
     function Filter_Transactions(){
 
         var transactions = '';
@@ -72,7 +94,7 @@
                 <div class="span1">
                     #ID
                 </div>
-                <div class="span3">
+                <div class="span2">
                     Referenced ID
                 </div>
                 <div class="span2">
@@ -86,6 +108,9 @@
                 </div>
                 <div class="span2">
                     Status
+                </div>
+                <div class="span1">
+                    &nbsp;
                 </div>
             </div>
             <?php
@@ -174,6 +199,7 @@
                 'dataProvider'=>new CActiveDataProvider('Transactions', array('criteria'=>array('condition'=> $condition,'order' => 'transactiondate DESC'),'pagination'=>array('pageSize'=>10))),
                 'itemView' => '_transaction_list_view',
                 'template'=>'{items}<div class="span12"></div>{pager}<div class="span12"></div>',
+                'ajaxUpdate' => 'flshMsg',
                 'afterAjaxUpdate'=>'function(id,options){window.scroll(0,0);}',
             ));
             ?>

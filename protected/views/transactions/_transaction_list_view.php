@@ -3,7 +3,7 @@
         <div class="span1">
             <?php echo $data->id ?>
         </div>
-        <div class="span2" style="text-align: center">
+        <div class="span1" style="text-align: center">
             <?php
             if ($data->type == 1) {?>
                 <a href="<?php echo Yii::app()->baseUrl . '/list/detail/pid/' .$data->referenceid;?> " target="_blank"><?php echo "#". $data->referenceid ?></a>
@@ -39,6 +39,9 @@
 
                 <p style="color: #2ecb46">Completed </p>
             <?php } ?>
+        </div>
+        <div class="span1">
+            <a href="javascript:Delete_Transaction(<?php echo $data->id; ?>);" class="lnklnkno-style" title="delete"><i class="icon-remove icon_gap"></i></a>
         </div>
     </div>
 </div>
