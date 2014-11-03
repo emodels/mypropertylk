@@ -73,6 +73,7 @@ $this->breadcrumbs=array(
         )); ?>
                 <legend>
                     About The Property
+                    <a href="javascript:history.back();" class="pull-right" style="font-size: 16px; color: #000000"><i class="icon-hand-left"></i> Back to Listing Details</a>
                 </legend>
                 <div>
                     <div class="span8">
@@ -92,8 +93,8 @@ $this->breadcrumbs=array(
                                                         9 => '9',
                                                         10 => '10');
                                 ?>
-                                <?php echo $form->dropDownList($model, 'bedrooms', $array_bedrooms, array('empty'=>'Bed Rooms')); ?><span class="star">*</span>
-                                <?php echo $form->error($model, 'bedrooms', array('style'=>'width: auto')); ?>
+                                <?php echo $form->dropDownList($model, 'bedrooms', $array_bedrooms, array('empty'=>'Bed Rooms')); ?><!--<span class="star">*</span>-->
+                                <?php //echo $form->error($model, 'bedrooms', array('style'=>'width: auto')); ?>
                             </div>
                             <div class="control-group-admin">
                                 <?php
@@ -108,8 +109,8 @@ $this->breadcrumbs=array(
                                     9 => '9',
                                     10 => '10');
                                 ?>
-                                <?php echo $form->dropDownList($model, 'bathrooms', $array_bathrooms, array('empty'=>'Bath Rooms')); ?><span class="star">*</span> <lable>including ensuites</lable>
-                                <?php echo $form->error($model, 'bathrooms', array('style'=>'width: auto')); ?>
+                                <?php echo $form->dropDownList($model, 'bathrooms', $array_bathrooms, array('empty'=>'Bath Rooms')); ?><!--<span class="star">*</span>--> <lable>including ensuites</lable>
+                                <?php //echo $form->error($model, 'bathrooms', array('style'=>'width: auto')); ?>
                             </div>
                             <div class="control-group-admin">
                                 <?php echo $form->textField($model,'ensuites', array('placeholder'=>'Ensuites', 'value'=>'')); ?>

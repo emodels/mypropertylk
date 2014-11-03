@@ -98,6 +98,7 @@
         )); ?>
         <legend>
             Listing Copy
+            <a href="javascript:history.back();" class="pull-right" style="font-size: 16px; color: #000000"><i class="icon-hand-left"></i> Back to Property Details</a>
         </legend>
         <div>
             <div class="span8">

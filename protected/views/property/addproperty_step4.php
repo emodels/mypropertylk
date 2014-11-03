@@ -125,6 +125,7 @@
         )); ?>
         <legend>
             Create Inspection Times
+            <a href="javascript:history.back();" class="pull-right" style="font-size: 16px; color: #000000"><i class="icon-hand-left"></i> Back to Images & Copy</a>
         </legend>
         <div>
             <div class="span12" style="padding-bottom: 20px;">
