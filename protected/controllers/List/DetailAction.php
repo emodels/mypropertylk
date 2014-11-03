@@ -32,10 +32,10 @@ class DetailAction extends CAction
                 Yii::app()->clientScript->registerMetaTag($model->desc, 'description');
 
                 /*---( Facebook specific Meta tags )---*/
-                Yii::app()->clientScript->registerMetaTag($model->desc, 'og:description');
+                Yii::app()->clientScript->registerMetaTag($model->desc, null, null, array('property'=>'og:description'));
 
                 if (count($model->propertyimages) > 0) {
-                    Yii::app()->clientScript->registerMetaTag('http://www.myproperty.lk/upload/propertyimages/'. $model->propertyimages[0]->imagename, 'og:image');
+                    Yii::app()->clientScript->registerMetaTag('http://www.myproperty.lk/upload/propertyimages/'. $model->propertyimages[0]->imagename, null, null, array('property'=>'og:image'));
                 }
 
                 if ($model->balcony == 1) {
