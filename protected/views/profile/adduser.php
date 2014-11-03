@@ -114,7 +114,7 @@ $this->breadcrumbs=array(
                             <strong>Warning!</strong><br/> Please check your Profile Image width and height is 90px and 100px before uploading ...!
                         </div>
                     </div>
-                    <div class="control-group">
+                    <div class="control-group <?php echo ($model->usertype == 2) ? 'hide' : ''; ?>">
                         <p>Please Select the User Type:</p>
                         <div class="row">
                             <div class="compactRadioGroup" style="margin: 0px 0 0;">

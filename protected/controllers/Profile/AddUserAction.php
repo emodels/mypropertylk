@@ -23,6 +23,10 @@ class AddUserAction extends CAction
         $form_valid = true;
 
 
+        if (Yii::app()->user->usertype == 2) {
+            $model->usertype = 2;
+        }
+
         if (isset($_POST['User'])) {
 
             $rnd = rand(0,9999);  // generate random number between 0-9999

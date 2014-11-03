@@ -24,9 +24,9 @@
             <a href="javascript:UserStatusChange(<?php echo $data->id; ?>);" class="icon_gap" style="text-decoration: none">
                 <?php
                 if ($data->status == 0) {
-                    echo "Active";
-                } elseif ($data->status == 1) {
                     echo "InActive";
+                } elseif ($data->status == 1) {
+                    echo "Active";
                 }
                 ?>
             </a>
