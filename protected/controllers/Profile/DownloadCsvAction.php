@@ -22,10 +22,10 @@ class DownloadCsvAction extends CAction
 
         $users = User::model()->findAll('usertype != 0');
 
-        echo "first name,last name,email \r\n";
+        echo "first name,last name,email,username,password,phone \r\n";
 
         foreach ($users as $data) {
-            echo "$data->fname,$data->lname, $data->email \r\n";
+            echo "$data->fname, $data->lname, $data->email, $data->username, $data->password, $data->phone \r\n";
         }
     }
 }
