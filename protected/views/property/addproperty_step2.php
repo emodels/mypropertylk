@@ -133,12 +133,12 @@ $this->breadcrumbs=array(
                             </div>
                             <div class="control-group-admin">
                                 <?php echo $form->textField($model,'housesize', array('placeholder'=>'House Size','value'=>'')); ?>
-                                <?php echo $form->error($model,'housesize'); ?>
+                                <?php //echo $form->error($model,'housesize'); ?>
                                 <?php
                                 $array_housesq= array(1 => 'Square Feet', 2 => 'Square Meters');
                                 ?>
-                                <?php echo $form->dropDownList($model, 'housesquares', $array_housesq); ?><span class="star">*</span>
-                                <?php echo $form->error($model, 'housesquares', array('style'=>'width: auto')); ?>
+                                <?php echo $form->dropDownList($model, 'housesquares', $array_housesq); ?><!--<span class="star">*</span>-->
+                                <?php //echo $form->error($model, 'housesquares', array('style'=>'width: auto')); ?>
                             </div>
                             <?php } ?>
                             <!---------( End Home Sales & Home Rentals )------------------>
@@ -146,25 +146,25 @@ $this->breadcrumbs=array(
                             <?php if ($model->type == 1 || $model->type == 2 || $model->type == 4 || $model->type == 5){  ?>
                             <div class="control-group-admin">
                                 <?php echo $form->textField($model,'landsize', array('placeholder'=>'Land Size', 'value'=>'')); ?>
-                                <?php echo $form->error($model,'landsize'); ?>
+                                <?php //echo $form->error($model,'landsize'); ?>
                                 <?php
                                 $array_landsq= array(1 => 'Square Feet', 2 => 'Square Meters', 3 => 'Perch', 4 => 'Acres');
                                 ?>
-                                <?php echo $form->dropDownList($model, 'landsquares', $array_landsq); ?><span class="star">*</span>
-                                <?php echo $form->error($model, 'landsquares', array('style'=>'width: auto')); ?>
+                                <?php echo $form->dropDownList($model, 'landsquares', $array_landsq); ?><!--<span class="star">*</span>-->
+                                <?php //echo $form->error($model, 'landsquares', array('style'=>'width: auto')); ?>
                             </div>
                             <?php } ?>
                             <!---------( End Home Sales, Land Sales, Commercial Sales & Commercial Leased )------------------>
                             <!---------( For Commercial Sales & Commercial Leased )------------------>
                             <?php if ($model->type == 4 || $model->type == 5){  ?>
                                 <div class="control-group-admin">
-                                    <?php echo $form->textField($model,'floorarea', array('placeholder'=>'Floor Area', 'value'=>'')); ?><span class="star">*</span>
-                                    <?php echo $form->error($model,'floorarea'); ?>
+                                    <?php echo $form->textField($model,'floorarea', array('placeholder'=>'Floor Area', 'value'=>'')); ?><!--<span class="star">*</span>-->
+                                    <?php //echo $form->error($model,'floorarea'); ?>
                                     <?php
                                     $array_landsq= array(1 => 'Square Feet', 2 => 'Square Meters', 3 => 'Perch', 4 => 'Acres');
                                     ?>
-                                    <?php echo $form->dropDownList($model, 'floorsquares', $array_landsq); ?><span class="star">*</span>
-                                    <?php echo $form->error($model, 'floorsquares', array('style'=>'width: auto')); ?>
+                                    <?php echo $form->dropDownList($model, 'floorsquares', $array_landsq); ?><!--<span class="star">*</span>-->
+                                    <?php //echo $form->error($model, 'floorsquares', array('style'=>'width: auto')); ?>
                                 </div>
                                 <div class="control-group-admin">
                                     <?php echo $form->textField($model,'tenuretype', array('placeholder'=>'Tenure Type', 'value'=>'')); ?>

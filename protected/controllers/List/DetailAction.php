@@ -32,6 +32,8 @@ class DetailAction extends CAction
                 Yii::app()->clientScript->registerMetaTag($model->desc, 'description');
 
                 /*---( Facebook specific Meta tags )---*/
+                Yii::app()->clientScript->registerMetaTag('http://www.myproperty.lk/list/detail?pid=' . $model->pid, null, null, array('property'=>'og:url'));
+                Yii::app()->clientScript->registerMetaTag($model->headline, null, null, array('property'=>'og:title'));
                 Yii::app()->clientScript->registerMetaTag($model->desc, null, null, array('property'=>'og:description'));
 
                 if (count($model->propertyimages) > 0) {

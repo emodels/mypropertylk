@@ -95,6 +95,20 @@ $this->breadcrumbs=array(
                             <?php echo $form->error($model,'email'); ?>
                         </div>
                         <div class="control-group">
+                            <label>Password</label>
+                            <div class="input-prepend">
+                                <?php echo $form->passwordField($model,'password', array('placeholder'=>'Password')); ?>
+                            </div>
+                            <?php echo $form->error($model,'password'); ?>
+                        </div>
+                        <div class="control-group">
+                            <label>Confirm Password</label>
+                            <div class="input-prepend">
+                                <?php echo $form->passwordField($model,'passwordconf', array('placeholder'=>'Re-EnterPassword')); ?>
+                            </div>
+                            <?php echo $form->error($model,'passwordconf'); ?>
+                        </div>
+                        <div class="control-group">
                             <label>Profile Image (<i>optional</i>)</label>
                             <?php echo $form->fileField($model, 'userimage',array(),array('tabindex'=>13));
                             if(isset($model->userimage))
