@@ -124,16 +124,16 @@ $this->breadcrumbs=array(
             <!---------( For Rental )------------------>
             <?php if ($model->type == 3 ||$model->type == 5){  ?>
             <div class="control-group-admin">
-                <?php echo $form->textField($model,'weeklyrent', array('placeholder'=>'Rental Per Week')); ?><span class="star">*</span>
-                <?php echo $form->error($model,'weeklyrent'); ?>
+                <?php echo $form->textField($model,'weeklyrent', array('placeholder'=>'Rental Per Week')); ?><!--<span class="star">*</span>-->
+                <?php //echo $form->error($model,'weeklyrent'); ?>
             </div>
             <div class="control-group-admin">
-                <?php echo $form->textField($model,'monthlyrent', array('placeholder'=>'Rental Per Calendar Month')); ?><span class="star">*</span>
-                <?php echo $form->error($model,'monthlyrent'); ?>
+                <?php echo $form->textField($model,'monthlyrent', array('placeholder'=>'Rental Per Calendar Month')); ?><!--<span class="star">*</span>-->
+                <?php //echo $form->error($model,'monthlyrent'); ?>
             </div>
             <div class="control-group-admin">
-                <?php echo $form->textField($model,'securebond', array('placeholder'=>'Security Bond')); ?><span class="star">*</span>
-                <?php echo $form->error($model,'securebond'); ?>
+                <?php echo $form->textField($model,'securebond', array('placeholder'=>'Security Bond')); ?><!--<span class="star">*</span>-->
+                <?php //echo $form->error($model,'securebond'); ?>
             </div>
             <?php } ?>
             <!--------( End Rental)----------------->
