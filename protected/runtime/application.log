@@ -5202,3 +5202,85 @@ Stack trace:
 REQUEST_URI=/mypropertylk/list/detail?pid=87
 HTTP_REFERER=http://localhost/mypropertylk/
 ---
+2014/12/02 11:47:23 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "addproperty_step1".' in C:\xampplite\htdocs\mypropertylk\protected\framework\web\CController.php:484
+Stack trace:
+#0 C:\xampplite\htdocs\mypropertylk\protected\framework\web\CController.php(271): CController->missingAction('addproperty_ste...')
+#1 C:\xampplite\htdocs\mypropertylk\protected\framework\web\CWebApplication.php(276): CController->run('addproperty_ste...')
+#2 C:\xampplite\htdocs\mypropertylk\protected\framework\web\CWebApplication.php(135): CWebApplication->runController('property/addpro...')
+#3 C:\xampplite\htdocs\mypropertylk\protected\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#4 C:\xampplite\htdocs\mypropertylk\index.php(15): CApplication->run()
+#5 {main}
+REQUEST_URI=/mypropertylk/property/addproperty_step1
+HTTP_REFERER=http://localhost/mypropertylk/property/addproperty_step3
+---
+2014/12/02 11:47:41 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "addproperty_step1".' in C:\xampplite\htdocs\mypropertylk\protected\framework\web\CController.php:484
+Stack trace:
+#0 C:\xampplite\htdocs\mypropertylk\protected\framework\web\CController.php(271): CController->missingAction('addproperty_ste...')
+#1 C:\xampplite\htdocs\mypropertylk\protected\framework\web\CWebApplication.php(276): CController->run('addproperty_ste...')
+#2 C:\xampplite\htdocs\mypropertylk\protected\framework\web\CWebApplication.php(135): CWebApplication->runController('property/addpro...')
+#3 C:\xampplite\htdocs\mypropertylk\protected\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#4 C:\xampplite\htdocs\mypropertylk\index.php(15): CApplication->run()
+#5 {main}
+REQUEST_URI=/mypropertylk/property/addproperty_step1
+HTTP_REFERER=http://localhost/mypropertylk/property/addproperty_step3
+---
+2014/12/02 11:47:49 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "addproperty_step1".' in C:\xampplite\htdocs\mypropertylk\protected\framework\web\CController.php:484
+Stack trace:
+#0 C:\xampplite\htdocs\mypropertylk\protected\framework\web\CController.php(271): CController->missingAction('addproperty_ste...')
+#1 C:\xampplite\htdocs\mypropertylk\protected\framework\web\CWebApplication.php(276): CController->run('addproperty_ste...')
+#2 C:\xampplite\htdocs\mypropertylk\protected\framework\web\CWebApplication.php(135): CWebApplication->runController('property/addpro...')
+#3 C:\xampplite\htdocs\mypropertylk\protected\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#4 C:\xampplite\htdocs\mypropertylk\index.php(15): CApplication->run()
+#5 {main}
+REQUEST_URI=/mypropertylk/property/addproperty_step1
+---
+2014/12/02 12:07:11 [error] [exception.CException] exception 'CException' with message 'Property "Inspecttime.pid" is not defined.' in C:\xampplite\htdocs\mypropertylk\protected\framework\base\CComponent.php:131
+Stack trace:
+#0 C:\xampplite\htdocs\mypropertylk\protected\framework\db\ar\CActiveRecord.php(144): CComponent->__get('pid')
+#1 C:\xampplite\htdocs\mypropertylk\protected\views\property\editproperty_step4.php(117): CActiveRecord->__get('pid')
+#2 C:\xampplite\htdocs\mypropertylk\protected\framework\web\CBaseController.php(127): require('C:\xampplite\ht...')
+#3 C:\xampplite\htdocs\mypropertylk\protected\framework\web\CBaseController.php(96): CBaseController->renderInternal('C:\xampplite\ht...', Array, true)
+#4 C:\xampplite\htdocs\mypropertylk\protected\framework\web\CController.php(870): CBaseController->renderFile('C:\xampplite\ht...', Array, true)
+#5 C:\xampplite\htdocs\mypropertylk\protected\framework\web\CController.php(783): CController->renderPartial('editproperty_st...', Array, true)
+#6 C:\xampplite\htdocs\mypropertylk\protected\controllers\Property\EditPropertyAction_Step4.php(68): CController->render('editproperty_st...', Array)
+#7 C:\xampplite\htdocs\mypropertylk\protected\framework\web\actions\CAction.php(75): EditPropertyAction_Step4->run()
+#8 C:\xampplite\htdocs\mypropertylk\protected\framework\web\CController.php(309): CAction->runWithParams(Array)
+#9 C:\xampplite\htdocs\mypropertylk\protected\framework\web\filters\CFilterChain.php(134): CController->runAction(Object(EditPropertyAction_Step4))
+#10 C:\xampplite\htdocs\mypropertylk\protected\controllers\PropertyController.php(74): CFilterChain->run()
+#11 C:\xampplite\htdocs\mypropertylk\protected\framework\web\filters\CInlineFilter.php(59): PropertyController->filterAccessControl(Object(CFilterChain))
+#12 C:\xampplite\htdocs\mypropertylk\protected\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#13 C:\xampplite\htdocs\mypropertylk\protected\framework\web\CController.php(292): CFilterChain->run()
+#14 C:\xampplite\htdocs\mypropertylk\protected\framework\web\CController.php(266): CController->runActionWithFilters(Object(EditPropertyAction_Step4), Array)
+#15 C:\xampplite\htdocs\mypropertylk\protected\framework\web\CWebApplication.php(276): CController->run('editproperty_st...')
+#16 C:\xampplite\htdocs\mypropertylk\protected\framework\web\CWebApplication.php(135): CWebApplication->runController('property/editpr...')
+#17 C:\xampplite\htdocs\mypropertylk\protected\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#18 C:\xampplite\htdocs\mypropertylk\index.php(15): CApplication->run()
+#19 {main}
+REQUEST_URI=/mypropertylk/property/editproperty_step4
+HTTP_REFERER=http://localhost/mypropertylk/property/editproperty_step2
+---
+2014/12/02 12:07:26 [error] [exception.CException] exception 'CException' with message 'Property "Inspecttime.pid" is not defined.' in C:\xampplite\htdocs\mypropertylk\protected\framework\base\CComponent.php:131
+Stack trace:
+#0 C:\xampplite\htdocs\mypropertylk\protected\framework\db\ar\CActiveRecord.php(144): CComponent->__get('pid')
+#1 C:\xampplite\htdocs\mypropertylk\protected\views\property\editproperty_step4.php(117): CActiveRecord->__get('pid')
+#2 C:\xampplite\htdocs\mypropertylk\protected\framework\web\CBaseController.php(127): require('C:\xampplite\ht...')
+#3 C:\xampplite\htdocs\mypropertylk\protected\framework\web\CBaseController.php(96): CBaseController->renderInternal('C:\xampplite\ht...', Array, true)
+#4 C:\xampplite\htdocs\mypropertylk\protected\framework\web\CController.php(870): CBaseController->renderFile('C:\xampplite\ht...', Array, true)
+#5 C:\xampplite\htdocs\mypropertylk\protected\framework\web\CController.php(783): CController->renderPartial('editproperty_st...', Array, true)
+#6 C:\xampplite\htdocs\mypropertylk\protected\controllers\Property\EditPropertyAction_Step4.php(68): CController->render('editproperty_st...', Array)
+#7 C:\xampplite\htdocs\mypropertylk\protected\framework\web\actions\CAction.php(75): EditPropertyAction_Step4->run()
+#8 C:\xampplite\htdocs\mypropertylk\protected\framework\web\CController.php(309): CAction->runWithParams(Array)
+#9 C:\xampplite\htdocs\mypropertylk\protected\framework\web\filters\CFilterChain.php(134): CController->runAction(Object(EditPropertyAction_Step4))
+#10 C:\xampplite\htdocs\mypropertylk\protected\controllers\PropertyController.php(74): CFilterChain->run()
+#11 C:\xampplite\htdocs\mypropertylk\protected\framework\web\filters\CInlineFilter.php(59): PropertyController->filterAccessControl(Object(CFilterChain))
+#12 C:\xampplite\htdocs\mypropertylk\protected\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#13 C:\xampplite\htdocs\mypropertylk\protected\framework\web\CController.php(292): CFilterChain->run()
+#14 C:\xampplite\htdocs\mypropertylk\protected\framework\web\CController.php(266): CController->runActionWithFilters(Object(EditPropertyAction_Step4), Array)
+#15 C:\xampplite\htdocs\mypropertylk\protected\framework\web\CWebApplication.php(276): CController->run('editproperty_st...')
+#16 C:\xampplite\htdocs\mypropertylk\protected\framework\web\CWebApplication.php(135): CWebApplication->runController('property/editpr...')
+#17 C:\xampplite\htdocs\mypropertylk\protected\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#18 C:\xampplite\htdocs\mypropertylk\index.php(15): CApplication->run()
+#19 {main}
+REQUEST_URI=/mypropertylk/property/editproperty_step4
+HTTP_REFERER=http://localhost/mypropertylk/property/editproperty_step3
+---
