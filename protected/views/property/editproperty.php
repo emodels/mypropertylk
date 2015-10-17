@@ -84,8 +84,12 @@ $this->breadcrumbs=array(
         <?php } ?>
     </div>
     <div style="text-align: center;">
-        <div>
+        <div style="position: relative">
             <img src="<?php echo Yii::app()->request->baseUrl; ?>/images/tab1.png" style="width: 942px; height: 37px;">
+            <a href="<?php echo Yii::app()->request->baseUrl; ?>/property/editproperty?pid=<?php echo $model->pid; ?>" style="position: absolute; top: 0px; left: 0px; height: 37px; width: 235px">&nbsp;</a>
+            <a href="<?php echo Yii::app()->request->baseUrl; ?>/property/editproperty_step2" style="position: absolute; top: 0px; left: 240px; height: 37px; width: 235px">&nbsp;</a>
+            <a href="<?php echo Yii::app()->request->baseUrl; ?>/property/editproperty_step3" style="position: absolute; top: 0px; left: 475px; height: 37px; width: 235px">&nbsp;</a>
+            <a href="<?php echo Yii::app()->request->baseUrl; ?>/property/editproperty_step4" style="position: absolute; top: 0px; left: 710px; height: 37px; width: 235px">&nbsp;</a>
         </div>
     </div>
     <div style="padding: 10px; 0">
@@ -145,18 +149,18 @@ $this->breadcrumbs=array(
                     <?php if ($model->type == 3 || $model->type == 5){  ?>
                         <div class="control-group-admin">
                             <label>Rental Per Week</label>
-                            <?php echo $form->textField($model,'weeklyrent', array('placeholder'=>'Rental Per Week')); ?><span class="star">*</span>
-                            <?php echo $form->error($model,'weeklyrent'); ?>
+                            <?php echo $form->textField($model,'weeklyrent', array('placeholder'=>'Rental Per Week')); ?><!--<span class="star">*</span>-->
+                            <?php //echo $form->error($model,'weeklyrent'); ?>
                         </div>
                         <div class="control-group-admin">
                             <label>Rental Per Calendar Month</label>
-                            <?php echo $form->textField($model,'monthlyrent', array('placeholder'=>'Rental Per Calendar Month')); ?><span class="star">*</span>
-                            <?php echo $form->error($model,'monthlyrent'); ?>
+                            <?php echo $form->textField($model,'monthlyrent', array('placeholder'=>'Rental Per Calendar Month')); ?><!--<span class="star">*</span>-->
+                            <?php //echo $form->error($model,'monthlyrent'); ?>
                         </div>
                         <div class="control-group-admin">
                             <label>Security Bond</label>
-                            <?php echo $form->textField($model,'securebond', array('placeholder'=>'Security Bond')); ?><span class="star">*</span>
-                            <?php echo $form->error($model,'securebond'); ?>
+                            <?php echo $form->textField($model,'securebond', array('placeholder'=>'Security Bond')); ?><!--<span class="star">*</span>-->
+                            <?php //echo $form->error($model,'securebond'); ?>
                         </div>
                     <?php } ?>
                     <!--------( End Rental)----------------->

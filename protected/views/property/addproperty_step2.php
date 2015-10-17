@@ -52,8 +52,9 @@ $this->breadcrumbs=array(
         <!---------( End Commercial Leased)------------------>
     </div>
     <div style="text-align: center;">
-        <div>
+        <div style="position: relative">
             <img src="<?php echo Yii::app()->request->baseUrl; ?>/images/tab2.png" style="width: 942px; height: 37px;">
+            <a href="javascript:history.go(-1);" style="position: absolute; top: 0px; left: 0px; height: 37px; width: 235px">&nbsp;</a>
         </div>
     </div>
     <div style="padding: 10px; 0">

@@ -40,41 +40,49 @@ class PropertyImageUploadAction extends CAction
             }
         }
 
-        FileExtentionRename::RenameFileExtention(Yii::getPathOfAlias('webroot.upload.propertyimages'), $fileName);
+        if (FileExtentionRename::RenameFileExtention(Yii::getPathOfAlias('webroot.upload.propertyimages'), $fileName)) {
 
-        $filename_array = explode('.', $fileName);
-        $fileName_without_extention = $filename_array[0];
-        $fileName_extention = $filename_array[1];
+            $filename_array = explode('.', $fileName);
+            $fileName_without_extention = $filename_array[0];
+            $fileName_extention = $filename_array[1];
 
             /*---( Scale images to 800 X 600 size )---*/
-        Yii::import('ext.CThumbCreator.CThumbCreator');
+            Yii::import('ext.CThumbCreator.CThumbCreator');
 
-        $thumb = new CThumbCreator();
-        $thumb->image = Yii::getPathOfAlias('webroot.upload.propertyimages') . DIRECTORY_SEPARATOR . $fileName;
-        $thumb->width = 800;
-        $thumb->height = 600;
-        $thumb->square = true;
-        $thumb->directory = Yii::getPathOfAlias('webroot.upload.propertyimages') . DIRECTORY_SEPARATOR;
-        $thumb->defaultName = $fileName_without_extention;
-        $thumb->createThumb();
+            $thumb = new CThumbCreator();
 
-        unlink(Yii::getPathOfAlias('webroot.upload.propertyimages') . DIRECTORY_SEPARATOR . $fileName);
+            $thumb->image = Yii::getPathOfAlias('webroot.upload.propertyimages') . DIRECTORY_SEPARATOR . $fileName_without_extention . '.' . strtolower($fileName_extention);
+            $thumb->width = 800;
+            $thumb->height = 600;
+            $thumb->square = true;
+            $thumb->directory = Yii::getPathOfAlias('webroot.upload.propertyimages') . DIRECTORY_SEPARATOR;
+            $thumb->defaultName = $fileName_without_extention;
 
-        $thumb->save();
+            $thumb->createThumb();
 
-        /*---( Add watermark to image )---*/
-        WatermarkGenerator::GenerateWatermark($thumb->directory, $thumb->defaultName, $fileName_extention);
+            unlink(Yii::getPathOfAlias('webroot.upload.propertyimages') . DIRECTORY_SEPARATOR . $fileName);
 
-        //----------Add to Database--------
-        $image = new Propertyimages();
-        $image->propertyid = $_GET['id'];
-        $image->imagetype = $_GET['type'];
-        $image->imagename = $fileName;
-        $image->primaryimg = 0;
+            $thumb->save();
 
-        $image->save();
-        //---------------------------------
+            /*---( Add watermark to image )---*/
+            WatermarkGenerator::GenerateWatermark($thumb->directory, $thumb->defaultName, strtolower($fileName_extention));
 
-        echo '{"success":true,"filename":"'. $fileName . '"}';
+            //----------Add to Database--------
+            $image = new Propertyimages();
+
+            $image->propertyid = $_GET['id'];
+            $image->imagetype = $_GET['type'];
+            $image->imagename = $fileName_without_extention . '.' . strtolower($fileName_extention);
+            $image->primaryimg = 0;
+
+            $image->save();
+            //---------------------------------
+
+            echo '{"success":true,"filename":"'. $fileName . '"}';
+
+        } else {
+
+            echo '{"success":false,"message":"Invalid image file extension"}';
+        }
     }
 }

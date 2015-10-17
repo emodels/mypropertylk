@@ -18,7 +18,11 @@ class FileExtentionRename
             $file = implode(".",$filearray);
             $dstfile = "$dir/$file";
 
-            rename($srcfile,$dstfile);
+            return rename($srcfile,$dstfile);
+
+        } else {
+
+            return true;
         }
     }
 }
