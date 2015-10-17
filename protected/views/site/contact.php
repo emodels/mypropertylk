@@ -4,11 +4,11 @@
         var map_canvas = document.getElementById('map_canvas');
         var map_options = {
             center: new google.maps.LatLng(44.5403, -78.5463),
-            zoom: 12,
+            zoom: 15,
             mapTypeId: google.maps.MapTypeId.ROADMAP
         }
         var map = new google.maps.Map(map_canvas, map_options);
-        geoLocation("McLarens Building,Bauddhaloka Mawatha,Colombo 03,Sri Lanka", map);
+        geoLocation("ibm building near Navam Mawatha, Colombo, Sri Lanka", map);
     }
 
     google.maps.event.addDomListener(window, 'load', initialize);
@@ -154,9 +154,9 @@ $this->breadcrumbs=array(
                                 <div class="span12">
                                     <b>Address : </b>
                                     <div class="offset1 span10" style="padding-bottom: 20px;">
-                                        McLarens Building, 2nd Floor,<br/> No 123,
-                                        Bauddhaloka Mawatha,<br/></ Bambalapitiya,<br/>
-                                        Colombo 4,<br/>
+                                        Level 3, IBM Building,<br/> No 48,
+                                        Nawam Mawatha,<br/>
+                                        Colombo 2,<br/>
                                         Sri Lanka.
                                     </div>
                                 </div>
