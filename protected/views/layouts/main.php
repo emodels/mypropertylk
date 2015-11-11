@@ -170,7 +170,7 @@
                         <ul class="footer-blog span6">
                             <li>
                                 <a href="#">
-                                    <i class="icon-phone"></i> +94 117 444 115
+                                    <i class="icon-phone"></i> +94 112314100
                                 </a>
                             </li>
                             <li>

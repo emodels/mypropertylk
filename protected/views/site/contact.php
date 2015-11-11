@@ -169,7 +169,7 @@ $this->breadcrumbs=array(
                                 <div class="span12">
                                     <b>Office Phone : </b>
                                     <div class="offset1 span10" style="padding-bottom: 20px;">
-                                        +94 117 444 115
+                                        +94 112314100
                                     </div>
                                 </div>
                                 <div class="span12">
