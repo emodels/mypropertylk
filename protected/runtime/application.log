@@ -5284,3 +5284,352 @@ Stack trace:
 REQUEST_URI=/mypropertylk/property/editproperty_step4
 HTTP_REFERER=http://localhost/mypropertylk/property/editproperty_step3
 ---
+2015/12/02 07:09:21 [error] [system.db.CDbCommand] CDbCommand::fetchAll() failed: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'mypropertylk.featurecontrol' doesn't exist. The SQL statement executed was: SHOW COLUMNS FROM `featurecontrol`.
+in C:\xampp\htdocs\mypropertylk\protected\models\Featurecontrol.php (20)
+in C:\xampp\htdocs\mypropertylk\protected\views\site\index.php (541)
+in C:\xampp\htdocs\mypropertylk\protected\controllers\SiteController.php (39)
+2015/12/02 07:09:21 [error] [exception.CDbException] exception 'CDbException' with message 'The table "featurecontrol" for active record class "Featurecontrol" cannot be found in the database.' in C:\xampp\htdocs\mypropertylk\protected\framework\db\ar\CActiveRecord.php:2264
+Stack trace:
+#0 C:\xampp\htdocs\mypropertylk\protected\framework\db\ar\CActiveRecord.php(379): CActiveRecordMetaData->__construct(Object(Featurecontrol))
+#1 C:\xampp\htdocs\mypropertylk\protected\models\Featurecontrol.php(20): CActiveRecord::model('Featurecontrol')
+#2 C:\xampp\htdocs\mypropertylk\protected\views\site\index.php(541): Featurecontrol::model()
+#3 C:\xampp\htdocs\mypropertylk\protected\framework\web\CBaseController.php(127): require('C:\\xampp\\htdocs...')
+#4 C:\xampp\htdocs\mypropertylk\protected\framework\web\CBaseController.php(96): CBaseController->renderInternal('C:\\xampp\\htdocs...', Array, true)
+#5 C:\xampp\htdocs\mypropertylk\protected\framework\web\CController.php(870): CBaseController->renderFile('C:\\xampp\\htdocs...', Array, true)
+#6 C:\xampp\htdocs\mypropertylk\protected\framework\web\CController.php(783): CController->renderPartial('index', Array, true)
+#7 C:\xampp\htdocs\mypropertylk\protected\controllers\SiteController.php(39): CController->render('index', Array)
+#8 C:\xampp\htdocs\mypropertylk\protected\framework\web\actions\CInlineAction.php(50): SiteController->actionIndex()
+#9 C:\xampp\htdocs\mypropertylk\protected\framework\web\CController.php(309): CInlineAction->runWithParams(Array)
+#10 C:\xampp\htdocs\mypropertylk\protected\framework\web\CController.php(287): CController->runAction(Object(CInlineAction))
+#11 C:\xampp\htdocs\mypropertylk\protected\framework\web\CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#12 C:\xampp\htdocs\mypropertylk\protected\framework\web\CWebApplication.php(276): CController->run('index')
+#13 C:\xampp\htdocs\mypropertylk\protected\framework\web\CWebApplication.php(135): CWebApplication->runController('site/index')
+#14 C:\xampp\htdocs\mypropertylk\protected\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#15 C:\xampp\htdocs\mypropertylk\index.php(15): CApplication->run()
+#16 {main}
+REQUEST_URI=/mypropertylk/
+---
+2015/12/02 07:15:24 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "upload/propertyimages/image_88_1_1411448131.jpg".' in C:\xampp\htdocs\mypropertylk\protected\framework\web\CWebApplication.php:280
+Stack trace:
+#0 C:\xampp\htdocs\mypropertylk\protected\framework\web\CWebApplication.php(135): CWebApplication->runController('upload/property...')
+#1 C:\xampp\htdocs\mypropertylk\protected\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\mypropertylk\index.php(15): CApplication->run()
+#3 {main}
+REQUEST_URI=/mypropertylk/upload/propertyimages/image_88_1_1411448131.jpg
+HTTP_REFERER=http://localhost:81/mypropertylk/
+---
+2015/12/02 07:15:23 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "upload/propertyimages/image_87_1_1411448128.jpg".' in C:\xampp\htdocs\mypropertylk\protected\framework\web\CWebApplication.php:280
+Stack trace:
+#0 C:\xampp\htdocs\mypropertylk\protected\framework\web\CWebApplication.php(135): CWebApplication->runController('upload/property...')
+#1 C:\xampp\htdocs\mypropertylk\protected\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\mypropertylk\index.php(15): CApplication->run()
+#3 {main}
+REQUEST_URI=/mypropertylk/upload/propertyimages/image_87_1_1411448128.jpg
+HTTP_REFERER=http://localhost:81/mypropertylk/
+---
+2015/12/02 07:15:24 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "upload/propertyimages/image_86_1_1411448125.jpg".' in C:\xampp\htdocs\mypropertylk\protected\framework\web\CWebApplication.php:280
+Stack trace:
+#0 C:\xampp\htdocs\mypropertylk\protected\framework\web\CWebApplication.php(135): CWebApplication->runController('upload/property...')
+#1 C:\xampp\htdocs\mypropertylk\protected\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\mypropertylk\index.php(15): CApplication->run()
+#3 {main}
+REQUEST_URI=/mypropertylk/upload/propertyimages/image_86_1_1411448125.jpg
+HTTP_REFERER=http://localhost:81/mypropertylk/
+---
+2015/12/02 07:16:14 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "upload/propertyimages/image_86_1_1411448125.jpg".' in C:\xampp\htdocs\mypropertylk\protected\framework\web\CWebApplication.php:280
+Stack trace:
+#0 C:\xampp\htdocs\mypropertylk\protected\framework\web\CWebApplication.php(135): CWebApplication->runController('upload/property...')
+#1 C:\xampp\htdocs\mypropertylk\protected\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\mypropertylk\index.php(15): CApplication->run()
+#3 {main}
+REQUEST_URI=/mypropertylk/upload/propertyimages/image_86_1_1411448125.jpg
+HTTP_REFERER=http://localhost:81/mypropertylk/property/propertylisting?type=0
+---
+2015/12/02 07:16:14 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "upload/propertyimages/image_89_1_1411448132.jpg".' in C:\xampp\htdocs\mypropertylk\protected\framework\web\CWebApplication.php:280
+Stack trace:
+#0 C:\xampp\htdocs\mypropertylk\protected\framework\web\CWebApplication.php(135): CWebApplication->runController('upload/property...')
+#1 C:\xampp\htdocs\mypropertylk\protected\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\mypropertylk\index.php(15): CApplication->run()
+#3 {main}
+REQUEST_URI=/mypropertylk/upload/propertyimages/image_89_1_1411448132.jpg
+HTTP_REFERER=http://localhost:81/mypropertylk/property/propertylisting?type=0
+---
+2015/12/02 07:16:14 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "upload/propertyimages/image_88_1_1411448131.jpg".' in C:\xampp\htdocs\mypropertylk\protected\framework\web\CWebApplication.php:280
+Stack trace:
+#0 C:\xampp\htdocs\mypropertylk\protected\framework\web\CWebApplication.php(135): CWebApplication->runController('upload/property...')
+#1 C:\xampp\htdocs\mypropertylk\protected\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\mypropertylk\index.php(15): CApplication->run()
+#3 {main}
+REQUEST_URI=/mypropertylk/upload/propertyimages/image_88_1_1411448131.jpg
+HTTP_REFERER=http://localhost:81/mypropertylk/property/propertylisting?type=0
+---
+2015/12/02 07:16:15 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "upload/propertyimages/image_87_1_1411448128.jpg".' in C:\xampp\htdocs\mypropertylk\protected\framework\web\CWebApplication.php:280
+Stack trace:
+#0 C:\xampp\htdocs\mypropertylk\protected\framework\web\CWebApplication.php(135): CWebApplication->runController('upload/property...')
+#1 C:\xampp\htdocs\mypropertylk\protected\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\mypropertylk\index.php(15): CApplication->run()
+#3 {main}
+REQUEST_URI=/mypropertylk/upload/propertyimages/image_87_1_1411448128.jpg
+HTTP_REFERER=http://localhost:81/mypropertylk/property/propertylisting?type=0
+---
+2015/12/02 07:17:22 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "upload/propertyimages/image_88_1_1411448131.jpg".' in C:\xampp\htdocs\mypropertylk\protected\framework\web\CWebApplication.php:280
+Stack trace:
+#0 C:\xampp\htdocs\mypropertylk\protected\framework\web\CWebApplication.php(135): CWebApplication->runController('upload/property...')
+#1 C:\xampp\htdocs\mypropertylk\protected\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\mypropertylk\index.php(15): CApplication->run()
+#3 {main}
+REQUEST_URI=/mypropertylk/upload/propertyimages/image_88_1_1411448131.jpg
+HTTP_REFERER=http://localhost:81/mypropertylk/
+---
+2015/12/02 07:17:22 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "upload/propertyimages/image_86_1_1411448125.jpg".' in C:\xampp\htdocs\mypropertylk\protected\framework\web\CWebApplication.php:280
+Stack trace:
+#0 C:\xampp\htdocs\mypropertylk\protected\framework\web\CWebApplication.php(135): CWebApplication->runController('upload/property...')
+#1 C:\xampp\htdocs\mypropertylk\protected\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\mypropertylk\index.php(15): CApplication->run()
+#3 {main}
+REQUEST_URI=/mypropertylk/upload/propertyimages/image_86_1_1411448125.jpg
+HTTP_REFERER=http://localhost:81/mypropertylk/
+---
+2015/12/02 07:17:22 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "upload/propertyimages/image_87_1_1411448128.jpg".' in C:\xampp\htdocs\mypropertylk\protected\framework\web\CWebApplication.php:280
+Stack trace:
+#0 C:\xampp\htdocs\mypropertylk\protected\framework\web\CWebApplication.php(135): CWebApplication->runController('upload/property...')
+#1 C:\xampp\htdocs\mypropertylk\protected\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\mypropertylk\index.php(15): CApplication->run()
+#3 {main}
+REQUEST_URI=/mypropertylk/upload/propertyimages/image_87_1_1411448128.jpg
+HTTP_REFERER=http://localhost:81/mypropertylk/
+---
+2015/12/02 07:22:58 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "upload/propertyimages/image_86_1_1411448125.jpg".' in C:\xampp\htdocs\mypropertylk\protected\framework\web\CWebApplication.php:280
+Stack trace:
+#0 C:\xampp\htdocs\mypropertylk\protected\framework\web\CWebApplication.php(135): CWebApplication->runController('upload/property...')
+#1 C:\xampp\htdocs\mypropertylk\protected\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\mypropertylk\index.php(15): CApplication->run()
+#3 {main}
+REQUEST_URI=/mypropertylk/upload/propertyimages/image_86_1_1411448125.jpg
+HTTP_REFERER=http://localhost:81/mypropertylk/list/property/type/buy
+---
+2015/12/02 07:22:58 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "upload/propertyimages/image_86_2_1411448125.jpg".' in C:\xampp\htdocs\mypropertylk\protected\framework\web\CWebApplication.php:280
+Stack trace:
+#0 C:\xampp\htdocs\mypropertylk\protected\framework\web\CWebApplication.php(135): CWebApplication->runController('upload/property...')
+#1 C:\xampp\htdocs\mypropertylk\protected\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\mypropertylk\index.php(15): CApplication->run()
+#3 {main}
+REQUEST_URI=/mypropertylk/upload/propertyimages/image_86_2_1411448125.jpg
+HTTP_REFERER=http://localhost:81/mypropertylk/list/property/type/buy
+---
+2015/12/02 07:22:58 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "upload/propertyimages/image_86_3_1411448125.jpg".' in C:\xampp\htdocs\mypropertylk\protected\framework\web\CWebApplication.php:280
+Stack trace:
+#0 C:\xampp\htdocs\mypropertylk\protected\framework\web\CWebApplication.php(135): CWebApplication->runController('upload/property...')
+#1 C:\xampp\htdocs\mypropertylk\protected\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\mypropertylk\index.php(15): CApplication->run()
+#3 {main}
+REQUEST_URI=/mypropertylk/upload/propertyimages/image_86_3_1411448125.jpg
+HTTP_REFERER=http://localhost:81/mypropertylk/list/property/type/buy
+---
+2015/12/02 07:22:58 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "upload/propertyimages/image_86_4_1411448126.jpg".' in C:\xampp\htdocs\mypropertylk\protected\framework\web\CWebApplication.php:280
+Stack trace:
+#0 C:\xampp\htdocs\mypropertylk\protected\framework\web\CWebApplication.php(135): CWebApplication->runController('upload/property...')
+#1 C:\xampp\htdocs\mypropertylk\protected\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\mypropertylk\index.php(15): CApplication->run()
+#3 {main}
+REQUEST_URI=/mypropertylk/upload/propertyimages/image_86_4_1411448126.jpg
+HTTP_REFERER=http://localhost:81/mypropertylk/list/property/type/buy
+---
+2015/12/02 07:22:58 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "upload/propertyimages/image_86_5_1411448126.jpg".' in C:\xampp\htdocs\mypropertylk\protected\framework\web\CWebApplication.php:280
+Stack trace:
+#0 C:\xampp\htdocs\mypropertylk\protected\framework\web\CWebApplication.php(135): CWebApplication->runController('upload/property...')
+#1 C:\xampp\htdocs\mypropertylk\protected\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\mypropertylk\index.php(15): CApplication->run()
+#3 {main}
+REQUEST_URI=/mypropertylk/upload/propertyimages/image_86_5_1411448126.jpg
+HTTP_REFERER=http://localhost:81/mypropertylk/list/property/type/buy
+---
+2015/12/02 07:22:58 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "upload/propertyimages/image_86_7_1411448127.jpg".' in C:\xampp\htdocs\mypropertylk\protected\framework\web\CWebApplication.php:280
+Stack trace:
+#0 C:\xampp\htdocs\mypropertylk\protected\framework\web\CWebApplication.php(135): CWebApplication->runController('upload/property...')
+#1 C:\xampp\htdocs\mypropertylk\protected\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\mypropertylk\index.php(15): CApplication->run()
+#3 {main}
+REQUEST_URI=/mypropertylk/upload/propertyimages/image_86_7_1411448127.jpg
+HTTP_REFERER=http://localhost:81/mypropertylk/list/property/type/buy
+---
+2015/12/02 07:22:58 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "upload/propertyimages/image_86_6_1411448126.jpg".' in C:\xampp\htdocs\mypropertylk\protected\framework\web\CWebApplication.php:280
+Stack trace:
+#0 C:\xampp\htdocs\mypropertylk\protected\framework\web\CWebApplication.php(135): CWebApplication->runController('upload/property...')
+#1 C:\xampp\htdocs\mypropertylk\protected\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\mypropertylk\index.php(15): CApplication->run()
+#3 {main}
+REQUEST_URI=/mypropertylk/upload/propertyimages/image_86_6_1411448126.jpg
+HTTP_REFERER=http://localhost:81/mypropertylk/list/property/type/buy
+---
+2015/12/02 07:22:58 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "upload/propertyimages/image_86_8_1411448127.jpg".' in C:\xampp\htdocs\mypropertylk\protected\framework\web\CWebApplication.php:280
+Stack trace:
+#0 C:\xampp\htdocs\mypropertylk\protected\framework\web\CWebApplication.php(135): CWebApplication->runController('upload/property...')
+#1 C:\xampp\htdocs\mypropertylk\protected\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\mypropertylk\index.php(15): CApplication->run()
+#3 {main}
+REQUEST_URI=/mypropertylk/upload/propertyimages/image_86_8_1411448127.jpg
+HTTP_REFERER=http://localhost:81/mypropertylk/list/property/type/buy
+---
+2015/12/02 07:22:58 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "upload/propertyimages/image_86_9_1411448127.jpg".' in C:\xampp\htdocs\mypropertylk\protected\framework\web\CWebApplication.php:280
+Stack trace:
+#0 C:\xampp\htdocs\mypropertylk\protected\framework\web\CWebApplication.php(135): CWebApplication->runController('upload/property...')
+#1 C:\xampp\htdocs\mypropertylk\protected\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\mypropertylk\index.php(15): CApplication->run()
+#3 {main}
+REQUEST_URI=/mypropertylk/upload/propertyimages/image_86_9_1411448127.jpg
+HTTP_REFERER=http://localhost:81/mypropertylk/list/property/type/buy
+---
+2015/12/02 07:22:58 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "upload/propertyimages/image_86_10_1411448128.jpg".' in C:\xampp\htdocs\mypropertylk\protected\framework\web\CWebApplication.php:280
+Stack trace:
+#0 C:\xampp\htdocs\mypropertylk\protected\framework\web\CWebApplication.php(135): CWebApplication->runController('upload/property...')
+#1 C:\xampp\htdocs\mypropertylk\protected\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\mypropertylk\index.php(15): CApplication->run()
+#3 {main}
+REQUEST_URI=/mypropertylk/upload/propertyimages/image_86_10_1411448128.jpg
+HTTP_REFERER=http://localhost:81/mypropertylk/list/property/type/buy
+---
+2015/12/02 07:22:58 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "upload/propertyimages/image_86_12_1411448128.jpg".' in C:\xampp\htdocs\mypropertylk\protected\framework\web\CWebApplication.php:280
+Stack trace:
+#0 C:\xampp\htdocs\mypropertylk\protected\framework\web\CWebApplication.php(135): CWebApplication->runController('upload/property...')
+#1 C:\xampp\htdocs\mypropertylk\protected\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\mypropertylk\index.php(15): CApplication->run()
+#3 {main}
+REQUEST_URI=/mypropertylk/upload/propertyimages/image_86_12_1411448128.jpg
+HTTP_REFERER=http://localhost:81/mypropertylk/list/property/type/buy
+---
+2015/12/02 07:22:58 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "upload/propertyimages/image_87_1_1411448128.jpg".' in C:\xampp\htdocs\mypropertylk\protected\framework\web\CWebApplication.php:280
+Stack trace:
+#0 C:\xampp\htdocs\mypropertylk\protected\framework\web\CWebApplication.php(135): CWebApplication->runController('upload/property...')
+#1 C:\xampp\htdocs\mypropertylk\protected\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\mypropertylk\index.php(15): CApplication->run()
+#3 {main}
+REQUEST_URI=/mypropertylk/upload/propertyimages/image_87_1_1411448128.jpg
+HTTP_REFERER=http://localhost:81/mypropertylk/list/property/type/buy
+---
+2015/12/02 07:22:58 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "upload/propertyimages/image_86_11_1411448128.jpg".' in C:\xampp\htdocs\mypropertylk\protected\framework\web\CWebApplication.php:280
+Stack trace:
+#0 C:\xampp\htdocs\mypropertylk\protected\framework\web\CWebApplication.php(135): CWebApplication->runController('upload/property...')
+#1 C:\xampp\htdocs\mypropertylk\protected\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\mypropertylk\index.php(15): CApplication->run()
+#3 {main}
+REQUEST_URI=/mypropertylk/upload/propertyimages/image_86_11_1411448128.jpg
+HTTP_REFERER=http://localhost:81/mypropertylk/list/property/type/buy
+---
+2015/12/02 07:22:58 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "upload/propertyimages/image_87_2_1411448129.jpg".' in C:\xampp\htdocs\mypropertylk\protected\framework\web\CWebApplication.php:280
+Stack trace:
+#0 C:\xampp\htdocs\mypropertylk\protected\framework\web\CWebApplication.php(135): CWebApplication->runController('upload/property...')
+#1 C:\xampp\htdocs\mypropertylk\protected\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\mypropertylk\index.php(15): CApplication->run()
+#3 {main}
+REQUEST_URI=/mypropertylk/upload/propertyimages/image_87_2_1411448129.jpg
+HTTP_REFERER=http://localhost:81/mypropertylk/list/property/type/buy
+---
+2015/12/02 07:22:58 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "upload/propertyimages/image_87_3_1411448129.jpg".' in C:\xampp\htdocs\mypropertylk\protected\framework\web\CWebApplication.php:280
+Stack trace:
+#0 C:\xampp\htdocs\mypropertylk\protected\framework\web\CWebApplication.php(135): CWebApplication->runController('upload/property...')
+#1 C:\xampp\htdocs\mypropertylk\protected\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\mypropertylk\index.php(15): CApplication->run()
+#3 {main}
+REQUEST_URI=/mypropertylk/upload/propertyimages/image_87_3_1411448129.jpg
+HTTP_REFERER=http://localhost:81/mypropertylk/list/property/type/buy
+---
+2015/12/02 07:22:58 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "upload/propertyimages/image_87_4_1411448129.jpg".' in C:\xampp\htdocs\mypropertylk\protected\framework\web\CWebApplication.php:280
+Stack trace:
+#0 C:\xampp\htdocs\mypropertylk\protected\framework\web\CWebApplication.php(135): CWebApplication->runController('upload/property...')
+#1 C:\xampp\htdocs\mypropertylk\protected\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\mypropertylk\index.php(15): CApplication->run()
+#3 {main}
+REQUEST_URI=/mypropertylk/upload/propertyimages/image_87_4_1411448129.jpg
+HTTP_REFERER=http://localhost:81/mypropertylk/list/property/type/buy
+---
+2015/12/02 07:22:58 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "upload/propertyimages/image_87_5_1411448129.jpg".' in C:\xampp\htdocs\mypropertylk\protected\framework\web\CWebApplication.php:280
+Stack trace:
+#0 C:\xampp\htdocs\mypropertylk\protected\framework\web\CWebApplication.php(135): CWebApplication->runController('upload/property...')
+#1 C:\xampp\htdocs\mypropertylk\protected\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\mypropertylk\index.php(15): CApplication->run()
+#3 {main}
+REQUEST_URI=/mypropertylk/upload/propertyimages/image_87_5_1411448129.jpg
+HTTP_REFERER=http://localhost:81/mypropertylk/list/property/type/buy
+---
+2015/12/02 07:22:58 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "upload/propertyimages/image_87_6_1411448130.jpg".' in C:\xampp\htdocs\mypropertylk\protected\framework\web\CWebApplication.php:280
+Stack trace:
+#0 C:\xampp\htdocs\mypropertylk\protected\framework\web\CWebApplication.php(135): CWebApplication->runController('upload/property...')
+#1 C:\xampp\htdocs\mypropertylk\protected\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\mypropertylk\index.php(15): CApplication->run()
+#3 {main}
+REQUEST_URI=/mypropertylk/upload/propertyimages/image_87_6_1411448130.jpg
+HTTP_REFERER=http://localhost:81/mypropertylk/list/property/type/buy
+---
+2015/12/02 07:22:59 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "upload/propertyimages/image_87_9_1411448131.jpg".' in C:\xampp\htdocs\mypropertylk\protected\framework\web\CWebApplication.php:280
+Stack trace:
+#0 C:\xampp\htdocs\mypropertylk\protected\framework\web\CWebApplication.php(135): CWebApplication->runController('upload/property...')
+#1 C:\xampp\htdocs\mypropertylk\protected\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\mypropertylk\index.php(15): CApplication->run()
+#3 {main}
+REQUEST_URI=/mypropertylk/upload/propertyimages/image_87_9_1411448131.jpg
+HTTP_REFERER=http://localhost:81/mypropertylk/list/property/type/buy
+---
+2015/12/02 07:22:59 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "upload/propertyimages/image_87_8_1411448130.jpg".' in C:\xampp\htdocs\mypropertylk\protected\framework\web\CWebApplication.php:280
+Stack trace:
+#0 C:\xampp\htdocs\mypropertylk\protected\framework\web\CWebApplication.php(135): CWebApplication->runController('upload/property...')
+#1 C:\xampp\htdocs\mypropertylk\protected\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\mypropertylk\index.php(15): CApplication->run()
+#3 {main}
+REQUEST_URI=/mypropertylk/upload/propertyimages/image_87_8_1411448130.jpg
+HTTP_REFERER=http://localhost:81/mypropertylk/list/property/type/buy
+---
+2015/12/02 07:22:59 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "upload/propertyimages/image_87_7_1411448130.jpg".' in C:\xampp\htdocs\mypropertylk\protected\framework\web\CWebApplication.php:280
+Stack trace:
+#0 C:\xampp\htdocs\mypropertylk\protected\framework\web\CWebApplication.php(135): CWebApplication->runController('upload/property...')
+#1 C:\xampp\htdocs\mypropertylk\protected\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\mypropertylk\index.php(15): CApplication->run()
+#3 {main}
+REQUEST_URI=/mypropertylk/upload/propertyimages/image_87_7_1411448130.jpg
+HTTP_REFERER=http://localhost:81/mypropertylk/list/property/type/buy
+---
+2015/12/02 07:22:59 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "upload/propertyimages/image_89_2_1411448132.jpg".' in C:\xampp\htdocs\mypropertylk\protected\framework\web\CWebApplication.php:280
+Stack trace:
+#0 C:\xampp\htdocs\mypropertylk\protected\framework\web\CWebApplication.php(135): CWebApplication->runController('upload/property...')
+#1 C:\xampp\htdocs\mypropertylk\protected\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\mypropertylk\index.php(15): CApplication->run()
+#3 {main}
+REQUEST_URI=/mypropertylk/upload/propertyimages/image_89_2_1411448132.jpg
+HTTP_REFERER=http://localhost:81/mypropertylk/list/property/type/buy
+---
+2015/12/02 07:22:59 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "upload/propertyimages/image_89_1_1411448132.jpg".' in C:\xampp\htdocs\mypropertylk\protected\framework\web\CWebApplication.php:280
+Stack trace:
+#0 C:\xampp\htdocs\mypropertylk\protected\framework\web\CWebApplication.php(135): CWebApplication->runController('upload/property...')
+#1 C:\xampp\htdocs\mypropertylk\protected\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\mypropertylk\index.php(15): CApplication->run()
+#3 {main}
+REQUEST_URI=/mypropertylk/upload/propertyimages/image_89_1_1411448132.jpg
+HTTP_REFERER=http://localhost:81/mypropertylk/list/property/type/buy
+---
+2015/12/02 07:22:59 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "upload/propertyimages/image_89_3_1411448132.jpg".' in C:\xampp\htdocs\mypropertylk\protected\framework\web\CWebApplication.php:280
+Stack trace:
+#0 C:\xampp\htdocs\mypropertylk\protected\framework\web\CWebApplication.php(135): CWebApplication->runController('upload/property...')
+#1 C:\xampp\htdocs\mypropertylk\protected\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\mypropertylk\index.php(15): CApplication->run()
+#3 {main}
+REQUEST_URI=/mypropertylk/upload/propertyimages/image_89_3_1411448132.jpg
+HTTP_REFERER=http://localhost:81/mypropertylk/list/property/type/buy
+---
+2015/12/02 07:22:59 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "upload/propertyimages/image_89_4_1411448133.jpg".' in C:\xampp\htdocs\mypropertylk\protected\framework\web\CWebApplication.php:280
+Stack trace:
+#0 C:\xampp\htdocs\mypropertylk\protected\framework\web\CWebApplication.php(135): CWebApplication->runController('upload/property...')
+#1 C:\xampp\htdocs\mypropertylk\protected\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\mypropertylk\index.php(15): CApplication->run()
+#3 {main}
+REQUEST_URI=/mypropertylk/upload/propertyimages/image_89_4_1411448133.jpg
+HTTP_REFERER=http://localhost:81/mypropertylk/list/property/type/buy
+---
+2015/12/02 07:22:59 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "upload/propertyimages/image_89_5_1411448133.jpg".' in C:\xampp\htdocs\mypropertylk\protected\framework\web\CWebApplication.php:280
+Stack trace:
+#0 C:\xampp\htdocs\mypropertylk\protected\framework\web\CWebApplication.php(135): CWebApplication->runController('upload/property...')
+#1 C:\xampp\htdocs\mypropertylk\protected\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\mypropertylk\index.php(15): CApplication->run()
+#3 {main}
+REQUEST_URI=/mypropertylk/upload/propertyimages/image_89_5_1411448133.jpg
+HTTP_REFERER=http://localhost:81/mypropertylk/list/property/type/buy
+---
