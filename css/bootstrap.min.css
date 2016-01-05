@@ -202,7 +202,7 @@ body {
 }
 
 a {
-    color: #08c;
+    color: #F4FAFC;
     text-decoration: none
 }
 
@@ -291,7 +291,7 @@ a:hover, a:focus {
 }
 
 .span4 {
-    width: 300px
+    /* width: 300px */
 }
 
 .span3 {
@@ -755,7 +755,8 @@ h4 small {
 
 ul, ol {
     padding: 0;
-    margin: 0 0 10px 25px
+    margin: 0 0 10px 25px;
+    /* padding-bottom: 10px; */
 }
 
 ul ul, ul ol, ol ol, ol ul {

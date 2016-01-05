@@ -1,3 +1,4 @@
+
 <script type="text/javascript">
 
     //---------------Form Send Function----//
@@ -42,7 +43,6 @@
     }
 
 </style>
-
 <?php
 $this->pageTitle=Yii::app()->name . ' - Register';
 $this->breadcrumbs=array(
@@ -60,7 +60,7 @@ $this->breadcrumbs=array(
                                 <div class="property-list-title">Register</div>
                             </div>
                             <div class="span5 offset1">
-                                <p class="alert alert-danger">Please fill the following fields to register with myproperty.lk....!</p>
+                                <p class="alert alert-danger alertb">Please fill the following fields to register with myproperty.lk....!</p>
                                 <div class="form">
                                     <?php $form=$this->beginWidget('CActiveForm', array(
                                         'id'=>'register-form',
@@ -138,6 +138,7 @@ $this->breadcrumbs=array(
                                     <div class="control-group">
                                         <div>
                                             <?php echo CHtml::submitButton('Register', array('class' => 'btn btn-primary')); ?>&nbsp;
+                                            
                                             <a href="<?php echo Yii::app()->baseUrl; ?>" class="btn btn-info">Cancel</a>
                                         </div>
                                     </div>
@@ -153,7 +154,7 @@ $this->breadcrumbs=array(
                                     <h4>Register as an Agent</h4>
                                     Become a Agent and you will able to publish large volume of Property advertisements within a short period using our Bulk Upload facility.
                                 </div>
-                                <div class="alert alert-block">
+                                <div class="alert alert-warning">
                                     <h4>Register as an Advertiser</h4>
                                     You can publish Banner Advertisements at our web site. Simply select preferred Banner size, page location and enter URL link for your banner and then complete your payment using PAYPAL to activate instantly.
                                 </div>

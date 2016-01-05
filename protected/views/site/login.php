@@ -147,7 +147,7 @@ $this->breadcrumbs=array(
                                         </div>
                                         <div class="span6">
                                             <div class="panel panel-default">
-                                                <div class="alert alert-info"  style="padding: 20px">
+                                                <div class="alert alert-info"  style="padding: 20px; padding-top: 25px">
                                                     <h4>Before <b>POST YOUR FREE AD</b> you need to Login first...!!</h4><br/>
                                                     If you are not a <b>Registered Member of 'myproperty.lk'</b> click here to Register Now..!
                                                     <br/><br/>

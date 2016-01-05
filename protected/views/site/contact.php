@@ -1,3 +1,4 @@
+
 <script src="https://maps.googleapis.com/maps/api/js?sensor=false"></script>
 <script type="text/javascript">
     function initialize() {
@@ -68,7 +69,7 @@ $this->breadcrumbs=array(
             <div class="span12">
                 <div class="row-fluid">
                     <div class="content-wrapper clearfix">
-                        <div class="span9">
+                        <div class="span9 contentb">
                             <div class="content-holder">
                                 <div id="title-listing" class="container">
                                     <div class="property-list-title">Contact Us</div>
@@ -100,32 +101,32 @@ $this->breadcrumbs=array(
 
                                             <?php echo $form->errorSummary($model); ?>
 
-                                            <div class="row">
+                                            <div class="row_contactus">
                                                 <?php echo $form->labelEx($model,'name'); ?>
                                                 <?php echo $form->textField($model,'name'); ?>
                                                 <?php echo $form->error($model,'name'); ?>
                                             </div>
 
-                                            <div class="row">
+                                            <div class="row_contactus">
                                                 <?php echo $form->labelEx($model,'email'); ?>
                                                 <?php echo $form->textField($model,'email'); ?>
                                                 <?php echo $form->error($model,'email'); ?>
                                             </div>
 
-                                            <div class="row">
+                                            <div class="row_contactus">
                                                 <?php echo $form->labelEx($model,'subject'); ?>
                                                 <?php echo $form->textField($model,'subject',array('size'=>60,'maxlength'=>128)); ?>
                                                 <?php echo $form->error($model,'subject'); ?>
                                             </div>
 
-                                            <div class="row">
+                                            <div class="row_contactus">
                                                 <?php echo $form->labelEx($model,'body'); ?>
                                                 <?php echo $form->textArea($model,'body',array('rows'=>6, 'cols'=>50)); ?>
                                                 <?php echo $form->error($model,'body'); ?>
                                             </div>
 
                                             <?php if(CCaptcha::checkRequirements()): ?>
-                                                <div class="row">
+                                                <div class="row_contactus">
                                                     <?php echo $form->labelEx($model,'verifyCode'); ?>
                                                     <div>
                                                         <?php $this->widget('CCaptcha'); ?>
@@ -137,8 +138,8 @@ $this->breadcrumbs=array(
                                                 </div>
                                             <?php endif; ?>
 
-                                            <div class="row buttons" style="margin-top: 15px;">
-                                                <?php echo CHtml::submitButton('Submit', array('class' => 'btn btn-primary')); ?>&nbsp;
+                                            <div class="row_contactus buttons" style="margin-top: 15px;">
+                                                <?php echo CHtml::submitButton('Submit', array('class' => 'btn btn-primary btn_contactus')); ?>&nbsp;
                                             </div>
 
                                             <?php $this->endWidget(); ?>

@@ -290,7 +290,7 @@
         )); ?>
             <div class="container">
                 <div class="row-fluid">
-                    <div class="span9">
+                    <div class="span9 content_buy">
                         <div class="row-fluid">
                             <div class="span4">
                                 <div class="row-fluid">

@@ -34,6 +34,29 @@
  * @license http://www.yiiframework.com/license/
  */
 
+input[type="text"]{
+    border-radius: 4px !important;
+    display: inline-block;
+    height: 30px;
+    padding: 4px 6px;
+    margin-bottom: 10px;
+    font-size: 14px;
+    line-height: 20px;
+    width: 225px;
+    border: 1px solid #ccc;
+    background-color: #fff;
+}
+textarea{
+    border-radius: 4px !important;
+    display: inline-block;
+    padding: 4px 6px;
+    margin-bottom: 10px;
+    font-size: 14px;
+    line-height: 20px;
+    width: 225px;
+    border: 1px solid #ccc;
+    background-color: #fff;
+}
 div.form
 {
 }

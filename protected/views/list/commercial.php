@@ -253,7 +253,7 @@
             <div class="row-fluid">
                 <div class="span12">
                     <div class="row-fluid">
-                        <div class="span9">
+                        <div class="span9 content_buy">
                             <div class="container row-fluid">
                             <div class="span4">
                             <div class="row-fluid">
