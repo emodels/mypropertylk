@@ -9270,3 +9270,571 @@ Stack trace:
 REQUEST_URI=/mypropertylk/images/img-6.jpg
 HTTP_REFERER=http://localhost:81/mypropertylk/
 ---
+2016/01/05 06:09:38 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "images/img-6.jpg".' in C:\xampp\htdocs\mypropertylk\protected\framework\web\CWebApplication.php:280
+Stack trace:
+#0 C:\xampp\htdocs\mypropertylk\protected\framework\web\CWebApplication.php(135): CWebApplication->runController('images/img-6.jp...')
+#1 C:\xampp\htdocs\mypropertylk\protected\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\mypropertylk\index.php(15): CApplication->run()
+#3 {main}
+REQUEST_URI=/mypropertylk/images/img-6.jpg
+HTTP_REFERER=http://localhost/mypropertylk/
+---
+2016/01/05 06:10:40 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "pages".' in C:\xampp\htdocs\mypropertylk\protected\framework\web\CController.php:484
+Stack trace:
+#0 C:\xampp\htdocs\mypropertylk\protected\framework\web\CController.php(271): CController->missingAction('pages')
+#1 C:\xampp\htdocs\mypropertylk\protected\framework\web\CWebApplication.php(276): CController->run('pages')
+#2 C:\xampp\htdocs\mypropertylk\protected\framework\web\CWebApplication.php(135): CWebApplication->runController('site/pages/abou...')
+#3 C:\xampp\htdocs\mypropertylk\protected\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\mypropertylk\index.php(15): CApplication->run()
+#5 {main}
+REQUEST_URI=/mypropertylk/site/pages/about
+HTTP_REFERER=http://localhost/mypropertylk/
+---
+2016/01/05 06:10:40 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "pages".' in C:\xampp\htdocs\mypropertylk\protected\framework\web\CController.php:484
+Stack trace:
+#0 C:\xampp\htdocs\mypropertylk\protected\framework\web\CController.php(271): CController->missingAction('pages')
+#1 C:\xampp\htdocs\mypropertylk\protected\framework\web\CWebApplication.php(276): CController->run('pages')
+#2 C:\xampp\htdocs\mypropertylk\protected\framework\web\CWebApplication.php(135): CWebApplication->runController('site/pages/js/b...')
+#3 C:\xampp\htdocs\mypropertylk\protected\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\mypropertylk\index.php(15): CApplication->run()
+#5 {main}
+REQUEST_URI=/mypropertylk/site/pages/js/bootstrap-select.js
+HTTP_REFERER=http://localhost/mypropertylk/site/pages/about
+---
+2016/01/05 06:10:40 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "pages".' in C:\xampp\htdocs\mypropertylk\protected\framework\web\CController.php:484
+Stack trace:
+#0 C:\xampp\htdocs\mypropertylk\protected\framework\web\CController.php(271): CController->missingAction('pages')
+#1 C:\xampp\htdocs\mypropertylk\protected\framework\web\CWebApplication.php(276): CController->run('pages')
+#2 C:\xampp\htdocs\mypropertylk\protected\framework\web\CWebApplication.php(135): CWebApplication->runController('site/pages/js/j...')
+#3 C:\xampp\htdocs\mypropertylk\protected\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\mypropertylk\index.php(15): CApplication->run()
+#5 {main}
+REQUEST_URI=/mypropertylk/site/pages/js/jquery-1.11.0.min.js
+HTTP_REFERER=http://localhost/mypropertylk/site/pages/about
+---
+2016/01/05 06:10:40 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "pages".' in C:\xampp\htdocs\mypropertylk\protected\framework\web\CController.php:484
+Stack trace:
+#0 C:\xampp\htdocs\mypropertylk\protected\framework\web\CController.php(271): CController->missingAction('pages')
+#1 C:\xampp\htdocs\mypropertylk\protected\framework\web\CWebApplication.php(276): CController->run('pages')
+#2 C:\xampp\htdocs\mypropertylk\protected\framework\web\CWebApplication.php(135): CWebApplication->runController('site/pages/js/j...')
+#3 C:\xampp\htdocs\mypropertylk\protected\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\mypropertylk\index.php(15): CApplication->run()
+#5 {main}
+REQUEST_URI=/mypropertylk/site/pages/js/jquery.stellar.js
+HTTP_REFERER=http://localhost/mypropertylk/site/pages/about
+---
+2016/01/05 06:10:40 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "pages".' in C:\xampp\htdocs\mypropertylk\protected\framework\web\CController.php:484
+Stack trace:
+#0 C:\xampp\htdocs\mypropertylk\protected\framework\web\CController.php(271): CController->missingAction('pages')
+#1 C:\xampp\htdocs\mypropertylk\protected\framework\web\CWebApplication.php(276): CController->run('pages')
+#2 C:\xampp\htdocs\mypropertylk\protected\framework\web\CWebApplication.php(135): CWebApplication->runController('site/pages/js/j...')
+#3 C:\xampp\htdocs\mypropertylk\protected\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\mypropertylk\index.php(15): CApplication->run()
+#5 {main}
+REQUEST_URI=/mypropertylk/site/pages/js/jquery.flexslider-min.js
+HTTP_REFERER=http://localhost/mypropertylk/site/pages/about
+---
+2016/01/05 06:10:40 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "pages".' in C:\xampp\htdocs\mypropertylk\protected\framework\web\CController.php:484
+Stack trace:
+#0 C:\xampp\htdocs\mypropertylk\protected\framework\web\CController.php(271): CController->missingAction('pages')
+#1 C:\xampp\htdocs\mypropertylk\protected\framework\web\CWebApplication.php(276): CController->run('pages')
+#2 C:\xampp\htdocs\mypropertylk\protected\framework\web\CWebApplication.php(135): CWebApplication->runController('site/pages/js/w...')
+#3 C:\xampp\htdocs\mypropertylk\protected\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\mypropertylk\index.php(15): CApplication->run()
+#5 {main}
+REQUEST_URI=/mypropertylk/site/pages/js/wow.min.js
+HTTP_REFERER=http://localhost/mypropertylk/site/pages/about
+---
+2016/01/05 06:10:40 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "pages".' in C:\xampp\htdocs\mypropertylk\protected\framework\web\CController.php:484
+Stack trace:
+#0 C:\xampp\htdocs\mypropertylk\protected\framework\web\CController.php(271): CController->missingAction('pages')
+#1 C:\xampp\htdocs\mypropertylk\protected\framework\web\CWebApplication.php(276): CController->run('pages')
+#2 C:\xampp\htdocs\mypropertylk\protected\framework\web\CWebApplication.php(135): CWebApplication->runController('site/pages/js/b...')
+#3 C:\xampp\htdocs\mypropertylk\protected\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\mypropertylk\index.php(15): CApplication->run()
+#5 {main}
+REQUEST_URI=/mypropertylk/site/pages/js/bootstrap.min.js
+HTTP_REFERER=http://localhost/mypropertylk/site/pages/about
+---
+2016/01/05 06:10:40 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "pages".' in C:\xampp\htdocs\mypropertylk\protected\framework\web\CController.php:484
+Stack trace:
+#0 C:\xampp\htdocs\mypropertylk\protected\framework\web\CController.php(271): CController->missingAction('pages')
+#1 C:\xampp\htdocs\mypropertylk\protected\framework\web\CWebApplication.php(276): CController->run('pages')
+#2 C:\xampp\htdocs\mypropertylk\protected\framework\web\CWebApplication.php(135): CWebApplication->runController('site/pages/js/j...')
+#3 C:\xampp\htdocs\mypropertylk\protected\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\mypropertylk\index.php(15): CApplication->run()
+#5 {main}
+REQUEST_URI=/mypropertylk/site/pages/js/jquery.sticky.js
+HTTP_REFERER=http://localhost/mypropertylk/site/pages/about
+---
+2016/01/05 06:10:40 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "pages".' in C:\xampp\htdocs\mypropertylk\protected\framework\web\CController.php:484
+Stack trace:
+#0 C:\xampp\htdocs\mypropertylk\protected\framework\web\CController.php(271): CController->missingAction('pages')
+#1 C:\xampp\htdocs\mypropertylk\protected\framework\web\CWebApplication.php(276): CController->run('pages')
+#2 C:\xampp\htdocs\mypropertylk\protected\framework\web\CWebApplication.php(135): CWebApplication->runController('site/pages/js/j...')
+#3 C:\xampp\htdocs\mypropertylk\protected\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\mypropertylk\index.php(15): CApplication->run()
+#5 {main}
+REQUEST_URI=/mypropertylk/site/pages/js/jquery.nouislider.min.js
+HTTP_REFERER=http://localhost/mypropertylk/site/pages/about
+---
+2016/01/05 06:10:40 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "pages".' in C:\xampp\htdocs\mypropertylk\protected\framework\web\CController.php:484
+Stack trace:
+#0 C:\xampp\htdocs\mypropertylk\protected\framework\web\CController.php(271): CController->missingAction('pages')
+#1 C:\xampp\htdocs\mypropertylk\protected\framework\web\CWebApplication.php(276): CController->run('pages')
+#2 C:\xampp\htdocs\mypropertylk\protected\framework\web\CWebApplication.php(135): CWebApplication->runController('site/pages/js/m...')
+#3 C:\xampp\htdocs\mypropertylk\protected\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\mypropertylk\index.php(15): CApplication->run()
+#5 {main}
+REQUEST_URI=/mypropertylk/site/pages/js/main.js
+HTTP_REFERER=http://localhost/mypropertylk/site/pages/about
+---
+2016/01/05 06:10:40 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "pages".' in C:\xampp\htdocs\mypropertylk\protected\framework\web\CController.php:484
+Stack trace:
+#0 C:\xampp\htdocs\mypropertylk\protected\framework\web\CController.php(271): CController->missingAction('pages')
+#1 C:\xampp\htdocs\mypropertylk\protected\framework\web\CWebApplication.php(276): CController->run('pages')
+#2 C:\xampp\htdocs\mypropertylk\protected\framework\web\CWebApplication.php(135): CWebApplication->runController('site/pages/imag...')
+#3 C:\xampp\htdocs\mypropertylk\protected\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\mypropertylk\index.php(15): CApplication->run()
+#5 {main}
+REQUEST_URI=/mypropertylk/site/pages/images/nav-image.png
+HTTP_REFERER=http://localhost/mypropertylk/site/pages/about
+---
+2016/01/05 06:10:40 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "pages".' in C:\xampp\htdocs\mypropertylk\protected\framework\web\CController.php:484
+Stack trace:
+#0 C:\xampp\htdocs\mypropertylk\protected\framework\web\CController.php(271): CController->missingAction('pages')
+#1 C:\xampp\htdocs\mypropertylk\protected\framework\web\CWebApplication.php(276): CController->run('pages')
+#2 C:\xampp\htdocs\mypropertylk\protected\framework\web\CWebApplication.php(135): CWebApplication->runController('site/pages/js/o...')
+#3 C:\xampp\htdocs\mypropertylk\protected\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\mypropertylk\index.php(15): CApplication->run()
+#5 {main}
+REQUEST_URI=/mypropertylk/site/pages/js/own-menu.js
+HTTP_REFERER=http://localhost/mypropertylk/site/pages/about
+---
+2016/01/05 06:10:40 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "pages".' in C:\xampp\htdocs\mypropertylk\protected\framework\web\CController.php:484
+Stack trace:
+#0 C:\xampp\htdocs\mypropertylk\protected\framework\web\CController.php(271): CController->missingAction('pages')
+#1 C:\xampp\htdocs\mypropertylk\protected\framework\web\CWebApplication.php(276): CController->run('pages')
+#2 C:\xampp\htdocs\mypropertylk\protected\framework\web\CWebApplication.php(135): CWebApplication->runController('site/pages/js/o...')
+#3 C:\xampp\htdocs\mypropertylk\protected\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\mypropertylk\index.php(15): CApplication->run()
+#5 {main}
+REQUEST_URI=/mypropertylk/site/pages/js/owl.carousel.min.js
+HTTP_REFERER=http://localhost/mypropertylk/site/pages/about
+---
+2016/01/05 06:10:45 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "pages".' in C:\xampp\htdocs\mypropertylk\protected\framework\web\CController.php:484
+Stack trace:
+#0 C:\xampp\htdocs\mypropertylk\protected\framework\web\CController.php(271): CController->missingAction('pages')
+#1 C:\xampp\htdocs\mypropertylk\protected\framework\web\CWebApplication.php(276): CController->run('pages')
+#2 C:\xampp\htdocs\mypropertylk\protected\framework\web\CWebApplication.php(135): CWebApplication->runController('site/pages/05-S...')
+#3 C:\xampp\htdocs\mypropertylk\protected\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\mypropertylk\index.php(15): CApplication->run()
+#5 {main}
+REQUEST_URI=/mypropertylk/site/pages/05-Services.html
+HTTP_REFERER=http://localhost/mypropertylk/site/pages/about
+---
+2016/01/05 06:10:45 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "pages".' in C:\xampp\htdocs\mypropertylk\protected\framework\web\CController.php:484
+Stack trace:
+#0 C:\xampp\htdocs\mypropertylk\protected\framework\web\CController.php(271): CController->missingAction('pages')
+#1 C:\xampp\htdocs\mypropertylk\protected\framework\web\CWebApplication.php(276): CController->run('pages')
+#2 C:\xampp\htdocs\mypropertylk\protected\framework\web\CWebApplication.php(135): CWebApplication->runController('site/pages/imag...')
+#3 C:\xampp\htdocs\mypropertylk\protected\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\mypropertylk\index.php(15): CApplication->run()
+#5 {main}
+REQUEST_URI=/mypropertylk/site/pages/images/nav-image.png
+HTTP_REFERER=http://localhost/mypropertylk/site/pages/05-Services.html
+---
+2016/01/05 06:10:45 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "pages".' in C:\xampp\htdocs\mypropertylk\protected\framework\web\CController.php:484
+Stack trace:
+#0 C:\xampp\htdocs\mypropertylk\protected\framework\web\CController.php(271): CController->missingAction('pages')
+#1 C:\xampp\htdocs\mypropertylk\protected\framework\web\CWebApplication.php(276): CController->run('pages')
+#2 C:\xampp\htdocs\mypropertylk\protected\framework\web\CWebApplication.php(135): CWebApplication->runController('site/pages/js/j...')
+#3 C:\xampp\htdocs\mypropertylk\protected\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\mypropertylk\index.php(15): CApplication->run()
+#5 {main}
+REQUEST_URI=/mypropertylk/site/pages/js/jquery-1.11.0.min.js
+HTTP_REFERER=http://localhost/mypropertylk/site/pages/05-Services.html
+---
+2016/01/05 06:10:45 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "pages".' in C:\xampp\htdocs\mypropertylk\protected\framework\web\CController.php:484
+Stack trace:
+#0 C:\xampp\htdocs\mypropertylk\protected\framework\web\CController.php(271): CController->missingAction('pages')
+#1 C:\xampp\htdocs\mypropertylk\protected\framework\web\CWebApplication.php(276): CController->run('pages')
+#2 C:\xampp\htdocs\mypropertylk\protected\framework\web\CWebApplication.php(135): CWebApplication->runController('site/pages/js/w...')
+#3 C:\xampp\htdocs\mypropertylk\protected\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\mypropertylk\index.php(15): CApplication->run()
+#5 {main}
+REQUEST_URI=/mypropertylk/site/pages/js/wow.min.js
+HTTP_REFERER=http://localhost/mypropertylk/site/pages/05-Services.html
+---
+2016/01/05 06:10:45 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "pages".' in C:\xampp\htdocs\mypropertylk\protected\framework\web\CController.php:484
+Stack trace:
+#0 C:\xampp\htdocs\mypropertylk\protected\framework\web\CController.php(271): CController->missingAction('pages')
+#1 C:\xampp\htdocs\mypropertylk\protected\framework\web\CWebApplication.php(276): CController->run('pages')
+#2 C:\xampp\htdocs\mypropertylk\protected\framework\web\CWebApplication.php(135): CWebApplication->runController('site/pages/js/b...')
+#3 C:\xampp\htdocs\mypropertylk\protected\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\mypropertylk\index.php(15): CApplication->run()
+#5 {main}
+REQUEST_URI=/mypropertylk/site/pages/js/bootstrap-select.js
+HTTP_REFERER=http://localhost/mypropertylk/site/pages/05-Services.html
+---
+2016/01/05 06:10:45 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "pages".' in C:\xampp\htdocs\mypropertylk\protected\framework\web\CController.php:484
+Stack trace:
+#0 C:\xampp\htdocs\mypropertylk\protected\framework\web\CController.php(271): CController->missingAction('pages')
+#1 C:\xampp\htdocs\mypropertylk\protected\framework\web\CWebApplication.php(276): CController->run('pages')
+#2 C:\xampp\htdocs\mypropertylk\protected\framework\web\CWebApplication.php(135): CWebApplication->runController('site/pages/js/b...')
+#3 C:\xampp\htdocs\mypropertylk\protected\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\mypropertylk\index.php(15): CApplication->run()
+#5 {main}
+REQUEST_URI=/mypropertylk/site/pages/js/bootstrap.min.js
+HTTP_REFERER=http://localhost/mypropertylk/site/pages/05-Services.html
+---
+2016/01/05 06:10:45 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "pages".' in C:\xampp\htdocs\mypropertylk\protected\framework\web\CController.php:484
+Stack trace:
+#0 C:\xampp\htdocs\mypropertylk\protected\framework\web\CController.php(271): CController->missingAction('pages')
+#1 C:\xampp\htdocs\mypropertylk\protected\framework\web\CWebApplication.php(276): CController->run('pages')
+#2 C:\xampp\htdocs\mypropertylk\protected\framework\web\CWebApplication.php(135): CWebApplication->runController('site/pages/js/j...')
+#3 C:\xampp\htdocs\mypropertylk\protected\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\mypropertylk\index.php(15): CApplication->run()
+#5 {main}
+REQUEST_URI=/mypropertylk/site/pages/js/jquery.stellar.js
+HTTP_REFERER=http://localhost/mypropertylk/site/pages/05-Services.html
+---
+2016/01/05 06:10:45 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "pages".' in C:\xampp\htdocs\mypropertylk\protected\framework\web\CController.php:484
+Stack trace:
+#0 C:\xampp\htdocs\mypropertylk\protected\framework\web\CController.php(271): CController->missingAction('pages')
+#1 C:\xampp\htdocs\mypropertylk\protected\framework\web\CWebApplication.php(276): CController->run('pages')
+#2 C:\xampp\htdocs\mypropertylk\protected\framework\web\CWebApplication.php(135): CWebApplication->runController('site/pages/js/j...')
+#3 C:\xampp\htdocs\mypropertylk\protected\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\mypropertylk\index.php(15): CApplication->run()
+#5 {main}
+REQUEST_URI=/mypropertylk/site/pages/js/jquery.flexslider-min.js
+HTTP_REFERER=http://localhost/mypropertylk/site/pages/05-Services.html
+---
+2016/01/05 06:10:45 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "pages".' in C:\xampp\htdocs\mypropertylk\protected\framework\web\CController.php:484
+Stack trace:
+#0 C:\xampp\htdocs\mypropertylk\protected\framework\web\CController.php(271): CController->missingAction('pages')
+#1 C:\xampp\htdocs\mypropertylk\protected\framework\web\CWebApplication.php(276): CController->run('pages')
+#2 C:\xampp\htdocs\mypropertylk\protected\framework\web\CWebApplication.php(135): CWebApplication->runController('site/pages/js/o...')
+#3 C:\xampp\htdocs\mypropertylk\protected\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\mypropertylk\index.php(15): CApplication->run()
+#5 {main}
+REQUEST_URI=/mypropertylk/site/pages/js/owl.carousel.min.js
+HTTP_REFERER=http://localhost/mypropertylk/site/pages/05-Services.html
+---
+2016/01/05 06:10:45 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "pages".' in C:\xampp\htdocs\mypropertylk\protected\framework\web\CController.php:484
+Stack trace:
+#0 C:\xampp\htdocs\mypropertylk\protected\framework\web\CController.php(271): CController->missingAction('pages')
+#1 C:\xampp\htdocs\mypropertylk\protected\framework\web\CWebApplication.php(276): CController->run('pages')
+#2 C:\xampp\htdocs\mypropertylk\protected\framework\web\CWebApplication.php(135): CWebApplication->runController('site/pages/js/j...')
+#3 C:\xampp\htdocs\mypropertylk\protected\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\mypropertylk\index.php(15): CApplication->run()
+#5 {main}
+REQUEST_URI=/mypropertylk/site/pages/js/jquery.sticky.js
+HTTP_REFERER=http://localhost/mypropertylk/site/pages/05-Services.html
+---
+2016/01/05 06:10:45 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "pages".' in C:\xampp\htdocs\mypropertylk\protected\framework\web\CController.php:484
+Stack trace:
+#0 C:\xampp\htdocs\mypropertylk\protected\framework\web\CController.php(271): CController->missingAction('pages')
+#1 C:\xampp\htdocs\mypropertylk\protected\framework\web\CWebApplication.php(276): CController->run('pages')
+#2 C:\xampp\htdocs\mypropertylk\protected\framework\web\CWebApplication.php(135): CWebApplication->runController('site/pages/js/o...')
+#3 C:\xampp\htdocs\mypropertylk\protected\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\mypropertylk\index.php(15): CApplication->run()
+#5 {main}
+REQUEST_URI=/mypropertylk/site/pages/js/own-menu.js
+HTTP_REFERER=http://localhost/mypropertylk/site/pages/05-Services.html
+---
+2016/01/05 06:10:45 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "pages".' in C:\xampp\htdocs\mypropertylk\protected\framework\web\CController.php:484
+Stack trace:
+#0 C:\xampp\htdocs\mypropertylk\protected\framework\web\CController.php(271): CController->missingAction('pages')
+#1 C:\xampp\htdocs\mypropertylk\protected\framework\web\CWebApplication.php(276): CController->run('pages')
+#2 C:\xampp\htdocs\mypropertylk\protected\framework\web\CWebApplication.php(135): CWebApplication->runController('site/pages/js/j...')
+#3 C:\xampp\htdocs\mypropertylk\protected\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\mypropertylk\index.php(15): CApplication->run()
+#5 {main}
+REQUEST_URI=/mypropertylk/site/pages/js/jquery.nouislider.min.js
+HTTP_REFERER=http://localhost/mypropertylk/site/pages/05-Services.html
+---
+2016/01/05 06:10:45 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "pages".' in C:\xampp\htdocs\mypropertylk\protected\framework\web\CController.php:484
+Stack trace:
+#0 C:\xampp\htdocs\mypropertylk\protected\framework\web\CController.php(271): CController->missingAction('pages')
+#1 C:\xampp\htdocs\mypropertylk\protected\framework\web\CWebApplication.php(276): CController->run('pages')
+#2 C:\xampp\htdocs\mypropertylk\protected\framework\web\CWebApplication.php(135): CWebApplication->runController('site/pages/js/m...')
+#3 C:\xampp\htdocs\mypropertylk\protected\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\mypropertylk\index.php(15): CApplication->run()
+#5 {main}
+REQUEST_URI=/mypropertylk/site/pages/js/main.js
+HTTP_REFERER=http://localhost/mypropertylk/site/pages/05-Services.html
+---
+2016/01/05 06:10:49 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "js".' in C:\xampp\htdocs\mypropertylk\protected\framework\web\CController.php:484
+Stack trace:
+#0 C:\xampp\htdocs\mypropertylk\protected\framework\web\CController.php(271): CController->missingAction('js')
+#1 C:\xampp\htdocs\mypropertylk\protected\framework\web\CWebApplication.php(276): CController->run('js')
+#2 C:\xampp\htdocs\mypropertylk\protected\framework\web\CWebApplication.php(135): CWebApplication->runController('site/js/jquery....')
+#3 C:\xampp\htdocs\mypropertylk\protected\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\mypropertylk\index.php(15): CApplication->run()
+#5 {main}
+REQUEST_URI=/mypropertylk/site/js/jquery.stellar.js
+HTTP_REFERER=http://localhost/mypropertylk/site/contact
+---
+2016/01/05 06:10:49 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "images".' in C:\xampp\htdocs\mypropertylk\protected\framework\web\CController.php:484
+Stack trace:
+#0 C:\xampp\htdocs\mypropertylk\protected\framework\web\CController.php(271): CController->missingAction('images')
+#1 C:\xampp\htdocs\mypropertylk\protected\framework\web\CWebApplication.php(276): CController->run('images')
+#2 C:\xampp\htdocs\mypropertylk\protected\framework\web\CWebApplication.php(135): CWebApplication->runController('site/images/nav...')
+#3 C:\xampp\htdocs\mypropertylk\protected\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\mypropertylk\index.php(15): CApplication->run()
+#5 {main}
+REQUEST_URI=/mypropertylk/site/images/nav-image.png
+HTTP_REFERER=http://localhost/mypropertylk/site/contact
+---
+2016/01/05 06:10:49 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "js".' in C:\xampp\htdocs\mypropertylk\protected\framework\web\CController.php:484
+Stack trace:
+#0 C:\xampp\htdocs\mypropertylk\protected\framework\web\CController.php(271): CController->missingAction('js')
+#1 C:\xampp\htdocs\mypropertylk\protected\framework\web\CWebApplication.php(276): CController->run('js')
+#2 C:\xampp\htdocs\mypropertylk\protected\framework\web\CWebApplication.php(135): CWebApplication->runController('site/js/jquery-...')
+#3 C:\xampp\htdocs\mypropertylk\protected\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\mypropertylk\index.php(15): CApplication->run()
+#5 {main}
+REQUEST_URI=/mypropertylk/site/js/jquery-1.11.0.min.js
+HTTP_REFERER=http://localhost/mypropertylk/site/contact
+---
+2016/01/05 06:10:49 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "js".' in C:\xampp\htdocs\mypropertylk\protected\framework\web\CController.php:484
+Stack trace:
+#0 C:\xampp\htdocs\mypropertylk\protected\framework\web\CController.php(271): CController->missingAction('js')
+#1 C:\xampp\htdocs\mypropertylk\protected\framework\web\CWebApplication.php(276): CController->run('js')
+#2 C:\xampp\htdocs\mypropertylk\protected\framework\web\CWebApplication.php(135): CWebApplication->runController('site/js/bootstr...')
+#3 C:\xampp\htdocs\mypropertylk\protected\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\mypropertylk\index.php(15): CApplication->run()
+#5 {main}
+REQUEST_URI=/mypropertylk/site/js/bootstrap-select.js
+HTTP_REFERER=http://localhost/mypropertylk/site/contact
+---
+2016/01/05 06:10:49 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "js".' in C:\xampp\htdocs\mypropertylk\protected\framework\web\CController.php:484
+Stack trace:
+#0 C:\xampp\htdocs\mypropertylk\protected\framework\web\CController.php(271): CController->missingAction('js')
+#1 C:\xampp\htdocs\mypropertylk\protected\framework\web\CWebApplication.php(276): CController->run('js')
+#2 C:\xampp\htdocs\mypropertylk\protected\framework\web\CWebApplication.php(135): CWebApplication->runController('site/js/bootstr...')
+#3 C:\xampp\htdocs\mypropertylk\protected\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\mypropertylk\index.php(15): CApplication->run()
+#5 {main}
+REQUEST_URI=/mypropertylk/site/js/bootstrap.min.js
+HTTP_REFERER=http://localhost/mypropertylk/site/contact
+---
+2016/01/05 06:10:49 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "js".' in C:\xampp\htdocs\mypropertylk\protected\framework\web\CController.php:484
+Stack trace:
+#0 C:\xampp\htdocs\mypropertylk\protected\framework\web\CController.php(271): CController->missingAction('js')
+#1 C:\xampp\htdocs\mypropertylk\protected\framework\web\CWebApplication.php(276): CController->run('js')
+#2 C:\xampp\htdocs\mypropertylk\protected\framework\web\CWebApplication.php(135): CWebApplication->runController('site/js/wow.min...')
+#3 C:\xampp\htdocs\mypropertylk\protected\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\mypropertylk\index.php(15): CApplication->run()
+#5 {main}
+REQUEST_URI=/mypropertylk/site/js/wow.min.js
+HTTP_REFERER=http://localhost/mypropertylk/site/contact
+---
+2016/01/05 06:10:49 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "js".' in C:\xampp\htdocs\mypropertylk\protected\framework\web\CController.php:484
+Stack trace:
+#0 C:\xampp\htdocs\mypropertylk\protected\framework\web\CController.php(271): CController->missingAction('js')
+#1 C:\xampp\htdocs\mypropertylk\protected\framework\web\CWebApplication.php(276): CController->run('js')
+#2 C:\xampp\htdocs\mypropertylk\protected\framework\web\CWebApplication.php(135): CWebApplication->runController('site/js/jquery....')
+#3 C:\xampp\htdocs\mypropertylk\protected\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\mypropertylk\index.php(15): CApplication->run()
+#5 {main}
+REQUEST_URI=/mypropertylk/site/js/jquery.flexslider-min.js
+HTTP_REFERER=http://localhost/mypropertylk/site/contact
+---
+2016/01/05 06:10:49 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "js".' in C:\xampp\htdocs\mypropertylk\protected\framework\web\CController.php:484
+Stack trace:
+#0 C:\xampp\htdocs\mypropertylk\protected\framework\web\CController.php(271): CController->missingAction('js')
+#1 C:\xampp\htdocs\mypropertylk\protected\framework\web\CWebApplication.php(276): CController->run('js')
+#2 C:\xampp\htdocs\mypropertylk\protected\framework\web\CWebApplication.php(135): CWebApplication->runController('site/js/jquery....')
+#3 C:\xampp\htdocs\mypropertylk\protected\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\mypropertylk\index.php(15): CApplication->run()
+#5 {main}
+REQUEST_URI=/mypropertylk/site/js/jquery.sticky.js
+HTTP_REFERER=http://localhost/mypropertylk/site/contact
+---
+2016/01/05 06:10:49 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "js".' in C:\xampp\htdocs\mypropertylk\protected\framework\web\CController.php:484
+Stack trace:
+#0 C:\xampp\htdocs\mypropertylk\protected\framework\web\CController.php(271): CController->missingAction('js')
+#1 C:\xampp\htdocs\mypropertylk\protected\framework\web\CWebApplication.php(276): CController->run('js')
+#2 C:\xampp\htdocs\mypropertylk\protected\framework\web\CWebApplication.php(135): CWebApplication->runController('site/js/owl.car...')
+#3 C:\xampp\htdocs\mypropertylk\protected\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\mypropertylk\index.php(15): CApplication->run()
+#5 {main}
+REQUEST_URI=/mypropertylk/site/js/owl.carousel.min.js
+HTTP_REFERER=http://localhost/mypropertylk/site/contact
+---
+2016/01/05 06:10:49 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "js".' in C:\xampp\htdocs\mypropertylk\protected\framework\web\CController.php:484
+Stack trace:
+#0 C:\xampp\htdocs\mypropertylk\protected\framework\web\CController.php(271): CController->missingAction('js')
+#1 C:\xampp\htdocs\mypropertylk\protected\framework\web\CWebApplication.php(276): CController->run('js')
+#2 C:\xampp\htdocs\mypropertylk\protected\framework\web\CWebApplication.php(135): CWebApplication->runController('site/js/own-men...')
+#3 C:\xampp\htdocs\mypropertylk\protected\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\mypropertylk\index.php(15): CApplication->run()
+#5 {main}
+REQUEST_URI=/mypropertylk/site/js/own-menu.js
+HTTP_REFERER=http://localhost/mypropertylk/site/contact
+---
+2016/01/05 06:10:49 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "js".' in C:\xampp\htdocs\mypropertylk\protected\framework\web\CController.php:484
+Stack trace:
+#0 C:\xampp\htdocs\mypropertylk\protected\framework\web\CController.php(271): CController->missingAction('js')
+#1 C:\xampp\htdocs\mypropertylk\protected\framework\web\CWebApplication.php(276): CController->run('js')
+#2 C:\xampp\htdocs\mypropertylk\protected\framework\web\CWebApplication.php(135): CWebApplication->runController('site/js/jquery....')
+#3 C:\xampp\htdocs\mypropertylk\protected\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\mypropertylk\index.php(15): CApplication->run()
+#5 {main}
+REQUEST_URI=/mypropertylk/site/js/jquery.nouislider.min.js
+HTTP_REFERER=http://localhost/mypropertylk/site/contact
+---
+2016/01/05 06:10:49 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "js".' in C:\xampp\htdocs\mypropertylk\protected\framework\web\CController.php:484
+Stack trace:
+#0 C:\xampp\htdocs\mypropertylk\protected\framework\web\CController.php(271): CController->missingAction('js')
+#1 C:\xampp\htdocs\mypropertylk\protected\framework\web\CWebApplication.php(276): CController->run('js')
+#2 C:\xampp\htdocs\mypropertylk\protected\framework\web\CWebApplication.php(135): CWebApplication->runController('site/js/main.js')
+#3 C:\xampp\htdocs\mypropertylk\protected\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\mypropertylk\index.php(15): CApplication->run()
+#5 {main}
+REQUEST_URI=/mypropertylk/site/js/main.js
+HTTP_REFERER=http://localhost/mypropertylk/site/contact
+---
+2016/01/05 06:10:49 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "images".' in C:\xampp\htdocs\mypropertylk\protected\framework\web\CController.php:484
+Stack trace:
+#0 C:\xampp\htdocs\mypropertylk\protected\framework\web\CController.php(271): CController->missingAction('images')
+#1 C:\xampp\htdocs\mypropertylk\protected\framework\web\CWebApplication.php(276): CController->run('images')
+#2 C:\xampp\htdocs\mypropertylk\protected\framework\web\CWebApplication.php(135): CWebApplication->runController('site/images/nav...')
+#3 C:\xampp\htdocs\mypropertylk\protected\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\mypropertylk\index.php(15): CApplication->run()
+#5 {main}
+REQUEST_URI=/mypropertylk/site/images/nav-image.png
+HTTP_REFERER=http://localhost/mypropertylk/site/contact
+---
+2016/01/05 06:10:51 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "js".' in C:\xampp\htdocs\mypropertylk\protected\framework\web\CController.php:484
+Stack trace:
+#0 C:\xampp\htdocs\mypropertylk\protected\framework\web\CController.php(271): CController->missingAction('js')
+#1 C:\xampp\htdocs\mypropertylk\protected\framework\web\CWebApplication.php(276): CController->run('js')
+#2 C:\xampp\htdocs\mypropertylk\protected\framework\web\CWebApplication.php(135): CWebApplication->runController('site/js/jquery-...')
+#3 C:\xampp\htdocs\mypropertylk\protected\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\mypropertylk\index.php(15): CApplication->run()
+#5 {main}
+REQUEST_URI=/mypropertylk/site/js/jquery-1.11.0.min.js
+HTTP_REFERER=http://localhost/mypropertylk/site/contact
+---
+2016/01/05 06:10:51 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "js".' in C:\xampp\htdocs\mypropertylk\protected\framework\web\CController.php:484
+Stack trace:
+#0 C:\xampp\htdocs\mypropertylk\protected\framework\web\CController.php(271): CController->missingAction('js')
+#1 C:\xampp\htdocs\mypropertylk\protected\framework\web\CWebApplication.php(276): CController->run('js')
+#2 C:\xampp\htdocs\mypropertylk\protected\framework\web\CWebApplication.php(135): CWebApplication->runController('site/js/wow.min...')
+#3 C:\xampp\htdocs\mypropertylk\protected\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\mypropertylk\index.php(15): CApplication->run()
+#5 {main}
+REQUEST_URI=/mypropertylk/site/js/wow.min.js
+HTTP_REFERER=http://localhost/mypropertylk/site/contact
+---
+2016/01/05 06:10:51 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "js".' in C:\xampp\htdocs\mypropertylk\protected\framework\web\CController.php:484
+Stack trace:
+#0 C:\xampp\htdocs\mypropertylk\protected\framework\web\CController.php(271): CController->missingAction('js')
+#1 C:\xampp\htdocs\mypropertylk\protected\framework\web\CWebApplication.php(276): CController->run('js')
+#2 C:\xampp\htdocs\mypropertylk\protected\framework\web\CWebApplication.php(135): CWebApplication->runController('site/js/bootstr...')
+#3 C:\xampp\htdocs\mypropertylk\protected\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\mypropertylk\index.php(15): CApplication->run()
+#5 {main}
+REQUEST_URI=/mypropertylk/site/js/bootstrap-select.js
+HTTP_REFERER=http://localhost/mypropertylk/site/contact
+---
+2016/01/05 06:10:51 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "js".' in C:\xampp\htdocs\mypropertylk\protected\framework\web\CController.php:484
+Stack trace:
+#0 C:\xampp\htdocs\mypropertylk\protected\framework\web\CController.php(271): CController->missingAction('js')
+#1 C:\xampp\htdocs\mypropertylk\protected\framework\web\CWebApplication.php(276): CController->run('js')
+#2 C:\xampp\htdocs\mypropertylk\protected\framework\web\CWebApplication.php(135): CWebApplication->runController('site/js/bootstr...')
+#3 C:\xampp\htdocs\mypropertylk\protected\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\mypropertylk\index.php(15): CApplication->run()
+#5 {main}
+REQUEST_URI=/mypropertylk/site/js/bootstrap.min.js
+HTTP_REFERER=http://localhost/mypropertylk/site/contact
+---
+2016/01/05 06:10:51 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "js".' in C:\xampp\htdocs\mypropertylk\protected\framework\web\CController.php:484
+Stack trace:
+#0 C:\xampp\htdocs\mypropertylk\protected\framework\web\CController.php(271): CController->missingAction('js')
+#1 C:\xampp\htdocs\mypropertylk\protected\framework\web\CWebApplication.php(276): CController->run('js')
+#2 C:\xampp\htdocs\mypropertylk\protected\framework\web\CWebApplication.php(135): CWebApplication->runController('site/js/jquery....')
+#3 C:\xampp\htdocs\mypropertylk\protected\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\mypropertylk\index.php(15): CApplication->run()
+#5 {main}
+REQUEST_URI=/mypropertylk/site/js/jquery.stellar.js
+HTTP_REFERER=http://localhost/mypropertylk/site/contact
+---
+2016/01/05 06:10:51 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "js".' in C:\xampp\htdocs\mypropertylk\protected\framework\web\CController.php:484
+Stack trace:
+#0 C:\xampp\htdocs\mypropertylk\protected\framework\web\CController.php(271): CController->missingAction('js')
+#1 C:\xampp\htdocs\mypropertylk\protected\framework\web\CWebApplication.php(276): CController->run('js')
+#2 C:\xampp\htdocs\mypropertylk\protected\framework\web\CWebApplication.php(135): CWebApplication->runController('site/js/jquery....')
+#3 C:\xampp\htdocs\mypropertylk\protected\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\mypropertylk\index.php(15): CApplication->run()
+#5 {main}
+REQUEST_URI=/mypropertylk/site/js/jquery.flexslider-min.js
+HTTP_REFERER=http://localhost/mypropertylk/site/contact
+---
+2016/01/05 06:10:51 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "js".' in C:\xampp\htdocs\mypropertylk\protected\framework\web\CController.php:484
+Stack trace:
+#0 C:\xampp\htdocs\mypropertylk\protected\framework\web\CController.php(271): CController->missingAction('js')
+#1 C:\xampp\htdocs\mypropertylk\protected\framework\web\CWebApplication.php(276): CController->run('js')
+#2 C:\xampp\htdocs\mypropertylk\protected\framework\web\CWebApplication.php(135): CWebApplication->runController('site/js/owl.car...')
+#3 C:\xampp\htdocs\mypropertylk\protected\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\mypropertylk\index.php(15): CApplication->run()
+#5 {main}
+REQUEST_URI=/mypropertylk/site/js/owl.carousel.min.js
+HTTP_REFERER=http://localhost/mypropertylk/site/contact
+---
+2016/01/05 06:10:51 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "js".' in C:\xampp\htdocs\mypropertylk\protected\framework\web\CController.php:484
+Stack trace:
+#0 C:\xampp\htdocs\mypropertylk\protected\framework\web\CController.php(271): CController->missingAction('js')
+#1 C:\xampp\htdocs\mypropertylk\protected\framework\web\CWebApplication.php(276): CController->run('js')
+#2 C:\xampp\htdocs\mypropertylk\protected\framework\web\CWebApplication.php(135): CWebApplication->runController('site/js/jquery....')
+#3 C:\xampp\htdocs\mypropertylk\protected\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\mypropertylk\index.php(15): CApplication->run()
+#5 {main}
+REQUEST_URI=/mypropertylk/site/js/jquery.sticky.js
+HTTP_REFERER=http://localhost/mypropertylk/site/contact
+---
+2016/01/05 06:10:51 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "js".' in C:\xampp\htdocs\mypropertylk\protected\framework\web\CController.php:484
+Stack trace:
+#0 C:\xampp\htdocs\mypropertylk\protected\framework\web\CController.php(271): CController->missingAction('js')
+#1 C:\xampp\htdocs\mypropertylk\protected\framework\web\CWebApplication.php(276): CController->run('js')
+#2 C:\xampp\htdocs\mypropertylk\protected\framework\web\CWebApplication.php(135): CWebApplication->runController('site/js/own-men...')
+#3 C:\xampp\htdocs\mypropertylk\protected\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\mypropertylk\index.php(15): CApplication->run()
+#5 {main}
+REQUEST_URI=/mypropertylk/site/js/own-menu.js
+HTTP_REFERER=http://localhost/mypropertylk/site/contact
+---
+2016/01/05 06:10:51 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "js".' in C:\xampp\htdocs\mypropertylk\protected\framework\web\CController.php:484
+Stack trace:
+#0 C:\xampp\htdocs\mypropertylk\protected\framework\web\CController.php(271): CController->missingAction('js')
+#1 C:\xampp\htdocs\mypropertylk\protected\framework\web\CWebApplication.php(276): CController->run('js')
+#2 C:\xampp\htdocs\mypropertylk\protected\framework\web\CWebApplication.php(135): CWebApplication->runController('site/js/jquery....')
+#3 C:\xampp\htdocs\mypropertylk\protected\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\mypropertylk\index.php(15): CApplication->run()
+#5 {main}
+REQUEST_URI=/mypropertylk/site/js/jquery.nouislider.min.js
+HTTP_REFERER=http://localhost/mypropertylk/site/contact
+---
+2016/01/05 06:10:51 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "js".' in C:\xampp\htdocs\mypropertylk\protected\framework\web\CController.php:484
+Stack trace:
+#0 C:\xampp\htdocs\mypropertylk\protected\framework\web\CController.php(271): CController->missingAction('js')
+#1 C:\xampp\htdocs\mypropertylk\protected\framework\web\CWebApplication.php(276): CController->run('js')
+#2 C:\xampp\htdocs\mypropertylk\protected\framework\web\CWebApplication.php(135): CWebApplication->runController('site/js/main.js')
+#3 C:\xampp\htdocs\mypropertylk\protected\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\mypropertylk\index.php(15): CApplication->run()
+#5 {main}
+REQUEST_URI=/mypropertylk/site/js/main.js
+HTTP_REFERER=http://localhost/mypropertylk/site/contact
+---
+2016/01/05 06:10:56 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "images/img-6.jpg".' in C:\xampp\htdocs\mypropertylk\protected\framework\web\CWebApplication.php:280
+Stack trace:
+#0 C:\xampp\htdocs\mypropertylk\protected\framework\web\CWebApplication.php(135): CWebApplication->runController('images/img-6.jp...')
+#1 C:\xampp\htdocs\mypropertylk\protected\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\mypropertylk\index.php(15): CApplication->run()
+#3 {main}
+REQUEST_URI=/mypropertylk/images/img-6.jpg
+HTTP_REFERER=http://localhost/mypropertylk/
+---
