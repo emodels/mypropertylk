@@ -24,9 +24,23 @@
         <link href='<?php echo Yii::app()->request->baseUrl; ?>/styles/responsive.css' rel="stylesheet" type="text/css">
         <link href='<?php echo Yii::app()->request->baseUrl; ?>/styles/font-awesome.min.css' rel="stylesheet" type="text/css">
         <link href='<?php echo Yii::app()->request->baseUrl; ?>/css/form.css' rel='stylesheet' type='text/css' media='all' />
+        <link href='<?php echo Yii::app()->request->baseUrl; ?>/styles/custom-style.css' rel="stylesheet" type="text/css">
         <link  id='realexpert_bootstrap_responsive_css-css' href='<?php echo Yii::app()->request->baseUrl; ?>/css/bootstrap-responsive.min.css' rel='stylesheet' type='text/css' media='all'/>
 
-    
+        <style>
+         #dvLoading{
+           background:#fff;
+           height: 100%;
+           width: 100%;
+           position: fixed;
+           z-index: 9999;
+        }
+        .loadingImg{
+           top: 50%;
+           position: relative;
+           left: 50%;
+        }
+        </style>
     
         
         <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
@@ -35,19 +49,22 @@
         <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
         <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
         <![endif]-->
-
+        
+        <script>
+        $(window).load(function(){
+          $('#dvLoading').fadeOut(2000);
+        });
+        </script>
         <script type="text/javascript">
             jQuery(document).ready(function () {
-                var b = window.location.pathname
-                $('.ownmenu li a').each(function () {
-                    $(this).parent().removeClass('active');
-                    var a = $(this).attr('href');
-                    
-                    if (b == a) {
-                        $(this).parent().addClass('active');
-                        return false;
-                    }
+               
+                
+                $('.forgotpword').click(function(){
+                    $('.new-height').height(665);
                 });
+                $('.contactSubmit').click(function(){
+                    $('.contactHeight').height(1130);
+		});
 
                 
                 $("path").tooltip({
@@ -76,6 +93,10 @@
         </script>
     </head>
     <body>
+        <div id="dvLoading">
+            <img class="loadingImg" src="images/loading.gif">
+        </div>
+
         <!-- Page Wrap ===========================================-->
         <div id="wrap" class="home-1">
 
@@ -87,12 +108,10 @@
                             <p><i class="fa fa-phone"></i> Call Us Now : +94 112 314 100</p>
                             <span>|</span> </li>
                         <li>
-                          <!--  <p><i class="fa fa-envelope-o"></i> Info@ourinfomail.com </p>-->
-                            <p class="mail"><a href="#."><i class="fa fa-envelope-o"></i> info@myproperty.lk </a> </p>
+                          <p class="mail"><a href="#."><i class="fa fa-envelope-o"></i> info@myproperty.lk </a> </p>
                             <span>|</span> </li>
                         <li>
-                          <!--<p><i class="fa fa-lock"></i> Login / Register </p>-->
-                            <p class="Signin" ><a href="<?php echo Yii::app()->request->baseUrl; ?>/login"><i class="fa fa-lock"></i> Sign in </a></p>
+                           <p class="Signin" ><a href="<?php echo Yii::app()->request->baseUrl; ?>/login"><i class="fa fa-lock"></i> Sign in </a></p>
                             <span>|</span> </li>
                         <li>
                             <p class="join"><a href="<?php echo Yii::app()->request->baseUrl; ?>/register"><i class="glyphicon glyphicon-user"></i>Join</a> </p>
@@ -113,7 +132,7 @@
                 <div class="container">
 
                     <!--======= LOGO =========-->
-                    <div class="logo"> <a href="#."><img src="<?php echo Yii::app()->request->baseUrl; ?>/images/logo.png" alt="" ></a> </div>
+                    <div class="logo"> <a href="#."><img src="<?php echo Yii::app()->request->baseUrl; ?>/images/logo_ash.png" alt="" ></a> </div>
                     <!--======= NAV =========-->
                     <nav>
 
@@ -127,7 +146,7 @@
                                 <div class="megamenu full-width">
                                     <h6>Our Services</h6>
                                     <div class="row nav-post">
-                                        <div class="col-sm-4 boder-da-r text-center">
+                                        <div class="col-sm-4 boder-da-r">
                                             <ul>
                                                 <li><a href="05-Services.html">Property Marketing </a></li>
                                                 <li><a href="05-Services.html">Property Brokerage</a></li>
@@ -136,7 +155,7 @@
                                                 <li><a href="<?php echo Yii::app()->request->baseUrl; ?>/list/property/type/sold">Sold</a></li>
                                             </ul>
                                         </div>
-                                        <div class="col-sm-4"> <img class="absu" src="images/nav-image.png" alt="" > </div>
+                                        <div class="col-sm-4"> <img class="absu"  src="images/nav-image.png" alt="" > </div>
                                     </div>
 
                             </li>
@@ -232,7 +251,7 @@
                                         <a href="<?php echo Yii::app()->request->baseUrl; ?>/terms_conditions.pdf" target="_blank">Terms and Conditions</a>
                                     </li>
                                     <li>
-                                        <a href="www.myproperty.lk/somthing/privacy_policy.pdf" target="_blank">Privacy Policy</a>
+                                        <a href="<?php echo Yii::app()->request->baseUrl; ?>/privacy_policy.pdf" target="_blank">Privacy Policy</a>
                                     </li>
                                 </ul>
                             </div>

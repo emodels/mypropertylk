@@ -1438,7 +1438,7 @@ input:focus:invalid:focus, textarea:focus:invalid:focus, select:focus:invalid:fo
 .input-append .add-on, .input-prepend .add-on {
     display: inline-block;
     width: auto;
-    height: 20px;
+    height: 30px;
     min-width: 16px;
     padding: 4px 5px;
     font-size: 14px;

@@ -1,4 +1,5 @@
-<head><link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>/css/tooltipster.css" />
+<head>
+    <link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>/css/tooltipster.css" />
     <link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>/css/jquery.bxslider.css" />
     <script type='text/javascript' src='<?php echo Yii::app()->request->baseUrl; ?>/js/jquery.form.min.js'></script>
     <script type='text/javascript' src='<?php echo Yii::app()->request->baseUrl; ?>/js/jquery.jcarousel.min.js'></script>
@@ -53,7 +54,7 @@
 
                     window.document.location.replace('<?php echo Yii::app()->request->baseUrl; ?>/list/property/type/<?php echo $model->type; ?>/district/' + district);
                 }
-                /*$('#map').css('margin-left','-65px');
+                $('#map').css('margin-left','-65px');
                  $('#div_citylist').css('display','block');
                  $('#citylist').empty();
                  
@@ -71,7 +72,7 @@
                  $('#citylist option:first').attr('selected','selected');
                  $('#citylist').focus();
                  }
-                 });*/
+                 });
 
                 return false;
             });
@@ -111,14 +112,18 @@
 
 <!--======= BANNER =========-->
 <div id="banner">
+   <!-- <div class="search-text" >
+        Search Your Properties
+                </div>  --> 
+    
  <!--================search box======================-->
-   <!-- <div class="finder">
+<!--   <div class="finder">
         <div class="container">
-            <!--  <h1 class="topic">Welcome to myproperty</h1>-->
+              <h1 class="topic">Welcome to myproperty</h1>
 
-            <!--======= FORM SECTION =========-->
+            ======= FORM SECTION =========
 
-            <!--  <div class="container searchBox">
+             <div class="container searchBox">
             <div class="form-group col-md-9">
               <h3 class="white">Search Properties</h3>
            
@@ -279,7 +284,7 @@
             <style type="text/css">
                 .land
                 {
-                    fill: rgba(0,0,0,.5);
+                    fill: rgba(0,0,0,.85);
                     fill-opacity: 1;
                     stroke:white;
                     stroke-opacity: 1;
@@ -334,6 +339,8 @@
         </g>
     </svg>
 
+
+    
     <!-- <div class="span5" style="position: relative">
        <div id="map" class="col">
          <img alt=" srilanka_map " height="428" id="map-imagemap" src="images/map.png" usemap="#ikman_map" width="470">
@@ -377,7 +384,9 @@
 
 
   <!--=================slide images============================-->
-    <div class="flex-banner">
+ <div class="flex-banner">
+   
+      
         <ul class="slides">
             
             <!--======= SLIDER =========-->
@@ -395,8 +404,8 @@
             </li>
             <li> 
                 <img src="images/slide-2.jpg" title="Slide_2" alt="" > 
-                    <div class="flex-caption">
-                        <p class="caption-header">Property Brokerage</p>
+                     <div class="flex-caption">
+                      <p class="caption-header">Property Brokerage</p>
                         <p class="caption-text">Talk to us to sell your property or buy your next property with confidence !</p>
                            <span>
                     <button href="05-Services.html" type="button" class="slide-btn btn-default">READ MORE</button>
@@ -405,7 +414,7 @@
             </li>
             <li>
                 <img src="images/slide-3.jpg" title="Slide_3" alt="" >
-                    <div class="flex-caption">
+                   <div class="flex-caption">
                         <p class="caption-header">Property Management</p>
                         <p class="caption-text">Property Management at its best !</p>
                            <span>
@@ -415,15 +424,16 @@
             </li>
             <li> 
                 <img src="images/slide-4.jpg" title="Slide_4" alt="" > 
-                    <div class="flex-caption">
+                   <div class="flex-caption">
                         <p class="caption-header">Investment Advisory</p>
                         <p class="caption-text">Talk to us before you invest on your next property !</p>
                        <span>
                     <button href="05-Services.html" type="button" class="slide-btn btn-default">READ MORE</button>
                     </span>
-                    </div>  -->               
+                    </div>               
                </ul>
          </div>
+              
 
    </div>
 
@@ -447,7 +457,7 @@
 
                                             <!--======= SERVICE HOVER =========-->
                                             <div class="ser-hover">
-                                                <p>Get the “SOLD” Tag next to your project with My Property Investments !<a href="#." class="read-more">Read more <i class="fa fa-angle-double-right"></i></a> </p>
+                                                <p>Get the “SOLD” Tag next to your project with My Property Investments !<a href="05-Services.html" class="read-more">Read more <i class="fa fa-angle-double-right"></i></a> </p>
                                             </div>
                                             <a href="#." class="heading">Property Marketing</a>
                                     </section>
@@ -462,7 +472,7 @@
 
                                             <!--======= SERVICE HOVER =========-->
                                             <div class="ser-hover">
-                                                <p>Talk to us to sell your property or buy your next property with confidence ! <a href="#." class="read-more">Read more <i class="fa fa-angle-double-right"></i></a> </p>
+                                                <p>Talk to us to sell your property or buy your next property with confidence ! <a href="05-Services.html" class="read-more">Read more <i class="fa fa-angle-double-right"></i></a> </p>
                                             </div>
                                             <a href="#." class="heading">Property Brokerage</a> </section>
                                 </li>
@@ -476,7 +486,7 @@
 
                                             <!--======= SERVICE HOVER =========-->
                                             <div class="ser-hover">
-                                                <p>Property Management at its best !<a href="#." class="read-more">Read more <i class="fa fa-angle-double-right"></i></a> </p>
+                                                <p>Property Management at its best !<a href="05-Services.html" class="read-more">Read more <i class="fa fa-angle-double-right"></i></a> </p>
                                             </div>
                                             <a href="#." class="heading">Property Management</a> </section>
                                 </li>
@@ -490,7 +500,7 @@
 
                                             <!--======= SERVICE HOVER =========-->
                                             <div class="ser-hover">
-                                                <p>Talk to us before you invest on your next property !<a href="#." class="read-more">Read more <i class="fa fa-angle-double-right"></i></a> </p>
+                                                <p>Talk to us before you invest on your next property !<a href="05-Services.html" class="read-more">Read more <i class="fa fa-angle-double-right"></i></a> </p>
                                             </div>
                                             <a href="#." class="heading">Investment Advisory</a> </section>
                                 </li>
@@ -667,7 +677,7 @@
 
                     <!--======= CALL US =========-->
 
-                    <section class="call-us">
+                    <section class="call-us" style="height:320px;">
                         <div class="overlay">
                             <div class="container">
                                 <ul class="row">

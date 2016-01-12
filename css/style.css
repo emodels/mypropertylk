@@ -501,7 +501,7 @@ code {
 	position:absolute;
 	bottom:100px;
 	width:auto;
-	height:100px;
+	height:100px !important;
 }
 	.flex-caption .caption-title{
 		float:left;
@@ -1234,7 +1234,7 @@ area[title]{
 }
 
 .property-list-title{
-	font-size:24px;
+	font-size:22px;
 	/*font-weight:bold;*/
 	padding:5px 20px 5px 0;
 	border-right:1px solid #d9dfe2;
@@ -1826,7 +1826,7 @@ article blockquote p{
 /*------------------------------------------------------*/
 #footer_bg{
     background: url('../images/footer_img.jpg') no-repeat 50% 0;
-    height:160px;
+    height:115px;
     min-width: auto;
     max-width: 100%;
     margin-top: 30px;
@@ -3131,7 +3131,7 @@ a img.aligncenter {
 }
 
 @media (max-width: 767px) and (min-width: 480px){
-    input, textarea, .uneditable-input {
+        input, textarea, .uneditable-input {
         width: 180px
     }
     select {
@@ -3743,4 +3743,18 @@ a img.aligncenter {
     padding: 0px;
     z-index: 9000;
 } 
+
+/*====== search your properties======*/
+
+.search-text {
+    float:right; 
+    right:90px;
+    z-index:99;
+    display: inline-block;
+    position: relative;
+    top: 240px;
+    font-size:24px;
+    
+    
+}
 

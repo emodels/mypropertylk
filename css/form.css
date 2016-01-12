@@ -35,7 +35,7 @@
  */
 
 input[type="text"]{
-    border-radius: 4px !important;
+    border-radius: 0px 4px 4px 0px;
     display: inline-block;
     height: 30px;
     padding: 4px 6px;
@@ -45,6 +45,20 @@ input[type="text"]{
     width: 225px;
     border: 1px solid #ccc;
     background-color: #fff;
+}
+
+input[type="password"]{
+    border-radius: 0px 4px 4px 0px;
+    display: inline-block;
+    height: 30px;
+    padding: 4px 6px;
+    margin-bottom: 10px;
+    font-size: 14px;
+    line-height: 20px;
+    width: 225px;
+    border: 1px solid #ccc;
+    background-color: #fff;
+    
 }
 textarea{
     border-radius: 4px !important;

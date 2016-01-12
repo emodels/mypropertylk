@@ -249,7 +249,7 @@
             ),
             'htmlOptions'=>array('class'=>'form-horizontal'),
         )); ?>
-        <div class="container">
+        <div class="container" style="height:1100px;">
             <div class="row-fluid">
                 <div class="span12">
                     <div class="row-fluid">

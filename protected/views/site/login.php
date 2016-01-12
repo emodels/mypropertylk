@@ -11,13 +11,17 @@
 </style>
 <script type="text/javascript">
 
+    $('.forgotpword').click(function(){
+        $('.new-height').height(665);
+    });
     function IsEmail(email) {
         var regex = /^([a-zA-Z0-9_.+-])+\@(([a-zA-Z0-9-])+\.)+([a-zA-Z0-9]{2,4})+$/;
         return regex.test(email);
     }
 
     function RequestPassword() {
-
+        
+        $('.new-height').height(665);
         $('#error_request_password').html('');
         $('#success_request_password').hide();
         $('#ajax_progress').hide();
@@ -70,7 +74,7 @@ $this->breadcrumbs=array(
 	'Login',
 );
 ?>
-<div class="container">
+<div class="container new-height" style="height:535px;">
     <div class="row-fluid">
         <div class="span12">
             <div class="row-fluid">
@@ -84,7 +88,7 @@ $this->breadcrumbs=array(
                                 <div class="container-fluid">
                                     <div class="row-fluid">
                                         <div class="span5">
-                                            <div class="form" style="padding-top: 10px;">
+                                            <div class="form">
                                                 <?php $form=$this->beginWidget('CActiveForm', array(
                                                     'id'=>'login-form',
                                                     'enableClientValidation'=>true,
@@ -94,18 +98,17 @@ $this->breadcrumbs=array(
                                                     'htmlOptions'=>array('class'=>'form-horizontal'),
                                                     'focus'=>array($model,'username')
                                                 )); ?>
-
                                                 <div class="control-group">
-                                                    <div class="input-prepend">
-                                                        <span class="add-on"><i class="icon-user"></i></span>
-                                                        <?php echo $form->textField($model,'username', array('placeholder'=>'Username', 'style' => 'width:auto !important')); ?>
+                                                    <div class="input-group">
+                                                        <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></i></span>
+                                                        <?php echo $form->textField($model,'username', array( 'class'=>'form-control', 'placeholder'=>'Username', 'style' => 'width:auto !important')); ?>
                                                     </div>
                                                     <?php echo $form->error($model,'username'); ?>
                                                 </div>
                                                 <div class="control-group">
-                                                    <div class="input-prepend">
-                                                        <span class="add-on"><i class="icon-lock"></i></span>
-                                                        <?php echo $form->passwordField($model,'password', array('placeholder'=>'Password', 'style' => 'width:auto !important')); ?>
+                                                    <div class="input-group">
+                                                        <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></i></span>
+                                                        <?php echo $form->passwordField($model,'password', array('class'=>'form-control', 'placeholder'=>'Password', 'style' => 'width:auto !important')); ?>
                                                     </div>
                                                     <?php echo $form->error($model,'password'); ?>
                                                 </div>
@@ -124,15 +127,15 @@ $this->breadcrumbs=array(
                                                         Not a Member? <a href="<?php echo Yii::app()->request->baseUrl; ?>/register">Register</a>
                                                     </div>
                                                 </div>
-                                                <div class="control-group">
-                                                    <a href="javascript:$('#password_request').toggle();">Forgot Your Password ?</a>
+                                                <div class="control-group" style="margin-top:100px;">
+                                                    <a class="forgotpword" href="javascript:$('#password_request').toggle();">Forgot Your Password ?</a>
                                                 </div>
                                                 <div id="password_request" class="well" style="padding: 5px 25px 5px 25px; display: none">
                                                     <h5>Enter your email address</h5>
                                                     <div class="control-group">
-                                                        <div class="input-prepend">
-                                                            <span class="add-on"><i class="icon-envelope"></i></span>
-                                                            <?php echo CHtml::textField('email','', array('placeholder'=>'Your Email Address', 'style' => 'width:auto !important')); ?>
+                                                        <div class="input-group">
+                                                            <span class="input-group-addon"><i class="glyphicon glyphicon-envelope"></i></span>
+                                                            <?php echo CHtml::textField('email','', array('class'=>'form-control', 'placeholder'=>'Your Email Address', 'style' => 'width:auto !important')); ?>
                                                         </div>
                                                     </div>
                                                     <div class="control-group">
@@ -147,7 +150,7 @@ $this->breadcrumbs=array(
                                         </div>
                                         <div class="span6">
                                             <div class="panel panel-default">
-                                                <div class="alert alert-info"  style="padding: 20px; padding-top: 25px">
+                                                <div class="alert alert-info"  style="padding: 20px; padding-top: 25px; margin-bottom: 0px">
                                                     <h4>Before <b>POST YOUR FREE AD</b> you need to Login first...!!</h4><br/>
                                                     If you are not a <b>Registered Member of 'myproperty.lk'</b> click here to Register Now..!
                                                     <br/><br/>

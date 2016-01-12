@@ -49,14 +49,14 @@ $this->breadcrumbs=array(
     'Register',
 );
 ?>
-<div class="container">
+<div class="container" style="height:1050px;">
     <div class="row-fluid">
         <div class="span12">
             <div class="row-fluid">
                 <div class="content-wrapper clearfix">
                     <div class="span9">
                         <div class="content-holder">
-                            <div id="title-listing" class="container">
+                            <div id="title-listing" class="container" >
                                 <div class="property-list-title">Register</div>
                             </div>
                             <div class="span5 offset1">

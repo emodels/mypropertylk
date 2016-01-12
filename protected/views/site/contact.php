@@ -64,7 +64,7 @@ $this->breadcrumbs=array(
 	'Contact',
 );
 ?>
-    <div class="container">
+    <div class="container contactHeight"style="height:850px;">
         <div class="row-fluid">
             <div class="span12">
                 <div class="row-fluid">
@@ -139,7 +139,7 @@ $this->breadcrumbs=array(
                                             <?php endif; ?>
 
                                             <div class="row_contactus buttons" style="margin-top: 15px;">
-                                                <?php echo CHtml::submitButton('Submit', array('class' => 'btn btn-primary btn_contactus')); ?>&nbsp;
+                                                <?php echo CHtml::submitButton('Submit', array('class' => 'btn btn-primary btn_contactus contactSubmit')); ?>&nbsp;
                                             </div>
 
                                             <?php $this->endWidget(); ?>

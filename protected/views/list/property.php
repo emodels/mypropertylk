@@ -288,7 +288,7 @@
             ),
             'htmlOptions'=>array('class'=>'form-horizontal'),
         )); ?>
-            <div class="container">
+            <div class="container" style="height:2350px;">
                 <div class="row-fluid">
                     <div class="span9 content_buy">
                         <div class="row-fluid">
@@ -310,7 +310,7 @@
                                          </div>
                                          <div class="span12" style="margin-bottom: 10px;">
                                              <label>Location</label>
-                                             <div class="span12" style="margin-left: 0;">
+                                             <div class="span12" style="margin-left: 0; width:255px">
                                                  <?php echo $form->textField($model,'townname', array('placeholder'=>'e.g: Colombo; Anuradhapura; ', 'class' => 'span10 typeahead', 'id' => 'townname', 'style' => 'z-index: 2')); ?>
                                              </div>
                                          </div>
