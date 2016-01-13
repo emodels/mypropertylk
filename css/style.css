@@ -680,56 +680,6 @@ area[title]{
 	color:#000 !important;
 }
 
-
-/*------------------------------------------------------*/
-/*	Select Box	*/
-/*------------------------------------------------------*/
-.selectwrap {
-  position: relative;
-  display: block;
-}
-.selectwrap input {
-  height: 24px;
-  padding-right: 40px;
-  cursor: pointer;
-  color: #7b8283;
-  background: url(../images/dropdown-arrow.png) no-repeat right center;
-}
-
-.selectbox-wrapper {
-  width: 100%;
-  position: absolute;
-  top: 46px;
-  left: 0px;
-  z-index: 1800;
-}
-
-#select-type_container {
-  width: 250px;
-  position: absolute;
-  top: 46px;
-  left: 0px;
-  z-index: 1800;
-}
-
-.selectbox-wrapper ul {
-  list-style: none;
-  background-color: white;
-  border: 1px solid #dedede;
-  margin: 0;
-}
-.selectbox-wrapper ul li {
-  font-family:inherit;
-  cursor: pointer;
-  color: #7b8283;
-  font-size: 14px;
-  padding: 6px 8px;
-  border-bottom: 1px solid #dedede;
-}
-.selectbox-wrapper ul li:hover {
-  background-color: #f7f7f7;
-}
-
 .advance-search .as-form-wrap {
 	padding: 25px 31px 0;
 }

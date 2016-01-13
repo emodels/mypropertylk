@@ -92,6 +92,7 @@
             });
         </script>
     </head>
+    
     <body>
         <div id="dvLoading">
             <img class="loadingImg" src="images/loading.gif">
@@ -132,7 +133,10 @@
                 <div class="container">
 
                     <!--======= LOGO =========-->
-                    <div class="logo"> <a href="#."><img src="<?php echo Yii::app()->request->baseUrl; ?>/images/logo_ash.png" alt="" ></a> </div>
+                    <div class="logo">
+                    <a href="<?php echo Yii::app()->request->baseUrl; ?>" title="myproperty.lk" rel="home">
+                     <img src="<?php echo Yii::app()->request->baseUrl; ?>/images/logo.png" alt="Real Expert" ></a>
+                    </div>
                     <!--======= NAV =========-->
                     <nav>
 

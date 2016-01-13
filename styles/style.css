@@ -576,10 +576,13 @@ p.caption-text {
 }
 #banner .flex-banner img {
 	width: 100%;
+        
 }
 #banner .flex-banner {
 	height: 300px;
 }
+
+/*
 .finder {
 	position: absolute;
 	top:25%;
@@ -593,8 +596,9 @@ p.caption-text {
 	color: #fff;
 	font-weight: 800;
 	letter-spacing: 8px;
-	font-family: 'Montserrat', sans-serif;
+	font-family: 'Montserrat', sans-serif; 
 }
+*/
 .find-sec {
 	background: #ffffff;
 	padding: 30px;
@@ -4660,18 +4664,19 @@ p.caption-text {
 .row_contactus {
     margin: 5px 0;
 }
+/*
 .btn_contactus{
     background-color: #04c;
-}
+} */
 
 .property-list-title{
-	font-size:22px;
+	font-size:20px;
 	/*font-weight:bold;*/
 	padding:5px 20px 5px 0;
 	border-right:1px solid #d9dfe2;
 	top: -15px;
 	left: 0;
-	color: #000; */
+	color: #000; 
 }
 /*=======================================================
 			SHOTCODES
@@ -5092,7 +5097,7 @@ footer .subcribe p {
 ::-webkit-input-placeholder {
  color: #fff;
 }
-
+*/
 :-moz-placeholder { /* Firefox 18- */
  color: #fff;
 }
@@ -5506,13 +5511,6 @@ height: 10px;
     right:0px;
     top: 50px;
 }
-
-/*#map {
-    width: 300px;
-    position: relative;
-    top:55px;
-}*/
-
 #map-layer {
     top: 0;
     left: 0;
@@ -5525,25 +5523,25 @@ height: 10px;
 #title-listing{
 	margin-bottom:40px;
 	margin-top:40px;
-	max-width:100%;
+	/*max-width:100%;*/
 	height:30px;
 	background-color:#d9dfe2;
 	position:relative;
 }
 
 /*====== search your properties======*/
-/*
+
 .search-text {
     height : 60px;
-    width : 140px;
+   width : 140px;
     float:right; 
     right:150px;
     z-index:99;
     display: inline-block;
     position: relative;
     top: 250px;
-    font-size: 24px; 
+    
     color : #0E0E0E;
-    background-color: #fff;
-    text-justify: justify;
-    }*/
+    
+    text-justify:auto;
+    } 

@@ -112,169 +112,26 @@
 
 <!--======= BANNER =========-->
 <div id="banner">
-   <!-- <div class="search-text" >
-        Search Your Properties
-                </div>  --> 
+   <div class="search-text" >              
+   
+   <?xml version="1.0"?>
+<svg xmlns="http://www.w3.org/2000/svg"
+     width="100px" height="30px" viewBox="0 0 1000 300">
+
+  <text x="250" y="150" 
+        font-family="Verdana" 
+        font-size="55">
+    Hello, out there
+  </text>
+
+  <!-- Show outline of canvas using 'rect' element -->
+  <rect x="1" y="1" width="998" height="298"
+        fill="none" stroke-width="2" />
+</svg>
+   </div>
     
- <!--================search box======================-->
-<!--   <div class="finder">
-        <div class="container">
-              <h1 class="topic">Welcome to myproperty</h1>
-
-            ======= FORM SECTION =========
-
-             <div class="container searchBox">
-            <div class="form-group col-md-9">
-              <h3 class="white">Search Properties</h3>
-           
-              <span>
-                <label>Enter your Town or City </label>
-              </span>
-              <input type="text" class="form-control goingto" placeholder="Eg : Colombo ; Gampaha ; Anuradhapura">
-              <div class="searchboxtype">
-                <span>
-                  <label>Property Type :</label>
-                </span>
-                <span>
-                  <select class="form-control">
-                    <option>Apartment</option>
-                    <option>House</option>
-                    <option>Portions and Rooms</option>
-                    <option>Land</option>
-                    <option>Holiday Rental</option>
-                    <option>Commercial Property</option>
-                    <option>Beach front Lands & Properties</option>
-                  </select>
-                </span>
-              </div>
-              <div class="searchboxtype">
-                <span>
-                  <label>Min Beds :</label>
-                </span>
-                <span>
-                  <select class="form-control">
-                    <option>Any</option>
-                    <option>1</option>
-                    <option>2</option>
-                    <option>3</option>
-                    <option>4</option>
-                    <option>5</option>
-                    <option>6</option>
-                    <option>7</option>
-                    <option>8</option>
-                    <option>9</option>
-                    <option>10</option>
-                  </select>
-                </span>
-              </div>
-           
-              <div class="searchboxtype">
-                <span>
-                  <label>Max Beds :</label>
-                </span>
-                <span>
-                  <select class="form-control">
-                    <option>Any</option>
-                    <option>1</option>
-                    <option>2</option>
-                    <option>3</option>
-                    <option>4</option>
-                    <option>5</option>
-                    <option>6</option>
-                    <option>7</option>
-                    <option>8</option>
-                    <option>9</option>
-                    <option>10</option>
-                  </select>
-                </span>
-              </div>
-           
-              <div class="searchboxtype">
-                <span>
-                  <label>Min Price :</label>
-                </span>
-                <span>
-                  <select class="form-control">
-                    <option>Any</option>
-                    <option>50,000</option>
-                    <option>100,000</option>
-                    <option>150,000</option>
-                    <option>200,000</option>
-                    <option>250,000</option>
-                    <option>300,000</option>
-                    <option>350,000</option>
-                    <option>400,000</option>
-                    <option>450,000</option>
-                    <option>500,000</option>
-                    <option>550,000</option>
-                    <option>600,000</option>
-                    <option>650,000</option>
-                    <option>700,000</option>
-                    <option>750,000</option>
-                    <option>800,000</option>
-                    <option>850,000</option>
-                    <option>900,000</option>
-                    <option>950,000</option>
-                    <option>1,000,000</option>
-                  </select>
-                </span>
-              </div>
-           
-              <div class="searchboxtype">
-                <span>
-                  <label>Max Price :</label>
-                </span>
-                <span>
-                  <select class="form-control">
-                    <option>Any</option>
-                    <option>50,000</option>
-                    <option>100,000</option>
-                    <option>150,000</option>
-                    <option>200,000</option>
-                    <option>250,000</option>
-                    <option>300,000</option>
-                    <option>350,000</option>
-                    <option>400,000</option>
-                    <option>450,000</option>
-                    <option>500,000</option>
-                    <option>550,000</option>
-                    <option>600,000</option>
-                    <option>650,000</option>
-                    <option>700,000</option>
-                    <option>750,000</option>
-                    <option>800,000</option>
-                    <option>850,000</option>
-                    <option>900,000</option>
-                    <option>950,000</option>
-                    <option>1,000,000</option>
-                  </select>
-                </span>
-              </div>
-           
-              <div class="col-md-4 ppadding">
-                <span>
-                  <label>Select the property type :</label>
-                </span>
-                <span>
-                  <div class="col-md-8 bpadding">
-                    <span>
-                     <div class="btn-group" role="group" aria-label="...">
-                        <button type="button" class="btn btn-default">Buy</button>
-                        <button type="button" class="btn btn-default">Rent</button>
-                        <button type="button" class="btn btn-default">Sold</button>
-                      </div>
-                    </span>
-                  </div>
-                </span>
-              </div>
-           
-              <div style="clear:both"></div>
-              <p><a class="btn btn-primary searchBtn" href="#" role="button">Search</a></p>
-            </div>
-            </div>
-        </div>
-     </div> -->
-
+    
+    
     <!-- =======================Sri Lanka Map =================== -->
 
     <?xml version="1.0" encoding="utf-8"?>
@@ -677,7 +534,7 @@
 
                     <!--======= CALL US =========-->
 
-                    <section class="call-us" style="height:320px;">
+                    <section class="call-us" style="height:290px;">
                         <div class="overlay">
                             <div class="container">
                                 <ul class="row">

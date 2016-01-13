@@ -288,7 +288,7 @@
             ),
             'htmlOptions'=>array('class'=>'form-horizontal'),
         )); ?>
-            <div class="container" style="height:2350px;">
+            <div class="container" style="height:2390px;">
                 <div class="row-fluid">
                     <div class="span9 content_buy">
                         <div class="row-fluid">
