@@ -112,14 +112,13 @@
 
 <!--======= BANNER =========-->
 <div id="banner">
-
-    
-    
-    
-    <!-- =======================Sri Lanka Map =================== -->
+    <div class="search-text">
+        <h4> Search your properties </h4>
+    </div>
+ <!-- =======================Sri Lanka Map =================== -->
 
     <!-- (c) ammap.com | SVG map of Sri Lanka - Low -->
-    <svg id="map" width="700px" height="1000px" xmlns="http://www.w3.org/2000/svg" xmlns:amcharts="http://amcharts.com/ammap" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1">
+    <svg id="sl-map" width="700px" height="1000px" xmlns="http://www.w3.org/2000/svg" xmlns:amcharts="http://amcharts.com/ammap" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1">
         <defs>
             <style type="text/css">
                 .land
@@ -220,14 +219,13 @@
          <select id="citylist" name="citylist" multiple style="height: 285px"></select>
          <img src="images/loading.gif" style="position: absolute; top: 100px; right: 100px; display: none"/>
        </div>
-     </div> -->
+     </div>-->
 
-
-  <!--=================slide images============================-->
+  <!--************SLIDER BEGIN*******************-->
+  
  <div class="flex-banner">
    
-      
-        <ul class="slides">
+    <ul class="slides">
             
             <!--======= SLIDER =========-->
             <li> 
@@ -277,85 +275,252 @@
 
    </div>
 
-                  <!--======= SERVICES =========-->
-                    <section class="services">
-                        <div class="container">
+       <!--*********** SLIDER END ************-->
 
-                            <!--======= TITTLE =========-->
-                            <div class="tittle"> <img src="images/head-top.png" alt="">
-                                    <h3>services we provide</h3>
-                                    <p>This time there's no stopping us. Straightnin' the curves. Flatnin' the hills Someday the mountain might get ‘em but the law never will. The weather started getting rough - the tiny ship was tossed.</p>
-                            </div>
-                            <ul class="row">
+       <!--*********** SERVICES BEGIN ************-->
+       
+<section class="services">
+   <div class="container">
 
-                                <!--======= SERVICE SECTION =========-->
-                                <li class="col-sm-3">
-                                    <section>
-                                        <!--======= SERVICE IMG =========-->
-                                        <img class="img-responsive" src="images/service-img-1.jpg" alt="" >
-                                            <div class="icon"> <img src="images/icon-services-1.png" alt=""> </div>
+                <!--======= TITTLE =========-->
+        <div class="tittle"> <img src="images/head-top.png" alt="">
+          <h3>services we provide</h3>
+          <p>This time there's no stopping us. Straightnin' the curves. Flatnin' the hills Someday the mountain might get ‘em but the law never will. The weather started getting rough - the tiny ship was tossed.</p>
+        </div>
+  
+            <ul class="row">
 
-                                            <!--======= SERVICE HOVER =========-->
-                                            <div class="ser-hover">
-                                                <p>Get the “SOLD” Tag next to your project with My Property Investments !<a href="05-Services.html" class="read-more">Read more <i class="fa fa-angle-double-right"></i></a> </p>
-                                            </div>
-                                            <a href="#." class="heading">Property Marketing</a>
-                                    </section>
-                                </li>
+            <!--======= SERVICE SECTION =========-->
+    <li class="col-sm-3">
+        <section>
+            <!--======= SERVICE IMG =========-->
+           <img class="img-responsive" src="images/service-img-1.jpg" alt="" >
+           <div class="icon"> <img src="images/icon-services-1.png" alt=""> </div>
 
-                                <!--======= SERVICE SECTION =========-->
-                                <li class="col-sm-3">
-                                    <section>
-                                        <!--======= SERVICE IMG =========-->
-                                        <img class="img-responsive" src="images/service-img-2.jpg" alt="" >
-                                            <div class="icon"> <img src="images/icon-services-2.png" alt=""> </div>
+            <!--======= SERVICE HOVER =========-->
+            <div class="ser-hover">
+            <p>Get the “SOLD” Tag next to your project with My Property Investments !<a href="05-Services.html" class="read-more">Read more <i class="fa fa-angle-double-right"></i></a> </p>
+            </div>
+            <a href="#." class="heading">Property Marketing</a>
+        </section>
+    </li>
 
-                                            <!--======= SERVICE HOVER =========-->
-                                            <div class="ser-hover">
-                                                <p>Talk to us to sell your property or buy your next property with confidence ! <a href="05-Services.html" class="read-more">Read more <i class="fa fa-angle-double-right"></i></a> </p>
-                                            </div>
-                                            <a href="#." class="heading">Property Brokerage</a> </section>
-                                </li>
+            <!--======= SERVICE SECTION =========-->
+    <li class="col-sm-3">
+        <section>
+            <!--======= SERVICE IMG =========-->
+            <img class="img-responsive" src="images/service-img-2.jpg" alt="" >
+            <div class="icon"> <img src="images/icon-services-2.png" alt=""> </div>
 
-                                <!--======= SERVICE SECTION =========-->
-                                <li class="col-sm-3">
-                                    <section>
-                                        <!--======= SERVICE IMG =========-->
-                                        <img class="img-responsive" src="images/service-img-3.jpg" alt="" >
-                                            <div class="icon"> <img src="images/icon-services-3.png" alt=""> </div>
+            <!--======= SERVICE HOVER =========-->
+            <div class="ser-hover">
+            <p>Talk to us to sell your property or buy your next property with confidence ! <a href="05-Services.html" class="read-more">Read more <i class="fa fa-angle-double-right"></i></a> </p>
+            </div>
+            <a href="#." class="heading">Property Brokerage</a> </section>
+    </li>
 
-                                            <!--======= SERVICE HOVER =========-->
-                                            <div class="ser-hover">
-                                                <p>Property Management at its best !<a href="05-Services.html" class="read-more">Read more <i class="fa fa-angle-double-right"></i></a> </p>
-                                            </div>
-                                            <a href="#." class="heading">Property Management</a> </section>
-                                </li>
+            <!--======= SERVICE SECTION =========-->
+    <li class="col-sm-3">
+        <section>
+            <!--======= SERVICE IMG =========-->
+            <img class="img-responsive" src="images/service-img-3.jpg" alt="" >
+            <div class="icon"> <img src="images/icon-services-3.png" alt=""> </div>
 
-                                <!--======= SERVICE SECTION =========-->
-                                <li class="col-sm-3">
-                                    <section>
-                                        <!--======= SERVICE IMG =========-->
-                                        <img class="img-responsive" src="images/service-img-4.jpg" alt="" >
-                                            <div class="icon"> <img src="images/icon-services-4.png" alt=""> </div>
+            <!--======= SERVICE HOVER =========-->
+            <div class="ser-hover">
+            <p>Property Management at its best !<a href="05-Services.html" class="read-more">Read more <i class="fa fa-angle-double-right"></i></a> </p>
+            </div>
+            <a href="#." class="heading">Property Management</a> </section>
+    </li>
 
-                                            <!--======= SERVICE HOVER =========-->
-                                            <div class="ser-hover">
-                                                <p>Talk to us before you invest on your next property !<a href="05-Services.html" class="read-more">Read more <i class="fa fa-angle-double-right"></i></a> </p>
-                                            </div>
-                                            <a href="#." class="heading">Investment Advisory</a> </section>
-                                </li>
-                            </ul>
-                        </div>
-                    </section>
+            <!--======= SERVICE SECTION =========-->
+    <li class="col-sm-3">
+        <section>
+        <!--======= SERVICE IMG =========-->
+        <img class="img-responsive" src="images/service-img-4.jpg" alt="" >
+        <div class="icon"> <img src="images/icon-services-4.png" alt=""> </div>
 
-                    <!--======= PROPERTY =========-->
+        <!--======= SERVICE HOVER =========-->
+        <div class="ser-hover">
+        <p>Talk to us before you invest on your next property !<a href="05-Services.html" class="read-more">Read more <i class="fa fa-angle-double-right"></i></a> </p>
+        </div>
+        <a href="#." class="heading">Investment Advisory</a> </section>
+    </li>
+        </ul>
+    </div>
+</section>
+       
+      <!--*********Services END************---->
+
+                    <!--======= FEATURED PROPERTY =========-->
                     <section class="properties">
                         <div class="container">
 
                             <!--======= TITTLE =========-->
                             <div class="tittle"> <img src="images/head-top.png" alt="">
                                     <h3>Featured Properties</h3>
-                                    <p>This time there's no stopping us. Straightnin' the curves. Flatnin' the hills Someday the mountain might get ‘em but the law never will. The weather started getting rough - the tiny ship was tossed.</p>
+                                   <!--<p>This time there's no stopping us. Straightnin' the curves. Flatnin' the hills Someday the mountain might get ‘em but the law never will. The weather started getting rough - the tiny ship was tossed.</p>-->
+                            </div>
+
+                            <!--======= PROPERTIES ROW =========-->
+                            <ul class="row">
+
+                                <!--======= PROPERTY =========-->
+                                <li class="col-sm-4">
+                                    <!--======= TAGS =========-->
+                                    <span class="tag font-montserrat sale">FOR SALE</span>
+                                    <section>
+                                        <!--======= IMAGE =========-->
+                                        <div class="img"> <img class="img-responsive" src="images/image_41.jpg" alt="" >
+                                                <!--======= IMAGE HOVER =========-->
+
+                                                <div class="over-proper"> <a href="#." class="btn font-montserrat">more details</a> </div>
+                                        </div>
+                                        <!--======= HOME INNER DETAILS =========-->
+                                        <ul class="home-in">
+                                            <li><span><i class="fa fa-home"></i> 36 Perch</span></li>
+                                            <li><span><i class="fa fa-bed"></i> 5 Bedrooms</span></li>
+                                            <li><span><i class="fa fa-tty"></i> 6 Bathrooms</span></li>
+                                        </ul>
+                                        <!--======= HOME DETAILS =========-->
+                                        <div class="detail-sec"> <span class="locate">
+                                                <i class="fa fa-map-marker" class="font-montserrat text-center"></i> Rajagiriya</span>
+                                                <div class="share-p"> <span class="price font-montserrat">Rs.125,000,000</span> <i class="fa fa-star-o"></i> <i class="fa fa-share-alt"></i> </div>
+                                        </div>
+                                    </section>
+                                </li>
+
+                                <!--======= PROPERTY =========-->
+                                <li class="col-sm-4">
+                                    <!--======= TAGS =========-->
+                                    <span class="tag font-montserrat sale">FOR SALE</span>
+                                    <section>
+                                        <!--======= IMAGE =========-->
+                                        <div class="img"> <img class="img-responsive" src="images/image-42.jpg" alt="" >
+                                                <!--======= IMAGE HOVER =========-->
+
+                                                <div class="over-proper"> <a href="#." class="btn font-montserrat">more details</a> </div>
+                                        </div>
+                                        <!--======= HOME INNER DETAILS =========-->
+                                        <ul class="home-in">
+                                            <li><span><i class="fa fa-home"></i> 22 Perch</span></li>
+                                            <li><span><i class="fa fa-bed"></i> 0</span></li>
+                                            <li><span><i class="fa fa-tty"></i> 0</span></li>
+                                        </ul>
+                                        <!--======= HOME DETAILS =========-->
+                                        <div class="detail-sec"> <span class="locate"><i class="fa fa-map-marker"></i> Galle</span>
+                                        <div class="share-p"> <span class="price font-montserrat">Rs.21,000,000</span> <i class="fa fa-star-o"></i> <i class="fa fa-share-alt"></i> </div>
+                                        </div>
+                                    </section>
+                                </li>
+
+                                <!--======= PROPERTY =========-->
+                                <li class="col-sm-4">
+                                    <!--======= TAGS =========-->
+                                    <span class="tag font-montserrat sale">FOR SALE</span>
+                                    <section>
+                                        <!--======= IMAGE =========-->
+                                        <div class="img"> <img class="img-responsive" src="images/image-44.jpg" alt="" >
+                                                <!--======= IMAGE HOVER =========-->
+
+                                                <div class="over-proper"> <a href="#." class="btn font-montserrat">more details</a> </div>
+                                        </div>
+                                        <!--======= HOME INNER DETAILS =========-->
+                                        <ul class="home-in">
+                                            <li><span><i class="fa fa-home"></i> 20,000 Acres</span></li>
+                                            <li><span><i class="fa fa-bed"></i> 3 Bedrooms</span></li>
+                                            <li><span><i class="fa fa-tty"></i> 3 Bathrooms</span></li>
+                                        </ul>
+                                        <!--======= HOME DETAILS =========-->
+                                        <div class="detail-sec"><span class="locate"><i class="fa fa-map-marker"></i> Koswatta, Battaramulla</span>
+                                        <div class="share-p"> <span class="price font-montserrat">Rs.14,000,000</span> <i class="fa fa-star-o"></i> <i class="fa fa-share-alt"></i> </div>
+                                        </div>
+                                    </section>
+                                </li>
+
+                                <!--======= PROPERTY =========-->
+                                <li class="col-sm-4">
+                                    <!--======= TAGS =========-->
+                                    <span class="tag font-montserrat sale">FOR SALE</span>
+                                    <section>
+                                        <!--======= IMAGE =========-->
+                                        <div class="img"> <img class="img-responsive" src="images/image-43.jpg" alt="" >
+                                                <!--======= IMAGE HOVER =========-->
+
+                                                <div class="over-proper"> <a href="#." class="btn font-montserrat">more details</a> </div>
+                                        </div>
+                                        <!--======= HOME INNER DETAILS =========-->
+                                        <ul class="home-in">
+                                            <li><span><i class="fa fa-home"></i> 20,000 Acres</span></li>
+                                            <li><span><i class="fa fa-bed"></i> 2 Bedrooms</span></li>
+                                            <li><span><i class="fa fa-tty"></i> 2 Bathrooms</span></li>
+                                        </ul>
+                                        <!--======= HOME DETAILS =========-->
+                                        <div class="detail-sec"><span class="locate"><i class="fa fa-map-marker"></i>Kathaluwa, Ahangama</span>
+                                        <div class="share-p"> <span class="price font-montserrat">Rs.280,000 (monthly rental)</span> <i class="fa fa-star-o"></i> <i class="fa fa-share-alt"></i> </div>
+                                        </div>
+                                    </section>
+                                </li>
+
+                                <!--======= PROPERTY =========-->
+                                <li class="col-sm-4">
+                                    <!--======= TAGS =========-->
+                                    <span class="tag font-montserrat sale">FOR SALE</span>
+                                    <section>
+                                        <!--======= IMAGE =========-->
+                                        <div class="img"> <img class="img-responsive" src="images/image-45.jpg" alt="" >
+                                                <!--======= IMAGE HOVER =========-->
+
+                                                <div class="over-proper"> <a href="#." class="btn font-montserrat">more details</a> </div>
+                                        </div>
+                                        <!--======= HOME INNER DETAILS =========-->
+                                        <ul class="home-in">
+                                            <li><span><i class="fa fa-home"></i> 20,000 Acres</span></li>
+                                            <li><span><i class="fa fa-bed"></i> 3 Bedrooms</span></li>
+                                            <li><span><i class="fa fa-tty"></i> 3 Bathrooms</span></li>
+                                        </ul>
+                                        <!--======= HOME DETAILS =========-->
+                                        <div class="detail-sec"><span class="locate"><i class="fa fa-map-marker"></i> Rajagiriya</span>
+                                        <div class="share-p"> <span class="price font-montserrat">Rs.14,000,000</span> <i class="fa fa-star-o"></i> <i class="fa fa-share-alt"></i> </div>
+                                        </div>
+                                    </section>
+                                </li>
+
+                                <!--======= PROPERTY =========-->
+                                <li class="col-sm-4">
+                                    <!--======= TAGS =========-->
+                                    <span class="tag font-montserrat rent">FOR RENT</span>
+                                    <section>
+                                        <!--======= IMAGE =========-->
+                                        <div class="img"> <img class="img-responsive" src="images/img-6.jpg" alt="" >
+                                                <!--======= IMAGE HOVER =========-->
+
+                                                <div class="over-proper"> <a href="#." class="btn font-montserrat">more details</a> </div>
+                                        </div>
+                                        <!--======= HOME INNER DETAILS =========-->
+                                        <ul class="home-in">
+                                            <li><span><i class="fa fa-home"></i> 20,000 Acres</span></li>
+                                            <li><span><i class="fa fa-bed"></i> 3 Bedrooms</span></li>
+                                            <li><span><i class="fa fa-tty"></i> 3 Bathrooms</span></li>
+                                        </ul>
+                                        <!--======= HOME DETAILS =========-->
+                                        <div class="detail-sec"><span class="locate"><i class="fa fa-map-marker"></i> Boston,USA</span>
+                                        <div class="share-p"> <span class="price font-montserrat">$ 2,956,596</span> <i class="fa fa-star-o"></i> <i class="fa fa-share-alt"></i> </div>
+                                        </div>
+                                    </section>
+                                </li>
+                            </ul>
+                        </div>
+                    </section>
+                    
+                    <!--======= RECENT PROPERTY =========-->
+                    <section class="properties">
+                        <div class="container">
+
+                            <!--======= TITTLE =========-->
+                            <div class="tittle"> <img src="images/head-top.png" alt="">
+                                    <h3>Recent Properties</h3>
+                                    <!--<p>This time there's no stopping us. Straightnin' the curves. Flatnin' the hills Someday the mountain might get ‘em but the law never will. The weather started getting rough - the tiny ship was tossed.</p>-->
                             </div>
 
                             <!--======= PROPERTIES ROW =========-->
@@ -490,7 +655,7 @@
                                 <!--======= PROPERTY =========-->
                                 <li class="col-sm-4">
                                     <!--======= TAGS =========-->
-                                    <span class="tag font-montserrat sale">FOR RENT</span>
+                                    <span class="tag font-montserrat rent">FOR RENT</span>
                                     <section>
                                         <!--======= IMAGE =========-->
                                         <div class="img"> <img class="img-responsive" src="images/img-6.jpg" alt="" >

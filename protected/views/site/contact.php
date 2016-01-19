@@ -45,9 +45,14 @@
 
 <style type="text/css">
     #map_canvas {
-        width: 98%;
+       /* width: 200px;
         height: 250px;
-        border: solid 1px silver;
+        border: solid 1px silver;*/
+       display: inline-block;
+	width: 100%;
+	height: 450px;
+	position: relative;
+	border: none;
     }
     .list-view .summary {
         display: none;
@@ -58,22 +63,74 @@
     }
 
 </style>
+
 <?php
 $this->pageTitle=Yii::app()->name . ' - Contact Us';
 $this->breadcrumbs=array(
 	'Contact',
 );
 ?>
-    <div class="container contactHeight"style="height:895px;">
-        <div class="row-fluid">
-            <div class="span12">
-                <div class="row-fluid">
-                    <div class="content-wrapper clearfix">
+    
+        
+    
+    <div class="sub-banner">
+    <div class="overlay">
+      <div class="container">
+        <h1>CONTACT US</h1>
+         <ol class="breadcrumb">
+          <li class="pull-left">CONTACT us</li>
+          <li><a href="#">Home</a></li>
+          <li class="active">CONTACT Us</li>
+        </ol>
+      </div>
+    </div>
+  </div>
+
+
+  <!--======= CONTACT =========-->
+  <section class="contact" style="height:1660px">
+
+    <!--======= CONTACT INFORMATION =========-->
+    <div class="contact-info">
+      <div class="container">
+        <!--======= CONTACT =========-->
+        <ul class="row con-det">
+
+          <!--======= ADDRESS =========-->
+          <li class="col-md-4"> <i class="fa fa-map-marker"></i>
+            <p>Level 3, IBM Building, 48, Nawam Mawatha,<br> Colombo 02, Sri Lanka<p>
+            <a href="<?php echo Yii::app()->request->baseUrl; ?>/site/contact#map_canvas" class="font-montserrat">Show map </a> </li>
+
+          <!--======= EMAIL =========-->
+          <li class="col-md-4"> <i class="fa fa-phone"></i>
+            <p>Tel    : +94 112 314 100</p>
+            <p>Mobile : +94 777 348 648</p>
+          </li>
+
+          <!--======= ADDRESS =========-->
+          <li class="col-md-4"> <i class="fa fa-clock-o"></i>
+            <p>Week days  :     9:00 Am to 5:00 PM</p>
+          </li>
+        </ul>
+
+        <!--======= CONTACT FORM =========-->
+
+      </div>
+    </div>
+    <div class="contact-form">
+      <div class="container">
+
+        <!--======= TITTLE =========-->
+        <div class="tittle"> <img src="<?php echo Yii::app()->request->baseUrl; ?>/images/head-top.png" alt="">
+          <h3>feel free to communicate with us</h3>
+          <p>If you have business inquiries or other questions, please fill out the following form to contact us. Thank you.</p>
+        </div>
+      
+
+      <div class="content-wrapper clearfix">
                         <div class="span9 contentb">
                             <div class="content-holder">
-                                <div id="title-listing" class="container">
-                                    <div class="property-list-title">Contact Us</div>
-                                </div>
+                                
                                 <div class="span10 offset1">
                                     <?php if(Yii::app()->user->hasFlash('contact')): ?>
 
@@ -83,11 +140,7 @@ $this->breadcrumbs=array(
 
                                     <?php else: ?>
 
-                                        <p>
-                                            If you have business inquiries or other questions, please fill out the following form to contact us. Thank you.
-                                        </p>
-
-                                        <div class="form">
+                                      <div class="form">
 
                                             <?php $form=$this->beginWidget('CActiveForm', array(
                                                 'id'=>'contact-form',
@@ -146,48 +199,19 @@ $this->breadcrumbs=array(
 
                                         </div><!-- form -->
 
-                                    <?php endif; ?>
+                                  <?php endif; ?>
                                 </div>
                             </div>
                         </div>
-                        <div class="span3" style="margin-top: 115px;">
-                            <div class="row-fluid">
-                                <div class="span12">
-                                    <b>Address : </b>
-                                    <div class="offset1 span10" style="padding-bottom: 20px;">
-                                        Level 3, IBM Building,<br/> No 48,
-                                        Nawam Mawatha,<br/>
-                                        Colombo 2,<br/>
-                                        Sri Lanka.
-                                    </div>
-                                </div>
-                                <div class="span12">
-                                    <b>Mobile : </b>
-                                    <div class="offset1 span10" style="padding-bottom: 20px;">
-                                        +94 777 348 648
-                                    </div>
-                                </div>
-                                <div class="span12">
-                                    <b>Office Phone : </b>
-                                    <div class="offset1 span10" style="padding-bottom: 20px;">
-                                        +94 112314100
-                                    </div>
-                                </div>
-                                <div class="span12">
-                                    <b>e-Mail : </b>
-                                    <div class="offset1 span10"  style="padding-bottom: 20px;">
-                                        <a href="mailto:info@myproperty.lk">info@myproperty.lk</a>
-                                    </div>
-                                </div>
-                                <div class="span12">
-                                    <b>Our Location : </b>
-                                    <div id="map_canvas"></div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                      </div>
                 </div>
             </div>
         </div>
     </div>
+      </div>
+    </div>
+    <!--======= MAP =========-->
+    <div id="map_canvas"></div>
+  </section>
+
 
