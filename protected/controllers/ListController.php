@@ -1,12 +1,5 @@
 <?php
-/*
- * Developer Name: Danesh Manjula
- * Developer Team: SNT3 Team
- * Application Name: myproerty.lk -Real Estate Web Site
- * File name: PropertyController.php
- *
- ***This is the PropertyController Controller Page.
- */
+
 
 class ListController extends Controller
 {
@@ -27,5 +20,11 @@ class ListController extends Controller
             'emailagent'=>'application.controllers.List.EmailagentAction',  //action for Email Agent page controller
         );
     }
+    
+    public function actionOverseas_Investments() {
+        
+        $this->render('Overseas_Investments', array());
+    }
+    
 
 }

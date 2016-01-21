@@ -3031,10 +3031,10 @@ a img.aligncenter {
 		bottom:0;
 		margin-bottom:50px
 	}
-	
+	/*
 	.flex-caption {
 		top: 200px;
-	}
+	}*/
 	
 	.meta-block {
 		width: 100%;
@@ -3567,19 +3567,14 @@ a img.aligncenter {
 }
 
 /*-------------Sri Lanka Map---------*/
-
+/*
 #map-imagemap {
     z-index: 100;
     position: absolute;
     left: 0;
     top: 0;
 }
-
-#map {
-    width: 300px;
-    position: relative;
-    top:10px;
-}
+*/
 
 #map-layer {
     top: 0;
@@ -3694,17 +3689,4 @@ a img.aligncenter {
     z-index: 9000;
 } 
 
-/*====== search your properties======*/
-
-.search-text {
-    float:right; 
-    right:90px;
-    z-index:99;
-    display: inline-block;
-    position: relative;
-    top: 240px;
-    font-size:24px;
-    
-    
-}
 

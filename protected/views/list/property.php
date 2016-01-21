@@ -574,7 +574,7 @@
                             <div class="span8">
                                 <div class="row-fluid">
                                     <div id="title-listing" class="container-fluid">
-                                        <div class="property-list-title">
+                                        <div class="property-list-title" style="text-align: center">
                                             <?php
 
                                             if (isset($_GET['type'])) {

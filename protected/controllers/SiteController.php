@@ -329,4 +329,16 @@ class SiteController extends Controller
 
         echo json_encode($data);
     }
+    
+    public function actionServices() {
+        
+        $this->render('services', array());
+    }
+
+    public function actionabout_us() {
+        
+        $this->render('about_us', array());
+    }
+    
+    
 }

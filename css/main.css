@@ -1,3 +1,4 @@
+/*
 body
 {
 	margin: 0;
@@ -229,3 +230,64 @@ div.search-form
 }
 
 
+*/
+
+
+/*=======================================================
+			TOP BAR
+========================================================*/
+.top-bar {
+	background: #222222;
+	border-bottom: 1px solid #eaebef;
+	height: 45px;
+	position: fixed;
+	overflow: hidden;
+        top : 0px;
+        z-index: 1000;
+        width: 100%;
+}
+.top-bar ul {
+}
+.top-bar ul li {
+	display: inline-block;
+}
+.top-bar ul li a {
+	color: #888888;
+	display: inline-block;
+	padding: 0 10px;
+	line-height: 45px;
+}
+.top-bar .left-bar-side {
+	float: left;
+	margin-bottom: 0px;
+}
+.top-bar .left-bar-side li {
+}
+.top-bar li:nth-last-child(1) a {
+}
+.top-bar .right-bar-side {
+	float: right;
+}
+.top-bar i {
+	margin: 0 4px;
+}
+.top-bar .left-bar-side li {
+	border: none;
+	margin-right: 0px;
+}
+.top-bar .left-bar-side li:nth-last-child(1) span {
+	display: none;
+}
+.top-bar .left-bar-side p {
+	font-weight: 400;
+	color: #9d9c9c;
+	line-height: 40px;
+	margin: 0px;
+	display: inline-block;
+	line-height: 45px;
+	font-size: 14px;
+}
+.top-bar .left-bar-side span {
+	color: #9c9c9c;
+	margin: 0 15px;
+}

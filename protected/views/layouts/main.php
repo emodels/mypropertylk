@@ -8,7 +8,7 @@
         <meta name="keywords" content="houses for sale, houses for rent/lease, land sales, Sri Lanka" />
         <meta name="description" content="myproperty.lk is most trusted property portal to promote Sri Lankan real-estate business locally and internationally. property website for houses for sale, houses for rent/lease and land sales across Sri Lanka, posted directly by the sellers, owners and estate agents/brokers" />
         <meta name="author" content="M_Adnan">
-
+        
         <!-- FONTS ONLINE -->
         <link href='http://fonts.googleapis.com/css?family=Roboto:400,100,100italic,300,300italic,400italic,500,500italic,700,700italic,900,900italic' rel='stylesheet' type='text/css'/>
         <link href='http://fonts.googleapis.com/css?family=Lato:100,300,400,700,900' rel='stylesheet' type='text/css'/>
@@ -80,13 +80,13 @@
 
                     if (district_ === "Colombo")
                     {
-                        alert("Colombo");
+                        //alert("Colombo");
                     } else if (district_ === "Gampaha")
                     {
-                        alert("Gampaha");
+                        //alert("Gampaha");
                     } else if (district_ === "Kaḷutara")
                     {
-                        alert("Kaḷutara");
+                        //alert("Kaḷutara");
                     }
                 });
             });
@@ -106,10 +106,10 @@
                 <div class="container">
                     <ul class="left-bar-side">
                         <li>
-                            <p><i class="fa fa-phone"></i> Call Us Now : +94 112 314 100</p>
+                            <p> <a href="#." <i class="fa fa-phone"></i> Call Us Now : +94 112 314 100 </a> </p>
                             <span>|</span> </li>
                         <li>
-                          <p class="mail"><a href="#."><i class="fa fa-envelope-o"></i> info@myproperty.lk </a> </p>
+                          <p class="mail"><a href="mailto:info@dwellingsgroup.com.au"><i class="fa fa-envelope-o"></i> info@myproperty.lk </a> </p>
                             <span>|</span> </li>
                         <li>
                            <p class="Signin" ><a href="<?php echo Yii::app()->request->baseUrl; ?>/login"><i class="fa fa-lock"></i> Sign in </a></p>
@@ -119,10 +119,10 @@
                             <span>|</span> </li>
                     </ul>
                     <ul class="right-bar-side social_icons">
-                        <li class="facebook"> <a href="https://www.facebook.com/sharer/sharer.php?u=http://www.myproperty.lk/index.php"><i class="fa fa-facebook"></i> </a></li>
-                        <li class="twitter"> <a href="https://twitter.com/share?url=http://www.myproperty.lk/index.php"><i class="fa fa-twitter"></i> </a></li>
-                        <li class="linkedin"> <a href="https://www.linkedin.com/"><i class="fa fa-linkedin"></i> </a></li>
-                        <li class="googleplus"><a href="http://www.plus.google.com/" title="Google Plus"><i class="fa fa-google-plus"></i></a></li>
+                        <li class="facebook"> <a href="https://www.facebook.com/sharer/sharer.php?u=http://www.myproperty.lk/index.php" tittle="Facebook" target="_blank"><i class="fa fa-facebook"></i> </a></li>
+                        <li class="twitter"> <a href="https://twitter.com/share?url=http://www.myproperty.lk/index.php" tittle="Twitter" target="_blank"><i class="fa fa-twitter"></i> </a></li>
+                       <li class="rss"> <a href="http://feeds.feedburner.com/" tittle="RSS"><i class="fa fa-rss" target="_blank"></i> </a></li>
+                        <li class="googleplus"><a href="http://www.plus.google.com/" title="Google Plus" target="_blank"><i class="fa fa-google-plus"></i></a></li>
                         <!--<li class="googleplus"><a href="#."><i class="fa fa-google-plus"></i></a></li>-->
                     </ul>
                 </div>
@@ -143,8 +143,8 @@
                         <!--======= MENU START =========-->
                         <ul class="ownmenu">
                             <li class="active"><a href="<?php echo Yii::app()->request->baseUrl; ?>">Home</a></li>
-                            <li><a href="<?php echo Yii::app()->request->baseUrl; ?>/site/pages/about"> About </a></li>
-                            <li><a href="05-Services.html">Services</a>
+                            <li><a href="<?php echo Yii::app()->request->baseUrl; ?>/site/about_us"> About Us </a></li>
+                            <li><a href="<?php echo Yii::app()->request->baseUrl; ?>/site/services">Services</a>
 
                                 <!--======= MEGA MENU =========-->
                                 <div class="megamenu full-width">
@@ -152,21 +152,34 @@
                                     <div class="row nav-post">
                                         <div class="col-sm-4 boder-da-r">
                                             <ul>
-                                                <li><a href="05-Services.html">Property Marketing </a></li>
-                                                <li><a href="05-Services.html">Property Brokerage</a></li>
-                                                <li><a href="05-Services.html">Property Management</a></li>
-                                                <li><a href="05-Services.html">Investment Advisory</a></li>
+                                                <li><a href="<?php echo Yii::app()->request->baseUrl; ?>/site/services#marketing">Property Marketing </a></li>
+                                                <li><a href="<?php echo Yii::app()->request->baseUrl; ?>/site/services#brokerage">Property Brokerage</a></li>
+                                                <li><a href="<?php echo Yii::app()->request->baseUrl; ?>/site/services#management">Property Management</a></li>
+                                                <li><a href="<?php echo Yii::app()->request->baseUrl; ?>/site/services#investment">Investment Advisory</a></li>
                                                 <li><a href="<?php echo Yii::app()->request->baseUrl; ?>/list/property/type/sold">Sold</a></li>
                                             </ul>
                                         </div>
                                         <div class="col-sm-4"> <img class="absu"  src="images/nav-image.png" alt="" > </div>
                                     </div>
+                                </div>
 
                             </li>
+                            
 
-                            <li><a href="<?php echo Yii::app()->request->baseUrl; ?>/list/property/type/buy">Buy</a></li>
-                            <li><a href="<?php echo Yii::app()->request->baseUrl; ?>/list/property/type/rent">Rent</a></li>
-                            <li><a href="<?php echo Yii::app()->request->baseUrl; ?>/list/commercial/type/all">Commercial</a></li>
+                            <li><a href="#.">Buy</a>
+                                 <ul class="dropdown">
+                                 <li><a href="<?php echo Yii::app()->request->baseUrl; ?>/list/property/type/buy">Residential</a></li>
+                                 <li><a href="<?php echo Yii::app()->request->baseUrl; ?>/list/commercial/type/all">Commercial</a></li>
+                                 </ul>
+                            </li> 
+                            
+                            <li><a href="#.">Rent</a>
+                                 <ul class="dropdown">
+                                 <li><a href="<?php echo Yii::app()->request->baseUrl; ?>/list/property/type/rent">Residential</a></li>
+                                 <li><a href="<?php echo Yii::app()->request->baseUrl; ?>/list/commercial/type/all">Commercial</a></li>
+                                 </ul>
+                             </li>
+                            <li><a href="<?php echo Yii::app()->request->baseUrl; ?>/list/Overseas_Investments">Overseas Investments</a></li>
                             <li><a href="<?php echo Yii::app()->request->baseUrl; ?>/site/contact">Contact us</a></li>
                             
                         </ul>
@@ -264,9 +277,7 @@
                 </div><!-- /.footer-widget-wrapper -->
             </section><!-- #footer_widgets -->
 
-
-
-
+            
             <footer id="footer">
                 <div class="container cleafix">       
                     <div class="footer-left">Copyright © 2014, Designed & Developed by SNT3.</div>
@@ -278,13 +289,15 @@
                         <ul class="footer-social">
                             <li class="facebook"> <a href="https://www.facebook.com/sharer/sharer.php?u=http://www.myproperty.lk/index.php" target="_blank"><i class="fa fa-facebook"></i> </a></li>
                             <li class="twitter"> <a href="https://twitter.com/share?url=http://www.myproperty.lk/index.php" target="_blank"><i class="fa fa-twitter"></i> </a></li>
-                            <li class="linkedin"> <a href="https://www.linkedin.com/" target="_blank"><i class="fa fa-linkedin"></i> </a></li>
+                         <!--   <li class="linkedin"> <a href="https://www.linkedin.com/" target="_blank"><i class="fa fa-linkedin"></i> </a></li>-->
+                            <li class="rss"> <a href="http://feeds.feedburner.com/" tittle="RSS"><i class="fa fa-rss" target="_blank"></i> </a></li>
                             <li class="googleplus"><a href="http://www.plus.google.com/" target="_blank"><i class="fa fa-google-plus"></i></a></li>
                         </ul>
                     </div>
                 </div>
             </footer>
 
+            
         </div>
         <script src="js/jquery-1.11.0.min.js"></script>
         <script src="js/wow.min.js"></script>
@@ -299,30 +312,6 @@
         <script src="js/jquery.nouislider.min.js"></script>
         <script src="js/main.js"></script>
         <script type="text/javascript">
-            /*-----------------------------------------------------------------------------------*/
-            /*    PRICE RANGE
-             /*-----------------------------------------------------------------------------------*/
-            $("#price-range").noUiSlider({
-                range: {
-                    'min': [0],
-                    'max': [10000000]},
-                start: [0, 10000000],
-                connect: true,
-                serialization: {
-                    lower: [
-                        $.Link({
-                            target: $("#price-min")
-                        })],
-                    upper: [
-                        $.Link({
-                            target: $("#price-max")
-                        })],
-                    format: {
-                        // Set formatting
-                        decimals: 0,
-                        prefix: '$'
-                    }}
-            });
         </script>
     </body>
 </html>
