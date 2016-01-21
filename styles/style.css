@@ -81,7 +81,7 @@ h6 {
         margin-left: -20px;
 }
 p {
-	color: #777777;
+	color: #535252;
 	font-family: 'Lato';
 	font-size: 14px;
 	line-height: 30px;
@@ -557,7 +557,7 @@ p.caption-text {
 }
 
 #banner {
-	height: 500px;     /* 670px */
+	height: 515px;     /* 670px */
 	position: relative;
 	overflow: hidden;
 	margin-top: -24px;
@@ -4066,6 +4066,7 @@ p.caption-text {
 /*=======================================================
 			REGISTER
 ========================================================*/
+/*
 .regi-sec {
 	padding: 20px;
 	display: inline-block;
@@ -4163,7 +4164,7 @@ p.caption-text {
 	margin-bottom: 50px;
 	line-height: 34px;
 	position: absolute;
-}
+}*/
 /*=======================================================
 			CONTACT
 ========================================================*/

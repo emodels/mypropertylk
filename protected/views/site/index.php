@@ -236,7 +236,7 @@
                         <p class="caption-text">Get the “SOLD” Tag next to your project with My Property Investments !</p>
                      
                     <span>
-                    <button href="05-Services.html" type="button" class="slide-btn btn-default">READ MORE</button>
+                    <button type="button" class="slide-btn btn-default" onclick="window.location.href='<?php echo Yii::app()->request->baseUrl; ?>/site/services#marketing'" >READ MORE</button>
                     </span>
                     </div>
             </li>
@@ -246,7 +246,7 @@
                       <p class="caption-header">Property Brokerage</p>
                         <p class="caption-text">Talk to us to sell your property or buy your next property with confidence !</p>
                            <span>
-                    <button href="05-Services.html" type="button" class="slide-btn btn-default">READ MORE</button>
+                    <button type="button" class="slide-btn btn-default" onclick="window.location.href='<?php echo Yii::app()->request->baseUrl; ?>/site/services#brokerage'" >READ MORE</button>
                     </span>
                     </div>
             </li>
@@ -256,7 +256,7 @@
                         <p class="caption-header">Property Management</p>
                         <p class="caption-text">Property Management at its best !</p>
                            <span>
-                    <button href="05-Services.html" type="button" class="slide-btn btn-default">READ MORE</button>
+                    <button type="button" class="slide-btn btn-default" onclick="window.location.href='<?php echo Yii::app()->request->baseUrl; ?>/site/services#management'" >READ MORE</button>
                     </span>
                     </div>
             </li>
@@ -266,7 +266,7 @@
                         <p class="caption-header">Investment Advisory</p>
                         <p class="caption-text">Talk to us before you invest on your next property !</p>
                        <span>
-                    <button href="05-Services.html" type="button" class="slide-btn btn-default">READ MORE</button>
+                    <button type="button" class="slide-btn btn-default" onclick="window.location.href='<?php echo Yii::app()->request->baseUrl; ?>/site/services#investment'" >READ MORE</button>
                     </span>
                     </div>               
                </ul>

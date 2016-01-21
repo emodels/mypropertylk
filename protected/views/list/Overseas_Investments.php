@@ -7,7 +7,7 @@
         <h1>OVERSEAS INVESTMENTS</h1>
         <ol class="breadcrumb">
           <li class="pull-left">Overseas Investments</li>
-          <li><a href="#">Home</a></li>
+          <li><a href="<?php echo Yii::app()->request->baseUrl; ?>">Home</a></li>
           <li class="active">Overseas Investments</li>
         </ol>
       </div>
@@ -57,7 +57,7 @@
                                 to all their investors for property development projects as follows:</p>
 
                                   <div class="text" style="font-size:16px;  line-height:25px;">
-                                     <ul class="list" style="margin-top:35px; margin-left:120px; font-size:14px; line-height:25px; text-align:justify; color:#777777">
+                                     <ul class="list" style="margin-top:35px; margin-left:120px; font-size:14px; line-height:25px; text-align:justify; color:#535252">
                                         <li>Provide assistance to form a BOI Company in Sri Lanka.</li>
                                         <li>Present feasibility Studies of the potential projects.</li>
                                         <li>Source suitable lands for development.</li>
@@ -87,15 +87,16 @@
                               </div>
                           </div>
                           <div class="media-right pl100 media-image"style="padding-top: 250px">
-
-                          <img src="<?php echo Yii::app()->request->baseUrl; ?>/images/ovrsea-ins-2.jpg" alt="">
-                        </div>
-                        <div class="media-left pl100 media-image"style="padding-top: 100px">
-                          <img src="<?php echo Yii::app()->request->baseUrl; ?>/images/ovrsea-ins-3.jpg" alt="">
-                        </div>
+                                <img src="<?php echo Yii::app()->request->baseUrl; ?>/images/ovrsea-ins-2.jpg" alt="">
+                          </div>
+                       
+                          <div class="media-left pl100 media-image"style="padding-top: 100px">
+                                <img src="<?php echo Yii::app()->request->baseUrl; ?>/images/ovrsea-ins-3.jpg" alt="">
+                          </div>
+                          
+                      </div>
                           
                         </div>
-                      </div>
                   </div>
             </div>
     </div>

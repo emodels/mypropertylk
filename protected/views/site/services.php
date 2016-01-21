@@ -8,7 +8,7 @@
         <h1>SERVICES</h1>
        <ol class="breadcrumb">
           <li class="pull-left">services</li>
-          <li><a href="#">Home</a></li>
+          <li><a href="<?php echo Yii::app()->request->baseUrl; ?>">Home</a></li>
           <li class="active">services</li>
         </ol>
       </div>

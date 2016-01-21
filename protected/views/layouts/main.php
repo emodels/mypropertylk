@@ -106,7 +106,7 @@
                 <div class="container">
                     <ul class="left-bar-side">
                         <li>
-                            <p><i class="fa fa-phone"></i> Call Us Now : +94 112 314 100</p>
+                            <p> <a href="#." <i class="fa fa-phone"></i> Call Us Now : +94 112 314 100 </a> </p>
                             <span>|</span> </li>
                         <li>
                           <p class="mail"><a href="mailto:info@dwellingsgroup.com.au"><i class="fa fa-envelope-o"></i> info@myproperty.lk </a> </p>
@@ -119,9 +119,9 @@
                             <span>|</span> </li>
                     </ul>
                     <ul class="right-bar-side social_icons">
-                        <li class="facebook"> <a href="https://www.facebook.com/sharer/sharer.php?u=http://www.myproperty.lk/index.php" target="_blank"><i class="fa fa-facebook"></i> </a></li>
-                        <li class="twitter"> <a href="https://twitter.com/share?url=http://www.myproperty.lk/index.php" target="_blank"><i class="fa fa-twitter"></i> </a></li>
-                       <li class="linkedin"> <a href="https://www.linkedin.com/"><i class="fa fa-linkedin" target="_blank"></i> </a></li>
+                        <li class="facebook"> <a href="https://www.facebook.com/sharer/sharer.php?u=http://www.myproperty.lk/index.php" tittle="Facebook" target="_blank"><i class="fa fa-facebook"></i> </a></li>
+                        <li class="twitter"> <a href="https://twitter.com/share?url=http://www.myproperty.lk/index.php" tittle="Twitter" target="_blank"><i class="fa fa-twitter"></i> </a></li>
+                       <li class="rss"> <a href="http://feeds.feedburner.com/" tittle="RSS"><i class="fa fa-rss" target="_blank"></i> </a></li>
                         <li class="googleplus"><a href="http://www.plus.google.com/" title="Google Plus" target="_blank"><i class="fa fa-google-plus"></i></a></li>
                         <!--<li class="googleplus"><a href="#."><i class="fa fa-google-plus"></i></a></li>-->
                     </ul>
@@ -277,9 +277,7 @@
                 </div><!-- /.footer-widget-wrapper -->
             </section><!-- #footer_widgets -->
 
-
-
-
+            
             <footer id="footer">
                 <div class="container cleafix">       
                     <div class="footer-left">Copyright © 2014, Designed & Developed by SNT3.</div>
@@ -291,13 +289,15 @@
                         <ul class="footer-social">
                             <li class="facebook"> <a href="https://www.facebook.com/sharer/sharer.php?u=http://www.myproperty.lk/index.php" target="_blank"><i class="fa fa-facebook"></i> </a></li>
                             <li class="twitter"> <a href="https://twitter.com/share?url=http://www.myproperty.lk/index.php" target="_blank"><i class="fa fa-twitter"></i> </a></li>
-                            <li class="linkedin"> <a href="https://www.linkedin.com/" target="_blank"><i class="fa fa-linkedin"></i> </a></li>
+                         <!--   <li class="linkedin"> <a href="https://www.linkedin.com/" target="_blank"><i class="fa fa-linkedin"></i> </a></li>-->
+                            <li class="rss"> <a href="http://feeds.feedburner.com/" tittle="RSS"><i class="fa fa-rss" target="_blank"></i> </a></li>
                             <li class="googleplus"><a href="http://www.plus.google.com/" target="_blank"><i class="fa fa-google-plus"></i></a></li>
                         </ul>
                     </div>
                 </div>
             </footer>
 
+            
         </div>
         <script src="js/jquery-1.11.0.min.js"></script>
         <script src="js/wow.min.js"></script>
