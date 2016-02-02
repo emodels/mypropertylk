@@ -1,4 +1,12 @@
-
+<script type="text/javascript">
+    $(document).ready(function(){
+       
+       $('#lnk_list li').each(function(){
+          $(this).removeClass('active'); 
+       });
+       $('#lnk_about').addClass('active');
+    });
+</script>
 
  <!--======= BANNER =========-->
   <div class="sub-banner">
@@ -17,7 +25,7 @@
 
   <!--======= WHAT WE DO =========-->
   <section class="what-we-do">
-    <div class="container" style="height:500px;">
+    <div class="container">
 
 
             <!--======= TITTLE =========-->
@@ -31,10 +39,10 @@
           
             <div class="media-right padding-top-2 pr25">
 
-            <div class="des" style="margin-top:-3px; line-height: 25px; text-align: justify;font-size:15px;">
+            <div class="des">
                 <p>  My Property Pvt Ltd is wholly own subsidiary of Dwellings Group based in Australia, and specializes in marketing Sri Lankan real estate in both local and International markets.
-                <br>At my property we strive to be Sri Lanka’s foremost integrated real estate portal where all the information you need is simply a phone call away.<br>
-                Are you a foreigner looking to invest in Sri Lanka but don’t know how. Let us help you navigate the rapidly evolving sri Lankan real estate market. Bringing our experience and professionalism learned in Australia but applied in Sri Lanka.  Come experience a level of service you have not experienced before.
+                <br>At My property we strive to be Sri Lanka’s foremost fully integrated real estate solution provider, where we offer ONE-STOP-SHOP services to all our client.<br>
+                When it comes to buying, selling, renting, property management and development, we at Myproperty aspire to provide our clients with the ultimate real estate experience.  Regardless of your real estate aspirations the knowledgeable and professional team at Myproperty will be with you every step of the way.
                 </p>
             </div>
           </div>

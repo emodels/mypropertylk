@@ -1,4 +1,12 @@
-
+<script type="text/javascript">
+    $(document).ready(function(){
+       
+       $('#lnk_list li').each(function(){
+          $(this).removeClass('active'); 
+       });
+       $('#lnk_contact').addClass('active');
+    });
+</script>
 <script src="https://maps.googleapis.com/maps/api/js?sensor=false"></script>
 <script type="text/javascript">
     function initialize() {

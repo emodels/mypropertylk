@@ -44,7 +44,7 @@
 	display: none;
 	position: absolute;
 	z-index: 99;
-	min-width: 250px;
+	min-width: 150px;
 	background: #fff;
 }
 .ownmenu ul.dropdown {
@@ -188,7 +188,7 @@
 	width: 50%;
 }
 .ownmenu > li > .megamenu.full-width {
-	width: 65%;
+	width: 60%;
 	left: 60px;
 	padding: 25px;
 }
@@ -536,10 +536,10 @@ html[xmlns] .flexslider .slides {
 	content: '\f104';
 }
 .flex-direction-nav .flex-prev {
-	right: 0;
+	right: 15px;
 }
 .flex-direction-nav .flex-next {
-	left: 0px;
+	left: 25px;
 	text-align: right;
 }
 .flexslider:hover .flex-direction-nav .flex-prev {
