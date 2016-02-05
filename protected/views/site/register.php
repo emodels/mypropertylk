@@ -49,7 +49,7 @@ $this->breadcrumbs=array(
     'Register',
 );
 ?>
-<div class="container" style="height:1050px;">
+<div class="container" >
     <div class="row-fluid">
         <div class="span12">
             <div class="row-fluid">

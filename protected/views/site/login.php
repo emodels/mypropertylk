@@ -74,7 +74,7 @@ $this->breadcrumbs=array(
 	'Login',
 );
 ?>
-<div class="container new-height" style="height:535px;">
+<div class="container new-height" >
     <div class="row-fluid">
         <div class="span12">
             <div class="row-fluid">

@@ -1,3 +1,18 @@
+<script type="text/javascript">
+    $(document).ready(function(){
+       
+       $('#lnk_list li').each(function(){
+          $(this).removeClass('active'); 
+       });
+       
+       <?php if (isset($_GET['type']) && $_GET['type'] == 'buy') { ?>
+           $('#lnk_buy').addClass('active');
+       <?php } if (isset($_GET['type']) && $_GET['type'] == 'rent') { ?>
+           $('#lnk_rent').addClass('active');
+       <?php } ?>
+    });
+</script>
+
 <link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>/css/tooltipster.css" />
 <script type='text/javascript' src='<?php echo Yii::app()->request->baseUrl; ?>/js/jquery.form.min.js'></script>
 <script type='text/javascript' src='<?php echo Yii::app()->request->baseUrl; ?>/js/jquery.jcarousel.min.js'></script>
@@ -273,7 +288,9 @@
         font-size: 14px;
     }
 
-
+    #footer_main{
+        margin-top:150px;
+}
 </style>
 <div class="content-wrapper clearfix">
     <div class="form">
@@ -288,7 +305,7 @@
             ),
             'htmlOptions'=>array('class'=>'form-horizontal'),
         )); ?>
-            <div class="container" style="height:2390px;">
+            <div class="container">
                 <div class="row-fluid">
                     <div class="span9 content_buy">
                         <div class="row-fluid">

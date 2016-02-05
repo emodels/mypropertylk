@@ -1816,7 +1816,7 @@ article blockquote p{
 
 .footer-blog li{
 	display:block;
-    padding-top:10px;
+    padding-top:9px;
 	clear:both;
 
 }
@@ -1900,7 +1900,11 @@ article blockquote p{
 		text-decoration:none;
 	}
 
-
+#footer_main{
+    margin-top:150px;
+    margin-left: 0px !important;
+    margin-right: 0px !important;
+}
 /* =WordPress Core
 -------------------------------------------------------------- */
 .alignnone {

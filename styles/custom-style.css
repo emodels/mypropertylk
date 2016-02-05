@@ -4,7 +4,7 @@ To change this template file, choose Tools | Templates
 and open the template in the editor.
 */
 /* 
-    Created on : Jan 9, 2016, 3:44:24 PM
+    Created on : Jan 9, 2016, 
     Author     : USER
 */
 
@@ -41,3 +41,221 @@ and open the template in the editor.
     padding-left: 20px;
 }
 
+/*----------------Responsive styles------------ */
+
+/*============ HOME PAGE=============== */
+
+@media (max-width: 460px){
+     .top-bar{
+        display:none;
+    }  
+    
+    body{
+        padding: 0px !important;
+        margin: 0px;
+    }
+    
+    .active {
+        display:none;
+    }
+
+    .sticky {
+        margin-top: 0 !important;
+    }
+    
+    .logo_img{
+        width: 90%
+    }
+    
+    .container {
+        padding: 0px;
+    }
+    .sticky-wrapper {
+        width : 100%;
+    }
+    #banner{
+        display:none
+    }
+    .flex-banner{
+        display : none;
+    }
+
+    .search_box {
+        display: block;
+        width: 85%;
+        margin-left: 20px;
+    }
+    .footer-img{
+        width: 100%;
+        margin-top: 5px;
+        padding-left: 35%;
+    }
+        
+    .footer-left {
+        width: 100%;
+        padding-left: 20px;
+    }
+        
+    .footer-right{
+        margin-top : 20px;
+        float : left;
+        margin-left: 20px;
+    }
+        
+    .footer-center {
+        margin-left: 25px !important;
+    }
+
+    .mobile-footer{
+        margin-left: 20px !important;
+    }
+
+
+      /*================ABOUT PAGE============== */
+
+    .des {
+        margin-top:300px; 
+        line-height: 25px;
+        text-align: justify;
+        margin-left : -505px;
+        margin-right : 160px;
+
+        }
+
+    /*================ SERVICES================= */
+    
+    
+    .p_txt1{
+        
+        margin-left : -400px;
+        margin-right: 85px;
+    }
+
+    .p_txt2{
+       
+        margin-right : 45px;
+        margin-left: 20px;
+    }
+
+    .p_txt3{
+        margin-left : -400px;
+        margin-right: 85px;
+    }
+
+    .p_txt4{
+        margin-right : 50px;
+        margin-left: 20x;
+      }
+    
+     .heading_txt1{
+      margin-left : -395px;
+      margin-top: -275px;
+      padding-top: 290px;
+      width: 300px;
+      line-height: 1.5;
+      text-align: center;
+      }
+    
+    .heading_txt2{
+      padding-left : -420px;
+      margin-top: -275px;
+      padding-top: 290px;
+      width: 400px;
+      line-height: 1.5;
+      text-align: center;
+    }
+    
+    .heading_txt3{
+      margin-left : -395px;
+      margin-top: -275px;
+      padding-top: 290px;
+      width: 300px;
+      line-height: 1.5;
+      text-align: center;
+    }
+    
+    .heading_txt4{
+      padding-left : -420px;
+      margin-top: -275px;
+      padding-top: 290px;
+      width: 400px;
+      line-height: 1.5;
+      text-align: center;
+    }
+
+    #marketing{
+      margin-left : -360px;
+      padding-top: 275px;   
+      }
+      
+    #brokerage{
+       padding-left: 60px;
+       padding-top: 275px;
+      }
+    
+    #management{
+      margin-left : -395px;
+      padding-top: 275px;
+      }
+      
+    #investment{
+       padding-left: 60px;
+       padding-top: 275px;
+      }
+      
+    .img_1{
+        margin-left: 50px;
+        
+    }
+    .img_2{
+        margin-right: 50px;   
+    }
+        
+    .img_3{
+        margin-left: 50px;   
+    }
+        
+    .img_4{
+        margin-right: 50px;
+    }
+    
+    
+    /*================OVERSEAS INVESTMENT=================*/
+
+    .img-mob {
+        margin-left: 15px;
+    }
+
+    .mobile-des {
+        margin-top :315px !important;
+        float:left;
+        margin-right: 120px;
+        margin-left: -460px;
+    }
+    .mobile-text1{
+        float:left;
+        padding-left :520px;
+        margin-top: -305px;
+        margin-right: -10px;
+    }
+     .mobile-text2{
+        float:left;
+        padding-left :415px;
+        margin-top: -180px;
+    }
+    .mobile-text3{
+        width :100%;
+        padding-right:100px; 
+    }
+    .img-tree {
+        display: none !important;
+    }
+     .img-coins {
+        display: none !important;ss
+    }
+    
+    
+    
+    
+    
+}

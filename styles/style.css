@@ -77,8 +77,8 @@ h5 {
 	font-size: 18px;
 }
 h6 {
-	font-size: 16px;
-        margin-left: -20px;
+	font-size: 15px;
+        margin-left: -5px;
 }
 p {
 	color: #535252;
@@ -104,7 +104,7 @@ img {
 }
 li {
 	font-family: 'Lato';
-	list-style: none;
+	list-style: none; 
 }
 a {
 	font-family: 'Lato';
@@ -387,19 +387,20 @@ header nav li {
 	padding-top: 22px;
 	margin-top: 20px;
 }
-header nav li.active {
+/*header nav li.active {
 	background: url(../images/nav-head.png) center 0px no-repeat;
-}
+}*/
 header nav li.active a {
 	color: #ff5722;
 }
 header nav li:hover a {
 	color: #ff5722;
 }
+/*
 header nav li:hover {
 	background: url(../images/nav-head.png) center 0px no-repeat;
 	color: #222222;
-}
+}*/
 header .navbar-default .navbar-nav > .active > a, .navbar-default .navbar-nav > .active > a:hover, .navbar-default .navbar-nav > .active > a:focus {
 	background: #ffdd00;
 	color: #222222;
@@ -497,7 +498,7 @@ ul.dropdown li:hover {
 }
 .absu {
 	position: absolute;
-	right: -215px;
+	right: -190px;
 	width: 100%;
 	top: -8px;
 	z-index: -1;
@@ -525,7 +526,7 @@ ul.dropdown li:hover {
 	margin: 20px 0;
 }
 .nav-post li a {
-	padding: 0px;
+	padding: 0px 0px 0px 15px;
 	margin: 0px;
 }
 /*=======================================================
@@ -534,7 +535,7 @@ ul.dropdown li:hover {
 .flex-caption {
   width: 50%;
   padding: 2%;
-  left: 50px;
+  left: 75px;
   top: 150px;
   position: absolute;
   background: rgba(0,0,0,.6);
@@ -1048,6 +1049,8 @@ p.caption-text {
 .properties {
 	padding-top: 45px;
 	background: url(../images/property-bg.jpg) repeat;
+        margin-top : -100px;   
+        
 }
 .properties.white-bg {
 	background: #fff;
@@ -1125,7 +1128,7 @@ p.caption-text {
 	font-size: 16px;
 	color: #222222;
 	display: inline-block;
-	width: 100%;
+	/*width: 100%;*/
 	margin: 0px;
 	text-transform: uppercase;
 }
@@ -1366,7 +1369,8 @@ p.caption-text {
 	font-family: 'Lato';
 	text-transform: none;
 	color: #4caf50;
-	margin-top: 10px;
+	/*margin-top: 10px;*/
+        line-height: 35px;
 }
 .call-us h1 {
 	color: #fff;
@@ -1376,7 +1380,7 @@ p.caption-text {
 }
 .call-us .btn {
 	display: inline-block;
-	width: 100%;
+	/*width: 100%;*/
 	border-bottom: 2px solid #1b7d1f;
 }
 /*=======================================================
@@ -1539,7 +1543,7 @@ p.caption-text {
 			SERVICES
 ========================================================*/
 .services {
-	padding: 80px 0;
+	padding: 160px 0;
 }
 .services li .icon {
 	position: absolute;
@@ -1964,7 +1968,7 @@ p.caption-text {
 .sub-banner {
 	background: url(../images/sub-bnr-bg.jpg) top center fixed no-repeat;
 	position: relative;
-	margin-top: -5px;
+	margin-top: -20px;
 	background-size: cover;
 	text-align: center;
 }
@@ -4567,10 +4571,16 @@ p.caption-text {
 .footer-right{
     float: right;
     margin-top: 20px;
+    display: inline;
 }
 .footer-img{
     margin-top: 0px;
     float: left;
+}
+#footer_main{
+    margin-top:150px;
+    margin-left: 0px !important;
+    margin-right: 0px !important;
 }
 
 /*========== BUY==================*/
@@ -4778,7 +4788,7 @@ p.caption-text {
 .social_icons .googleplus a:hover {
 	color: #fff;
 	background-color: #f63d26;
-	border-color: #f63d26;
+	border-color: #c50b0b;
 }
 .social_icons .instagram a:hover {
 	color: #fff;
@@ -4841,7 +4851,18 @@ p.caption-text {
 	border-color: #ff3330;
 }
 
+.social_icons .rss a:hover {
+	color: #fff;
+	background-color: #ff3330;
+	border-color: #ff3330;
+}
+
 /* =======================================================================================*/
+
+.call a:hover {
+        color: #1E90FF;
+	border-color: #35506b;
+}
 
 .mail a:hover{
 	color: #1E90FF;
@@ -4961,7 +4982,7 @@ p.caption-text {
 	margin: 0;
 	background-color: #999C9E;
 	color: #262a2c;
-	padding-top: 5px;
+	padding-top: 0px;
 	font-size: 14px;
 }
 
@@ -4969,7 +4990,7 @@ p.caption-text {
 	color:#262a2c;
 }
 	#footer .container {
-		padding: 25px 0 20px 0;
+		padding: 10px 0 15px 0;
 		border-top: 1px solid #40494e;
 	}
 
@@ -4987,9 +5008,12 @@ p.caption-text {
 	}
 
 .textwidget {
-	color: :#40494e;
+	/*color:#40494e ;*/
+        
 }
-
+.container_f{
+    padding: 10px 0 15px 0;
+}
 /*============home ideas : 11.01.2016================*/
 
 #title-listing{
@@ -5005,7 +5029,7 @@ p.caption-text {
 
 .search-text {
     float:right; 
-    right:110px;
+    right:148px;
     z-index:99;
     display: inline-block;
     position: relative;
@@ -5013,6 +5037,9 @@ p.caption-text {
     color : #0E0E0E;
    } 
 
+   .search_box {
+    display : none;
+}
     /*================ sri lanka map ==========*/
  
  #sl-map {
@@ -5023,3 +5050,106 @@ p.caption-text {
     position: absolute;
     top:85px;
 }
+
+#sl-map-imagemap {
+    z-index: 100;
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+
+
+#sl-map-layer {
+    top: 0;
+    left: 0;
+    position: absolute;
+    z-index: 0;
+}
+.ads_placeholder{
+    width: 300px;
+    height: 250px;
+
+}
+.ads_placeholder_half{
+    width: 300px;
+    height: 60px;
+}
+.ads_placeholder_large{
+    width: 300px;
+    height: 600px;
+}
+.img-thumb{
+    border: solid 1px #E6E6E6;
+    padding: 5px;
+}
+
+
+/*======= ABOUT US =========*/
+ .des{
+        margin-top:4px; 
+        line-height: 25px;
+        text-align: justify;
+        font-size:15px;   
+
+    }
+    
+  /*========== SEARVICES ========*/
+
+  .heading_txt{
+     font-size:20px;
+     color:#FF0000; 
+     line-height: 2;
+  }
+  
+  .p_txt{
+      font-size:16px;
+      text-align:justify;
+      line-height:25px;
+      }
+      
+   #marketing{
+       margin-top: 80px;
+       font-size:30px;   
+      }
+      
+    #brokerage{
+       margin-top: 15px;
+       font-size:30px;   
+      }
+    
+    #management{
+       margin-top: 100px;
+       font-size:30px;   
+      }
+      
+    #investment{
+       margin-top: 75px;
+       font-size:30px;   
+      }
+      
+  /* OVERSEAS INVESTMENT */
+		
+  .mobile-des{
+      margin-top:3px; 
+      line-height: 25px;
+      text-align: justify;
+      font-size:15px;
+      
+  }
+  .des-ovrc{
+      margin-top:3px; 
+      line-height: 25px;
+      text-align: justify;
+      font-size:15px;
+  }
+
+/*::-moz-selection {  Code for Firefox 
+    color: red;
+    background: yellow;
+}
+
+::selection {
+    color: red; 
+    background: yellow;
+}*/
+
