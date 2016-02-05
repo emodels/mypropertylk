@@ -94,7 +94,7 @@
             <div class="row-fluid">
                 <div class="span12">
                     <div class="row-fluid">
-                        <div class="span12" style="margin-top:160px;">
+                        <div class="span12" style="margin-top:150px;">
                             <div id="title-listing">
                                 <div class="property-list-title">Home Ideas</div>
                                 <a class=" btn-warning" style="position: absolute; right: 0px; top: 0px; color: #ffffff; padding: 5px 18px; border-radius: 5px; height:30px; width:250px " href="<?php echo Yii::app()->request->baseUrl; ?>/homeideas/homeideaslisting">Upload and share your Home ideas</a>

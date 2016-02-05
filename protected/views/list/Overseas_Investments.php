@@ -40,8 +40,8 @@
                           <div class="media-left pr100 media-image">
                               <img class="img-mob" src="<?php echo Yii::app()->request->baseUrl; ?>/images/ovrsea-ins-1.jpg" alt="">
                           </div>
-                          <div class="media-right padding-top-2 pr25 overc" style="padding-left:100px;">
-                            <div class="des mobile-des" style="margin-top:3px; text-align:justify; line-height: 25px;font-size:15px;">
+                          <div class="media-right padding-top-2 pr25" style="padding-left:100px;">
+                            <div class="mobile-des">
                                 <p>  To us property development is not just about building on land, it’s about building relationships with each and every one of our clients.
 
 

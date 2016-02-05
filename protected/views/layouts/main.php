@@ -122,7 +122,7 @@
                 <div class="container">
                     <ul class="left-bar-side">
                         <li>
-                            <p> <a href="#." <i class="fa fa-phone"></i> Call Us Now : +94 112 314 100 </a> </p>
+                            <p class="call"> <a href="#." <i class="fa fa-phone"></i> Call Us Now : +94 112 314 100 </a> </p>
                             <span>|</span> </li>
                         <li>
                           <p class="mail"><a href="mailto:info@dwellingsgroup.com.au"><i class="fa fa-envelope-o"></i> info@myproperty.lk </a> </p>
@@ -137,7 +137,7 @@
                     <ul class="right-bar-side social_icons">
                         <li class="facebook"> <a href="https://www.facebook.com/sharer/sharer.php?u=http://www.myproperty.lk/index.php" tittle="Facebook" target="_blank"><i class="fa fa-facebook"></i> </a></li>
                         <li class="twitter"> <a href="https://twitter.com/share?url=http://www.myproperty.lk/index.php" tittle="Twitter" target="_blank"><i class="fa fa-twitter"></i> </a></li>
-                       <li class="rss"> <a href="http://feeds.feedburner.com/" tittle="RSS"><i class="fa fa-rss" target="_blank"></i> </a></li>
+                       <li class="rss"> <a href="http://feeds.feedburner.com/" tittle="RSS"target="_blank"><i class="fa fa-rss" ></i> </a></li>
                         <li class="googleplus"><a href="http://www.plus.google.com/" title="Google Plus" target="_blank"><i class="fa fa-google-plus"></i></a></li>
                         <!--<li class="googleplus"><a href="#."><i class="fa fa-google-plus"></i></a></li>-->
                     </ul>
@@ -185,14 +185,14 @@
                             <li id="lnk_buy"><a href="#.">Buy</a>
                                  <ul class="dropdown">
                                  <li ><a href="<?php echo Yii::app()->request->baseUrl; ?>/list/property/type/buy">Residential</a></li>
-                                 <li><a href="<?php echo Yii::app()->request->baseUrl; ?>/list/commercial/type/all">Commercial</a></li>
+                                 <li><a href="<?php echo Yii::app()->request->baseUrl; ?>/list/commercial/type/sale">Commercial</a></li>
                                  </ul>
                             </li> 
                             
                             <li id="lnk_rent"><a href="#.">Rent</a>
                                  <ul class="dropdown">
                                  <li id="lnk_rent"><a href="<?php echo Yii::app()->request->baseUrl; ?>/list/property/type/rent">Residential</a></li>
-                                 <li><a href="<?php echo Yii::app()->request->baseUrl; ?>/list/commercial/type/all">Commercial</a></li>
+                                 <li><a href="<?php echo Yii::app()->request->baseUrl; ?>/list/commercial/type/lease">Commercial</a></li>
                                  </ul>
                              </li>
                             <li id="lnk_overseas"><a href="<?php echo Yii::app()->request->baseUrl; ?>/list/Overseas_Investments">Overseas Investments</a></li>
@@ -213,7 +213,10 @@
             <?php echo $content; ?>
                <div class="clearfix"></div>
             </div>
-            <div class="row" style="margin-top: 150px">
+            
+            <!-- ===========FOOTER===========-->
+            
+            <div id="footer_main" class="row" >
                 
                <footer id="footer">
                 
@@ -267,7 +270,7 @@
                                             <li class="facebook"> <a href="https://www.facebook.com/sharer/sharer.php?u=http://www.myproperty.lk/index.php" target="_blank"><i class="fa fa-facebook"></i> </a></li>
                                             <li class="twitter"> <a href="https://twitter.com/share?url=http://www.myproperty.lk/index.php" target="_blank"><i class="fa fa-twitter"></i>  </a></li>
                                             <!--<li class="linkedin"> <a href="https://www.linkedin.com/" target="_blank"><i class="fa fa-linkedin"></i> </a></li>-->
-                                            <li class="rss"> <a href="http://feeds.feedburner.com/" tittle="RSS"><i class="fa fa-rss" target="_blank"></i> </a></li>
+                                            <li class="rss"> <a href="http://feeds.feedburner.com/" tittle="RSS" target="_blank"><i class="fa fa-rss" ></i> </a></li>
                                             <li class="googleplus"><a href="http://www.plus.google.com/" target="_blank"><i class="fa fa-google-plus"></i></a></li>
                                     </ul>                                
                             
@@ -292,22 +295,9 @@
                                              <i class="fa fa-mobile" style="font-size: 18px"></i> +94 777 348 648
                                         </a>
                                     </li>
-                                    
-                                   <!--   <li>     
-                                        <a href="<?php echo Yii::app()->request->baseUrl; ?>/terms_conditions.pdf" target="_blank">Terms and Conditions</a>
-                                    </li>
-                                    <li>
-                                         <a href="<?php echo Yii::app()->request->baseUrl; ?>/privacy_policy.pdf" target="_blank">Privacy Policy</a>
-                                     </li>-->
-                                 </ul>
+                                   </ul>
                             </div>
-                        
-                       
-                            
-                            
-                         
-                        
-                      </div>
+                         </div>
                     </div>
                 </div><!-- /.footer-widget-wrapper -->
             </section><!-- #footer_widgets -->
@@ -331,27 +321,15 @@
                                          <a href="<?php echo Yii::app()->request->baseUrl; ?>/privacy_policy.pdf" target="_blank">Privacy Policy</a>
                                      </li>
                                  </ul>
-<!--                        <ul class="footer-social">
-                            <li class="facebook"> <a href="https://www.facebook.com/sharer/sharer.php?u=http://www.myproperty.lk/index.php" target="_blank"><i class="fa fa-facebook"></i> </a></li>
-                            <li class="twitter"> <a href="https://twitter.com/share?url=http://www.myproperty.lk/index.php" target="_blank"><i class="fa fa-twitter"></i> </a></li>
-                            <li class="linkedin"> <a href="https://www.linkedin.com/" target="_blank"><i class="fa fa-linkedin"></i> </a></li>
-                            <li class="rss"> <a href="http://feeds.feedburner.com/" tittle="RSS"><i class="fa fa-rss" target="_blank"></i> </a></li>
-                            <li class="googleplus"><a href="http://www.plus.google.com/" target="_blank"><i class="fa fa-google-plus"></i></a></li>
-                        </ul>-->
+
                     </div>
                 </div>
             </footer>  
             </div>    
             <!--======= FOOTER =========-->
-
-
-            
-            
-           
-
-            
+     
         </div>
-        <script src="<?php echo Yii::app()->request->baseUrl; ?>/js/jquery-1.11.0.min.js"></script>
+<!--        <script src="<?php echo Yii::app()->request->baseUrl; ?>/js/jquery-1.11.0.min.js"></script>-->
         <script src="<?php echo Yii::app()->request->baseUrl; ?>/js/wow.min.js"></script>
         <script src="<?php echo Yii::app()->request->baseUrl; ?>/js/bootstrap-select.js"></script>
         <script src="<?php echo Yii::app()->request->baseUrl; ?>/js/bootstrap-select.js"></script>

@@ -7,7 +7,7 @@
        
        <?php if (isset($_GET['type']) && $_GET['type'] == 'buy') { ?>
            $('#lnk_buy').addClass('active');
-       <?php } else { ?>
+       <?php } if (isset($_GET['type']) && $_GET['type'] == 'rent') { ?>
            $('#lnk_rent').addClass('active');
        <?php } ?>
     });
@@ -288,7 +288,9 @@
         font-size: 14px;
     }
 
-
+    #footer_main{
+        margin-top:150px;
+}
 </style>
 <div class="content-wrapper clearfix">
     <div class="form">

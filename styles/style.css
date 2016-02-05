@@ -4577,6 +4577,11 @@ p.caption-text {
     margin-top: 0px;
     float: left;
 }
+#footer_main{
+    margin-top:150px;
+    margin-left: 0px !important;
+    margin-right: 0px !important;
+}
 
 /*========== BUY==================*/
 
@@ -4854,6 +4859,11 @@ p.caption-text {
 
 /* =======================================================================================*/
 
+.call a:hover {
+        color: #1E90FF;
+	border-color: #35506b;
+}
+
 .mail a:hover{
 	color: #1E90FF;
 	border-color: #35506b;
@@ -5117,10 +5127,29 @@ p.caption-text {
        font-size:30px;   
       }
       
-  
+  /* OVERSEAS INVESTMENT */
 		
+  .mobile-des{
+      margin-top:3px; 
+      line-height: 25px;
+      text-align: justify;
+      font-size:15px;
+      
+  }
+  .des-ovrc{
+      margin-top:3px; 
+      line-height: 25px;
+      text-align: justify;
+      font-size:15px;
+  }
 
+/*::-moz-selection {  Code for Firefox 
+    color: red;
+    background: yellow;
+}
 
-
-
+::selection {
+    color: red; 
+    background: yellow;
+}*/
 

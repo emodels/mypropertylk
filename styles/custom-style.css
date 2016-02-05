@@ -4,7 +4,7 @@ To change this template file, choose Tools | Templates
 and open the template in the editor.
 */
 /* 
-    Created on : Jan 9, 2016, 3:44:24 PM
+    Created on : Jan 9, 2016, 
     Author     : USER
 */
 
@@ -117,7 +117,7 @@ and open the template in the editor.
         margin-top:300px; 
         line-height: 25px;
         text-align: justify;
-        margin-left : -500px;
+        margin-left : -505px;
         margin-right : 160px;
 
         }
@@ -133,8 +133,8 @@ and open the template in the editor.
 
     .p_txt2{
        
-        margin-right : -190px;
-        margin-left: 35px;
+        margin-right : 45px;
+        margin-left: 20px;
     }
 
     .p_txt3{
@@ -143,8 +143,8 @@ and open the template in the editor.
     }
 
     .p_txt4{
-        margin-right : 140px;
-        margin-left: 30px;
+        margin-right : 50px;
+        margin-left: 20x;
       }
     
      .heading_txt1{
@@ -170,6 +170,8 @@ and open the template in the editor.
       margin-top: -275px;
       padding-top: 290px;
       width: 300px;
+      line-height: 1.5;
+      text-align: center;
     }
     
     .heading_txt4{
@@ -206,7 +208,7 @@ and open the template in the editor.
         
     }
     .img_2{
-        margin-right: 35px;   
+        margin-right: 50px;   
     }
         
     .img_3{
@@ -214,7 +216,7 @@ and open the template in the editor.
     }
         
     .img_4{
-        margin-right: 35px;
+        margin-right: 50px;
     }
     
     
@@ -227,16 +229,18 @@ and open the template in the editor.
     .mobile-des {
         margin-top :315px !important;
         float:left;
-        padding-left :35px;
+        margin-right: 120px;
+        margin-left: -460px;
     }
     .mobile-text1{
         float:left;
-        padding-left :510px;
+        padding-left :520px;
         margin-top: -305px;
+        margin-right: -10px;
     }
      .mobile-text2{
         float:left;
-        padding-left :400px;
+        padding-left :415px;
         margin-top: -180px;
     }
     .mobile-text3{
@@ -247,12 +251,10 @@ and open the template in the editor.
         display: none !important;
     }
      .img-coins {
-        display: none !important;
+        display: none !important;ss
     }
     
-    .overc{
-        margin-top:75px;
-    }
+    
     
     
     

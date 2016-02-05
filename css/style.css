@@ -1900,7 +1900,11 @@ article blockquote p{
 		text-decoration:none;
 	}
 
-
+#footer_main{
+    margin-top:150px;
+    margin-left: 0px !important;
+    margin-right: 0px !important;
+}
 /* =WordPress Core
 -------------------------------------------------------------- */
 .alignnone {
