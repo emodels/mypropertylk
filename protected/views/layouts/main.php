@@ -14,11 +14,6 @@
         <link href='http://fonts.googleapis.com/css?family=Lato:100,300,400,700,900' rel='stylesheet' type='text/css'/>
         <link href='http://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'/>
 
-        <script type='text/javascript' src='<?php echo Yii::app()->request->baseUrl; ?>/js/bootstrap.min.js'></script>
-        
-        
-        
-        
         <!--MAIN STYLE-->
         <link href='<?php echo Yii::app()->request->baseUrl; ?>/styles/bootstrap.min.css' rel="stylesheet" type="text/css">
         <link href='<?php echo Yii::app()->request->baseUrl; ?>/styles/main.css' rel="stylesheet" type="text/css">
@@ -331,7 +326,6 @@
         </div>
 <!--        <script src="<?php echo Yii::app()->request->baseUrl; ?>/js/jquery-1.11.0.min.js"></script>-->
         <script src="<?php echo Yii::app()->request->baseUrl; ?>/js/wow.min.js"></script>
-        <script src="<?php echo Yii::app()->request->baseUrl; ?>/js/bootstrap-select.js"></script>
         <script src="<?php echo Yii::app()->request->baseUrl; ?>/js/bootstrap-select.js"></script>
         <script src="<?php echo Yii::app()->request->baseUrl; ?>/js/bootstrap.min.js"></script>
         <script src="<?php echo Yii::app()->request->baseUrl; ?>/js/jquery.stellar.js"></script>

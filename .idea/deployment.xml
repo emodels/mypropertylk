@@ -7,6 +7,18 @@
           <mappings>
             <mapping deploy="/demo" local="$PROJECT_DIR$" web="/" />
           </mappings>
+          <excludedPaths>
+            <excludedPath local="true" path="$PROJECT_DIR$/.idea" />
+            <excludedPath local="true" path="$PROJECT_DIR$/assets" />
+            <excludedPath local="true" path="$PROJECT_DIR$/protected/config" />
+            <excludedPath local="true" path="$PROJECT_DIR$/protected/data" />
+            <excludedPath local="true" path="$PROJECT_DIR$/protected/extensions" />
+            <excludedPath local="true" path="$PROJECT_DIR$/protected/framework" />
+            <excludedPath local="true" path="$PROJECT_DIR$/protected/models" />
+            <excludedPath local="true" path="$PROJECT_DIR$/protected/runtime" />
+            <excludedPath local="true" path="$PROJECT_DIR$/protected/tests" />
+            <excludedPath local="true" path="$PROJECT_DIR$/upload" />
+          </excludedPaths>
         </serverdata>
       </paths>
     </serverData>
