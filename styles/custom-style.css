@@ -183,6 +183,22 @@ and open the template in the editor.
       text-align: center;
     }
 
+    .service-graph-2 {
+        position: relative;
+    }
+    
+    .service-graph-2 .media-image {
+        position: absolute;
+        top: 0px;
+        left: 40px;
+    }
+    
+    .service-graph-2 .pl30 {
+        
+        position: relative;
+        top: 100px;
+    }
+    
     #marketing{
       margin-left : -360px;
       padding-top: 275px;   

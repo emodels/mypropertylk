@@ -152,7 +152,7 @@
         max-height: 80px !important;
     }
 </style>
-<div class="span12">
+<div class="span12" style="margin-top: 105px;">
     <div class="offset1 span8">
         <div class="span10" style="border-bottom: solid 1px silver; padding-top: 20px; font-size: 12px; color: #999999;">
             <div class="span6">

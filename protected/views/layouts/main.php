@@ -163,10 +163,10 @@
                                     <div class="row nav-post">
                                         <div class="col-sm-4 boder-da-r">
                                             <ul>
-                                                <li><a href="<?php echo Yii::app()->request->baseUrl; ?>/site/services#marketing">Project Marketing </a></li>
-                                                <li><a href="<?php echo Yii::app()->request->baseUrl; ?>/site/services#brokerage">Property Brokerage</a></li>
-                                                <li><a href="<?php echo Yii::app()->request->baseUrl; ?>/site/services#management">Property Management</a></li>
-                                                <li><a href="<?php echo Yii::app()->request->baseUrl; ?>/site/services#investment">Investment Advisory</a></li>
+                                                <li><a href="<?php echo Yii::app()->request->baseUrl; ?>/site/services?marketing">Project Marketing </a></li>
+                                                <li><a href="<?php echo Yii::app()->request->baseUrl; ?>/site/services?brokerage">Property Brokerage</a></li>
+                                                <li><a href="<?php echo Yii::app()->request->baseUrl; ?>/site/services?management">Property Management</a></li>
+                                                <li><a href="<?php echo Yii::app()->request->baseUrl; ?>/site/services?investment">Investment Advisory</a></li>
                                                 <!--<li><a href="<?php echo Yii::app()->request->baseUrl; ?>/list/property/type/sold">Sold</a></li>-->
                                             </ul>
                                         </div>

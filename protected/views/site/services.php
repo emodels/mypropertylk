@@ -6,6 +6,14 @@
           $(this).removeClass('active'); 
        });
        $('#lnk_services').addClass('active');
+       
+       var url = document.location.href;
+       var pos = document.location.href.lastIndexOf('?');
+       var length = document.location.href.length;
+       
+       var top = $('#' + url.substring(pos, length).replace('?', '')).position().top;
+       
+       window.scrollTo(0, top);
     });
 </script>
 
