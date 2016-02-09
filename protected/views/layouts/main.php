@@ -78,24 +78,24 @@
                     'container': 'body',
                     'placement': 'bottom'
                 });
-                $(function () {
-                    $('.ownmenu li a[href^="/' + location.pathname + '"]').parent().addClass('active');
-                });
-                $('path').mouseenter(function () {
-
-                    var district_ = $(this).attr('title');
-
-                    if (district_ === "Colombo")
-                    {
-                        //alert("Colombo");
-                    } else if (district_ === "Gampaha")
-                    {
-                        //alert("Gampaha");
-                    } else if (district_ === "Kaḷutara")
-                    {
-                        //alert("Kaḷutara");
-                    }
-                });
+//                $(function () {
+//                    $('.ownmenu li a[href^="/' + location.pathname + '"]').parent().addClass('active');
+//                });
+//                $('path').mouseenter(function () {
+//
+//                    var district_ = $(this).attr('title');
+//
+//                    if (district_ === "Colombo")
+//                    {
+//                        //alert("Colombo");
+//                    } else if (district_ === "Gampaha")
+//                    {
+//                        //alert("Gampaha");
+//                    } else if (district_ === "Kaḷutara")
+//                    {
+//                        //alert("Kaḷutara");
+//                    }
+                //});
             });
         </script>
     </head>
@@ -180,14 +180,14 @@
                             <li id="lnk_buy"><a href="#.">Buy</a>
                                  <ul class="dropdown">
                                  <li ><a href="<?php echo Yii::app()->request->baseUrl; ?>/list/property/type/buy">Residential</a></li>
-                                 <li><a href="<?php echo Yii::app()->request->baseUrl; ?>/list/commercial/type/sale">Commercial</a></li>
+                                 <li id="lnk_commercial"><a href="<?php echo Yii::app()->request->baseUrl; ?>/list/commercial/type/sale">Commercial</a></li>
                                  </ul>
                             </li> 
                             
                             <li id="lnk_rent"><a href="#.">Rent</a>
                                  <ul class="dropdown">
                                  <li id="lnk_rent"><a href="<?php echo Yii::app()->request->baseUrl; ?>/list/property/type/rent">Residential</a></li>
-                                 <li><a href="<?php echo Yii::app()->request->baseUrl; ?>/list/commercial/type/lease">Commercial</a></li>
+                                 <li id="lnk_commercial"><a href="<?php echo Yii::app()->request->baseUrl; ?>/list/commercial/type/lease">Commercial</a></li>
                                  </ul>
                              </li>
                             <li id="lnk_overseas"><a href="<?php echo Yii::app()->request->baseUrl; ?>/list/Overseas_Investments">Overseas Investments</a></li>
@@ -216,7 +216,7 @@
                <footer id="footer">
                 
                 <section id="footer_widgets">
-                <div classs="col-lg-12">
+                <div class="col-lg-12" style="padding:0px;">
                     <div class="row-fluid">
                         <div class="">
                             <div id="footer_bg">
@@ -324,7 +324,7 @@
             <!--======= FOOTER =========-->
      
         </div>
-<!--        <script src="<?php echo Yii::app()->request->baseUrl; ?>/js/jquery-1.11.0.min.js"></script>-->
+<!--  <script src="<?php echo Yii::app()->request->baseUrl; ?>/js/jquery-1.11.0.min.js"></script>-->
         <script src="<?php echo Yii::app()->request->baseUrl; ?>/js/wow.min.js"></script>
         <script src="<?php echo Yii::app()->request->baseUrl; ?>/js/bootstrap-select.js"></script>
         <script src="<?php echo Yii::app()->request->baseUrl; ?>/js/bootstrap.min.js"></script>

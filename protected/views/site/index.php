@@ -56,7 +56,7 @@
 
             $('#ikman_map path').click(function (event) {
 
-                alert('sss')
+               // alert('sss')
 ;                event.preventDefault();
 
                 var district = $(this).attr('href').replace('#', '');
@@ -261,7 +261,7 @@
                         <p class="caption-text">Get the “SOLD” Tag next to your project with My Property !</p>
                      
                     <span>
-                    <button type="button" class="slide-btn btn-default" onclick="window.location.href='<?php echo Yii::app()->request->baseUrl; ?>/site/services#marketing'" >READ MORE</button>
+                    <button type="button" class="slide-btn btn-default" onclick="window.location.href='<?php echo Yii::app()->request->baseUrl; ?>/site/services?marketing'" >READ MORE</button>
                     </span>
                     </div>
             </li>
@@ -271,7 +271,7 @@
                       <p class="caption-header">Property Brokerage</p>
                         <p class="caption-text">Talk to us to sell your property or buy your next property with confidence !</p>
                            <span>
-                    <button type="button" class="slide-btn btn-default" onclick="window.location.href='<?php echo Yii::app()->request->baseUrl; ?>/site/services#brokerage'" >READ MORE</button>
+                    <button type="button" class="slide-btn btn-default" onclick="window.location.href='<?php echo Yii::app()->request->baseUrl; ?>/site/services?brokerage'" >READ MORE</button>
                     </span>
                     </div>
             </li>
@@ -281,7 +281,7 @@
                         <p class="caption-header">Property Management</p>
                         <p class="caption-text">Property Management at its best !</p>
                            <span>
-                    <button type="button" class="slide-btn btn-default" onclick="window.location.href='<?php echo Yii::app()->request->baseUrl; ?>/site/services#management'" >READ MORE</button>
+                    <button type="button" class="slide-btn btn-default" onclick="window.location.href='<?php echo Yii::app()->request->baseUrl; ?>/site/services?management'" >READ MORE</button>
                     </span>
                     </div>
             </li>
@@ -291,7 +291,7 @@
                         <p class="caption-header">Investment Advisory</p>
                         <p class="caption-text">Talk to us before you invest on your next property !</p>
                        <span>
-                    <button type="button" class="slide-btn btn-default" onclick="window.location.href='<?php echo Yii::app()->request->baseUrl; ?>/site/services#investment'" >READ MORE</button>
+                    <button type="button" class="slide-btn btn-default" onclick="window.location.href='<?php echo Yii::app()->request->baseUrl; ?>/site/services?investment'" >READ MORE</button>
                     </span>
                     </div>               
                </ul>
@@ -482,7 +482,7 @@
 
                  <!--======= SERVICE HOVER =========-->
                  <div class="ser-hover">
-                 <p>Get the “SOLD” Tag next to your project with My Property Investments !<a href="<?php echo Yii::app()->request->baseUrl; ?>/site/services#marketing"href="<?php echo Yii::app()->request->baseUrl; ?>/site/services#marketing" class="read-more">Read more <i class="fa fa-angle-double-right"></i></a> </p>
+                 <p>Get the “SOLD” Tag next to your project with My Property Investments !<a href="<?php echo Yii::app()->request->baseUrl; ?>/site/services?marketing"href="<?php echo Yii::app()->request->baseUrl; ?>/site/services#marketing" class="read-more">Read more <i class="fa fa-angle-double-right"></i></a> </p>
                  </div>
                  <a href="#." class="heading">Project Marketing</a>
              </section>
@@ -497,7 +497,7 @@
 
                  <!--======= SERVICE HOVER =========-->
                  <div class="ser-hover">
-                 <p>Talk to us to sell your property or buy your next property with confidence ! <a href="<?php echo Yii::app()->request->baseUrl; ?>/site/services#brokerage" class="read-more">Read more <i class="fa fa-angle-double-right"></i></a> </p>
+                 <p>Talk to us to sell your property or buy your next property with confidence ! <a href="<?php echo Yii::app()->request->baseUrl; ?>/site/services?brokerage" class="read-more">Read more <i class="fa fa-angle-double-right"></i></a> </p>
                  </div>
                  <a href="#." class="heading">Property Brokerage</a> </section>
          </li>
@@ -511,7 +511,7 @@
 
                  <!--======= SERVICE HOVER =========-->
                  <div class="ser-hover">
-                 <p>Property Management at its best !<a href="<?php echo Yii::app()->request->baseUrl; ?>/site/services#management" class="read-more">Read more <i class="fa fa-angle-double-right"></i></a> </p>
+                 <p>Property Management at its best !<a href="<?php echo Yii::app()->request->baseUrl; ?>/site/services?management" class="read-more">Read more <i class="fa fa-angle-double-right"></i></a> </p>
                  </div>
                  <a href="#." class="heading">Property Management</a> </section>
          </li>
@@ -525,7 +525,7 @@
 
              <!--======= SERVICE HOVER =========-->
              <div class="ser-hover">
-             <p>Talk to us before you invest on your next property !<a href="<?php echo Yii::app()->request->baseUrl; ?>/site/services#investment" class="read-more">Read more <i class="fa fa-angle-double-right"></i></a> </p>
+             <p>Talk to us before you invest on your next property !<a href="<?php echo Yii::app()->request->baseUrl; ?>/site/services?investment" class="read-more">Read more <i class="fa fa-angle-double-right"></i></a> </p>
              </div>
              <a href="#." class="heading">Investment Advisory</a> </section>
          </li>
@@ -570,7 +570,8 @@
                                 $this->widget('zii.widgets.CListView', array(
                                               'id' => 'list_featured',
                                               'dataProvider'=>new CActiveDataProvider('Property', array('criteria'=>array('condition'=> $condition,'order' => 'entrydate DESC LIMIT 20'),'pagination'=>false)),
-                                              'itemView' => '_featured_list_view'
+                                              'itemView' => '_featured_list_view',
+                                              'template'=>'{items} {pager}'          
                                             ));
                             ?>
                       </ul>
@@ -607,7 +608,8 @@
                                 $this->widget('zii.widgets.CListView', array(
                                               'id' => 'list_featured',
                                               'dataProvider'=>new CActiveDataProvider('Property', array('criteria'=>array('condition'=> $condition,'order' => 'entrydate DESC LIMIT 20'),'pagination'=>false)),
-                                              'itemView' => '_featured_list_view'
+                                              'itemView' => '_featured_list_view',
+                                              'template'=>'{items} {pager}'
                                             ));
                             ?>
                     </ul>

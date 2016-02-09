@@ -1,3 +1,13 @@
+<script type="text/javascript">
+    $(document).ready(function(){
+       
+       $('#lnk_list li').each(function(){
+          $(this).removeClass('active'); 
+       });
+       $('#id="lnk_commercial"').addClass('active');
+    });
+</script>
+
 <script type="text/javascript" src='<?php echo Yii::app()->request->baseUrl; ?>/js/typeahead.bundle.min.js'></script>
 <!-- Start sider HEAD section -->
 <link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>/engine1/style.css" />

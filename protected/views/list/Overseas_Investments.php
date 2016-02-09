@@ -7,6 +7,10 @@
        $('#lnk_overseas').addClass('active');
     });
 </script>
+<style type="text/css">
+    #footer_main{
+        margin-top:80px;
+</style>
 
 <!--======= BANNER =========-->
   <div class="sub-banner" style="margin-top:110px">

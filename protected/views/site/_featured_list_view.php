@@ -1,6 +1,7 @@
 <li class="col-sm-4">
     <!--======= TAGS =========-->
-    <span class="tag font-montserrat sale">FOR SALE</span>
+<!--<span class="tag font-montserrat sale">FOR SALE</span>-->
+            
     <section>
         <!--======= IMAGE =========-->
         <div class="img"> 
@@ -94,15 +95,17 @@
             <div>
                 <?php if (($data->type == 1 || $data->type == 2 || $data->type == 4) && $data->status == 1) {
                     
-                    echo "<div class='property-status status-35-text'> On Sale</div>";
+                  echo "<span class='tag font-montserrat sale'>FOR SALE</span>";
+                    //echo "<div class='property-status status-35-text'> On Sale</div>";
                     
                 } elseif (($data->type == 3 || $data->type == 5) && $data->status == 1) {
-                    
-                    echo "<div class='property-status status-28-text'> For Rent</div>";
+                    echo "<span class='tag font-montserrat rent'>FOR RENT</span>";
+//                    echo "<div class='property-status status-28-text'> For Rent</div>";
                 }
                 
                 if ($data->status == 2) {
-                    echo "<div class='property-status status-sold-text'>Sold</div>";
+                    echo "<span class='tag font-montserrat sale'>FOR SOLD</span>";
+//                    echo "<div class='property-status status-sold-text'>Sold</div>";
                 }
                 ?>
             </div>
@@ -110,7 +113,7 @@
 
         <!--  ======= IMAGE HOVER =========-->
 
-        <div class="over-proper"> <a href="#." class="btn font-montserrat">more details</a> </div>
+        <div class="over-proper"> <a href="<?php echo Yii::app()->baseUrl . '/list/detail?pid=' . $data->pid; ?>" title="<?php echo $data->pid; ?>" class="btn font-montserrat">more details</a> </div>
     
         <!--  ======= HOME INNER DETAILS =========-->
         <ul class="home-in">

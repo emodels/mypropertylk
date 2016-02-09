@@ -11,9 +11,13 @@
        var pos = document.location.href.lastIndexOf('?');
        var length = document.location.href.length;
        
-       var top = $('#' + url.substring(pos, length).replace('?', '')).position().top;
+       if ($('#' + url.substring(pos, length).replace('?', '')).position() != undefined) {
+           
+           var topLocation = $('#' + url.substring(pos, length).replace('?', '')).position().top;
        
-       window.scrollTo(0, top);
+           window.scrollTo(0, topLocation);
+       }
+       
     });
 </script>
 
@@ -78,7 +82,7 @@
                             </div>
                         </div>
                         
-                        <div class="media service-graph ">
+                        <div class="media service-graph-4 ">
                             <div class="media-left padding-top pl30" style="padding-right:100px;">
                             <div id="investment">Investment Advisory</div>
                                 <p class="heading_txt heading_txt4" >Talk to us before you invest on your next property !</p>

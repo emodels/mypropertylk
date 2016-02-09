@@ -127,24 +127,27 @@ and open the template in the editor.
     
     .p_txt1{
         
-        margin-left : -400px;
-        margin-right: 85px;
+        margin-left : -410px;
+        margin-right: 80px;
     }
 
     .p_txt2{
        
         margin-right : 45px;
         margin-left: 20px;
+        margin-bottom: 120px;
     }
 
     .p_txt3{
-        margin-left : -400px;
-        margin-right: 85px;
+        margin-left : -415px;
+        margin-right: 75px;
     }
 
     .p_txt4{
-        margin-right : 50px;
-        margin-left: 20x;
+        margin-right : 35px;
+        margin-left: 20px;
+        padding-bottom: 100px;
+        
       }
     
      .heading_txt1{
@@ -181,6 +184,7 @@ and open the template in the editor.
       width: 400px;
       line-height: 1.5;
       text-align: center;
+      margin-left: -12px;
     }
 
     .service-graph-2 {
@@ -199,6 +203,22 @@ and open the template in the editor.
         top: 100px;
     }
     
+    .service-graph-4 {
+        position: relative;
+    }
+    
+    .service-graph-4 .media-image {
+        position: absolute;
+        top: 0px;
+        left: 40px;
+    }
+    
+    .service-graph-4 .pl30 {
+        
+        position: relative;
+        top: 100px;
+    }
+    
     #marketing{
       margin-left : -360px;
       padding-top: 275px;   
@@ -206,7 +226,7 @@ and open the template in the editor.
       
     #brokerage{
        padding-left: 60px;
-       padding-top: 275px;
+       padding-top: 260px;
       }
     
     #management{
@@ -215,8 +235,8 @@ and open the template in the editor.
       }
       
     #investment{
-       padding-left: 60px;
-       padding-top: 275px;
+       padding-left: 50px;
+       padding-top: 210px;
       }
       
     .img_1{
