@@ -20,6 +20,10 @@ class IndexAction extends CAction
 
             $model = Landingpage::model()->findByPk($_GET['id']);
 
+            $this->pageTitle = $model->title;
+
+            Yii::app()->clientScript->registerMetaTag($model->description, 'description');
+
             if (Yii::app()->request->isAjaxRequest && Yii::app()->request->isPostRequest) {
 
                 //---------------Email notification to Admin--------------------------------------------------------
