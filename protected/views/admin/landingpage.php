@@ -45,18 +45,13 @@
                 </div>
             </div>
             <?php
-
-            $data = new CActiveDataProvider('Landingpage', array('criteria'=>array('order' => 'id DESC'),'pagination'=>array('pageSize'=>10)));
-
-            var_dump($data);
-
-            /*$this->widget('zii.widgets.CListView', array(
+            $this->widget('zii.widgets.CListView', array(
                 'id' => 'landing_pages',
-                'dataProvider'=>new CActiveDataProvider('landingpage', array('criteria'=>array('order' => 'id DESC'),'pagination'=>array('pageSize'=>10))),
+                'dataProvider'=>new CActiveDataProvider('Landingpage', array('criteria'=>array('order' => 'id DESC'),'pagination'=>array('pageSize'=>10))),
                 'itemView' => '_landing_pages_list_view',
                 'template'=>'{items}<div class="span12"></div>{pager}<div class="span12"></div>',
                 'afterAjaxUpdate'=>'function(id,options){window.scroll(0,0);}',
-            ));*/
+            ));
             ?>
         </div>
         <?php $this->endWidget(); ?>
