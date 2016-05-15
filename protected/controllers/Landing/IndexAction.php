@@ -20,7 +20,7 @@ class IndexAction extends CAction
 
             $model = Landingpage::model()->findByPk($_GET['id']);
 
-            $this->pageTitle = $model->title;
+            $this->$this->getController()->pageTitle = $model->title;
 
             Yii::app()->clientScript->registerMetaTag($model->description, 'description');
 
