@@ -1,23 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="PublishConfigData" autoUpload="Always" serverName="demo.myproperty.lk" uploadOnCheckin="00d73a0e-4291-49da-b99d-a15808f900eb">
+  <component name="PublishConfigData" autoUpload="Always" uploadOnCheckin="00d73a0e-4291-49da-b99d-a15808f900eb">
     <serverData>
-      <paths name="demo.myproperty.lk">
+      <paths name="MyProperty - Live">
         <serverdata>
           <mappings>
-            <mapping deploy="/demo" local="$PROJECT_DIR$" web="/" />
+            <mapping deploy="/" local="$PROJECT_DIR$" web="/" />
           </mappings>
           <excludedPaths>
             <excludedPath local="true" path="$PROJECT_DIR$/.idea" />
             <excludedPath local="true" path="$PROJECT_DIR$/assets" />
             <excludedPath local="true" path="$PROJECT_DIR$/protected/config" />
             <excludedPath local="true" path="$PROJECT_DIR$/protected/data" />
-            <excludedPath local="true" path="$PROJECT_DIR$/protected/extensions" />
             <excludedPath local="true" path="$PROJECT_DIR$/protected/framework" />
-            <excludedPath local="true" path="$PROJECT_DIR$/protected/models" />
             <excludedPath local="true" path="$PROJECT_DIR$/protected/runtime" />
             <excludedPath local="true" path="$PROJECT_DIR$/protected/tests" />
-            <excludedPath local="true" path="$PROJECT_DIR$/upload" />
           </excludedPaths>
         </serverdata>
       </paths>

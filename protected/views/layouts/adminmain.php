@@ -109,6 +109,7 @@
                             <li><a id="admin_uplaod" href="<?php echo Yii::app()->request->baseUrl; ?>/bulkupload/upload"><i class="icon-upload icon_gap"></i>Bulk Upload</a></li>
                             <li><a id="admin_city" href="<?php echo Yii::app()->request->baseUrl; ?>/admin/city"><i class="icon-map-marker icon_gap"></i>City List</a></li>
                             <li><a id="admin_feature" href="<?php echo Yii::app()->request->baseUrl; ?>/admin/feature"><i class="icon-wrench icon_gap"></i>Feature Control</a></li>
+                            <li><a id="admin_landingpages" href="<?php echo Yii::app()->request->baseUrl; ?>/admin/landingpages"><i class="icon-plane icon_gap"></i>Landing Pages</a></li>
                         </ul>
                     </div>
                 </div>
