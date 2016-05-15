@@ -1,4 +1,4 @@
-<!--<div class="row-fluid">
+<div class="row-fluid">
     <div class="span listing-row">
         <div class="span1">
             <div class="listing-normal"><?php echo  $data->id ; ?></div>
@@ -17,4 +17,4 @@
             </div>
         </div>
     </div>
-</div>-->
+</div>
