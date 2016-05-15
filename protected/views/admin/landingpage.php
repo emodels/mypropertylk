@@ -46,7 +46,9 @@
             </div>
             <?php
 
-            $data = new CActiveDataProvider('landingpage', array('criteria'=>array('order' => 'id DESC'),'pagination'=>array('pageSize'=>10)));
+            //$data = new CActiveDataProvider('landingpage', array('criteria'=>array('order' => 'id DESC'),'pagination'=>array('pageSize'=>10)));
+
+            $data = '111';
 
             var_dump($data);
 
