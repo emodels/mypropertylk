@@ -51,7 +51,7 @@
                 'itemView' => '_landing_pages_list_view',
                 'template'=>'{items}<div class="span12"></div>{pager}<div class="span12"></div>',
                 'afterAjaxUpdate'=>'function(id,options){window.scroll(0,0);}',
-            ));/*
+            ));*/
             ?>
         </div>
         <?php $this->endWidget(); ?>
