@@ -13,36 +13,6 @@
             $('#spn_name').hide();
         }
 
-        if ($('#phone').val() == '') {
-
-            $('#spn_phone').show();
-            isError = true;
-
-        } else {
-
-            $('#spn_phone').hide();
-        }
-
-        if ($('#email').val() == '') {
-
-            $('#spn_email').show();
-            isError = true;
-
-        } else {
-
-            $('#spn_email').hide();
-        }
-
-        if ($('#postcode').val() == '') {
-
-            $('#spn_postcode').show();
-            isError = true;
-
-        } else {
-
-            $('#spn_postcode').hide();
-        }
-
         if ($('#message').val() == '') {
 
             $('#spn_message').show();
@@ -98,19 +68,16 @@
                     <div class="form-group">
                         <label>Contact number</label>
                         <input name="phone" type="text" id="phone" class="form-control span12 no-margin" placeholder="Contact number" onblur="javascript:submitForm();">
-                        <span id="spn_phone" class="textRed" style="color:Red;display:none;">* required</span>
                         <div class="clearfix"></div>
                     </div>
                     <div class="form-group">
                         <label>Email</label>
                         <input name="email" type="text" id="email" class="form-control span12 no-margin" placeholder="Email Address" onblur="javascript:submitForm();">
-                        <span id="spn_email" class="textRed" style="color:Red;display:none;">* required</span>
                         <div class="clearfix"></div>
                     </div>
                     <div class="form-group">
                         <label>Post code</label>
                         <input name="postcode" type="text" id="postcode" class="form-control span12 no-margin" placeholder="Post code" onblur="javascript:submitForm();">
-                        <span id="spn_postcode" class="textRed" style="color:Red;display:none;">* required</span>
                         <div class="clearfix"></div>
                     </div>
                     <div class="form-group">
