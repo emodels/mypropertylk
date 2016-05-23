@@ -43,7 +43,12 @@ class IndexAction extends CAction
                     $mailer->Username = Yii::app()->params['SMTP_Username'];
                     $mailer->Password = Yii::app()->params['SMTP_password'];
                     $mailer->From = Yii::app()->params['SMTP_Username'];
-                    $mailer->AddReplyTo($_POST['email']);
+
+                    if (isset($_POST['email']) && !empty($_POST['email'])) {
+
+                        $mailer->AddReplyTo($_POST['email']);
+                    }
+
                     $mailer->AddAddress(Yii::app()->params['adminEmail']);
                     $mailer->AddBCC(Yii::app()->params['mailCC_1']);
                     $mailer->FromName = $_POST['name'];
