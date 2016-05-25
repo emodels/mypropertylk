@@ -1,4 +1,5 @@
 <script type="text/javascript">
+
     function submitForm(isPost) {
 
         var isError = false;
