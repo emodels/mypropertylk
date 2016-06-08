@@ -1049,7 +1049,7 @@ p.caption-text {
 .properties {
 	padding-top: 45px;
 	background: url(../images/property-bg.jpg) repeat;
-        margin-top : -100px;   
+/*        margin-top : -100px;   */
         
 }
 .properties.white-bg {
@@ -1088,7 +1088,7 @@ p.caption-text {
 	-moz-transition: all 0.4s ease-in-out;
 	-o-transition: all 0.4s ease-in-out;
 	-ms-transition: all 0.4s ease-in-out;
-	transition: all 0.4s ease-in-out;
+	transition: all 0.p4s ease-in-out;
 }
 .properties li {
 	-webkit-transition: all 0.4s ease-in-out;
@@ -1547,7 +1547,8 @@ p.caption-text {
 			SERVICES
 ========================================================*/
 .services {
-	padding: 160px 0;
+	padding: 110px 0;
+        margin-bottom: -60px;
 }
 .services li .icon {
 	position: absolute;
@@ -1579,8 +1580,7 @@ p.caption-text {
 	-o-transform: rotate(45deg);
 	z-index: 99;
 }
-.services li .heading {
-}
+
 .services li .ser-hover {
 	position: absolute;
 	top: 0px;

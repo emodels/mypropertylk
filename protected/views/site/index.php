@@ -177,9 +177,9 @@
 
 <!--======= BANNER =========-->
 <div id="banner">
-    <div class="search-text">
+<!--    <div class="search-text">
         <h4> Search properties </h4>
-    </div>
+    </div>-->
  <!-- =======================Sri Lanka Map =================== -->
 
     <!-- (c) ammap.com | SVG map of Sri Lanka - Low -->
@@ -302,164 +302,8 @@
                                             <!--===========================================-->
                                                         <!--  SLIDER END  -->
                                             <!--===========================================-->
- 
-                                            
-                                            <!-- ============================================= -->
-                                                           <!-- SEARCH BOX END-->
-                                            <!-- ============================================== -->
 
-<div class="search_box">
-<div class="span7" id="search-box1">
-                <div class="search-wrapper">
-                    <div class="search-form-v1">
-                        <div id="title-listing" class="container" style="padding-bottom:15px; margin-left: 0">
-                           
-                            <div class="form">
-                                <div id="title-listing" class="container">
-                                    <div class="property-list-title" style="font-size:20px; color: #000">Search Properties</div>
-                                </div>
-                                <div class="span12" style="margin-bottom: 10px;">
-                                    <label>Enter your Town or City</label>
-                                    <div class="span12" style="margin-left: 0;">
-                                        <span class="twitter-typeahead" style="position: relative; display: inline-block; direction: ltr;"><input class="span10 typeahead tt-hint" style="z-index: 2; position: absolute; top: 0px; left: 0px; border-color: transparent; box-shadow: none; background: none 0% 0% / auto repeat scroll padding-box border-box rgb(255, 255, 255);" type="text" maxlength="200" disabled="" autocomplete="off" spellcheck="false"><input placeholder="e.g: Colombo; Anuradhapura; " class="span10 typeahead tt-input" id="townname" style="z-index: 2; position: relative; vertical-align: top; background-color: transparent;" name="Property[townname]" type="text" maxlength="200" autocomplete="off" spellcheck="false" dir="auto"><pre aria-hidden="true" style="position: absolute; visibility: hidden; white-space: pre; font-family: Helvetica, Arial, sans-serif; font-size: 14px; font-style: normal; font-variant: normal; font-weight: normal; word-spacing: 0px; letter-spacing: normal; text-indent: 0px; text-rendering: auto; text-transform: none;"></pre><span class="tt-dropdown-menu" style="position: absolute; top: 100%; left: 0px; z-index: 100; display: none; right: auto;"><div class="tt-dataset-city-list"></div></span></span>                                             </div>
-                                                    </div>
-                                                    <div class="span12">
-                                                        <select multiple="multiple" title="Property Type" class="span10" id="prop_type" name="Propertytyperelation[typeid][]" style="display: none;">
-                                                            <option value="3">Apartment</option>
-                                                            <option value="7">House</option>
-                                                            <option value="13">Portions and Rooms</option>
-                                                            <option value="14">Land</option>
-                                                            <option value="16">Holiday Rental</option>
-                                                            <option value="22">Commercial Property</option>
-                                                            <option value="24">Beach front Lands &amp; Properties</option>
-                                                        </select><div class="btn-group bootstrap-select show-tick span10"><button type="button" class="btn dropdown-toggle btn-default" data-toggle="dropdown" data-id="prop_type"><div class="filter-option pull-left">Property Type</div>&nbsp;<div class="caret"></div></button><div class="dropdown-menu open"><ul class="dropdown-menu inner" role="menu"><li rel="0"><a tabindex="0" class="" style=""><span class="text">Apartment</span><i class="glyphicon glyphicon-ok icon-ok check-mark"></i></a></li><li rel="1"><a tabindex="0" class="" style=""><span class="text">House</span><i class="glyphicon glyphicon-ok icon-ok check-mark"></i></a></li><li rel="2"><a tabindex="0" class="" style=""><span class="text">Portions and Rooms</span><i class="glyphicon glyphicon-ok icon-ok check-mark"></i></a></li><li rel="3"><a tabindex="0" class="" style=""><span class="text">Land</span><i class="glyphicon glyphicon-ok icon-ok check-mark"></i></a></li><li rel="4"><a tabindex="0" class="" style=""><span class="text">Holiday Rental</span><i class="glyphicon glyphicon-ok icon-ok check-mark"></i></a></li><li rel="5"><a tabindex="0" class="" style=""><span class="text">Commercial Property</span><i class="glyphicon glyphicon-ok icon-ok check-mark"></i></a></li><li rel="6"><a tabindex="0" class="" style=""><span class="text">Beach front Lands &amp; Properties</span><i class="glyphicon glyphicon-ok icon-ok check-mark"></i></a></li></ul></div></div>                                             <div class="errorMessage" id="Propertytyperelation_typeid_em_" style="display:none"></div>
-                                                    </div>
-                                                    <div class="span12">
-                                                        <div class="row-fluid">
-                                                            <div class="span6">
-                                                                <label>Min. Price</label>
-                                                                <select id="min_price" class="span8" name="min_price" style="display: none;">
-                                                                    <option value="0" selected="selected">Any</option>
-                                                                    <option value="50,000">50,000</option>
-                                                                    <option value="100,000">100,000</option>
-                                                                    <option value="150,000">150,000</option>
-                                                                    <option value="200,000">200,000</option>
-                                                                    <option value="250,000">250,000</option>
-                                                                    <option value="300,000">300,000</option>
-                                                                    <option value="350,000">350,000</option>
-                                                                    <option value="400,000">400,000</option>
-                                                                    <option value="450,000">450,000</option>
-                                                                    <option value="500,000">500,000</option>
-                                                                    <option value="550,000">550,000</option>
-                                                                    <option value="600,000">600,000</option>
-                                                                    <option value="650,000">650,000</option>
-                                                                    <option value="700,000">700,000</option>
-                                                                    <option value="750,000">750,000</option>
-                                                                    <option value="800,000">800,000</option>
-                                                                    <option value="8500,000">8500,000</option>
-                                                                    <option value="900,000">900,000</option>
-                                                                    <option value="950,000">950,000</option>
-                                                                    <option value="1,000,000">1,000,000</option>
-                                                                    <option value="1,250,000">1,250,000</option>
-                                                                    <option value="1,500,000">1,500,000</option>
-                                                                    <option value="1,750,000">1,750,000</option>
-                                                                    <option value="2,000,000">2,000,000</option>
-                                                                    <option value="2,500,000">2,500,000</option>
-                                                                    <option value="3,000,000">3,000,000</option>
-                                                                    <option value="4,000,000">4,000,000</option>
-                                                                </select><div class="btn-group bootstrap-select span8 dropup"><button type="button" class="btn dropdown-toggle btn-default" data-toggle="dropdown" data-id="min_price"><div class="filter-option pull-left">Any</div>&nbsp;<div class="caret"></div></button><div class="dropdown-menu open" style="max-height: 400px; overflow: hidden; min-height: 92px;"><ul class="dropdown-menu inner" role="menu" style="max-height: 388px; overflow-y: auto; min-height: 80px;"><li rel="0" class="selected"><a tabindex="0" class="" style=""><span class="text">Any</span><i class="glyphicon glyphicon-ok icon-ok check-mark"></i></a></li><li rel="1"><a tabindex="0" class="" style=""><span class="text">50,000</span><i class="glyphicon glyphicon-ok icon-ok check-mark"></i></a></li><li rel="2"><a tabindex="0" class="" style=""><span class="text">100,000</span><i class="glyphicon glyphicon-ok icon-ok check-mark"></i></a></li><li rel="3"><a tabindex="0" class="" style=""><span class="text">150,000</span><i class="glyphicon glyphicon-ok icon-ok check-mark"></i></a></li><li rel="4"><a tabindex="0" class="" style=""><span class="text">200,000</span><i class="glyphicon glyphicon-ok icon-ok check-mark"></i></a></li><li rel="5"><a tabindex="0" class="" style=""><span class="text">250,000</span><i class="glyphicon glyphicon-ok icon-ok check-mark"></i></a></li><li rel="6"><a tabindex="0" class="" style=""><span class="text">300,000</span><i class="glyphicon glyphicon-ok icon-ok check-mark"></i></a></li><li rel="7"><a tabindex="0" class="" style=""><span class="text">350,000</span><i class="glyphicon glyphicon-ok icon-ok check-mark"></i></a></li><li rel="8"><a tabindex="0" class="" style=""><span class="text">400,000</span><i class="glyphicon glyphicon-ok icon-ok check-mark"></i></a></li><li rel="9"><a tabindex="0" class="" style=""><span class="text">450,000</span><i class="glyphicon glyphicon-ok icon-ok check-mark"></i></a></li><li rel="10"><a tabindex="0" class="" style=""><span class="text">500,000</span><i class="glyphicon glyphicon-ok icon-ok check-mark"></i></a></li><li rel="11"><a tabindex="0" class="" style=""><span class="text">550,000</span><i class="glyphicon glyphicon-ok icon-ok check-mark"></i></a></li><li rel="12"><a tabindex="0" class="" style=""><span class="text">600,000</span><i class="glyphicon glyphicon-ok icon-ok check-mark"></i></a></li><li rel="13"><a tabindex="0" class="" style=""><span class="text">650,000</span><i class="glyphicon glyphicon-ok icon-ok check-mark"></i></a></li><li rel="14"><a tabindex="0" class="" style=""><span class="text">700,000</span><i class="glyphicon glyphicon-ok icon-ok check-mark"></i></a></li><li rel="15"><a tabindex="0" class="" style=""><span class="text">750,000</span><i class="glyphicon glyphicon-ok icon-ok check-mark"></i></a></li><li rel="16"><a tabindex="0" class="" style=""><span class="text">800,000</span><i class="glyphicon glyphicon-ok icon-ok check-mark"></i></a></li><li rel="17"><a tabindex="0" class="" style=""><span class="text">8500,000</span><i class="glyphicon glyphicon-ok icon-ok check-mark"></i></a></li><li rel="18"><a tabindex="0" class="" style=""><span class="text">900,000</span><i class="glyphicon glyphicon-ok icon-ok check-mark"></i></a></li><li rel="19"><a tabindex="0" class="" style=""><span class="text">950,000</span><i class="glyphicon glyphicon-ok icon-ok check-mark"></i></a></li><li rel="20"><a tabindex="0" class="" style=""><span class="text">1,000,000</span><i class="glyphicon glyphicon-ok icon-ok check-mark"></i></a></li><li rel="21"><a tabindex="0" class="" style=""><span class="text">1,250,000</span><i class="glyphicon glyphicon-ok icon-ok check-mark"></i></a></li><li rel="22"><a tabindex="0" class="" style=""><span class="text">1,500,000</span><i class="glyphicon glyphicon-ok icon-ok check-mark"></i></a></li><li rel="23"><a tabindex="0" class="" style=""><span class="text">1,750,000</span><i class="glyphicon glyphicon-ok icon-ok check-mark"></i></a></li><li rel="24"><a tabindex="0" class="" style=""><span class="text">2,000,000</span><i class="glyphicon glyphicon-ok icon-ok check-mark"></i></a></li><li rel="25"><a tabindex="0" class="" style=""><span class="text">2,500,000</span><i class="glyphicon glyphicon-ok icon-ok check-mark"></i></a></li><li rel="26"><a tabindex="0" class="" style=""><span class="text">3,000,000</span><i class="glyphicon glyphicon-ok icon-ok check-mark"></i></a></li><li rel="27"><a tabindex="0" class="" style=""><span class="text">4,000,000</span><i class="glyphicon glyphicon-ok icon-ok check-mark"></i></a></li></ul></div></div>                                                 </div>
-                                                            <div class="span6">
-                                                                <label>Max. Price</label>
-                                                                <select id="max_price" class="span8" name="max_price" style="display: none;">
-                                                                    <option value="0" selected="selected">Any</option>
-                                                                    <option value="50,000">50,000</option>
-                                                                    <option value="100,000">100,000</option>
-                                                                    <option value="150,000">150,000</option>
-                                                                    <option value="200,000">200,000</option>
-                                                                    <option value="250,000">250,000</option>
-                                                                    <option value="300,000">300,000</option>
-                                                                    <option value="350,000">350,000</option>
-                                                                    <option value="400,000">400,000</option>
-                                                                    <option value="450,000">450,000</option>
-                                                                    <option value="500,000">500,000</option>
-                                                                    <option value="550,000">550,000</option>
-                                                                    <option value="600,000">600,000</option>
-                                                                    <option value="650,000">650,000</option>
-                                                                    <option value="700,000">700,000</option>
-                                                                    <option value="750,000">750,000</option>
-                                                                    <option value="800,000">800,000</option>
-                                                                    <option value="8500,000">8500,000</option>
-                                                                    <option value="900,000">900,000</option>
-                                                                    <option value="950,000">950,000</option>
-                                                                    <option value="1,000,000">1,000,000</option>
-                                                                    <option value="1,250,000">1,250,000</option>
-                                                                    <option value="1,500,000">1,500,000</option>
-                                                                    <option value="1,750,000">1,750,000</option>
-                                                                    <option value="2,000,000">2,000,000</option>
-                                                                    <option value="2,500,000">2,500,000</option>
-                                                                    <option value="3,000,000">3,000,000</option>
-                                                                    <option value="4,000,000">4,000,000</option>
-                                                                </select><div class="btn-group bootstrap-select span8"><button type="button" class="btn dropdown-toggle btn-default" data-toggle="dropdown" data-id="max_price"><div class="filter-option pull-left">Any</div>&nbsp;<div class="caret"></div></button><div class="dropdown-menu open"><ul class="dropdown-menu inner" role="menu"><li rel="0" class="selected"><a tabindex="0" class="" style=""><span class="text">Any</span><i class="glyphicon glyphicon-ok icon-ok check-mark"></i></a></li><li rel="1"><a tabindex="0" class="" style=""><span class="text">50,000</span><i class="glyphicon glyphicon-ok icon-ok check-mark"></i></a></li><li rel="2"><a tabindex="0" class="" style=""><span class="text">100,000</span><i class="glyphicon glyphicon-ok icon-ok check-mark"></i></a></li><li rel="3"><a tabindex="0" class="" style=""><span class="text">150,000</span><i class="glyphicon glyphicon-ok icon-ok check-mark"></i></a></li><li rel="4"><a tabindex="0" class="" style=""><span class="text">200,000</span><i class="glyphicon glyphicon-ok icon-ok check-mark"></i></a></li><li rel="5"><a tabindex="0" class="" style=""><span class="text">250,000</span><i class="glyphicon glyphicon-ok icon-ok check-mark"></i></a></li><li rel="6"><a tabindex="0" class="" style=""><span class="text">300,000</span><i class="glyphicon glyphicon-ok icon-ok check-mark"></i></a></li><li rel="7"><a tabindex="0" class="" style=""><span class="text">350,000</span><i class="glyphicon glyphicon-ok icon-ok check-mark"></i></a></li><li rel="8"><a tabindex="0" class="" style=""><span class="text">400,000</span><i class="glyphicon glyphicon-ok icon-ok check-mark"></i></a></li><li rel="9"><a tabindex="0" class="" style=""><span class="text">450,000</span><i class="glyphicon glyphicon-ok icon-ok check-mark"></i></a></li><li rel="10"><a tabindex="0" class="" style=""><span class="text">500,000</span><i class="glyphicon glyphicon-ok icon-ok check-mark"></i></a></li><li rel="11"><a tabindex="0" class="" style=""><span class="text">550,000</span><i class="glyphicon glyphicon-ok icon-ok check-mark"></i></a></li><li rel="12"><a tabindex="0" class="" style=""><span class="text">600,000</span><i class="glyphicon glyphicon-ok icon-ok check-mark"></i></a></li><li rel="13"><a tabindex="0" class="" style=""><span class="text">650,000</span><i class="glyphicon glyphicon-ok icon-ok check-mark"></i></a></li><li rel="14"><a tabindex="0" class="" style=""><span class="text">700,000</span><i class="glyphicon glyphicon-ok icon-ok check-mark"></i></a></li><li rel="15"><a tabindex="0" class="" style=""><span class="text">750,000</span><i class="glyphicon glyphicon-ok icon-ok check-mark"></i></a></li><li rel="16"><a tabindex="0" class="" style=""><span class="text">800,000</span><i class="glyphicon glyphicon-ok icon-ok check-mark"></i></a></li><li rel="17"><a tabindex="0" class="" style=""><span class="text">8500,000</span><i class="glyphicon glyphicon-ok icon-ok check-mark"></i></a></li><li rel="18"><a tabindex="0" class="" style=""><span class="text">900,000</span><i class="glyphicon glyphicon-ok icon-ok check-mark"></i></a></li><li rel="19"><a tabindex="0" class="" style=""><span class="text">950,000</span><i class="glyphicon glyphicon-ok icon-ok check-mark"></i></a></li><li rel="20"><a tabindex="0" class="" style=""><span class="text">1,000,000</span><i class="glyphicon glyphicon-ok icon-ok check-mark"></i></a></li><li rel="21"><a tabindex="0" class="" style=""><span class="text">1,250,000</span><i class="glyphicon glyphicon-ok icon-ok check-mark"></i></a></li><li rel="22"><a tabindex="0" class="" style=""><span class="text">1,500,000</span><i class="glyphicon glyphicon-ok icon-ok check-mark"></i></a></li><li rel="23"><a tabindex="0" class="" style=""><span class="text">1,750,000</span><i class="glyphicon glyphicon-ok icon-ok check-mark"></i></a></li><li rel="24"><a tabindex="0" class="" style=""><span class="text">2,000,000</span><i class="glyphicon glyphicon-ok icon-ok check-mark"></i></a></li><li rel="25"><a tabindex="0" class="" style=""><span class="text">2,500,000</span><i class="glyphicon glyphicon-ok icon-ok check-mark"></i></a></li><li rel="26"><a tabindex="0" class="" style=""><span class="text">3,000,000</span><i class="glyphicon glyphicon-ok icon-ok check-mark"></i></a></li><li rel="27"><a tabindex="0" class="" style=""><span class="text">4,000,000</span><i class="glyphicon glyphicon-ok icon-ok check-mark"></i></a></li></ul></div></div>                                                 </div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="span12" style="padding-top: 10px;">
-                                                        <div class="span6">
-                                                            <label>Min. Beds</label>
-                                                            <select id="min_bed" class="span8" name="min_beds" style="display: none;">
-                                                                <option value="0" selected="selected">Any</option>
-                                                                <option value="1">1</option>
-                                                                <option value="2">2</option>
-                                                                <option value="3">3</option>
-                                                                <option value="4">4</option>
-                                                                <option value="5">5</option>
-                                                                <option value="6">6</option>
-                                                                <option value="7">7</option>
-                                                                <option value="8">8</option>
-                                                                <option value="9">9</option>
-                                                                <option value="10">10</option>
-                                                            </select><div class="btn-group bootstrap-select span8 dropup"><button type="button" class="btn dropdown-toggle btn-default" data-toggle="dropdown" data-id="min_bed"><div class="filter-option pull-left">Any</div>&nbsp;<div class="caret"></div></button><div class="dropdown-menu open" style="max-height: 520px; overflow: hidden; min-height: 92px;"><ul class="dropdown-menu inner" role="menu" style="max-height: 508px; overflow-y: auto; min-height: 80px;"><li rel="0" class="selected"><a tabindex="0" class="" style=""><span class="text">Any</span><i class="glyphicon glyphicon-ok icon-ok check-mark"></i></a></li><li rel="1"><a tabindex="0" class="" style=""><span class="text">1</span><i class="glyphicon glyphicon-ok icon-ok check-mark"></i></a></li><li rel="2"><a tabindex="0" class="" style=""><span class="text">2</span><i class="glyphicon glyphicon-ok icon-ok check-mark"></i></a></li><li rel="3"><a tabindex="0" class="" style=""><span class="text">3</span><i class="glyphicon glyphicon-ok icon-ok check-mark"></i></a></li><li rel="4"><a tabindex="0" class="" style=""><span class="text">4</span><i class="glyphicon glyphicon-ok icon-ok check-mark"></i></a></li><li rel="5"><a tabindex="0" class="" style=""><span class="text">5</span><i class="glyphicon glyphicon-ok icon-ok check-mark"></i></a></li><li rel="6"><a tabindex="0" class="" style=""><span class="text">6</span><i class="glyphicon glyphicon-ok icon-ok check-mark"></i></a></li><li rel="7"><a tabindex="0" class="" style=""><span class="text">7</span><i class="glyphicon glyphicon-ok icon-ok check-mark"></i></a></li><li rel="8"><a tabindex="0" class="" style=""><span class="text">8</span><i class="glyphicon glyphicon-ok icon-ok check-mark"></i></a></li><li rel="9"><a tabindex="0" class="" style=""><span class="text">9</span><i class="glyphicon glyphicon-ok icon-ok check-mark"></i></a></li><li rel="10"><a tabindex="0" class="" style=""><span class="text">10</span><i class="glyphicon glyphicon-ok icon-ok check-mark"></i></a></li></ul></div></div>                                             </div>
-                                                        <div class="span6">
-                                                            <label>Max. Beds</label>
-                                                            <select id="max_bed" class="span8" name="max_beds" style="display: none;">
-                                                                <option value="0" selected="selected">Any</option>
-                                                                <option value="1">1</option>
-                                                                <option value="2">2</option>
-                                                                <option value="3">3</option>
-                                                                <option value="4">4</option>
-                                                                <option value="5">5</option>
-                                                                <option value="6">6</option>
-                                                                <option value="7">7</option>
-                                                                <option value="8">8</option>
-                                                                <option value="9">9</option>
-                                                                <option value="10">10</option>
-                                                            </select><div class="btn-group bootstrap-select span8 dropup"><button type="button" class="btn dropdown-toggle btn-default" data-toggle="dropdown" data-id="max_bed"><div class="filter-option pull-left">Any</div>&nbsp;<div class="caret"></div></button><div class="dropdown-menu open" style="max-height: 575px; overflow: hidden; min-height: 92px;"><ul class="dropdown-menu inner" role="menu" style="max-height: 563px; overflow-y: auto; min-height: 80px;"><li rel="0" class="selected"><a tabindex="0" class="" style=""><span class="text">Any</span><i class="glyphicon glyphicon-ok icon-ok check-mark"></i></a></li><li rel="1"><a tabindex="0" class="" style=""><span class="text">1</span><i class="glyphicon glyphicon-ok icon-ok check-mark"></i></a></li><li rel="2"><a tabindex="0" class="" style=""><span class="text">2</span><i class="glyphicon glyphicon-ok icon-ok check-mark"></i></a></li><li rel="3"><a tabindex="0" class="" style=""><span class="text">3</span><i class="glyphicon glyphicon-ok icon-ok check-mark"></i></a></li><li rel="4"><a tabindex="0" class="" style=""><span class="text">4</span><i class="glyphicon glyphicon-ok icon-ok check-mark"></i></a></li><li rel="5"><a tabindex="0" class="" style=""><span class="text">5</span><i class="glyphicon glyphicon-ok icon-ok check-mark"></i></a></li><li rel="6"><a tabindex="0" class="" style=""><span class="text">6</span><i class="glyphicon glyphicon-ok icon-ok check-mark"></i></a></li><li rel="7"><a tabindex="0" class="" style=""><span class="text">7</span><i class="glyphicon glyphicon-ok icon-ok check-mark"></i></a></li><li rel="8"><a tabindex="0" class="" style=""><span class="text">8</span><i class="glyphicon glyphicon-ok icon-ok check-mark"></i></a></li><li rel="9"><a tabindex="0" class="" style=""><span class="text">9</span><i class="glyphicon glyphicon-ok icon-ok check-mark"></i></a></li><li rel="10"><a tabindex="0" class="" style=""><span class="text">10</span><i class="glyphicon glyphicon-ok icon-ok check-mark"></i></a></li></ul></div></div>                                             </div>
-
-                                                    </div>
-                                                    <div class="span12" style="padding: 10px 0;">
-                                                        <div class="span6">
-                                                            <a href="javascript:SearchProperty();" class="btn btn-primary">Search</a>
-                                                        </div>
-                                                        <div class="span6 text-right">
-                                                            <a href="javascript:Refine_Search();" class="span8" style="font-size: 12px;" type="reset">clear all</a>
-                                                        </div>
-                                                    </div>
-                                                    </div>
-
-
-                        </div>
-                    </div>
-                </div>
-            </div>
-</div>
-      
-                                            <!-- ============================================= -->
-                                                           <!-- SEARCH BOX END-->
-                                            <!-- ============================================== -->
-                 
-                 
-                 
-                 
-                                            <!--==============================================-->
+                                           <!--==============================================-->
                                                          <!-- SERVICES BEGIN -->
                                             <!--==============================================-->
 
@@ -482,9 +326,9 @@
 
                  <!--======= SERVICE HOVER =========-->
                  <div class="ser-hover">
-                 <p>Get the “SOLD” Tag next to your project with My Property Investments !<a href="<?php echo Yii::app()->request->baseUrl; ?>/site/services?marketing"href="<?php echo Yii::app()->request->baseUrl; ?>/site/services#marketing" class="read-more">Read more <i class="fa fa-angle-double-right"></i></a> </p>
+                 <p>Get the “SOLD” Tag next to your project with My Property Investments !<a href="<?php echo Yii::app()->request->baseUrl; ?>/site/services?marketing" class="read-more">Read more <i class="fa fa-angle-double-right"></i></a> </p>
                  </div>
-                 <a href="#." class="heading">Project Marketing</a>
+                 <a href="<?php echo Yii::app()->request->baseUrl; ?>/site/services?marketing" class="heading">Project Marketing</a>
              </section>
          </li>
 
@@ -499,7 +343,7 @@
                  <div class="ser-hover">
                  <p>Talk to us to sell your property or buy your next property with confidence ! <a href="<?php echo Yii::app()->request->baseUrl; ?>/site/services?brokerage" class="read-more">Read more <i class="fa fa-angle-double-right"></i></a> </p>
                  </div>
-                 <a href="#." class="heading">Property Brokerage</a> </section>
+                 <a href="<?php echo Yii::app()->request->baseUrl; ?>/site/services?brokerage" class="heading">Property Brokerage</a> </section>
          </li>
 
                  <!--======= SERVICE SECTION =========-->
@@ -513,7 +357,7 @@
                  <div class="ser-hover">
                  <p>Property Management at its best !<a href="<?php echo Yii::app()->request->baseUrl; ?>/site/services?management" class="read-more">Read more <i class="fa fa-angle-double-right"></i></a> </p>
                  </div>
-                 <a href="#." class="heading">Property Management</a> </section>
+                 <a href="<?php echo Yii::app()->request->baseUrl; ?>/site/services?management"  class="heading">Property Management</a> </section>
          </li>
 
                  <!--======= SERVICE SECTION =========-->
@@ -527,7 +371,7 @@
              <div class="ser-hover">
              <p>Talk to us before you invest on your next property !<a href="<?php echo Yii::app()->request->baseUrl; ?>/site/services?investment" class="read-more">Read more <i class="fa fa-angle-double-right"></i></a> </p>
              </div>
-             <a href="#." class="heading">Investment Advisory</a> </section>
+             <a href="<?php echo Yii::app()->request->baseUrl; ?>/site/services?investment" class="heading">Investment Advisory</a> </section>
          </li>
              </ul>
          </div>

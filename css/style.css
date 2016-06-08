@@ -242,7 +242,7 @@ code {
 	width:100%;
 	margin:0;
 	padding:0;
-	background-color : ff0;
+	background-color : ff00;
 }
 
 /*------------------------------------------------------*/
@@ -257,7 +257,7 @@ code {
 }
 
 .site-logo{
-	padding: 10px 10;
+	padding: 10px 10px;
 }
 .site-title a{
 	color:#FFF;

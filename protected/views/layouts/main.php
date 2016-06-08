@@ -2,12 +2,22 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        <meta charset="utf-8"/>
+        
+    <meta charset="utf-8"/>
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Myproperty</title>
+        <title><?php echo $this->pageTitle; ?></title>
         <meta name="keywords" content="houses for sale, houses for rent/lease, land sales, Sri Lanka" />
+        <link rel="shortcut icon" href="<?php echo Yii::app()->request->baseUrl; ?>/images/fav-ico.ico" />
         <meta name="description" content="myproperty.lk is most trusted property portal to promote Sri Lankan real-estate business locally and internationally. property website for houses for sale, houses for rent/lease and land sales across Sri Lanka, posted directly by the sellers, owners and estate agents/brokers" />
-        <meta name="author" content="M_Adnan">
+
+<!-- <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="description" content="myproperty.lk is most trusted property portal to promote Sri Lankan real-estate business locally and internationally. property website for houses for sale, houses for rent/lease and land sales across Sri Lanka, posted directly by the sellers, owners and estate agents/brokers" />
+    <meta name="keywords" content="houses for sale, houses for rent/lease, land sales, Sri Lanka" />
+    <title><?php echo $this->pageTitle; ?></title>
+    <link rel="shortcut icon" href="<?php echo Yii::app()->request->baseUrl; ?>/images/fav-ico.ico" />
+    <meta name='robots' content='noindex,nofollow'/>-->
         
         <!-- FONTS ONLINE -->
         <link href='http://fonts.googleapis.com/css?family=Roboto:400,100,100italic,300,300italic,400italic,500,500italic,700,700italic,900,900italic' rel='stylesheet' type='text/css'/>
@@ -23,7 +33,7 @@
         <link href='<?php echo Yii::app()->request->baseUrl; ?>/styles/font-awesome.min.css' rel="stylesheet" type="text/css">
         <link href='<?php echo Yii::app()->request->baseUrl; ?>/css/form.css' rel='stylesheet' type='text/css' media='all' />
         <link href='<?php echo Yii::app()->request->baseUrl; ?>/styles/custom-style.css' rel="stylesheet" type="text/css">
-        <link  id='realexpert_bootstrap_responsive_css-css' href='<?php echo Yii::app()->request->baseUrl; ?>/css/bootstrap-responsive.min.css' rel='stylesheet' type='text/css' media='all'/>
+        <link id='realexpert_bootstrap_responsive_css-css' href='<?php echo Yii::app()->request->baseUrl; ?>/css/bootstrap-responsive.min.css' rel='stylesheet' type='text/css' media='all'/>
 
         <style>
          #dvLoading{
@@ -145,7 +155,7 @@
 
                     <!--======= LOGO =========-->
                     <div class="logo">
-                    <a href="<?php echo Yii::app()->request->baseUrl; ?>" title="myproperty.lk" rel="home">
+                    <a href="<?php echo Yii::app()->request->baseUrl;?>/" title="myproperty.lk" rel="home">
                      <img class="logo_img" src="<?php echo Yii::app()->request->baseUrl; ?>/images/logo.png" alt="Real Expert" ></a>
                     </div>
                     <!--======= NAV =========-->
@@ -153,7 +163,7 @@
 
                         <!--======= MENU START =========-->
                         <ul id="lnk_list" class="ownmenu">
-                            <li class="active"><a href="<?php echo Yii::app()->request->baseUrl; ?>">Home</a></li>
+                            <li class="active"><a href="<?php echo Yii::app()->request->baseUrl; ?>/">Home</a></li>
                             <li id="lnk_about"><a href="<?php echo Yii::app()->request->baseUrl; ?>/site/about_us"> About Us </a></li>
                             <li id="lnk_services"><a href="<?php echo Yii::app()->request->baseUrl; ?>/site/services">Services</a>
 
@@ -290,7 +300,7 @@
                                              <i class="fa fa-mobile" style="font-size: 18px"></i> +94 777 348 648
                                         </a>
                                     </li>
-                                   </ul>
+                                </ul>
                             </div>
                          </div>
                     </div>

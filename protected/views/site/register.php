@@ -152,7 +152,7 @@ $this->breadcrumbs=array(
                                 </div>
                                 <div class="alert alert-info alert-block">
                                     <h4>Register as an Agent</h4>
-                                    Become a Agent and you will able to publish large volume of Property advertisements within a short period using our Bulk Upload facility.
+                                    Become an Agent and you will able to publish large volume of Property advertisements within a short period using our Bulk Upload facility.
                                 </div>
                                 <div class="alert alert-warning">
                                     <h4>Register as an Advertiser</h4>
