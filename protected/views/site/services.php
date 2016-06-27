@@ -18,7 +18,14 @@
            window.scrollTo(0, topLocation);
        }
        
-    });
+    }
+            
+    function myFunction() {
+        document.getElementById("demo").innerHTML = "Hello World";
+    }
+
+            
+            );
 </script>
 
   <!--======= BANNER =========-->
@@ -60,11 +67,14 @@
                         
                         <div class="media service-graph-2 " style="margin-top:25px;">
                             <div class="media-left padding-top pl30" style="padding-right:100px;">
-                                <div id="brokerage">Property Brokerage</div>
+                                <div id="brokerage">Property Brokerage  
+                                    <p>   <button type="button" class="btn" data-toggle="modal" data-target="#myModal">Marketing Packages</button> </p>
+                                </div>
                                 <p class="heading_txt heading_txt2">Talk to us to sell your property or buy your next property with confidence !</p>
                                 <p class="p_txt p_txt2">Property hunting is exciting business but it can be tedious and daunting especially for first time buyers.  Let us do the hard work so that you can focus on your loved ones and what matters the most. We at My property are here to provide you with everything you need to make the process easy and fun while giving our clients that edge in their property search helping them be the most informed at that moment of purchase.
                                     <br>  From identifying the right property, making a buying decision to home loans we are here to help you in every step of the way.
                                     <br>  We offer property brokerage throughout Sri Lanka for Residential as well as commercial properties. Whether you want to sell your house/ office complex or buy a new house / apartment or an office, you will be delighted with our professional service. All transactions will be done on a transparent and a professional manner with Legal agreements in place to protect both buyers and sellers. </p>
+                                
                             </div>
                             <div class="media-right pl100 media-image">
                                 <img class="img_2" src="<?php echo Yii::app()->request->baseUrl; ?>/images/service-img-2.jpg" alt="">

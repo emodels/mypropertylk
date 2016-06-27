@@ -14,7 +14,10 @@
     <script type="text/javascript" src='<?php echo Yii::app()->request->baseUrl; ?>/js/jquery.maphilight.min.js'></script>
     <script type="text/javascript" src='<?php echo Yii::app()->request->baseUrl; ?>/js/jquery.tooltipster.min.js'></script>
     <script type="text/javascript" src='<?php echo Yii::app()->request->baseUrl; ?>/js/typeahead.bundle.min.js'></script>
-
+     <!-- <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>-->
+    
     <script type="text/javascript">
 
            function loadPropertyByDistrict(district){
@@ -180,6 +183,7 @@
 <!--    <div class="search-text">
         <h4> Search properties </h4>
     </div>-->
+ 
  <!-- =======================Sri Lanka Map =================== -->
 
     <!-- (c) ammap.com | SVG map of Sri Lanka - Low -->
@@ -270,9 +274,15 @@
                      <div class="flex-caption">
                       <p class="caption-header">Property Brokerage</p>
                         <p class="caption-text">Talk to us to sell your property or buy your next property with confidence !</p>
-                           <span>
-                    <button type="button" class="slide-btn btn-default" onclick="window.location.href='<?php echo Yii::app()->request->baseUrl; ?>/site/services?brokerage'" >READ MORE</button>
-                    </span>
+                      
+                    
+                   <span>
+                       <p>   <button type="button" class="slide-btn btn-default" style="width:160px;margin-top:0px"  data-toggle="modal" data-target="#myModal">Marketing Packages</button> </p> 
+                   </span>
+                   <span>
+                    <button type="button" class="slide-btn btn-default" style="margin-top:0px" onclick="window.location.href='<?php echo Yii::app()->request->baseUrl; ?>/site/services?brokerage'" >READ MORE</button>
+                   </span>
+                                                      
                     </div>
             </li>
             <li>
@@ -341,7 +351,8 @@
 
                  <!--======= SERVICE HOVER =========-->
                  <div class="ser-hover">
-                 <p>Talk to us to sell your property or buy your next property with confidence ! <a href="<?php echo Yii::app()->request->baseUrl; ?>/site/services?brokerage" class="read-more">Read more <i class="fa fa-angle-double-right"></i></a> </p>
+                 <p>Talk to us to sell your property or buy your next property with confidence ! <a href="<?php echo Yii::app()->request->baseUrl; ?>/site/services?brokerage" class="read-more">Read more <i class="fa fa-angle-double-right"></i></a>
+                 </p>
                  </div>
                  <a href="<?php echo Yii::app()->request->baseUrl; ?>/site/services?brokerage" class="heading">Property Brokerage</a> </section>
          </li>

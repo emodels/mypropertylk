@@ -1,6 +1,6 @@
 <div data-id="<?php echo $data->pid; ?>" style="margin-left: 0px; padding-bottom: 10px;" class="container row-fluid span listing-row">
         <div class="span2">
-            <a href="javascript:ViewProperty(<?php echo $data->pid ?>);" title="view property" style="text-decoration: none">
+            <a href="javascript:ViewProperty(<?php echo $data->pid ?>);" title="view property" style="text-decoration: none;color:#04c">
                 <?php
                 $imgname = "";
 
@@ -32,7 +32,7 @@
             </a>
     </div>
     <div class="span5">
-        <a href="javascript:ViewProperty(<?php echo $data->pid ?>);" title="view" style="text-decoration: none">
+        <a href="javascript:ViewProperty(<?php echo $data->pid ?>);" title="view" style="text-decoration: none;color:#04c">
             <div class="listing-Address">
                     <?php
                     if ($data->hidestreetaddress != 1) {
@@ -93,7 +93,7 @@
     </div>
     <div class="span2" style="padding-top: 10px;">
         <div class="listing-small">
-            <a href="javascript:ViewProperty(<?php echo $data->pid ?>);" title="view property" style="text-decoration: none">
+            <a href="javascript:ViewProperty(<?php echo $data->pid ?>);" title="view property" style="text-decoration: none;color:#04c">
                 Property No : <?php echo $data->pid ?>
             </a>
         </div>
@@ -149,10 +149,12 @@
                 }
                 ?>
             </a>
-            <a href="javascript:ViewProperty(<?php echo $data->pid ?>);" title="view" style="text-decoration: none"><i class="icon-eye-open icon_gap"></i></a>
-            <a href="<?php echo Yii::app()->request->baseUrl .'/property/editproperty?pid='. $data->pid ;?>" title="edit" style="text-decoration: none"> <i class="icon-edit icon_gap"></i></a>
-            <a href="javascript:Delete_Property(<?php echo $data->pid; ?>);" title="delete" style="text-decoration: none"><i class="icon-trash icon_gap"></i></a>
-        </div>
+            
+            <a href="javascript:ViewProperty(<?php echo $data->pid ?>);" title="view" style="text-decoration: none; color:#04c"><i class="icon-eye-open icon_gap"></i></a>
+            <a href="<?php echo Yii::app()->request->baseUrl .'/property/editproperty?pid='. $data->pid ;?>" title="edit" style="text-decoration: none;color:#04c"> <i class="icon-edit icon_gap"></i></a>
+            <a href="javascript:Delete_Property(<?php echo $data->pid; ?>);" title="delete" style="text-decoration: none;color:#04c"><i class="icon-trash icon_gap"></i></a>
+            
+            </div>
         <div class="listing-btn" style="margin: 10px 0;">
             <?php if ($data->status == 0 || $data->status == 1) { ?>
                    <a class="btn btn-danger" href="javascript:PropertySold(<?php echo $data->pid; ?>);" style="width: 125px;"><i class="icon-bookmark icon_gap"></i>Mark as Sold</a>

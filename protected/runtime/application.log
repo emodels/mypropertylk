@@ -6998,3 +6998,1552 @@ REQUEST_URI=/mypropertylk/admin/editlandingpage/id/11
 in C:\xampp\htdocs\mypropertylk\protected\controllers\Admin\EditLandingpageAction.php (38)
 in C:\xampp\htdocs\mypropertylk\protected\controllers\AdminController.php (61)
 in C:\xampp\htdocs\mypropertylk\index.php (15)
+2016/06/09 09:59:20 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "upload/propertyimages/image_87_1_1411448128.jpg".' in C:\xampp\htdocs\mypropertylk\protected\framework\web\CWebApplication.php:280
+Stack trace:
+#0 C:\xampp\htdocs\mypropertylk\protected\framework\web\CWebApplication.php(135): CWebApplication->runController('upload/property...')
+#1 C:\xampp\htdocs\mypropertylk\protected\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\mypropertylk\index.php(15): CApplication->run()
+#3 {main}
+REQUEST_URI=/mypropertylk/upload/propertyimages/image_87_1_1411448128.jpg
+HTTP_REFERER=http://localhost:81/mypropertylk/property/propertylisting?type=1
+---
+2016/06/09 09:59:20 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "upload/propertyimages/image_89_1_1411448132.jpg".' in C:\xampp\htdocs\mypropertylk\protected\framework\web\CWebApplication.php:280
+Stack trace:
+#0 C:\xampp\htdocs\mypropertylk\protected\framework\web\CWebApplication.php(135): CWebApplication->runController('upload/property...')
+#1 C:\xampp\htdocs\mypropertylk\protected\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\mypropertylk\index.php(15): CApplication->run()
+#3 {main}
+REQUEST_URI=/mypropertylk/upload/propertyimages/image_89_1_1411448132.jpg
+HTTP_REFERER=http://localhost:81/mypropertylk/property/propertylisting?type=1
+---
+2016/06/09 09:59:20 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "upload/propertyimages/image_86_1_1411448125.jpg".' in C:\xampp\htdocs\mypropertylk\protected\framework\web\CWebApplication.php:280
+Stack trace:
+#0 C:\xampp\htdocs\mypropertylk\protected\framework\web\CWebApplication.php(135): CWebApplication->runController('upload/property...')
+#1 C:\xampp\htdocs\mypropertylk\protected\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\mypropertylk\index.php(15): CApplication->run()
+#3 {main}
+REQUEST_URI=/mypropertylk/upload/propertyimages/image_86_1_1411448125.jpg
+HTTP_REFERER=http://localhost:81/mypropertylk/property/propertylisting?type=1
+---
+2016/06/09 09:59:23 [error] [system.db.CDbCommand] CDbCommand::fetchAll() failed: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'mypropertylk.landingpage' doesn't exist. The SQL statement executed was: SHOW COLUMNS FROM `landingpage`.
+in C:\xampp\htdocs\mypropertylk\protected\views\admin\landingpage.php (50)
+in C:\xampp\htdocs\mypropertylk\protected\controllers\Admin\LandingpageAction.php (28)
+in C:\xampp\htdocs\mypropertylk\protected\controllers\AdminController.php (61)
+2016/06/09 09:59:23 [error] [exception.CDbException] exception 'CDbException' with message 'The table "landingpage" for active record class "Landingpage" cannot be found in the database.' in C:\xampp\htdocs\mypropertylk\protected\framework\db\ar\CActiveRecord.php:2264
+Stack trace:
+#0 C:\xampp\htdocs\mypropertylk\protected\framework\db\ar\CActiveRecord.php(379): CActiveRecordMetaData->__construct(Object(Landingpage))
+#1 C:\xampp\htdocs\mypropertylk\protected\framework\web\CActiveDataProvider.php(75): CActiveRecord::model('Landingpage')
+#2 C:\xampp\htdocs\mypropertylk\protected\views\admin\landingpage.php(50): CActiveDataProvider->__construct('Landingpage', Array)
+#3 C:\xampp\htdocs\mypropertylk\protected\framework\web\CBaseController.php(127): require('C:\\xampp\\htdocs...')
+#4 C:\xampp\htdocs\mypropertylk\protected\framework\web\CBaseController.php(96): CBaseController->renderInternal('C:\\xampp\\htdocs...', Array, true)
+#5 C:\xampp\htdocs\mypropertylk\protected\framework\web\CController.php(870): CBaseController->renderFile('C:\\xampp\\htdocs...', Array, true)
+#6 C:\xampp\htdocs\mypropertylk\protected\framework\web\CController.php(783): CController->renderPartial('landingpage', Array, true)
+#7 C:\xampp\htdocs\mypropertylk\protected\controllers\Admin\LandingpageAction.php(28): CController->render('landingpage', Array)
+#8 C:\xampp\htdocs\mypropertylk\protected\framework\web\actions\CAction.php(75): LandingpageAction->run()
+#9 C:\xampp\htdocs\mypropertylk\protected\framework\web\CController.php(309): CAction->runWithParams(Array)
+#10 C:\xampp\htdocs\mypropertylk\protected\framework\web\filters\CFilterChain.php(134): CController->runAction(Object(LandingpageAction))
+#11 C:\xampp\htdocs\mypropertylk\protected\controllers\AdminController.php(61): CFilterChain->run()
+#12 C:\xampp\htdocs\mypropertylk\protected\framework\web\filters\CInlineFilter.php(59): AdminController->filterAccessControl(Object(CFilterChain))
+#13 C:\xampp\htdocs\mypropertylk\protected\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#14 C:\xampp\htdocs\mypropertylk\protected\framework\web\CController.php(292): CFilterChain->run()
+#15 C:\xampp\htdocs\mypropertylk\protected\framework\web\CController.php(266): CController->runActionWithFilters(Object(LandingpageAction), Array)
+#16 C:\xampp\htdocs\mypropertylk\protected\framework\web\CWebApplication.php(276): CController->run('landingpages')
+#17 C:\xampp\htdocs\mypropertylk\protected\framework\web\CWebApplication.php(135): CWebApplication->runController('admin/landingpa...')
+#18 C:\xampp\htdocs\mypropertylk\protected\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#19 C:\xampp\htdocs\mypropertylk\index.php(15): CApplication->run()
+#20 {main}
+REQUEST_URI=/mypropertylk/admin/landingpages
+HTTP_REFERER=http://localhost:81/mypropertylk/property/propertylisting?type=1
+---
+2016/06/09 09:59:35 [error] [system.db.CDbCommand] CDbCommand::fetchAll() failed: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'mypropertylk.landingpage' doesn't exist. The SQL statement executed was: SHOW COLUMNS FROM `landingpage`.
+in C:\xampp\htdocs\mypropertylk\protected\views\admin\landingpage.php (50)
+in C:\xampp\htdocs\mypropertylk\protected\controllers\Admin\LandingpageAction.php (28)
+in C:\xampp\htdocs\mypropertylk\protected\controllers\AdminController.php (61)
+2016/06/09 09:59:35 [error] [exception.CDbException] exception 'CDbException' with message 'The table "landingpage" for active record class "Landingpage" cannot be found in the database.' in C:\xampp\htdocs\mypropertylk\protected\framework\db\ar\CActiveRecord.php:2264
+Stack trace:
+#0 C:\xampp\htdocs\mypropertylk\protected\framework\db\ar\CActiveRecord.php(379): CActiveRecordMetaData->__construct(Object(Landingpage))
+#1 C:\xampp\htdocs\mypropertylk\protected\framework\web\CActiveDataProvider.php(75): CActiveRecord::model('Landingpage')
+#2 C:\xampp\htdocs\mypropertylk\protected\views\admin\landingpage.php(50): CActiveDataProvider->__construct('Landingpage', Array)
+#3 C:\xampp\htdocs\mypropertylk\protected\framework\web\CBaseController.php(127): require('C:\\xampp\\htdocs...')
+#4 C:\xampp\htdocs\mypropertylk\protected\framework\web\CBaseController.php(96): CBaseController->renderInternal('C:\\xampp\\htdocs...', Array, true)
+#5 C:\xampp\htdocs\mypropertylk\protected\framework\web\CController.php(870): CBaseController->renderFile('C:\\xampp\\htdocs...', Array, true)
+#6 C:\xampp\htdocs\mypropertylk\protected\framework\web\CController.php(783): CController->renderPartial('landingpage', Array, true)
+#7 C:\xampp\htdocs\mypropertylk\protected\controllers\Admin\LandingpageAction.php(28): CController->render('landingpage', Array)
+#8 C:\xampp\htdocs\mypropertylk\protected\framework\web\actions\CAction.php(75): LandingpageAction->run()
+#9 C:\xampp\htdocs\mypropertylk\protected\framework\web\CController.php(309): CAction->runWithParams(Array)
+#10 C:\xampp\htdocs\mypropertylk\protected\framework\web\filters\CFilterChain.php(134): CController->runAction(Object(LandingpageAction))
+#11 C:\xampp\htdocs\mypropertylk\protected\controllers\AdminController.php(61): CFilterChain->run()
+#12 C:\xampp\htdocs\mypropertylk\protected\framework\web\filters\CInlineFilter.php(59): AdminController->filterAccessControl(Object(CFilterChain))
+#13 C:\xampp\htdocs\mypropertylk\protected\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#14 C:\xampp\htdocs\mypropertylk\protected\framework\web\CController.php(292): CFilterChain->run()
+#15 C:\xampp\htdocs\mypropertylk\protected\framework\web\CController.php(266): CController->runActionWithFilters(Object(LandingpageAction), Array)
+#16 C:\xampp\htdocs\mypropertylk\protected\framework\web\CWebApplication.php(276): CController->run('landingpages')
+#17 C:\xampp\htdocs\mypropertylk\protected\framework\web\CWebApplication.php(135): CWebApplication->runController('admin/landingpa...')
+#18 C:\xampp\htdocs\mypropertylk\protected\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#19 C:\xampp\htdocs\mypropertylk\index.php(15): CApplication->run()
+#20 {main}
+REQUEST_URI=/mypropertylk/admin/landingpages
+HTTP_REFERER=http://localhost:81/mypropertylk/property/propertylisting?type=1
+---
+2016/06/09 09:59:40 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "index".' in C:\xampp\htdocs\mypropertylk\protected\framework\web\CController.php:484
+Stack trace:
+#0 C:\xampp\htdocs\mypropertylk\protected\framework\web\CController.php(271): CController->missingAction('')
+#1 C:\xampp\htdocs\mypropertylk\protected\framework\web\CWebApplication.php(276): CController->run('')
+#2 C:\xampp\htdocs\mypropertylk\protected\framework\web\CWebApplication.php(135): CWebApplication->runController('admin')
+#3 C:\xampp\htdocs\mypropertylk\protected\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\mypropertylk\index.php(15): CApplication->run()
+#5 {main}
+REQUEST_URI=/mypropertylk/admin/
+---
+2016/06/09 09:59:40 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "images".' in C:\xampp\htdocs\mypropertylk\protected\framework\web\CController.php:484
+Stack trace:
+#0 C:\xampp\htdocs\mypropertylk\protected\framework\web\CController.php(271): CController->missingAction('images')
+#1 C:\xampp\htdocs\mypropertylk\protected\framework\web\CWebApplication.php(276): CController->run('images')
+#2 C:\xampp\htdocs\mypropertylk\protected\framework\web\CWebApplication.php(135): CWebApplication->runController('admin/images/na...')
+#3 C:\xampp\htdocs\mypropertylk\protected\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\mypropertylk\index.php(15): CApplication->run()
+#5 {main}
+REQUEST_URI=/mypropertylk/admin/images/nav-head.png
+HTTP_REFERER=http://localhost:81/mypropertylk/admin/
+---
+2016/06/09 10:00:06 [error] [system.db.CDbCommand] CDbCommand::fetchAll() failed: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'mypropertylk.landingpage' doesn't exist. The SQL statement executed was: SHOW COLUMNS FROM `landingpage`.
+in C:\xampp\htdocs\mypropertylk\protected\views\admin\landingpage.php (50)
+in C:\xampp\htdocs\mypropertylk\protected\controllers\Admin\LandingpageAction.php (28)
+in C:\xampp\htdocs\mypropertylk\protected\controllers\AdminController.php (61)
+2016/06/09 10:00:06 [error] [exception.CDbException] exception 'CDbException' with message 'The table "landingpage" for active record class "Landingpage" cannot be found in the database.' in C:\xampp\htdocs\mypropertylk\protected\framework\db\ar\CActiveRecord.php:2264
+Stack trace:
+#0 C:\xampp\htdocs\mypropertylk\protected\framework\db\ar\CActiveRecord.php(379): CActiveRecordMetaData->__construct(Object(Landingpage))
+#1 C:\xampp\htdocs\mypropertylk\protected\framework\web\CActiveDataProvider.php(75): CActiveRecord::model('Landingpage')
+#2 C:\xampp\htdocs\mypropertylk\protected\views\admin\landingpage.php(50): CActiveDataProvider->__construct('Landingpage', Array)
+#3 C:\xampp\htdocs\mypropertylk\protected\framework\web\CBaseController.php(127): require('C:\\xampp\\htdocs...')
+#4 C:\xampp\htdocs\mypropertylk\protected\framework\web\CBaseController.php(96): CBaseController->renderInternal('C:\\xampp\\htdocs...', Array, true)
+#5 C:\xampp\htdocs\mypropertylk\protected\framework\web\CController.php(870): CBaseController->renderFile('C:\\xampp\\htdocs...', Array, true)
+#6 C:\xampp\htdocs\mypropertylk\protected\framework\web\CController.php(783): CController->renderPartial('landingpage', Array, true)
+#7 C:\xampp\htdocs\mypropertylk\protected\controllers\Admin\LandingpageAction.php(28): CController->render('landingpage', Array)
+#8 C:\xampp\htdocs\mypropertylk\protected\framework\web\actions\CAction.php(75): LandingpageAction->run()
+#9 C:\xampp\htdocs\mypropertylk\protected\framework\web\CController.php(309): CAction->runWithParams(Array)
+#10 C:\xampp\htdocs\mypropertylk\protected\framework\web\filters\CFilterChain.php(134): CController->runAction(Object(LandingpageAction))
+#11 C:\xampp\htdocs\mypropertylk\protected\controllers\AdminController.php(61): CFilterChain->run()
+#12 C:\xampp\htdocs\mypropertylk\protected\framework\web\filters\CInlineFilter.php(59): AdminController->filterAccessControl(Object(CFilterChain))
+#13 C:\xampp\htdocs\mypropertylk\protected\framework\web\filters\CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#14 C:\xampp\htdocs\mypropertylk\protected\framework\web\CController.php(292): CFilterChain->run()
+#15 C:\xampp\htdocs\mypropertylk\protected\framework\web\CController.php(266): CController->runActionWithFilters(Object(LandingpageAction), Array)
+#16 C:\xampp\htdocs\mypropertylk\protected\framework\web\CWebApplication.php(276): CController->run('landingpages')
+#17 C:\xampp\htdocs\mypropertylk\protected\framework\web\CWebApplication.php(135): CWebApplication->runController('admin/landingpa...')
+#18 C:\xampp\htdocs\mypropertylk\protected\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#19 C:\xampp\htdocs\mypropertylk\index.php(15): CApplication->run()
+#20 {main}
+REQUEST_URI=/mypropertylk/admin/landingpages
+HTTP_REFERER=http://localhost:81/mypropertylk/admin/home
+---
+2016/06/15 12:58:48 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "images".' in C:\xampp\htdocs\mypropertylk\protected\framework\web\CController.php:484
+Stack trace:
+#0 C:\xampp\htdocs\mypropertylk\protected\framework\web\CController.php(271): CController->missingAction('images')
+#1 C:\xampp\htdocs\mypropertylk\protected\framework\web\CWebApplication.php(276): CController->run('images')
+#2 C:\xampp\htdocs\mypropertylk\protected\framework\web\CWebApplication.php(135): CWebApplication->runController('site/images/nav...')
+#3 C:\xampp\htdocs\mypropertylk\protected\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\mypropertylk\index.php(15): CApplication->run()
+#5 {main}
+REQUEST_URI=/mypropertylk/site/images/nav-head.png
+HTTP_REFERER=http://localhost:81/mypropertylk/site/contact
+---
+2016/06/15 12:59:36 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "images".' in C:\xampp\htdocs\mypropertylk\protected\framework\web\CController.php:484
+Stack trace:
+#0 C:\xampp\htdocs\mypropertylk\protected\framework\web\CController.php(271): CController->missingAction('images')
+#1 C:\xampp\htdocs\mypropertylk\protected\framework\web\CWebApplication.php(276): CController->run('images')
+#2 C:\xampp\htdocs\mypropertylk\protected\framework\web\CWebApplication.php(135): CWebApplication->runController('list/images/nav...')
+#3 C:\xampp\htdocs\mypropertylk\protected\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\mypropertylk\index.php(15): CApplication->run()
+#5 {main}
+REQUEST_URI=/mypropertylk/list/images/nav-head.png
+HTTP_REFERER=http://localhost:81/mypropertylk/list/Overseas_Investments
+---
+2016/06/15 13:00:40 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "upload/propertyimages/image_89_1_1411448132.jpg".' in C:\xampp\htdocs\mypropertylk\protected\framework\web\CWebApplication.php:280
+Stack trace:
+#0 C:\xampp\htdocs\mypropertylk\protected\framework\web\CWebApplication.php(135): CWebApplication->runController('upload/property...')
+#1 C:\xampp\htdocs\mypropertylk\protected\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\mypropertylk\index.php(15): CApplication->run()
+#3 {main}
+REQUEST_URI=/mypropertylk/upload/propertyimages/image_89_1_1411448132.jpg
+HTTP_REFERER=http://localhost:81/mypropertylk/property/propertylisting?type=0
+---
+2016/06/15 13:00:40 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "upload/propertyimages/image_88_1_1411448131.jpg".' in C:\xampp\htdocs\mypropertylk\protected\framework\web\CWebApplication.php:280
+Stack trace:
+#0 C:\xampp\htdocs\mypropertylk\protected\framework\web\CWebApplication.php(135): CWebApplication->runController('upload/property...')
+#1 C:\xampp\htdocs\mypropertylk\protected\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\mypropertylk\index.php(15): CApplication->run()
+#3 {main}
+REQUEST_URI=/mypropertylk/upload/propertyimages/image_88_1_1411448131.jpg
+HTTP_REFERER=http://localhost:81/mypropertylk/property/propertylisting?type=0
+---
+2016/06/15 13:00:40 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "upload/propertyimages/image_87_1_1411448128.jpg".' in C:\xampp\htdocs\mypropertylk\protected\framework\web\CWebApplication.php:280
+Stack trace:
+#0 C:\xampp\htdocs\mypropertylk\protected\framework\web\CWebApplication.php(135): CWebApplication->runController('upload/property...')
+#1 C:\xampp\htdocs\mypropertylk\protected\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\mypropertylk\index.php(15): CApplication->run()
+#3 {main}
+REQUEST_URI=/mypropertylk/upload/propertyimages/image_87_1_1411448128.jpg
+HTTP_REFERER=http://localhost:81/mypropertylk/property/propertylisting?type=0
+---
+2016/06/15 13:00:40 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "upload/propertyimages/image_86_1_1411448125.jpg".' in C:\xampp\htdocs\mypropertylk\protected\framework\web\CWebApplication.php:280
+Stack trace:
+#0 C:\xampp\htdocs\mypropertylk\protected\framework\web\CWebApplication.php(135): CWebApplication->runController('upload/property...')
+#1 C:\xampp\htdocs\mypropertylk\protected\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\mypropertylk\index.php(15): CApplication->run()
+#3 {main}
+REQUEST_URI=/mypropertylk/upload/propertyimages/image_86_1_1411448125.jpg
+HTTP_REFERER=http://localhost:81/mypropertylk/property/propertylisting?type=0
+---
+2016/06/15 13:01:25 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "upload/propertyimages/image_89_1_1411448132.jpg".' in C:\xampp\htdocs\mypropertylk\protected\framework\web\CWebApplication.php:280
+Stack trace:
+#0 C:\xampp\htdocs\mypropertylk\protected\framework\web\CWebApplication.php(135): CWebApplication->runController('upload/property...')
+#1 C:\xampp\htdocs\mypropertylk\protected\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\mypropertylk\index.php(15): CApplication->run()
+#3 {main}
+REQUEST_URI=/mypropertylk/upload/propertyimages/image_89_1_1411448132.jpg
+HTTP_REFERER=http://localhost:81/mypropertylk/property/propertylisting?type=0
+---
+2016/06/15 13:01:25 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "upload/propertyimages/image_88_1_1411448131.jpg".' in C:\xampp\htdocs\mypropertylk\protected\framework\web\CWebApplication.php:280
+Stack trace:
+#0 C:\xampp\htdocs\mypropertylk\protected\framework\web\CWebApplication.php(135): CWebApplication->runController('upload/property...')
+#1 C:\xampp\htdocs\mypropertylk\protected\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\mypropertylk\index.php(15): CApplication->run()
+#3 {main}
+REQUEST_URI=/mypropertylk/upload/propertyimages/image_88_1_1411448131.jpg
+HTTP_REFERER=http://localhost:81/mypropertylk/property/propertylisting?type=0
+---
+2016/06/15 13:01:25 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "upload/propertyimages/image_87_1_1411448128.jpg".' in C:\xampp\htdocs\mypropertylk\protected\framework\web\CWebApplication.php:280
+Stack trace:
+#0 C:\xampp\htdocs\mypropertylk\protected\framework\web\CWebApplication.php(135): CWebApplication->runController('upload/property...')
+#1 C:\xampp\htdocs\mypropertylk\protected\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\mypropertylk\index.php(15): CApplication->run()
+#3 {main}
+REQUEST_URI=/mypropertylk/upload/propertyimages/image_87_1_1411448128.jpg
+HTTP_REFERER=http://localhost:81/mypropertylk/property/propertylisting?type=0
+---
+2016/06/15 13:01:25 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "upload/propertyimages/image_86_1_1411448125.jpg".' in C:\xampp\htdocs\mypropertylk\protected\framework\web\CWebApplication.php:280
+Stack trace:
+#0 C:\xampp\htdocs\mypropertylk\protected\framework\web\CWebApplication.php(135): CWebApplication->runController('upload/property...')
+#1 C:\xampp\htdocs\mypropertylk\protected\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\mypropertylk\index.php(15): CApplication->run()
+#3 {main}
+REQUEST_URI=/mypropertylk/upload/propertyimages/image_86_1_1411448125.jpg
+HTTP_REFERER=http://localhost:81/mypropertylk/property/propertylisting?type=0
+---
+2016/06/15 13:01:25 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "upload/propertyimages/image_89_1_1411448132.jpg".' in C:\xampp\htdocs\mypropertylk\protected\framework\web\CWebApplication.php:280
+Stack trace:
+#0 C:\xampp\htdocs\mypropertylk\protected\framework\web\CWebApplication.php(135): CWebApplication->runController('upload/property...')
+#1 C:\xampp\htdocs\mypropertylk\protected\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\mypropertylk\index.php(15): CApplication->run()
+#3 {main}
+REQUEST_URI=/mypropertylk/upload/propertyimages/image_89_1_1411448132.jpg
+HTTP_REFERER=http://localhost:81/mypropertylk/property/propertylisting?type=0
+---
+2016/06/23 06:45:22 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "images".' in C:\xampp\htdocs\mypropertylk\protected\framework\web\CController.php:484
+Stack trace:
+#0 C:\xampp\htdocs\mypropertylk\protected\framework\web\CController.php(271): CController->missingAction('images')
+#1 C:\xampp\htdocs\mypropertylk\protected\framework\web\CWebApplication.php(276): CController->run('images')
+#2 C:\xampp\htdocs\mypropertylk\protected\framework\web\CWebApplication.php(135): CWebApplication->runController('site/images/nav...')
+#3 C:\xampp\htdocs\mypropertylk\protected\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\mypropertylk\index.php(15): CApplication->run()
+#5 {main}
+REQUEST_URI=/mypropertylk/site/images/nav-head.png
+HTTP_REFERER=http://localhost:81/mypropertylk/site/services?brokerage
+---
+2016/06/23 08:26:54 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "images".' in C:\xampp\htdocs\mypropertylk\protected\framework\web\CController.php:484
+Stack trace:
+#0 C:\xampp\htdocs\mypropertylk\protected\framework\web\CController.php(271): CController->missingAction('images')
+#1 C:\xampp\htdocs\mypropertylk\protected\framework\web\CWebApplication.php(276): CController->run('images')
+#2 C:\xampp\htdocs\mypropertylk\protected\framework\web\CWebApplication.php(135): CWebApplication->runController('site/images/nav...')
+#3 C:\xampp\htdocs\mypropertylk\protected\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\mypropertylk\index.php(15): CApplication->run()
+#5 {main}
+REQUEST_URI=/mypropertylk/site/images/nav-head.png
+HTTP_REFERER=http://localhost:81/mypropertylk/site/services
+---
+2016/06/23 08:30:31 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "images".' in C:\xampp\htdocs\mypropertylk\protected\framework\web\CController.php:484
+Stack trace:
+#0 C:\xampp\htdocs\mypropertylk\protected\framework\web\CController.php(271): CController->missingAction('images')
+#1 C:\xampp\htdocs\mypropertylk\protected\framework\web\CWebApplication.php(276): CController->run('images')
+#2 C:\xampp\htdocs\mypropertylk\protected\framework\web\CWebApplication.php(135): CWebApplication->runController('site/images/nav...')
+#3 C:\xampp\htdocs\mypropertylk\protected\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\mypropertylk\index.php(15): CApplication->run()
+#5 {main}
+REQUEST_URI=/mypropertylk/site/images/nav-head.png
+HTTP_REFERER=http://localhost:81/mypropertylk/site/services
+---
+2016/06/23 08:37:34 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "images".' in C:\xampp\htdocs\mypropertylk\protected\framework\web\CController.php:484
+Stack trace:
+#0 C:\xampp\htdocs\mypropertylk\protected\framework\web\CController.php(271): CController->missingAction('images')
+#1 C:\xampp\htdocs\mypropertylk\protected\framework\web\CWebApplication.php(276): CController->run('images')
+#2 C:\xampp\htdocs\mypropertylk\protected\framework\web\CWebApplication.php(135): CWebApplication->runController('site/images/nav...')
+#3 C:\xampp\htdocs\mypropertylk\protected\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\mypropertylk\index.php(15): CApplication->run()
+#5 {main}
+REQUEST_URI=/mypropertylk/site/images/nav-head.png
+HTTP_REFERER=http://localhost:81/mypropertylk/site/services
+---
+2016/06/23 08:37:34 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "images".' in C:\xampp\htdocs\mypropertylk\protected\framework\web\CController.php:484
+Stack trace:
+#0 C:\xampp\htdocs\mypropertylk\protected\framework\web\CController.php(271): CController->missingAction('images')
+#1 C:\xampp\htdocs\mypropertylk\protected\framework\web\CWebApplication.php(276): CController->run('images')
+#2 C:\xampp\htdocs\mypropertylk\protected\framework\web\CWebApplication.php(135): CWebApplication->runController('site/images/nav...')
+#3 C:\xampp\htdocs\mypropertylk\protected\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\mypropertylk\index.php(15): CApplication->run()
+#5 {main}
+REQUEST_URI=/mypropertylk/site/images/nav-head.png
+HTTP_REFERER=http://localhost:81/mypropertylk/site/services
+---
+2016/06/23 08:41:28 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "images".' in C:\xampp\htdocs\mypropertylk\protected\framework\web\CController.php:484
+Stack trace:
+#0 C:\xampp\htdocs\mypropertylk\protected\framework\web\CController.php(271): CController->missingAction('images')
+#1 C:\xampp\htdocs\mypropertylk\protected\framework\web\CWebApplication.php(276): CController->run('images')
+#2 C:\xampp\htdocs\mypropertylk\protected\framework\web\CWebApplication.php(135): CWebApplication->runController('site/images/nav...')
+#3 C:\xampp\htdocs\mypropertylk\protected\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\mypropertylk\index.php(15): CApplication->run()
+#5 {main}
+REQUEST_URI=/mypropertylk/site/images/nav-head.png
+HTTP_REFERER=http://localhost:81/mypropertylk/site/services
+---
+2016/06/23 08:44:20 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "images".' in C:\xampp\htdocs\mypropertylk\protected\framework\web\CController.php:484
+Stack trace:
+#0 C:\xampp\htdocs\mypropertylk\protected\framework\web\CController.php(271): CController->missingAction('images')
+#1 C:\xampp\htdocs\mypropertylk\protected\framework\web\CWebApplication.php(276): CController->run('images')
+#2 C:\xampp\htdocs\mypropertylk\protected\framework\web\CWebApplication.php(135): CWebApplication->runController('site/images/nav...')
+#3 C:\xampp\htdocs\mypropertylk\protected\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\mypropertylk\index.php(15): CApplication->run()
+#5 {main}
+REQUEST_URI=/mypropertylk/site/images/nav-head.png
+HTTP_REFERER=http://localhost:81/mypropertylk/site/services
+---
+2016/06/23 09:11:34 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "images".' in C:\xampp\htdocs\mypropertylk\protected\framework\web\CController.php:484
+Stack trace:
+#0 C:\xampp\htdocs\mypropertylk\protected\framework\web\CController.php(271): CController->missingAction('images')
+#1 C:\xampp\htdocs\mypropertylk\protected\framework\web\CWebApplication.php(276): CController->run('images')
+#2 C:\xampp\htdocs\mypropertylk\protected\framework\web\CWebApplication.php(135): CWebApplication->runController('site/images/nav...')
+#3 C:\xampp\htdocs\mypropertylk\protected\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\mypropertylk\index.php(15): CApplication->run()
+#5 {main}
+REQUEST_URI=/mypropertylk/site/images/nav-head.png
+HTTP_REFERER=http://localhost:81/mypropertylk/site/services
+---
+2016/06/23 09:57:16 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "images".' in C:\xampp\htdocs\mypropertylk\protected\framework\web\CController.php:484
+Stack trace:
+#0 C:\xampp\htdocs\mypropertylk\protected\framework\web\CController.php(271): CController->missingAction('images')
+#1 C:\xampp\htdocs\mypropertylk\protected\framework\web\CWebApplication.php(276): CController->run('images')
+#2 C:\xampp\htdocs\mypropertylk\protected\framework\web\CWebApplication.php(135): CWebApplication->runController('site/images/nav...')
+#3 C:\xampp\htdocs\mypropertylk\protected\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\mypropertylk\index.php(15): CApplication->run()
+#5 {main}
+REQUEST_URI=/mypropertylk/site/images/nav-head.png
+HTTP_REFERER=http://localhost:81/mypropertylk/site/services
+---
+2016/06/23 09:57:55 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "images".' in C:\xampp\htdocs\mypropertylk\protected\framework\web\CController.php:484
+Stack trace:
+#0 C:\xampp\htdocs\mypropertylk\protected\framework\web\CController.php(271): CController->missingAction('images')
+#1 C:\xampp\htdocs\mypropertylk\protected\framework\web\CWebApplication.php(276): CController->run('images')
+#2 C:\xampp\htdocs\mypropertylk\protected\framework\web\CWebApplication.php(135): CWebApplication->runController('site/images/nav...')
+#3 C:\xampp\htdocs\mypropertylk\protected\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\mypropertylk\index.php(15): CApplication->run()
+#5 {main}
+REQUEST_URI=/mypropertylk/site/images/nav-head.png
+HTTP_REFERER=http://localhost:81/mypropertylk/site/services
+---
+2016/06/23 09:58:00 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "images".' in C:\xampp\htdocs\mypropertylk\protected\framework\web\CController.php:484
+Stack trace:
+#0 C:\xampp\htdocs\mypropertylk\protected\framework\web\CController.php(271): CController->missingAction('images')
+#1 C:\xampp\htdocs\mypropertylk\protected\framework\web\CWebApplication.php(276): CController->run('images')
+#2 C:\xampp\htdocs\mypropertylk\protected\framework\web\CWebApplication.php(135): CWebApplication->runController('site/images/nav...')
+#3 C:\xampp\htdocs\mypropertylk\protected\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\mypropertylk\index.php(15): CApplication->run()
+#5 {main}
+REQUEST_URI=/mypropertylk/site/images/nav-head.png
+HTTP_REFERER=http://localhost:81/mypropertylk/site/services
+---
+2016/06/23 10:04:13 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "images".' in C:\xampp\htdocs\mypropertylk\protected\framework\web\CController.php:484
+Stack trace:
+#0 C:\xampp\htdocs\mypropertylk\protected\framework\web\CController.php(271): CController->missingAction('images')
+#1 C:\xampp\htdocs\mypropertylk\protected\framework\web\CWebApplication.php(276): CController->run('images')
+#2 C:\xampp\htdocs\mypropertylk\protected\framework\web\CWebApplication.php(135): CWebApplication->runController('site/images/nav...')
+#3 C:\xampp\htdocs\mypropertylk\protected\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\mypropertylk\index.php(15): CApplication->run()
+#5 {main}
+REQUEST_URI=/mypropertylk/site/images/nav-head.png
+HTTP_REFERER=http://localhost:81/mypropertylk/site/services
+---
+2016/06/23 10:04:18 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "images".' in C:\xampp\htdocs\mypropertylk\protected\framework\web\CController.php:484
+Stack trace:
+#0 C:\xampp\htdocs\mypropertylk\protected\framework\web\CController.php(271): CController->missingAction('images')
+#1 C:\xampp\htdocs\mypropertylk\protected\framework\web\CWebApplication.php(276): CController->run('images')
+#2 C:\xampp\htdocs\mypropertylk\protected\framework\web\CWebApplication.php(135): CWebApplication->runController('site/images/nav...')
+#3 C:\xampp\htdocs\mypropertylk\protected\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\mypropertylk\index.php(15): CApplication->run()
+#5 {main}
+REQUEST_URI=/mypropertylk/site/images/nav-head.png
+HTTP_REFERER=http://localhost:81/mypropertylk/site/services
+---
+2016/06/23 10:05:16 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "images".' in C:\xampp\htdocs\mypropertylk\protected\framework\web\CController.php:484
+Stack trace:
+#0 C:\xampp\htdocs\mypropertylk\protected\framework\web\CController.php(271): CController->missingAction('images')
+#1 C:\xampp\htdocs\mypropertylk\protected\framework\web\CWebApplication.php(276): CController->run('images')
+#2 C:\xampp\htdocs\mypropertylk\protected\framework\web\CWebApplication.php(135): CWebApplication->runController('site/images/nav...')
+#3 C:\xampp\htdocs\mypropertylk\protected\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\mypropertylk\index.php(15): CApplication->run()
+#5 {main}
+REQUEST_URI=/mypropertylk/site/images/nav-head.png
+HTTP_REFERER=http://localhost:81/mypropertylk/site/services
+---
+2016/06/23 10:05:48 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "images".' in C:\xampp\htdocs\mypropertylk\protected\framework\web\CController.php:484
+Stack trace:
+#0 C:\xampp\htdocs\mypropertylk\protected\framework\web\CController.php(271): CController->missingAction('images')
+#1 C:\xampp\htdocs\mypropertylk\protected\framework\web\CWebApplication.php(276): CController->run('images')
+#2 C:\xampp\htdocs\mypropertylk\protected\framework\web\CWebApplication.php(135): CWebApplication->runController('site/images/nav...')
+#3 C:\xampp\htdocs\mypropertylk\protected\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\mypropertylk\index.php(15): CApplication->run()
+#5 {main}
+REQUEST_URI=/mypropertylk/site/images/nav-head.png
+HTTP_REFERER=http://localhost:81/mypropertylk/site/services
+---
+2016/06/23 10:05:48 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "images".' in C:\xampp\htdocs\mypropertylk\protected\framework\web\CController.php:484
+Stack trace:
+#0 C:\xampp\htdocs\mypropertylk\protected\framework\web\CController.php(271): CController->missingAction('images')
+#1 C:\xampp\htdocs\mypropertylk\protected\framework\web\CWebApplication.php(276): CController->run('images')
+#2 C:\xampp\htdocs\mypropertylk\protected\framework\web\CWebApplication.php(135): CWebApplication->runController('site/images/nav...')
+#3 C:\xampp\htdocs\mypropertylk\protected\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\mypropertylk\index.php(15): CApplication->run()
+#5 {main}
+REQUEST_URI=/mypropertylk/site/images/nav-head.png
+HTTP_REFERER=http://localhost:81/mypropertylk/site/services
+---
+2016/06/23 10:33:11 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "images".' in C:\xampp\htdocs\mypropertylk\protected\framework\web\CController.php:484
+Stack trace:
+#0 C:\xampp\htdocs\mypropertylk\protected\framework\web\CController.php(271): CController->missingAction('images')
+#1 C:\xampp\htdocs\mypropertylk\protected\framework\web\CWebApplication.php(276): CController->run('images')
+#2 C:\xampp\htdocs\mypropertylk\protected\framework\web\CWebApplication.php(135): CWebApplication->runController('site/images/nav...')
+#3 C:\xampp\htdocs\mypropertylk\protected\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\mypropertylk\index.php(15): CApplication->run()
+#5 {main}
+REQUEST_URI=/mypropertylk/site/images/nav-head.png
+HTTP_REFERER=http://localhost:81/mypropertylk/site/services
+---
+2016/06/23 10:37:30 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "images".' in C:\xampp\htdocs\mypropertylk\protected\framework\web\CController.php:484
+Stack trace:
+#0 C:\xampp\htdocs\mypropertylk\protected\framework\web\CController.php(271): CController->missingAction('images')
+#1 C:\xampp\htdocs\mypropertylk\protected\framework\web\CWebApplication.php(276): CController->run('images')
+#2 C:\xampp\htdocs\mypropertylk\protected\framework\web\CWebApplication.php(135): CWebApplication->runController('site/images/nav...')
+#3 C:\xampp\htdocs\mypropertylk\protected\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\mypropertylk\index.php(15): CApplication->run()
+#5 {main}
+REQUEST_URI=/mypropertylk/site/images/nav-head.png
+HTTP_REFERER=http://localhost:81/mypropertylk/site/services
+---
+2016/06/23 10:38:09 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "images".' in C:\xampp\htdocs\mypropertylk\protected\framework\web\CController.php:484
+Stack trace:
+#0 C:\xampp\htdocs\mypropertylk\protected\framework\web\CController.php(271): CController->missingAction('images')
+#1 C:\xampp\htdocs\mypropertylk\protected\framework\web\CWebApplication.php(276): CController->run('images')
+#2 C:\xampp\htdocs\mypropertylk\protected\framework\web\CWebApplication.php(135): CWebApplication->runController('site/images/nav...')
+#3 C:\xampp\htdocs\mypropertylk\protected\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\mypropertylk\index.php(15): CApplication->run()
+#5 {main}
+REQUEST_URI=/mypropertylk/site/images/nav-head.png
+HTTP_REFERER=http://localhost:81/mypropertylk/site/services
+---
+2016/06/23 10:38:56 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "images".' in C:\xampp\htdocs\mypropertylk\protected\framework\web\CController.php:484
+Stack trace:
+#0 C:\xampp\htdocs\mypropertylk\protected\framework\web\CController.php(271): CController->missingAction('images')
+#1 C:\xampp\htdocs\mypropertylk\protected\framework\web\CWebApplication.php(276): CController->run('images')
+#2 C:\xampp\htdocs\mypropertylk\protected\framework\web\CWebApplication.php(135): CWebApplication->runController('site/images/nav...')
+#3 C:\xampp\htdocs\mypropertylk\protected\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\mypropertylk\index.php(15): CApplication->run()
+#5 {main}
+REQUEST_URI=/mypropertylk/site/images/nav-head.png
+HTTP_REFERER=http://localhost:81/mypropertylk/site/services
+---
+2016/06/23 10:39:23 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "images".' in C:\xampp\htdocs\mypropertylk\protected\framework\web\CController.php:484
+Stack trace:
+#0 C:\xampp\htdocs\mypropertylk\protected\framework\web\CController.php(271): CController->missingAction('images')
+#1 C:\xampp\htdocs\mypropertylk\protected\framework\web\CWebApplication.php(276): CController->run('images')
+#2 C:\xampp\htdocs\mypropertylk\protected\framework\web\CWebApplication.php(135): CWebApplication->runController('site/images/nav...')
+#3 C:\xampp\htdocs\mypropertylk\protected\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\mypropertylk\index.php(15): CApplication->run()
+#5 {main}
+REQUEST_URI=/mypropertylk/site/images/nav-head.png
+HTTP_REFERER=http://localhost:81/mypropertylk/site/services
+---
+2016/06/23 10:40:27 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "images".' in C:\xampp\htdocs\mypropertylk\protected\framework\web\CController.php:484
+Stack trace:
+#0 C:\xampp\htdocs\mypropertylk\protected\framework\web\CController.php(271): CController->missingAction('images')
+#1 C:\xampp\htdocs\mypropertylk\protected\framework\web\CWebApplication.php(276): CController->run('images')
+#2 C:\xampp\htdocs\mypropertylk\protected\framework\web\CWebApplication.php(135): CWebApplication->runController('site/images/nav...')
+#3 C:\xampp\htdocs\mypropertylk\protected\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\mypropertylk\index.php(15): CApplication->run()
+#5 {main}
+REQUEST_URI=/mypropertylk/site/images/nav-head.png
+HTTP_REFERER=http://localhost:81/mypropertylk/site/services
+---
+2016/06/23 10:40:27 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "images".' in C:\xampp\htdocs\mypropertylk\protected\framework\web\CController.php:484
+Stack trace:
+#0 C:\xampp\htdocs\mypropertylk\protected\framework\web\CController.php(271): CController->missingAction('images')
+#1 C:\xampp\htdocs\mypropertylk\protected\framework\web\CWebApplication.php(276): CController->run('images')
+#2 C:\xampp\htdocs\mypropertylk\protected\framework\web\CWebApplication.php(135): CWebApplication->runController('site/images/nav...')
+#3 C:\xampp\htdocs\mypropertylk\protected\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\mypropertylk\index.php(15): CApplication->run()
+#5 {main}
+REQUEST_URI=/mypropertylk/site/images/nav-head.png
+HTTP_REFERER=http://localhost:81/mypropertylk/site/services
+---
+2016/06/23 10:41:18 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "images".' in C:\xampp\htdocs\mypropertylk\protected\framework\web\CController.php:484
+Stack trace:
+#0 C:\xampp\htdocs\mypropertylk\protected\framework\web\CController.php(271): CController->missingAction('images')
+#1 C:\xampp\htdocs\mypropertylk\protected\framework\web\CWebApplication.php(276): CController->run('images')
+#2 C:\xampp\htdocs\mypropertylk\protected\framework\web\CWebApplication.php(135): CWebApplication->runController('site/images/nav...')
+#3 C:\xampp\htdocs\mypropertylk\protected\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\mypropertylk\index.php(15): CApplication->run()
+#5 {main}
+REQUEST_URI=/mypropertylk/site/images/nav-head.png
+HTTP_REFERER=http://localhost:81/mypropertylk/site/services
+---
+2016/06/23 10:43:32 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "images".' in C:\xampp\htdocs\mypropertylk\protected\framework\web\CController.php:484
+Stack trace:
+#0 C:\xampp\htdocs\mypropertylk\protected\framework\web\CController.php(271): CController->missingAction('images')
+#1 C:\xampp\htdocs\mypropertylk\protected\framework\web\CWebApplication.php(276): CController->run('images')
+#2 C:\xampp\htdocs\mypropertylk\protected\framework\web\CWebApplication.php(135): CWebApplication->runController('site/images/nav...')
+#3 C:\xampp\htdocs\mypropertylk\protected\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\mypropertylk\index.php(15): CApplication->run()
+#5 {main}
+REQUEST_URI=/mypropertylk/site/images/nav-head.png
+HTTP_REFERER=http://localhost:81/mypropertylk/site/services
+---
+2016/06/23 11:31:47 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "images".' in C:\xampp\htdocs\mypropertylk\protected\framework\web\CController.php:484
+Stack trace:
+#0 C:\xampp\htdocs\mypropertylk\protected\framework\web\CController.php(271): CController->missingAction('images')
+#1 C:\xampp\htdocs\mypropertylk\protected\framework\web\CWebApplication.php(276): CController->run('images')
+#2 C:\xampp\htdocs\mypropertylk\protected\framework\web\CWebApplication.php(135): CWebApplication->runController('site/images/nav...')
+#3 C:\xampp\htdocs\mypropertylk\protected\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\mypropertylk\index.php(15): CApplication->run()
+#5 {main}
+REQUEST_URI=/mypropertylk/site/images/nav-head.png
+HTTP_REFERER=http://localhost:81/mypropertylk/site/services
+---
+2016/06/23 11:33:54 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "images".' in C:\xampp\htdocs\mypropertylk\protected\framework\web\CController.php:484
+Stack trace:
+#0 C:\xampp\htdocs\mypropertylk\protected\framework\web\CController.php(271): CController->missingAction('images')
+#1 C:\xampp\htdocs\mypropertylk\protected\framework\web\CWebApplication.php(276): CController->run('images')
+#2 C:\xampp\htdocs\mypropertylk\protected\framework\web\CWebApplication.php(135): CWebApplication->runController('site/images/nav...')
+#3 C:\xampp\htdocs\mypropertylk\protected\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\mypropertylk\index.php(15): CApplication->run()
+#5 {main}
+REQUEST_URI=/mypropertylk/site/images/nav-head.png
+HTTP_REFERER=http://localhost:81/mypropertylk/site/services
+---
+2016/06/23 11:33:55 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "images".' in C:\xampp\htdocs\mypropertylk\protected\framework\web\CController.php:484
+Stack trace:
+#0 C:\xampp\htdocs\mypropertylk\protected\framework\web\CController.php(271): CController->missingAction('images')
+#1 C:\xampp\htdocs\mypropertylk\protected\framework\web\CWebApplication.php(276): CController->run('images')
+#2 C:\xampp\htdocs\mypropertylk\protected\framework\web\CWebApplication.php(135): CWebApplication->runController('site/images/nav...')
+#3 C:\xampp\htdocs\mypropertylk\protected\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\mypropertylk\index.php(15): CApplication->run()
+#5 {main}
+REQUEST_URI=/mypropertylk/site/images/nav-head.png
+HTTP_REFERER=http://localhost:81/mypropertylk/site/services
+---
+2016/06/23 11:35:56 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "images".' in C:\xampp\htdocs\mypropertylk\protected\framework\web\CController.php:484
+Stack trace:
+#0 C:\xampp\htdocs\mypropertylk\protected\framework\web\CController.php(271): CController->missingAction('images')
+#1 C:\xampp\htdocs\mypropertylk\protected\framework\web\CWebApplication.php(276): CController->run('images')
+#2 C:\xampp\htdocs\mypropertylk\protected\framework\web\CWebApplication.php(135): CWebApplication->runController('site/images/nav...')
+#3 C:\xampp\htdocs\mypropertylk\protected\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\mypropertylk\index.php(15): CApplication->run()
+#5 {main}
+REQUEST_URI=/mypropertylk/site/images/nav-head.png
+HTTP_REFERER=http://localhost:81/mypropertylk/site/services
+---
+2016/06/23 11:35:58 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "images".' in C:\xampp\htdocs\mypropertylk\protected\framework\web\CController.php:484
+Stack trace:
+#0 C:\xampp\htdocs\mypropertylk\protected\framework\web\CController.php(271): CController->missingAction('images')
+#1 C:\xampp\htdocs\mypropertylk\protected\framework\web\CWebApplication.php(276): CController->run('images')
+#2 C:\xampp\htdocs\mypropertylk\protected\framework\web\CWebApplication.php(135): CWebApplication->runController('site/images/nav...')
+#3 C:\xampp\htdocs\mypropertylk\protected\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\mypropertylk\index.php(15): CApplication->run()
+#5 {main}
+REQUEST_URI=/mypropertylk/site/images/nav-head.png
+HTTP_REFERER=http://localhost:81/mypropertylk/site/services
+---
+2016/06/23 11:39:04 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "images".' in C:\xampp\htdocs\mypropertylk\protected\framework\web\CController.php:484
+Stack trace:
+#0 C:\xampp\htdocs\mypropertylk\protected\framework\web\CController.php(271): CController->missingAction('images')
+#1 C:\xampp\htdocs\mypropertylk\protected\framework\web\CWebApplication.php(276): CController->run('images')
+#2 C:\xampp\htdocs\mypropertylk\protected\framework\web\CWebApplication.php(135): CWebApplication->runController('site/images/nav...')
+#3 C:\xampp\htdocs\mypropertylk\protected\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\mypropertylk\index.php(15): CApplication->run()
+#5 {main}
+REQUEST_URI=/mypropertylk/site/images/nav-head.png
+HTTP_REFERER=http://localhost:81/mypropertylk/site/services
+---
+2016/06/23 11:41:37 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "images".' in C:\xampp\htdocs\mypropertylk\protected\framework\web\CController.php:484
+Stack trace:
+#0 C:\xampp\htdocs\mypropertylk\protected\framework\web\CController.php(271): CController->missingAction('images')
+#1 C:\xampp\htdocs\mypropertylk\protected\framework\web\CWebApplication.php(276): CController->run('images')
+#2 C:\xampp\htdocs\mypropertylk\protected\framework\web\CWebApplication.php(135): CWebApplication->runController('site/images/nav...')
+#3 C:\xampp\htdocs\mypropertylk\protected\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\mypropertylk\index.php(15): CApplication->run()
+#5 {main}
+REQUEST_URI=/mypropertylk/site/images/nav-head.png
+HTTP_REFERER=http://localhost:81/mypropertylk/site/services
+---
+2016/06/23 11:41:38 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "images".' in C:\xampp\htdocs\mypropertylk\protected\framework\web\CController.php:484
+Stack trace:
+#0 C:\xampp\htdocs\mypropertylk\protected\framework\web\CController.php(271): CController->missingAction('images')
+#1 C:\xampp\htdocs\mypropertylk\protected\framework\web\CWebApplication.php(276): CController->run('images')
+#2 C:\xampp\htdocs\mypropertylk\protected\framework\web\CWebApplication.php(135): CWebApplication->runController('site/images/nav...')
+#3 C:\xampp\htdocs\mypropertylk\protected\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\mypropertylk\index.php(15): CApplication->run()
+#5 {main}
+REQUEST_URI=/mypropertylk/site/images/nav-head.png
+HTTP_REFERER=http://localhost:81/mypropertylk/site/services
+---
+2016/06/23 11:45:30 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "images".' in C:\xampp\htdocs\mypropertylk\protected\framework\web\CController.php:484
+Stack trace:
+#0 C:\xampp\htdocs\mypropertylk\protected\framework\web\CController.php(271): CController->missingAction('images')
+#1 C:\xampp\htdocs\mypropertylk\protected\framework\web\CWebApplication.php(276): CController->run('images')
+#2 C:\xampp\htdocs\mypropertylk\protected\framework\web\CWebApplication.php(135): CWebApplication->runController('site/images/nav...')
+#3 C:\xampp\htdocs\mypropertylk\protected\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\mypropertylk\index.php(15): CApplication->run()
+#5 {main}
+REQUEST_URI=/mypropertylk/site/images/nav-head.png
+HTTP_REFERER=http://localhost:81/mypropertylk/site/services
+---
+2016/06/23 11:53:51 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "images".' in C:\xampp\htdocs\mypropertylk\protected\framework\web\CController.php:484
+Stack trace:
+#0 C:\xampp\htdocs\mypropertylk\protected\framework\web\CController.php(271): CController->missingAction('images')
+#1 C:\xampp\htdocs\mypropertylk\protected\framework\web\CWebApplication.php(276): CController->run('images')
+#2 C:\xampp\htdocs\mypropertylk\protected\framework\web\CWebApplication.php(135): CWebApplication->runController('site/images/nav...')
+#3 C:\xampp\htdocs\mypropertylk\protected\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\mypropertylk\index.php(15): CApplication->run()
+#5 {main}
+REQUEST_URI=/mypropertylk/site/images/nav-head.png
+HTTP_REFERER=http://localhost:81/mypropertylk/site/services
+---
+2016/06/23 11:56:02 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "images".' in C:\xampp\htdocs\mypropertylk\protected\framework\web\CController.php:484
+Stack trace:
+#0 C:\xampp\htdocs\mypropertylk\protected\framework\web\CController.php(271): CController->missingAction('images')
+#1 C:\xampp\htdocs\mypropertylk\protected\framework\web\CWebApplication.php(276): CController->run('images')
+#2 C:\xampp\htdocs\mypropertylk\protected\framework\web\CWebApplication.php(135): CWebApplication->runController('site/images/nav...')
+#3 C:\xampp\htdocs\mypropertylk\protected\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\mypropertylk\index.php(15): CApplication->run()
+#5 {main}
+REQUEST_URI=/mypropertylk/site/images/nav-head.png
+HTTP_REFERER=http://localhost:81/mypropertylk/site/services
+---
+2016/06/23 11:58:16 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "images".' in C:\xampp\htdocs\mypropertylk\protected\framework\web\CController.php:484
+Stack trace:
+#0 C:\xampp\htdocs\mypropertylk\protected\framework\web\CController.php(271): CController->missingAction('images')
+#1 C:\xampp\htdocs\mypropertylk\protected\framework\web\CWebApplication.php(276): CController->run('images')
+#2 C:\xampp\htdocs\mypropertylk\protected\framework\web\CWebApplication.php(135): CWebApplication->runController('site/images/nav...')
+#3 C:\xampp\htdocs\mypropertylk\protected\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\mypropertylk\index.php(15): CApplication->run()
+#5 {main}
+REQUEST_URI=/mypropertylk/site/images/nav-head.png
+HTTP_REFERER=http://localhost:81/mypropertylk/site/services
+---
+2016/06/23 12:01:01 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "images".' in C:\xampp\htdocs\mypropertylk\protected\framework\web\CController.php:484
+Stack trace:
+#0 C:\xampp\htdocs\mypropertylk\protected\framework\web\CController.php(271): CController->missingAction('images')
+#1 C:\xampp\htdocs\mypropertylk\protected\framework\web\CWebApplication.php(276): CController->run('images')
+#2 C:\xampp\htdocs\mypropertylk\protected\framework\web\CWebApplication.php(135): CWebApplication->runController('site/images/nav...')
+#3 C:\xampp\htdocs\mypropertylk\protected\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\mypropertylk\index.php(15): CApplication->run()
+#5 {main}
+REQUEST_URI=/mypropertylk/site/images/nav-head.png
+HTTP_REFERER=http://localhost:81/mypropertylk/site/services
+---
+2016/06/23 12:11:35 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "images".' in C:\xampp\htdocs\mypropertylk\protected\framework\web\CController.php:484
+Stack trace:
+#0 C:\xampp\htdocs\mypropertylk\protected\framework\web\CController.php(271): CController->missingAction('images')
+#1 C:\xampp\htdocs\mypropertylk\protected\framework\web\CWebApplication.php(276): CController->run('images')
+#2 C:\xampp\htdocs\mypropertylk\protected\framework\web\CWebApplication.php(135): CWebApplication->runController('site/images/nav...')
+#3 C:\xampp\htdocs\mypropertylk\protected\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\mypropertylk\index.php(15): CApplication->run()
+#5 {main}
+REQUEST_URI=/mypropertylk/site/images/nav-head.png
+HTTP_REFERER=http://localhost:81/mypropertylk/site/services?investment
+---
+2016/06/23 12:14:41 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "images".' in C:\xampp\htdocs\mypropertylk\protected\framework\web\CController.php:484
+Stack trace:
+#0 C:\xampp\htdocs\mypropertylk\protected\framework\web\CController.php(271): CController->missingAction('images')
+#1 C:\xampp\htdocs\mypropertylk\protected\framework\web\CWebApplication.php(276): CController->run('images')
+#2 C:\xampp\htdocs\mypropertylk\protected\framework\web\CWebApplication.php(135): CWebApplication->runController('site/images/nav...')
+#3 C:\xampp\htdocs\mypropertylk\protected\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\mypropertylk\index.php(15): CApplication->run()
+#5 {main}
+REQUEST_URI=/mypropertylk/site/images/nav-head.png
+HTTP_REFERER=http://localhost:81/mypropertylk/site/services?investment
+---
+2016/06/23 12:18:09 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "images".' in C:\xampp\htdocs\mypropertylk\protected\framework\web\CController.php:484
+Stack trace:
+#0 C:\xampp\htdocs\mypropertylk\protected\framework\web\CController.php(271): CController->missingAction('images')
+#1 C:\xampp\htdocs\mypropertylk\protected\framework\web\CWebApplication.php(276): CController->run('images')
+#2 C:\xampp\htdocs\mypropertylk\protected\framework\web\CWebApplication.php(135): CWebApplication->runController('site/images/nav...')
+#3 C:\xampp\htdocs\mypropertylk\protected\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\mypropertylk\index.php(15): CApplication->run()
+#5 {main}
+REQUEST_URI=/mypropertylk/site/images/nav-head.png
+HTTP_REFERER=http://localhost:81/mypropertylk/site/services
+---
+2016/06/23 12:20:12 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "images".' in C:\xampp\htdocs\mypropertylk\protected\framework\web\CController.php:484
+Stack trace:
+#0 C:\xampp\htdocs\mypropertylk\protected\framework\web\CController.php(271): CController->missingAction('images')
+#1 C:\xampp\htdocs\mypropertylk\protected\framework\web\CWebApplication.php(276): CController->run('images')
+#2 C:\xampp\htdocs\mypropertylk\protected\framework\web\CWebApplication.php(135): CWebApplication->runController('site/images/nav...')
+#3 C:\xampp\htdocs\mypropertylk\protected\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\mypropertylk\index.php(15): CApplication->run()
+#5 {main}
+REQUEST_URI=/mypropertylk/site/images/nav-head.png
+HTTP_REFERER=http://localhost:81/mypropertylk/site/services
+---
+2016/06/23 12:21:13 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "images".' in C:\xampp\htdocs\mypropertylk\protected\framework\web\CController.php:484
+Stack trace:
+#0 C:\xampp\htdocs\mypropertylk\protected\framework\web\CController.php(271): CController->missingAction('images')
+#1 C:\xampp\htdocs\mypropertylk\protected\framework\web\CWebApplication.php(276): CController->run('images')
+#2 C:\xampp\htdocs\mypropertylk\protected\framework\web\CWebApplication.php(135): CWebApplication->runController('site/images/nav...')
+#3 C:\xampp\htdocs\mypropertylk\protected\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\mypropertylk\index.php(15): CApplication->run()
+#5 {main}
+REQUEST_URI=/mypropertylk/site/images/nav-head.png
+HTTP_REFERER=http://localhost:81/mypropertylk/site/services
+---
+2016/06/23 12:23:41 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "images".' in C:\xampp\htdocs\mypropertylk\protected\framework\web\CController.php:484
+Stack trace:
+#0 C:\xampp\htdocs\mypropertylk\protected\framework\web\CController.php(271): CController->missingAction('images')
+#1 C:\xampp\htdocs\mypropertylk\protected\framework\web\CWebApplication.php(276): CController->run('images')
+#2 C:\xampp\htdocs\mypropertylk\protected\framework\web\CWebApplication.php(135): CWebApplication->runController('site/images/nav...')
+#3 C:\xampp\htdocs\mypropertylk\protected\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\mypropertylk\index.php(15): CApplication->run()
+#5 {main}
+REQUEST_URI=/mypropertylk/site/images/nav-head.png
+HTTP_REFERER=http://localhost:81/mypropertylk/site/services
+---
+2016/06/23 12:39:27 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "images".' in C:\xampp\htdocs\mypropertylk\protected\framework\web\CController.php:484
+Stack trace:
+#0 C:\xampp\htdocs\mypropertylk\protected\framework\web\CController.php(271): CController->missingAction('images')
+#1 C:\xampp\htdocs\mypropertylk\protected\framework\web\CWebApplication.php(276): CController->run('images')
+#2 C:\xampp\htdocs\mypropertylk\protected\framework\web\CWebApplication.php(135): CWebApplication->runController('site/images/nav...')
+#3 C:\xampp\htdocs\mypropertylk\protected\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\mypropertylk\index.php(15): CApplication->run()
+#5 {main}
+REQUEST_URI=/mypropertylk/site/images/nav-head.png
+HTTP_REFERER=http://localhost:81/mypropertylk/site/services
+---
+2016/06/23 12:40:21 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "images".' in C:\xampp\htdocs\mypropertylk\protected\framework\web\CController.php:484
+Stack trace:
+#0 C:\xampp\htdocs\mypropertylk\protected\framework\web\CController.php(271): CController->missingAction('images')
+#1 C:\xampp\htdocs\mypropertylk\protected\framework\web\CWebApplication.php(276): CController->run('images')
+#2 C:\xampp\htdocs\mypropertylk\protected\framework\web\CWebApplication.php(135): CWebApplication->runController('site/images/nav...')
+#3 C:\xampp\htdocs\mypropertylk\protected\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\mypropertylk\index.php(15): CApplication->run()
+#5 {main}
+REQUEST_URI=/mypropertylk/site/images/nav-head.png
+HTTP_REFERER=http://localhost:81/mypropertylk/site/services
+---
+2016/06/23 12:42:37 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "images".' in C:\xampp\htdocs\mypropertylk\protected\framework\web\CController.php:484
+Stack trace:
+#0 C:\xampp\htdocs\mypropertylk\protected\framework\web\CController.php(271): CController->missingAction('images')
+#1 C:\xampp\htdocs\mypropertylk\protected\framework\web\CWebApplication.php(276): CController->run('images')
+#2 C:\xampp\htdocs\mypropertylk\protected\framework\web\CWebApplication.php(135): CWebApplication->runController('site/images/nav...')
+#3 C:\xampp\htdocs\mypropertylk\protected\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\mypropertylk\index.php(15): CApplication->run()
+#5 {main}
+REQUEST_URI=/mypropertylk/site/images/nav-head.png
+HTTP_REFERER=http://localhost:81/mypropertylk/site/services
+---
+2016/06/24 06:25:02 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "images".' in C:\xampp\htdocs\mypropertylk\protected\framework\web\CController.php:484
+Stack trace:
+#0 C:\xampp\htdocs\mypropertylk\protected\framework\web\CController.php(271): CController->missingAction('images')
+#1 C:\xampp\htdocs\mypropertylk\protected\framework\web\CWebApplication.php(276): CController->run('images')
+#2 C:\xampp\htdocs\mypropertylk\protected\framework\web\CWebApplication.php(135): CWebApplication->runController('site/images/nav...')
+#3 C:\xampp\htdocs\mypropertylk\protected\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\mypropertylk\index.php(15): CApplication->run()
+#5 {main}
+REQUEST_URI=/mypropertylk/site/images/nav-head.png
+HTTP_REFERER=http://localhost:81/mypropertylk/site/services
+---
+2016/06/24 06:31:39 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "images".' in C:\xampp\htdocs\mypropertylk\protected\framework\web\CController.php:484
+Stack trace:
+#0 C:\xampp\htdocs\mypropertylk\protected\framework\web\CController.php(271): CController->missingAction('images')
+#1 C:\xampp\htdocs\mypropertylk\protected\framework\web\CWebApplication.php(276): CController->run('images')
+#2 C:\xampp\htdocs\mypropertylk\protected\framework\web\CWebApplication.php(135): CWebApplication->runController('site/images/nav...')
+#3 C:\xampp\htdocs\mypropertylk\protected\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\mypropertylk\index.php(15): CApplication->run()
+#5 {main}
+REQUEST_URI=/mypropertylk/site/images/nav-head.png
+HTTP_REFERER=http://localhost:81/mypropertylk/site/services
+---
+2016/06/24 06:33:50 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "images".' in C:\xampp\htdocs\mypropertylk\protected\framework\web\CController.php:484
+Stack trace:
+#0 C:\xampp\htdocs\mypropertylk\protected\framework\web\CController.php(271): CController->missingAction('images')
+#1 C:\xampp\htdocs\mypropertylk\protected\framework\web\CWebApplication.php(276): CController->run('images')
+#2 C:\xampp\htdocs\mypropertylk\protected\framework\web\CWebApplication.php(135): CWebApplication->runController('site/images/nav...')
+#3 C:\xampp\htdocs\mypropertylk\protected\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\mypropertylk\index.php(15): CApplication->run()
+#5 {main}
+REQUEST_URI=/mypropertylk/site/images/nav-head.png
+HTTP_REFERER=http://localhost:81/mypropertylk/site/services
+---
+2016/06/24 06:33:50 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "images".' in C:\xampp\htdocs\mypropertylk\protected\framework\web\CController.php:484
+Stack trace:
+#0 C:\xampp\htdocs\mypropertylk\protected\framework\web\CController.php(271): CController->missingAction('images')
+#1 C:\xampp\htdocs\mypropertylk\protected\framework\web\CWebApplication.php(276): CController->run('images')
+#2 C:\xampp\htdocs\mypropertylk\protected\framework\web\CWebApplication.php(135): CWebApplication->runController('site/images/nav...')
+#3 C:\xampp\htdocs\mypropertylk\protected\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\mypropertylk\index.php(15): CApplication->run()
+#5 {main}
+REQUEST_URI=/mypropertylk/site/images/nav-head.png
+HTTP_REFERER=http://localhost:81/mypropertylk/site/services
+---
+2016/06/24 06:35:57 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "images".' in C:\xampp\htdocs\mypropertylk\protected\framework\web\CController.php:484
+Stack trace:
+#0 C:\xampp\htdocs\mypropertylk\protected\framework\web\CController.php(271): CController->missingAction('images')
+#1 C:\xampp\htdocs\mypropertylk\protected\framework\web\CWebApplication.php(276): CController->run('images')
+#2 C:\xampp\htdocs\mypropertylk\protected\framework\web\CWebApplication.php(135): CWebApplication->runController('site/images/nav...')
+#3 C:\xampp\htdocs\mypropertylk\protected\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\mypropertylk\index.php(15): CApplication->run()
+#5 {main}
+REQUEST_URI=/mypropertylk/site/images/nav-head.png
+HTTP_REFERER=http://localhost:81/mypropertylk/site/services
+---
+2016/06/24 06:37:02 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "images".' in C:\xampp\htdocs\mypropertylk\protected\framework\web\CController.php:484
+Stack trace:
+#0 C:\xampp\htdocs\mypropertylk\protected\framework\web\CController.php(271): CController->missingAction('images')
+#1 C:\xampp\htdocs\mypropertylk\protected\framework\web\CWebApplication.php(276): CController->run('images')
+#2 C:\xampp\htdocs\mypropertylk\protected\framework\web\CWebApplication.php(135): CWebApplication->runController('site/images/nav...')
+#3 C:\xampp\htdocs\mypropertylk\protected\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\mypropertylk\index.php(15): CApplication->run()
+#5 {main}
+REQUEST_URI=/mypropertylk/site/images/nav-head.png
+HTTP_REFERER=http://localhost:81/mypropertylk/site/services
+---
+2016/06/24 06:39:10 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "images".' in C:\xampp\htdocs\mypropertylk\protected\framework\web\CController.php:484
+Stack trace:
+#0 C:\xampp\htdocs\mypropertylk\protected\framework\web\CController.php(271): CController->missingAction('images')
+#1 C:\xampp\htdocs\mypropertylk\protected\framework\web\CWebApplication.php(276): CController->run('images')
+#2 C:\xampp\htdocs\mypropertylk\protected\framework\web\CWebApplication.php(135): CWebApplication->runController('site/images/nav...')
+#3 C:\xampp\htdocs\mypropertylk\protected\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\mypropertylk\index.php(15): CApplication->run()
+#5 {main}
+REQUEST_URI=/mypropertylk/site/images/nav-head.png
+HTTP_REFERER=http://localhost:81/mypropertylk/site/services
+---
+2016/06/24 06:43:13 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "images".' in C:\xampp\htdocs\mypropertylk\protected\framework\web\CController.php:484
+Stack trace:
+#0 C:\xampp\htdocs\mypropertylk\protected\framework\web\CController.php(271): CController->missingAction('images')
+#1 C:\xampp\htdocs\mypropertylk\protected\framework\web\CWebApplication.php(276): CController->run('images')
+#2 C:\xampp\htdocs\mypropertylk\protected\framework\web\CWebApplication.php(135): CWebApplication->runController('site/images/nav...')
+#3 C:\xampp\htdocs\mypropertylk\protected\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\mypropertylk\index.php(15): CApplication->run()
+#5 {main}
+REQUEST_URI=/mypropertylk/site/images/nav-head.png
+HTTP_REFERER=http://localhost:81/mypropertylk/site/services
+---
+2016/06/24 06:44:26 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "images".' in C:\xampp\htdocs\mypropertylk\protected\framework\web\CController.php:484
+Stack trace:
+#0 C:\xampp\htdocs\mypropertylk\protected\framework\web\CController.php(271): CController->missingAction('images')
+#1 C:\xampp\htdocs\mypropertylk\protected\framework\web\CWebApplication.php(276): CController->run('images')
+#2 C:\xampp\htdocs\mypropertylk\protected\framework\web\CWebApplication.php(135): CWebApplication->runController('site/images/nav...')
+#3 C:\xampp\htdocs\mypropertylk\protected\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\mypropertylk\index.php(15): CApplication->run()
+#5 {main}
+REQUEST_URI=/mypropertylk/site/images/nav-head.png
+HTTP_REFERER=http://localhost:81/mypropertylk/site/services
+---
+2016/06/24 06:45:23 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "images".' in C:\xampp\htdocs\mypropertylk\protected\framework\web\CController.php:484
+Stack trace:
+#0 C:\xampp\htdocs\mypropertylk\protected\framework\web\CController.php(271): CController->missingAction('images')
+#1 C:\xampp\htdocs\mypropertylk\protected\framework\web\CWebApplication.php(276): CController->run('images')
+#2 C:\xampp\htdocs\mypropertylk\protected\framework\web\CWebApplication.php(135): CWebApplication->runController('site/images/nav...')
+#3 C:\xampp\htdocs\mypropertylk\protected\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\mypropertylk\index.php(15): CApplication->run()
+#5 {main}
+REQUEST_URI=/mypropertylk/site/images/nav-head.png
+HTTP_REFERER=http://localhost:81/mypropertylk/site/services
+---
+2016/06/24 06:59:42 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "images".' in C:\xampp\htdocs\mypropertylk\protected\framework\web\CController.php:484
+Stack trace:
+#0 C:\xampp\htdocs\mypropertylk\protected\framework\web\CController.php(271): CController->missingAction('images')
+#1 C:\xampp\htdocs\mypropertylk\protected\framework\web\CWebApplication.php(276): CController->run('images')
+#2 C:\xampp\htdocs\mypropertylk\protected\framework\web\CWebApplication.php(135): CWebApplication->runController('site/images/nav...')
+#3 C:\xampp\htdocs\mypropertylk\protected\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\mypropertylk\index.php(15): CApplication->run()
+#5 {main}
+REQUEST_URI=/mypropertylk/site/images/nav-head.png
+HTTP_REFERER=http://localhost:81/mypropertylk/site/services
+---
+2016/06/24 06:59:42 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "images".' in C:\xampp\htdocs\mypropertylk\protected\framework\web\CController.php:484
+Stack trace:
+#0 C:\xampp\htdocs\mypropertylk\protected\framework\web\CController.php(271): CController->missingAction('images')
+#1 C:\xampp\htdocs\mypropertylk\protected\framework\web\CWebApplication.php(276): CController->run('images')
+#2 C:\xampp\htdocs\mypropertylk\protected\framework\web\CWebApplication.php(135): CWebApplication->runController('site/images/nav...')
+#3 C:\xampp\htdocs\mypropertylk\protected\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\mypropertylk\index.php(15): CApplication->run()
+#5 {main}
+REQUEST_URI=/mypropertylk/site/images/nav-head.png
+HTTP_REFERER=http://localhost:81/mypropertylk/site/services
+---
+2016/06/24 07:49:00 [error] [php] Trying to get property of non-object (C:\xampp\htdocs\mypropertylk\protected\views\list\property.php:604)
+Stack trace:
+#0 C:\xampp\htdocs\mypropertylk\protected\framework\web\CController.php(870): ListController->renderFile()
+#1 C:\xampp\htdocs\mypropertylk\protected\framework\web\CController.php(783): ListController->renderPartial()
+#2 C:\xampp\htdocs\mypropertylk\protected\controllers\List\PropertyAction.php(96): ListController->render()
+#3 C:\xampp\htdocs\mypropertylk\protected\framework\web\actions\CAction.php(75): PropertyAction->run()
+#4 C:\xampp\htdocs\mypropertylk\protected\framework\web\CController.php(309): PropertyAction->runWithParams()
+#5 C:\xampp\htdocs\mypropertylk\protected\framework\web\CController.php(287): ListController->runAction()
+#6 C:\xampp\htdocs\mypropertylk\protected\framework\web\CController.php(266): ListController->runActionWithFilters()
+#7 C:\xampp\htdocs\mypropertylk\protected\framework\web\CWebApplication.php(276): ListController->run()
+#8 C:\xampp\htdocs\mypropertylk\protected\framework\web\CWebApplication.php(135): CWebApplication->runController()
+#9 C:\xampp\htdocs\mypropertylk\protected\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#10 C:\xampp\htdocs\mypropertylk\index.php(15): CWebApplication->run()
+REQUEST_URI=/mypropertylk/list/property/type/buy/district/images/nav-head.png
+in C:\xampp\htdocs\mypropertylk\protected\views\list\property.php (604)
+in C:\xampp\htdocs\mypropertylk\protected\controllers\List\PropertyAction.php (96)
+in C:\xampp\htdocs\mypropertylk\index.php (15)
+2016/06/24 10:52:10 [error] [php] Trying to get property of non-object (C:\xampp\htdocs\mypropertylk\protected\views\list\property.php:604)
+Stack trace:
+#0 C:\xampp\htdocs\mypropertylk\protected\framework\web\CController.php(870): ListController->renderFile()
+#1 C:\xampp\htdocs\mypropertylk\protected\framework\web\CController.php(783): ListController->renderPartial()
+#2 C:\xampp\htdocs\mypropertylk\protected\controllers\List\PropertyAction.php(96): ListController->render()
+#3 C:\xampp\htdocs\mypropertylk\protected\framework\web\actions\CAction.php(75): PropertyAction->run()
+#4 C:\xampp\htdocs\mypropertylk\protected\framework\web\CController.php(309): PropertyAction->runWithParams()
+#5 C:\xampp\htdocs\mypropertylk\protected\framework\web\CController.php(287): ListController->runAction()
+#6 C:\xampp\htdocs\mypropertylk\protected\framework\web\CController.php(266): ListController->runActionWithFilters()
+#7 C:\xampp\htdocs\mypropertylk\protected\framework\web\CWebApplication.php(276): ListController->run()
+#8 C:\xampp\htdocs\mypropertylk\protected\framework\web\CWebApplication.php(135): CWebApplication->runController()
+#9 C:\xampp\htdocs\mypropertylk\protected\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#10 C:\xampp\htdocs\mypropertylk\index.php(15): CWebApplication->run()
+REQUEST_URI=/mypropertylk/list/property/type/buy/district/images/nav-head.png
+in C:\xampp\htdocs\mypropertylk\protected\views\list\property.php (604)
+in C:\xampp\htdocs\mypropertylk\protected\controllers\List\PropertyAction.php (96)
+in C:\xampp\htdocs\mypropertylk\index.php (15)
+2016/06/24 11:16:46 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "services".' in C:\xampp\htdocs\mypropertylk\protected\framework\web\CWebApplication.php:280
+Stack trace:
+#0 C:\xampp\htdocs\mypropertylk\protected\framework\web\CWebApplication.php(135): CWebApplication->runController('services')
+#1 C:\xampp\htdocs\mypropertylk\protected\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\mypropertylk\index.php(15): CApplication->run()
+#3 {main}
+REQUEST_URI=/mypropertylk/services
+---
+2016/06/24 11:17:42 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "images".' in C:\xampp\htdocs\mypropertylk\protected\framework\web\CController.php:484
+Stack trace:
+#0 C:\xampp\htdocs\mypropertylk\protected\framework\web\CController.php(271): CController->missingAction('images')
+#1 C:\xampp\htdocs\mypropertylk\protected\framework\web\CWebApplication.php(276): CController->run('images')
+#2 C:\xampp\htdocs\mypropertylk\protected\framework\web\CWebApplication.php(135): CWebApplication->runController('site/images/nav...')
+#3 C:\xampp\htdocs\mypropertylk\protected\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\mypropertylk\index.php(15): CApplication->run()
+#5 {main}
+REQUEST_URI=/mypropertylk/site/images/nav-head.png
+HTTP_REFERER=http://localhost:81/mypropertylk/site/services
+---
+2016/06/25 12:43:32 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "images".' in C:\xampp\htdocs\mypropertylk\protected\framework\web\CController.php:484
+Stack trace:
+#0 C:\xampp\htdocs\mypropertylk\protected\framework\web\CController.php(271): CController->missingAction('images')
+#1 C:\xampp\htdocs\mypropertylk\protected\framework\web\CWebApplication.php(276): CController->run('images')
+#2 C:\xampp\htdocs\mypropertylk\protected\framework\web\CWebApplication.php(135): CWebApplication->runController('site/images/nav...')
+#3 C:\xampp\htdocs\mypropertylk\protected\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\mypropertylk\index.php(15): CApplication->run()
+#5 {main}
+REQUEST_URI=/mypropertylk/site/images/nav-head.png
+HTTP_REFERER=http://localhost:81/mypropertylk/site/services
+---
+2016/06/25 12:58:41 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "images".' in C:\xampp\htdocs\mypropertylk\protected\framework\web\CController.php:484
+Stack trace:
+#0 C:\xampp\htdocs\mypropertylk\protected\framework\web\CController.php(271): CController->missingAction('images')
+#1 C:\xampp\htdocs\mypropertylk\protected\framework\web\CWebApplication.php(276): CController->run('images')
+#2 C:\xampp\htdocs\mypropertylk\protected\framework\web\CWebApplication.php(135): CWebApplication->runController('site/images/nav...')
+#3 C:\xampp\htdocs\mypropertylk\protected\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\mypropertylk\index.php(15): CApplication->run()
+#5 {main}
+REQUEST_URI=/mypropertylk/site/images/nav-head.png
+HTTP_REFERER=http://localhost:81/mypropertylk/site/services
+---
+2016/06/25 12:58:42 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "images".' in C:\xampp\htdocs\mypropertylk\protected\framework\web\CController.php:484
+Stack trace:
+#0 C:\xampp\htdocs\mypropertylk\protected\framework\web\CController.php(271): CController->missingAction('images')
+#1 C:\xampp\htdocs\mypropertylk\protected\framework\web\CWebApplication.php(276): CController->run('images')
+#2 C:\xampp\htdocs\mypropertylk\protected\framework\web\CWebApplication.php(135): CWebApplication->runController('site/images/nav...')
+#3 C:\xampp\htdocs\mypropertylk\protected\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\mypropertylk\index.php(15): CApplication->run()
+#5 {main}
+REQUEST_URI=/mypropertylk/site/images/nav-head.png
+HTTP_REFERER=http://localhost:81/mypropertylk/site/services
+---
+2016/06/25 12:59:34 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "upload/propertyimages/image_89_1_1411448132.jpg".' in C:\xampp\htdocs\mypropertylk\protected\framework\web\CWebApplication.php:280
+Stack trace:
+#0 C:\xampp\htdocs\mypropertylk\protected\framework\web\CWebApplication.php(135): CWebApplication->runController('upload/property...')
+#1 C:\xampp\htdocs\mypropertylk\protected\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\mypropertylk\index.php(15): CApplication->run()
+#3 {main}
+REQUEST_URI=/mypropertylk/upload/propertyimages/image_89_1_1411448132.jpg
+HTTP_REFERER=http://localhost:81/mypropertylk/property/propertylisting?type=0
+---
+2016/06/25 12:59:34 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "upload/propertyimages/image_88_1_1411448131.jpg".' in C:\xampp\htdocs\mypropertylk\protected\framework\web\CWebApplication.php:280
+Stack trace:
+#0 C:\xampp\htdocs\mypropertylk\protected\framework\web\CWebApplication.php(135): CWebApplication->runController('upload/property...')
+#1 C:\xampp\htdocs\mypropertylk\protected\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\mypropertylk\index.php(15): CApplication->run()
+#3 {main}
+REQUEST_URI=/mypropertylk/upload/propertyimages/image_88_1_1411448131.jpg
+HTTP_REFERER=http://localhost:81/mypropertylk/property/propertylisting?type=0
+---
+2016/06/25 12:59:34 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "upload/propertyimages/image_87_1_1411448128.jpg".' in C:\xampp\htdocs\mypropertylk\protected\framework\web\CWebApplication.php:280
+Stack trace:
+#0 C:\xampp\htdocs\mypropertylk\protected\framework\web\CWebApplication.php(135): CWebApplication->runController('upload/property...')
+#1 C:\xampp\htdocs\mypropertylk\protected\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\mypropertylk\index.php(15): CApplication->run()
+#3 {main}
+REQUEST_URI=/mypropertylk/upload/propertyimages/image_87_1_1411448128.jpg
+HTTP_REFERER=http://localhost:81/mypropertylk/property/propertylisting?type=0
+---
+2016/06/25 12:59:34 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "upload/propertyimages/image_86_1_1411448125.jpg".' in C:\xampp\htdocs\mypropertylk\protected\framework\web\CWebApplication.php:280
+Stack trace:
+#0 C:\xampp\htdocs\mypropertylk\protected\framework\web\CWebApplication.php(135): CWebApplication->runController('upload/property...')
+#1 C:\xampp\htdocs\mypropertylk\protected\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\mypropertylk\index.php(15): CApplication->run()
+#3 {main}
+REQUEST_URI=/mypropertylk/upload/propertyimages/image_86_1_1411448125.jpg
+HTTP_REFERER=http://localhost:81/mypropertylk/property/propertylisting?type=0
+---
+2016/06/25 12:59:34 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "upload/propertyimages/image_89_1_1411448132.jpg".' in C:\xampp\htdocs\mypropertylk\protected\framework\web\CWebApplication.php:280
+Stack trace:
+#0 C:\xampp\htdocs\mypropertylk\protected\framework\web\CWebApplication.php(135): CWebApplication->runController('upload/property...')
+#1 C:\xampp\htdocs\mypropertylk\protected\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\mypropertylk\index.php(15): CApplication->run()
+#3 {main}
+REQUEST_URI=/mypropertylk/upload/propertyimages/image_89_1_1411448132.jpg
+HTTP_REFERER=http://localhost:81/mypropertylk/property/propertylisting?type=0
+---
+2016/06/25 13:08:27 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "upload/propertyimages/image_89_1_1411448132.jpg".' in C:\xampp\htdocs\mypropertylk\protected\framework\web\CWebApplication.php:280
+Stack trace:
+#0 C:\xampp\htdocs\mypropertylk\protected\framework\web\CWebApplication.php(135): CWebApplication->runController('upload/property...')
+#1 C:\xampp\htdocs\mypropertylk\protected\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\mypropertylk\index.php(15): CApplication->run()
+#3 {main}
+REQUEST_URI=/mypropertylk/upload/propertyimages/image_89_1_1411448132.jpg
+HTTP_REFERER=http://localhost:81/mypropertylk/property/propertylisting?type=0
+---
+2016/06/25 13:08:27 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "upload/propertyimages/image_88_1_1411448131.jpg".' in C:\xampp\htdocs\mypropertylk\protected\framework\web\CWebApplication.php:280
+Stack trace:
+#0 C:\xampp\htdocs\mypropertylk\protected\framework\web\CWebApplication.php(135): CWebApplication->runController('upload/property...')
+#1 C:\xampp\htdocs\mypropertylk\protected\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\mypropertylk\index.php(15): CApplication->run()
+#3 {main}
+REQUEST_URI=/mypropertylk/upload/propertyimages/image_88_1_1411448131.jpg
+HTTP_REFERER=http://localhost:81/mypropertylk/property/propertylisting?type=0
+---
+2016/06/25 13:08:27 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "upload/propertyimages/image_87_1_1411448128.jpg".' in C:\xampp\htdocs\mypropertylk\protected\framework\web\CWebApplication.php:280
+Stack trace:
+#0 C:\xampp\htdocs\mypropertylk\protected\framework\web\CWebApplication.php(135): CWebApplication->runController('upload/property...')
+#1 C:\xampp\htdocs\mypropertylk\protected\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\mypropertylk\index.php(15): CApplication->run()
+#3 {main}
+REQUEST_URI=/mypropertylk/upload/propertyimages/image_87_1_1411448128.jpg
+HTTP_REFERER=http://localhost:81/mypropertylk/property/propertylisting?type=0
+---
+2016/06/25 13:08:27 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "upload/propertyimages/image_86_1_1411448125.jpg".' in C:\xampp\htdocs\mypropertylk\protected\framework\web\CWebApplication.php:280
+Stack trace:
+#0 C:\xampp\htdocs\mypropertylk\protected\framework\web\CWebApplication.php(135): CWebApplication->runController('upload/property...')
+#1 C:\xampp\htdocs\mypropertylk\protected\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\mypropertylk\index.php(15): CApplication->run()
+#3 {main}
+REQUEST_URI=/mypropertylk/upload/propertyimages/image_86_1_1411448125.jpg
+HTTP_REFERER=http://localhost:81/mypropertylk/property/propertylisting?type=0
+---
+2016/06/25 13:08:27 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "upload/propertyimages/image_89_1_1411448132.jpg".' in C:\xampp\htdocs\mypropertylk\protected\framework\web\CWebApplication.php:280
+Stack trace:
+#0 C:\xampp\htdocs\mypropertylk\protected\framework\web\CWebApplication.php(135): CWebApplication->runController('upload/property...')
+#1 C:\xampp\htdocs\mypropertylk\protected\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\mypropertylk\index.php(15): CApplication->run()
+#3 {main}
+REQUEST_URI=/mypropertylk/upload/propertyimages/image_89_1_1411448132.jpg
+HTTP_REFERER=http://localhost:81/mypropertylk/property/propertylisting?type=0
+---
+2016/06/27 05:54:27 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "images".' in C:\xampp\htdocs\mypropertylk\protected\framework\web\CController.php:484
+Stack trace:
+#0 C:\xampp\htdocs\mypropertylk\protected\framework\web\CController.php(271): CController->missingAction('images')
+#1 C:\xampp\htdocs\mypropertylk\protected\framework\web\CWebApplication.php(276): CController->run('images')
+#2 C:\xampp\htdocs\mypropertylk\protected\framework\web\CWebApplication.php(135): CWebApplication->runController('site/images/nav...')
+#3 C:\xampp\htdocs\mypropertylk\protected\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\mypropertylk\index.php(15): CApplication->run()
+#5 {main}
+REQUEST_URI=/mypropertylk/site/images/nav-head.png
+HTTP_REFERER=http://localhost:81/mypropertylk/site/services
+---
+2016/06/27 05:55:05 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "images".' in C:\xampp\htdocs\mypropertylk\protected\framework\web\CController.php:484
+Stack trace:
+#0 C:\xampp\htdocs\mypropertylk\protected\framework\web\CController.php(271): CController->missingAction('images')
+#1 C:\xampp\htdocs\mypropertylk\protected\framework\web\CWebApplication.php(276): CController->run('images')
+#2 C:\xampp\htdocs\mypropertylk\protected\framework\web\CWebApplication.php(135): CWebApplication->runController('site/images/nav...')
+#3 C:\xampp\htdocs\mypropertylk\protected\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\mypropertylk\index.php(15): CApplication->run()
+#5 {main}
+REQUEST_URI=/mypropertylk/site/images/nav-head.png
+HTTP_REFERER=http://localhost:81/mypropertylk/site/services
+---
+2016/06/27 05:55:05 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "images".' in C:\xampp\htdocs\mypropertylk\protected\framework\web\CController.php:484
+Stack trace:
+#0 C:\xampp\htdocs\mypropertylk\protected\framework\web\CController.php(271): CController->missingAction('images')
+#1 C:\xampp\htdocs\mypropertylk\protected\framework\web\CWebApplication.php(276): CController->run('images')
+#2 C:\xampp\htdocs\mypropertylk\protected\framework\web\CWebApplication.php(135): CWebApplication->runController('site/images/nav...')
+#3 C:\xampp\htdocs\mypropertylk\protected\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\mypropertylk\index.php(15): CApplication->run()
+#5 {main}
+REQUEST_URI=/mypropertylk/site/images/nav-head.png
+HTTP_REFERER=http://localhost:81/mypropertylk/site/services
+---
+2016/06/27 05:57:04 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "images".' in C:\xampp\htdocs\mypropertylk\protected\framework\web\CController.php:484
+Stack trace:
+#0 C:\xampp\htdocs\mypropertylk\protected\framework\web\CController.php(271): CController->missingAction('images')
+#1 C:\xampp\htdocs\mypropertylk\protected\framework\web\CWebApplication.php(276): CController->run('images')
+#2 C:\xampp\htdocs\mypropertylk\protected\framework\web\CWebApplication.php(135): CWebApplication->runController('site/images/nav...')
+#3 C:\xampp\htdocs\mypropertylk\protected\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\mypropertylk\index.php(15): CApplication->run()
+#5 {main}
+REQUEST_URI=/mypropertylk/site/images/nav-head.png
+HTTP_REFERER=http://localhost:81/mypropertylk/site/services
+---
+2016/06/27 05:57:04 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "images".' in C:\xampp\htdocs\mypropertylk\protected\framework\web\CController.php:484
+Stack trace:
+#0 C:\xampp\htdocs\mypropertylk\protected\framework\web\CController.php(271): CController->missingAction('images')
+#1 C:\xampp\htdocs\mypropertylk\protected\framework\web\CWebApplication.php(276): CController->run('images')
+#2 C:\xampp\htdocs\mypropertylk\protected\framework\web\CWebApplication.php(135): CWebApplication->runController('site/images/nav...')
+#3 C:\xampp\htdocs\mypropertylk\protected\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\mypropertylk\index.php(15): CApplication->run()
+#5 {main}
+REQUEST_URI=/mypropertylk/site/images/nav-head.png
+HTTP_REFERER=http://localhost:81/mypropertylk/site/services
+---
+2016/06/27 05:59:10 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "images".' in C:\xampp\htdocs\mypropertylk\protected\framework\web\CController.php:484
+Stack trace:
+#0 C:\xampp\htdocs\mypropertylk\protected\framework\web\CController.php(271): CController->missingAction('images')
+#1 C:\xampp\htdocs\mypropertylk\protected\framework\web\CWebApplication.php(276): CController->run('images')
+#2 C:\xampp\htdocs\mypropertylk\protected\framework\web\CWebApplication.php(135): CWebApplication->runController('site/images/nav...')
+#3 C:\xampp\htdocs\mypropertylk\protected\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\mypropertylk\index.php(15): CApplication->run()
+#5 {main}
+REQUEST_URI=/mypropertylk/site/images/nav-head.png
+HTTP_REFERER=http://localhost:81/mypropertylk/site/services
+---
+2016/06/27 05:59:20 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "images".' in C:\xampp\htdocs\mypropertylk\protected\framework\web\CController.php:484
+Stack trace:
+#0 C:\xampp\htdocs\mypropertylk\protected\framework\web\CController.php(271): CController->missingAction('images')
+#1 C:\xampp\htdocs\mypropertylk\protected\framework\web\CWebApplication.php(276): CController->run('images')
+#2 C:\xampp\htdocs\mypropertylk\protected\framework\web\CWebApplication.php(135): CWebApplication->runController('site/images/nav...')
+#3 C:\xampp\htdocs\mypropertylk\protected\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\mypropertylk\index.php(15): CApplication->run()
+#5 {main}
+REQUEST_URI=/mypropertylk/site/images/nav-head.png
+HTTP_REFERER=http://localhost:81/mypropertylk/site/services?brokerage
+---
+2016/06/27 06:07:16 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "images".' in C:\xampp\htdocs\mypropertylk\protected\framework\web\CController.php:484
+Stack trace:
+#0 C:\xampp\htdocs\mypropertylk\protected\framework\web\CController.php(271): CController->missingAction('images')
+#1 C:\xampp\htdocs\mypropertylk\protected\framework\web\CWebApplication.php(276): CController->run('images')
+#2 C:\xampp\htdocs\mypropertylk\protected\framework\web\CWebApplication.php(135): CWebApplication->runController('list/images/nav...')
+#3 C:\xampp\htdocs\mypropertylk\protected\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\mypropertylk\index.php(15): CApplication->run()
+#5 {main}
+REQUEST_URI=/mypropertylk/list/images/nav-head.png
+HTTP_REFERER=http://localhost:81/mypropertylk/list/Overseas_Investments
+---
+2016/06/27 06:10:42 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "images".' in C:\xampp\htdocs\mypropertylk\protected\framework\web\CController.php:484
+Stack trace:
+#0 C:\xampp\htdocs\mypropertylk\protected\framework\web\CController.php(271): CController->missingAction('images')
+#1 C:\xampp\htdocs\mypropertylk\protected\framework\web\CWebApplication.php(276): CController->run('images')
+#2 C:\xampp\htdocs\mypropertylk\protected\framework\web\CWebApplication.php(135): CWebApplication->runController('site/images/nav...')
+#3 C:\xampp\htdocs\mypropertylk\protected\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\mypropertylk\index.php(15): CApplication->run()
+#5 {main}
+REQUEST_URI=/mypropertylk/site/images/nav-head.png
+HTTP_REFERER=http://localhost:81/mypropertylk/site/contact
+---
+2016/06/27 06:10:49 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "images".' in C:\xampp\htdocs\mypropertylk\protected\framework\web\CController.php:484
+Stack trace:
+#0 C:\xampp\htdocs\mypropertylk\protected\framework\web\CController.php(271): CController->missingAction('images')
+#1 C:\xampp\htdocs\mypropertylk\protected\framework\web\CWebApplication.php(276): CController->run('images')
+#2 C:\xampp\htdocs\mypropertylk\protected\framework\web\CWebApplication.php(135): CWebApplication->runController('list/images/nav...')
+#3 C:\xampp\htdocs\mypropertylk\protected\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\mypropertylk\index.php(15): CApplication->run()
+#5 {main}
+REQUEST_URI=/mypropertylk/list/images/nav-head.png
+HTTP_REFERER=http://localhost:81/mypropertylk/list/Overseas_Investments
+---
+2016/06/27 06:10:49 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "images".' in C:\xampp\htdocs\mypropertylk\protected\framework\web\CController.php:484
+Stack trace:
+#0 C:\xampp\htdocs\mypropertylk\protected\framework\web\CController.php(271): CController->missingAction('images')
+#1 C:\xampp\htdocs\mypropertylk\protected\framework\web\CWebApplication.php(276): CController->run('images')
+#2 C:\xampp\htdocs\mypropertylk\protected\framework\web\CWebApplication.php(135): CWebApplication->runController('list/images/nav...')
+#3 C:\xampp\htdocs\mypropertylk\protected\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\mypropertylk\index.php(15): CApplication->run()
+#5 {main}
+REQUEST_URI=/mypropertylk/list/images/nav-head.png
+HTTP_REFERER=http://localhost:81/mypropertylk/list/Overseas_Investments
+---
+2016/06/27 06:10:58 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "images".' in C:\xampp\htdocs\mypropertylk\protected\framework\web\CController.php:484
+Stack trace:
+#0 C:\xampp\htdocs\mypropertylk\protected\framework\web\CController.php(271): CController->missingAction('images')
+#1 C:\xampp\htdocs\mypropertylk\protected\framework\web\CWebApplication.php(276): CController->run('images')
+#2 C:\xampp\htdocs\mypropertylk\protected\framework\web\CWebApplication.php(135): CWebApplication->runController('site/images/nav...')
+#3 C:\xampp\htdocs\mypropertylk\protected\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\mypropertylk\index.php(15): CApplication->run()
+#5 {main}
+REQUEST_URI=/mypropertylk/site/images/nav-head.png
+HTTP_REFERER=http://localhost:81/mypropertylk/site/about_us
+---
+2016/06/27 06:14:12 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "images".' in C:\xampp\htdocs\mypropertylk\protected\framework\web\CController.php:484
+Stack trace:
+#0 C:\xampp\htdocs\mypropertylk\protected\framework\web\CController.php(271): CController->missingAction('images')
+#1 C:\xampp\htdocs\mypropertylk\protected\framework\web\CWebApplication.php(276): CController->run('images')
+#2 C:\xampp\htdocs\mypropertylk\protected\framework\web\CWebApplication.php(135): CWebApplication->runController('site/images/nav...')
+#3 C:\xampp\htdocs\mypropertylk\protected\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\mypropertylk\index.php(15): CApplication->run()
+#5 {main}
+REQUEST_URI=/mypropertylk/site/images/nav-head.png
+HTTP_REFERER=http://localhost:81/mypropertylk/site/services
+---
+2016/06/27 06:14:12 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "images".' in C:\xampp\htdocs\mypropertylk\protected\framework\web\CController.php:484
+Stack trace:
+#0 C:\xampp\htdocs\mypropertylk\protected\framework\web\CController.php(271): CController->missingAction('images')
+#1 C:\xampp\htdocs\mypropertylk\protected\framework\web\CWebApplication.php(276): CController->run('images')
+#2 C:\xampp\htdocs\mypropertylk\protected\framework\web\CWebApplication.php(135): CWebApplication->runController('site/images/nav...')
+#3 C:\xampp\htdocs\mypropertylk\protected\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\mypropertylk\index.php(15): CApplication->run()
+#5 {main}
+REQUEST_URI=/mypropertylk/site/images/nav-head.png
+HTTP_REFERER=http://localhost:81/mypropertylk/site/services
+---
+2016/06/27 06:16:35 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "upload/propertyimages/image_89_1_1411448132.jpg".' in C:\xampp\htdocs\mypropertylk\protected\framework\web\CWebApplication.php:280
+Stack trace:
+#0 C:\xampp\htdocs\mypropertylk\protected\framework\web\CWebApplication.php(135): CWebApplication->runController('upload/property...')
+#1 C:\xampp\htdocs\mypropertylk\protected\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\mypropertylk\index.php(15): CApplication->run()
+#3 {main}
+REQUEST_URI=/mypropertylk/upload/propertyimages/image_89_1_1411448132.jpg
+HTTP_REFERER=http://localhost:81/mypropertylk/property/propertylisting?type=0
+---
+2016/06/27 06:16:35 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "upload/propertyimages/image_88_1_1411448131.jpg".' in C:\xampp\htdocs\mypropertylk\protected\framework\web\CWebApplication.php:280
+Stack trace:
+#0 C:\xampp\htdocs\mypropertylk\protected\framework\web\CWebApplication.php(135): CWebApplication->runController('upload/property...')
+#1 C:\xampp\htdocs\mypropertylk\protected\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\mypropertylk\index.php(15): CApplication->run()
+#3 {main}
+REQUEST_URI=/mypropertylk/upload/propertyimages/image_88_1_1411448131.jpg
+HTTP_REFERER=http://localhost:81/mypropertylk/property/propertylisting?type=0
+---
+2016/06/27 06:16:35 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "upload/propertyimages/image_87_1_1411448128.jpg".' in C:\xampp\htdocs\mypropertylk\protected\framework\web\CWebApplication.php:280
+Stack trace:
+#0 C:\xampp\htdocs\mypropertylk\protected\framework\web\CWebApplication.php(135): CWebApplication->runController('upload/property...')
+#1 C:\xampp\htdocs\mypropertylk\protected\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\mypropertylk\index.php(15): CApplication->run()
+#3 {main}
+REQUEST_URI=/mypropertylk/upload/propertyimages/image_87_1_1411448128.jpg
+HTTP_REFERER=http://localhost:81/mypropertylk/property/propertylisting?type=0
+---
+2016/06/27 06:16:36 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "upload/propertyimages/image_86_1_1411448125.jpg".' in C:\xampp\htdocs\mypropertylk\protected\framework\web\CWebApplication.php:280
+Stack trace:
+#0 C:\xampp\htdocs\mypropertylk\protected\framework\web\CWebApplication.php(135): CWebApplication->runController('upload/property...')
+#1 C:\xampp\htdocs\mypropertylk\protected\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\mypropertylk\index.php(15): CApplication->run()
+#3 {main}
+REQUEST_URI=/mypropertylk/upload/propertyimages/image_86_1_1411448125.jpg
+HTTP_REFERER=http://localhost:81/mypropertylk/property/propertylisting?type=0
+---
+2016/06/27 06:16:36 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "upload/propertyimages/image_89_1_1411448132.jpg".' in C:\xampp\htdocs\mypropertylk\protected\framework\web\CWebApplication.php:280
+Stack trace:
+#0 C:\xampp\htdocs\mypropertylk\protected\framework\web\CWebApplication.php(135): CWebApplication->runController('upload/property...')
+#1 C:\xampp\htdocs\mypropertylk\protected\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\mypropertylk\index.php(15): CApplication->run()
+#3 {main}
+REQUEST_URI=/mypropertylk/upload/propertyimages/image_89_1_1411448132.jpg
+HTTP_REFERER=http://localhost:81/mypropertylk/property/propertylisting?type=0
+---
+2016/06/27 06:30:16 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "upload/propertyimages/image_89_1_1411448132.jpg".' in C:\xampp\htdocs\mypropertylk\protected\framework\web\CWebApplication.php:280
+Stack trace:
+#0 C:\xampp\htdocs\mypropertylk\protected\framework\web\CWebApplication.php(135): CWebApplication->runController('upload/property...')
+#1 C:\xampp\htdocs\mypropertylk\protected\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\mypropertylk\index.php(15): CApplication->run()
+#3 {main}
+REQUEST_URI=/mypropertylk/upload/propertyimages/image_89_1_1411448132.jpg
+HTTP_REFERER=http://localhost:81/mypropertylk/property/propertylisting?type=0
+---
+2016/06/27 06:30:16 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "upload/propertyimages/image_88_1_1411448131.jpg".' in C:\xampp\htdocs\mypropertylk\protected\framework\web\CWebApplication.php:280
+Stack trace:
+#0 C:\xampp\htdocs\mypropertylk\protected\framework\web\CWebApplication.php(135): CWebApplication->runController('upload/property...')
+#1 C:\xampp\htdocs\mypropertylk\protected\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\mypropertylk\index.php(15): CApplication->run()
+#3 {main}
+REQUEST_URI=/mypropertylk/upload/propertyimages/image_88_1_1411448131.jpg
+HTTP_REFERER=http://localhost:81/mypropertylk/property/propertylisting?type=0
+---
+2016/06/27 06:30:16 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "upload/propertyimages/image_87_1_1411448128.jpg".' in C:\xampp\htdocs\mypropertylk\protected\framework\web\CWebApplication.php:280
+Stack trace:
+#0 C:\xampp\htdocs\mypropertylk\protected\framework\web\CWebApplication.php(135): CWebApplication->runController('upload/property...')
+#1 C:\xampp\htdocs\mypropertylk\protected\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\mypropertylk\index.php(15): CApplication->run()
+#3 {main}
+REQUEST_URI=/mypropertylk/upload/propertyimages/image_87_1_1411448128.jpg
+HTTP_REFERER=http://localhost:81/mypropertylk/property/propertylisting?type=0
+---
+2016/06/27 06:30:16 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "upload/propertyimages/image_89_1_1411448132.jpg".' in C:\xampp\htdocs\mypropertylk\protected\framework\web\CWebApplication.php:280
+Stack trace:
+#0 C:\xampp\htdocs\mypropertylk\protected\framework\web\CWebApplication.php(135): CWebApplication->runController('upload/property...')
+#1 C:\xampp\htdocs\mypropertylk\protected\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\mypropertylk\index.php(15): CApplication->run()
+#3 {main}
+REQUEST_URI=/mypropertylk/upload/propertyimages/image_89_1_1411448132.jpg
+HTTP_REFERER=http://localhost:81/mypropertylk/property/propertylisting?type=0
+---
+2016/06/27 06:30:17 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "upload/propertyimages/image_86_1_1411448125.jpg".' in C:\xampp\htdocs\mypropertylk\protected\framework\web\CWebApplication.php:280
+Stack trace:
+#0 C:\xampp\htdocs\mypropertylk\protected\framework\web\CWebApplication.php(135): CWebApplication->runController('upload/property...')
+#1 C:\xampp\htdocs\mypropertylk\protected\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\mypropertylk\index.php(15): CApplication->run()
+#3 {main}
+REQUEST_URI=/mypropertylk/upload/propertyimages/image_86_1_1411448125.jpg
+HTTP_REFERER=http://localhost:81/mypropertylk/property/propertylisting?type=0
+---
+2016/06/27 06:30:17 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "upload/propertyimages/image_88_1_1411448131.jpg".' in C:\xampp\htdocs\mypropertylk\protected\framework\web\CWebApplication.php:280
+Stack trace:
+#0 C:\xampp\htdocs\mypropertylk\protected\framework\web\CWebApplication.php(135): CWebApplication->runController('upload/property...')
+#1 C:\xampp\htdocs\mypropertylk\protected\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\mypropertylk\index.php(15): CApplication->run()
+#3 {main}
+REQUEST_URI=/mypropertylk/upload/propertyimages/image_88_1_1411448131.jpg
+HTTP_REFERER=http://localhost:81/mypropertylk/property/propertylisting?type=0
+---
+2016/06/27 06:31:24 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "upload/propertyimages/image_89_1_1411448132.jpg".' in C:\xampp\htdocs\mypropertylk\protected\framework\web\CWebApplication.php:280
+Stack trace:
+#0 C:\xampp\htdocs\mypropertylk\protected\framework\web\CWebApplication.php(135): CWebApplication->runController('upload/property...')
+#1 C:\xampp\htdocs\mypropertylk\protected\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\mypropertylk\index.php(15): CApplication->run()
+#3 {main}
+REQUEST_URI=/mypropertylk/upload/propertyimages/image_89_1_1411448132.jpg
+HTTP_REFERER=http://localhost:81/mypropertylk/property/propertylisting?type=0
+---
+2016/06/27 06:31:24 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "upload/propertyimages/image_86_1_1411448125.jpg".' in C:\xampp\htdocs\mypropertylk\protected\framework\web\CWebApplication.php:280
+Stack trace:
+#0 C:\xampp\htdocs\mypropertylk\protected\framework\web\CWebApplication.php(135): CWebApplication->runController('upload/property...')
+#1 C:\xampp\htdocs\mypropertylk\protected\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\mypropertylk\index.php(15): CApplication->run()
+#3 {main}
+REQUEST_URI=/mypropertylk/upload/propertyimages/image_86_1_1411448125.jpg
+HTTP_REFERER=http://localhost:81/mypropertylk/property/propertylisting?type=0
+---
+2016/06/27 06:31:24 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "upload/propertyimages/image_88_1_1411448131.jpg".' in C:\xampp\htdocs\mypropertylk\protected\framework\web\CWebApplication.php:280
+Stack trace:
+#0 C:\xampp\htdocs\mypropertylk\protected\framework\web\CWebApplication.php(135): CWebApplication->runController('upload/property...')
+#1 C:\xampp\htdocs\mypropertylk\protected\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\mypropertylk\index.php(15): CApplication->run()
+#3 {main}
+REQUEST_URI=/mypropertylk/upload/propertyimages/image_88_1_1411448131.jpg
+HTTP_REFERER=http://localhost:81/mypropertylk/property/propertylisting?type=0
+---
+2016/06/27 06:31:24 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "upload/propertyimages/image_87_1_1411448128.jpg".' in C:\xampp\htdocs\mypropertylk\protected\framework\web\CWebApplication.php:280
+Stack trace:
+#0 C:\xampp\htdocs\mypropertylk\protected\framework\web\CWebApplication.php(135): CWebApplication->runController('upload/property...')
+#1 C:\xampp\htdocs\mypropertylk\protected\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\mypropertylk\index.php(15): CApplication->run()
+#3 {main}
+REQUEST_URI=/mypropertylk/upload/propertyimages/image_87_1_1411448128.jpg
+HTTP_REFERER=http://localhost:81/mypropertylk/property/propertylisting?type=0
+---
+2016/06/27 06:40:03 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "upload/propertyimages/image_89_1_1411448132.jpg".' in C:\xampp\htdocs\mypropertylk\protected\framework\web\CWebApplication.php:280
+Stack trace:
+#0 C:\xampp\htdocs\mypropertylk\protected\framework\web\CWebApplication.php(135): CWebApplication->runController('upload/property...')
+#1 C:\xampp\htdocs\mypropertylk\protected\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\mypropertylk\index.php(15): CApplication->run()
+#3 {main}
+REQUEST_URI=/mypropertylk/upload/propertyimages/image_89_1_1411448132.jpg
+HTTP_REFERER=http://localhost:81/mypropertylk/property/propertylisting?type=0
+---
+2016/06/27 06:40:03 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "upload/propertyimages/image_88_1_1411448131.jpg".' in C:\xampp\htdocs\mypropertylk\protected\framework\web\CWebApplication.php:280
+Stack trace:
+#0 C:\xampp\htdocs\mypropertylk\protected\framework\web\CWebApplication.php(135): CWebApplication->runController('upload/property...')
+#1 C:\xampp\htdocs\mypropertylk\protected\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\mypropertylk\index.php(15): CApplication->run()
+#3 {main}
+REQUEST_URI=/mypropertylk/upload/propertyimages/image_88_1_1411448131.jpg
+HTTP_REFERER=http://localhost:81/mypropertylk/property/propertylisting?type=0
+---
+2016/06/27 06:40:03 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "upload/propertyimages/image_87_1_1411448128.jpg".' in C:\xampp\htdocs\mypropertylk\protected\framework\web\CWebApplication.php:280
+Stack trace:
+#0 C:\xampp\htdocs\mypropertylk\protected\framework\web\CWebApplication.php(135): CWebApplication->runController('upload/property...')
+#1 C:\xampp\htdocs\mypropertylk\protected\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\mypropertylk\index.php(15): CApplication->run()
+#3 {main}
+REQUEST_URI=/mypropertylk/upload/propertyimages/image_87_1_1411448128.jpg
+HTTP_REFERER=http://localhost:81/mypropertylk/property/propertylisting?type=0
+---
+2016/06/27 06:40:03 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "upload/propertyimages/image_86_1_1411448125.jpg".' in C:\xampp\htdocs\mypropertylk\protected\framework\web\CWebApplication.php:280
+Stack trace:
+#0 C:\xampp\htdocs\mypropertylk\protected\framework\web\CWebApplication.php(135): CWebApplication->runController('upload/property...')
+#1 C:\xampp\htdocs\mypropertylk\protected\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\mypropertylk\index.php(15): CApplication->run()
+#3 {main}
+REQUEST_URI=/mypropertylk/upload/propertyimages/image_86_1_1411448125.jpg
+HTTP_REFERER=http://localhost:81/mypropertylk/property/propertylisting?type=0
+---
+2016/06/27 06:40:04 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "upload/propertyimages/image_87_1_1411448128.jpg".' in C:\xampp\htdocs\mypropertylk\protected\framework\web\CWebApplication.php:280
+Stack trace:
+#0 C:\xampp\htdocs\mypropertylk\protected\framework\web\CWebApplication.php(135): CWebApplication->runController('upload/property...')
+#1 C:\xampp\htdocs\mypropertylk\protected\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\mypropertylk\index.php(15): CApplication->run()
+#3 {main}
+REQUEST_URI=/mypropertylk/upload/propertyimages/image_87_1_1411448128.jpg
+HTTP_REFERER=http://localhost:81/mypropertylk/property/propertylisting?type=0
+---
+2016/06/27 06:40:04 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "upload/propertyimages/image_89_1_1411448132.jpg".' in C:\xampp\htdocs\mypropertylk\protected\framework\web\CWebApplication.php:280
+Stack trace:
+#0 C:\xampp\htdocs\mypropertylk\protected\framework\web\CWebApplication.php(135): CWebApplication->runController('upload/property...')
+#1 C:\xampp\htdocs\mypropertylk\protected\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\mypropertylk\index.php(15): CApplication->run()
+#3 {main}
+REQUEST_URI=/mypropertylk/upload/propertyimages/image_89_1_1411448132.jpg
+HTTP_REFERER=http://localhost:81/mypropertylk/property/propertylisting?type=0
+---
+2016/06/27 06:40:04 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "upload/propertyimages/image_88_1_1411448131.jpg".' in C:\xampp\htdocs\mypropertylk\protected\framework\web\CWebApplication.php:280
+Stack trace:
+#0 C:\xampp\htdocs\mypropertylk\protected\framework\web\CWebApplication.php(135): CWebApplication->runController('upload/property...')
+#1 C:\xampp\htdocs\mypropertylk\protected\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\mypropertylk\index.php(15): CApplication->run()
+#3 {main}
+REQUEST_URI=/mypropertylk/upload/propertyimages/image_88_1_1411448131.jpg
+HTTP_REFERER=http://localhost:81/mypropertylk/property/propertylisting?type=0
+---
+2016/06/27 06:40:04 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "upload/propertyimages/image_86_1_1411448125.jpg".' in C:\xampp\htdocs\mypropertylk\protected\framework\web\CWebApplication.php:280
+Stack trace:
+#0 C:\xampp\htdocs\mypropertylk\protected\framework\web\CWebApplication.php(135): CWebApplication->runController('upload/property...')
+#1 C:\xampp\htdocs\mypropertylk\protected\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\mypropertylk\index.php(15): CApplication->run()
+#3 {main}
+REQUEST_URI=/mypropertylk/upload/propertyimages/image_86_1_1411448125.jpg
+HTTP_REFERER=http://localhost:81/mypropertylk/property/propertylisting?type=0
+---
+2016/06/27 06:41:34 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "images".' in C:\xampp\htdocs\mypropertylk\protected\framework\web\CController.php:484
+Stack trace:
+#0 C:\xampp\htdocs\mypropertylk\protected\framework\web\CController.php(271): CController->missingAction('images')
+#1 C:\xampp\htdocs\mypropertylk\protected\framework\web\CWebApplication.php(276): CController->run('images')
+#2 C:\xampp\htdocs\mypropertylk\protected\framework\web\CWebApplication.php(135): CWebApplication->runController('site/images/nav...')
+#3 C:\xampp\htdocs\mypropertylk\protected\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\mypropertylk\index.php(15): CApplication->run()
+#5 {main}
+REQUEST_URI=/mypropertylk/site/images/nav-head.png
+HTTP_REFERER=http://localhost:81/mypropertylk/site/services
+---
+2016/06/27 06:41:34 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "images".' in C:\xampp\htdocs\mypropertylk\protected\framework\web\CController.php:484
+Stack trace:
+#0 C:\xampp\htdocs\mypropertylk\protected\framework\web\CController.php(271): CController->missingAction('images')
+#1 C:\xampp\htdocs\mypropertylk\protected\framework\web\CWebApplication.php(276): CController->run('images')
+#2 C:\xampp\htdocs\mypropertylk\protected\framework\web\CWebApplication.php(135): CWebApplication->runController('site/images/nav...')
+#3 C:\xampp\htdocs\mypropertylk\protected\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\mypropertylk\index.php(15): CApplication->run()
+#5 {main}
+REQUEST_URI=/mypropertylk/site/images/nav-head.png
+HTTP_REFERER=http://localhost:81/mypropertylk/site/services
+---
+2016/06/27 06:42:27 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "upload/propertyimages/image_89_1_1411448132.jpg".' in C:\xampp\htdocs\mypropertylk\protected\framework\web\CWebApplication.php:280
+Stack trace:
+#0 C:\xampp\htdocs\mypropertylk\protected\framework\web\CWebApplication.php(135): CWebApplication->runController('upload/property...')
+#1 C:\xampp\htdocs\mypropertylk\protected\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\mypropertylk\index.php(15): CApplication->run()
+#3 {main}
+REQUEST_URI=/mypropertylk/upload/propertyimages/image_89_1_1411448132.jpg
+HTTP_REFERER=http://localhost:81/mypropertylk/property/propertylisting?type=0
+---
+2016/06/27 06:42:27 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "upload/propertyimages/image_88_1_1411448131.jpg".' in C:\xampp\htdocs\mypropertylk\protected\framework\web\CWebApplication.php:280
+Stack trace:
+#0 C:\xampp\htdocs\mypropertylk\protected\framework\web\CWebApplication.php(135): CWebApplication->runController('upload/property...')
+#1 C:\xampp\htdocs\mypropertylk\protected\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\mypropertylk\index.php(15): CApplication->run()
+#3 {main}
+REQUEST_URI=/mypropertylk/upload/propertyimages/image_88_1_1411448131.jpg
+HTTP_REFERER=http://localhost:81/mypropertylk/property/propertylisting?type=0
+---
+2016/06/27 06:42:27 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "upload/propertyimages/image_87_1_1411448128.jpg".' in C:\xampp\htdocs\mypropertylk\protected\framework\web\CWebApplication.php:280
+Stack trace:
+#0 C:\xampp\htdocs\mypropertylk\protected\framework\web\CWebApplication.php(135): CWebApplication->runController('upload/property...')
+#1 C:\xampp\htdocs\mypropertylk\protected\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\mypropertylk\index.php(15): CApplication->run()
+#3 {main}
+REQUEST_URI=/mypropertylk/upload/propertyimages/image_87_1_1411448128.jpg
+HTTP_REFERER=http://localhost:81/mypropertylk/property/propertylisting?type=0
+---
+2016/06/27 06:42:27 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "upload/propertyimages/image_86_1_1411448125.jpg".' in C:\xampp\htdocs\mypropertylk\protected\framework\web\CWebApplication.php:280
+Stack trace:
+#0 C:\xampp\htdocs\mypropertylk\protected\framework\web\CWebApplication.php(135): CWebApplication->runController('upload/property...')
+#1 C:\xampp\htdocs\mypropertylk\protected\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\mypropertylk\index.php(15): CApplication->run()
+#3 {main}
+REQUEST_URI=/mypropertylk/upload/propertyimages/image_86_1_1411448125.jpg
+HTTP_REFERER=http://localhost:81/mypropertylk/property/propertylisting?type=0
+---
+2016/06/27 06:42:27 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "upload/propertyimages/image_89_1_1411448132.jpg".' in C:\xampp\htdocs\mypropertylk\protected\framework\web\CWebApplication.php:280
+Stack trace:
+#0 C:\xampp\htdocs\mypropertylk\protected\framework\web\CWebApplication.php(135): CWebApplication->runController('upload/property...')
+#1 C:\xampp\htdocs\mypropertylk\protected\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#2 C:\xampp\htdocs\mypropertylk\index.php(15): CApplication->run()
+#3 {main}
+REQUEST_URI=/mypropertylk/upload/propertyimages/image_89_1_1411448132.jpg
+HTTP_REFERER=http://localhost:81/mypropertylk/property/propertylisting?type=0
+---
+2016/06/27 06:55:54 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "images".' in C:\xampp\htdocs\mypropertylk\protected\framework\web\CController.php:484
+Stack trace:
+#0 C:\xampp\htdocs\mypropertylk\protected\framework\web\CController.php(271): CController->missingAction('images')
+#1 C:\xampp\htdocs\mypropertylk\protected\framework\web\CWebApplication.php(276): CController->run('images')
+#2 C:\xampp\htdocs\mypropertylk\protected\framework\web\CWebApplication.php(135): CWebApplication->runController('site/images/nav...')
+#3 C:\xampp\htdocs\mypropertylk\protected\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\mypropertylk\index.php(15): CApplication->run()
+#5 {main}
+REQUEST_URI=/mypropertylk/site/images/nav-head.png
+HTTP_REFERER=http://localhost:81/mypropertylk/site/services
+---
+2016/06/27 06:55:54 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "images".' in C:\xampp\htdocs\mypropertylk\protected\framework\web\CController.php:484
+Stack trace:
+#0 C:\xampp\htdocs\mypropertylk\protected\framework\web\CController.php(271): CController->missingAction('images')
+#1 C:\xampp\htdocs\mypropertylk\protected\framework\web\CWebApplication.php(276): CController->run('images')
+#2 C:\xampp\htdocs\mypropertylk\protected\framework\web\CWebApplication.php(135): CWebApplication->runController('site/images/nav...')
+#3 C:\xampp\htdocs\mypropertylk\protected\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\mypropertylk\index.php(15): CApplication->run()
+#5 {main}
+REQUEST_URI=/mypropertylk/site/images/nav-head.png
+HTTP_REFERER=http://localhost:81/mypropertylk/site/services
+---
+2016/06/27 07:01:06 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "images".' in C:\xampp\htdocs\mypropertylk\protected\framework\web\CController.php:484
+Stack trace:
+#0 C:\xampp\htdocs\mypropertylk\protected\framework\web\CController.php(271): CController->missingAction('images')
+#1 C:\xampp\htdocs\mypropertylk\protected\framework\web\CWebApplication.php(276): CController->run('images')
+#2 C:\xampp\htdocs\mypropertylk\protected\framework\web\CWebApplication.php(135): CWebApplication->runController('site/images/nav...')
+#3 C:\xampp\htdocs\mypropertylk\protected\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\mypropertylk\index.php(15): CApplication->run()
+#5 {main}
+REQUEST_URI=/mypropertylk/site/images/nav-head.png
+HTTP_REFERER=http://localhost:81/mypropertylk/site/services
+---
+2016/06/27 07:18:27 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "images".' in C:\xampp\htdocs\mypropertylk\protected\framework\web\CController.php:484
+Stack trace:
+#0 C:\xampp\htdocs\mypropertylk\protected\framework\web\CController.php(271): CController->missingAction('images')
+#1 C:\xampp\htdocs\mypropertylk\protected\framework\web\CWebApplication.php(276): CController->run('images')
+#2 C:\xampp\htdocs\mypropertylk\protected\framework\web\CWebApplication.php(135): CWebApplication->runController('site/images/nav...')
+#3 C:\xampp\htdocs\mypropertylk\protected\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\mypropertylk\index.php(15): CApplication->run()
+#5 {main}
+REQUEST_URI=/mypropertylk/site/images/nav-head.png
+HTTP_REFERER=http://localhost:81/mypropertylk/site/services
+---
+2016/06/27 07:18:28 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'The system is unable to find the requested action "images".' in C:\xampp\htdocs\mypropertylk\protected\framework\web\CController.php:484
+Stack trace:
+#0 C:\xampp\htdocs\mypropertylk\protected\framework\web\CController.php(271): CController->missingAction('images')
+#1 C:\xampp\htdocs\mypropertylk\protected\framework\web\CWebApplication.php(276): CController->run('images')
+#2 C:\xampp\htdocs\mypropertylk\protected\framework\web\CWebApplication.php(135): CWebApplication->runController('site/images/nav...')
+#3 C:\xampp\htdocs\mypropertylk\protected\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\mypropertylk\index.php(15): CApplication->run()
+#5 {main}
+REQUEST_URI=/mypropertylk/site/images/nav-head.png
+HTTP_REFERER=http://localhost:81/mypropertylk/site/services
+---

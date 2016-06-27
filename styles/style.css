@@ -1637,8 +1637,8 @@ p.caption-text {
 	transition: all 0.4s ease-in-out;
 }
 .services li:hover .ser-hover {
-	background: #4caf50;
-}               /* (25,182,37,0.85)*/
+	background: rgba(76,175,80,0.71);
+}               /* (25,182,37,0.85), #4caf50; rgba(76,175,80,0.71)*/
 
 .services li:hover .ser-hover p {
 	opacity: 1;
@@ -5145,7 +5145,8 @@ p.caption-text {
       text-align: justify;
       font-size:15px;
   }
-
+ 
+  
 /*::-moz-selection {  Code for Firefox 
     color: red;
     background: yellow;

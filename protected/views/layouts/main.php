@@ -111,6 +111,25 @@
     </head>
     
     <body>
+        
+         <div class="modal fade"  id="myModal" style="top:20px !important; left:-175px !important;" myModalrole="dialog">
+                     <div class="modal-dialog">
+
+                            <!-- Modal content-->
+                        <div class="modal-content" style="width:790px">
+                        <div class="modal-header" style="border-bottom:none">
+                            <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                                 
+                        </div>
+                         <div class="modal-body">
+                        <img class="MP" style="z-index:9999" src="<?php echo Yii::app()->request->baseUrl; ?>/images/Marketing_packeges.jpg" alt="">
+                        </div>
+                        </div>
+
+                        </div>
+          </div>
+        
+        
         <div id="dvLoading">
             <img class="loadingImg" src="<?php echo Yii::app()->request->baseUrl; ?>/images/loading.gif">
         </div>
