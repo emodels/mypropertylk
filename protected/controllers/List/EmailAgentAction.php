@@ -30,15 +30,18 @@ class EmailagentAction extends CAction
 
                     if (isset($property)) {
 
+                        $agent_vendor_name = '';
                         $agent_vendor_email = '';
 
                         if ($property->sendemail == 1 && $property->vendoremail != '') {
 
                             $agent_vendor_email = $property->vendoremail;
+                            $agent_vendor_name = $property->vendorname;
 
                         } else {
 
                             $agent_vendor_email = $property->agent0->email;
+                            $agent_vendor_name = $property->agent0->fname;
                         }
 
                         $mailer = Yii::createComponent('application.extensions.mailer.EMailer');
@@ -65,6 +68,19 @@ class EmailagentAction extends CAction
 
                         try{
                             $mailer->Send();
+
+                            /*---( Add to Mail Log )---*/
+
+                            Utility::addMailLog(
+                                Yii::app()->params['SMTP_Username'],
+                                'myproperty.lk Enquiry',
+                                $agent_vendor_email,
+                                $agent_vendor_name,
+                                'Property Id : # ' . $_POST['Enquery']['pid'] . ' - Enquiry from - ' . ucwords($_POST['Enquery']['name']),
+                                $message,
+                                $property->owner,
+                                0
+                            );
                         }
                         catch (Exception $ex){
                             echo $ex->getMessage();

@@ -2,6 +2,8 @@
 
 class SiteController extends Controller
 {
+    public $layout = "column1";
+
 	/**
 	 * Declares class-based actions.
 	 */
@@ -88,13 +90,26 @@ class SiteController extends Controller
                     $mailer->AddBCC(Yii::app()->params['mailCC_1']);
                     $mailer->FromName = $model->name;
                     $mailer->CharSet = 'UTF-8';
-                    $mailer->Subject = 'myproperty.lk Contact Us Enquiry';;
+                    $mailer->Subject = 'myproperty.lk Contact Us Enquiry';
                     $mailer->IsHTML();
                     $mailer->Body = $message;
                     $mailer->SMTPDebug  = Yii::app()->params['SMTPDebug'];
 
                     try{
                         $mailer->Send();
+
+                        /*---( Add to Mail Log )---*/
+
+                        Utility::addMailLog(
+                            Yii::app()->params['SMTP_Username'],
+                            $model->name,
+                            Yii::app()->params['adminEmail'],
+                            'Admin',
+                            'myproperty.lk Contact Us Enquiry',
+                            $message,
+                            1,
+                            1
+                        );
                     }
                     catch (Exception $ex){
                         echo $ex->getMessage();
@@ -313,6 +328,19 @@ class SiteController extends Controller
 
                     try{
                         $mailer->Send();
+
+                        /*---( Add to Mail Log )---*/
+
+                        Utility::addMailLog(
+                            Yii::app()->params['SMTP_Username'],
+                            'myproperty.lk',
+                            $user->email,
+                            $user->fname . ' ' . $user->lname,
+                            'myproperty.lk - Your Login access information',
+                            $message,
+                            $user->id,
+                            0
+                        );
                     }
                     catch (Exception $ex){
                         echo $ex->getMessage();
@@ -339,6 +367,36 @@ class SiteController extends Controller
         
         $this->render('about_us', array());
     }
-    
-    
+
+    public function actionMailLog($id){
+
+        $user = User::model()->findByPk($id);
+
+        switch ($user->usertype) {
+
+            case 0;
+                $this->layout = "adminmain";
+                break;
+
+            case 1;
+                $this->layout = "membermain";
+                break;
+
+            case 2;
+                $this->layout = "agentmain";
+                break;
+
+            case 3;
+                $this->layout = "advertisermain";
+                break;
+        }
+
+
+        $user = User::model()->findByPk($id);
+
+        $dataProvider = new CActiveDataProvider('MailLog', array('criteria'=>array('condition'=> 'user = ' . $id, 'order'=>'id DESC'), 'pagination' => false));
+
+        $this->render('mail_log', array('dataProvider'=>$dataProvider, 'user'=>$user));
+    }
+
 }

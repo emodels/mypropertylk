@@ -53,13 +53,26 @@ class IndexAction extends CAction
                     $mailer->AddBCC(Yii::app()->params['mailCC_1']);
                     $mailer->FromName = $_POST['name'];
                     $mailer->CharSet = 'UTF-8';
-                    $mailer->Subject = 'myproperty.lk Enquiry for landing page #' . $_GET['id'];;
+                    $mailer->Subject = 'myproperty.lk Enquiry for landing page #' . $_GET['id'];
                     $mailer->IsHTML();
                     $mailer->Body = $message;
                     $mailer->SMTPDebug  = Yii::app()->params['SMTPDebug'];
 
                     try{
                         $mailer->Send();
+
+                        /*---( Add to Mail Log )---*/
+
+                        Utility::addMailLog(
+                            Yii::app()->params['SMTP_Username'],
+                            $_POST['name'],
+                            Yii::app()->params['adminEmail'],
+                            'Admin',
+                            'myproperty.lk Enquiry for landing page #' . $_GET['id'],
+                            $message,
+                            1,
+                            1
+                        );
                     }
                     catch (Exception $ex){
 

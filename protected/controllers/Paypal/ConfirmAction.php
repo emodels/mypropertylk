@@ -115,6 +115,19 @@ class ConfirmAction extends CAction
 
                                     try{
                                         $mailer->Send();
+
+                                        /*---( Add to Mail Log )---*/
+
+                                        Utility::addMailLog(
+                                            Yii::app()->params['SMTP_Username'],
+                                            'myproperty.lk',
+                                            $transaction->user0->email,
+                                            $transaction->user0->fname,
+                                            'myproperty.lk Property Transaction - # ' . $transaction->id . ' Successfully Completed...',
+                                            $message,
+                                            $transaction->user,
+                                            0
+                                        );
                                     }
                                     catch (Exception $ex){
                                         echo $ex->getMessage();
@@ -172,6 +185,19 @@ class ConfirmAction extends CAction
 
                                     try{
                                         $mailer->Send();
+
+                                        /*---( Add to Mail Log )---*/
+
+                                        Utility::addMailLog(
+                                            Yii::app()->params['SMTP_Username'],
+                                            'myproperty.lk',
+                                            $transaction->user0->email,
+                                            $transaction->user0->fname,
+                                            'myproperty.lk Advertisement Transaction  - # ' . $transaction->id . ' Successfully Completed...',
+                                            $message,
+                                            $transaction->user,
+                                            0
+                                        );
                                     }
                                     catch (Exception $ex){
                                         echo $ex->getMessage();

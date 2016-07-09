@@ -56,7 +56,10 @@
             </div>
         </div>
     </div>
-    <div class="span9" style="text-align: right">
+    <div class="span3">
+        <a href="<?php echo Yii::app()->request->baseUrl; ?>/site/maillog/<?php echo Yii::app()->user->id; ?>" class="btn btn-default"><i class="icon-envelope" style="margin-right: 10px"></i></span> View Mail Log</a>
+    </div>
+    <div class="span6" style="text-align: right">
         <div class="control-group">
             <form class="form-search">
                 <div class="input-append">
