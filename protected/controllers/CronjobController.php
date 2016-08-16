@@ -61,4 +61,44 @@ class CronjobController extends Controller
             echo "No Advertisements Found..!";
         }
     }
+
+    public function actionOptimizePropertyImages() {
+
+        /*---( Stop page scripting timeout )---*/
+
+        set_time_limit(0);
+        ignore_user_abort(1);
+
+        $dir = Yii::getPathOfAlias('webroot') . '/upload/propertyimages';
+        $dir_original = $dir . '/original';
+
+        if (is_dir($dir)) {
+
+            if ($dh = opendir($dir)) {
+
+                while (($file = readdir($dh)) !== false) {
+
+                    if (strpos($file, 'image_') !== false) {
+
+                        if (Utility::getFileSize($dir . '/'. $file) > 30) {
+
+                            if (!file_exists($dir_original . '/' . $file)) {
+
+                                /*---( Save Copy to Original Folder )---*/
+
+                                if (copy($dir . '/'. $file, $dir_original . '/' . $file)) {
+
+                                    Utility::compressImage($dir . '/' . $file, $dir . '/' . $file, 25);
+
+                                    echo $file . '<br><br>';
+                                }
+                            }
+                        }
+                    }
+                }
+
+                closedir($dh);
+            }
+        }
+    }
 }
