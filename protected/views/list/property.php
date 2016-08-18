@@ -13,20 +13,20 @@
     });
 </script>
 
-<link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>/css/tooltipster.css" />
-<script type='text/javascript' src='<?php echo Yii::app()->request->baseUrl; ?>/js/jquery.form.min.js'></script>
-<script type='text/javascript' src='<?php echo Yii::app()->request->baseUrl; ?>/js/jquery.jcarousel.min.js'></script>
-<script type='text/javascript' src='<?php echo Yii::app()->request->baseUrl; ?>/js/jquery.flexslider.js'></script>
-<script type='text/javascript' src='<?php echo Yii::app()->request->baseUrl; ?>/js/jquery.placeholder.js'></script>
+<!--<link rel="stylesheet" type="text/css" href="<?php //echo Yii::app()->request->baseUrl; ?>/css/tooltipster.css" />
+<script type='text/javascript' src='<?php //echo Yii::app()->request->baseUrl; ?>/js/jquery.form.min.js'></script>
+<script type='text/javascript' src='<?php //echo Yii::app()->request->baseUrl; ?>/js/jquery.jcarousel.min.js'></script>
+<script type='text/javascript' src='<?php //echo Yii::app()->request->baseUrl; ?>/js/jquery.flexslider.js'></script>
+<script type='text/javascript' src='<?php //echo Yii::app()->request->baseUrl; ?>/js/jquery.placeholder.js'></script>
 <script type='text/javascript'>
     /* <![CDATA[ */
     var slide = {"start":"1","interval":"5000"};
     /* ]]> */
 </script>
-<script type='text/javascript' src='<?php echo Yii::app()->request->baseUrl; ?>/js/real-expert.js'></script>
-<script type="text/javascript" src='<?php echo Yii::app()->request->baseUrl; ?>/js/jquery.maphilight.min.js'></script>
-<script type="text/javascript" src='<?php echo Yii::app()->request->baseUrl; ?>/js/jquery.tooltipster.min.js'></script>
-<script type="text/javascript" src='<?php echo Yii::app()->request->baseUrl; ?>/js/typeahead.bundle.min.js'></script>
+<script type='text/javascript' src='<?php //echo Yii::app()->request->baseUrl; ?>/js/real-expert.js'></script>
+<script type="text/javascript" src='<?php //echo Yii::app()->request->baseUrl; ?>/js/jquery.maphilight.min.js'></script>
+<script type="text/javascript" src='<?php //echo Yii::app()->request->baseUrl; ?>/js/jquery.tooltipster.min.js'></script>
+<script type="text/javascript" src='<?php //echo Yii::app()->request->baseUrl; ?>/js/typeahead.bundle.min.js'></script>-->
 <!-- Start sider HEAD section -->
 <link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>/engine1/style.css" />
 <!-- End slider HEAD section -->
@@ -855,3 +855,17 @@
 </div><!-- /.content-wrapper -->
 <script type="text/javascript" src="<?php echo Yii::app()->request->baseUrl; ?>/engine1/wowslider.js"></script>
 <script type="text/javascript" src="<?php echo Yii::app()->request->baseUrl; ?>/engine1/script.js"></script>
+
+<script type='text/javascript' src='<?php echo Yii::app()->request->baseUrl; ?>/js/jquery.form.min.js'></script>
+<script type='text/javascript' src='<?php echo Yii::app()->request->baseUrl; ?>/js/jquery.jcarousel.min.js'></script>
+<script type='text/javascript' src='<?php echo Yii::app()->request->baseUrl; ?>/js/jquery.flexslider.js'></script>
+<script type='text/javascript' src='<?php echo Yii::app()->request->baseUrl; ?>/js/jquery.placeholder.js'></script>
+<script type='text/javascript'>
+    /* <![CDATA[ */
+    var slide = {"start":"1","interval":"5000"};
+    /* ]]> */
+</script>
+<script type='text/javascript' src='<?php echo Yii::app()->request->baseUrl; ?>/js/real-expert.js'></script>
+<script type="text/javascript" src='<?php echo Yii::app()->request->baseUrl; ?>/js/jquery.maphilight.min.js'></script>
+<script type="text/javascript" src='<?php echo Yii::app()->request->baseUrl; ?>/js/jquery.tooltipster.min.js'></script>
+<script type="text/javascript" src='<?php echo Yii::app()->request->baseUrl; ?>/js/typeahead.bundle.min.js'></script>

@@ -1,22 +1,21 @@
 <head>
     <link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>/css/tooltipster.css" />
-    <link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>/css/jquery.bxslider.css" />
-    <script type='text/javascript' src='<?php echo Yii::app()->request->baseUrl; ?>/js/jquery.form.min.js'></script>
-    <script type='text/javascript' src='<?php echo Yii::app()->request->baseUrl; ?>/js/jquery.jcarousel.min.js'></script>
-    <script type='text/javascript' src='<?php echo Yii::app()->request->baseUrl; ?>/js/jquery.flexslider.js'></script>
-    <script type='text/javascript' src='<?php echo Yii::app()->request->baseUrl; ?>/js/jquery.placeholder.js'></script>
-    <script type='text/javascript'>
+<!--    <link rel="stylesheet" type="text/css" href="<?php //echo Yii::app()->request->baseUrl; ?>/css/jquery.bxslider.css" />-->
+<!--    <script type='text/javascript' src='<?php //echo Yii::app()->request->baseUrl; ?>/js/jquery.form.min.js'></script>
+        <script type='text/javascript' src='<?php //echo Yii::app()->request->baseUrl; ?>/js/jquery.jcarousel.min.js'></script>
+        <script type='text/javascript' src='<?php //echo Yii::app()->request->baseUrl; ?>/js/jquery.flexslider.js'></script>
+        <script type='text/javascript' src='<?php //echo Yii::app()->request->baseUrl; ?>/js/jquery.placeholder.js'></script> -->
+        <script type='text/javascript'>
         /* <![CDATA[ */
         var slide = {"start": "1", "interval": "5000"};
         /* ]]> */
-    </script>
-    <script type='text/javascript' src='<?php echo Yii::app()->request->baseUrl; ?>/js/real-expert.js'></script>
-    <script type="text/javascript" src='<?php echo Yii::app()->request->baseUrl; ?>/js/jquery.maphilight.min.js'></script>
-    <script type="text/javascript" src='<?php echo Yii::app()->request->baseUrl; ?>/js/jquery.tooltipster.min.js'></script>
-    <script type="text/javascript" src='<?php echo Yii::app()->request->baseUrl; ?>/js/typeahead.bundle.min.js'></script>
-     <!-- <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
-    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>-->
+        </script>
+        
+<!--   <script type='text/javascript' src='<?php //echo Yii::app()->request->baseUrl; ?>/js/real-expert.js'></script>
+       <script type="text/javascript" src='<?php //echo Yii::app()->request->baseUrl; ?>/js/jquery.maphilight.min.js'></script>
+       <script type="text/javascript" src='<?php //echo Yii::app()->request->baseUrl; ?>/js/jquery.tooltipster.min.js'></script>
+       <script type="text/javascript" src='<?php //echo Yii::app()->request->baseUrl; ?>/js/typeahead.bundle.min.js'></script> -->
+
     
     <script type="text/javascript">
 
@@ -32,30 +31,30 @@
 
         jQuery(document).ready(function () {
 
-            jQuery.fn.maphilight.defaults = {
-                fill: true,
-                fillColor: '104745',
-                fillOpacity: 1,
-                stroke: true,
-                strokeColor: 'B6EEEB',
-                strokeOpacity: 1,
-                strokeWidth: 1,
-                fade: true,
-                alwaysOn: false,
-                neverOn: false,
-                groupBy: false,
-                wrapClass: true,
-                shadow: false,
-                shadowX: 0,
-                shadowY: 0,
-                shadowRadius: 6,
-                shadowColor: '000000',
-                shadowOpacity: 0.8,
-                shadowPosition: 'outside',
-                shadowFrom: false
-            };
-            jQuery('#sl-map-imagemap').maphilight();
-            jQuery('.tooltip').tooltipster();
+//            jQuery.fn.maphilight.defaults = {
+//                fill: true,
+//                fillColor: '104745',
+//                fillOpacity: 0,
+//                stroke: true,
+//                strokeColor: 'B6EEEB',
+//                strokeOpacity: 1,
+//                strokeWidth: 1,
+//                fade: true,
+//                alwaysOn: false,
+//                neverOn: false,
+//                groupBy: false,
+//                wrapClass: true,
+//                shadow: false,
+//                shadowX: 0,
+//                shadowY: 0,
+//                shadowRadius: 6,
+//                shadowColor: '000000',
+//                shadowOpacity: 0.8,
+//                shadowPosition: 'outside',
+//                shadowFrom: false
+//            };
+//            jQuery('#sl-map-imagemap').maphilight();
+//            jQuery('.tooltip').tooltipster();
 
             $('#ikman_map path').click(function (event) {
 
@@ -68,7 +67,7 @@
 
                     window.document.location.replace('<?php echo Yii::app()->request->baseUrl; ?>/list/property/type/<?php echo $model->type; ?>/district/' + district);
                 }
-               $('#sl-map').css('margin-left','-65px');
+               $('#sl-map').css('margin-left','-65px'); 
                  $('#div_citylist').css('display','block');
                  $('#citylist').empty();
                  
@@ -119,55 +118,55 @@
                     });
 
         });
+// 04/08/2016
+//
+//        function LoadFeaturedList(type) {
+//
+//        if (type === 'buy') {
+//            $('.property-list-by a').removeClass('current');
+//            $('.property-list-by a#buy').addClass('current');
+//        }
+//
+//        if (type === 'rent') {
+//            $('.property-list-by a').removeClass('current');
+//            $('.property-list-by a#rent').addClass('current');
+//        }
+//
+//        if (type === 'all') {
+//            $('.property-list-by a').removeClass('current');
+//            $('.property-list-by a#all').addClass('current');
+//        }
+//
+//        $.fn.yiiListView.update('list_featured', {data:{type: type}});
+//
+//    }
 
-        function LoadFeaturedList(type) {
-
-        if (type === 'buy') {
-            $('.property-list-by a').removeClass('current');
-            $('.property-list-by a#buy').addClass('current');
-        }
-
-        if (type === 'rent') {
-            $('.property-list-by a').removeClass('current');
-            $('.property-list-by a#rent').addClass('current');
-        }
-
-        if (type === 'all') {
-            $('.property-list-by a').removeClass('current');
-            $('.property-list-by a#all').addClass('current');
-        }
-
-        $.fn.yiiListView.update('list_featured', {data:{type: type}});
-
-    }
-
-    function SearchProperty(district){
-
-        var array_search = [];
-
-        array_search.push({name: 'search[type]', value: $("input[name='Property[type]']:checked").val()});
-        array_search.push({name: 'search[town]', value: $("#townname").val()});
-        array_search.push({name: 'search[category]', value: $("#prop_type").val()});
-        array_search.push({name: 'search[minbed]', value: $("#min_bed").val()});
-        array_search.push({name: 'search[maxbed]', value: $("#max_bed").val()});
-        array_search.push({name: 'search[minprice]', value: $("#min_price").val()});
-        array_search.push({name: 'search[maxprice]', value: $("#max_price").val()});
-
-        if (district !== null) {
-            array_search.push({name: 'search[district]', value: district});
-        }
-
-        $.ajax({
-            type: "POST",
-            url: '<?php echo Yii::app()->request->baseUrl; ?>/list/searchjson',
-            data: $.param(array_search),
-            success: function(data){
-                if (data === 'done'){
-                    window.document.location.replace('<?php echo Yii::app()->request->baseUrl; ?>/list/property/type/' + $("input[name='Property[type]']:checked").val());
-                }
-            }
-        });
-    }
+//    function SearchProperty(district){ 
+////        var array_search = [];
+////
+////        array_search.push({name: 'search[type]', value: $("input[name='Property[type]']:checked").val()});
+////        array_search.push({name: 'search[town]', value: $("#townname").val()});
+////        array_search.push({name: 'search[category]', value: $("#prop_type").val()});
+////        array_search.push({name: 'search[minbed]', value: $("#min_bed").val()});
+////        array_search.push({name: 'search[maxbed]', value: $("#max_bed").val()});
+////        array_search.push({name: 'search[minprice]', value: $("#min_price").val()});
+////        array_search.push({name: 'search[maxprice]', value: $("#max_price").val()});
+////
+////        if (district !== null) {
+////            array_search.push({name: 'search[district]', value: district});
+////        }
+////
+//        $.ajax({
+//            type: "POST",
+//            url: '<?php //echo Yii::app()->request->baseUrl; ?>/list/searchjson',
+//            data: $.param(array_search),
+//            success: function(data){
+//                if (data === 'done'){
+//                    window.document.location.replace('<?php //echo Yii::app()->request->baseUrl; ?>/list/property/type/' + $("input[name='Property[type]']:checked").val());
+//                }
+//            }
+//        });
+//    }
     </script>
 
     <style type="text/css">
@@ -180,10 +179,7 @@
 
 <!--======= BANNER =========-->
 <div id="banner">
-<!--    <div class="search-text">
-        <h4> Search properties </h4>
-    </div>-->
- 
+
  <!-- =======================Sri Lanka Map =================== -->
 
     <!-- (c) ammap.com | SVG map of Sri Lanka - Low -->
@@ -212,9 +208,9 @@
                 }
             </style>
 
-            <amcharts:ammap projection="mercator" leftLongitude="79.649879" topLatitude="9.836123" rightLongitude="81.879063" bottomLatitude="5.918161"></amcharts:ammap>
+             <amcharts:ammap projection="mercator" leftLongitude="79.649879" topLatitude="9.836123" rightLongitude="81.879063" bottomLatitude="5.918161"></amcharts:ammap> -->
 
-            <!-- All areas are listed in the line below. You can use this list in your script. -->
+            <!--All areas are listed in the line below. You can use this list in your script. -->
             <!--{id:"LK-11"},{id:"LK-12"},{id:"LK-13"},{id:"LK-21"},{id:"LK-22"},{id:"LK-23"},{id:"LK-31"},{id:"LK-32"},{id:"LK-33"},{id:"LK-41"},{id:"LK-42"},{id:"LK-43"},{id:"LK-44"},{id:"LK-45"},{id:"LK-51"},{id:"LK-52"},{id:"LK-53"},{id:"LK-61"},{id:"LK-62"},{id:"LK-71"},{id:"LK-72"},{id:"LK-81"},{id:"LK-82"},{id:"LK-91"},{id:"LK-92"}-->
 
        </defs>
@@ -277,7 +273,7 @@
                       
                     
                    <span>
-                       <p>   <button type="button" class="slide-btn btn-default" style="width:160px;margin-top:0px"  data-toggle="modal" data-target="#myModal">Marketing Packages</button> </p> 
+                       <p>   <button type="button" class="btn" style="width:225px;margin-top:0px"  data-toggle="modal" data-target="#myModal">Marketing Packages</button> </p> 
                    </span>
                    <span>
                     <button type="button" class="slide-btn btn-default" style="margin-top:0px" onclick="window.location.href='<?php echo Yii::app()->request->baseUrl; ?>/site/services?brokerage'" >READ MORE</button>
@@ -500,4 +496,17 @@
                                                 <!--================================-->
                                                               <!--CALL US-->
                                                 <!--================================-->
+ 
+    <script type='text/javascript' src='<?php echo Yii::app()->request->baseUrl; ?>/js/jquery.form.min.js'></script>
+        <script type='text/javascript' src='<?php echo Yii::app()->request->baseUrl; ?>/js/jquery.jcarousel.min.js'></script>
+<!--        <script type='text/javascript' src='<?php //echo Yii::app()->request->baseUrl; ?>/js/jquery.flexslider.js'></script>-->
+<!--        <script type='text/javascript' src='<?php //echo Yii::app()->request->baseUrl; ?>/js/jquery.placeholder.js'></script>-->
                 
+<!--        <script type='text/javascript' src='<?php //echo Yii::app()->request->baseUrl; ?>/js/real-expert.js'></script>
+    <script type="text/javascript" src='<?php //echo Yii::app()->request->baseUrl; ?>/js/jquery.maphilight.min.js'></script>
+        <script type="text/javascript" src='<?php //echo Yii::app()->request->baseUrl; ?>/js/jquery.tooltipster.min.js'></script>-->
+        <script type="text/javascript" src='<?php echo Yii::app()->request->baseUrl; ?>/js/typeahead.bundle.min.js'></script>
+
+    
+   
+    

@@ -7,6 +7,7 @@
        $('#lnk_contact').addClass('active');
     });
 </script>
+
 <script src="https://maps.googleapis.com/maps/api/js?sensor=false"></script>
 <script type="text/javascript">
     function initialize() {
@@ -87,7 +88,7 @@ $this->breadcrumbs=array(
         <h1>CONTACT US</h1>
          <ol class="breadcrumb">
           <li class="pull-left">CONTACT us</li>
-          <li><a href="#">Home</a></li>
+          <li><a href="<?php echo Yii::app()->request->baseUrl;?>/">Home</a></li>
           <li class="active">CONTACT Us</li>
         </ol>
       </div>
@@ -117,7 +118,7 @@ $this->breadcrumbs=array(
 
           <!--======= ADDRESS =========-->
           <li class="col-md-4"> <i class="fa fa-clock-o"></i>
-            <p>Week days  :     9:00 Am to 5:00 PM</p>
+            <p>Week days  : 9:00 Am to 5:00 PM</p>
           </li>
         </ul>
 
@@ -221,5 +222,7 @@ $this->breadcrumbs=array(
     <!--======= MAP =========-->
     <div id="map_canvas"></div>
   </section>
+  
+  
 
 

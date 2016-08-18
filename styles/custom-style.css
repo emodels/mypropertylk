@@ -1,361 +1,55 @@
-/*
-To change this license header, choose License Headers in Project Properties.
-To change this template file, choose Tools | Templates
-and open the template in the editor.
-*/
-/* 
-    Created on : Jan 9, 2016, 
-    Author     : USER
-*/
-
-.input-prepend .add-on:first-child, .input-prepend .btn:first-child {
-    -webkit-border-radius: 4px 0 0 4px;
-    -moz-border-radius: 4px 0 0 4px;
-    border-radius: 4px 0 0 4px;
+.input-prepend .add-on:first-child,.input-prepend .btn:first-child{-webkit-border-radius:4px 0 0 4px;-moz-border-radius:4px 0 0 4px;border-radius:4px 0 0 4px}
+.add-on{display:inline-block;width:auto;height:30px;min-width:16px;padding:4px 5px;font-size:14px;font-weight:400;line-height:20px;text-align:center;text-shadow:0 1px 0 #fff;background-color:#eee;border:1px solid #ccc}
+.form-horizontal .control-group{margin-bottom:20px}
+.checkbox.inline{display:inline-block;padding-top:5px;margin-bottom:0;vertical-align:middle}
+.radio,.checkbox{min-height:20px;padding-left:20px}
+@media (max-width: 460px) {
+.top-bar{display:none}
+body{padding:0!important;margin:0}
+.active{display:none}
+.sticky{margin-top:0!important}
+.logo_img{width:90%}
+.container{padding:0;width:350px!important;margin-left:5px}
+.sticky-wrapper{width:100%}
+#banner{margin-top:-12px;margin-right:20px}
+.search-text{margin-left:10px}
+.flex-banner{display:none}
+.footer-img{width:100%;margin-top:5px;padding-left:35%}
+.footer-left{width:100%;padding-left:20px}
+.footer-right{margin-top:20px;float:left;margin-left:20px}
+.footer-center{margin-left:25px!important}
+.mobile-footer{margin-left:20px!important}
+.services li section:before{display:none}
+.services li .heading{width:271px}
+.services li{margin-bottom:30px;margin-left:35px}
+.des{margin-top:300px;line-height:25px;text-align:justify;margin-left:-505px;margin-right:160px}
+.p_txt1{margin-left:-410px;margin-right:80px}
+.p_txt2{margin-right:45px;margin-left:20px;margin-bottom:120px}
+.p_txt3{margin-left:-415px;margin-right:75px}
+.p_txt4{margin-right:35px;margin-left:20px;padding-bottom:100px}
+.heading_txt1{margin-left:-395px;margin-top:-275px;padding-top:290px;width:300px;line-height:1.5;text-align:center}
+.heading_txt2{padding-left:-420px;margin-top:-275px;padding-top:290px;width:400px;line-height:1.5;text-align:center}
+.heading_txt3{margin-left:-395px;margin-top:-275px;padding-top:290px;width:300px;line-height:1.5;text-align:center}
+.heading_txt4{padding-left:-420px;margin-top:-275px;padding-top:290px;width:400px;line-height:1.5;text-align:center;margin-left:-12px}
+.service-graph-2{position:relative}
+.service-graph-2 .media-image{position:absolute;top:0;left:40px}
+.service-graph-2 .pl30{position:relative;top:100px}
+.service-graph-4{position:relative}
+.service-graph-4 .media-image{position:absolute;top:0;left:40px}
+.service-graph-4 .pl30{position:relative;top:100px}
+#marketing{margin-left:-360px;padding-top:275px}
+#brokerage{padding-left:60px;padding-top:260px}
+#management{margin-left:-395px;padding-top:275px}
+#investment{padding-left:50px;padding-top:210px}
+.img_1{margin-left:50px}
+.img_2{margin-right:50px}
+.img_3{margin-left:50px}
+.img_4{margin-right:50px}
+.img-mob{margin-left:15px}
+.mobile-des{margin-top:315px!important;float:left;margin-right:120px;margin-left:-460px}
+.mobile-text1{float:left;padding-left:520px;margin-top:-305px;margin-right:-10px}
+.mobile-text2{float:left;padding-left:415px;margin-top:-180px}
+.mobile-text3{width:100%;padding-right:100px}
+.img-tree{display:none!important}
+.img-coins{display:none!important}
 }
-    .add-on {
-    display: inline-block;
-    width: auto;
-    height: 30px;
-    min-width: 16px;
-    padding: 4px 5px;
-    font-size: 14px;
-    font-weight: normal;
-    line-height: 20px;
-    text-align: center;
-    text-shadow: 0 1px 0 #fff;
-    background-color: #eee;
-    border: 1px solid #ccc;
-}
-.form-horizontal .control-group {
-    margin-bottom: 20px;
-}
-.checkbox.inline {
-    display: inline-block;
-    padding-top: 5px;
-    margin-bottom: 0;
-    vertical-align: middle;
-}
-.radio, .checkbox {
-    min-height: 20px;
-    padding-left: 20px;
-}
-
-/*----------------Responsive styles for moblile ------------ */
-
-/*============ HOME PAGE=============== */
-
-@media (max-width: 460px){
-     .top-bar{
-        display:none;
-    }  
-    
-    body{
-        padding: 0px !important;
-        margin: 0px;
-    }
-    
-    .active {
-        display:none;
-    }
-
-    .sticky {
-        margin-top: 0 !important;
-    }
-    
-    .logo_img{
-        width: 90%
-    }
-    
-    .container {
-        padding: 0px;
-        width : 350px !important;
-        margin-left: 5px;
-        
-    }
-    .sticky-wrapper {
-        width : 100%;
-    }
-    #banner{
-        margin-top: -12px;
-        margin-right: 20px;
-    }
-    
-    .search-text{
-      margin-left: 10px;  
-    }
-    .flex-banner{
-        display : none;
-    }
-
-/*    .search_box {
-        display: block;
-        width: 85%;
-        margin-left: 20px;
-    }*/
-    .footer-img{
-        width: 100%;
-        margin-top: 5px;
-        padding-left: 35%;
-    }
-        
-    .footer-left {
-        width: 100%;
-        padding-left: 20px;
-    }
-        
-    .footer-right{
-        margin-top : 20px;
-        float : left;
-        margin-left: 20px;
-    }
-        
-    .footer-center {
-        margin-left: 25px !important;
-    }
-
-    .mobile-footer{
-        margin-left: 20px !important;
-    }
-    
-    .services li section:before{
-        display : none;
-    }
-    
-    .services li .heading {
-        width: 271px;
-    }
-    
-    .services li {
-    margin-bottom: 30px;
-    margin-left: 35px;
-}
-
-
-      /*================ABOUT PAGE============== */
-
-    .des {
-        margin-top:300px; 
-        line-height: 25px;
-        text-align: justify;
-        margin-left : -505px;
-        margin-right : 160px;
-
-        }
-
-    /*================ SERVICES================= */
-    
-    
-    .p_txt1{
-        
-        margin-left : -410px;
-        margin-right: 80px;
-    }
-
-    .p_txt2{
-       
-        margin-right : 45px;
-        margin-left: 20px;
-        margin-bottom: 120px;
-    }
-
-    .p_txt3{
-        margin-left : -415px;
-        margin-right: 75px;
-    }
-
-    .p_txt4{
-        margin-right : 35px;
-        margin-left: 20px;
-        padding-bottom: 100px;
-        
-      }
-    
-     .heading_txt1{
-      margin-left : -395px;
-      margin-top: -275px;
-      padding-top: 290px;
-      width: 300px;
-      line-height: 1.5;
-      text-align: center;
-      }
-    
-    .heading_txt2{
-      padding-left : -420px;
-      margin-top: -275px;
-      padding-top: 290px;
-      width: 400px;
-      line-height: 1.5;
-      text-align: center;
-    }
-    
-    .heading_txt3{
-      margin-left : -395px;
-      margin-top: -275px;
-      padding-top: 290px;
-      width: 300px;
-      line-height: 1.5;
-      text-align: center;
-    }
-    
-    .heading_txt4{
-      padding-left : -420px;
-      margin-top: -275px;
-      padding-top: 290px;
-      width: 400px;
-      line-height: 1.5;
-      text-align: center;
-      margin-left: -12px;
-    }
-
-    .service-graph-2 {
-        position: relative;
-    }
-    
-    .service-graph-2 .media-image {
-        position: absolute;
-        top: 0px;
-        left: 40px;
-    }
-    
-    .service-graph-2 .pl30 {
-        
-        position: relative;
-        top: 100px;
-    }
-    
-    .service-graph-4 {
-        position: relative;
-    }
-    
-    .service-graph-4 .media-image {
-        position: absolute;
-        top: 0px;
-        left: 40px;
-    }
-    
-    .service-graph-4 .pl30 {
-        
-        position: relative;
-        top: 100px;
-    }
-    
-    #marketing{
-      margin-left : -360px;
-      padding-top: 275px;   
-      }
-      
-    #brokerage{
-       padding-left: 60px;
-       padding-top: 260px;
-      }
-    
-    #management{
-      margin-left : -395px;
-      padding-top: 275px;
-      }
-      
-    #investment{
-       padding-left: 50px;
-       padding-top: 210px;
-      }
-      
-    .img_1{
-        margin-left: 50px;
-        
-    }
-    .img_2{
-        margin-right: 50px;   
-    }
-        
-    .img_3{
-        margin-left: 50px;   
-    }
-        
-    .img_4{
-        margin-right: 50px;
-    }
-    
-    
-    /*================OVERSEAS INVESTMENT=================*/
-
-    .img-mob {
-        margin-left: 15px;
-    }
-
-    .mobile-des {
-        margin-top :315px !important;
-        float:left;
-        margin-right: 120px;
-        margin-left: -460px;
-    }
-    .mobile-text1{
-        float:left;
-        padding-left :520px;
-        margin-top: -305px;
-        margin-right: -10px;
-    }
-     .mobile-text2{
-        float:left;
-        padding-left :415px;
-        margin-top: -180px;
-    }
-    .mobile-text3{
-        width :100%;
-        padding-right:100px; 
-    }
-    .img-tree {
-        display: none !important;
-    }
-     .img-coins {
-        display: none !important;ss
-    }
-    
-   
-}
-/*
-----------------Responsive styles for ipad ------------ 
-
-@media(max-width: 1024px){
-    
-============ HOME PAGE=============== 
-.logo {
-    width:200px;
-    margin-left: -40px;
-}
-header nav {
-    width:683px;
-    margin-right: -45px;
-    
-}
-.services li .heading{
-    font-size: 13px;
-  }
-  
-  .footer-center {
-         width: 200px; 
-         margin-top: 0px;
-  }
-}
-  ============ ABOUT US=============== 
-  
-  .media{
-      margin-top: 40px;
-  }
-  
-  ============= Services =============
-  
-      
-   
-
-
-
-
-
-
-
-
-
-
-
-}*/

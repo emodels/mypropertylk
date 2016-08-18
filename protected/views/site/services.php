@@ -20,9 +20,9 @@
        
     }
             
-    function myFunction() {
-        document.getElementById("demo").innerHTML = "Hello World";
-    }
+//    function myFunction() {
+//        document.getElementById("demo").innerHTML = "Hello World";
+//    }
 
             
             );
@@ -33,7 +33,7 @@
     <div class="overlay">
       <div class="container">
         <h1>SERVICES</h1>
-       <ol class="breadcrumb">
+        <ol class="breadcrumb">
           <li class="pull-left">services</li>
           <li><a href="<?php echo Yii::app()->request->baseUrl; ?>">Home</a></li>
           <li class="active">services</li>

@@ -8,16 +8,10 @@
         <title><?php echo $this->pageTitle; ?></title>
         <meta name="keywords" content="houses for sale, houses for rent/lease, land sales, Sri Lanka" />
         <link rel="shortcut icon" href="<?php echo Yii::app()->request->baseUrl; ?>/images/fav-ico.ico" />
-        <meta name="description" content="myproperty.lk is most trusted property portal to promote Sri Lankan real-estate business locally and internationally. property website for houses for sale, houses for rent/lease and land sales across Sri Lanka, posted directly by the sellers, owners and estate agents/brokers" />
-
-<!-- <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
-    <meta name="description" content="myproperty.lk is most trusted property portal to promote Sri Lankan real-estate business locally and internationally. property website for houses for sale, houses for rent/lease and land sales across Sri Lanka, posted directly by the sellers, owners and estate agents/brokers" />
-    <meta name="keywords" content="houses for sale, houses for rent/lease, land sales, Sri Lanka" />
-    <title><?php echo $this->pageTitle; ?></title>
-    <link rel="shortcut icon" href="<?php echo Yii::app()->request->baseUrl; ?>/images/fav-ico.ico" />
-    <meta name='robots' content='noindex,nofollow'/>-->
+<!--        <meta name="description" content="myproperty.lk is most trusted property portal to promote Sri Lankan real-estate business locally and internationally. property website for houses for sale, houses for rent/lease and land sales across Sri Lanka, posted directly by the sellers, owners and estate agents/brokers" />-->
+            <meta name="description" content="At My property we strive to be Sri Lanka’s foremost fully integrated real estate solution provider, where we offer ONE-STOP-SHOP services to all our client." />
+<!-- <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+     <meta name='robots' content='noindex,nofollow'/> -->
         
         <!-- FONTS ONLINE -->
         <link href='http://fonts.googleapis.com/css?family=Roboto:400,100,100italic,300,300italic,400italic,500,500italic,700,700italic,900,900italic' rel='stylesheet' type='text/css'/>
@@ -25,7 +19,7 @@
         <link href='http://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'/>
 
         <!--MAIN STYLE-->
-        <link href='<?php echo Yii::app()->request->baseUrl; ?>/styles/bootstrap.min.css' rel="stylesheet" type="text/css">
+        <link href='<?php echo Yii::app()->request->baseUrl; ?>/styles/bootstrap.min.css' rel="stylesheet" type="text/css"> 
         <link href='<?php echo Yii::app()->request->baseUrl; ?>/styles/main.css' rel="stylesheet" type="text/css">
         <link href='<?php echo Yii::app()->request->baseUrl; ?>/styles/style.css' rel="stylesheet" type="text/css">
         <link href='<?php echo Yii::app()->request->baseUrl; ?>/styles/animate.css' rel="stylesheet" type="text/css">
@@ -76,19 +70,19 @@
             jQuery(document).ready(function () {
                
                 
-                $('.forgotpword').click(function(){
-                    $('.new-height').height(665);
-                });
-                $('.contactSubmit').click(function(){
-                    $('.contactHeight').height(1130);
-		});
+//               $('.forgotpword').click(function(){
+//                    $('.new-height').height(665);
+//               });
+//                $('.contactSubmit').click(function(){
+//                   $('.contactHeight').height(1130);
+//		});
 
                 
                 $("path").tooltip({
                     'container': 'body',
                     'placement': 'bottom'
                 });
-//                $(function () {
+//                $(function () {  //04.08.2016
 //                    $('.ownmenu li a[href^="/' + location.pathname + '"]').parent().addClass('active');
 //                });
 //                $('path').mouseenter(function () {
@@ -105,29 +99,28 @@
 //                    {
 //                        //alert("Kaḷutara");
 //                    }
-                //});
+//                });
             });
-        </script>
+       </script>
     </head>
     
     <body>
         
          <div class="modal fade"  id="myModal" style="top:20px !important; left:-175px !important;" myModalrole="dialog">
-                     <div class="modal-dialog">
+            <div class="modal-dialog">
 
-                            <!-- Modal content-->
-                        <div class="modal-content" style="width:790px">
-                        <div class="modal-header" style="border-bottom:none">
-                            <button type="button" class="close" data-dismiss="modal">&times;</button>
-                                                 
-                        </div>
-                         <div class="modal-body">
+                <!-- Modal content-->
+                 <div class="modal-content" style="width:790px">
+                    <div class="modal-header" style="border-bottom:none">
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    </div>
+                        <div class="modal-body">
                         <img class="MP" style="z-index:9999" src="<?php echo Yii::app()->request->baseUrl; ?>/images/Marketing_packeges.jpg" alt="">
                         </div>
-                        </div>
+                 </div>
 
-                        </div>
-          </div>
+            </div>
+        </div>
         
         
         <div id="dvLoading">
@@ -161,9 +154,9 @@
                     <ul class="right-bar-side social_icons">
                         <li class="facebook"> <a href="https://www.facebook.com/sharer/sharer.php?u=http://www.myproperty.lk/index.php" tittle="Facebook" target="_blank"><i class="fa fa-facebook"></i> </a></li>
                         <li class="twitter"> <a href="https://twitter.com/share?url=http://www.myproperty.lk/index.php" tittle="Twitter" target="_blank"><i class="fa fa-twitter"></i> </a></li>
-                       <li class="rss"> <a href="http://feeds.feedburner.com/" tittle="RSS"target="_blank"><i class="fa fa-rss" ></i> </a></li>
+                        <li class="rss"> <a href="http://feeds.feedburner.com/" tittle="RSS"target="_blank"><i class="fa fa-rss" ></i> </a></li>
                         <li class="googleplus"><a href="http://www.plus.google.com/" title="Google Plus" target="_blank"><i class="fa fa-google-plus"></i></a></li>
-                        <!--<li class="googleplus"><a href="#."><i class="fa fa-google-plus"></i></a></li>-->
+                        
                     </ul>
                 </div>
             </div>
@@ -196,8 +189,7 @@
                                                 <li><a href="<?php echo Yii::app()->request->baseUrl; ?>/site/services?brokerage">Property Brokerage</a></li>
                                                 <li><a href="<?php echo Yii::app()->request->baseUrl; ?>/site/services?management">Property Management</a></li>
                                                 <li><a href="<?php echo Yii::app()->request->baseUrl; ?>/site/services?investment">Investment Advisory</a></li>
-                                                <!--<li><a href="<?php echo Yii::app()->request->baseUrl; ?>/list/property/type/sold">Sold</a></li>-->
-                                            </ul>
+                                               </ul>
                                         </div>
                                         <div class="col-sm-4"> <img class="absu"  src="<?php echo Yii::app()->request->baseUrl; ?>/images/nav-image.png" alt="" > </div>
                                     </div>
@@ -218,27 +210,27 @@
                                  <li id="lnk_rent"><a href="<?php echo Yii::app()->request->baseUrl; ?>/list/property/type/rent">Residential</a></li>
                                  <li id="lnk_commercial"><a href="<?php echo Yii::app()->request->baseUrl; ?>/list/commercial/type/lease">Commercial</a></li>
                                  </ul>
-                             </li>
+                            </li>
+                            
                             <li id="lnk_overseas"><a href="<?php echo Yii::app()->request->baseUrl; ?>/list/Overseas_Investments">Overseas Investments</a></li>
                             <li id="lnk_contact"><a href="<?php echo Yii::app()->request->baseUrl; ?>/site/contact">Contact us</a></li>
                             
                         </ul>
 
                         <!--======= SUBMIT COUPON =========-->
-                        <div class="sub-nav-co"> <a href="#."><i class="fa fa-search"></i></a> </div>
+<!--                        <div class="sub-nav-co"> <a href="#."><i class="fa fa-search"></i></a> </div>-->
                     </nav> 
                 </div>
                 
             </header>
             
 
-
-            <div class="row">    
+         <div class="row">    
             <?php echo $content; ?>
                <div class="clearfix"></div>
             </div>
             
-            <!-- ===========FOOTER===========-->
+                      <!-- ===========================================FOOTER========================================-->
             
             <div id="footer_main" class="row" >
                 
@@ -293,7 +285,6 @@
                                     <ul class="footer-social" style="margin-top: 115px;">
                                             <li class="facebook"> <a href="https://www.facebook.com/sharer/sharer.php?u=http://www.myproperty.lk/index.php" target="_blank"><i class="fa fa-facebook"></i> </a></li>
                                             <li class="twitter"> <a href="https://twitter.com/share?url=http://www.myproperty.lk/index.php" target="_blank"><i class="fa fa-twitter"></i>  </a></li>
-                                            <!--<li class="linkedin"> <a href="https://www.linkedin.com/" target="_blank"><i class="fa fa-linkedin"></i> </a></li>-->
                                             <li class="rss"> <a href="http://feeds.feedburner.com/" tittle="RSS" target="_blank"><i class="fa fa-rss" ></i> </a></li>
                                             <li class="googleplus"><a href="http://www.plus.google.com/" target="_blank"><i class="fa fa-google-plus"></i></a></li>
                                     </ul>                                
@@ -328,7 +319,7 @@
 
             
                 <div class="container clearfix">  
-                    <div class="footer-left">Copyright © 2014, Designed & Developed by SNT3.</div>
+                    <div class="footer-left">Copyright © 2016, Designed & Developed by SNT3.</div>
                     <div class="footer-img">
                         <a href="http://www.dwellingsgroup.com.au/" target="_blank"> <img src="<?php echo Yii::app()->request->baseUrl; ?>/images/dwg.png"> </a>
                     </div>
@@ -353,13 +344,13 @@
             <!--======= FOOTER =========-->
      
         </div>
-<!--  <script src="<?php echo Yii::app()->request->baseUrl; ?>/js/jquery-1.11.0.min.js"></script>-->
-        <script src="<?php echo Yii::app()->request->baseUrl; ?>/js/wow.min.js"></script>
+<!--    <script src="<?php echo Yii::app()->request->baseUrl; ?>/js/jquery-1.11.0.min.js"></script>-->
+        <script src="<?php echo Yii::app()->request->baseUrl; ?>/js/wow.min.js"></script> 
         <script src="<?php echo Yii::app()->request->baseUrl; ?>/js/bootstrap-select.js"></script>
         <script src="<?php echo Yii::app()->request->baseUrl; ?>/js/bootstrap.min.js"></script>
         <script src="<?php echo Yii::app()->request->baseUrl; ?>/js/jquery.stellar.js"></script>
         <script src="<?php echo Yii::app()->request->baseUrl; ?>/js/jquery.flexslider-min.js"></script>
-        <script src="<?php echo Yii::app()->request->baseUrl; ?>/js/owl.carousel.min.js"></script>
+<!--    <script src="<?php //echo Yii::app()->request->baseUrl;?>/js/owl.carousel.min.js"></script> -->
         <script src="<?php echo Yii::app()->request->baseUrl; ?>/js/jquery.sticky.js"></script>
         <script src="<?php echo Yii::app()->request->baseUrl; ?>/js/own-menu.js"></script>
         <script src="<?php echo Yii::app()->request->baseUrl; ?>/js/jquery.nouislider.min.js"></script>

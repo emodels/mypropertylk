@@ -15,7 +15,7 @@
         <h1>ABOUT US</h1>
         <ol class="breadcrumb">
           <li class="pull-left">ABOUT us</li>
-          <li><a href="<?php echo Yii::app()->request->baseUrl; ?>">Home</a></li>
+          <li><a href="<?php echo Yii::app()->request->baseUrl;?>/">Home</a></li>
           <li class="active">ABOUT Us</li>
         </ol>
       </div>
