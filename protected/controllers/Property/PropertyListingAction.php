@@ -71,6 +71,19 @@ class PropertyListingAction extends CAction
 
                         try{
                             $mailer->Send();
+
+                            /*---( Add to Mail Log )---*/
+
+                            Utility::addMailLog(
+                                Yii::app()->params['SMTP_Username'],
+                                'myproperty.lk',
+                                $property->agent0->email,
+                                $property->agent0->fname,
+                                'Your Property listing # ' . $property->pid . ' is approved by MyProperty.lk and now live on our website',
+                                $message,
+                                $property->agent,
+                                0
+                            );
                         }
                         catch (Exception $ex){
                             echo $ex->getMessage();

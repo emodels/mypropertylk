@@ -78,6 +78,19 @@ class AddPropertyAction_Step4 extends CAction
 
                         try{
                             $mailer->Send();
+
+                            /*---( Add to Mail Log )---*/
+
+                            Utility::addMailLog(
+                                Yii::app()->params['SMTP_Username'],
+                                'myproperty.lk',
+                                Yii::app()->params['adminEmail'],
+                                'Admin',
+                                'New Property - # ' . $property->pid . ' added and required authorization',
+                                $message,
+                                1,
+                                1
+                            );
                         }
                         catch (Exception $ex){
                             echo $ex->getMessage();
@@ -113,6 +126,19 @@ class AddPropertyAction_Step4 extends CAction
 
                         try{
                             $mailer->Send();
+
+                            /*---( Add to Mail Log )---*/
+
+                            Utility::addMailLog(
+                                Yii::app()->params['SMTP_Username'],
+                                'myproperty.lk',
+                                $property->agent0->email,
+                                $property->agent0->fname,
+                                'Your Property listing # ' . $property->pid . ' with MyProperty.lk',
+                                $message,
+                                $property->agent,
+                                0
+                            );
                         }
                         catch (Exception $ex){
                             echo $ex->getMessage();
