@@ -6482,3 +6482,20 @@ Stack trace:
 REQUEST_URI=/mypropertylk/site/maillog/images/nav-head.png
 HTTP_REFERER=http://localhost/mypropertylk/site/maillog/1
 ---
+2016/08/19 06:44:08 [error] [php] Undefined variable: page (C:\xampp\htdocs\mypropertylk\protected\views\list\property.php:577)
+Stack trace:
+#0 C:\xampp\htdocs\mypropertylk\protected\framework\web\CController.php(870): ListController->renderFile()
+#1 C:\xampp\htdocs\mypropertylk\protected\framework\web\CController.php(783): ListController->renderPartial()
+#2 C:\xampp\htdocs\mypropertylk\protected\controllers\List\PropertyAction.php(96): ListController->render()
+#3 C:\xampp\htdocs\mypropertylk\protected\framework\web\actions\CAction.php(75): PropertyAction->run()
+#4 C:\xampp\htdocs\mypropertylk\protected\framework\web\CController.php(309): PropertyAction->runWithParams()
+#5 C:\xampp\htdocs\mypropertylk\protected\framework\web\CController.php(287): ListController->runAction()
+#6 C:\xampp\htdocs\mypropertylk\protected\framework\web\CController.php(266): ListController->runActionWithFilters()
+#7 C:\xampp\htdocs\mypropertylk\protected\framework\web\CWebApplication.php(276): ListController->run()
+#8 C:\xampp\htdocs\mypropertylk\protected\framework\web\CWebApplication.php(135): CWebApplication->runController()
+#9 C:\xampp\htdocs\mypropertylk\protected\framework\base\CApplication.php(162): CWebApplication->processRequest()
+#10 C:\xampp\htdocs\mypropertylk\index.php(15): CWebApplication->run()
+REQUEST_URI=/mypropertylk/list/property/type/images/nav-head.png
+in C:\xampp\htdocs\mypropertylk\protected\views\list\property.php (577)
+in C:\xampp\htdocs\mypropertylk\protected\controllers\List\PropertyAction.php (96)
+in C:\xampp\htdocs\mypropertylk\index.php (15)

@@ -28,7 +28,7 @@
 <script type="text/javascript" src='<?php //echo Yii::app()->request->baseUrl; ?>/js/jquery.tooltipster.min.js'></script>
 <script type="text/javascript" src='<?php //echo Yii::app()->request->baseUrl; ?>/js/typeahead.bundle.min.js'></script>-->
 <!-- Start sider HEAD section -->
-<link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>/engine1/style.css" />
+<!--<link rel="stylesheet" type="text/css" href="<?php //echo Yii::app()->request->baseUrl; ?>/engine1/style.css" />-->
 <!-- End slider HEAD section -->
 <script type="text/javascript">
     jQuery(document).ready(function () {
@@ -853,8 +853,8 @@
         <?php $this->endWidget(); ?>
     </div>
 </div><!-- /.content-wrapper -->
-<script type="text/javascript" src="<?php echo Yii::app()->request->baseUrl; ?>/engine1/wowslider.js"></script>
-<script type="text/javascript" src="<?php echo Yii::app()->request->baseUrl; ?>/engine1/script.js"></script>
+<!--<script type="text/javascript" src="<?php //echo Yii::app()->request->baseUrl; ?>/engine1/wowslider.js"></script>
+<script type="text/javascript" src="<?php //echo Yii::app()->request->baseUrl; ?>/engine1/script.js"></script>-->
 
 <script type='text/javascript' src='<?php echo Yii::app()->request->baseUrl; ?>/js/jquery.form.min.js'></script>
 <script type='text/javascript' src='<?php echo Yii::app()->request->baseUrl; ?>/js/jquery.jcarousel.min.js'></script>

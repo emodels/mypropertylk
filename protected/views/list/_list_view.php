@@ -171,6 +171,8 @@ if ($_GET['type'] == 'sold'){
                                                         </li>
                                                     <?php
                                                     }
+
+                                                    break;
                                                 }
                                             }
 

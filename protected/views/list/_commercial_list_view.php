@@ -114,6 +114,8 @@ switch ($data->pricetype){
                                                         </li>
                                                     <?php
                                                     }
+
+                                                    break;
                                                 }
                                             }
 
