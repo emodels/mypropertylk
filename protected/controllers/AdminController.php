@@ -28,7 +28,7 @@ class AdminController extends Controller
     {
         return array(
             'home'=>'application.controllers.Admin.IndexAction',  //action for admin - index page controller
-            'pricelist'=>'application.controllers.Admin.PricelistAction',  //action for admin - Price List page controller
+            'pricelist'=>'application.controllers.Admin.PriceListAction',  //action for admin - Price List page controller
             'city'=>'application.controllers.Admin.CityAction',  //action for admin - City List page controller
             'feature'=>'application.controllers.Admin.FeatureAction',  //action for admin - Feature Control page controller
             'landingpages'=>'application.controllers.Admin.LandingpageAction',  //action for admin - Landing Page Control page controller
