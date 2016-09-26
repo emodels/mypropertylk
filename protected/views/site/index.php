@@ -454,10 +454,13 @@
                                     }
                                 }
                                 else {
-                                    $condition = 'pricetype = 3 AND status = 1 ';
-                                    }
+
+                                    //$condition = 'pricetype = 3 AND status = 1 ';
+                                    $condition = 'status = 1 ';
+                                }
+
                                 $this->widget('zii.widgets.CListView', array(
-                                              'id' => 'list_featured',
+                                              'id' => 'list_recent',
                                               'dataProvider'=>new CActiveDataProvider('Property', array('criteria'=>array('condition'=> $condition,'order' => 'entrydate DESC LIMIT 20'),'pagination'=>false)),
                                               'itemView' => '_featured_list_view',
                                               'template'=>'{items} {pager}'
