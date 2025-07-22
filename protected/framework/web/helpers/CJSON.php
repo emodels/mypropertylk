@@ -532,7 +532,7 @@ class CJSON
 
 						} elseif ((($chrs[$c] == '"') || ($chrs[$c] == "'")) && ($top['what'] != self::JSON_IN_STR)) {
 							// found a quote, and we are not inside a string
-							array_push($stk, array('what' => self::JSON_IN_STR, 'where' => $c, 'delim' => $chrs{$c}));
+							array_push($stk, array('what' => self::JSON_IN_STR, 'where' => $c, 'delim' => $chrs[$c]));
 							//print("Found start of string at {$c}\n");
 
 						} elseif (($chrs[$c] == $top['delim']) &&
